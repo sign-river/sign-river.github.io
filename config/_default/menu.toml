@@ -12,7 +12,7 @@
     url = "/archives/"
     weight = 2
     [main.params]
-        icon = "search"   # 先用 search (放大镜)，绝对能过！过了一会儿再改。
+        icon = "archives"   
 
 [[main]]
     identifier = "search"
@@ -28,7 +28,7 @@
     url = "/links/"
     weight = 4
     [main.params]
-        icon = "link"     # 改回 link (原本就是好的)
+        icon = "link"    
 
 
 [[social]]
