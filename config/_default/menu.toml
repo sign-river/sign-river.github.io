@@ -2,29 +2,25 @@
     identifier = "home"
     name = "首页"        # 汉化这里
     url = "/"
-[main.params]
-    icon = "home"
+
    
 [[main]]
     identifier = "archives"
     name = "归档"        # 汉化这里
     url = "/archives/"
-[main.params]
-    icon = "archive"
+
 
 [[main]]
     identifier = "search"
     name = "搜索"        # 汉化这里
     url = "/search/"
-[main.params]
-    icon = "search"
+
 
 [[main]]
     identifier = "links"
     name = "友链"        # 汉化这里
     url = "/links/"
-[main.params]
-    icon = "link"
+
 
 [[social]]
 identifier = "github"
