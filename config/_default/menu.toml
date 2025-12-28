@@ -1,3 +1,37 @@
+[[main]]
+    identifier = "Home"      # 注意：改成大写 H
+    name = "首页"
+    url = "/"
+    weight = 1
+    [main.params]
+        icon = "home"
+
+[[main]]
+    identifier = "Archives"  # 注意：改成大写 A
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+    [main.params]
+        icon = "folder"
+
+[[main]]
+    identifier = "Search"    # 注意：改成大写 S
+    name = "搜索"
+    url = "/search/"
+    weight = 3
+    [main.params]
+        icon = "search"
+
+# 这一项主题原本可能叫 Links 或 links，我们试着两个都写一下防止删不掉
+# 或者是直接覆盖 Links
+[[main]]
+    identifier = "Links"     # 注意：改成大写 L
+    name = "友链"
+    url = "/links/"
+    weight = 4
+    [main.params]
+        icon = "users"
+
 [[social]]
 identifier = "github"
 name = "GitHub"
