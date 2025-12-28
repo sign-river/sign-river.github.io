@@ -78,18 +78,13 @@ enabled = true
 [comments]
     enabled = true
     provider = "giscus"
-
-[comments.giscus]
-    repo = "sign-river/sign-river.github.io"
-    repoID = "R_kgDOQv6PXw"
-    category = "Announcements"
-    categoryID = "DIC_kwDOQv6PX84C0Twp"
-    mapping = "pathname"
-    reactionsEnabled = 1
-    emitMetadata = 0
-    lightTheme = "light"
-    darkTheme = "dark"
-    lazyLoading = false
+    
+[comments.disqusjs]
+    shortname = ""
+    apiUrl = ""
+    apiKey = ""
+    admin = ""
+    adminLabel = ""
 
 [comments.utterances]
 repo = ""
@@ -133,15 +128,16 @@ serverName = "cactus.chat"
 siteName = ""
 
 [comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
-lightTheme = ""
-darkTheme = ""
-reactionsEnabled = 1
-emitMetadata = 0
+    repo = "sign-river/sign-river.github.io"
+    repoID = "R_kgDOQv6PXw"
+    category = "Announcements"
+    categoryID = "DIC_kwDOQv6PX84C0Twp"
+    mapping = "pathname"
+    reactionsEnabled = 1
+    emitMetadata = 0
+    lightTheme = "light"
+    darkTheme = "dark"
+    lazyLoading = false
 
 [comments.gitalk]
 owner = ""
