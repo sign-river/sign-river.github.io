@@ -1,3 +1,17 @@
 .site-footer .powerby {
     display: none;
 }
+
+/* 关闭目录（TOC）的自动编号 */
+.article-page .left-sidebar .table-of-contents {
+    counter-reset: none;
+}
+
+.article-page .left-sidebar .table-of-contents li::before {
+    content: none !important;
+}
+
+.article-page .left-sidebar .table-of-contents ol {
+    list-style: none;
+    counter-reset: none;
+}
