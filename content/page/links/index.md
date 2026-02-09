@@ -1,28 +1,14 @@
 ---
-title: Links
+title: 友情链接
 links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
+  - title: 我的 GitHub
+    description: 欢迎访问我的代码仓库，查看我的开源项目
+    website: https://github.com/sign-river
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
 
 comments: false
 ---
 
-To use this feature, add `links` section to frontmatter.
+这里是我的个人主页和相关链接。
 
-This page's frontmatter:
-
-```yaml
-links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-    website: https://www.typescriptlang.org
-    image: ts-logo-128.jpg
-```
-
-`image` field accepts both local and external images.
+如果你也有自己的博客或网站，欢迎交换友链！
