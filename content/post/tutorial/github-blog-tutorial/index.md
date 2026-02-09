@@ -221,7 +221,7 @@ Hugo 有一种很好的文章组织方式叫 "Page Bundles"（页面束）。简
 
 3. 输入文章内容，格式如下：
 
-   ````markdown
+```
 ---
 # 1. Front Matter (元数据配置区) - 决定了文章在网站后台和侧边栏的展示
 title: "我的 Python 工具箱计划"         # 文章标题
@@ -578,9 +578,28 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 ## 第七章：补充内容
 
-![Hugo 博客工作流示意图](2026-02-09-21-45-25.png)
+### 1. link界面调整
 
+1.在本地找到links的index.md文件
+![link文件位置](2026-02-09-21-45-25.png)
+2.复制之前的模块，修改文本内容即可
+```
+---
+title: Links
+links:
+  - title: GitHub
+    description: 欢迎访问我的代码仓库
+    website: https://github.com/sign-river
+    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: Bilibili
+    description: 我的b站账户
+    website: https://space.bilibili.com/504574253?spm_id_from=333.1007.0.0
+    image: https://www.bilibili.com/favicon.ico
 
+comments: false
+---
+```
+![](2026-02-09-22-34-01.png)
 ---
 
 ## 总结
