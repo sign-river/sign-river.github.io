@@ -3,15 +3,33 @@
 }
 
 /* 关闭目录（TOC）的自动编号 */
-.article-page .left-sidebar .table-of-contents {
-    counter-reset: none;
+.table-of-contents {
+    counter-reset: none !important;
 }
 
-.article-page .left-sidebar .table-of-contents li::before {
-    content: none !important;
+.table-of-contents li::before {
+    content: "" !important;
 }
 
-.article-page .left-sidebar .table-of-contents ol {
-    list-style: none;
-    counter-reset: none;
+.table-of-contents ol {
+    list-style: none !important;
+    counter-reset: none !important;
+}
+
+.table-of-contents ol li {
+    counter-increment: none !important;
+}
+
+/* 更强力的规则 - 针对所有可能的目录结构 */
+aside .table-of-contents ol,
+#TableOfContents ol,
+.toc ol {
+    list-style-type: none !important;
+}
+
+aside .table-of-contents ol li::before,
+#TableOfContents ol li::before,
+.toc ol li::before {
+    content: "" !important;
+    margin-right: 0 !important;
 }
