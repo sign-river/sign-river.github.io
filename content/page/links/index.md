@@ -2,27 +2,13 @@
 title: Links
 links:
   - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
+    description: 欢迎访问我的代码仓库
+    website: https://github.com/sign-river
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: Bilibili
+    description: 我的b站账户
+    website: https://space.bilibili.com/504574253?spm_id_from=333.1007.0.0
+    image: https://www.bilibili.com/favicon.ico
 
 comments: false
 ---
-
-To use this feature, add `links` section to frontmatter.
-
-This page's frontmatter:
-
-```yaml
-links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-    website: https://www.typescriptlang.org
-    image: ts-logo-128.jpg
-```
-
-`image` field accepts both local and external images.
