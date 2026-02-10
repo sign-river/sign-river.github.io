@@ -371,7 +371,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 
 <img src="images/2026-02-10-11-05-23.png" alt="image" width="1000">
 
-   ![添加 CSS 代码](2026-02-09-21-00-07.png)
+<img src="images/2026-02-10-11-07-06.png" alt="image" width="1000">
 
 ### 细节清理
 
@@ -381,16 +381,15 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
    - 准备一张正方形的小图片，重命名为 `favicon.png`
    - 上传到仓库的 `static` 文件夹下（如果没有该文件夹，请在根目录新建一个）
 
-   ![上传 Favicon](2026-02-09-21-00-15.png)
+<img src="images/2026-02-10-11-07-37.png" alt="image" width="1000">
 
 2. **删除多余分类**：
    - 进入 `content/categories`
    - 删除 `example-category` 文件夹，保持分类清爽
 
-   ![查看分类目录](2026-02-09-21-00-43.png)
+<img src="images/2026-02-10-11-07-56.png" alt="image" width="1000">
 
-   ![删除示例分类](2026-02-09-21-00-53.png)
-
+<img src="images/2026-02-10-11-08-35.png" alt="image" width="1000">
 
 ---
 
@@ -408,12 +407,12 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 2. 点击上方的 **Settings**（设置）选项卡
 3. 在 **General** 页面向下滚动，找到 **Features** 区域
 
-   ![进入 Settings](2026-02-09-21-04-41.png)
+<img src="images/2026-02-10-11-09-21.png" alt="image" width="1000">
 
 4. 勾选 **Discussions** 选项
    - *提示：这一步非常关键，如果不开启，后续评论将无法写入*
 
-   ![开启 Discussions](2026-02-09-21-04-53.png)
+<img src="images/2026-02-10-11-09-42.png" alt="image" width="1000">
 
 ### 安装 Giscus 应用
 
@@ -422,7 +421,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 1. 访问 Giscus 应用页面：[https://github.com/apps/giscus](https://github.com/apps/giscus)
 2. 点击绿色的 **Install** 按钮
 
-   ![安装 Giscus](2026-02-09-21-05-59.png)
+<img src="images/2026-02-10-11-09-53.png" alt="image" width="1000">
 
 3. 在权限选择页面：
    - 选择 **Only select repositories**
@@ -430,7 +429,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 
 4. 点击 **Install** 完成安装
 
-   ![选择仓库](2026-02-09-21-06-50.png)
+<img src="images/2026-02-10-11-10-08.png" alt="image" width="500">
 
 ### 获取配置代码
 
@@ -442,19 +441,19 @@ Giscus 提供了一个可视化工具来生成配置参数。
    - 在“仓库”一栏，输入 `你的用户名/你的仓库名`（例如 `sign-river/sign-river.github.io`）
    - 等待下方出现绿色的“成功！该仓库满足所有条件”提示
 
-   ![配置仓库](2026-02-09-21-35-39.png)
+<img src="images/2026-02-10-11-19-17.png" alt="image" width="500">
 
 3. **配置分类**：
    - 在“Discussion 分类”中，推荐选择 **Announcements**
    - *注意：这决定了评论会出现在仓库 Discussions 的哪个板块下*
 
-   ![选择分类](2026-02-09-21-35-53.png)
+<img src="images/2026-02-10-11-18-37.png" alt="image" width="500">
 
 4. **生成代码**：
    - 滚动到页面底部的“启用 giscus”部分
    - 你会看到一段生成的 `<script>` 代码。**不要直接复制这段代码**，我们只需要其中的几个关键参数
 
-   ![生成配置代码](2026-02-09-21-36-03.png)
+<img src="images/2026-02-10-11-20-16.png" alt="image" width="500">
 
 ### 写入博客配置 (params.toml)
 
@@ -463,7 +462,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 1. 回到你的仓库，打开 `config/_default/params.toml` 文件
 2. 找到 `[comments]` 区域，将 `enabled` 设置为 `true`，`provider` 设置为 `"giscus"`
 
-   ![开启评论功能](2026-02-09-21-36-31.png)
+<img src="images/2026-02-10-11-21-59.png" alt="image" width="1000">
 
 3. 找到 `[comments.giscus]` 区域，根据刚才网页生成的信息填写：
 
@@ -486,7 +485,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
    > ⚠️ **关键点**：`repoID` 和 `categoryID` 是两串乱码一样的字符，必须从 Giscus 官网生成的代码中精确复制。
 
-   ![配置 Giscus 参数](2026-02-09-21-36-41.png)
+<img src="images/2026-02-10-11-22-16.png" alt="image" width="1000">
 
 ### 清理旧配置 (config.toml)
 
@@ -496,7 +495,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 2. 找到 `disqusShortname` 这一行
 3. 在行首添加 `#` 号将其注释掉，或者直接删除该行
 
-   ![注释 Disqus 配置](2026-02-09-21-37-05.png)
+<img src="images/2026-02-10-11-22-39.png" alt="image" width="1000">
 
 ### 验证评论区
 
@@ -504,7 +503,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 如果一切顺利，你应该能看到一个漂亮的评论框，支持使用 GitHub 账号登录发表评论。所有的评论都会自动同步到你 GitHub 仓库的 Discussions 版块中。
 
-![评论区效果](2026-02-09-21-37-29.png)
+<img src="images/2026-02-10-11-22-51.png" alt="image" width="1000">
 
 ---
 
@@ -517,7 +516,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 1. **克隆仓库**：使用 Git 工具将你的 `用户名.github.io` 仓库克隆到本地电脑
 2. **打开项目**：右键点击文件夹，选择 "Open with Code"（用 VS Code 打开）
 
-   ![用 VS Code 打开项目](2026-02-09-21-41-52.png)
+<img src="images/2026-02-10-11-23-38.png" alt="image" width="500">
 
 ### 必装插件推荐
 
@@ -527,39 +526,44 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 这是写 Markdown 的必备插件，提供了快捷键、自动补全和格式化功能。
 
-![Markdown All in One 插件](2026-02-09-21-42-14.png)
+<img src="images/2026-02-10-11-24-08.png" alt="image" width="1000">
 
 **常用快捷键**：
-    * **加粗**：`Ctrl + B` 
-    * **斜体**：`Ctrl + I` 
-    * **删除线**：`Alt + S` 
-    * **调整标题级别**：`Ctrl + Shift + ]`
+
+- **加粗**：`Ctrl + B`
+- **斜体**：`Ctrl + I`
+- **删除线**：`Alt + S`
+- **调整标题级别**：`Ctrl + Shift + ]`
 
 **自动功能**：
-    * **表格格式化**：写表格时会自动对齐，强迫症福音。
-    * **链接补全**：选中文字输入 `[`，自动包裹为链接格式。
+
+- **表格格式化**：写表格时会自动对齐，强迫症福音。
+- **链接补全**：选中文字输入 `[`，自动包裹为链接格式。
 
 #### 🖼️ Paste Image —— 截图神器
 
 在 Markdown 中插入图片通常很麻烦（截图 → 保存 → 改名 → 上传 → 引用）。这个插件能把这些步骤缩减为一步。
 
-![Paste Image 插件](2026-02-09-21-42-26.png)
+<img src="images/2026-02-10-11-24-30.png" alt="image" width="1000">
 
 **使用方法**：
+
 1. 使用任意截图工具（如微信截图或 `Win + Shift + S`）截图
 2. 在 VS Code 的 Markdown 文件中，按下 **`Ctrl + Alt + V`**
 
 **神奇效果**：
-    * 插件会自动将剪贴板里的图片保存到当前文章的目录下。
-    * 自动在文章中插入 `![](图片路径.png)` 代码，所见即所得。
+
+- **插件会自动将剪贴板里的图片保存到当前文章的目录下。
+- **自动在文章中插入 `![](图片路径.png)` 代码，所见即所得。
 
 #### 👁️ Markdown Preview Enhanced —— 实时预览
 
 虽然 VS Code 自带预览，但这个插件功能更强大。
 
-![Markdown Preview Enhanced 插件](2026-02-09-21-42-44.png)
+<img src="images/2026-02-10-11-24-46.png" alt="image" width="1000">
 
 **核心功能**：
+
 - **同步滚动**：左边编辑，右边预览自动跟随，不迷路
 - **数学公式与图表**：完美支持 LaTeX 公式和各种流程图渲染
 - **导出功能**：右键点击预览界面，可以直接导出为 HTML 或 PDF 分享
@@ -574,7 +578,6 @@ Giscus 提供了一个可视化工具来生成配置参数。
 4. **预览**：用 Preview Enhanced 实时检查效果
 5. **发布**：写完后，在 VS Code 的源代码管理（Source Control）中点击 **Commit** 和 **Sync**，文章就会自动推送到 GitHub 并发布上线！
 
-
 ---
 
 ## 补充内容
@@ -585,7 +588,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 1.定位配置文件 在博客的本地根目录下，找到 Links 页面的源文件（通常位于 source/links/index.md）。
 
-![link文件位置](2026-02-09-21-45-25.png)
+<img src="images/2026-02-10-11-29-33.png" alt="image" width="300">
 
 2.编辑链接信息 复制以下配置代码，覆盖或添加到文件中。你可以根据需要修改 links 下的列表项。
 
@@ -606,7 +609,7 @@ comments: false
 ---
 ```
 
-![最终效果](2026-02-09-22-34-01.png)
+<img src="images/![最终效果](2026-02-09-22-34-01.png).png" alt="image" width="1000">
 
 ### Paste Image 图片保存位置
 
@@ -618,9 +621,9 @@ comments: false
 
 <img src="images/2026-02-09-23-54-32.png" alt="image" width="400">
 
-1. 搜索paste image
-2. 找到Path
-3. 在原参数后添加/images即可
+2. 搜索paste image
+3. 找到Path
+4. 在原参数后添加/images即可
 
 <img src="images/2026-02-09-23-54-39.png" alt="image" width="500">
 
@@ -634,9 +637,9 @@ comments: false
 
 <img src="images/2026-02-09-23-54-32.png" alt="调整参数" width="400">
 
-1. 搜索搜索paste image
-2. 找到Insert Pattern
-3. 删除原参数修改为
+2. 搜索搜索paste image
+3. 找到Insert Pattern
+4. 删除原参数修改为
 
 ```
 <img src="${imageFilePath}" alt="image" width="600">
