@@ -657,7 +657,7 @@ comments: false
 解决方案如下：
 我们需要在站点配置中关闭目录的自动编号功能
 
-1. 定位配置文件： 找到站点根目录下的 config/\_default/markup.toml 文件。
+1. 定位配置文件： 找到站点根目录下的 config/default/markup.toml 文件。
 2. 修改参数： 找到 [tableOfContents] 区域，将 ordered 属性由 true 改为 false。
 
 <img src="images/2026-02-10-10-07-25.png" alt="image" width="600">
