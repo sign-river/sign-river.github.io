@@ -2,7 +2,7 @@
 title: "WPS 复制图片模糊问题完美解决方案"
 date: 2026-02-09
 description: "解析从 WPS 复制图片时画质下降的原因，提供解决方法"
-image: cover.jpg
+image: images/cover.jpg
 categories:
     - "效率工具"
     - "问题解决"
@@ -37,8 +37,8 @@ WPS 为了减小文件体积，会对插入的图片进行自动压缩。当你�
 
 1. 在 WPS 文档中**点击图片右边的放大镜按钮**
 
+<img src="images/2026-02-10-09-42-16.png" alt="image" width="600">
 
-![](images/2026-02-09-23-34-44.png)
 2. Ctrl+C或者直接右键复制即可
 3. 该往哪粘往哪粘,现在就是清晰的了
 
