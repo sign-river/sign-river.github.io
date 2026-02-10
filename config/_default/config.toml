@@ -11,6 +11,9 @@ defaultContentLanguage = "zh-cn"
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage = true
 
+# Ignore README files in content directory
+ignoreFiles = ["README\\.md$", "readme\\.md$"]
+
 # Change it to your Disqus shortname before using
 # disqusShortname = "sign-river-blog"
 
