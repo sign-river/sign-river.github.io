@@ -21,7 +21,7 @@ draft: false
 
 ---
 
-## 安装插件markdownlint
+## 安装插件 markdownlint
 
 ### 格式检查工具
 
@@ -44,11 +44,11 @@ draft: false
 
 ### 使用方法
 
-1. 在拓展商店搜索并安装markdownlint
+1. 在拓展商店搜索并安装 markdownlint
 
 <img src="images/2026-02-10-23-18-56.png" alt="image" width="1000">
 
-2. 打开设置(json)
+2. 打开设置 (json)
 
 <img src="images/2026-02-10-23-21-47.png" alt="image" width="500">
 
@@ -68,7 +68,7 @@ draft: false
 
 ### 总结
 
-之后只要Ctrl + S保存文件,就会自动修正Markdown格式
+之后只要 Ctrl + S 保存文件，就会自动修正 Markdown 格式
 
 ---
 

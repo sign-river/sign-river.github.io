@@ -4,12 +4,12 @@ date: 2026-02-09
 description: "手把手教你使用 Hugo + GitHub Pages 搭建自己的个人博客"
 # image: images/cover.jpg
 categories:
-    - "教程"
-    - "GitHub"
+  - "教程"
+  - "GitHub"
 tags:
-    - "博客搭建"
-    - "GitHub Pages"
-    - "Hugo"
+  - "博客搭建"
+  - "GitHub Pages"
+  - "Hugo"
 draft: false
 ---
 
@@ -45,8 +45,8 @@ draft: false
 
 在 **Repository name**（仓库名称）一栏中，**必须**按照以下格式填写：
 
-```text
-你的GitHub用户名.github.io
+```
+你的 GitHub username.github.io
 ```
 
 <img src="images/2026-02-10-10-49-03.png" alt="image" width="1000">
@@ -75,7 +75,7 @@ draft: false
 
 <img src="images/2026-02-10-10-46-54.png" alt="image" width="1000">
 
-部署完成后，访问 `https://你的用户名.github.io`，如果能看到一个带有 "Hugo Theme Stack" 标题和示例文章的精美页面，恭喜你，你的个人博客雏形已经搭建完成了！🎉
+部署完成后，访问 `https://username.github.io`，如果能看到一个带有 "Hugo Theme Stack" 标题和示例文章的精美页面，恭喜你，你的个人博客雏形已经搭建完成了！🎉
 
 ---
 
@@ -102,12 +102,12 @@ draft: false
 4. 找到以下两行并进行修改：
 
    ```toml
-    # 将此链接修改为你自己的仓库地址 (注意最后要有斜杠 /)
-    baseurl = "https://你的用户名.github.io/"
+    # 将此链接修改为你自己的仓库地址 （注意最后要有斜杠 /)
+    baseurl = "https://username.github.io/"
 
     # 修改为你喜欢的博客名称
-    title = "YSY的博客"
-    ```
+    title = "YSY 的博客"
+   ```
 
 <img src="images/2026-02-10-10-51-00.png" alt="image" width="1000">
 
@@ -137,7 +137,7 @@ draft: false
     enabled = true
     # 头像必须放在 assets/img/ 目录下
     src = "img/avatar.png"
-    ```
+   ```
 
 <img src="images/2026-02-10-10-52-29.png" alt="image" width="500">
 
@@ -182,7 +182,7 @@ draft: false
 
 完成上述步骤后，等待几分钟（GitHub Actions 需要一点时间重新构建）。再次访问你的博客链接：
 
-> `https://你的用户名.github.io`
+> `https://username.github.io`
 
 现在，你应该能看到博客标题变了，左侧也换成了你的头像和简介。是不是更有成就感了？
 
@@ -215,7 +215,7 @@ Hugo 有一种很好的文章组织方式叫 "Page Bundles"（页面束）。简
 <img src="images/2026-02-10-10-55-13.png" alt="image" width="1000">
 
 2. 在文件名输入框中填写：`post/my-first-post/index.md`
-   - *注意：输入 `/` 会自动创建文件夹*
+   - _注意：输入 `/` 会自动创建文件夹_
 
 <img src="images/2026-02-10-10-55-26.png" alt="image" width="1000">
 
@@ -224,10 +224,10 @@ Hugo 有一种很好的文章组织方式叫 "Page Bundles"（页面束）。简
 ```
 
 ---
-# 1. Front Matter (元数据配置区) - 决定了文章在网站后台和侧边栏的展示
+# 1. Front Matter （元数据配置区） - 决定了文章在网站后台和侧边栏的展示
 title: "我的 Python 工具箱计划"         # 文章标题
 date: 2025-12-28                      # 发布日期，影响排序
-description: "我正在搭建一个..."        # 摘要，显示在列表页和侧边栏简介
+description: "我正在搭建一个。.."        # 摘要，显示在列表页和侧边栏简介
 image:                                # 封面图路径，留空则不显示
 categories:                           # 分类设置，直接控制侧边栏的导航分类
   - "Python"
@@ -286,11 +286,11 @@ categories:                           # 分类设置，直接控制侧边栏的�
 1. 打开 `config/_default/config.toml`。
 2. 找到并修改以下三项配置：
 
-    ```toml
-    languageCode = "zh-cn"
-    defaultContentLanguage = "zh-cn"
-    hasCJKLanguage = true
-    ```
+   ```toml
+   languageCode = "zh-cn"
+   defaultContentLanguage = "zh-cn"
+   hasCJKLanguage = true
+   ```
 
 <img src="images/2026-02-10-11-00-21.png" alt="image" width="1000">
 
@@ -310,7 +310,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
    - `content/page/links/index.md`
 
 2. **编辑文件**：删除文件头部 `menu:` 及其下方缩进的内容（通常是 `main:` 和 `params:` 那几行）
-   - *注意：保留最上方的 `title`、`slug` 等信息，以及最下方的 `---` 分隔线，只删 menu 模块*
+   - _注意：保留最上方的 `title`、`slug` 等信息，以及最下方的 `---` 分隔线，只删 menu 模块_
 
 <img src="images/2026-02-10-11-01-04.png" alt="image" width="1000">
 
@@ -351,7 +351,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
         weight = 4
         [main.params]
             icon = "link"
-    ```
+   ```
 
 <img src="images/2026-02-10-11-04-07.png" alt="image" width="1000">
 
@@ -365,7 +365,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 
    ```css
    .site-footer .powerby {
-       display: none;
+     display: none;
    }
    ```
 
@@ -410,7 +410,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 <img src="images/2026-02-10-11-09-21.png" alt="image" width="1000">
 
 4. 勾选 **Discussions** 选项
-   - *提示：这一步非常关键，如果不开启，后续评论将无法写入*
+   - _提示：这一步非常关键，如果不开启，后续评论将无法写入_
 
 <img src="images/2026-02-10-11-09-42.png" alt="image" width="1000">
 
@@ -425,7 +425,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 
 3. 在权限选择页面：
    - 选择 **Only select repositories**
-   - 在下拉菜单中找到并选中你用来存放博客的仓库（`你的用户名.github.io`）
+   - 在下拉菜单中找到并选中你用来存放博客的仓库（`username.github.io`）
 
 4. 点击 **Install** 完成安装
 
@@ -445,7 +445,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 3. **配置分类**：
    - 在“Discussion 分类”中，推荐选择 **Announcements**
-   - *注意：这决定了评论会出现在仓库 Discussions 的哪个板块下*
+   - _注意：这决定了评论会出现在仓库 Discussions 的哪个板块下_
 
 <img src="images/2026-02-10-11-18-37.png" alt="image" width="500">
 
@@ -466,22 +466,22 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 3. 找到 `[comments.giscus]` 区域，根据刚才网页生成的信息填写：
 
-    ```toml
-    [comments]
-        enabled = true
-        provider = "giscus"
+   ```toml
+   [comments]
+       enabled = true
+       provider = "giscus"
 
-    [comments.giscus]
-        repo = "你的用户名/仓库名"
-        repoID = "从Giscus官网生成的代码中复制"
-        category = "Announcements"
-        categoryID = "从Giscus官网生成的代码中复制"
-        mapping = "pathname"
-        lightTheme = "light"
-        darkTheme = "dark"
-        reactionsEnabled = 1
-        emitMetadata = 0
-    ```
+   [comments.giscus]
+       repo = "你的用户名/仓库名"
+       repoID = "从 Giscus 官网生成的代码中复制"
+       category = "Announcements"
+       categoryID = "从 Giscus 官网生成的代码中复制"
+       mapping = "pathname"
+       lightTheme = "light"
+       darkTheme = "dark"
+       reactionsEnabled = 1
+       emitMetadata = 0
+   ```
 
    > ⚠️ **关键点**：`repoID` 和 `categoryID` 是两串乱码一样的字符，必须从 Giscus 官网生成的代码中精确复制。
 
@@ -513,7 +513,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 ### 准备工作
 
-1. **克隆仓库**：使用 Git 工具将你的 `用户名.github.io` 仓库克隆到本地电脑
+1. **克隆仓库**：使用 Git 工具将你的 `username.github.io` 仓库克隆到本地电脑
 2. **打开项目**：右键点击文件夹，选择 "Open with Code"（用 VS Code 打开）
 
 <img src="images/2026-02-10-11-23-38.png" alt="image" width="500">
@@ -553,8 +553,8 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 **神奇效果**：
 
-- **插件会自动将剪贴板里的图片保存到当前文章的目录下。
-- **自动在文章中插入 `![](图片路径.png)` 代码，所见即所得。
+- \*\*插件会自动将剪贴板里的图片保存到当前文章的目录下。
+- \*\*自动在文章中插入 `![]（图片路径。png)` 代码，所见即所得。
 
 #### 👁️ Markdown Preview Enhanced —— 实时预览
 
@@ -582,15 +582,15 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 ## 补充内容
 
-### link界面调整
+### link 界面调整
 
 默认的友链页面尚未初始化。如果你想添加友情链接，请按照以下步骤操作：
 
-1.定位配置文件 在博客的本地根目录下，找到 Links 页面的源文件（通常位于 source/links/index.md）。
+1. 定位配置文件 在博客的本地根目录下，找到 Links 页面的源文件（通常位于 source/links/index.md）。
 
 <img src="images/2026-02-10-11-29-33.png" alt="image" width="300">
 
-2.编辑链接信息 复制以下配置代码，覆盖或添加到文件中。你可以根据需要修改 links 下的列表项。
+2. 编辑链接信息 复制以下配置代码，覆盖或添加到文件中。你可以根据需要修改 links 下的列表项。
 
 ```
 ---
@@ -601,7 +601,7 @@ links:
     website: https://github.com/sign-river
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
   - title: Bilibili
-    description: 我的b站账户
+    description: 我的 b 站账户
     website: https://space.bilibili.com/504574253?spm_id_from=333.1007.0.0
     image: https://www.bilibili.com/favicon.ico
 
@@ -613,39 +613,38 @@ comments: false
 
 ### Paste Image 图片保存位置
 
-在粘贴图片时,默认会把图片在index.md文件的同一级目录保存,看上去非常的乱,所以如何在index.md旁边开一个images文件夹,让图片保存到文件夹里呢?
+在粘贴图片时，默认会把图片在 index.md 文件的同一级目录保存，看上去非常的乱，所以如何在 index.md 旁边开一个 images 文件夹，让图片保存到文件夹里呢？
+解决方案如下：
 
-解决方案如下:
-
-1. 打开vscode设置
+1. 打开 vscode 设置
 
 <img src="images/2026-02-09-23-54-32.png" alt="image" width="400">
 
-2. 搜索paste image
-3. 找到Path
-4. 在原参数后添加/images即可
+2. 搜索 paste image
+3. 找到 Path
+4. 在原参数后添加/images 即可
 
 <img src="images/2026-02-09-23-54-39.png" alt="image" width="500">
 
 ### Paste Image 图片大小调整
 
-直接保存的图片无法调整参数，所以我们要把引入图片的代码格式转为html
+直接保存的图片无法调整参数，所以我们要把引入图片的代码格式转为 html
 
 解决方案如下：
 
-1. 打开vscode设置
+1. 打开 vscode 设置
 
 <img src="images/2026-02-09-23-54-32.png" alt="调整参数" width="400">
 
-2. 搜索搜索paste image
-3. 找到Insert Pattern
+2. 搜索搜索 paste image
+3. 找到 Insert Pattern
 4. 删除原参数修改为
 
 ```
 <img src="${imageFilePath}" alt="image" width="600">
 ```
 
-5. 调整图片大小时修改width值即可
+5. 调整图片大小时修改 width 值即可
 
 <img src="images/2026-02-10-00-03-31.png" alt="image" width="500">
 
@@ -655,11 +654,10 @@ comments: false
 
 <img src="images/2026-02-10-09-59-44.png" alt="image" width="600">
 
-解决方案如下:
-
+解决方案如下：
 我们需要在站点配置中关闭目录的自动编号功能
 
-1. 定位配置文件： 找到站点根目录下的 config/_default/markup.toml 文件。
+1. 定位配置文件： 找到站点根目录下的 config/\_default/markup.toml 文件。
 2. 修改参数： 找到 [tableOfContents] 区域，将 ordered 属性由 true 改为 false。
 
 <img src="images/2026-02-10-10-07-25.png" alt="image" width="600">
