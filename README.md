@@ -1,69 +1,104 @@
-<img align="right" width="150" alt="logo" src="https://user-images.githubusercontent.com/5889006/190859553-5b229b4f-c476-4cbd-928f-890f5265ca4c.png">
+# 🌊 Sign River's Blog
 
-# Hugo Theme Stack Starter Template
+我的个人技术博客，使用 Hugo + Stack 主题搭建，托管在 GitHub Pages。
 
-This is a quick start template for [Hugo theme Stack](https://github.com/CaiJimmy/hugo-theme-stack). It uses [Hugo modules](https://gohugo.io/hugo-modules/) feature to load the theme.
-
-It comes with a basic theme structure and configuration. GitHub action has been set up to deploy the theme to a public GitHub page automatically. Also, there's a cron job to update the theme automatically everyday.
-
-## Get started
-
-1. Click *Use this template*, and create your repository as `<username>.github.io` on GitHub.
-![Step 1](https://user-images.githubusercontent.com/5889006/156916624-20b2a784-f3a9-4718-aa5f-ce2a436b241f.png)
-
-2. Once the repository is created, create a GitHub codespace associated with it.
-![Create codespace](https://user-images.githubusercontent.com/5889006/156916672-43b7b6e9-4ffb-4704-b4ba-d5ca40ffcae7.png)
-
-3. And voila! You're ready to go. The codespace has been configured with the latest version of Hugo extended, just run `hugo server` in the terminal and see your new site in action.
-
-4. Check `config` folder for the configuration files. You can edit them to suit your needs. Make sure to update the `baseurl` property in `config/_default/config.toml` to your site's URL.
-
-5. Open Settings -> Pages. Change the build branch from `master` to `gh-pages`.
-![Build](https://github.com/namanh11611/hugo-theme-stack-starter/assets/16586200/12c763cd-bead-4923-b610-8788f388fcb5)
-
-6. Once you're done editing the site, just commit it and push it. GitHub action will deploy the site automatically to GitHub page asociated with the repository.
-![GitHub action](https://user-images.githubusercontent.com/5889006/156916881-90b8bb9b-1925-4e60-9d7a-8026cda729bf.png)
+🔗 **在线访问**：[https://sign-river.github.io](https://sign-river.github.io)
 
 ---
 
-In case you don't want to use GitHub codespace, you can also run this template in your local machine. **You need to install Git, Go and Hugo extended locally.**
+## 📝 关于本博客
 
-## Update theme manually
+这里记录我的：
 
-Run:
+- 💻 技术学习笔记
+- 🛠️ 实用工具分享
+- 📚 项目开发经验
+- ✍️ 个人思考与总结
+
+## 🏗️ 技术栈
+
+- **静态网站生成器**：[Hugo](https://gohugo.io/)
+- **主题**：[Hugo Theme Stack](https://github.com/CaiJimmy/hugo-theme-stack)
+- **托管平台**：GitHub Pages
+- **自动部署**：GitHub Actions
+- **评论系统**：Giscus
+
+## 📂 项目结构
+
+```
+.
+├── config/           # 配置文件
+│   └── _default/     # 默认配置
+├── content/          # 文章内容
+│   └── post/         # 博客文章
+│       ├── tutorial/ # 教程类
+│       ├── tools/    # 工具类
+│       ├── projects/ # 项目类
+│       ├── notes/    # 笔记类
+│       ├── tech/     # 技术类
+│       └── ...       # 其他分类
+├── static/           # 静态资源
+├── docs/             # 项目文档
+└── public/           # 构建输出（自动生成）
+```
+
+## 🚀 本地运行
+
+### 前置要求
+
+- Git
+- Hugo Extended (推荐最新版本)
+
+### 运行步骤
+
+1. **克隆仓库**
+
+```bash
+git clone https://github.com/sign-river/sign-river.github.io.git
+cd sign-river.github.io
+```
+
+1. **启动本地服务器**
+
+```bash
+hugo server -D
+```
+
+1. **访问博客**
+打开浏览器访问 `http://localhost:1313`
+
+## ✍️ 写作流程
+
+1. 在 `content/post/分类/` 下创建文章文件夹
+2. 创建 `index.md` 作为文章主文件
+3. 图片放在同级的 `images/` 文件夹中
+4. 提交并推送到 GitHub
+5. GitHub Actions 自动构建部署
+
+详细教程见：[GitHub 个人博客搭建教程](https://sign-river.github.io/p/github-blog-tutorial/)
+
+## 🔄 更新主题
+
+手动更新 Stack 主题：
 
 ```bash
 hugo mod get -u github.com/CaiJimmy/hugo-theme-stack/v3
 hugo mod tidy
 ```
 
-> This starter template has been configured with `v3` version of theme. Due to the limitation of Go module, once the `v4` or up version of theme is released, you need to update the theme manually. (Modifying `config/module.toml` file)
+## 📊 SEO 优化
 
-## Deploy to another static page hostings
+- ✅ 已配置 sitemap.xml
+- ✅ 已接入 Google Search Console
+- ✅ 支持 robots.txt
+- ✅ 每篇文章包含 meta description
 
-If you want to build this site using another static page hosting, you need to make sure they have Go installed in the machine. 
+## 📄 开源协议
 
-<details>
-  <summary>Vercel</summary>
-  
-You need to overwrite build command to install manually Go:
+本博客内容采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。
 
-```
-amazon-linux-extras install golang1.11 && hugo --gc --minify
-```
+代码部分遵循仓库原有协议。
 
-![](https://user-images.githubusercontent.com/5889006/156917172-01e4d418-3469-4ffb-97e4-a905d28b8424.png)
+---
 
-If you are using Node.js 20, you need to overwrite the install command to install manually Go:
-
-```
-dnf install -y golang
-```
-
-![image](https://github.com/zhi-yi-huang/hugo-theme-stack-starter/assets/83860323/777c1109-dfc8-4893-9db7-1305ec027cf5)
-
-
-Make sure also to specify Hugo version in the environment variable `HUGO_VERSION` (Use the latest version of Hugo extended):
-
-![Environment variable](https://user-images.githubusercontent.com/5889006/156917212-afb7c70d-ab85-480f-8288-b15781a462c0.png)
-</details>
+**感谢 [Hugo](https://gohugo.io/) 和 [Stack 主题](https://github.com/CaiJimmy/hugo-theme-stack) 的开发者！** 🙏
