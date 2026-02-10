@@ -2,7 +2,7 @@
 title: "WPS 复制图片模糊问题完美解决方案"
 date: 2026-02-09
 description: "解析从 WPS 复制图片时画质下降的原因，提供解决方法"
-image: images/cover.jpg
+# image: images/cover.jpg
 categories:
     - "效率工具"
     - "问题解决"
