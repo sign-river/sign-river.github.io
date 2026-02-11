@@ -61,6 +61,7 @@ http.proxy=http://127.0.0.1:7897
 https.proxy=http://127.0.0.1:7897
 ```
 
+<br>
  <img src="images/2026-02-11-11-28-50.png" alt="image" width="1000">
 
 ## 配置用户信息
