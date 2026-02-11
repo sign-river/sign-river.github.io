@@ -9,4 +9,4 @@ weight = 200
 
 [[indices]]
 name = "categories"
-weight = 100
+weight = 50
