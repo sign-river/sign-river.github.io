@@ -66,7 +66,7 @@ draft: false
 <br>
 <img src="images/2026-02-10-23-23-38.png" alt="image" width="1000">
 
-### 总结
+## 总结
 
 之后只要 Ctrl + S 保存文件，就会自动修正 Markdown 格式
 
