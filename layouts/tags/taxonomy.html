@@ -1,0 +1,88 @@
+{{ define "body-class" }}article-page{{ end }} {{ define "main" }}
+<article class="main-article">
+  <header class="article-header">
+    <div class="article-details">
+      <h1 class="article-title">标签</h1>
+    </div>
+  </header>
+
+  <section class="article-content">
+    <p>浏览所有标签，找到你感兴趣的内容。</p>
+
+    <!-- 搜索框 -->
+    <div class="tags-search-box">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        type="text"
+        id="tag-search"
+        placeholder="搜索标签..."
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- 标签统计 -->
+    <div class="tags-stats">
+      共 <strong>{{ len .Site.Taxonomies.tags }}</strong> 个标签
+    </div>
+
+    <!-- 标签列表 -->
+    <div class="tags-cloud" id="tags-list">
+      {{ range .Site.Taxonomies.tags.ByCount }}
+      <a
+        href="{{ .Page.RelPermalink }}"
+        class="tag-item"
+        data-tag="{{ .Page.Title | lower }}"
+      >
+        <span class="tag-name">{{ .Page.Title }}</span>
+        <span class="tag-count">{{ .Count }}</span>
+      </a>
+      {{ end }}
+    </div>
+
+    <!-- 无结果提示 -->
+    <p class="tags-no-result" id="no-results" style="display: none">
+      没有找到匹配的标签
+    </p>
+  </section>
+</article>
+
+<script>
+  (function () {
+    const searchInput = document.getElementById("tag-search");
+    const tagsList = document.getElementById("tags-list");
+    const tags = tagsList.querySelectorAll(".tag-item");
+    const noResults = document.getElementById("no-results");
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase().trim();
+      let found = false;
+
+      tags.forEach(function (tag) {
+        const tagName = tag.getAttribute("data-tag");
+        if (tagName.includes(query)) {
+          tag.style.display = "";
+          found = true;
+        } else {
+          tag.style.display = "none";
+        }
+      });
+
+      noResults.style.display = found ? "none" : "";
+    });
+  })();
+</script>
+
+{{ partialCached "footer/footer" . }} {{ end }}

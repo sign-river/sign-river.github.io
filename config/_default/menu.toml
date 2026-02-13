@@ -15,20 +15,52 @@
         icon = "archives"   
 
 [[main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    weight = 3
+    [main.params]
+        icon = "tag"
+
+[[main]]
     identifier = "search"
     name = "搜索"
     url = "/search/"
-    weight = 3
+    weight = 4
     [main.params]
         icon = "search"
+
+[[main]]
+    identifier = "projects"
+    name = "项目"
+    url = "/projects/"
+    weight = 5
+    [main.params]
+        icon = "link"
+
+[[main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 6
+    [main.params]
+        icon = "user"
 
 [[main]]
     identifier = "links"
     name = "友链"
     url = "/links/"
-    weight = 4
+    weight = 7
     [main.params]
-        icon = "link"    
+        icon = "link"
+
+[[main]]
+    identifier = "guestbook"
+    name = "留言板"
+    url = "/guestbook/"
+    weight = 8
+    [main.params]
+        icon = "messages"
 
 
 [[social]]

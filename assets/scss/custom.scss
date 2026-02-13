@@ -1,3 +1,248 @@
 .site-footer .powerby {
-    display: none;
+  display: none;
+}
+
+/* ========== 标签页面样式 ========== */
+.tags-search-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--card-background);
+  border: 2px solid var(--card-separator-color);
+  border-radius: var(--card-border-radius);
+  margin-bottom: 24px;
+  transition: border-color 0.3s ease;
+
+  &:focus-within {
+    border-color: var(--accent-color);
+  }
+
+  svg {
+    color: var(--card-text-color-secondary);
+    flex-shrink: 0;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1.7rem;
+    color: var(--card-text-color-main);
+
+    &::placeholder {
+      color: var(--card-text-color-tertiary);
+    }
+  }
+}
+
+.tags-stats {
+  color: var(--card-text-color-secondary);
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.tag-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--card-background);
+  border-radius: var(--tag-border-radius);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+  border: 1px solid var(--card-separator-color);
+
+  &:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    .tag-count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+  }
+
+  .tag-name {
+    font-weight: 500;
+  }
+
+  .tag-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 26px;
+    height: 26px;
+    padding: 0 8px;
+    border-radius: 13px;
+    background: var(
+      --accent-color-alpha-20,
+      rgba(var(--accent-color-rgb, 51, 51, 51), 0.1)
+    );
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+}
+
+.tags-no-result {
+  text-align: center;
+  color: var(--card-text-color-secondary);
+  padding: 40px 0;
+  font-size: 1.15rem;
+}
+
+/* ========== 项目页面样式 ========== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  padding: 0 var(--card-padding);
+  margin-bottom: 20px;
+}
+
+.project-card {
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-l1);
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    box-shadow: var(--shadow-l3);
+    transform: translateY(-4px);
+  }
+
+  .project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  .project-info {
+    padding: 24px;
+  }
+
+  .project-title {
+    margin: 0 0 12px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.4;
+
+    a {
+      color: var(--card-text-color-main);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+
+  .project-description {
+    color: var(--card-text-color-secondary);
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 0 0 18px 0;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .project-tag {
+    display: inline-block;
+    padding: 5px 14px;
+    background: var(
+      --accent-color-alpha-20,
+      rgba(var(--accent-color-rgb, 51, 51, 51), 0.1)
+    );
+    color: var(--accent-color);
+    border-radius: var(--tag-border-radius);
+    font-size: 1.0rem;
+    font-weight: 500;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 18px;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 6px 0;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+  }
+
+  .project-status {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+
+    &--active {
+      background: #10b981;
+    }
+
+    &--completed {
+      background: #3b82f6;
+    }
+
+    &--archived {
+      background: #6b7280;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
