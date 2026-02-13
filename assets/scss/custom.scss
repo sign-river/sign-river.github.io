@@ -104,6 +104,48 @@
   font-size: 1.15rem;
 }
 
+/* ========== 左侧栏站点统计样式 ========== */
+.sidebar-stats-wrapper {
+  list-style: none;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+}
+
+.sidebar-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 8px;
+  border-top: 1px solid var(--card-separator-color, rgba(0, 0, 0, 0.08));
+  border-bottom: 1px solid var(--card-separator-color, rgba(0, 0, 0, 0.08));
+}
+
+.sidebar-stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.06);
+  }
+}
+
+.sidebar-stats-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1.3;
+}
+
+.sidebar-stats-label {
+  font-size: 1rem;
+  color: var(--card-text-color-secondary);
+  line-height: 1.3;
+}
+
 /* ========== 项目页面样式 ========== */
 .projects-grid {
   display: grid;
@@ -244,5 +286,312 @@
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ========== 个人页面（关于我）样式 ========== */
+.about-page .main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-container {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 个人简介卡片 */
+.about-profile-card {
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-l2);
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-l3);
+  }
+}
+
+.about-avatar {
+  flex-shrink: 0;
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--card-separator-color);
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      border-color: var(--accent-color);
+    }
+  }
+}
+
+.about-profile-info {
+  flex: 1;
+}
+
+.about-name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--card-text-color-main);
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.about-subtitle {
+  font-size: 1.6rem;
+  color: var(--card-text-color-secondary);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.about-social-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(
+    --accent-color-alpha-20,
+    rgba(var(--accent-color-rgb, 51, 51, 51), 0.1)
+  );
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--accent-color);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Markdown 正文内容区域 */
+.about-content {
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-l2);
+  padding: 40px;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--card-text-color-main);
+    margin: 32px 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--card-separator-color);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--card-text-color-main);
+    margin: 28px 0 12px 0;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: var(--card-text-color-main);
+    margin-bottom: 16px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+
+    li {
+      font-size: 1.6rem;
+      line-height: 1.8;
+      color: var(--card-text-color-main);
+      padding: 8px 0 8px 28px;
+      position: relative;
+
+      &::before {
+        content: "▸";
+        position: absolute;
+        left: 8px;
+        color: var(--accent-color);
+        font-weight: 700;
+      }
+    }
+  }
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.7;
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    color: var(--accent-color);
+    font-weight: 600;
+  }
+
+  code {
+    background: var(
+      --accent-color-alpha-20,
+      rgba(var(--accent-color-rgb, 51, 51, 51), 0.1)
+    );
+    color: var(--accent-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: "JetBrains Mono", "Fira Code", Consolas, Monaco, monospace;
+  }
+}
+
+/* 统计信息卡片 */
+.about-stats-card {
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-l2);
+  padding: 32px 40px;
+}
+
+.about-stats-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--card-text-color-main);
+  margin: 0 0 24px 0;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.about-stat-item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(
+    --accent-color-alpha-20,
+    rgba(var(--accent-color-rgb, 51, 51, 51), 0.05)
+  );
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(
+      --accent-color-alpha-20,
+      rgba(var(--accent-color-rgb, 51, 51, 51), 0.1)
+    );
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.about-stat-value {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.about-stat-label {
+  font-size: 1.3rem;
+  color: var(--card-text-color-secondary);
+  line-height: 1.3;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .about-profile-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .about-avatar img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-name {
+    font-size: 2.4rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .about-social-links {
+    justify-content: center;
+  }
+
+  .about-content {
+    padding: 28px 20px;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    p,
+    ul li {
+      font-size: 1.5rem;
+    }
+  }
+
+  .about-stats-card {
+    padding: 24px 20px;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .about-stat-item {
+    padding: 16px;
+  }
+
+  .about-stat-value {
+    font-size: 2.4rem;
+  }
+
+  .about-stat-label {
+    font-size: 1.2rem;
   }
 }

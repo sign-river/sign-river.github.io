@@ -36,11 +36,11 @@
     url = "/projects/"
     weight = 5
     [main.params]
-        icon = "link"
+        icon = "folder"
 
 [[main]]
     identifier = "about"
-    name = "关于"
+    name = "我的"
     url = "/about/"
     weight = 6
     [main.params]
@@ -61,12 +61,3 @@
     weight = 8
     [main.params]
         icon = "messages"
-
-
-[[social]]
-identifier = "github"
-name = "GitHub"
-url = "https://github.com/sign-river"
-
-[social.params]
-icon = "brand-github"
