@@ -1,7 +1,7 @@
 ---
 title: "Cursor 使用心得：AI 编程助手的初体验"
 date: 2026-02-12
-description: "作为cursor新手，分享使用 Cursor AI 编程助手的心得体会与实用技巧"
+description: "作为Cursor新手，分享使用 Cursor AI 编程助手的心得体会与实用技巧"
 # image: images/cover.jpg
 categories:
   - "效率工具"
