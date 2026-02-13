@@ -64,13 +64,13 @@
 
   &:hover {
     background: var(--accent-color);
-    color: #fff;
+    color: var(--card-background);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
     .tag-count {
-      background: rgba(255, 255, 255, 0.2);
-      color: #fff;
+      background: var(--card-background-alpha-50, rgba(255, 255, 255, 0.2));
+      color: var(--card-background);
     }
   }
 
@@ -186,7 +186,7 @@
     );
     color: var(--accent-color);
     border-radius: var(--tag-border-radius);
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 500;
   }
 
