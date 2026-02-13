@@ -2,6 +2,17 @@
   display: none;
 }
 
+/* ========== 左侧边栏间距调整 ========== */
+/* 调整副标题和菜单项之间的距离 */
+.left-sidebar .site-info {
+  margin-bottom: 80px; /* 增加底部间距，默认可能较小 */
+}
+
+/* 或者调整菜单的顶部间距 */
+.left-sidebar #main-menu {
+  margin-top: 10px; /* 调整菜单顶部间距 */
+}
+
 /* ========== 标签页面样式 ========== */
 .tags-search-box {
   display: flex;
@@ -261,11 +272,11 @@
 
   .project-status {
     position: absolute;
-    top: 16px;
+    top: 20px;
     right: 16px;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.95rem;
+    padding: 6px 15px;
+    border-radius: 16px;
+    font-size: 1.3rem;
     font-weight: 600;
     color: #fff;
 

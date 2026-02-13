@@ -14,8 +14,8 @@ comments: false
 ### 💻 技术栈
 
 - **前端开发**: HTML, CSS, JavaScript, Vue.js, React
-- **后端开发**: Node.js, Python, Go
-- **数据库**: MySQL, MongoDB, Redis
+- **后端开发**: Python, C++
+- **数据库**: MySQL
 - **工具链**: Git, Docker, Linux, Hugo
 
 ### 🎯 兴趣方向
@@ -33,7 +33,6 @@ comments: false
 
 - **GitHub**: [@sign-river](https://github.com/sign-river) - 查看我的开源项目
 - **Bilibili**: [我的主页](https://space.bilibili.com/504574253) - 技术视频分享
-- **Email**: 欢迎通过邮件交流技术话题
 
 ### 📝 版权说明
 
