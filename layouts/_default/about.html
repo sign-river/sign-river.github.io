@@ -100,7 +100,15 @@
       </div>
       <div class="about-stat-item">
         <div class="about-stat-value">
-          {{ div (countwords .Site.RegularPages) 1000 }}K
+          {{ $totalWords := 0 }} {{ range where .Site.RegularPages "Section"
+          "post" }} {{ $totalWords = add $totalWords .WordCount }} {{ end }} {{
+          if ge $totalWords 10000 }} {{ $wan := div $totalWords 10000 }} {{
+          $decimal := mod (div $totalWords 1000) 10 }} {{ if eq $decimal 0 }}{{
+          $wan }}万{{ else }}{{ $wan }}.{{ $decimal }}万{{ end }} {{ else if ge
+          $totalWords 1000 }} {{ $k := div $totalWords 1000 }} {{ $decimal :=
+          mod (div $totalWords 100) 10 }} {{ if eq $decimal 0 }}{{ $k }}k{{ else
+          }}{{ $k }}.{{ $decimal }}k{{ end }} {{ else }} {{ $totalWords }} {{
+          end }}
         </div>
         <div class="about-stat-label">总字数</div>
       </div>

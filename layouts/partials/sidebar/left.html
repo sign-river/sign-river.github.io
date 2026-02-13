@@ -121,10 +121,13 @@
         </div>
         <div class="sidebar-stats-item">
           <span class="sidebar-stats-value">
-            {{- if ge $totalWords 10000 -}} {{ div $totalWords 10000 }}.{{ mod
-            (div $totalWords 1000) 10 }}万 {{- else if ge $totalWords 1000 -}}
-            {{ div $totalWords 1000 }}.{{ mod (div $totalWords 100) 10 }}k {{-
-            else -}} {{ $totalWords }} {{- end -}}
+            {{- if ge $totalWords 10000 -}} {{- $wan := div $totalWords 10000
+            -}} {{- $decimal := mod (div $totalWords 1000) 10 -}} {{- if eq
+            $decimal 0 -}}{{ $wan }}万{{- else -}}{{ $wan }}.{{ $decimal }}万{{-
+            end -}} {{- else if ge $totalWords 1000 -}} {{- $k := div
+            $totalWords 1000 -}} {{- $decimal := mod (div $totalWords 100) 10
+            -}} {{- if eq $decimal 0 -}}{{ $k }}k{{- else -}}{{ $k }}.{{
+            $decimal }}k{{- end -}} {{- else -}} {{ $totalWords }} {{- end -}}
           </span>
           <span class="sidebar-stats-label">字数</span>
         </div>
