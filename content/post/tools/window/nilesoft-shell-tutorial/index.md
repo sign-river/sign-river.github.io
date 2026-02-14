@@ -632,9 +632,9 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 	// ============================================
 	menu(separator="after" image=\uE133 title='选择')
 	{
-		item(title="全选" image=\uE16F cmd=command.select_all)
-		item(title="反选" image=\uE1D8 cmd=command.invert_selection)
-		item(title="取消选择" image=\uE108 cmd=command.select_none)
+		item(title="全选"  cmd=command.select_all)
+		item(title="反选"  cmd=command.invert_selection)
+		item(title="取消选择"  cmd=command.select_none)
 	}
 
 	// ============================================
@@ -712,40 +712,40 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 			$dt = sys.datetime("ymdHMSs")
 
 			// 文本文件
-			item(title='TXT 文件' image=\uE160 cmd=io.file.create('@(dt).txt', 'Hello World!'))
-			item(title='Markdown 文件' image=\uE17B cmd=io.file.create('@(dt).md', '# 标题\n\n这是一个 Markdown 文件。'))
+			item(title='TXT 文件'  cmd=io.file.create('@(dt).txt', 'Hello World!'))
+			item(title='Markdown 文件'  cmd=io.file.create('@(dt).md', '# 标题\n\n这是一个 Markdown 文件。'))
 
 			separator
 
 			// 编程语言文件
-			item(title='Python 文件' image=\uE26C cmd=io.file.create('@(dt).py', '# Python Script\n\ndef main():\n    print("Hello World!")\n\nif __name__ == "__main__":\n    main()'))
-			item(title='JavaScript 文件' image=\uE26C cmd=io.file.create('@(dt).js', '// JavaScript File\n\nconsole.log("Hello World!");'))
-			item(title='CSS 文件' image=\uE26C cmd=io.file.create('@(dt).css', '/* CSS Stylesheet */\n\nbody {\n    margin: 0;\n    padding: 0;\n}'))
+			item(title='Python 文件' cmd=io.file.create('@(dt).py', '# Python Script\n\ndef main():\n    print("Hello World!")\n\nif __name__ == "__main__":\n    main()'))
+			item(title='JavaScript 文件'  cmd=io.file.create('@(dt).js', '// JavaScript File\n\nconsole.log("Hello World!");'))
+			item(title='CSS 文件' cmd=io.file.create('@(dt).css', '/* CSS Stylesheet */\n\nbody {\n    margin: 0;\n    padding: 0;\n}'))
 
 			separator
 
 			// 数据文件
-			item(title='JSON 文件' image=\uE160 cmd=io.file.create('@(dt).json', '{\n    "name": "example",\n    "version": "1.0.0"\n}'))
-			item(title='XML 文件' image=\uE160 cmd=io.file.create('@(dt).xml', '<?xml version="1.0" encoding="UTF-8"?>\n<root>\n    <item>Hello World!</item>\n</root>'))
-			item(title='YAML 文件' image=\uE160 cmd=io.file.create('@(dt).yml', '# YAML Configuration\nname: example\nversion: 1.0.0'))
-			item(title='CSV 文件' image=\uE1C3 cmd=io.file.create('@(dt).csv', '姓名，年龄，城市\n张三，25，北京\n李四，30，上海'))
+			item(title='JSON 文件'  cmd=io.file.create('@(dt).json', '{\n    "name": "example",\n    "version": "1.0.0"\n}'))
+			item(title='XML 文件' cmd=io.file.create('@(dt).xml', '<?xml version="1.0" encoding="UTF-8"?>\n<root>\n    <item>Hello World!</item>\n</root>'))
+			item(title='YAML 文件'  cmd=io.file.create('@(dt).yml', '# YAML Configuration\nname: example\nversion: 1.0.0'))
+			item(title='CSV 文件'  cmd=io.file.create('@(dt).csv', '姓名，年龄，城市\n张三，25，北京\n李四，30，上海'))
 
 			separator
 
 			// 网页文件
-			item(title='HTML 文件' image=\uE160 cmd=io.file.create('@(dt).html', '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n    <meta charset="UTF-8">\n    <title>标题</title>\n</head>\n<body>\n    <h1>Hello World!</h1>\n</body>\n</html>'))
+			item(title='HTML 文件'  cmd=io.file.create('@(dt).html', '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n    <meta charset="UTF-8">\n    <title>标题</title>\n</head>\n<body>\n    <h1>Hello World!</h1>\n</body>\n</html>'))
 
 			separator
 
 			// 配置文件
-			item(title='INI 配置文件' image=\uE115 cmd=io.file.create('@(dt).ini', '[Settings]\nkey=value'))
-			item(title='ENV 环境变量' image=\uE115 cmd=io.file.create('@(dt).env', '# Environment Variables\nAPP_NAME=MyApp\nAPP_ENV=development'))
+			item(title='INI 配置文件'  cmd=io.file.create('@(dt).ini', '[Settings]\nkey=value'))
+			item(title='ENV 环境变量' cmd=io.file.create('@(dt).env', '# Environment Variables\nAPP_NAME=MyApp\nAPP_ENV=development'))
 
 			separator
 
 			// 批处理和脚本
-			item(title='BAT 批处理' image=\uE17D cmd=io.file.create('@(dt).bat', '@echo off\necho Hello World!\npause'))
-			item(title='PowerShell 脚本' image=\uE17D cmd=io.file.create('@(dt).ps1', '# PowerShell Script\nWrite-Host "Hello World!"'))
+			item(title='BAT 批处理'  cmd=io.file.create('@(dt).bat', '@echo off\necho Hello World!\npause'))
+			item(title='PowerShell 脚本'  cmd=io.file.create('@(dt).ps1', '# PowerShell Script\nWrite-Host "Hello World!"'))
 		}
 	}
 
@@ -754,6 +754,7 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 	// ============================================
 	item(where=!wnd.is_desktop title='文件夹选项' image=\uE115 cmd=command.folder_options)
 }
+
 ```
 
 **第三步**：保存并生效
