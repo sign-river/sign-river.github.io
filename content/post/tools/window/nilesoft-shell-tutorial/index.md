@@ -593,7 +593,7 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 	// ============================================
 	// 复制路径子菜单
 	// ============================================
-	menu(separator="after" title='复制路径' image=\uE16F)
+	menu(separator="after" title='复制路径'image=\uE26C)
 	{
 		// 多选时显示
 		item(where=sel.count > 1 title='复制 (@sel.count) 个项目' cmd=command.copy(sel(false, "\n")))
@@ -632,9 +632,9 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 	// ============================================
 	menu(separator="after" image=\uE133 title='选择')
 	{
-		item(title="全选" image=\uE0E7 cmd=command.select_all)
+		item(title="全选" image=\uE16F cmd=command.select_all)
 		item(title="反选" image=\uE1D8 cmd=command.invert_selection)
-		item(title="取消选择" image=\uE10A cmd=command.select_none)
+		item(title="取消选择" image=\uE108 cmd=command.select_none)
 	}
 
 	// ============================================
@@ -650,8 +650,8 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 	// ============================================
 	menu(title="显示/隐藏" image=\uE138)
 	{
-		item(title="系统文件" image=inherit cmd='@command.togglehidden')
-		item(title="文件扩展名" image=\uE160 cmd='@command.toggleext')
+		item(title="系统文件" cmd='@command.togglehidden')
+		item(title="文件扩展名" cmd='@command.toggleext')
 	}
 
 	// ============================================
@@ -700,7 +700,7 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 	menu(mode="single" type='back' expanded=true)
 	{
 		// 新建文件夹子菜单
-		menu(separator="before" title='新建文件夹' image=\uE188)
+		menu(separator="before" title='新建文件夹' image=\uE0E7)
 		{
 			item(title='时间戳文件夹' cmd=io.dir.create(sys.datetime("ymdHMSs")))
 			item(title='GUID 文件夹' cmd=io.dir.create(str.guid))
@@ -725,7 +725,7 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 			separator
 
 			// 数据文件
-			item(title='JSON 文件' image=\uE132 cmd=io.file.create('@(dt).json', '{\n    "name": "example",\n    "version": "1.0.0"\n}'))
+			item(title='JSON 文件' image=\uE160 cmd=io.file.create('@(dt).json', '{\n    "name": "example",\n    "version": "1.0.0"\n}'))
 			item(title='XML 文件' image=\uE160 cmd=io.file.create('@(dt).xml', '<?xml version="1.0" encoding="UTF-8"?>\n<root>\n    <item>Hello World!</item>\n</root>'))
 			item(title='YAML 文件' image=\uE160 cmd=io.file.create('@(dt).yml', '# YAML Configuration\nname: example\nversion: 1.0.0'))
 			item(title='CSV 文件' image=\uE1C3 cmd=io.file.create('@(dt).csv', '姓名，年龄，城市\n张三，25，北京\n李四，30，上海'))
@@ -733,7 +733,7 @@ menu(where=sel.count>0 type='file|dir|drive|namespace|back' mode="multiple" titl
 			separator
 
 			// 网页文件
-			item(title='HTML 文件' image=\uE12B cmd=io.file.create('@(dt).html', '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n    <meta charset="UTF-8">\n    <title>标题</title>\n</head>\n<body>\n    <h1>Hello World!</h1>\n</body>\n</html>'))
+			item(title='HTML 文件' image=\uE160 cmd=io.file.create('@(dt).html', '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n    <meta charset="UTF-8">\n    <title>标题</title>\n</head>\n<body>\n    <h1>Hello World!</h1>\n</body>\n</html>'))
 
 			separator
 
