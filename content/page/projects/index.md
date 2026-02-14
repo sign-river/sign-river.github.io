@@ -3,7 +3,7 @@ title: "项目"
 slug: "projects"
 layout: "projects"
 projects:
-  - title: YSY的博客
+  - title: YSY 的博客
     description: 基于 Hugo + Stack 主题搭建的个人技术博客，记录学习笔记与技术分享。
     website: https://sign-river.github.io/
     repo: https://github.com/sign-river/sign-river.github.io
@@ -13,7 +13,7 @@ projects:
       - 博客
     status: active
   - title: Stellaris DLC Helper
-    description: 🌟 群星(Stellaris) DLC 一键解锁工具 - 云端下载 | 智能缓存 | 操作可还原
+    description: 🌟 群星 (Stellaris) DLC 一键解锁工具 - 云端下载 | 智能缓存 | 操作可还原
     website: https://sign-river.github.io/p/stellaris-dlc-helper-%E7%BE%A4%E6%98%9F-dlc-%E8%A7%A3%E9%94%81%E5%B7%A5%E5%85%B7/
     repo: https://github.com/sign-river/Stellaris-DLC-Helper
     tags:
