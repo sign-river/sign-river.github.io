@@ -129,7 +129,7 @@ draft: false
 什么都不用准备！只需要：
 
 - Windows 电脑
-- 已经在steam激活了正版群星本体
+- 已经在 steam 激活了正版群星本体
 - 能上网
 
 ### 会不会封号？
@@ -159,7 +159,7 @@ draft: false
 
 <img src="images/2026-02-13-17-44-56.png" alt="image" width="700">
 
-- 如果还是缺失,则为杀毒软件误杀补丁,请把补丁添加进杀毒软件的白名单,补丁存放路径如下Stellaris-DLC-Helper\patches
+- 如果还是缺失，则为杀毒软件误杀补丁，请把补丁添加进杀毒软件的白名单，补丁存放路径如下 Stellaris-DLC-Helper\patches
 
 <img src="images/2026-02-13-17-48-37.png" alt="image" width="700">
 
@@ -171,9 +171,9 @@ draft: false
 - CreamAPI 补丁（用于解锁 DLC）
 - 游戏必需的配置文件
 
-### 想要卸载DLC和补丁怎么办？
+### 想要卸载 DLC 和补丁怎么办？
 
-在工具里点击"卸载dlc"和"移除补丁"按钮即可
+在工具里点击"卸载 dlc"和"移除补丁"按钮即可
 <img src="images/2026-02-13-17-33-32.png" alt="image" width="700">
 
 ### 提示"找不到游戏目录"？
