@@ -9,8 +9,10 @@ categories:
 tags:
   - 联邦遗忘学习
   - Federated Unlearning
+  - Federated Learning
   - FedEditor
   - 论文阅读
+  - 深度学习
 image:
 math: true
 draft: false

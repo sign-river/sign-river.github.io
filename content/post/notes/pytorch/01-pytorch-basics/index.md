@@ -9,7 +9,8 @@ categories:
 tags:
   - "PyTorch"
   - "深度学习"
-  - "机器学习"
+  - "Python"
+  - "环境配置"
 draft: false
 ---
 

@@ -10,6 +10,9 @@ tags:
   - "博客搭建"
   - "GitHub Pages"
   - "Hugo"
+  - "hugo-theme-stack"
+  - "Git"
+  - "静态网站"
 draft: false
 ---
 

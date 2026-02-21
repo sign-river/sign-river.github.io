@@ -8,8 +8,10 @@ categories:
   - "开发环境"
 tags:
   - "Cursor"
-  - "插件安装"
+  - "插件"
   - "开发工具"
+  - "VS Code"
+  - "GitHub"
 draft: false
 ---
 

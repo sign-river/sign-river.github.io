@@ -7,8 +7,10 @@ categories:
   - "GitHub"
 tags:
   - "Git"
+  - "GitHub"
   - "配置"
   - "开发环境"
+  - "代理"
 draft: false
 ---
 

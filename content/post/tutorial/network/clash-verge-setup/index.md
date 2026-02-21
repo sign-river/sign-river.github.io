@@ -11,6 +11,8 @@ tags:
   - "代理"
   - "3x-ui"
   - "网络配置"
+  - "Linux"
+  - "服务器"
 draft: false
 ---
 

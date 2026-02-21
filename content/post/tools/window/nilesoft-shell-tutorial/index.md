@@ -9,9 +9,10 @@ categories:
 tags:
   - "Nilesoft Shell"
   - "Windows 11"
+  - "Windows"
   - "右键菜单"
-  - "系统定制"
-  - "效率提升"
+  - "系统优化"
+  - "开源项目"
 draft: false
 ---
 

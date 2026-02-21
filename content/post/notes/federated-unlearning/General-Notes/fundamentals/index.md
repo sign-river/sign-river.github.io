@@ -9,8 +9,10 @@ categories:
 tags:
   - 联邦遗忘学习
   - Federated Learning
+  - Federated Unlearning
   - Machine Unlearning
   - 基础知识
+  - 深度学习
 image:
 math: true
 ---

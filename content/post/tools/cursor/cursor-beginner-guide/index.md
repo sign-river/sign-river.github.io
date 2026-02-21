@@ -11,6 +11,8 @@ tags:
   - "AI"
   - "编程助手"
   - "开发工具"
+  - "VS Code"
+  - "使用技巧"
 draft: false
 ---
 

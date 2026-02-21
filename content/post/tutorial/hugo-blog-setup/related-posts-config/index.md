@@ -7,8 +7,9 @@ categories:
   - "GitHub"
 tags:
   - "Hugo"
+  - "hugo-theme-stack"
   - "博客搭建"
-  - "配置优化"
+  - "配置"
 draft: false
 ---
 

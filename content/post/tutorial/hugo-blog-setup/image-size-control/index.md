@@ -11,6 +11,7 @@ tags:
   - "Markdown"
   - "Paste Image"
   - "博客搭建"
+  - "VS Code"
 draft: false
 ---
 

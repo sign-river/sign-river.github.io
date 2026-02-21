@@ -7,8 +7,10 @@ categories:
   - "问题解决"
 tags:
   - "Windows"
-  - "系统设置"
+  - "系统优化"
   - "Windows Defender"
+  - "安全"
+  - "组策略"
 draft: false
 ---
 
