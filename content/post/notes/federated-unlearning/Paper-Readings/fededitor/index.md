@@ -4,8 +4,7 @@ description: "Yuan 等 - 2025 - FedEditor: Efficient and Effective Federated Unl
 slug: "paper-fededitor"
 date: 2026-02-13
 categories:
-  - 笔记
-  - 联邦学习
+  - 学习笔记
 tags:
   - 联邦遗忘学习
   - Federated Unlearning

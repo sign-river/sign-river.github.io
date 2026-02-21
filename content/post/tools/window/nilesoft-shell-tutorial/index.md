@@ -4,8 +4,7 @@ date: 2026-02-14
 description: "Windows 11 右键菜单自定义神器！强大的 Nilesoft Shell 让你随心所欲定制右键菜单"
 # image: images/cover.jpg
 categories:
-  - "效率工具"
-  - "系统优化"
+  - "系统工具"
 tags:
   - "Nilesoft Shell"
   - "Windows 11"

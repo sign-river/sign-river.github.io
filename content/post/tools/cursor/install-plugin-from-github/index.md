@@ -4,8 +4,7 @@ date: 2026-02-14
 description: "Cursor 插件商店找不到想要的插件？教你通过 .vsix 文件手动安装插件"
 # image: images/cover.jpg
 categories:
-  - "效率工具"
-  - "开发环境"
+  - "开发工具"
 tags:
   - "Cursor"
   - "插件"

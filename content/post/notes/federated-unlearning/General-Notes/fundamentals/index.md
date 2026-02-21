@@ -4,8 +4,7 @@ description: "联邦遗忘学习的核心概念和理论基础"
 slug: "federated-unlearning-fundamentals"
 date: 2026-02-13
 categories:
-  - 笔记
-  - 联邦学习
+  - 学习笔记
 tags:
   - 联邦遗忘学习
   - Federated Learning

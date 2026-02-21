@@ -4,7 +4,6 @@ description: "详细记录东北大学秦皇岛分校学生申请 GitHub Student
 slug: "github-student-pack-neu-qhd"
 date: 2026-02-13
 categories:
-  - 教程
   - 开发工具
 tags:
   - GitHub

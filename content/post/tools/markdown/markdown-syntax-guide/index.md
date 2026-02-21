@@ -4,8 +4,7 @@ date: 2026-02-10
 description: "Markdown 从基础到进阶的完整语法参考手册"
 image:
 categories:
-  - "效率工具"
-  - "文档编写"
+  - "写作工具"
 tags:
   - "Markdown"
   - "写作效率"
