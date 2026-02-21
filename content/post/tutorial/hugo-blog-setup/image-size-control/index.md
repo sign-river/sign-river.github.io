@@ -84,7 +84,11 @@ draft: false
 </div>
 ```
 
-> 注意：`<div>` 标签与 `![image]` 之间必须有空行，Hugo 才会正确将内部内容识别为 Markdown 并渲染。
+<br>
+
+<a href="images\2026-02-21-14-43-56.png" target="_blank"> <img src="images\2026-02-21-14-43-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+> 注意：`<div>` 标签与 `![image]` 之间必须有空行，这里的代码段因为 md 格式问题无法展现，记得自己加上空行，Hugo 才会正确将内部内容识别为 Markdown 并渲染。
 
 ### 效果
 
