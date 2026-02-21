@@ -80,12 +80,12 @@ GitHub Student Developer Pack 为学生提供了丰富的免费开发工具和�
    <img src="images/2026-02-13-21-23-04.png" alt="image" width="1000">
 3. 在跳转出的统一身份认证界面，使用您的 **学号** 和 **刚才重置的新密码** 进行登录。
    <img src="images/2026-02-13-21-23-34.png" alt="image" width="1000">
-4. 到了绑定邮箱这个界面后,保留这个界面,继续下一步
+4. 到了绑定邮箱这个界面后，保留这个界面，继续下一步
    <img src="images/2026-02-13-21-25-17.png" alt="image" width="1000">
 
 ### 4. 第三次进入注册流程
 
-输入网址再回到登录界面,再次点击新生注册
+输入网址再回到登录界面，再次点击新生注册
 
 ```
 https://mails.neu.edu.cn/coremail/
@@ -108,7 +108,7 @@ https://mails.neu.edu.cn/coremail/
 
 ### 5. 登录邮箱（关键避坑点）
 
-注册提交后，可能会遇到一个坑：如果直接使用刚才注册的“邮箱账号+邮箱密码”登录，系统可能会提示失败或进不去（可能是系统适配问题）。
+注册提交后，可能会遇到一个坑：如果直接使用刚才注册的“邮箱账号 + 邮箱密码”登录，系统可能会提示失败或进不去（可能是系统适配问题）。
 
 <img src="images/2026-02-13-21-29-27.png" alt="image" width="1000">
 
@@ -149,7 +149,7 @@ https://mails.neu.edu.cn/coremail/
 1. 在左侧菜单栏中找到并点击 **Emails**。
 2. 在 "Add email address" 输入框中，填入您在第一章注册好的学生邮箱（例如 `yourname@mails.neu.edu.cn`）。
 3. 点击 **Add** 按钮。
-4. 之后点击认证一下,GitHub 会向您的学生邮箱发送一封验证邮件。
+4. 之后点击认证一下，GitHub 会向您的学生邮箱发送一封验证邮件。
 5. 请登录您的学生邮箱，找到邮件并点击验证链接。
 6. 找到 **Keep my email addresses private** 选项。
 7. **务必取消勾选**（保持 Off 状态）。如果不关闭这个选项，GitHub 在审核时可能无法读取到您的学生邮箱，导致认证失败。
@@ -254,7 +254,7 @@ GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某�
 
 确认所有信息无误后，点击底部的 Save billing information 保存。
 
-## 开始申请流程,解决定位问题与上传凭证（核心章节）
+## 开始申请流程，解决定位问题与上传凭证（核心章节）
 
 ### 进入教育优惠申请入口
 
@@ -262,7 +262,7 @@ GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某�
 
 1. 依然在左侧 Billing and licensing 菜单下。
 2. 点击 Education benefits。
-3. 在页面右侧找到并找到绿色的 Start an application 按钮,但是先不要点击,先看下一步。
+3. 在页面右侧找到并找到绿色的 Start an application 按钮，但是先不要点击，先看下一步。
    <img src="images/2026-02-13-21-44-39.png" alt="image" width="1000">
 
 GitHub 会校验您的物理位置是否在学校附近。如果您身处校外（如寒暑假在家），或者校园网定位不准，直接申请很可能导致认证失败。
@@ -298,7 +298,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 #### 刷新页面生效
 
 1. 保持开发者工具（F12）和 Sensors 面板处于开启状态（这一点非常重要，不能关）。
-2. 后续截图虽然没有截入开发者工具面板,但是一定不能关
+2. 后续截图虽然没有截入开发者工具面板，但是一定不能关
 3. 点击浏览器左上角的 刷新 按钮。
 4. 页面刷新后，点击绿色的 Start an application 按钮。
    <img src="images/2026-02-13-22-07-26.png" alt="image" width="1000">
