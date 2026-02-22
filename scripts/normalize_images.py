@@ -53,7 +53,7 @@ def process_text(text: str) -> str:
     return text
 
 def extract_code_blocks(content: str):
-    """按 ``` 分割，返回 (非代码段列表, 代码段列表) 交错表示：0=普通 1=代码"""
+    """按 ``` 分割，返回 (非代码段列表，代码段列表) 交错表示：0=普通 1=代码"""
     parts = []
     current = []
     in_fence = False
