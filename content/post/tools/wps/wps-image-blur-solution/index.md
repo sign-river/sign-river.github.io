@@ -11,6 +11,7 @@ tags:
   - "办公技巧"
   - "问题解决"
 draft: false
+slug: "wps-image-blur-solution"
 ---
 
 ## 问题描述

@@ -10,6 +10,7 @@ tags:
   - "博客搭建"
   - "配置"
 draft: false
+slug: "hugo-related-posts-config"
 ---
 
 ## 问题背景

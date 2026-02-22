@@ -11,6 +11,7 @@ tags:
   - "开发环境"
   - "代理"
 draft: false
+slug: "git-initial-setup"
 ---
 
 ## 问题背景

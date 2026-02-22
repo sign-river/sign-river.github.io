@@ -14,6 +14,7 @@ tags:
   - "游戏工具"
   - "网络配置"
 draft: false
+slug: "stellaris-lan-openvpn-guide"
 ---
 
 ## 引言
@@ -34,7 +35,7 @@ draft: false
 
 请根据你使用的服务器系统，选择对应教程：
 
-- 🚀 [点此查看 Ubuntu / Debian 现代系统搭建指南（强烈推荐）](/p/ubuntu/)
-- 📜 [点此查看 CentOS 7 旧版系统搭建指南（仅供参考）](/p/centos/)
+- 🚀 [点此查看 Ubuntu / Debian 现代系统搭建指南（强烈推荐）](/p/stellaris-lan-openvpn-ubuntu/)
+- 📜 [点此查看 CentOS 7 旧版系统搭建指南（仅供参考）](/p/stellaris-lan-openvpn-centos/)
 
 ---

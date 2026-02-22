@@ -12,6 +12,7 @@ tags:
   - "博客搭建"
   - "VS Code"
 draft: false
+slug: "hugo-stack-image-size-control"
 ---
 
 ## 前言

@@ -12,6 +12,7 @@ tags:
   - "VS Code"
   - "GitHub"
 draft: false
+slug: "cursor-install-plugin-from-github"
 ---
 
 ## 为什么需要手动安装？

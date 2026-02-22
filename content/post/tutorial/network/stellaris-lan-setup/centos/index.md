@@ -11,7 +11,7 @@ tags:
   - "CentOS"
   - "网络配置"
 draft: false
-slug: "centos"
+slug: "stellaris-lan-openvpn-centos"
 hidden: true
 ---
 

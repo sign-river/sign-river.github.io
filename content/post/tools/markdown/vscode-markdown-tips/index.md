@@ -13,6 +13,7 @@ tags:
   - "markdownlint"
   - "格式化"
 draft: false
+slug: "vscode-markdown-format-tips"
 ---
 
 ## 前言

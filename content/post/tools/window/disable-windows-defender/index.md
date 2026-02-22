@@ -11,6 +11,7 @@ tags:
   - "安全"
   - "组策略"
 draft: false
+slug: "disable-windows-defender"
 ---
 
 ## 问题背景

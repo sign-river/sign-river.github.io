@@ -26,7 +26,7 @@ PyTorch 是一个基于 Python 的科学计算包，主要用于：
 
 ## 环境配置
 
-### 配置Anaconda
+### 配置 Anaconda
 
 在开始 PyTorch 学习前，使用 Anaconda 进行环境隔离是最佳选项，避免不同项目的依赖冲突。
 
@@ -40,7 +40,7 @@ Packages (版本选择)：勾选 Python，并选择 3.12 版本。
 
 <a href="images/2026-02-10-21-30-21.png" target="_blank"> <img src="images/2026-02-10-21-30-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-💡 版本选择思路 (2026 Q1)： 推荐选择 Python 3.12。相比于旧版本，它拥有更好的性能；相比于最新的 3.13+ 版本，它在 PyTorch 生态圈（包括 NumPy, Pandas 等依赖库）中的兼容性最为成熟稳定。
+💡 版本选择思路 (2026 Q1)：推荐选择 Python 3.12。相比于旧版本，它拥有更好的性能；相比于最新的 3.13+ 版本，它在 PyTorch 生态圈（包括 NumPy, Pandas 等依赖库）中的兼容性最为成熟稳定。
 
 ### 安装 PyTorch
 
@@ -54,7 +54,7 @@ Packages (版本选择)：勾选 Python，并选择 3.12 版本。
 
 ⚠️ 重要原则：官网下载时选择的 CUDA 版本（Runtime）必须 <= 电脑显示的 CUDA 版本（Driver）。
 
-win+r,输入cmd回车打开终端,在终端输入nvidia-smi回车,第一行最右边就是适合你选择的CUDA版本
+win+r，输入 cmd 回车打开终端，在终端输入 nvidia-smi 回车，第一行最右边就是适合你选择的 CUDA 版本
 
 <a href="images/2026-02-10-21-53-17.png" target="_blank"> <img src="images/2026-02-10-21-53-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 

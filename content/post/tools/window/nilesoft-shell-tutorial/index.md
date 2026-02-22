@@ -13,6 +13,7 @@ tags:
   - "系统优化"
   - "开源项目"
 draft: false
+slug: "nilesoft-shell-win11-right-click"
 ---
 
 ## 什么是 Nilesoft Shell？

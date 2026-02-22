@@ -13,6 +13,7 @@ tags:
   - "中文排版"
   - "写作效率"
 draft: false
+slug: "vscode-auto-space-chinese-english"
 ---
 
 ## 前言

@@ -11,6 +11,7 @@ tags:
   - "语法"
   - "参考手册"
 draft: false
+slug: "markdown-syntax-guide"
 ---
 
 ## 前言

@@ -1,7 +1,7 @@
 ---
 title: "论文阅读：FedEditor - Efficient and Effective Federated Unlearning"
 description: "Yuan 等 - 2025 - FedEditor: Efficient and Effective Federated Unlearning 论文个人分析"
-slug: "paper-fededitor"
+slug: "fededitor-paper-reading"
 date: 2026-02-13
 categories:
   - 学习笔记

@@ -13,6 +13,7 @@ tags:
   - "VS Code"
   - "使用技巧"
 draft: false
+slug: "cursor-beginner-guide"
 ---
 
 ## 常用设置

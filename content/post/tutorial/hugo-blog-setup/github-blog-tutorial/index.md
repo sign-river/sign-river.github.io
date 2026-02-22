@@ -13,6 +13,7 @@ tags:
   - "Git"
   - "静态网站"
 draft: false
+slug: "hugo-github-pages-blog-tutorial"
 ---
 
 ## 前言

@@ -13,6 +13,7 @@ tags:
   - "开源项目"
   - "Windows"
 draft: false
+slug: "stellaris-dlc-helper"
 ---
 
 ## Stellaris DLC Helper - 快速上手指南

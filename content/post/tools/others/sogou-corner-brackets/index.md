@@ -12,6 +12,7 @@ tags:
   - "中文排版"
   - "Windows"
 draft: false
+slug: "sogou-corner-brackets"
 ---
 
 ## 为什么需要直角引号？

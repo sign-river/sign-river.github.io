@@ -13,6 +13,7 @@ tags:
   - "Linux"
   - "服务器"
 draft: false
+slug: "clash-verge-setup-tutorial"
 ---
 
 ## 引言
