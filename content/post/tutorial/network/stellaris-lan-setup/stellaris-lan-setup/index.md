@@ -34,7 +34,7 @@ draft: false
 
 请根据你使用的服务器系统，选择对应教程：
 
-- 🚀 [点此查看 Ubuntu / Debian 现代系统搭建指南（强烈推荐）](ubuntu/)
-- 📜 [点此查看 CentOS 7 旧版系统搭建指南（仅供参考）](centos/)
+- 🚀 [点此查看 Ubuntu / Debian 现代系统搭建指南（强烈推荐）](/p/ubuntu/)
+- 📜 [点此查看 CentOS 7 旧版系统搭建指南（仅供参考）](/p/centos/)
 
 ---

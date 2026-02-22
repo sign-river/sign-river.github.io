@@ -1,11 +1,8 @@
 ---
-title: "群星联机优化指南（CentOS 7 版）"
+title: "群星联机优化指南（CentOS 8 版）"
 date: 2026-02-11
 description: "基于 CentOS 7 的 OpenVPN 虚拟局域网搭建教程（旧版，仅供参考）"
 categories:
-  - "网络"
-  - "游戏"
-tags:
   - "群星"
   - "Stellaris"
   - "OpenVPN"
@@ -14,6 +11,7 @@ tags:
   - "CentOS"
   - "网络配置"
 draft: false
+slug: "centos"
 ---
 
 ## 引言
@@ -63,9 +61,9 @@ draft: false
 
 首先远程连接云服务器，这里以阿里云为例
 
-<img src="../images/2026-02-11-21-40-19.png" alt="image" width="1000">
-<img src="../images/2026-02-11-21-40-51.png" alt="image" width="1000">
-<img src="../images/2026-02-11-21-41-10.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-40-19.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-40-51.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-41-10.png" alt="image" width="1000">
 
 #### 更新系统软件包
 
@@ -74,7 +72,7 @@ sudo yum update -y
 ```
 
 <br>
-<img src="../images/2026-02-11-18-30-37.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-30-37.png" alt="image" width="1000">
 
 #### 安装 unzip 解压工具
 
@@ -85,7 +83,7 @@ sudo yum install unzip -y
 ```
 
 <br>
-<img src="../images/2026-02-11-18-31-46.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-31-46.png" alt="image" width="1000">
 
 #### 安装 EPEL 源
 
@@ -96,7 +94,7 @@ sudo yum install epel-release -y
 ```
 
 <br>
-<img src="../images/2026-02-11-18-32-10.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-32-10.png" alt="image" width="1000">
 
 #### 安装 OpenVPN
 
@@ -105,7 +103,7 @@ sudo yum install openvpn -y
 ```
 
 <br>
-<img src="../images/2026-02-11-18-32-31.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-32-31.png" alt="image" width="1000">
 #### 版本检查（重要！）
 
 安装完成后，输入以下命令查看版本：
@@ -115,7 +113,7 @@ openvpn --version
 ```
 
 <br>
-<img src="../images/2026-02-11-18-41-00.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-41-00.png" alt="image" width="1000">
 
 ⚠️ **请根据输出的版本号，记下您的情况**：
 
@@ -141,9 +139,9 @@ sudo systemctl status firewalld
 ```
 
 如果输出如下图所示，说明你的 firewalld 防火墙服务没有启动，默认所有端口全部被放行，你可以直接跳过这一步，直接去看第二关：云厂商安全组
-<img src="../images/2026-02-11-18-39-01.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-39-01.png" alt="image" width="1000">
 如果输出如下图所示，说明你的 firewalld 防火墙服务在正常运行，我们需要继续操作，放行端口 3074(UDP) 和 3075(TCP)
-<img src="../images/2026-02-11-18-42-06.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-42-06.png" alt="image" width="1000">
 放行 3074 (UDP)
 
 ```bash
@@ -169,7 +167,7 @@ sudo firewall-cmd --zone=public --list-ports
 ```
 
 <br>
-<img src="../images/2026-02-11-18-42-27.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-42-27.png" alt="image" width="1000">
 如果看到 3074/udp 3075/tcp 字样，即代表操作成功。
 
 #### 第二关：云厂商安全组 (Security Group)
@@ -179,7 +177,7 @@ sudo firewall-cmd --zone=public --list-ports
 绝大多数云服务器（阿里云、腾讯云、华为云等）在网页控制台都有一层额外的 **「安全组」** 或 **「防火墙」** 设置。
 
 请登录您的云服务器控制台，找到 **安全组 → 配置规则 → 手动添加**，填入以下信息：
-<img src="../images/2026-02-11-18-42-53.png" alt="image" width="1000">
+<img src="images/2026-02-11-18-42-53.png" alt="image" width="1000">
 规则 1 (UDP)
 
 - 协议类型：UDP
@@ -193,8 +191,8 @@ sudo firewall-cmd --zone=public --list-ports
 - 端口范围：3075/3075
 - 授权对象：0.0.0.0/0（所有 IP）
 - 策略：允许
-  <img src="../images/2026-02-11-18-43-17.png" alt="image" width="1000">
-  <img src="../images/2026-02-11-18-43-25.png" alt="image" width="1000">
+  <img src="images/2026-02-11-18-43-17.png" alt="image" width="1000">
+  <img src="images/2026-02-11-18-43-25.png" alt="image" width="1000">
 
 ### 特殊情况：共享型 VPS 的端口转发（NAT 映射）
 
@@ -219,7 +217,7 @@ sudo firewall-cmd --zone=public --list-ports
 |           3074           | UDP  |         例：40074          |
 |           3075           | TCP  |         例：40075          |
 
-<a href="../images/2026-02-21-14-27-43.png" target="_blank"> <img src="../images/2026-02-21-14-27-43.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-21-14-27-43.png" target="_blank"> <img src="images/2026-02-21-14-27-43.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. **记录下服务商分配给您的两个外部端口号**，在后续配置客户端时需要用到
 
@@ -241,21 +239,21 @@ sudo firewall-cmd --zone=public --list-ports
 2. **主机名**：填写您的服务器公网 IP。
 3. **用户名**：root
 4. **密码**：您的服务器 SSH 登录密码。
-   <img src="../images/2026-02-11-18-55-12.png" alt="image" width="1000">
+   <img src="images/2026-02-11-18-55-12.png" alt="image" width="1000">
 5. 点击登录，如果是首次连接，点击“是”接受密钥指纹。
-   <img src="../images/2026-02-11-18-56-03.png" alt="image" width="1000">
+   <img src="images/2026-02-11-18-56-03.png" alt="image" width="1000">
 
 #### 上传操作
 
 1. 登录成功后，软件界面左侧代表您的电脑，右侧代表服务器。
 2. 在右侧（服务器端），双击顶部的 `..` 文件夹图标返回根目录，然后找到并进入 `/tmp` 目录。
    （选择 `/tmp` 是因为它是存放临时文件的标准位置，系统重启后会自动清理，适合做中转）
-   <img src="../images/2026-02-11-18-57-02.png" alt="image" width="1000">
+   <img src="images/2026-02-11-18-57-02.png" alt="image" width="1000">
 3. 在左侧（本地端），找到您电脑上的 `server.zip` 文件。
 4. 将 `server.zip` 直接拖拽到右侧窗口中。
-   <img src="../images/2026-02-11-18-57-17.png" alt="image" width="1000">
-   <img src="../images/2026-02-11-18-57-45.png" alt="image" width="1000">
-   <img src="../images/2026-02-11-18-57-52.png" alt="image" width="1000">
+   <img src="images/2026-02-11-18-57-17.png" alt="image" width="1000">
+   <img src="images/2026-02-11-18-57-45.png" alt="image" width="1000">
+   <img src="images/2026-02-11-18-57-52.png" alt="image" width="1000">
 
 ### 解压与部署
 
@@ -340,7 +338,7 @@ sudo vi /etc/openvpn/server_tcp.conf
 ```
 
 <br>
-<img src="../images/2026-02-11-21-42-28.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-42-28.png" alt="image" width="1000">
 
 #### 编辑 tcp 指南
 
@@ -362,7 +360,7 @@ data-ciphers none
 ```
 
 （如果不改，服务端日志会疯狂报错提示协商失败）
-<img src="../images/2026-02-11-21-44-33.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-44-33.png" alt="image" width="1000">
 
 3. 针对 OpenVPN 2.6.x（最新版）
    除了执行上述 2.5.x 的修改外，还必须处理证书验证指令。
@@ -373,7 +371,7 @@ verify-client-cert none
 ```
 
 （新版本彻底移除了旧指令，不替换将无法启动服务）
-<img src="../images/2026-02-11-21-44-58.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-44-58.png" alt="image" width="1000">
 
 #### 保存 tcp 并文件退出
 
@@ -457,7 +455,7 @@ sudo find / -name openvpn
 ```
 
 <br>
-<img src="../images/2026-02-11-21-49-28.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-49-28.png" alt="image" width="1000">
 
 #### 测试 TCP 服务
 
@@ -468,7 +466,7 @@ sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_tcp.conf
 ```
 
 <br>
-<img src="../images/2026-02-11-21-50-01.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-50-01.png" alt="image" width="1000">
 
 #### 观察启动日志
 
@@ -488,7 +486,7 @@ sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_udp.conf
 ```
 
 <br>
-<img src="../images/2026-02-11-21-49-47.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-49-47.png" alt="image" width="1000">
 
 同样等待出现 **`Initialization Sequence Completed`** 后，按 `Ctrl + C` 停止。
 
@@ -505,12 +503,12 @@ sudo vi /etc/rc.d/rc.local
 ```
 
 <br>
-<img src="../images/2026-02-11-21-50-25.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-50-25.png" alt="image" width="1000">
 
 #### 添加启动命令
 
 按 i 进入插入模式，使用方向键移动到文件最底部，粘贴以下两行代码：
-<img src="../images/2026-02-11-21-50-42.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-50-42.png" alt="image" width="1000">
 
 ```bash
 /usr/sbin/openvpn --cd /etc/openvpn/ --config server_udp.conf &
@@ -518,7 +516,7 @@ sudo vi /etc/rc.d/rc.local
 ```
 
 - ⚠️ **注意**：命令末尾的 `&` 符号绝对不能漏！它代表「在后台运行」。如果漏掉，服务器重启后会卡在启动画面进不去系统。
-  <img src="../images/2026-02-11-21-50-57.png" alt="image" width="1000">
+  <img src="images/2026-02-11-21-50-57.png" alt="image" width="1000">
 
 #### 保存并退出
 
@@ -533,7 +531,7 @@ sudo chmod +x /etc/rc.d/rc.local
 ```
 
 <br>
-<img src="../images/2026-02-11-21-51-18.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-51-18.png" alt="image" width="1000">
 ### 重启验证
 
 为了确保万无一失，我们模拟一次服务器断电重启。
@@ -557,7 +555,7 @@ sudo netstat -anp | grep 307
 ```
 
 <br>
-<img src="../images/2026-02-11-21-51-43.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-51-43.png" alt="image" width="1000">
 
 #### 确认结果
 
@@ -580,7 +578,7 @@ sudo netstat -anp | grep 307
 
 > <https://www.dogfight360.com/blog/1590/>
 > <br>
-> <img src="../images/2026-02-11-21-58-56.png" alt="image" width="1000">
+> <img src="images/2026-02-11-21-58-56.png" alt="image" width="1000">
 
 解压后，您应该会看到以下三个核心文件：
 
@@ -595,7 +593,7 @@ sudo netstat -anp | grep 307
 1. 双击运行 tap-windows-9.9.2_3.exe。
 2. 一路点击 Next（下一步）直到安装完成。
 3. 注意：安装过程中无需更改任何默认设置。
-   <img src="../images/2026-02-11-22-01-59.png" alt="image" width="1000">
+   <img src="images/2026-02-11-22-01-59.png" alt="image" width="1000">
 
 ### 配置节点信息
 
@@ -604,7 +602,7 @@ sudo netstat -anp | grep 307
 #### 编辑配置文件
 
 用记事本打开 customize.ini，清空里面的内容，或者直接修改为以下标准格式：
-<img src="../images/2026-02-11-21-59-44.png" alt="image" width="1000">
+<img src="images/2026-02-11-21-59-44.png" alt="image" width="1000">
 <br>
 
 ```ini
@@ -641,7 +639,7 @@ PASS=123456
 #### 启动客户端
 
 双击运行 UsbEAm LAN Party V1.2.exe。
-<img src="../images/2026-02-11-22-02-15.png" alt="image" width="1000">
+<img src="images/2026-02-11-22-02-15.png" alt="image" width="1000">
 
 #### 选择节点
 
@@ -654,7 +652,7 @@ PASS=123456
 
 > 💡 群星联机对延迟极其敏感，**UDP 模式去除了 TCP 的握手重传机制**，能显著降低延迟，是本教程的核心优势所在。
 
-<img src="../images/2026-02-11-22-03-17.png" alt="image" width="400">
+<img src="images/2026-02-11-22-03-17.png" alt="image" width="400">
 
 #### 点击连接
 
@@ -667,10 +665,10 @@ PASS=123456
   - 账号密码是否填写正确（上一章）
   - 服务端是否正常运行
 
-    <img src="../images/2026-02-11-22-03-31.png" alt="image" width="400">
+    <img src="images/2026-02-11-22-03-31.png" alt="image" width="400">
 
 当所有小伙伴都显示 **「连接状态：正常」** 后，大家实际上已经处于同一个虚拟局域网中。
-<img src="../images/2026-02-11-22-03-48.png" alt="image" width="400">
+<img src="images/2026-02-11-22-03-48.png" alt="image" width="400">
 
 ---
 

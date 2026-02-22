@@ -13,7 +13,8 @@ tags:
   - "虚拟局域网"
   - "Ubuntu"
   - "网络配置"
-draft: false
+draft: true
+slug: "ubuntu"
 ---
 
 本文为 **Ubuntu 22.04 64 位** 系统下的群星联机节点搭建指南，内容待补充。
@@ -55,4 +56,4 @@ draft: false
 
 ---
 
-_请在上方各节中补充具体命令、截图与说明。配图可放在本目录下的 `images/` 文件夹中，与 CentOS 版共用。_
+_请在上方各节中补充具体命令、截图与说明。配图请放在 `static/images/stellaris-lan-setup/`，与 CentOS 版共用，文中引用路径为 `/images/stellaris-lan-setup/xxx.png`。_

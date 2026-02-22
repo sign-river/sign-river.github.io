@@ -104,7 +104,7 @@ draft: false
 4. 找到以下两行并进行修改：
 
    ```toml
-    # 将此链接修改为你自己的仓库地址 （注意最后要有斜杠 /)
+    # 将此链接修改为你自己的仓库地址（注意最后要有斜杠 /)
     baseurl = "https://username.github.io/"
 
     # 修改为你喜欢的博客名称
@@ -625,6 +625,7 @@ comments: false
 2. 搜索 paste image
 3. 找到 Path
 4. 在原参数后添加/images 即可
+5. **Windows 用户**：建议同时搜索 `Force Unix Style Separator` 并勾选，这样生成的路径会是正斜杠 `images/xxx.png`，网页中图片才能正常加载（否则会是反斜杠 `images\xxx.png`，可能 404）。
 
 <img src="images/2026-02-09-23-54-39.png" alt="image" width="500">
 
@@ -659,8 +660,8 @@ comments: false
 解决方案如下：
 我们需要在站点配置中关闭目录的自动编号功能
 
-1. 定位配置文件： 找到站点根目录下的 config/default/markup.toml 文件。
-2. 修改参数： 找到 [tableOfContents] 区域，将 ordered 属性由 true 改为 false。
+1. 定位配置文件：找到站点根目录下的 config/default/markup.toml 文件。
+2. 修改参数：找到 [tableOfContents] 区域，将 ordered 属性由 true 改为 false。
 
 <img src="images/2026-02-10-10-07-25.png" alt="image" width="600">
 

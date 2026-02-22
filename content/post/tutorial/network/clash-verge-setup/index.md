@@ -31,13 +31,13 @@ draft: false
 
 在众多 VPS 服务商中，本教程首选 Vultr 作为演示平台，主要基于以下几点核心优势：
 
-支付便捷：直接支持 支付宝 (Alipay) 扫码付款，无需准备境外信用卡或 PayPal，这是对国内用户最友好的功能之一 。
+支付便捷：直接支持 支付宝 (Alipay) 扫码付款，无需准备境外信用卡或 PayPal，这是对国内用户最友好的功能之一。
 
-性价比高：提供“共享 CPU (Shared CPU)”的基础方案，价格低廉，完全满足个人节点的性能需求 。
+性价比高：提供“共享 CPU (Shared CPU)”的基础方案，价格低廉，完全满足个人节点的性能需求。
 
-线路优势：拥有洛杉矶 (Los Angeles) 等优质数据中心，作为国际网络枢纽，其信号连接相对畅通，延迟较低 。
+线路优势：拥有洛杉矶 (Los Angeles) 等优质数据中心，作为国际网络枢纽，其信号连接相对畅通，延迟较低。
 
-新手福利：新用户注册往往会获赠一定额度的体验金（例如 $300），虽然通常有有效期限制（如 30 天），但足以让你免费完成初期的搭建和测试 。
+新手福利：新用户注册往往会获赠一定额度的体验金（例如 $300），虽然通常有有效期限制（如 30 天），但足以让你免费完成初期的搭建和测试。
 
 注册账号：访问 Vultr 官网（<https://my.vultr.com/）进行注册并登录> 。
 <img src="images/2026-02-11-11-59-25.png" alt="image" width="1000">
@@ -45,35 +45,35 @@ draft: false
 
 登录后点击左侧菜单栏的 Account（账户）。
 
-在支付方式中选择 Alipay（支付宝），这对国内用户非常方便 。
+在支付方式中选择 Alipay（支付宝），这对国内用户非常方便。
 <img src="images/2026-02-11-12-02-41.png" alt="image" width="1000">
-填写必要的账单信息（可用拼音），选择充值金额（例如 $10 或 $25），勾选同意条款并点击 Pay with Alipay 完成支付 。
+填写必要的账单信息（可用拼音），选择充值金额（例如 $10 或 $25），勾选同意条款并点击 Pay with Alipay 完成支付。
 
-注：新用户注册有时会获赠 $300 的体验金（有效期通常为一个月），这属于新手福利，过期后会自动失效，不必惊慌 。
+注：新用户注册有时会获赠 $300 的体验金（有效期通常为一个月），这属于新手福利，过期后会自动失效，不必惊慌。
 <img src="images/2026-02-11-12-03-09.png" alt="image" width="1000">
 
 ### 部署服务器 (Deploy Instance)
 
-充值到账后，点击页面右上角的蓝色按钮 Deploy + -> Deploy New Server 开始创建服务器 。下面会推荐配置，以确保性价比和兼容性：
+充值到账后，点击页面右上角的蓝色按钮 Deploy + -> Deploy New Server 开始创建服务器。下面会推荐配置，以确保性价比和兼容性：
 <img src="images/2026-02-11-12-03-21.png" alt="image" width="1000">
-Choose Type（服务器类型）： 选择 Shared CPU（共享 CPU）。对于个人节点而言，共享核心的性能完全足够，且价格最实惠 。
+Choose Type（服务器类型）：选择 Shared CPU（共享 CPU）。对于个人节点而言，共享核心的性能完全足够，且价格最实惠。
 
-Choose Location（地区选择）： 建议选择 Americas -> Los Angeles（洛杉矶）。这里是中美海底光缆的登陆点之一，作为网络枢纽，通常能提供较好的连接速度和信号稳定性 。
+Choose Location（地区选择）：建议选择 Americas -> Los Angeles（洛杉矶）。这里是中美海底光缆的登陆点之一，作为网络枢纽，通常能提供较好的连接速度和信号稳定性。
 
-Choose Plan（配置套餐）： 根据个人预算选择。通常选择 $5.00/month（1 vCPU, 1GB Memory）的配置即可满足日常 4K 视频浏览等需求 。
+Choose Plan（配置套餐）：根据个人预算选择。通常选择 $5.00/month（1 vCPU, 1GB Memory）的配置即可满足日常 4K 视频浏览等需求。
 
-Additional Features（附加功能）： 重要提示：请务必找到 Automatic Backups（自动备份）选项并点击 Disable（关闭）。
+Additional Features（附加功能）：重要提示：请务必找到 Automatic Backups（自动备份）选项并点击 Disable（关闭）。
 
-理由：自动备份需要额外收费。对于这种随时可以销毁重建的节点服务器，开启备份不仅浪费钱，也没有太大的实际意义 。
+理由：自动备份需要额外收费。对于这种随时可以销毁重建的节点服务器，开启备份不仅浪费钱，也没有太大的实际意义。
 <img src="images/2026-02-11-12-04-37.png" alt="image" width="1000">
-Choose Image（操作系统）： 选择 Debian，版本建议选择 12 x64。Debian 系统以轻量、稳定著称，相比其他系统更节省服务器资源 。
+Choose Image（操作系统）：选择 Debian，版本建议选择 12 x64。Debian 系统以轻量、稳定著称，相比其他系统更节省服务器资源。
 <img src="images/2026-02-11-12-06-09.png" alt="image" width="1000">
 
 ### 获取服务器信息
 
-点击底部的 Deploy Now 部署后，等待服务器状态从 Installing 变为 Running 。 点击服务器名称（如 Cloud Instance）进入详情页，请记录下以下两项关键信息，稍后连接服务器时必须用到：
+点击底部的 Deploy Now 部署后，等待服务器状态从 Installing 变为 Running。点击服务器名称（如 Cloud Instance）进入详情页，请记录下以下两项关键信息，稍后连接服务器时必须用到：
 <img src="images/2026-02-11-12-06-48.png" alt="image" width="1000">
-IP Address：服务器的公网 IP 地址 。
+IP Address：服务器的公网 IP 地址。
 
 Password：root 账户的初始密码（点击眼睛图标可显示，点击复制图标可直接复制）
 
@@ -87,7 +87,7 @@ Password：root 账户的初始密码（点击眼睛图标可显示，点击复�
 
 我们需要使用电脑自带的终端工具连接服务器。
 
-右键点击“开始”菜单，选择 Windows PowerShell 或 终端 。
+右键点击“开始”菜单，选择 Windows PowerShell 或 终端。
 
 <img src="images/2026-02-11-12-26-07.png" alt="image" width="1000">
 
@@ -99,9 +99,9 @@ ssh root@xx.xx.xxx.xxx
 
 连接过程中的注意事项：
 
-首次连接确认：输入指令回车后，若提示 Are you sure you want to continue connecting (yes/no/[fingerprint])?，请输入 yes 并回车 。
+首次连接确认：输入指令回车后，若提示 Are you sure you want to continue connecting (yes/no/[fingerprint])?，请输入 yes 并回车。
 
-输入密码：系统会提示 root@... password:。此时输入你刚才复制的服务器密码。注意：Linux 系统为了安全，输入密码时屏幕上不会显示任何字符（包括星号），光标也不会移动。这完全正常，输完密码后直接按回车即可 。
+输入密码：系统会提示 root@... password:。此时输入你刚才复制的服务器密码。注意：Linux 系统为了安全，输入密码时屏幕上不会显示任何字符（包括星号），光标也不会移动。这完全正常，输完密码后直接按回车即可。
 <img src="images/2026-02-11-12-29-20.png" alt="image" width="1000">
 
 ### 优化连接稳定性（防断连）
@@ -130,9 +130,9 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 <img src="images/2026-02-11-12-30-45.png" alt="image" width="1000">
 安装引导设置：
 
-脚本启动后，会询问是否自定义端口。输入 y 并回车 。
+脚本启动后，会询问是否自定义端口。输入 y 并回车。
 
-设置面板端口：建议输入一个好记的数字，例如 54321，然后回车 。
+设置面板端口：建议输入一个好记的数字，例如 54321，然后回车。
 
 <img src="images/2026-02-11-12-31-07.png" alt="image" width="1000">
 安装完成后，终端会显示你的登录信息，包括访问地址（http://IP: 端口） 。

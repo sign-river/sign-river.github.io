@@ -86,7 +86,7 @@ draft: false
 
 <br>
 
-<a href="images\2026-02-21-14-43-56.png" target="_blank"> <img src="images\2026-02-21-14-43-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-21-14-43-56.png" target="_blank"> <img src="images/2026-02-21-14-43-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 > 注意：`<div>` 标签与 `![image]` 之间必须有空行，这里的代码段因为 md 格式问题无法展现，记得自己加上空行，Hugo 才会正确将内部内容识别为 Markdown 并渲染。
 
@@ -106,6 +106,9 @@ draft: false
 
 - 如果图片原始宽度比容器 `max-width` 小，图片会被拉伸放大，可能变模糊，建议 `max-width` 值不超过图片原始宽度
 - 方案二**无法通过 Paste Image 自动生成**，需要在使用时手动将图片语法嵌套进 `<div>` 容器中
+- **Windows 用户**：建议同时搜索 `Force Unix Style Separator` 并勾选，这样生成的路径会是正斜杠 `images/xxx.png`，网页中图片才能正常加载（否则会是反斜杠 `images\xxx.png`，可能 404）。<a href="images/2026-02-22-13-37-30.png" target="_blank">
+  <img src="images/2026-02-22-13-37-30.png" alt="image" style="max-width: 100%; width: 1000px;"/>
+  </a>
 
 ---
 
