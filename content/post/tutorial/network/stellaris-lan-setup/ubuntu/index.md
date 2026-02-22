@@ -13,8 +13,9 @@ tags:
   - "虚拟局域网"
   - "Ubuntu"
   - "网络配置"
-draft: true
+draft: false
 slug: "stellaris-lan-openvpn-ubuntu"
+hidden: true
 ---
 
 本文为 **Ubuntu 22.04 64 位** 系统下的群星联机节点搭建指南，内容待补充。
