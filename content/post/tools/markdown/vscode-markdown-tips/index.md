@@ -50,7 +50,7 @@ draft: false
 
 2. 打开设置 (json)
 
-<a href="images/2026-02-10-23-21-47.png" target="_blank"> <img src="images/2026-02-10-23-21-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-23-21-47.png" target="_blank"> <img src="images/2026-02-10-23-21-47.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 <a href="images/2026-02-10-23-22-18.png" target="_blank"> <img src="images/2026-02-10-23-22-18.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 

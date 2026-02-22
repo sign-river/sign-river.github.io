@@ -115,7 +115,7 @@ draft: false
 
 5. 修改完成后，点击页面底部的绿色按钮 **Commit changes** 保存
 
-<a href="images/2026-02-10-10-51-33.png" target="_blank"> <img src="images/2026-02-10-10-51-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-10-51-33.png" target="_blank"> <img src="images/2026-02-10-10-51-33.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 ### 设置头像与个人简介 (params.toml)
 
@@ -141,7 +141,7 @@ draft: false
     src = "img/avatar.png"
    ```
 
-<a href="images/2026-02-10-10-52-29.png" target="_blank"> <img src="images/2026-02-10-10-52-29.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-10-52-29.png" target="_blank"> <img src="images/2026-02-10-10-52-29.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 3. 修改完成后，记得 **Commit changes** 保存
 
@@ -314,7 +314,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 2. **编辑文件**：删除文件头部 `menu:` 及其下方缩进的内容（通常是 `main:` 和 `params:` 那几行）
    - _注意：保留最上方的 `title`、`slug` 等信息，以及最下方的 `---` 分隔线，只删 menu 模块_
 
-<a href="images/2026-02-10-11-01-04.png" target="_blank"> <img src="images/2026-02-10-11-01-04.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-11-01-04.png" target="_blank"> <img src="images/2026-02-10-11-01-04.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 #### 重写主菜单配置
 
@@ -431,7 +431,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 
 4. 点击 **Install** 完成安装
 
-<a href="images/2026-02-10-11-10-08.png" target="_blank"> <img src="images/2026-02-10-11-10-08.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-11-10-08.png" target="_blank"> <img src="images/2026-02-10-11-10-08.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 ### 获取配置代码
 
@@ -443,19 +443,19 @@ Giscus 提供了一个可视化工具来生成配置参数。
    - 在“仓库”一栏，输入 `你的用户名/你的仓库名`（例如 `sign-river/sign-river.github.io`）
    - 等待下方出现绿色的“成功！该仓库满足所有条件”提示
 
-<a href="images/2026-02-10-11-19-17.png" target="_blank"> <img src="images/2026-02-10-11-19-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-11-19-17.png" target="_blank"> <img src="images/2026-02-10-11-19-17.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 3. **配置分类**：
    - 在“Discussion 分类”中，推荐选择 **Announcements**
    - _注意：这决定了评论会出现在仓库 Discussions 的哪个板块下_
 
-<a href="images/2026-02-10-11-18-37.png" target="_blank"> <img src="images/2026-02-10-11-18-37.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-11-18-37.png" target="_blank"> <img src="images/2026-02-10-11-18-37.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 4. **生成代码**：
    - 滚动到页面底部的“启用 giscus”部分
    - 你会看到一段生成的 `<script>` 代码。**不要直接复制这段代码**，我们只需要其中的几个关键参数
 
-<a href="images/2026-02-10-11-20-16.png" target="_blank"> <img src="images/2026-02-10-11-20-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-11-20-16.png" target="_blank"> <img src="images/2026-02-10-11-20-16.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 ### 写入博客配置 (params.toml)
 
@@ -590,7 +590,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 1. 定位配置文件 在博客的本地根目录下，找到 Links 页面的源文件（通常位于 source/links/index.md）。
 
-<a href="images/2026-02-10-11-29-33.png" target="_blank"> <img src="images/2026-02-10-11-29-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-11-29-33.png" target="_blank"> <img src="images/2026-02-10-11-29-33.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 2. 编辑链接信息 复制以下配置代码，覆盖或添加到文件中。你可以根据需要修改 links 下的列表项。
 
@@ -611,7 +611,7 @@ comments: false
 ---
 ```
 
-<a href="images/2026-02-09-22-34-01.png" target="_blank"> <img src="images/2026-02-09-22-34-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/![最终效果](2026-02-09-22-34-01.png).png" target="_blank"> <img src="images/![最终效果](2026-02-09-22-34-01.png).png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### Paste Image 图片保存位置
 
@@ -620,14 +620,14 @@ comments: false
 
 1. 打开 vscode 设置
 
-<a href="images/2026-02-09-23-54-32.png" target="_blank"> <img src="images/2026-02-09-23-54-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-09-23-54-32.png" target="_blank"> <img src="images/2026-02-09-23-54-32.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 2. 搜索 paste image
 3. 找到 Path
 4. 在原参数后添加/images 即可
 5. **Windows 用户**：建议同时搜索 `Force Unix Style Separator` 并勾选，这样生成的路径会是正斜杠 `images/xxx.png`，网页中图片才能正常加载（否则会是反斜杠 `images\xxx.png`，可能 404）。
 
-<a href="images/2026-02-09-23-54-39.png" target="_blank"> <img src="images/2026-02-09-23-54-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-09-23-54-39.png" target="_blank"> <img src="images/2026-02-09-23-54-39.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 ### Paste Image 图片大小调整
 
@@ -637,7 +637,7 @@ comments: false
 
 1. 打开 vscode 设置
 
-<a href="images/2026-02-09-23-54-32.png" target="_blank"> <img src="images/2026-02-09-23-54-32.png" alt="调整参数" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-09-23-54-32.png" target="_blank"> <img src="images/2026-02-09-23-54-32.png" alt="调整参数" style="max-width: 100%; width: 700px;"/> </a>
 
 2. 搜索搜索 paste image
 3. 找到 Insert Pattern
@@ -649,7 +649,7 @@ comments: false
 
 5. 调整图片大小时修改 width 值即可
 
-<a href="images/2026-02-10-00-03-31.png" target="_blank"> <img src="images/2026-02-10-00-03-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-00-03-31.png" target="_blank"> <img src="images/2026-02-10-00-03-31.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 ### 文章目录序号嵌套问题
 

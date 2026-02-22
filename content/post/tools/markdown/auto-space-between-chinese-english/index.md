@@ -39,7 +39,7 @@ draft: false
 
 1. **打开设置**
 
-<a href="images/2026-02-10-23-48-31.png" target="_blank"> <img src="images/2026-02-10-23-48-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-23-48-31.png" target="_blank"> <img src="images/2026-02-10-23-48-31.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 2. **搜索并启用自动格式化**
 

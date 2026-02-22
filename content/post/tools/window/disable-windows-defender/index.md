@@ -39,7 +39,8 @@ gpedit.msc
 ```
 
 <br>
-<a href="images/2026-02-11-13-05-10.png" target="_blank"> <img src="images/2026-02-11-13-05-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-11-13-05-10.png" target="_blank"> <img src="images/2026-02-11-13-05-10.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
+
 > ⚠️ **注意**：家庭版 Windows 默认不包含组策略编辑器。如果提示找不到 gpedit.msc，需要先安装组策略编辑器功能。
 
 ### 2. 导航到 Defender 设置

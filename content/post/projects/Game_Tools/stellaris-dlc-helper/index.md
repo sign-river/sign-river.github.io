@@ -24,7 +24,8 @@ draft: false
 ## 💡 这个工具是干什么的？
 
 一个帮你给群星游戏解锁所有 DLC 的小工具，简单来说就是：**点几下鼠标，所有 DLC 就能用了**。
-<a href="images/2026-02-13-16-58-48.png" target="_blank"> <img src="images/2026-02-13-16-58-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+<a href="images/2026-02-13-16-58-48.png" target="_blank"> <img src="images/2026-02-13-16-58-48.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 ---
 
@@ -50,7 +51,8 @@ draft: false
 - 双击 exe 文件启动程序
 - 第一次运行会弹出更新检查和公告
 - 如果不想每次打开都看公告的话可以勾选"本版本不再显示此公告"
-  <a href="images/2026-02-13-17-03-52.png" target="_blank"> <img src="images/2026-02-13-17-03-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+  <a href="images/2026-02-13-17-03-52.png" target="_blank"> <img src="images/2026-02-13-17-03-52.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 #### 选择游戏目录
 

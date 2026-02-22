@@ -1,8 +1,8 @@
 ---
-title: "群星联机优化指南（CentOS 8 版）"
+title: "群星联机优化指南（CentOS 7 版）"
 date: 2026-02-11
 description: "基于 CentOS 7 的 OpenVPN 虚拟局域网搭建教程（旧版，仅供参考）"
-categories:
+tags:
   - "群星"
   - "Stellaris"
   - "OpenVPN"
@@ -12,6 +12,7 @@ categories:
   - "网络配置"
 draft: false
 slug: "centos"
+hidden: true
 ---
 
 ## 引言
@@ -639,7 +640,7 @@ PASS=123456
 #### 启动客户端
 
 双击运行 UsbEAm LAN Party V1.2.exe。
-<a href="images/2026-02-11-22-02-15.png" target="_blank"> <img src="images/2026-02-11-22-02-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-11-22-02-15.png" target="_blank"> <img src="images/2026-02-11-22-02-15.png" alt="image" style="max-width: 100%; width:1000px;"/> </a>
 
 #### 选择节点
 
@@ -652,7 +653,7 @@ PASS=123456
 
 > 💡 群星联机对延迟极其敏感，**UDP 模式去除了 TCP 的握手重传机制**，能显著降低延迟，是本教程的核心优势所在。
 
-<a href="images/2026-02-11-22-03-17.png" target="_blank"> <img src="images/2026-02-11-22-03-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-11-22-03-17.png" target="_blank"> <img src="images/2026-02-11-22-03-17.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 #### 点击连接
 
@@ -665,10 +666,10 @@ PASS=123456
   - 账号密码是否填写正确（上一章）
   - 服务端是否正常运行
 
-    <a href="images/2026-02-11-22-03-31.png" target="_blank"> <img src="images/2026-02-11-22-03-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+    <a href="images/2026-02-11-22-03-31.png" target="_blank"> <img src="images/2026-02-11-22-03-31.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 当所有小伙伴都显示 **「连接状态：正常」** 后，大家实际上已经处于同一个虚拟局域网中。
-<a href="images/2026-02-11-22-03-48.png" target="_blank"> <img src="images/2026-02-11-22-03-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-11-22-03-48.png" target="_blank"> <img src="images/2026-02-11-22-03-48.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 ---
 

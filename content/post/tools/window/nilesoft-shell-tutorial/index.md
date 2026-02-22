@@ -43,7 +43,7 @@ Nilesoft Shell 是一款强大的 Windows 右键菜单自定义工具，让你�
 
 安装完成后，右键点击桌面，即可看到 Nilesoft Shell 的默认菜单。默认配置已经包含了许多实用功能，比如快速访问系统工具、文件操作等。
 
-<a href="images/2026-02-14-19-32-51.png" target="_blank"> <img src="images/2026-02-14-19-32-51.png" alt="默认菜单效果" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-14-19-32-51.png" target="_blank"> <img src="images/2026-02-14-19-32-51.png" alt="默认菜单效果" style="max-width: 100%; width: 400px;"/> </a>
 
 这只是冰山一角，接下来我们将学习如何自定义菜单！
 
@@ -111,8 +111,8 @@ import 'imports/taskbar.nss'
 
 **三个选项说明：**
 
-- **Enable**：启用 Nilesoft Shell
-- **Disable**：停用 Nilesoft Shell
+- **Register**：启用 Nilesoft Shell
+- **Unregister**：停用 Nilesoft Shell
 - **Restart Explorer**：重启资源管理器（使配置生效）
 
 ---

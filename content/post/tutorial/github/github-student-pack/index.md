@@ -44,7 +44,7 @@ GitHub Student Developer Pack 为学生提供了丰富的免费开发工具和�
 
 在登录框下方找到并点击 **新生注册**。
 
-<a href="images/2026-02-13-21-21-42.png" target="_blank"> <img src="images/2026-02-13-21-21-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-13-21-21-42.png" target="_blank"> <img src="images/2026-02-13-21-21-42.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 - 注意：无论您是大一新生还是大四老生，只要您之前没有注册过这个邮箱账号，都必须点击“新生注册”入口。
 
@@ -116,7 +116,7 @@ https://mails.neu.edu.cn/coremail/
 
 1. 回到邮箱登录首页。
 2. 即使已经注册好了，也不要直接输账号密码。
-3. 点击登录框上方的 **统一身份认证登录** 选项卡（或链接）。
+3. 点击登录框上方的 **统一身份认证登录** 选项卡。
 4. 使用 **学号** 和 **统一身份认证密码** 进行登录。
 
 成功登录后，您将看到邮箱主界面。请点击左上角头像，确认您的邮箱地址后缀为 `@mails.neu.edu.cn`。至此，教育邮箱准备工作完成
@@ -149,10 +149,9 @@ https://mails.neu.edu.cn/coremail/
 1. 在左侧菜单栏中找到并点击 **Emails**。
 2. 在 "Add email address" 输入框中，填入您在第一章注册好的学生邮箱（例如 `yourname@mails.neu.edu.cn`）。
 3. 点击 **Add** 按钮。
-4. 之后点击认证一下，GitHub 会向您的学生邮箱发送一封验证邮件。
-5. 请登录您的学生邮箱，找到邮件并点击验证链接。
-6. 找到 **Keep my email addresses private** 选项。
-7. **务必取消勾选**（保持 Off 状态）。如果不关闭这个选项，GitHub 在审核时可能无法读取到您的学生邮箱，导致认证失败。
+4. 之后点击认证一下，GitHub 会向您的学生邮箱发送一封验证邮件。请登录您的学生邮箱，找到邮件并点击验证链接。
+5. 找到 **Keep my email addresses private** 选项。
+6. **务必取消勾选**（保持 Off 状态）。如果不关闭这个选项，GitHub 在审核时可能无法读取到您的学生邮箱，导致认证失败。
    <a href="images/2026-02-13-21-39-19.png" target="_blank"> <img src="images/2026-02-13-21-39-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 开启双重认证 (2FA)
@@ -315,10 +314,12 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 
 - 界面通常会提示：You have verified the email address ... associated with the school Northeastern University, China.
 - 此时直接点击 Continue (继续) 即可。
-  <a href="images/2026-02-13-21-44-57.png" target="_blank"> <img src="images/2026-02-13-21-44-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+  <a href="images/2026-02-22-19-42-13.png" target="_blank"> <img src="images/2026-02-22-19-42-13.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 点击 Continue 后，再点击 Share Location（分享定位）。
-<a href="images/2026-02-13-21-55-07.png" target="_blank"> <img src="images/2026-02-13-21-55-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+<a href="images/2026-02-22-19-42-59.png" target="_blank"> <img src="images/2026-02-22-19-42-59.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 ### 上传学生证件
 
@@ -329,7 +330,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 在 Please select the type of proof you would like to provide 下拉菜单中，选择：
 
 - 1. Dated school ID - Good (有日期的学生证)
-     <a href="images/2026-02-13-22-19-48.png" target="_blank"> <img src="images/2026-02-13-22-19-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+     <a href="images/2026-02-13-22-19-48.png" target="_blank"> <img src="images/2026-02-13-22-19-48.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 #### 拍照上传
 
@@ -341,7 +342,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
    - 手持卡片对准摄像头（第二次点击通常有 3 秒延迟拍摄）。
    - 亲测饭卡（一卡通）是可行的。
 
-<a href="images/2026-02-13-22-21-45.png" target="_blank"> <img src="images/2026-02-13-22-21-45.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-13-22-21-45.png" target="_blank"> <img src="images/2026-02-13-22-21-45.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 ### 提交与审核结果
 
