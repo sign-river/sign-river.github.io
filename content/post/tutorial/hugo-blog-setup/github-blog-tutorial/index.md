@@ -39,7 +39,7 @@ draft: false
 
 进入页面后，点击右上角的 **Use this template**（使用此模板）按钮，然后选择 **Create a new repository**（创建新仓库）。
 
-<img src="images/2026-02-10-10-44-47.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-44-47.png" target="_blank"> <img src="images/2026-02-10-10-44-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 创建 GitHub 仓库（关键步骤！）
 
@@ -51,7 +51,7 @@ draft: false
 你的 GitHub username.github.io
 ```
 
-<img src="images/2026-02-10-10-49-03.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-49-03.png" target="_blank"> <img src="images/2026-02-10-10-49-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 > ⚠️ **注意事项：**
 >
@@ -73,9 +73,9 @@ draft: false
 - 🟡 **黄色旋转图标**：表示正在部署中，请耐心等待（通常需要 1-2 分钟）
 - 🟢 **绿色对勾图标**：表示部署成功！
 
-<img src="images/2026-02-10-10-46-40.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-46-40.png" target="_blank"> <img src="images/2026-02-10-10-46-40.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-10-46-54.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-46-54.png" target="_blank"> <img src="images/2026-02-10-10-46-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 部署完成后，访问 `https://username.github.io`，如果能看到一个带有 "Hugo Theme Stack" 标题和示例文章的精美页面，恭喜你，你的个人博客雏形已经搭建完成了！🎉
 
@@ -91,15 +91,15 @@ draft: false
 
 1. 在你的仓库主页，点击进入 `config/_default` 文件夹
 
-<img src="images/2026-02-10-10-50-05.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-50-05.png" target="_blank"> <img src="images/2026-02-10-10-50-05.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 找到并点击 `config.toml` 文件
 
-<img src="images/2026-02-10-10-50-25.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-50-25.png" target="_blank"> <img src="images/2026-02-10-10-50-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 点击文件右上角的 **铅笔图标**（Edit this file）进入编辑模式
 
-<img src="images/2026-02-10-10-50-35.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-50-35.png" target="_blank"> <img src="images/2026-02-10-10-50-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. 找到以下两行并进行修改：
 
@@ -111,11 +111,11 @@ draft: false
     title = "YSY 的博客"
    ```
 
-<img src="images/2026-02-10-10-51-00.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-51-00.png" target="_blank"> <img src="images/2026-02-10-10-51-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 5. 修改完成后，点击页面底部的绿色按钮 **Commit changes** 保存
 
-<img src="images/2026-02-10-10-51-33.png" alt="image" width="400">
+<a href="images/2026-02-10-10-51-33.png" target="_blank"> <img src="images/2026-02-10-10-51-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 设置头像与个人简介 (params.toml)
 
@@ -123,7 +123,7 @@ draft: false
 
 1. 回到 `config/_default` 文件夹，这次我们要修改 `params.toml` 文件
 
-<img src="images/2026-02-10-10-52-01.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-52-01.png" target="_blank"> <img src="images/2026-02-10-10-52-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 同样点击铅笔图标编辑，找到 `[sidebar]` 区域，参考下图修改：
 
@@ -141,7 +141,7 @@ draft: false
     src = "img/avatar.png"
    ```
 
-<img src="images/2026-02-10-10-52-29.png" alt="image" width="500">
+<a href="images/2026-02-10-10-52-29.png" target="_blank"> <img src="images/2026-02-10-10-52-29.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 修改完成后，记得 **Commit changes** 保存
 
@@ -151,17 +151,17 @@ draft: false
 
 1. 回到仓库根目录，依次进入 `assets` -> `img` 文件夹
 
-<img src="images/2026-02-10-10-53-03.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-53-03.png" target="_blank"> <img src="images/2026-02-10-10-53-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-10-53-11.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-53-11.png" target="_blank"> <img src="images/2026-02-10-10-53-11.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 1. 点击右上角的 **Add file** → **Upload files**
 
-<img src="images/2026-02-10-10-53-31.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-53-31.png" target="_blank"> <img src="images/2026-02-10-10-53-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 将你准备好的头像图片重命名为 `avatar.png`（注意后缀名要匹配），然后拖拽上传
 
-<img src="images/2026-02-10-10-53-44.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-53-44.png" target="_blank"> <img src="images/2026-02-10-10-53-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 点击 **Commit changes** 提交更改
 
@@ -176,7 +176,7 @@ draft: false
    - **Branch**（分支）下拉菜单中，一定要选择 **gh-pages** 分支（而不是 master/main）
    - 文件夹保持 `/(root)` 不变
 
-<img src="images/2026-02-10-10-54-02.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-54-02.png" target="_blank"> <img src="images/2026-02-10-10-54-02.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. 点击 **Save** 保存
 
@@ -188,7 +188,7 @@ draft: false
 
 现在，你应该能看到博客标题变了，左侧也换成了你的头像和简介。是不是更有成就感了？
 
-<img src="images/2026-02-10-10-54-33.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-54-33.png" target="_blank"> <img src="images/2026-02-10-10-54-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -204,9 +204,9 @@ draft: false
 2. 你会看到 `hello-world`、`markdown-syntax` 等文件夹
 3. **全部删除**：点击右上角的 **...** → **Delete directory**，或者直接在本地操作删除
 
-<img src="images/2026-02-10-10-54-50.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-54-50.png" target="_blank"> <img src="images/2026-02-10-10-54-50.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-10-55-00.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-55-00.png" target="_blank"> <img src="images/2026-02-10-10-55-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 创建第一篇文章
 
@@ -214,12 +214,12 @@ Hugo 有一种很好的文章组织方式叫 "Page Bundles"（页面束）。简
 
 1. 在 `content/post` 目录下，点击 **Add file** → **Create new file**
 
-<img src="images/2026-02-10-10-55-13.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-55-13.png" target="_blank"> <img src="images/2026-02-10-10-55-13.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 在文件名输入框中填写：`post/my-first-post/index.md`
    - _注意：输入 `/` 会自动创建文件夹_
 
-<img src="images/2026-02-10-10-55-26.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-55-26.png" target="_blank"> <img src="images/2026-02-10-10-55-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 输入文章内容，格式如下：
 
@@ -260,7 +260,7 @@ categories:                           # 分类设置，直接控制侧边栏的�
 
 ✨ **见证时刻**：原本的英文演示文章消失了，取而代之的是你刚刚写的“我的第一篇博客”！点击标题进去，能看到你写的内容。
 
-<img src="images/2026-02-10-10-57-39.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-57-39.png" target="_blank"> <img src="images/2026-02-10-10-57-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -272,14 +272,14 @@ categories:                           # 分类设置，直接控制侧边栏的�
 
 默认模板左侧栏有 GitHub 和 Twitter 的图标。我们需要把 Twitter 删掉，并把 GitHub 换成你自己的地址。
 
-<img src="images/2026-02-10-10-59-51.png" alt="image" width="1000">
+<a href="images/2026-02-10-10-59-51.png" target="_blank"> <img src="images/2026-02-10-10-59-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 1. 进入 `config/_default` 文件夹，打开 `menu.toml`
 2. 找到 `[[social]]` 区域
 3. **修改 GitHub**：将 `url` 修改为你自己的 GitHub 主页地址
 4. **删除 Twitter**：直接删除整个 Twitter 的配置块（从 `[[social]]` 到 `icon = "brand-twitter"` 的部分）
 
-<img src="images/2026-02-10-11-00-03.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-00-03.png" target="_blank"> <img src="images/2026-02-10-11-00-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 全局语言汉化
 
@@ -294,9 +294,9 @@ categories:                           # 分类设置，直接控制侧边栏的�
    hasCJKLanguage = true
    ```
 
-<img src="images/2026-02-10-11-00-21.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-00-21.png" target="_blank"> <img src="images/2026-02-10-11-00-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-11-00-31.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-00-31.png" target="_blank"> <img src="images/2026-02-10-11-00-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 左侧主菜单汉化（关键！）
 
@@ -314,7 +314,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 2. **编辑文件**：删除文件头部 `menu:` 及其下方缩进的内容（通常是 `main:` 和 `params:` 那几行）
    - _注意：保留最上方的 `title`、`slug` 等信息，以及最下方的 `---` 分隔线，只删 menu 模块_
 
-<img src="images/2026-02-10-11-01-04.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-01-04.png" target="_blank"> <img src="images/2026-02-10-11-01-04.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 重写主菜单配置
 
@@ -355,7 +355,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
             icon = "link"
    ```
 
-<img src="images/2026-02-10-11-04-07.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-04-07.png" target="_blank"> <img src="images/2026-02-10-11-04-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 隐藏页脚版权信息 (CSS)
 
@@ -371,9 +371,9 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
    }
    ```
 
-<img src="images/2026-02-10-11-05-23.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-05-23.png" target="_blank"> <img src="images/2026-02-10-11-05-23.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-11-07-06.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-07-06.png" target="_blank"> <img src="images/2026-02-10-11-07-06.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 细节清理
 
@@ -383,15 +383,15 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
    - 准备一张正方形的小图片，重命名为 `favicon.png`
    - 上传到仓库的 `static` 文件夹下（如果没有该文件夹，请在根目录新建一个）
 
-<img src="images/2026-02-10-11-07-37.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-07-37.png" target="_blank"> <img src="images/2026-02-10-11-07-37.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. **删除多余分类**：
    - 进入 `content/categories`
    - 删除 `example-category` 文件夹，保持分类清爽
 
-<img src="images/2026-02-10-11-07-56.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-07-56.png" target="_blank"> <img src="images/2026-02-10-11-07-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-11-08-35.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-08-35.png" target="_blank"> <img src="images/2026-02-10-11-08-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -409,12 +409,12 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 2. 点击上方的 **Settings**（设置）选项卡
 3. 在 **General** 页面向下滚动，找到 **Features** 区域
 
-<img src="images/2026-02-10-11-09-21.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-09-21.png" target="_blank"> <img src="images/2026-02-10-11-09-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. 勾选 **Discussions** 选项
    - _提示：这一步非常关键，如果不开启，后续评论将无法写入_
 
-<img src="images/2026-02-10-11-09-42.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-09-42.png" target="_blank"> <img src="images/2026-02-10-11-09-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 安装 Giscus 应用
 
@@ -423,7 +423,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 1. 访问 Giscus 应用页面：[https://github.com/apps/giscus](https://github.com/apps/giscus)
 2. 点击绿色的 **Install** 按钮
 
-<img src="images/2026-02-10-11-09-53.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-09-53.png" target="_blank"> <img src="images/2026-02-10-11-09-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 在权限选择页面：
    - 选择 **Only select repositories**
@@ -431,7 +431,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 
 4. 点击 **Install** 完成安装
 
-<img src="images/2026-02-10-11-10-08.png" alt="image" width="500">
+<a href="images/2026-02-10-11-10-08.png" target="_blank"> <img src="images/2026-02-10-11-10-08.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 获取配置代码
 
@@ -443,19 +443,19 @@ Giscus 提供了一个可视化工具来生成配置参数。
    - 在“仓库”一栏，输入 `你的用户名/你的仓库名`（例如 `sign-river/sign-river.github.io`）
    - 等待下方出现绿色的“成功！该仓库满足所有条件”提示
 
-<img src="images/2026-02-10-11-19-17.png" alt="image" width="500">
+<a href="images/2026-02-10-11-19-17.png" target="_blank"> <img src="images/2026-02-10-11-19-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. **配置分类**：
    - 在“Discussion 分类”中，推荐选择 **Announcements**
    - _注意：这决定了评论会出现在仓库 Discussions 的哪个板块下_
 
-<img src="images/2026-02-10-11-18-37.png" alt="image" width="500">
+<a href="images/2026-02-10-11-18-37.png" target="_blank"> <img src="images/2026-02-10-11-18-37.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. **生成代码**：
    - 滚动到页面底部的“启用 giscus”部分
    - 你会看到一段生成的 `<script>` 代码。**不要直接复制这段代码**，我们只需要其中的几个关键参数
 
-<img src="images/2026-02-10-11-20-16.png" alt="image" width="500">
+<a href="images/2026-02-10-11-20-16.png" target="_blank"> <img src="images/2026-02-10-11-20-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 写入博客配置 (params.toml)
 
@@ -464,7 +464,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 1. 回到你的仓库，打开 `config/_default/params.toml` 文件
 2. 找到 `[comments]` 区域，将 `enabled` 设置为 `true`，`provider` 设置为 `"giscus"`
 
-<img src="images/2026-02-10-11-21-59.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-21-59.png" target="_blank"> <img src="images/2026-02-10-11-21-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 找到 `[comments.giscus]` 区域，根据刚才网页生成的信息填写：
 
@@ -487,7 +487,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
    > ⚠️ **关键点**：`repoID` 和 `categoryID` 是两串乱码一样的字符，必须从 Giscus 官网生成的代码中精确复制。
 
-<img src="images/2026-02-10-11-22-16.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-22-16.png" target="_blank"> <img src="images/2026-02-10-11-22-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 清理旧配置 (config.toml)
 
@@ -497,7 +497,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 2. 找到 `disqusShortname` 这一行
 3. 在行首添加 `#` 号将其注释掉，或者直接删除该行
 
-<img src="images/2026-02-10-11-22-39.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-22-39.png" target="_blank"> <img src="images/2026-02-10-11-22-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 验证评论区
 
@@ -505,7 +505,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 如果一切顺利，你应该能看到一个漂亮的评论框，支持使用 GitHub 账号登录发表评论。所有的评论都会自动同步到你 GitHub 仓库的 Discussions 版块中。
 
-<img src="images/2026-02-10-11-22-51.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-22-51.png" target="_blank"> <img src="images/2026-02-10-11-22-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -518,7 +518,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 1. **克隆仓库**：使用 Git 工具将你的 `username.github.io` 仓库克隆到本地电脑
 2. **打开项目**：右键点击文件夹，选择 "Open with Code"（用 VS Code 打开）
 
-<img src="images/2026-02-10-11-23-38.png" alt="image" width="500">
+<a href="images/2026-02-10-11-23-38.png" target="_blank"> <img src="images/2026-02-10-11-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 必装插件推荐
 
@@ -528,7 +528,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 这是写 Markdown 的必备插件，提供了快捷键、自动补全和格式化功能。
 
-<img src="images/2026-02-10-11-24-08.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-24-08.png" target="_blank"> <img src="images/2026-02-10-11-24-08.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 **常用快捷键**：
 
@@ -546,7 +546,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 在 Markdown 中插入图片通常很麻烦（截图 → 保存 → 改名 → 上传 → 引用）。这个插件能把这些步骤缩减为一步。
 
-<img src="images/2026-02-10-11-24-30.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-24-30.png" target="_blank"> <img src="images/2026-02-10-11-24-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 **使用方法**：
 
@@ -562,7 +562,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 虽然 VS Code 自带预览，但这个插件功能更强大。
 
-<img src="images/2026-02-10-11-24-46.png" alt="image" width="1000">
+<a href="images/2026-02-10-11-24-46.png" target="_blank"> <img src="images/2026-02-10-11-24-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 **核心功能**：
 
@@ -590,7 +590,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 1. 定位配置文件 在博客的本地根目录下，找到 Links 页面的源文件（通常位于 source/links/index.md）。
 
-<img src="images/2026-02-10-11-29-33.png" alt="image" width="300">
+<a href="images/2026-02-10-11-29-33.png" target="_blank"> <img src="images/2026-02-10-11-29-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 编辑链接信息 复制以下配置代码，覆盖或添加到文件中。你可以根据需要修改 links 下的列表项。
 
@@ -611,7 +611,7 @@ comments: false
 ---
 ```
 
-<img src="images/![最终效果](2026-02-09-22-34-01.png).png" alt="image" width="1000">
+<a href="images/2026-02-09-22-34-01.png" target="_blank"> <img src="images/2026-02-09-22-34-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### Paste Image 图片保存位置
 
@@ -620,14 +620,14 @@ comments: false
 
 1. 打开 vscode 设置
 
-<img src="images/2026-02-09-23-54-32.png" alt="image" width="400">
+<a href="images/2026-02-09-23-54-32.png" target="_blank"> <img src="images/2026-02-09-23-54-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 搜索 paste image
 3. 找到 Path
 4. 在原参数后添加/images 即可
 5. **Windows 用户**：建议同时搜索 `Force Unix Style Separator` 并勾选，这样生成的路径会是正斜杠 `images/xxx.png`，网页中图片才能正常加载（否则会是反斜杠 `images\xxx.png`，可能 404）。
 
-<img src="images/2026-02-09-23-54-39.png" alt="image" width="500">
+<a href="images/2026-02-09-23-54-39.png" target="_blank"> <img src="images/2026-02-09-23-54-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### Paste Image 图片大小调整
 
@@ -637,7 +637,7 @@ comments: false
 
 1. 打开 vscode 设置
 
-<img src="images/2026-02-09-23-54-32.png" alt="调整参数" width="400">
+<a href="images/2026-02-09-23-54-32.png" target="_blank"> <img src="images/2026-02-09-23-54-32.png" alt="调整参数" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 搜索搜索 paste image
 3. 找到 Insert Pattern
@@ -649,13 +649,13 @@ comments: false
 
 5. 调整图片大小时修改 width 值即可
 
-<img src="images/2026-02-10-00-03-31.png" alt="image" width="500">
+<a href="images/2026-02-10-00-03-31.png" target="_blank"> <img src="images/2026-02-10-00-03-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 文章目录序号嵌套问题
 
 如果你的文章标题中已经手动添加了序号（如 1. 前言），博客自动生成的目录可能会再次添加一层编号，导致出现类似 1. 1. 前言 的重复显示现象。
 
-<img src="images/2026-02-10-09-59-44.png" alt="image" width="600">
+<a href="images/2026-02-10-09-59-44.png" target="_blank"> <img src="images/2026-02-10-09-59-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 解决方案如下：
 我们需要在站点配置中关闭目录的自动编号功能
@@ -663,7 +663,7 @@ comments: false
 1. 定位配置文件：找到站点根目录下的 config/default/markup.toml 文件。
 2. 修改参数：找到 [tableOfContents] 区域，将 ordered 属性由 true 改为 false。
 
-<img src="images/2026-02-10-10-07-25.png" alt="image" width="600">
+<a href="images/2026-02-10-10-07-25.png" target="_blank"> <img src="images/2026-02-10-10-07-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 不过需要注意，关闭自动编号后如果写文章时没有手动编号，会出现无法在网页中打开文章的情况
 

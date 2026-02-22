@@ -37,7 +37,7 @@ WPS 为了减小文件体积，会对插入的图片进行自动压缩。当你�
 
 1. 在 WPS 文档中**点击图片右边的放大镜按钮**
 
-<img src="images/2026-02-10-09-42-16.png" alt="image" width="600">
+<a href="images/2026-02-10-09-42-16.png" target="_blank"> <img src="images/2026-02-10-09-42-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. Ctrl+C 或者直接右键复制即可
 3. 该往哪粘往哪粘，现在就是清晰的了

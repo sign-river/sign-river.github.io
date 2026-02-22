@@ -38,7 +38,7 @@ Name (名称)：设置为 pytorch（清晰明了，便于识别）。
 
 Packages (版本选择)：勾选 Python，并选择 3.12 版本。
 
-<img src="images/2026-02-10-21-30-21.png" alt="image" width="1000">
+<a href="images/2026-02-10-21-30-21.png" target="_blank"> <img src="images/2026-02-10-21-30-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 💡 版本选择思路 (2026 Q1)： 推荐选择 Python 3.12。相比于旧版本，它拥有更好的性能；相比于最新的 3.13+ 版本，它在 PyTorch 生态圈（包括 NumPy, Pandas 等依赖库）中的兼容性最为成熟稳定。
 
@@ -56,9 +56,9 @@ Packages (版本选择)：勾选 Python，并选择 3.12 版本。
 
 win+r,输入cmd回车打开终端,在终端输入nvidia-smi回车,第一行最右边就是适合你选择的CUDA版本
 
-<img src="images/2026-02-10-21-53-17.png" alt="image" width="500">
+<a href="images/2026-02-10-21-53-17.png" target="_blank"> <img src="images/2026-02-10-21-53-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-21-53-50.png" alt="image" width="1000">
+<a href="images/2026-02-10-21-53-50.png" target="_blank"> <img src="images/2026-02-10-21-53-50.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 获取安装指令
 
@@ -74,7 +74,7 @@ Language: Python
 
 Compute Platform: CUDA 13.0 (根据上一步确认的版本选择，这里选 13.0 是安全的，因为 13.0 < 13.1)
 
-<img src="images/2026-02-10-21-55-27.png" alt="image" width="1000">
+<a href="images/2026-02-10-21-55-27.png" target="_blank"> <img src="images/2026-02-10-21-55-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 执行安装
 
@@ -82,13 +82,13 @@ Compute Platform: CUDA 13.0 (根据上一步确认的版本选择，这里选 13
 
 点击播放键 ▶️ -> 选择 Open Terminal（这一步确保了命令是在虚拟环境中运行）。
 
-<img src="images/2026-02-10-22-00-24.png" alt="image" width="1000">
+<a href="images/2026-02-10-22-00-24.png" target="_blank"> <img src="images/2026-02-10-22-00-24.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 粘贴并运行官网生成的指令：
 
 (注：下载文件较大，约 2GB+，请耐心等待)
 
-<img src="images/2026-02-10-22-02-31.png" alt="image" width="1000">
+<a href="images/2026-02-10-22-02-31.png" target="_blank"> <img src="images/2026-02-10-22-02-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. 验证安装 (Verification)
 
@@ -101,7 +101,7 @@ torch.cuda.is_available()
 ```
 
 <br/>
-<img src="images/2026-02-10-22-08-48.png" alt="image" width="1000">
+<a href="images/2026-02-10-22-08-48.png" target="_blank"> <img src="images/2026-02-10-22-08-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 总结
 

@@ -39,7 +39,7 @@ gpedit.msc
 ```
 
 <br>
-<img src="images/2026-02-11-13-05-10.png" alt="image" width="500">
+<a href="images/2026-02-11-13-05-10.png" target="_blank"> <img src="images/2026-02-11-13-05-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 > ⚠️ **注意**：家庭版 Windows 默认不包含组策略编辑器。如果提示找不到 gpedit.msc，需要先安装组策略编辑器功能。
 
 ### 2. 导航到 Defender 设置
@@ -54,7 +54,7 @@ gpedit.msc
 ```
 
 <br>
-<img src="images/2026-02-11-13-02-25.png" alt="image" width="1000">
+<a href="images/2026-02-11-13-02-25.png" target="_blank"> <img src="images/2026-02-11-13-02-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 3. 禁用反恶意软件服务
 
@@ -65,13 +65,13 @@ gpedit.msc
 ```
 
 <br>
-<img src="images/2026-02-11-13-03-21.png" alt="image" width="1000">
+<a href="images/2026-02-11-13-03-21.png" target="_blank"> <img src="images/2026-02-11-13-03-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 在弹出的设置窗口中：
 
 1. 选择 **已禁用**
 2. 点击 **应用**
 3. 点击 **确定**
-   <img src="images/2026-02-11-13-03-57.png" alt="image" width="1000">
+   <a href="images/2026-02-11-13-03-57.png" target="_blank"> <img src="images/2026-02-11-13-03-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 4. 重启生效
 

@@ -40,22 +40,22 @@ draft: false
 新手福利：新用户注册往往会获赠一定额度的体验金（例如 $300），虽然通常有有效期限制（如 30 天），但足以让你免费完成初期的搭建和测试。
 
 注册账号：访问 Vultr 官网（<https://my.vultr.com/）进行注册并登录> 。
-<img src="images/2026-02-11-11-59-25.png" alt="image" width="1000">
+<a href="images/2026-02-11-11-59-25.png" target="_blank"> <img src="images/2026-02-11-11-59-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 账号充值：
 
 登录后点击左侧菜单栏的 Account（账户）。
 
 在支付方式中选择 Alipay（支付宝），这对国内用户非常方便。
-<img src="images/2026-02-11-12-02-41.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-02-41.png" target="_blank"> <img src="images/2026-02-11-12-02-41.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 填写必要的账单信息（可用拼音），选择充值金额（例如 $10 或 $25），勾选同意条款并点击 Pay with Alipay 完成支付。
 
 注：新用户注册有时会获赠 $300 的体验金（有效期通常为一个月），这属于新手福利，过期后会自动失效，不必惊慌。
-<img src="images/2026-02-11-12-03-09.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-03-09.png" target="_blank"> <img src="images/2026-02-11-12-03-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 部署服务器 (Deploy Instance)
 
 充值到账后，点击页面右上角的蓝色按钮 Deploy + -> Deploy New Server 开始创建服务器。下面会推荐配置，以确保性价比和兼容性：
-<img src="images/2026-02-11-12-03-21.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-03-21.png" target="_blank"> <img src="images/2026-02-11-12-03-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 Choose Type（服务器类型）：选择 Shared CPU（共享 CPU）。对于个人节点而言，共享核心的性能完全足够，且价格最实惠。
 
 Choose Location（地区选择）：建议选择 Americas -> Los Angeles（洛杉矶）。这里是中美海底光缆的登陆点之一，作为网络枢纽，通常能提供较好的连接速度和信号稳定性。
@@ -65,19 +65,19 @@ Choose Plan（配置套餐）：根据个人预算选择。通常选择 $5.00/mo
 Additional Features（附加功能）：重要提示：请务必找到 Automatic Backups（自动备份）选项并点击 Disable（关闭）。
 
 理由：自动备份需要额外收费。对于这种随时可以销毁重建的节点服务器，开启备份不仅浪费钱，也没有太大的实际意义。
-<img src="images/2026-02-11-12-04-37.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-04-37.png" target="_blank"> <img src="images/2026-02-11-12-04-37.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 Choose Image（操作系统）：选择 Debian，版本建议选择 12 x64。Debian 系统以轻量、稳定著称，相比其他系统更节省服务器资源。
-<img src="images/2026-02-11-12-06-09.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-06-09.png" target="_blank"> <img src="images/2026-02-11-12-06-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 获取服务器信息
 
 点击底部的 Deploy Now 部署后，等待服务器状态从 Installing 变为 Running。点击服务器名称（如 Cloud Instance）进入详情页，请记录下以下两项关键信息，稍后连接服务器时必须用到：
-<img src="images/2026-02-11-12-06-48.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-06-48.png" target="_blank"> <img src="images/2026-02-11-12-06-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 IP Address：服务器的公网 IP 地址。
 
 Password：root 账户的初始密码（点击眼睛图标可显示，点击复制图标可直接复制）
 
-<img src="images/2026-02-11-12-07-00.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-07-00.png" target="_blank"> <img src="images/2026-02-11-12-07-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 服务器连接与面板安装
 
@@ -89,7 +89,7 @@ Password：root 账户的初始密码（点击眼睛图标可显示，点击复�
 
 右键点击“开始”菜单，选择 Windows PowerShell 或 终端。
 
-<img src="images/2026-02-11-12-26-07.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-26-07.png" target="_blank"> <img src="images/2026-02-11-12-26-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 在终端中输入以下指令（请将 xx.xx.xxx.xxx 替换为你刚才在 Vultr 后台复制的 IP 地址）：
 
@@ -102,7 +102,7 @@ ssh root@xx.xx.xxx.xxx
 首次连接确认：输入指令回车后，若提示 Are you sure you want to continue connecting (yes/no/[fingerprint])?，请输入 yes 并回车。
 
 输入密码：系统会提示 root@... password:。此时输入你刚才复制的服务器密码。注意：Linux 系统为了安全，输入密码时屏幕上不会显示任何字符（包括星号），光标也不会移动。这完全正常，输完密码后直接按回车即可。
-<img src="images/2026-02-11-12-29-20.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-29-20.png" target="_blank"> <img src="images/2026-02-11-12-29-20.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 优化连接稳定性（防断连）
 
@@ -114,7 +114,7 @@ Bash
 echo "ClientAliveInterval 60" >> /etc/ssh/sshd_config
 echo "ClientAliveCountMax 3" >> /etc/ssh/sshd_config
 systemctl restart ssh
-<img src="images/2026-02-11-12-29-35.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-29-35.png" target="_blank"> <img src="images/2026-02-11-12-29-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 安装 3x-ui 管理面板
 
@@ -127,17 +127,17 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 ```
 
 <br>
-<img src="images/2026-02-11-12-30-45.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-30-45.png" target="_blank"> <img src="images/2026-02-11-12-30-45.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 安装引导设置：
 
 脚本启动后，会询问是否自定义端口。输入 y 并回车。
 
 设置面板端口：建议输入一个好记的数字，例如 54321，然后回车。
 
-<img src="images/2026-02-11-12-31-07.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-31-07.png" target="_blank"> <img src="images/2026-02-11-12-31-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 安装完成后，终端会显示你的登录信息，包括访问地址（http://IP: 端口） 。
 
-<img src="images/2026-02-11-12-31-30.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-31-30.png" target="_blank"> <img src="images/2026-02-11-12-31-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 配置防火墙（开放端口）
 
@@ -166,7 +166,7 @@ ufw enable
 ```
 
 （如果提示 Command may disrupt existing ssh connections，输入 y 确认即可）
-<img src="images/2026-02-11-12-32-39.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-32-39.png" target="_blank"> <img src="images/2026-02-11-12-32-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 至此，服务器端的底层环境已经搭建完毕。
 
 ---
@@ -186,12 +186,12 @@ ufw enable
 > <http://192.168.1.1:54321>
 
 进入登录页面后，输入我们在上一章安装过程中设置的**用户名**和**密码**，点击登录进入系统仪表盘。
-<img src="images/2026-02-11-12-43-54.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-43-54.png" target="_blank"> <img src="images/2026-02-11-12-43-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 2. 添加并配置入站节点
 
 在左侧菜单栏中找到 **入站列表 (Inbound List)**，点击进入后，选择页面中的绿色按钮 **添加入站 (Add Inbound)**。
-<img src="images/2026-02-11-12-44-07.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-44-07.png" target="_blank"> <img src="images/2026-02-11-12-44-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 此时会弹出一个详细的配置窗口，这是整个教程最关键的一步。请严格按照以下参数进行设置，未提及的选项保持默认即可：
 
 - **备注 (Remark)**：`MyVPN` （或者任何您喜欢的名字）
@@ -206,8 +206,8 @@ ufw enable
 - **SNI 域名 (SNI)**：`www.microsoft.com`
   - _原理：Reality 协议会将您的流量伪装成访问微软官网，从而在防火墙面前“隐身”。_
 - **公钥/私钥 (Public/Private Key)**：点击输入框下方的 **`Get New Cert`** 按钮，系统会自动生成一串密钥。
-  <img src="images/2026-02-11-12-44-19.png" alt="image" width="1000">
-  <img src="images/2026-02-11-12-44-27.png" alt="image" width="1000">
+  <a href="images/2026-02-11-12-44-19.png" target="_blank"> <img src="images/2026-02-11-12-44-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+  <a href="images/2026-02-11-12-44-27.png" target="_blank"> <img src="images/2026-02-11-12-44-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 3. 保存并生效
 
@@ -236,7 +236,7 @@ ufw enable
 
 回到浏览器中的 **3x-ui 管理面板**，在 **入站列表** 中找到刚才创建的节点。
 点击节点左侧的 **菜单图标**（三个点），选择 **导出链接**，然后点击复制。
-<img src="images/2026-02-11-12-51-16.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-51-16.png" target="_blank"> <img src="images/2026-02-11-12-51-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### **转换配置文件**
 
@@ -245,7 +245,7 @@ ufw enable
 - 将刚才复制的 `vless://...` 链接粘贴到网页的输入框中。
 - 依次点击 **生成文件** -> **下载 MyVPN.yaml**。
 - _请务必保存好这个下载下来的 `.yaml` 文件。_
-  <img src="images/2026-02-11-12-52-00.png" alt="image" width="1000">
+  <a href="images/2026-02-11-12-52-00.png" target="_blank"> <img src="images/2026-02-11-12-52-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 3. 导入配置到 Clash Verge
 
@@ -253,14 +253,14 @@ ufw enable
 
 #### 点击左侧菜单栏的 **订阅 (Subscription)**，然后点击右上角的 **新建 (New)** 按钮
 
-<img src="images/2026-02-11-12-53-42.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-53-42.png" target="_blank"> <img src="images/2026-02-11-12-53-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 在弹出的窗口中进行如下设置
 
 - **类型 (Type)**：选择 `Local`（本地文件）。
 - **名称 (Name)**：填写 `MyVPN`（或你喜欢的任何名字）。
 - **文件 (File)**：点击 **选择文件** 按钮，选中刚才下载的 `MyVPN.yaml` 文件。
-  <img src="images/2026-02-11-12-53-59.png" alt="image" width="1000">
+  <a href="images/2026-02-11-12-53-59.png" target="_blank"> <img src="images/2026-02-11-12-53-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 点击 **保存 (Save)** 按钮
 
@@ -275,10 +275,10 @@ ufw enable
 点击节点名称旁边的 **测试图标**（通常是一个类似 WiFi 信号的图标）。
 **\*成功**：如果显示绿色的数字（例如 `187 ms`），代表节点已连通。\* **失败**：如果显示 `Timeout`，请检查 VPS 的防火墙端口是否已开放，或配置步骤是否有误。
 
-<img src="images/2026-02-11-12-54-19.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-54-19.png" target="_blank"> <img src="images/2026-02-11-12-54-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### **开启系统代理**
 
 确认连接成功后，点击左侧菜单栏的 **设置 (Settings)**，找到 **系统代理 (System Proxy)** 开关并将其**打开**（变为蓝色）。
-<img src="images/2026-02-11-12-53-09.png" alt="image" width="1000">
+<a href="images/2026-02-11-12-53-09.png" target="_blank"> <img src="images/2026-02-11-12-53-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 此时，打开浏览器访问 Google 或 YouTube，如果能顺利加载，恭喜你！你已经成功从零开始搭建了属于自己的高速节点。

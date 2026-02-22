@@ -24,7 +24,7 @@ draft: false
 ## 💡 这个工具是干什么的？
 
 一个帮你给群星游戏解锁所有 DLC 的小工具，简单来说就是：**点几下鼠标，所有 DLC 就能用了**。
-<img src="images/2026-02-13-16-58-48.png" alt="image" width="700">
+<a href="images/2026-02-13-16-58-48.png" target="_blank"> <img src="images/2026-02-13-16-58-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -35,7 +35,7 @@ draft: false
 1. 去 [Releases 页面](https://github.com/sign-river/Stellaris-DLC-Helper/releases/latest) 或者[群文件](https://qm.qq.com/q/ZNGagKl346)下载最新版本
 2. 下载后解压到任意文件夹（建议放在容易找到的地方）
 3. 双击 `Stellaris_DLC_Helper.exe` 运行
-   <img src="images/2026-02-13-16-57-33.png" alt="image" width="700">
+   <a href="images/2026-02-13-16-57-33.png" target="_blank"> <img src="images/2026-02-13-16-57-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 **注意：** 这个工具只支持 Windows 系统！
 
@@ -50,13 +50,13 @@ draft: false
 - 双击 exe 文件启动程序
 - 第一次运行会弹出更新检查和公告
 - 如果不想每次打开都看公告的话可以勾选"本版本不再显示此公告"
-  <img src="images/2026-02-13-17-03-52.png" alt="image" width="500">
+  <a href="images/2026-02-13-17-03-52.png" target="_blank"> <img src="images/2026-02-13-17-03-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 选择游戏目录
 
 - 程序会自动尝试找到你的群星游戏安装位置
 - 如果没找到，点击"浏览"按钮，手动选择游戏文件夹
-  <img src="images/2026-02-13-17-06-52.png" alt="image" width="700">
+  <a href="images/2026-02-13-17-06-52.png" target="_blank"> <img src="images/2026-02-13-17-06-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 点击"一键解锁"
 
@@ -66,15 +66,15 @@ draft: false
   - 下载所有 DLC 文件
   - 安装 DLC
 
-  <img src="images/2026-02-13-17-08-24.png" alt="image" width="700">
+  <a href="images/2026-02-13-17-08-24.png" target="_blank"> <img src="images/2026-02-13-17-08-24.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 等待完成
 
 - 下载过程中会显示实时速度和进度
 - 下载完成后会自动安装
 - 看到"解锁成功"提示就好了
-  <img src="images/2026-02-13-17-09-52.png" alt="image" width="700">
-  <img src="images/2026-02-13-17-10-53.png" alt="image" width="700">
+  <a href="images/2026-02-13-17-09-52.png" target="_blank"> <img src="images/2026-02-13-17-09-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+  <a href="images/2026-02-13-17-10-53.png" target="_blank"> <img src="images/2026-02-13-17-10-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 启动游戏
 
@@ -97,15 +97,15 @@ draft: false
 - 点击"设置"按钮
 - 切换到"测速"选项卡
 - 点击"开始测速"查看下载速度
-  <img src="images/2026-02-13-17-15-41.png" alt="image" width="700">
+  <a href="images/2026-02-13-17-15-41.png" target="_blank"> <img src="images/2026-02-13-17-15-41.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 暂停/继续下载
 
 - 下载过程中可以点击"暂停下载"
 - 想继续下载时点击"继续下载"
 - 支持断点续传，不用担心网络中断
-  <img src="images/2026-02-13-17-16-33.png" alt="image" width="700">
-  <img src="images/2026-02-13-17-16-46.png" alt="image" width="700">
+  <a href="images/2026-02-13-17-16-33.png" target="_blank"> <img src="images/2026-02-13-17-16-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+  <a href="images/2026-02-13-17-16-46.png" target="_blank"> <img src="images/2026-02-13-17-16-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -147,21 +147,21 @@ draft: false
 - 进入游戏主菜单
 - 点击"内容"或查看 DLC 列表
 - 看到所有 DLC 都显示可用即安装成功
-  <img src="images/2026-02-13-17-32-10.png" alt="image" width="700">
+  <a href="images/2026-02-13-17-32-10.png" target="_blank"> <img src="images/2026-02-13-17-32-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 检测到补丁文件缺失
 
-<img src="images/2026-02-13-17-44-15.png" alt="image" width="500">
+<a href="images/2026-02-13-17-44-15.png" target="_blank"> <img src="images/2026-02-13-17-44-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 - 点击"设置"按钮
 - 切换到"高级功能"选项卡
 - 点击"恢复补丁"下载补丁内容
 
-<img src="images/2026-02-13-17-44-56.png" alt="image" width="700">
+<a href="images/2026-02-13-17-44-56.png" target="_blank"> <img src="images/2026-02-13-17-44-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 - 如果还是缺失，则为杀毒软件误杀补丁，请把补丁添加进杀毒软件的白名单，补丁存放路径如下 Stellaris-DLC-Helper\patches
 
-<img src="images/2026-02-13-17-48-37.png" alt="image" width="700">
+<a href="images/2026-02-13-17-48-37.png" target="_blank"> <img src="images/2026-02-13-17-48-37.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 工具下载的是什么？
 
@@ -174,7 +174,7 @@ draft: false
 ### 想要卸载 DLC 和补丁怎么办？
 
 在工具里点击"卸载 dlc"和"移除补丁"按钮即可
-<img src="images/2026-02-13-17-33-32.png" alt="image" width="700">
+<a href="images/2026-02-13-17-33-32.png" target="_blank"> <img src="images/2026-02-13-17-33-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 提示"找不到游戏目录"？
 
@@ -211,19 +211,19 @@ A: 会的！
 
 1. 在主界面取消勾选不需要的 DLC
 2. 只下载你需要的部分
-   <img src="images/2026-02-13-17-38-15.png" alt="image" width="700">
+   <a href="images/2026-02-13-17-38-15.png" target="_blank"> <img src="images/2026-02-13-17-38-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 查看操作日志
 
 1. 点击"设置"
 2. 切换到"日志"选项卡
 3. 可以查看所有操作记录
-   <img src="images/2026-02-13-17-39-42.png" alt="image" width="700">
+   <a href="images/2026-02-13-17-39-42.png" target="_blank"> <img src="images/2026-02-13-17-39-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 清理缓存
 
 在工具里点击"清理缓存"按钮即可
-<img src="images/2026-02-13-17-40-24.png" alt="image" width="700">
+<a href="images/2026-02-13-17-40-24.png" target="_blank"> <img src="images/2026-02-13-17-40-24.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 

@@ -17,7 +17,7 @@ draft: false
 在使用 Hugo Theme Stack 主题搭建博客时，你可能会发现一个问题：文章底部的"相关文章"推荐有时候并不那么"相关"。
 
 比如，一篇关于 **WPS 图片处理技巧**的文章，可能会被推荐到一篇讲 **Markdown 语法**的文章下方。虽然它们都属于"效率工具"分类，但实际上是完全不同领域的内容 —— WPS 是办公软件，Markdown 是写作语法，两者八竿子打不着。
-<img src="images/2026-02-11-11-15-08.png" alt="image" width="1000">
+<a href="images/2026-02-11-11-15-08.png" target="_blank"> <img src="images/2026-02-11-11-15-08.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 这就是 Hugo 默认相关文章推荐配置带来的问题。
 
 ---
@@ -170,7 +170,7 @@ weight = 100            # 从 200 降低到 100
 2. **修改配置**
    - 将 `threshold` 从 60 改为 80
    - 交换 `tags` 和 `categories` 的权重
-     <img src="images/2026-02-11-11-12-42.png" alt="image" width="1000">
+     <a href="images/2026-02-11-11-12-42.png" target="_blank"> <img src="images/2026-02-11-11-12-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 3. **保存并提交**
    - 如果使用 GitHub Pages，推送到仓库会自动部署
    - 如果本地测试，运行 `hugo server` 查看效果

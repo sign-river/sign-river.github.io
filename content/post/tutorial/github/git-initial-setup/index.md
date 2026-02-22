@@ -36,7 +36,7 @@ draft: false
 - **Clash**：默认端口 `7890`
 - **Clash Verge**：默认端口 `7897`
 - 其他工具：可在工具的设置中查看
-  <img src="images/2026-02-11-11-28-12.png" alt="image" width="1000">
+  <a href="images/2026-02-11-11-28-12.png" target="_blank"> <img src="images/2026-02-11-11-28-12.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 设置代理
 
@@ -63,7 +63,7 @@ https.proxy=http://127.0.0.1:7897
 ```
 
 <br>
- <img src="images/2026-02-11-11-28-50.png" alt="image" width="1000">
+ <a href="images/2026-02-11-11-28-50.png" target="_blank"> <img src="images/2026-02-11-11-28-50.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 配置用户信息
 

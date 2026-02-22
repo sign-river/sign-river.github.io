@@ -44,7 +44,7 @@ GitHub Student Developer Pack 为学生提供了丰富的免费开发工具和�
 
 在登录框下方找到并点击 **新生注册**。
 
-<img src="images/2026-02-13-21-21-42.png" alt="image" width="500">
+<a href="images/2026-02-13-21-21-42.png" target="_blank"> <img src="images/2026-02-13-21-21-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 - 注意：无论您是大一新生还是大四老生，只要您之前没有注册过这个邮箱账号，都必须点击“新生注册”入口。
 
@@ -55,21 +55,21 @@ GitHub Student Developer Pack 为学生提供了丰富的免费开发工具和�
 #### 进入重置流程
 
 在登录框下方，点击 **忘记密码**。
-<img src="images/2026-02-13-21-22-06.png" alt="image" width="1000">
+<a href="images/2026-02-13-21-22-06.png" target="_blank"> <img src="images/2026-02-13-21-22-06.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 验证账号信息
 
 1. **账号**：输入您的东秦学号（账号是互通的）。
 2. **手机**：使用您在东秦校园账号绑定的手机号。
 3. 输入图形验证码，点击 **下一步**。
-   <img src="images/2026-02-13-21-22-25.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-22-25.png" target="_blank"> <img src="images/2026-02-13-21-22-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 设置新密码
 
 1. 系统会向您的手机发送 6 位动态验证码，填入验证码。
 2. 设置一个新的密码（请务必记住，后续登录全靠它）。
 3. 点击 **完成**。
-   <img src="images/2026-02-13-21-22-47.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-22-47.png" target="_blank"> <img src="images/2026-02-13-21-22-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 3. 二次进入注册流程
 
@@ -77,11 +77,11 @@ GitHub Student Developer Pack 为学生提供了丰富的免费开发工具和�
 
 1. 再次回到邮箱系统首页：`https://mails.neu.edu.cn/coremail/`
 2. 再次点击 **新生注册**。
-   <img src="images/2026-02-13-21-23-04.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-23-04.png" target="_blank"> <img src="images/2026-02-13-21-23-04.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 3. 在跳转出的统一身份认证界面，使用您的 **学号** 和 **刚才重置的新密码** 进行登录。
-   <img src="images/2026-02-13-21-23-34.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-23-34.png" target="_blank"> <img src="images/2026-02-13-21-23-34.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 4. 到了绑定邮箱这个界面后，保留这个界面，继续下一步
-   <img src="images/2026-02-13-21-25-17.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-25-17.png" target="_blank"> <img src="images/2026-02-13-21-25-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 4. 第三次进入注册流程
 
@@ -92,7 +92,7 @@ https://mails.neu.edu.cn/coremail/
 ```
 
 <br>
-<img src="images/2026-02-13-21-27-30.png" alt="image" width="1000">
+<a href="images/2026-02-13-21-27-30.png" target="_blank"> <img src="images/2026-02-13-21-27-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 登录成功后，会进入“新生注册”的信息填写页面，请完善以下信息：
 
@@ -104,13 +104,13 @@ https://mails.neu.edu.cn/coremail/
 - **手机号码**：填入手机号并获取验证码。
 
 填写完毕后，点击 **提交信息**。
-<img src="images/2026-02-13-21-28-02.png" alt="image" width="1000">
+<a href="images/2026-02-13-21-28-02.png" target="_blank"> <img src="images/2026-02-13-21-28-02.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 5. 登录邮箱（关键避坑点）
 
 注册提交后，可能会遇到一个坑：如果直接使用刚才注册的“邮箱账号 + 邮箱密码”登录，系统可能会提示失败或进不去（可能是系统适配问题）。
 
-<img src="images/2026-02-13-21-29-27.png" alt="image" width="1000">
+<a href="images/2026-02-13-21-29-27.png" target="_blank"> <img src="images/2026-02-13-21-29-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 **正确登录方式：**
 
@@ -120,7 +120,7 @@ https://mails.neu.edu.cn/coremail/
 4. 使用 **学号** 和 **统一身份认证密码** 进行登录。
 
 成功登录后，您将看到邮箱主界面。请点击左上角头像，确认您的邮箱地址后缀为 `@mails.neu.edu.cn`。至此，教育邮箱准备工作完成
-<img src="images/2026-02-13-21-29-45.png" alt="image" width="1000">
+<a href="images/2026-02-13-21-29-45.png" target="_blank"> <img src="images/2026-02-13-21-29-45.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -142,7 +142,7 @@ https://mails.neu.edu.cn/coremail/
 1. 访问 GitHub 官网：`https://github.com/`
 2. 登录您的 GitHub 账号（如果没有账号请先注册）。
 3. 点击右上角的头像，在下拉菜单中选择 **Settings** (设置)。
-   <img src="images/2026-02-13-21-33-23.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-33-23.png" target="_blank"> <img src="images/2026-02-13-21-33-23.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 添加邮箱
 
@@ -153,7 +153,7 @@ https://mails.neu.edu.cn/coremail/
 5. 请登录您的学生邮箱，找到邮件并点击验证链接。
 6. 找到 **Keep my email addresses private** 选项。
 7. **务必取消勾选**（保持 Off 状态）。如果不关闭这个选项，GitHub 在审核时可能无法读取到您的学生邮箱，导致认证失败。
-   <img src="images/2026-02-13-21-39-19.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-39-19.png" target="_blank"> <img src="images/2026-02-13-21-39-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 开启双重认证 (2FA)
 
@@ -164,7 +164,7 @@ GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某�
 1. 在左侧菜单栏点击 **Password and authentication**。
 2. 向下滚动找到 "Two-factor authentication" 区域。
 3. 点击 **Enable two-factor authentication** 按钮。
-   <img src="images/2026-02-13-21-39-55.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-39-55.png" target="_blank"> <img src="images/2026-02-13-21-39-55.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 配置身份验证器
 
@@ -173,7 +173,7 @@ GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某�
 3. 打开手机 App，扫描屏幕上的二维码。
 4. App 会生成一个 6 位数的动态验证码，将其填入 GitHub 网页的输入框中。
 5. **保存恢复代码**：系统会生成一组 Recovery Codes（恢复代码），请务必下载并妥善保存。如果您丢失了手机或误删了 App，这是找回账号的唯一凭证。
-   <img src="images/2026-02-13-21-40-23.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-40-23.png" target="_blank"> <img src="images/2026-02-13-21-40-23.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 完善个人资料 (关键加分项)
 
@@ -208,8 +208,8 @@ GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某�
 #### Location (地区)
 
 - 内容：`China`
-  <img src="images/2026-02-13-21-41-01.png" alt="image" width="1000">
-  <img src="images/2026-02-13-21-41-39.png" alt="image" width="1000">
+  <a href="images/2026-02-13-21-41-01.png" target="_blank"> <img src="images/2026-02-13-21-41-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+  <a href="images/2026-02-13-21-41-39.png" target="_blank"> <img src="images/2026-02-13-21-41-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 填写完毕后，点击页面底部的 **Update profile** 保存修改
 
@@ -250,7 +250,7 @@ GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某�
 
 - Country/Region (国家/地区)
   - 选择：China
-    <img src="images/2026-02-13-21-44-05.png" alt="image" width="1000">
+    <a href="images/2026-02-13-21-44-05.png" target="_blank"> <img src="images/2026-02-13-21-44-05.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 确认所有信息无误后，点击底部的 Save billing information 保存。
 
@@ -263,7 +263,7 @@ GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某�
 1. 依然在左侧 Billing and licensing 菜单下。
 2. 点击 Education benefits。
 3. 在页面右侧找到并找到绿色的 Start an application 按钮，但是先不要点击，先看下一步。
-   <img src="images/2026-02-13-21-44-39.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-44-39.png" target="_blank"> <img src="images/2026-02-13-21-44-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 GitHub 会校验您的物理位置是否在学校附近。如果您身处校外（如寒暑假在家），或者校园网定位不准，直接申请很可能导致认证失败。
 
@@ -281,7 +281,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 3. 在下拉菜单中选择 More tools (更多工具)。
 4. 在子菜单中选择 Sensors (传感器)。
 5. 此时，界面下方会出现一个 Sensors 面板。
-   <img src="images/2026-02-13-21-59-07.png" alt="image" width="1000">
+   <a href="images/2026-02-13-21-59-07.png" target="_blank"> <img src="images/2026-02-13-21-59-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 输入东大坐标参数 (严格照抄)
 
@@ -293,7 +293,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 - Timezone ID: 输入 Asia/Shanghai
 - Locale: 输入 zh-Hans-CN
 - Accuracy: 输入 150
-  <img src="images/2026-02-13-21-59-53.png" alt="image" width="1000">
+  <a href="images/2026-02-13-21-59-53.png" target="_blank"> <img src="images/2026-02-13-21-59-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 刷新页面生效
 
@@ -301,7 +301,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 2. 后续截图虽然没有截入开发者工具面板，但是一定不能关
 3. 点击浏览器左上角的 刷新 按钮。
 4. 页面刷新后，点击绿色的 Start an application 按钮。
-   <img src="images/2026-02-13-22-07-26.png" alt="image" width="1000">
+   <a href="images/2026-02-13-22-07-26.png" target="_blank"> <img src="images/2026-02-13-22-07-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 确认身份信息
 
@@ -315,10 +315,10 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 
 - 界面通常会提示：You have verified the email address ... associated with the school Northeastern University, China.
 - 此时直接点击 Continue (继续) 即可。
-  <img src="images/2026-02-13-21-44-57.png" alt="image" width="1000">
+  <a href="images/2026-02-13-21-44-57.png" target="_blank"> <img src="images/2026-02-13-21-44-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 点击 Continue 后，再点击 Share Location（分享定位）。
-<img src="images/2026-02-13-21-55-07.png" alt="image" width="1000">
+<a href="images/2026-02-13-21-55-07.png" target="_blank"> <img src="images/2026-02-13-21-55-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 上传学生证件
 
@@ -329,7 +329,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 在 Please select the type of proof you would like to provide 下拉菜单中，选择：
 
 - 1. Dated school ID - Good (有日期的学生证)
-     <img src="images/2026-02-13-22-19-48.png" alt="image" width="500">
+     <a href="images/2026-02-13-22-19-48.png" target="_blank"> <img src="images/2026-02-13-22-19-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 拍照上传
 
@@ -341,7 +341,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
    - 手持卡片对准摄像头（第二次点击通常有 3 秒延迟拍摄）。
    - 亲测饭卡（一卡通）是可行的。
 
-<img src="images/2026-02-13-22-21-45.png" alt="image" width="500">
+<a href="images/2026-02-13-22-21-45.png" target="_blank"> <img src="images/2026-02-13-22-21-45.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 提交与审核结果
 
@@ -355,7 +355,7 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 
 - Approved (绿色)：恭喜！认证通过。页面提示福利将在 72 小时内到账。
 - Denied (红色)：认证失败。系统会提示具体原因（如图像不清、定位不符等），请根据提示修正后重新尝试。
-  <img src="images/2026-02-13-22-26-38.png" alt="image" width="1000">
+  <a href="images/2026-02-13-22-26-38.png" target="_blank"> <img src="images/2026-02-13-22-26-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 

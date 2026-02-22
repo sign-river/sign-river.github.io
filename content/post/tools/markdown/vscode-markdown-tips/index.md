@@ -46,13 +46,13 @@ draft: false
 
 1. 在拓展商店搜索并安装 markdownlint
 
-<img src="images/2026-02-10-23-18-56.png" alt="image" width="1000">
+<a href="images/2026-02-10-23-18-56.png" target="_blank"> <img src="images/2026-02-10-23-18-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 打开设置 (json)
 
-<img src="images/2026-02-10-23-21-47.png" alt="image" width="500">
+<a href="images/2026-02-10-23-21-47.png" target="_blank"> <img src="images/2026-02-10-23-21-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<img src="images/2026-02-10-23-22-18.png" alt="image" width="1000">
+<a href="images/2026-02-10-23-22-18.png" target="_blank"> <img src="images/2026-02-10-23-22-18.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 在设置中输入
 
@@ -64,7 +64,7 @@ draft: false
 ```
 
 <br>
-<img src="images/2026-02-10-23-23-38.png" alt="image" width="1000">
+<a href="images/2026-02-10-23-23-38.png" target="_blank"> <img src="images/2026-02-10-23-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 总结
 

@@ -22,30 +22,30 @@ draft: false
 1. 按下 `Ctrl + Shift + P` 打开命令面板
 2. 输入 `display`，选择"配置显示语言"
 
-<img src="images/2026-02-12-18-08-19.png" alt="配置显示语言" width="1000">
+<a href="images/2026-02-12-18-08-19.png" target="_blank"> <img src="images/2026-02-12-18-08-19.png" alt="配置显示语言" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 在语言列表中选择"中文（简体）"
 
-<img src="images/2026-02-12-18-09-24.png" alt="选择中文" width="1000">
+<a href="images/2026-02-12-18-09-24.png" target="_blank"> <img src="images/2026-02-12-18-09-24.png" alt="选择中文" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 查看剩余请求次数
 
 1. 点击右上角的设置图标
 
-<img src="images/2026-02-12-18-52-45.png" alt="打开设置" width="1000">
+<a href="images/2026-02-12-18-52-45.png" target="_blank"> <img src="images/2026-02-12-18-52-45.png" alt="打开设置" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 在 `Agents` 选项中找到 `Usage Summary`，在下拉框中选择 `Always`
 
-<img src="images/2026-02-12-19-09-12.png" alt="设置使用量显示" width="1000">
+<a href="images/2026-02-12-19-09-12.png" target="_blank"> <img src="images/2026-02-12-19-09-12.png" alt="设置使用量显示" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 设置完成后，在消息框底部就能看到当前使用的次数和剩余的次数
 
-<img src="images/2026-02-12-19-11-08.png" alt="查看使用情况" width="1000">
+<a href="images/2026-02-12-19-11-08.png" target="_blank"> <img src="images/2026-02-12-19-11-08.png" alt="查看使用情况" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 切换主题
 
 依次点击菜单栏的 文件 > 首选项 > 主题 > 颜色主题。 在弹出的列表中，您可以上下浏览预览效果，点击即可应用您喜欢的配色。
-<img src="images/2026-02-12-21-17-15.png" alt="image" width="1000">
+<a href="images/2026-02-12-21-17-15.png" target="_blank"> <img src="images/2026-02-12-21-17-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -53,7 +53,7 @@ draft: false
 
 Cursor 提供了多种工作模式，可根据不同场景选择使用：
 
-<img src="images/2026-02-12-19-25-17.png" alt="工作模式选择界面" width="1000">
+<a href="images/2026-02-12-19-25-17.png" target="_blank"> <img src="images/2026-02-12-19-25-17.png" alt="工作模式选择界面" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### Agent（自动执行模式）
 
@@ -157,14 +157,14 @@ Cursor 提供了多种工作模式，可根据不同场景选择使用：
 
 ### 模型不工作：Model not available
 
-<img src="images/2026-02-12-21-20-47.png" alt="image" width="500">
+<a href="images/2026-02-12-21-20-47.png" target="_blank"> <img src="images/2026-02-12-21-20-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 如果遇到模型不可用的问题，可以尝试以下解决方案：
 
 1. 在设置中找到 `Network` 选项
 2. 将网络协议改为 `HTTP 1.0`
 
-<img src="images/2026-02-12-21-01-11.png" alt="修改网络设置" width="1000">
+<a href="images/2026-02-12-21-01-11.png" target="_blank"> <img src="images/2026-02-12-21-01-11.png" alt="修改网络设置" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 模型耗token太快
 

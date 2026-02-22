@@ -42,7 +42,7 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 1. 打开 Cursor
 2. 切换到插件界面
 3. 将下载的 `.vsix` 文件**直接拖入 插件窗口**
-   <img src="images/2026-02-14-12-17-12.png" alt="image" width="1000">
+   <a href="images/2026-02-14-12-17-12.png" target="_blank"> <img src="images/2026-02-14-12-17-12.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -52,7 +52,7 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 
 1. 打开设置
 
-<img src="images/2026-02-14-13-00-03.png" alt="image" width="500">
+<a href="images/2026-02-14-13-00-03.png" target="_blank"> <img src="images/2026-02-14-13-00-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 搜索 autocorrect
 3. 根据需求调整选项
@@ -69,7 +69,7 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 ```
 
 <br>
-<img src="images/2026-02-14-12-57-53.png" alt="image" width="700">
+<a href="images/2026-02-14-12-57-53.png" target="_blank"> <img src="images/2026-02-14-12-57-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 

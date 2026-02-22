@@ -70,7 +70,7 @@ draft: false
 
 在 VS Code 中打开设置，搜索 `Paste Image: Insert Pattern`，将默认值替换为上方内容即可。
 
-<a href="images\2026-02-21-14-31-22.png" target="_blank"> <img src="images\2026-02-21-14-31-22.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-21-14-31-22.png" target="_blank"> <img src="images/2026-02-21-14-31-22.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
@@ -106,9 +106,7 @@ draft: false
 
 - 如果图片原始宽度比容器 `max-width` 小，图片会被拉伸放大，可能变模糊，建议 `max-width` 值不超过图片原始宽度
 - 方案二**无法通过 Paste Image 自动生成**，需要在使用时手动将图片语法嵌套进 `<div>` 容器中
-- **Windows 用户**：建议同时搜索 `Force Unix Style Separator` 并勾选，这样生成的路径会是正斜杠 `images/xxx.png`，网页中图片才能正常加载（否则会是反斜杠 `images\xxx.png`，可能 404）。<a href="images/2026-02-22-13-37-30.png" target="_blank">
-  <img src="images/2026-02-22-13-37-30.png" alt="image" style="max-width: 100%; width: 1000px;"/>
-  </a>
+- **Windows 用户**：建议同时搜索 `Force Unix Style Separator` 并勾选，这样生成的路径会是正斜杠 `images/xxx.png`，网页中图片才能正常加载（否则会是反斜杠 `images\xxx.png`，可能 404）。 <a href="images/2026-02-22-13-37-30.png" target="_blank"> <img src="images/2026-02-22-13-37-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 

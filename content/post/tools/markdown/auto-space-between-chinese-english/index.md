@@ -31,7 +31,7 @@ draft: false
 
 打开 VS Code 扩展商店，搜索 `Pangu-Markdown` 并安装。
 
-<img src="images/2026-02-10-23-47-23.png" alt="image" width="1000">
+<a href="images/2026-02-10-23-47-23.png" target="_blank"> <img src="images/2026-02-10-23-47-23.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 配置自动格式化
 
@@ -39,13 +39,13 @@ draft: false
 
 1. **打开设置**
 
-<img src="images/2026-02-10-23-48-31.png" alt="image" width="500">
+<a href="images/2026-02-10-23-48-31.png" target="_blank"> <img src="images/2026-02-10-23-48-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. **搜索并启用自动格式化**
 
    搜索 `pangu`，勾选 "Format On Save"（保存时自动格式化）选项。
 
-<img src="images/2026-02-11-00-01-13.png" alt="image" width="1000">
+<a href="images/2026-02-11-00-01-13.png" target="_blank"> <img src="images/2026-02-11-00-01-13.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. **重启 VS Code**
 

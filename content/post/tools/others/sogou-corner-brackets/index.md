@@ -47,31 +47,31 @@ draft: false
 
 打开搜狗输入法设置界面，选择属性设置->高级，勾选自定义短语。
 
-<img src="images/2026-02-14-18-28-49.png" alt="image" width="700">
+<a href="images/2026-02-14-18-28-49.png" target="_blank"> <img src="images/2026-02-14-18-28-49.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 第二步：添加新短语
 
 进入自定义短语设置，点击添加新短语。
 
-<img src="images/2026-02-14-18-35-02.png" alt="image" width="700">
+<a href="images/2026-02-14-18-35-02.png" target="_blank"> <img src="images/2026-02-14-18-35-02.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 第三步：设置直角引号「」
 
 缩写可以自拟，这里我用 "syh" 意指"第一层引号"，下方文本框输入直角引号「」即可。
 
-<img src="images/2026-02-14-18-45-11.png" alt="image" width="700">
+<a href="images/2026-02-14-18-45-11.png" target="_blank"> <img src="images/2026-02-14-18-45-11.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 第四步：使用效果
 
 以后输入 syh 即可快速打出直角引号「」。
 
-<img src="images/2026-02-14-18-45-26.png" alt="image" width="700">
+<a href="images/2026-02-14-18-45-26.png" target="_blank"> <img src="images/2026-02-14-18-45-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 第五步：添加嵌套引号『』
 
 同理可以添加第二层引号『』，用于引用中的引用。
 
-<img src="images/2026-02-14-18-47-26.png" alt="image" width="700">
+<a href="images/2026-02-14-18-47-26.png" target="_blank"> <img src="images/2026-02-14-18-47-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ---
 
