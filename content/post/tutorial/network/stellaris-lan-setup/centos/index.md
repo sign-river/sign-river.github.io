@@ -2,20 +2,12 @@
 title: "群星联机优化指南（CentOS 7 版）"
 date: 2026-02-11
 description: "基于 CentOS 7 的 OpenVPN 虚拟局域网搭建教程（旧版，仅供参考）"
-tags:
-  - "群星"
-  - "Stellaris"
-  - "OpenVPN"
-  - "联机"
-  - "虚拟局域网"
-  - "CentOS"
-  - "网络配置"
 draft: false
 slug: "stellaris-lan-openvpn-centos"
 hidden: true
 ---
 
-> <span style="font-size: 20px; font-weight: bold;">🚀 [点此回到上一界面](/p/stellaris-lan-openvpn-guide/)</span>
+> <span style="font-size: 20px; font-weight: bold;">🚀 [点此返回主文章](/p/stellaris-lan-openvpn-guide/)</span>
 
 ## 引言
 
@@ -35,8 +27,7 @@ hidden: true
 
 #### 带宽是核心
 
-**10Mbps 的带宽**大约能支撑 **1-2 车人**同时游玩（每车约 10 人）。**带宽越大，后期卡顿的概率越低**
-群星联机的数据交换量较大。根据实测经验，10Mbps 的带宽大约能支撑 1-2 车人同时游玩，一车大概 10 来人左右。带宽越大，后期卡顿的概率越低。
+群星联机数据交换量较大。根据实测经验，**10Mbps 带宽**大约能支撑 **1～2 车**同时游玩（每车约 10 人），**带宽越大，后期卡顿概率越低**。
 
 #### 地理位置
 
@@ -123,7 +114,7 @@ openvpn --version
 
 如果您的服务器开启了 firewalld，请执行以下命令放行端口：
 
-检查防火墙状态
+#### 检查防火墙状态
 
 ```bash
 sudo systemctl status firewalld
@@ -133,25 +124,28 @@ sudo systemctl status firewalld
 <a href="images/2026-02-11-18-39-01.png" target="_blank"> <img src="images/2026-02-11-18-39-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 如果输出如下图所示，说明你的 firewalld 防火墙服务在正常运行，我们需要继续操作，放行端口 3074(UDP) 和 3075(TCP)
 <a href="images/2026-02-11-18-42-06.png" target="_blank"> <img src="images/2026-02-11-18-42-06.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-放行 3074 (UDP)
+
+#### 放行 3074 (UDP)
 
 ```bash
 sudo firewall-cmd --zone=public --add-port=3074/udp --permanent
 ```
 
-放行 3075 (TCP)
+#### 放行 3075 (TCP)
 
 ```bash
 sudo firewall-cmd --zone=public --add-port=3075/tcp --permanent
 ```
 
-重载配置使其生效
+#### 重载配置使其生效
 
 ```bash
 sudo firewall-cmd --reload
 ```
 
-验证是否成功：输入以下指令查看开放列表：
+#### 验证是否成功
+
+输入以下指令查看开放列表：
 
 ```bash
 sudo firewall-cmd --zone=public --list-ports
@@ -384,10 +378,7 @@ sudo vi /etc/openvpn/server_udp.conf
 
 操作逻辑与 TCP 完全一致，请重复上述步骤：
 
-1. 通用修改
-   将 auth 改为 auth none。
-
-2. 版本适配
+1. 版本适配
 
 - 2.4.x：保持 cipher none 和 client-cert-not-required。
 
@@ -571,7 +562,7 @@ sudo netstat -anp | grep 307
 > <br>
 > <a href="images/2026-02-11-21-58-56.png" target="_blank"> <img src="images/2026-02-11-21-58-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-解压后，您应该会看到以下三个核心文件：
+下载完成后解压，**解压密码：dogfight360**。解压后您应该会看到以下三个核心文件：
 
 - UsbEAm LAN Party V1.2.exe（客户端主程序）
 - tap-windows-9.9.2_3.exe（虚拟网卡驱动安装包）

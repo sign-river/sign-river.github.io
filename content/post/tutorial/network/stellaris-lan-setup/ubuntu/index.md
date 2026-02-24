@@ -2,23 +2,12 @@
 title: "群星联机优化指南（Ubuntu 24.04 64 位）"
 date: 2026-02-22
 description: "基于 Ubuntu 24.04 64 位的 OpenVPN 虚拟局域网搭建教程"
-categories:
-  - "网络"
-  - "游戏"
-tags:
-  - "群星"
-  - "Stellaris"
-  - "OpenVPN"
-  - "联机"
-  - "虚拟局域网"
-  - "Ubuntu"
-  - "网络配置"
 draft: false
 slug: "stellaris-lan-openvpn-ubuntu"
 hidden: true
 ---
 
-> <span style="font-size: 20px; font-weight: bold;">🚀 [点此回到上一界面](/p/stellaris-lan-openvpn-guide/)</span>
+> <span style="font-size: 20px; font-weight: bold;">🚀 [点此返回主文章](/p/stellaris-lan-openvpn-guide/)</span>
 
 ## 引言
 
