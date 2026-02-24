@@ -15,6 +15,12 @@ slug: "stellaris-lan-openvpn-centos"
 hidden: true
 ---
 
+---
+
+## 🚀 [点此回到上一界面](/p/stellaris-lan-openvpn-guide/)
+
+---
+
 ## 引言
 
 **你需要准备**：
