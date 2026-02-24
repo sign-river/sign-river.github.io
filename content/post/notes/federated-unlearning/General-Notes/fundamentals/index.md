@@ -12,7 +12,6 @@ tags:
   - Machine Unlearning
   - 基础知识
   - 深度学习
-image:
 math: true
 ---
 

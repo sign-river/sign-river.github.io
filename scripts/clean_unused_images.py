@@ -3,9 +3,9 @@
 遍历 Hugo 博客 content 目录下所有 index.md，
 找出 images/ 文件夹中未被引用的图片并删除。
 
-用法：
-  python clean_unused_images.py           # 实际删除
-  python clean_unused_images.py --dry-run # 试运行，只打印不删除
+用法（在项目根目录执行）：
+  python scripts/clean_unused_images.py           # 实际删除
+  python scripts/clean_unused_images.py --dry-run # 试运行，只打印不删除
 """
 
 import io
@@ -18,7 +18,8 @@ from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 # ── 可配置项 ──────────────────────────────────────────────
-CONTENT_DIR = Path(__file__).parent / "content"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+CONTENT_DIR = REPO_ROOT / "content"
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg", ".bmp", ".ico"}
 IMAGE_DIRS = {"images", "image"}
 DRY_RUN = "--dry-run" in sys.argv

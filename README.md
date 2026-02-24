@@ -65,7 +65,7 @@ hugo server -D
 ```
 
 1. **访问博客**
-打开浏览器访问 `http://localhost:1313`
+   打开浏览器访问 `http://localhost:1313`
 
 ## ✍️ 写作流程
 
