@@ -12,10 +12,9 @@
     font-size: 2.2rem;
     font-weight: 700;
     margin: 2.6em 0 0.6em 0;
-    padding: 0.5em 0.75em 0.45em 0.75em;
+    padding: 0.5em 0.75em 0.45em 1em;
     border-left: 4px solid var(--accent-color);
     border-bottom: 2px solid var(--card-separator-color);
-    background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
     border-radius: 0 8px 0 0;
     color: var(--card-text-color-main);
     line-height: 1.3;
@@ -77,6 +76,22 @@
     li {
       margin-bottom: 0.35em;
       line-height: 1.7;
+    }
+  }
+
+  /* 引用块：与代码块同风格——圆角、浅底、轻阴影 */
+  blockquote {
+    margin: 1.2em 0;
+    padding: 0.9em 1.1em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    color: var(--card-text-color-main);
+    font-size: 1em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+
+    p:last-child {
+      margin-bottom: 0;
     }
   }
 

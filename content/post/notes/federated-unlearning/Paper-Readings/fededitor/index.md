@@ -35,8 +35,6 @@ draft: true
 - **DOI**：[10.1109/TIFS.2025.3583231](https://doi.org/10.1109/TIFS.2025.3583231)
 - **GitHub**：[https://github.com/XXiaoY/Fededitor](https://github.com/XXiaoY/Fededitor)
 
----
-
 ## 二、背景与痛点
 
 <a href="images/2026-02-13-19-14-20.png" target="_blank"> <img src="images/2026-02-13-19-14-20.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
@@ -56,23 +54,13 @@ draft: true
 另一个是模型性能修复，他利用剩余数据和正则化约束保护模型想关键知识，防止灾难性遗忘
 接下来我们将详细讲解算法细节
 
----
-
 ## 三、方法概述
-
----
 
 ## 四、核心方法详解
 
----
-
 ## 五、实验设计与结果
 
----
-
 ## 六、总结与思考
-
----
 
 ## 参考文献
 

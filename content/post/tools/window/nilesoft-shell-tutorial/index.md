@@ -30,15 +30,11 @@ Nilesoft Shell 是一款强大的 Windows 右键菜单自定义工具，让你�
 
 接下来，我们以"添加 Cursor 到右键菜单"为例，演示如何使用 Nilesoft Shell。
 
----
-
 ## 安装 Nilesoft Shell
 
 前往[官网下载](https://nilesoft.org/download)并安装 Nilesoft Shell。安装完成后可能需要重启资源管理器才能看到效果。
 
 **提示**：安装时请记住安装路径，后续配置时会用到。
-
----
 
 ## 体验默认功能
 
@@ -47,8 +43,6 @@ Nilesoft Shell 是一款强大的 Windows 右键菜单自定义工具，让你�
 <a href="images/2026-02-14-19-32-51.png" target="_blank"> <img src="images/2026-02-14-19-32-51.png" alt="默认菜单效果" style="max-width: 100%; width: 400px;"/> </a>
 
 这只是冰山一角，接下来我们将学习如何自定义菜单！
-
----
 
 ## 认识配置文件
 
@@ -90,8 +84,6 @@ import 'imports/develop.nss'
 import 'imports/goto.nss'
 import 'imports/taskbar.nss'
 ```
-
----
 
 ## 基本操作
 
@@ -234,8 +226,6 @@ item(title='搜索选中内容'
 **效果展示：**
 
 <a href="images/2026-02-14-21-44-48.png" target="_blank"> <img src="images/2026-02-14-21-44-48.png" alt="添加网址效果" style="max-width: 100%; width: 1000px;"/> </a>
-
----
 
 ## 进阶操作
 
@@ -555,8 +545,6 @@ item(where=sel.type!=remote title='本地文件操作' cmd='...')
 - [配置属性完整文档](https://nilesoft.org/docs/configuration/properties)
 - [表达式和变量](https://nilesoft.org/docs/expressions)
 
----
-
 ## 默认配置汉化
 
 Nilesoft Shell 默认菜单为英文，对中文用户不够友好。下面提供**文件管理**和**快速跳转（Go to）**两个菜单的汉化配置，可直接替换使用。
@@ -574,8 +562,6 @@ Nilesoft Shell 默认菜单为英文，对中文用户不够友好。下面提�
 
 1. **替换原文件**：打开 Nilesoft Shell 安装目录下的 `imports` 文件夹（即 `nilesoft\imports`），将下载好的 `file-manage.nss` 和 `goto.nss` 拖入，若提示已存在同名文件则选择**替换**。
 2. **生效**：在 Nilesoft Shell 中执行 **Restart Explorer**（重启资源管理器）后即可看到汉化效果。
-
----
 
 ## 常见问题
 
@@ -604,8 +590,6 @@ Nilesoft Shell 默认菜单为英文，对中文用户不够友好。下面提�
 - 养成备份配置文件的习惯
 - 注意检查中英文标点符号（要用英文标点）
 
----
-
 ## 总结
 
 Nilesoft Shell 是一款功能强大的右键菜单定制工具，通过简单的配置文件即可打造出完全符合个人工作流的右键菜单。
@@ -619,8 +603,6 @@ Nilesoft Shell 是一款功能强大的右键菜单定制工具，通过简单�
 - 每次修改后记得重启资源管理器
 
 掌握这些技巧，你的 Windows 右键菜单将变得更加高效、整洁、个性化！
-
----
 
 ## 相关资源
 

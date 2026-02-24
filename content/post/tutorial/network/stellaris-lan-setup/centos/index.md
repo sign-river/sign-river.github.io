@@ -15,11 +15,7 @@ slug: "stellaris-lan-openvpn-centos"
 hidden: true
 ---
 
----
-
-## 🚀 [点此回到上一界面](/p/stellaris-lan-openvpn-guide/)
-
----
+> <span style="font-size: 20px; font-weight: bold;">🚀 [点此回到上一界面](/p/stellaris-lan-openvpn-guide/)</span>
 
 ## 引言
 
@@ -29,7 +25,6 @@ hidden: true
 - 基础工具：**WinSCP**（用于传文件）、**SSH 终端**
 - 一颗折腾的心：虽然步骤较多，但为了流畅的银河征途，一切都是值得的！
 
----
 
 ## 服务器准备与基础环境搭建
 
@@ -667,7 +662,6 @@ PASS=123456
 当所有小伙伴都显示 **「连接状态：正常」** 后，大家实际上已经处于同一个虚拟局域网中。
 <a href="images/2026-02-11-22-03-48.png" target="_blank"> <img src="images/2026-02-11-22-03-48.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
----
 
 ## 总结
 

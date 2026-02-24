@@ -24,8 +24,6 @@ slug: "git-initial-setup"
 
 本文整理了新机 Git 初始化的完整流程，帮助你快速配置好开发环境。
 
----
-
 ## 配置代理
 
 如果你需要使用代理工具访问 GitHub，首先需要配置 Git 的网络代理。
@@ -86,8 +84,6 @@ git config --global user.name "sign-river"
 git config --global user.email "example@gmail.com"
 ```
 
----
-
 ## 解决中文文件名乱码问题
 
 如果你的项目中有中文文件名，Git 默认会将其转义为八进制编码，显示为乱码（如 `\344\270\255\346\226\207`）。
@@ -101,8 +97,6 @@ git config --global core.quotepath false
 ```
 
 配置后，`git status` 等命令就能正常显示中文文件名了。
-
----
 
 ## 完整配置脚本
 
@@ -123,8 +117,6 @@ git config --global core.quotepath false
 # 查看所有配置
 git config --global --list
 ```
-
----
 
 ## 常见问题
 
@@ -148,8 +140,6 @@ git config --global --edit
 ### Q3: 配置是否对所有仓库生效？
 
 `--global` 参数表示全局配置，对当前用户的所有 Git 仓库生效。如果只想针对某个仓库配置，可以去掉 `--global` 参数，在仓库目录下执行命令。
-
----
 
 ## 总结
 

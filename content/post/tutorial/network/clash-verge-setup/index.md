@@ -22,8 +22,6 @@ slug: "clash-verge-setup-tutorial"
 
 本教程将手把手教你如何从零开始，搭建一套稳定、高速且现代化的节点服务。我们将采用目前主流且配置简便的方案，即使你对 Linux 命令不熟悉，也能轻松完成。
 
----
-
 ## 服务器选购与基础环境部署
 
 一切的开始，我们需要拥有一台位于海外的虚拟服务器（VPS）。本章将指导你完成账号注册、充值以及服务器的各项配置选择。
@@ -169,8 +167,6 @@ ufw enable
 （如果提示 Command may disrupt existing ssh connections，输入 y 确认即可）
 <a href="images/2026-02-11-12-32-39.png" target="_blank"> <img src="images/2026-02-11-12-32-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 至此，服务器端的底层环境已经搭建完毕。
-
----
 
 ## 面板配置与节点创建
 

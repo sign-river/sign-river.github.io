@@ -18,11 +18,7 @@ slug: "stellaris-lan-openvpn-ubuntu"
 hidden: true
 ---
 
----
-
-## 🚀 [点此回到上一界面](/p/stellaris-lan-openvpn-guide/)
-
----
+> <span style="font-size: 20px; font-weight: bold;">🚀 [点此回到上一界面](/p/stellaris-lan-openvpn-guide/)</span>
 
 ## 引言
 
@@ -31,8 +27,6 @@ hidden: true
 - 一台云服务器 (VPS)：本文以 **Ubuntu 24.04 64 位**系统为例
 - 基础工具：**WindTerm**（SSH 终端，推荐）、**WinSCP**（用于传文件）
 - 一颗折腾的心：虽然步骤较多，但为了流畅的银河征途，一切都是值得的！
-
----
 
 ## 服务器准备与基础环境搭建
 
@@ -658,8 +652,6 @@ PASS=123456
 当所有小伙伴都显示 **「连接状态：正常」** 后，大家实际上已经处于同一个虚拟局域网中。
 
 <!-- [图片占位符：多人连接成功] -->
-
----
 
 ## 总结
 

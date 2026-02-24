@@ -24,8 +24,6 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 
 好消息是，Cursor 完全兼容 VSCode 插件，我们可以通过 `.vsix` 文件手动安装。
 
----
-
 ## 安装步骤
 
 ### 第一步：下载插件文件
@@ -72,15 +70,11 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 <br>
 <a href="images/2026-02-14-12-57-53.png" target="_blank"> <img src="images/2026-02-14-12-57-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
----
-
 ## 注意事项
 
 - 手动安装的插件不会自动更新，需要手动下载新版本重新安装
 - 大部分 VSCode 插件都能在 Cursor 中正常使用
 - 如果 Cursor 商店中已有同名插件，建议先卸载再安装
-
----
 
 ## 其他插件安装
 

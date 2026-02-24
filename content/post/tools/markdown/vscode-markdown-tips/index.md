@@ -20,8 +20,6 @@ slug: "vscode-markdown-format-tips"
 
 在 VS Code 中编写 Markdown 时，常常会遇到各种格式问题：表格对不齐、列表缩进混乱、链接格式错误等。本文将介绍如何通过插件和配置来轻松解决这些问题，让你的 Markdown 写作更加高效。
 
----
-
 ## 安装插件 markdownlint
 
 ### 格式检查工具

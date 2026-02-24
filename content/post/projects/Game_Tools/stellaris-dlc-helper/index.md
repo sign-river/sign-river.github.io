@@ -20,15 +20,11 @@ slug: "stellaris-dlc-helper"
 
 > 三分钟学会使用本工具，解锁群星全部 DLC
 
----
-
 ## 💡 这个工具是干什么的？
 
 一个帮你给群星游戏解锁所有 DLC 的小工具，简单来说就是：**点几下鼠标，所有 DLC 就能用了**。
 
 <a href="images/2026-02-13-16-58-48.png" target="_blank"> <img src="images/2026-02-13-16-58-48.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
-
----
 
 ## 🚀 怎么开始？
 
@@ -40,8 +36,6 @@ slug: "stellaris-dlc-helper"
    <a href="images/2026-02-13-16-57-33.png" target="_blank"> <img src="images/2026-02-13-16-57-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 **注意：** 这个工具只支持 Windows 系统！
-
----
 
 ## 📖 使用教程
 
@@ -84,8 +78,6 @@ slug: "stellaris-dlc-helper"
 - 正常通过 Steam 启动群星游戏
 - 进入游戏后就能看到所有 DLC 了
 
----
-
 ## 🎮 日常使用
 
 ### 游戏更新了怎么办？
@@ -110,8 +102,6 @@ slug: "stellaris-dlc-helper"
   <a href="images/2026-02-13-17-16-33.png" target="_blank"> <img src="images/2026-02-13-17-16-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
   <a href="images/2026-02-13-17-16-46.png" target="_blank"> <img src="images/2026-02-13-17-16-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
----
-
 ## 🔧 工具按钮说明
 
 | 按钮         | 作用                                                 |
@@ -122,8 +112,6 @@ slug: "stellaris-dlc-helper"
 | **还原游戏** | 把游戏恢复到原始状态（移除所有 DLC 和补丁）          |
 | **暂停下载** | 暂停正在进行的下载                                   |
 | **继续下载** | 继续之前暂停的下载                                   |
-
----
 
 ## ❓ 常见问题
 
@@ -206,8 +194,6 @@ A: 会的！
 - DLC 缓存：约 1GB（可以在设置里清理）
 - 总共：约 1GB
 
----
-
 ## 🛠️ 进阶功能
 
 ### 手动选择 DLC
@@ -228,23 +214,17 @@ A: 会的！
 在工具里点击"清理缓存"按钮即可
 <a href="images/2026-02-13-17-40-24.png" target="_blank"> <img src="images/2026-02-13-17-40-24.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
----
-
 ## 💬 需要帮助？
 
 - **查看报错指南**：[完整使用手册](https://www.kdocs.cn/l/cdVvg4OgHMzj)
 - **反馈问题**：[GitHub Issues](https://github.com/sign-river/Stellaris-DLC-Helper/issues)
 - **加入 QQ 群**：1051774780
 
----
-
 ## ⚠️ 重要提示
 
 1. **仅供学习交流使用**，请支持正版游戏
 2. 使用本工具造成的任何后果，用户自行承担
 3. 建议定期备份游戏存档
-
----
 
 ## 🎉 开始使用吧
 

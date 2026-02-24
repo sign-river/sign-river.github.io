@@ -18,8 +18,6 @@ slug: "markdown-syntax-guide"
 
 Markdown 是一种轻量级标记语言，让你可以用纯文本格式编写文档，然后转换成格式丰富的 HTML 页面。本文将系统介绍 Markdown 的各种语法。
 
----
-
 ## 基础语法
 
 ### 标题
@@ -86,8 +84,6 @@ _斜体_ 或 _斜体_
 - **_粗斜体_**
 - ~~删除线~~
 
----
-
 ## 列表
 
 ### 无序列表
@@ -143,8 +139,6 @@ _斜体_ 或 _斜体_
 - [x] 已完成任务
 - [ ] 未完成任务
 - [ ] 待办事项
-
----
 
 ## 链接和图片
 
@@ -218,8 +212,6 @@ _斜体_ 或 _斜体_
 [image-ref]: 图片路径。jpg
 ```
 
----
-
 ## 引用
 
 ### 基本引用
@@ -273,8 +265,6 @@ _斜体_ 或 _斜体_
 > - 列表项 2
 >
 > **粗体文本** 和 _斜体文本_
-
----
 
 ## 代码
 
@@ -340,8 +330,6 @@ function greet(name) {
 echo "Hello, World!"
 ```
 
----
-
 ## 表格
 
 ### 基本表格
@@ -366,8 +354,6 @@ echo "Hello, World!"
 - `:---:` 居中
 - `---:` 右对齐
 
----
-
 ## 分隔线
 
 使用三个或更多的 `-`：
@@ -379,8 +365,6 @@ echo "Hello, World!"
 **效果**：
 
 第一条分隔线：
-
----
 
 ## 转义字符
 
@@ -403,8 +387,6 @@ echo "Hello, World!"
 ```
 \ ` * _ { } [ ] ( ) # + - . !
 ```
-
----
 
 ## 进阶语法
 
@@ -452,8 +434,6 @@ _[CSS]: Cascading Style Sheets
 HTML 和 CSS 是 Web 开发的基础。
 ```
 
----
-
 ## HTML 支持
 
 Markdown 支持内嵌 HTML 标签：
@@ -488,8 +468,6 @@ Markdown 支持内嵌 HTML 标签：
   
 </details>
 
----
-
 ## 数学公式
 
 使用 LaTeX 语法（需要支持）：
@@ -520,8 +498,6 @@ $$
 $$
 \int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
 $$
-
----
 
 ## 常用技巧
 
@@ -586,8 +562,6 @@ $$
 <span style="color: green;">这是绿色文字</span>  
 <span style="color: orange;">这是橙色文字</span>
 
----
-
 ## VS Code 快捷键（Markdown All in One）
 
 | 功能         | 快捷键             |
@@ -597,8 +571,6 @@ $$
 | 删除线       | `Alt + S`          |
 | 切换标题级别 | `Ctrl + Shift + ]` |
 | 预览         | `Ctrl + K V`       |
-
----
 
 ## 常见问题
 
@@ -651,16 +623,12 @@ A: 使用 HTML 指定宽度：
 <img src="image.jpg" alt="描述" width="400" />
 ```
 
----
-
 ## 在线工具推荐
 
 - **StackEdit**：在线 Markdown 编辑器
 - **Dillinger**：支持实时预览
 - **Typora**：所见即所得编辑器
 - **Markdown Preview Enhanced**：VS Code 插件
-
----
 
 ## 参考资料
 

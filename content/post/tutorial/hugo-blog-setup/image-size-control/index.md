@@ -29,8 +29,6 @@ slug: "hugo-stack-image-size-control"
 
 本文整理了两种可以控制图片显示尺寸的方案，各有优缺点，可以根据场景选择。
 
----
-
 ## 方案一：`<a>` + `<img>` —— 点击另开标签页查看原图
 
 ### 写法
@@ -72,8 +70,6 @@ slug: "hugo-stack-image-size-control"
 在 VS Code 中打开设置，搜索 `Paste Image: Insert Pattern`，将默认值替换为上方内容即可。
 
 <a href="images/2026-02-21-14-31-22.png" target="_blank"> <img src="images/2026-02-21-14-31-22.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
----
 
 ## 方案二：`<div>` 容器 + Markdown 图片 —— 通过容器控制宽度
 

@@ -26,8 +26,6 @@ slug: "sogou-corner-brackets"
 
 相比普通的弯引号，直角引号在视觉上更加醒目，也更符合传统中文排版规范。
 
----
-
 ## 直角引号的区别
 
 - **普通引号**：""、''
@@ -39,8 +37,6 @@ slug: "sogou-corner-brackets"
 - 『』用于第二层引用，即引用中的引用（相当于单引号 ''）
 
 **示例**：他说「这本书里写着『天行健，君子以自强不息』」
-
----
 
 ## 设置方法
 
@@ -73,8 +69,6 @@ slug: "sogou-corner-brackets"
 同理可以添加第二层引号『』，用于引用中的引用。
 
 <a href="images/2026-02-14-18-47-26.png" target="_blank"> <img src="images/2026-02-14-18-47-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
----
 
 ## 总结
 

@@ -29,8 +29,6 @@ slug: "stellaris-lan-openvpn-guide"
 
 > 📖 原作者博客：[Dogfight360 Blog](https://www.dogfight360.com/blog/1590/#comment-41142)
 
----
-
 ## 选择你的系统版本
 
 请根据你使用的服务器系统，选择对应教程：

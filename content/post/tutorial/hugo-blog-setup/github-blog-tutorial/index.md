@@ -26,8 +26,6 @@ slug: "hugo-github-pages-blog-tutorial"
 
 不需要你精通前端代码，只要跟着步骤走，你也能轻松搭建出一个既好看又好用的个人博客。
 
----
-
 ## 快速起步与仓库搭建
 
 搭建博客最怕的就是繁琐的环境配置。幸运的是，我们不需要在本地一行行敲代码安装 Hugo，直接利用现成的 GitHub 模板，只需点几下鼠标，就能把博客"搬"回家。
@@ -79,8 +77,6 @@ slug: "hugo-github-pages-blog-tutorial"
 <a href="images/2026-02-10-10-46-54.png" target="_blank"> <img src="images/2026-02-10-10-46-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 部署完成后，访问 `https://username.github.io`，如果能看到一个带有 "Hugo Theme Stack" 标题和示例文章的精美页面，恭喜你，你的个人博客雏形已经搭建完成了！🎉
-
----
 
 ## 基础个性化配置
 
@@ -191,8 +187,6 @@ slug: "hugo-github-pages-blog-tutorial"
 
 <a href="images/2026-02-10-10-54-33.png" target="_blank"> <img src="images/2026-02-10-10-54-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
----
-
 ## 内容管理与初次发布
 
 现在的博客里充斥着 "Hello World" 和 "Markdown Syntax Guide" 这样的演示文章。我们需要把它们清理干净，然后发布一篇真正属于你的内容。
@@ -262,8 +256,6 @@ categories:                           # 分类设置，直接控制侧边栏的�
 ✨ **见证时刻**：原本的英文演示文章消失了，取而代之的是你刚刚写的“我的第一篇博客”！点击标题进去，能看到你写的内容。
 
 <a href="images/2026-02-10-10-57-39.png" target="_blank"> <img src="images/2026-02-10-10-57-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
----
 
 ## 界面深度优化与汉化
 
@@ -394,8 +386,6 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 
 <a href="images/2026-02-10-11-08-35.png" target="_blank"> <img src="images/2026-02-10-11-08-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
----
-
 ## 接入评论系统（Giscus）
 
 一个没有评论区的博客是没有灵魂的。虽然 Stack 主题自带了 Disqus 支持，但它加载慢且有广告。本章我们将重点介绍 Giscus —— 一个基于 GitHub Discussions 的现代化、免费、无广告的评论系统。
@@ -508,8 +498,6 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 <a href="images/2026-02-10-11-22-51.png" target="_blank"> <img src="images/2026-02-10-11-22-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
----
-
 ## 打造高效写作环境
 
 工欲善其事，必先利其器。虽然 GitHub 网页版也能修改文件，但为了更好的写作体验（尤其是图片处理和实时预览），强烈建议将仓库克隆到本地，使用 VS Code 进行管理。
@@ -580,8 +568,6 @@ Giscus 提供了一个可视化工具来生成配置参数。
 3. **配图**：用 Paste Image 一键粘贴截图
 4. **预览**：用 Preview Enhanced 实时检查效果
 5. **发布**：写完后，在 VS Code 的源代码管理（Source Control）中点击 **Commit** 和 **Sync**，文章就会自动推送到 GitHub 并发布上线！
-
----
 
 ## 补充内容
 
@@ -667,8 +653,6 @@ comments: false
 <a href="images/2026-02-10-10-07-25.png" target="_blank"> <img src="images/2026-02-10-10-07-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 3. 不过需要注意，关闭自动编号后如果写文章时没有手动编号，会出现无法在网页中打开文章的情况
-
----
 
 ## 总结
 
