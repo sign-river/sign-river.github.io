@@ -111,12 +111,11 @@
     {{ end }} {{/* ===== 站点统计 ===== */}}
     <li class="sidebar-stats-wrapper">
       {{- $pages := where .Site.RegularPages "Type" "in"
-      .Site.Params.mainSections -}} {{- $filtered := where $pages
-      "Params.hidden" "!=" true -}} {{- $totalWords := 0 -}} {{- range $filtered
+      .Site.Params.mainSections -}} {{- $totalWords := 0 -}} {{- range $pages
       -}} {{- $totalWords = add $totalWords .WordCount -}} {{- end -}}
       <div class="sidebar-stats">
         <div class="sidebar-stats-item">
-          <span class="sidebar-stats-value">{{ len $filtered }}</span>
+          <span class="sidebar-stats-value">{{ len $pages }}</span>
           <span class="sidebar-stats-label">文章</span>
         </div>
         <div class="sidebar-stats-item">
