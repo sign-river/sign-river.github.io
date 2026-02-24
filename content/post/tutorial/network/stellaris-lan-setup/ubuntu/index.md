@@ -29,7 +29,7 @@ hidden: true
 **你需要准备**：
 
 - 一台云服务器 (VPS)：本文以 **Ubuntu 24.04 64 位**系统为例
-- 基础工具：**WinSCP**（用于传文件）、**SSH 终端**
+- 基础工具：**WindTerm**（SSH 终端，推荐）、**WinSCP**（用于传文件）
 - 一颗折腾的心：虽然步骤较多，但为了流畅的银河征途，一切都是值得的！
 
 ---
@@ -44,8 +44,7 @@ hidden: true
 
 #### 带宽是核心
 
-**10Mbps 的带宽**大约能支撑 **1-2 车人**同时游玩（每车约 10 人）。**带宽越大，后期卡顿的概率越低**
-群星联机的数据交换量较大。根据实测经验，10Mbps 的带宽大约能支撑 1-2 车人同时游玩，一车大概 10 来人左右。带宽越大，后期卡顿的概率越低。
+群星联机数据交换量较大。根据实测，**约 10Mbps 带宽**可支撑 **1～2 车人**（每车约 10 人）同时游玩，**带宽越大，后期卡顿概率越低**。
 
 #### 地理位置
 
@@ -59,37 +58,37 @@ hidden: true
 
 购买并登录服务器（使用 SSH 工具）后，我们需要安装解压工具和核心软件 OpenVPN。Ubuntu 24.04 的软件源已包含 OpenVPN，无需额外添加 EPEL。请依次执行以下指令：
 
-首先远程连接云服务器，这里以阿里云为例。
+#### 下载 SSH 客户端（推荐 WindTerm）
 
-<!-- [图片占位符：阿里云/云厂商远程连接入口] -->
-<!-- [图片占位符：SSH 连接配置] -->
-<!-- [图片占位符：连接成功界面] -->
+为方便操作，建议使用 **WindTerm** 作为 SSH 终端：免费、绿色免安装，解压即用，支持多标签与会话管理。
 
-#### 更新系统软件包
+- **国内镜像下载（Windows 64 位便携版）**：  
+  [WindTerm 2.7.0 便携版 (x86_64)](https://gitlink.org.cn/signriver/WindTerm/releases/download/2.7.0-Mirror/WindTerm_2.7.0_Windows_Portable_x86_64.zip)
+
+下载后解压到任意目录，双击运行 `WindTerm.exe` 即可。
+
+#### 使用 WindTerm 连接云服务器
+
+1. 打开 WindTerm，点击 **「Session」→「New Session」** 或使用快捷键新建会话。
+2. 选择 **SSH**，在 **Host** 中填写服务器公网 IP，**Port** 一般为 `22`（若云厂商使用其他端口请按实际填写）。
+3. **Username** 填 `root`（或您的 SSH 用户名），认证方式选择 **Password** 并输入服务器密码；若使用密钥则选 **PublicKey** 并指定私钥路径。
+4. 点击 **Connect** 连接。首次连接会提示确认主机指纹，选择接受即可。
+
+连接成功后即可在终端中执行后续命令。下图为以阿里云为例的登录与连接示意。
+
+<a href="images/2026-02-24-19-28-55.png" target="_blank"> <img src="images/2026-02-24-19-28-55.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-24-19-30-30.png" target="_blank"> <img src="images/2026-02-24-19-30-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+#### 更新系统并安装所需软件
+
+一次完成系统更新及 unzip、OpenVPN 的安装（解压服务端和运行 VPN 都需要）：
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+sudo apt install -y unzip openvpn
 ```
 
-<!-- [图片占位符：apt update 执行结果] -->
-
-#### 安装 unzip 解压工具
-
-（后续解压服务端文件需要用到）
-
-```bash
-sudo apt install unzip -y
-```
-
-<!-- [图片占位符：安装 unzip 结果] -->
-
-#### 安装 OpenVPN
-
-```bash
-sudo apt install openvpn -y
-```
-
-<!-- [图片占位符：安装 OpenVPN 结果] -->
+<!-- [图片占位符：apt update 与安装结果] -->
 
 #### 版本检查（重要！）
 
@@ -124,7 +123,7 @@ sudo ufw status
 ```
 
 若显示 `Status: inactive`，说明防火墙未启用，可跳过本小节，直接配置 **云厂商安全组**。  
-若显示 `Status: active`，请执行以下命令放行端口并重载：
+若显示 `Status: active`，请执行以下命令放行端口并重载。若尚未启用 ufw 但打算启用，可先执行 `sudo ufw enable`（提示时输入 y 确认），再执行下面的放行命令：
 
 放行 3074 (UDP) 和 3075 (TCP)：
 
@@ -213,7 +212,7 @@ sudo ufw status numbered
 
 1. 打开 WinSCP 软件。
 2. **主机名**：填写您的服务器公网 IP。
-3. **用户名**：root
+3. **用户名**：root（若使用 sudo 用户登录，填该用户名即可）。
 4. **密码**：您的服务器 SSH 登录密码。
 
    <!-- [图片占位符：WinSCP 登录界面] -->
@@ -312,10 +311,11 @@ ls -l /etc/openvpn/checkpsw.sh
 
 #### 打开 tcp 文件
 
-输入以下命令编辑 server_tcp.conf 文件：
+使用编辑器打开 server_tcp.conf（任选其一）：
 
 ```bash
 sudo vi /etc/openvpn/server_tcp.conf
+# 若不熟悉 vi，可用 nano：sudo nano /etc/openvpn/server_tcp.conf（保存：Ctrl+O 回车，退出：Ctrl+X）
 ```
 
 <!-- [图片占位符：编辑 server_tcp.conf] -->
@@ -355,9 +355,9 @@ verify-client-cert none
 
 <!-- [图片占位符：verify-client-cert 修改示意] -->
 
-#### 保存 tcp 并文件退出
+#### 保存 tcp 并退出
 
-修改完成后，按 Esc 键，输入 :wq 并回车。
+vi：按 Esc，输入 `:wq` 回车。nano：Ctrl+O 回车保存，Ctrl+X 退出。
 
 ### 修改 UDP 配置文件
 
@@ -365,10 +365,9 @@ verify-client-cert none
 
 #### 打开 udp 文件
 
-输入以下命令：
-
 ```bash
 sudo vi /etc/openvpn/server_udp.conf
+# 或使用 nano：sudo nano /etc/openvpn/server_udp.conf
 ```
 
 #### 编辑 udp 指南
@@ -387,7 +386,7 @@ sudo vi /etc/openvpn/server_udp.conf
 
 #### 保存 udp 文件并退出
 
-按 Esc 键，输入 :wq 并回车。
+vi：按 Esc，输入 `:wq` 回车。nano：Ctrl+O 回车保存，Ctrl+X 退出。
 
 ### 设置连接账号密码
 
@@ -395,10 +394,9 @@ sudo vi /etc/openvpn/server_udp.conf
 
 #### 打开密码文件
 
-输入以下命令：
-
 ```bash
 sudo vi /etc/openvpn/psw-file
+# 或：sudo nano /etc/openvpn/psw-file
 ```
 
 #### 设置账号
@@ -414,7 +412,13 @@ stellaris 123456
 
 #### 保存退出
 
-按 Esc 键，输入 :wq 并回车。
+vi：Esc → `:wq` 回车。nano：Ctrl+O 回车，Ctrl+X。
+
+> **可选（熟悉命令行时）**：若 OpenVPN 为 2.6.x，可用 sed 批量替换 cipher 与证书参数，再用编辑器确认并补上 `auth none`：
+
+```bash
+sudo sed -i 's/cipher none/data-ciphers none/g; s/client-cert-not-required/verify-client-cert none/g' /etc/openvpn/server_tcp.conf /etc/openvpn/server_udp.conf
+```
 
 ---
 
@@ -428,19 +432,9 @@ stellaris 123456
 
 在后台静默运行之前，我们先在前台手动启动一次，以便直观地看到启动日志。
 
-#### 查找 OpenVPN 主程序路径
-
-输入以下指令查找路径，通常位于 /usr/sbin/openvpn：
-
-```bash
-sudo find / -name openvpn
-```
-
-<!-- [图片占位符：find openvpn 输出] -->
-
 #### 测试 TCP 服务
 
-输入以下指令启动 TCP 服务端（注意路径需与上一步查到的一致）：
+在 Ubuntu 中 OpenVPN 一般位于 `/usr/sbin/openvpn`（不确定可执行 `which openvpn` 查看）。直接启动 TCP 服务端：
 
 ```bash
 sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_tcp.conf
@@ -525,23 +519,21 @@ sudo systemctl start openvpn-stellaris-tcp openvpn-stellaris-udp
 sudo systemctl status openvpn-stellaris-tcp openvpn-stellaris-udp
 ```
 
-### 重启验证
+### 可选：重启验证
 
-为了确保万无一失，我们模拟一次服务器断电重启。
+若想确认开机自启是否生效，可重启服务器后再检查端口（非必须，上面 `systemctl status` 正常即可）。
 
 #### 重启服务器
-
-输入以下命令重启系统：
 
 ```bash
 sudo reboot
 ```
 
-此时 SSH 连接会断开，请等待 1-2 分钟。
+SSH 会断开，等待 1～2 分钟后重新连接。
 
 #### 验证端口监听状态
 
-重新连接 SSH，输入以下指令检查端口是否已在运行：
+重新连接后执行：
 
 ```bash
 ss -ulnp | grep 3074
@@ -618,7 +610,7 @@ PASS=123456
 
 - **Server List**：这里填的名字会显示在软件下拉菜单里
 - **[我的群星节点]**：中括号里的名字必须与 `Server List` 保持一致
-- **IP**：修改为您服务器的 **公网 IP 地址**,**如果您使用的是共享型 VPS**,只保留前面的 ip 地址即可，去掉后面的端口
+- **IP**：改为您服务器的 **公网 IP**（示例中的 203.0.113.1 仅为占位）。若为共享型 VPS，只填 IP，不要带端口号。
 - **TCP Port / UDP Port**：默认填写 `3075` 和 `3074`。**如果您使用的是共享型 VPS**，请填写您在服务商管理面板中配置的端口转发规则里对应的**外部端口号**（详见上方"特殊情况：共享型 VPS 的端口转发"一节）
 - **USER**：修改为您在 `psw-file` 里设置的 **用户名**
 - **PASS**：修改为您在 `psw-file` 里设置的 **密码**

@@ -2,6 +2,177 @@
   display: none;
 }
 
+/* ========== 正文标题层级（仅文章内容，与侧边栏序号无关）========== */
+.article-content {
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  /* 一级标题：块感强——整块浅底 + 左边框 + 下边框 */
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 2.6em 0 0.6em 0;
+    padding: 0.5em 0.75em 0.45em 0.75em;
+    border-left: 4px solid var(--accent-color);
+    border-bottom: 2px solid var(--card-separator-color);
+    background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
+    border-radius: 0 8px 0 0;
+    color: var(--card-text-color-main);
+    line-height: 1.3;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  /* 二级标题：左侧色条 + 稍大留白 */
+  h3 {
+    font-size: 1.85rem;
+    font-weight: 600;
+    margin: 1.8em 0 0.5em 0;
+    padding-left: 20px;
+    border-left: 4px solid var(--accent-color);
+    color: var(--card-text-color-main);
+    line-height: 1.35;
+  }
+
+  /* 三级标题：与正文同级主色，细左边框区分层级 */
+  h4 {
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin: 1.4em 0 0.4em 0;
+    padding-left: 18px;
+    border-left: 3px solid var(--card-separator-color);
+    color: var(--card-text-color-main);
+    line-height: 1.4;
+  }
+
+  /* 四级及以下：仅字号与间距区分 */
+  h5 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin: 1.2em 0 0.35em 0;
+    color: var(--card-text-color-secondary);
+  }
+
+  h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1em 0 0.3em 0;
+    color: var(--card-text-color-tertiary);
+  }
+
+  /* 段落：行高与间距，长文更易读 */
+  p {
+    line-height: 1.78;
+    margin-bottom: 1.1em;
+  }
+
+  /* 列表：与段落拉开间距，缩进更清晰 */
+  ul,
+  ol {
+    margin: 1em 0 1.2em 0.8em;
+    padding-left: 1.6em;
+
+    li {
+      margin-bottom: 0.35em;
+      line-height: 1.7;
+    }
+  }
+
+  /* 表格：表头突出、行悬停 */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+    font-size: 0.95em;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  thead {
+    background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
+    font-weight: 600;
+    color: var(--card-text-color-main);
+  }
+
+  th,
+  td {
+    padding: 0.6em 0.9em;
+    border: 1px solid var(--card-separator-color);
+    text-align: left;
+  }
+
+  tbody tr {
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.04);
+    }
+  }
+
+  /* 代码块：四角圆角 + 轻阴影，长行横向滚动不溢出 */
+  .highlight,
+  pre {
+    margin: 1.2em 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+    overflow-y: auto;
+    max-width: 100%;
+  }
+
+  /* 主题内部 pre/表格可能只圆了左侧，这里统一四角圆角 */
+  .highlight pre,
+  .highlight .chroma {
+    border-radius: 8px;
+  }
+
+  /* 保证代码块内 pre 可横向滚动，不撑破容器 */
+  .highlight pre {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  /* 行内代码 */
+  code {
+    padding: 0.2em 0.45em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+}
+
+/* 正文区域在小屏上的标题收敛 */
+@media (max-width: 768px) {
+  .article-content {
+    h2 {
+      font-size: 1.9rem;
+      margin-top: 2em;
+      padding-left: 0.4em;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      padding-left: 14px;
+    }
+
+    h4 {
+      font-size: 1.4rem;
+      padding-left: 12px;
+    }
+
+    table {
+      font-size: 0.9em;
+    }
+
+    th,
+    td {
+      padding: 0.5em 0.6em;
+    }
+  }
+}
+
 /* ========== 左侧边栏间距调整 ========== */
 /* 调整副标题和菜单项之间的距离 */
 .left-sidebar .site-info {
