@@ -50,7 +50,7 @@ hidden: true
 
 ### 安装必要组件
 
-购买并登录服务器（使用 SSH 工具）后，我们需要安装解压工具和核心软件 OpenVPN。Ubuntu 24.04 的软件源已包含 OpenVPN，无需额外添加 EPEL。请依次执行以下指令：
+购买并登录服务器（使用 SSH 工具）后，我们需要安装解压工具和核心软件 OpenVPN。请依次执行以下指令：
 
 #### 下载 SSH 客户端（推荐 WindTerm）
 
@@ -59,19 +59,45 @@ hidden: true
 - **国内镜像下载（Windows 64 位便携版）**：  
   [WindTerm 2.7.0 便携版 (x86_64)](https://gitlink.org.cn/signriver/WindTerm/releases/download/2.7.0-Mirror/WindTerm_2.7.0_Windows_Portable_x86_64.zip)
 
-下载后解压到任意目录，双击运行 `WindTerm.exe` 即可。
+  下载后解压到任意目录，路径中不要有中文，双击运行 `WindTerm.exe` 即可。
+
+  <a href="images/2026-02-24-21-38-02.png" target="_blank"> <img src="images/2026-02-24-21-38-02.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
+
+  存储位置选择第一个应用程序目录
+
+  <a href="images/2026-02-24-21-39-32.png" target="_blank"> <img src="images/2026-02-24-21-39-32.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
 #### 使用 WindTerm 连接云服务器
 
-1. 打开 WindTerm，点击 **「Session」→「New Session」** 或使用快捷键新建会话。
-2. 选择 **SSH**，在 **Host** 中填写服务器公网 IP，**Port** 一般为 `22`（若云厂商使用其他端口请按实际填写）。
-3. **Username** 填 `root`（或您的 SSH 用户名），认证方式选择 **Password** 并输入服务器密码；若使用密钥则选 **PublicKey** 并指定私钥路径。
-4. 点击 **Connect** 连接。首次连接会提示确认主机指纹，选择接受即可。
+1. 打开 WindTerm，点击 **「会话」→「新建会话」**。
 
-连接成功后即可在终端中执行后续命令。下图为以阿里云为例的登录与连接示意。
+   <a href="images/2026-02-24-21-47-17.png" target="_blank"> <img src="images/2026-02-24-21-47-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="images/2026-02-24-19-28-55.png" target="_blank"> <img src="images/2026-02-24-19-28-55.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-<a href="images/2026-02-24-19-30-30.png" target="_blank"> <img src="images/2026-02-24-19-30-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+2. 选择 **SSH**，在 **主机** 中填写服务器公网 IP，**端口** 一般为 `22`（若云厂商使用其他端口请按实际填写）。
+
+- 若商家提供公网 ip 如下图，在 **主机** 中直接填写公网 IP 即可，**端口** 保持默认无需修改。
+
+  <a href="images/2026-02-24-21-52-54.png" target="_blank"> <img src="images/2026-02-24-21-52-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+- 若购买的是超低价共享型 VPS，公网 IP 后带有额外端口，则在 **主机** 中填公网 IP，在 **端口** 处删掉默认的 `22`，改为 IP 后面显示的那个端口号。
+
+  <a href="images/2026-02-24-21-54-33.png" target="_blank"> <img src="images/2026-02-24-21-54-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+- 按照情况填写表单
+
+  <a href="images/2026-02-24-21-49-25.png" target="_blank"> <img src="images/2026-02-24-21-49-25.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
+
+3. 切换到账户标签页，**用户名** 默认填写为 `root`（如果有指定其他 SSH 用户名则填写对应名称），密码填写你在云服务器控制台设置的远程登录密码。
+
+   <a href="images/2026-02-24-22-03-47.png" target="_blank"> <img src="images/2026-02-24-22-03-47.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
+
+   <a href="images/2026-02-24-22-05-31.png" target="_blank"> <img src="images/2026-02-24-22-05-31.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
+
+4. 连接成功则如图所示，如果返回上一界面可能是密码有误请重新输入
+
+   接下来就可以输入指令对服务器进行操作了
+
+   <a href="images/2026-02-24-22-08-44.png" target="_blank"> <img src="images/2026-02-24-22-08-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 更新系统并安装所需软件
 
@@ -82,25 +108,33 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y unzip openvpn
 ```
 
-<!-- [图片占位符：apt update 与安装结果] -->
+将鼠标移至文中代码框上方，点击“复制”按钮，然后回到终端右键粘贴并回车即可，后续操作同理。
+
+<a href="images/2026-02-24-22-14-44.png" target="_blank"> <img src="images/2026-02-24-22-14-44.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
+
+<a href="images/2026-02-24-22-17-25.png" target="_blank"> <img src="images/2026-02-24-22-17-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+输入以下命令并回车，即可重启服务器：
+
+```bash
+reboot
+```
+
+指令执行后再次按下回车，然后耐心等待片刻，待服务器自动重启并重新出现大量系统信息输出后，即表示重启已完成。
+
+<a href="images/2026-02-24-22-24-44.png" target="_blank"> <img src="images/2026-02-24-22-24-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 版本检查（重要！）
 
-安装完成后，输入以下命令查看版本：
+安装完成后，输入以下命令查看版本，判断是否安装成功：
 
 ```bash
 openvpn --version
 ```
 
-<!-- [图片占位符：openvpn --version 输出] -->
+<a href="images/2026-02-24-22-18-49.png" target="_blank"> <img src="images/2026-02-24-22-18-49.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-⚠️ **请根据输出的版本号，记下您的情况**：
-
-- **情况 A：版本 < 2.5**（例如 2.4.x）  
-  与本教程提供的原始配置文件完全兼容，您在后续章节 **无需进行额外修改**。
-
-- **情况 B：版本 ≥ 2.5**（2.5 或 2.6+）  
-  **Ubuntu 24.04 默认安装的通常是 2.6.x**。新版本废弃了旧的加密与证书参数，在下一章部署时 **必须手动修改配置文件**（如 `data-ciphers none`、`verify-client-cert none`）才能正常连接，否则会导致无法联机。
+然后记住你的 openvpn 版本，会影响后面的操作步骤
 
 ### 开放防火墙端口（关键步骤）
 
@@ -116,8 +150,13 @@ Ubuntu 24.04 默认使用 **ufw** 作为防火墙前端。若未启用 ufw，端
 sudo ufw status
 ```
 
-若显示 `Status: inactive`，说明防火墙未启用，可跳过本小节，直接配置 **云厂商安全组**。  
+若显示 `Status: inactive`，说明防火墙未启用，可跳过本小节，直接配置 **云厂商安全组**。
+
+<a href="images/2026-02-24-22-30-31.png" target="_blank"> <img src="images/2026-02-24-22-30-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 若显示 `Status: active`，请执行以下命令放行端口并重载。若尚未启用 ufw 但打算启用，可先执行 `sudo ufw enable`（提示时输入 y 确认），再执行下面的放行命令：
+
+<a href="images/2026-02-24-22-32-06.png" target="_blank"> <img src="images/2026-02-24-22-32-06.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 放行 3074 (UDP) 和 3075 (TCP)：
 
@@ -133,7 +172,7 @@ sudo ufw reload
 sudo ufw status numbered
 ```
 
-<!-- [图片占位符：ufw 放行端口后的 list] -->
+<a href="images/2026-02-24-22-32-46.png" target="_blank"> <img src="images/2026-02-24-22-32-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 若在规则列表中看到 3074/udp 和 3075/tcp，即代表操作成功。
 
@@ -145,7 +184,7 @@ sudo ufw status numbered
 
 请登录您的云服务器控制台，找到 **安全组 → 配置规则 → 手动添加**，填入以下信息：
 
-<!-- [图片占位符：云厂商安全组规则入口] -->
+<a href="images/2026-02-24-22-33-52.png" target="_blank"> <img src="images/2026-02-24-22-33-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 规则 1 (UDP)
 
@@ -161,7 +200,7 @@ sudo ufw status numbered
 - 授权对象：0.0.0.0/0（所有 IP）
 - 策略：允许
 
-<!-- [图片占位符：安全组 UDP/TCP 规则添加完成] -->
+<a href="images/2026-02-24-22-34-25.png" target="_blank"> <img src="images/2026-02-24-22-34-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 特殊情况：共享型 VPS 的端口转发（NAT 映射）
 
@@ -186,7 +225,7 @@ sudo ufw status numbered
 |           3074           | UDP  |         例：40074          |
 |           3075           | TCP  |         例：40075          |
 
-<!-- [图片占位符：端口转发/NAT 映射配置界面] -->
+<a href="images/2026-02-24-22-35-19.png" target="_blank"> <img src="images/2026-02-24-22-35-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. **记录下服务商分配给您的两个外部端口号**，在后续配置客户端时需要用到
 
@@ -198,36 +237,29 @@ sudo ufw status numbered
 
 首先，我们需要先从 [原作者博客](https://www.dogfight360.com/blog/1590/#comment-41142) 中下载关键文件 [教程 .zip](https://www.dogfight360.com/blog/wp-content/uploads/2021/07/%E6%95%99%E7%A8%8B.zip), 解压后从中提取出 server.zip
 
-### 使用 WinSCP 上传文件
+<a href="images/2026-02-24-22-43-14.png" target="_blank"> <img src="images/2026-02-24-22-43-14.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-为了方便管理，我们推荐使用 [WinSCP 可视化工具](https://winscp.net/eng/download.php) 将文件上传到服务器的临时目录。
+### 上传文件
 
-#### 建立连接
+在右侧文件资源管理器中，打开下拉框，点击第一个'/'
 
-1. 打开 WinSCP 软件。
-2. **主机名**：填写您的服务器公网 IP。
-3. **用户名**：root（若使用 sudo 用户登录，填该用户名即可）。
-4. **密码**：您的服务器 SSH 登录密码。
+<a href="images/2026-02-24-22-39-46.png" target="_blank"> <img src="images/2026-02-24-22-39-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-   <!-- [图片占位符：WinSCP 登录界面] -->
+然后进入 tmp 目录
 
-5. 点击登录，如果是首次连接，点击"是"接受密钥指纹。
+<a href="images/2026-02-24-22-41-50.png" target="_blank"> <img src="images/2026-02-24-22-41-50.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
-   <!-- [图片占位符：接受主机密钥] -->
+点击右上角三个点，选择上传文件到当前目录
 
-#### 上传操作
+<a href="images/2026-02-24-22-42-53.png" target="_blank"> <img src="images/2026-02-24-22-42-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-1. 登录成功后，软件界面左侧代表您的电脑，右侧代表服务器。
-2. 在右侧（服务器端），双击顶部的 `..` 文件夹图标返回根目录，然后找到并进入 `/tmp` 目录。
-   （选择 `/tmp` 是因为它是存放临时文件的标准位置，系统重启后会自动清理，适合做中转）
+选择本章初解压获得的 server.zip 文件上传
 
-   <!-- [图片占位符：进入 /tmp 目录] -->
+<a href="images/2026-02-24-22-44-23.png" target="_blank"> <img src="images/2026-02-24-22-44-23.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-3. 在左侧（本地端），找到您电脑上的 `server.zip` 文件。
-4. 将 `server.zip` 直接拖拽到右侧窗口中。
+如图即上传成功
 
-   <!-- [图片占位符：拖拽上传 server.zip] -->
-   <!-- [图片占位符：上传进度/完成] -->
+<a href="images/2026-02-24-22-46-02.png" target="_blank"> <img src="images/2026-02-24-22-46-02.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 解压与部署
 
@@ -264,6 +296,8 @@ ls -l /etc/openvpn/
 - `checkpsw.sh` （密码验证脚本）
 - `psw-file` （账号密码文件）
 
+<a href="images/2026-02-24-22-48-40.png" target="_blank"> <img src="images/2026-02-24-22-48-40.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 ### 关键步骤：赋予执行权限
 
 ⚠️ **这是最容易被新手忽略的一步！**
@@ -291,6 +325,8 @@ ls -l /etc/openvpn/checkpsw.sh
 - 如果显示 `-rwxr-xr-x` （包含 `x` 且文件名通常变绿），说明权限设置成功。
 - 如果显示 `-rw-r--r--` （没有 `x`)，说明失败，请重新执行 `chmod` 命令。
 
+<a href="images/2026-02-24-22-49-26.png" target="_blank"> <img src="images/2026-02-24-22-49-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 ---
 
 至此，所有的文件都已就位，且具备了运行条件。下一章我们将进入最核心、也最复杂的环节：修改配置文件以适配群星的低延迟需求及新版系统的兼容性。
@@ -299,99 +335,52 @@ ls -l /etc/openvpn/checkpsw.sh
 
 文件部署完成后，我们需要对 OpenVPN 的配置文件进行"手术"。本章的核心目标是：关闭加密以降低延迟，并修正新旧版本的语法差异。
 
-### 修改 TCP 配置文件
+首先，在左侧文件管理器中按照路径/etc/openvpn/找到 OpenVPN 的配置文件目录：
 
-首先修改 TCP 协议的配置文件。此文件决定了游戏数据的传输方式之一。
+<a href="images/2026-02-24-22-53-53.png" target="_blank"> <img src="images/2026-02-24-22-53-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+### 修改 TCP 配置文件
 
 #### 打开 tcp 文件
 
-使用编辑器打开 server_tcp.conf（任选其一）：
+双击打开 server_tcp.conf，如果让你选择打开方式，选择记事本即可：
 
-```bash
-sudo vi /etc/openvpn/server_tcp.conf
-# 若不熟悉 vi，可用 nano：sudo nano /etc/openvpn/server_tcp.conf（保存：Ctrl+O 回车，退出：Ctrl+X）
-```
-
-<!-- [图片占位符：编辑 server_tcp.conf] -->
+<a href="images/2026-02-24-22-55-52.png" target="_blank"> <img src="images/2026-02-24-22-55-52.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 #### 编辑 tcp 指南
 
-进入编辑模式（按 i 键），请根据您的 OpenVPN 版本进行以下修改：
+> **注意：以下为新版 OpenVPN 关键配置语法变更！**
 
-1. 针对 OpenVPN 2.4.x（旧版）
-   保持以下参数不变（如果文件中是这样写的）：
+请注意：不同 OpenVPN 版本所需的修改各不相同。如果忘记自己的 OpenVPN 版本，请返回前文“版本检查（重要！）”部分重新确认。
 
-```text
-cipher none
-client-cert-not-required
-```
+- 如果你的 OpenVPN 版本为 **2.5.x**，只需**将 `cipher none` 替换为 `data-ciphers none`**（这样可避免加密兼容性及报错问题）。
+- 如果你的 OpenVPN 版本为 **2.6.x 及以上**，除了**将 `cipher none` 换为 `data-ciphers none`**，还要**把 `client-cert-not-required` 替换为 `verify-client-cert none`**（否则服务将无法启动）。
 
-2. 针对 OpenVPN 2.5.x（较新版）
-   旧的 cipher 指令已弃用，请找到 cipher none，将其修改或替换为：
+请根据你的实际版本，按需修改对应条目，确保配置兼容并能顺利启动。
 
-```text
-data-ciphers none
-```
+<a href="images/2026-02-24-23-07-20.png" target="_blank"> <img src="images/2026-02-24-23-07-20.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-（如果不改，服务端日志会疯狂报错提示协商失败）
+然后！记得 ctrl+S 保存，会弹出弹窗让你将文件上传回服务器，点击是
 
-<!-- [图片占位符：data-ciphers 修改示意] -->
-
-3. 针对 OpenVPN 2.6.x（最新版）
-   除了执行上述 2.5.x 的修改外，还必须处理证书验证指令。
-   找到 client-cert-not-required，将其**删除**并替换为：
-
-```text
-verify-client-cert none
-```
-
-（新版本彻底移除了旧指令，不替换将无法启动服务）
-
-<!-- [图片占位符：verify-client-cert 修改示意] -->
-
-#### 保存 tcp 并退出
-
-vi：按 Esc，输入 `:wq` 回车。nano：Ctrl+O 回车保存，Ctrl+X 退出。
+<a href="images/2026-02-24-23-08-09.png" target="_blank"> <img src="images/2026-02-24-23-08-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 修改 UDP 配置文件
 
-接下来修改 UDP 配置文件，通常群星联机更推荐使用 UDP 协议，因为它的延迟更低。
+于上文修改 tcp 文件同理，不再赘述
 
-#### 打开 udp 文件
+<a href="images/2026-02-24-23-12-55.png" target="_blank"> <img src="images/2026-02-24-23-12-55.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
-```bash
-sudo vi /etc/openvpn/server_udp.conf
-# 或使用 nano：sudo nano /etc/openvpn/server_udp.conf
-```
-
-#### 编辑 udp 指南
-
-操作逻辑与 TCP 完全一致，请重复上述步骤：
-
-1. 通用修改
-   将 auth 改为 auth none。
-
-2. 版本适配
-
-- 2.4.x：保持 cipher none 和 client-cert-not-required。
-
-- 2.5.x：将 cipher 改为 data-ciphers none。
-- 2.6.x：同上，并将 client-cert-not-required 替换为 verify-client-cert none。
-
-#### 保存 udp 文件并退出
-
-vi：按 Esc，输入 `:wq` 回车。nano：Ctrl+O 回车保存，Ctrl+X 退出。
+<a href="images/2026-02-24-23-12-40.png" target="_blank"> <img src="images/2026-02-24-23-12-40.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 设置连接账号密码
 
-最后，我们需要配置 checkpsw.sh 脚本读取的账号密码文件。客户端连接时必须填写这里设置的内容。
+最后，我们需要配置 psw-file 账号密码文件。客户端连接时必须填写这里设置的内容。
 
 #### 打开密码文件
 
-```bash
-sudo vi /etc/openvpn/psw-file
-# 或：sudo nano /etc/openvpn/psw-file
-```
+双击打开 psw-file
+
+<a href="images/2026-02-24-23-14-24.png" target="_blank"> <img src="images/2026-02-24-23-14-24.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 #### 设置账号
 
@@ -404,17 +393,9 @@ sudo vi /etc/openvpn/psw-file
 stellaris 123456
 ```
 
-#### 保存退出
+<a href="images/2026-02-24-23-15-35.png" target="_blank"> <img src="images/2026-02-24-23-15-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-vi：Esc → `:wq` 回车。nano：Ctrl+O 回车，Ctrl+X。
-
-> **可选（熟悉命令行时）**：若 OpenVPN 为 2.6.x，可用 sed 批量替换 cipher 与证书参数，再用编辑器确认并补上 `auth none`：
-
-```bash
-sudo sed -i 's/cipher none/data-ciphers none/g; s/client-cert-not-required/verify-client-cert none/g' /etc/openvpn/server_tcp.conf /etc/openvpn/server_udp.conf
-```
-
----
+然后 Ctrl+S 保存并上传文件
 
 至此，配置文件的修改工作全部完成。下一章我们将尝试启动服务，并教您如何看懂启动日志来验证修改是否成功。
 
@@ -428,13 +409,17 @@ sudo sed -i 's/cipher none/data-ciphers none/g; s/client-cert-not-required/verif
 
 #### 测试 TCP 服务
 
-在 Ubuntu 中 OpenVPN 一般位于 `/usr/sbin/openvpn`（不确定可执行 `which openvpn` 查看）。直接启动 TCP 服务端：
+在 Ubuntu 中 OpenVPN 一般位于 `/usr/sbin/openvpn`（不确定可执行 `which openvpn` 查看）。
+
+<a href="images/2026-02-24-23-17-03.png" target="_blank"> <img src="images/2026-02-24-23-17-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+直接启动 TCP 服务端：
 
 ```bash
 sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_tcp.conf
 ```
 
-<!-- [图片占位符：TCP 服务启动日志] -->
+<a href="images/2026-02-24-23-17-42.png" target="_blank"> <img src="images/2026-02-24-23-17-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 观察启动日志
 
@@ -453,13 +438,15 @@ sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_tcp.conf
 sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_udp.conf
 ```
 
-<!-- [图片占位符：UDP 服务启动日志] -->
+<a href="images/2026-02-24-23-19-53.png" target="_blank"> <img src="images/2026-02-24-23-19-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 同样等待出现 **`Initialization Sequence Completed`** 后，按 `Ctrl + C` 停止。
 
 ### 配置开机自启动
 
-为了让加速器在服务器重启后自动运行，我们使用 **systemd** 创建两个服务单元。Ubuntu 24.04 默认使用 systemd，无需依赖 rc.local。
+为了让加速器在服务器重启后自动运行，我们使用 **systemd** 创建两个服务单元。
+
+下列指令直接复制粘贴后回车即可
 
 #### 创建 TCP 服务单元
 
@@ -479,6 +466,8 @@ WantedBy=multi-user.target
 EOF
 ```
 
+<a href="images/2026-02-24-23-22-52.png" target="_blank"> <img src="images/2026-02-24-23-22-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 #### 创建 UDP 服务单元
 
 ```bash
@@ -497,6 +486,8 @@ WantedBy=multi-user.target
 EOF
 ```
 
+<a href="images/2026-02-24-23-23-22.png" target="_blank"> <img src="images/2026-02-24-23-23-22.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 #### 启用并启动服务
 
 ```bash
@@ -505,13 +496,15 @@ sudo systemctl enable openvpn-stellaris-tcp openvpn-stellaris-udp
 sudo systemctl start openvpn-stellaris-tcp openvpn-stellaris-udp
 ```
 
-<!-- [图片占位符：systemctl enable/start 执行结果] -->
+<a href="images/2026-02-24-23-26-05.png" target="_blank"> <img src="images/2026-02-24-23-26-05.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 检查状态（应均为 active (running)）：
 
 ```bash
 sudo systemctl status openvpn-stellaris-tcp openvpn-stellaris-udp
 ```
+
+<a href="images/2026-02-24-23-27-46.png" target="_blank"> <img src="images/2026-02-24-23-27-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 可选：重启验证
 
@@ -523,7 +516,7 @@ sudo systemctl status openvpn-stellaris-tcp openvpn-stellaris-udp
 sudo reboot
 ```
 
-SSH 会断开，等待 1～2 分钟后重新连接。
+SSH 会断开，按回车等待 1～2 分钟后重新连接。
 
 #### 验证端口监听状态
 
@@ -534,15 +527,13 @@ ss -ulnp | grep 3074
 ss -tlnp | grep 3075
 ```
 
-（Ubuntu 默认未安装 `netstat`，使用 `ss` 查看端口；若已安装 net-tools，也可用 `netstat -anp | grep 307`。）
-
-<!-- [图片占位符：端口监听检查结果] -->
-
 #### 确认结果
 
 观察输出结果：
 
 - 若 UDP 3074 和 TCP 3075 均有对应进程在监听，说明加速器已成功在后台自动运行，服务端部署完成。
+
+<a href="images/2026-02-24-23-29-15.png" target="_blank"> <img src="images/2026-02-24-23-29-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 客户端深度配置与联机实测
 
@@ -558,13 +549,15 @@ ss -tlnp | grep 3075
 
 > <https://www.dogfight360.com/blog/1590/>
 
-<!-- [图片占位符：下载页面/解压后的文件列表] -->
+<a href="images/2026-02-24-23-33-53.png" target="_blank"> <img src="images/2026-02-24-23-33-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-解压后，您应该会看到以下三个核心文件：
+下载完成后解压，解压密码 dogfight360，解压后，您应该会看到以下三个核心文件：
 
 - UsbEAm LAN Party V1.2.exe（客户端主程序）
 - tap-windows-9.9.2_3.exe（虚拟网卡驱动安装包）
 - customize.ini（节点配置文件）
+
+<a href="images/2026-02-24-23-35-06.png" target="_blank"> <img src="images/2026-02-24-23-35-06.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 #### 安装 TAP 驱动
 
@@ -574,7 +567,7 @@ ss -tlnp | grep 3075
 2. 一路点击 Next（下一步）直到安装完成。
 3. 注意：安装过程中无需更改任何默认设置。
 
-   <!-- [图片占位符：TAP 驱动安装完成] -->
+<a href="images/2026-02-24-23-35-23.png" target="_blank"> <img src="images/2026-02-24-23-35-23.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
 ### 配置节点信息
 
@@ -582,20 +575,20 @@ ss -tlnp | grep 3075
 
 #### 编辑配置文件
 
-用记事本打开 customize.ini，清空里面的内容，或者直接修改为以下标准格式：
+双击选择用记事本打开 customize.ini，清空里面的内容，或者直接修改为以下标准格式：
 
-<!-- [图片占位符：customize.ini 编辑] -->
+<a href="images/2026-02-24-23-37-55.png" target="_blank"> <img src="images/2026-02-24-23-37-55.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ```ini
 [usbeam]
-Server List=我的群星节点
-Disable rules=0
-Broadcast fix=0
+Server_List=我的群星节点
+Disable_rules=1
+Broadcast_fix=1
 
 [我的群星节点]
 IP=203.0.113.1
-TCP Port=3075
-UDP Port=3074
+TCP_Port=3075
+UDP_Port=3074
 USER=stellaris
 PASS=123456
 ```
@@ -608,8 +601,8 @@ PASS=123456
 - **TCP Port / UDP Port**：默认填写 `3075` 和 `3074`。**如果您使用的是共享型 VPS**，请填写您在服务商管理面板中配置的端口转发规则里对应的**外部端口号**（详见上方"特殊情况：共享型 VPS 的端口转发"一节）
 - **USER**：修改为您在 `psw-file` 里设置的 **用户名**
 - **PASS**：修改为您在 `psw-file` 里设置的 **密码**
-- **Disable rules=0**：代表默认不勾选「不使用安全规则」
-- **Broadcast fix=0**：代表默认不勾选「修正广播优先级」
+- **Disable rules=1**：代表默认勾选「不使用安全规则」
+- **Broadcast fix=1**：代表默认勾选「修正广播优先级」
 
 修改完成后，保存并关闭文件。
 
@@ -621,11 +614,13 @@ PASS=123456
 
 双击运行 UsbEAm LAN Party V1.2.exe。
 
-<!-- [图片占位符：客户端主界面] -->
+<a href="images/2026-02-24-23-39-01.png" target="_blank"> <img src="images/2026-02-24-23-39-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 #### 选择节点
 
 在软件界面的下拉框中，找到我们刚才在配置文件里命名的节点（例如"我的群星节点"）。
+
+<a href="images/2026-02-24-23-50-46.png" target="_blank"> <img src="images/2026-02-24-23-50-46.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
 #### 选择模式（关键！）
 
@@ -634,7 +629,7 @@ PASS=123456
 
 > 💡 群星联机对延迟极其敏感，**UDP 模式去除了 TCP 的握手重传机制**，能显著降低延迟，是本教程的核心优势所在。
 
-<!-- [图片占位符：选择 UDP 模式] -->
+<a href="images/2026-02-24-23-51-04.png" target="_blank"> <img src="images/2026-02-24-23-51-04.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
 #### 点击连接
 
@@ -642,16 +637,14 @@ PASS=123456
 
 - 观察软件底部的状态栏
 - ✅ 如果显示 **「连接状态：正常 (xx ms)」**，恭喜您！节点搭建成功
-- ❌ 如果一直卡在「正在连接」或提示 **验证失败**，请检查：
+- ❌ 如果一直卡在「正在连接」，请检查：
   - 防火墙端口是否正确开放（第一章）
   - 账号密码是否填写正确（上一章）
   - 服务端是否正常运行
 
-<!-- [图片占位符：连接状态正常] -->
-
 当所有小伙伴都显示 **「连接状态：正常」** 后，大家实际上已经处于同一个虚拟局域网中。
 
-<!-- [图片占位符：多人连接成功] -->
+<a href="images/2026-02-24-23-51-54.png" target="_blank"> <img src="images/2026-02-24-23-51-54.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
 ## 总结
 

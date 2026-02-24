@@ -37,11 +37,11 @@
 
   /* 三级标题：与正文同级主色，细左边框区分层级 */
   h4 {
-    font-size: 1.55rem;
+    font-size: 1.65rem;
     font-weight: 600;
-    margin: 1.4em 0 0.4em 0;
-    padding-left: 18px;
-    border-left: 3px solid var(--card-separator-color);
+    margin: 1.6em 0 0.45em 0;
+    padding: 0.15em 0 0.15em 18px;
+    border-left: 2px solid var(--accent-color);
     color: var(--card-text-color-main);
     line-height: 1.4;
   }

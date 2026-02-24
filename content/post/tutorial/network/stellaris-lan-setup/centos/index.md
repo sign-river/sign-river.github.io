@@ -25,7 +25,6 @@ hidden: true
 - 基础工具：**WinSCP**（用于传文件）、**SSH 终端**
 - 一颗折腾的心：虽然步骤较多，但为了流畅的银河征途，一切都是值得的！
 
-
 ## 服务器准备与基础环境搭建
 
 俗话说"工欲善其事，必先利其器"。搭建群星联机节点，核心在于网络质量而非服务器的计算性能。本章将指导您完成服务器的选购及基础环境的配置。
@@ -599,14 +598,14 @@ sudo netstat -anp | grep 307
 
 ```ini
 [usbeam]
-Server List=我的群星节点
-Disable rules=0
-Broadcast fix=0
+Server_List=我的群星节点
+Disable_rules=1
+Broadcast_fix=1
 
 [我的群星节点]
 IP=203.0.113.1
-TCP Port=3075
-UDP Port=3074
+TCP_Port=3075
+UDP_Port=3074
 USER=stellaris
 PASS=123456
 ```
@@ -619,8 +618,8 @@ PASS=123456
 - **TCP Port / UDP Port**：默认填写 `3075` 和 `3074`。**如果您使用的是共享型 VPS**，请填写您在服务商管理面板中配置的端口转发规则里对应的**外部端口号**（详见上方"特殊情况：共享型 VPS 的端口转发"一节）
 - **USER**：修改为您在 `psw-file` 里设置的 **用户名**
 - **PASS**：修改为您在 `psw-file` 里设置的 **密码**
-- **Disable rules=0**：代表默认不勾选「不使用安全规则」
-- **Broadcast fix=0**：代表默认不勾选「修正广播优先级」
+- **Disable rules=1**：代表默认勾选「不使用安全规则」
+- **Broadcast fix=1**：代表默认勾选「修正广播优先级」
 
 修改完成后，保存并关闭文件。
 
@@ -644,7 +643,7 @@ PASS=123456
 
 > 💡 群星联机对延迟极其敏感，**UDP 模式去除了 TCP 的握手重传机制**，能显著降低延迟，是本教程的核心优势所在。
 
-<a href="images/2026-02-11-22-03-17.png" target="_blank"> <img src="images/2026-02-11-22-03-17.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
+<a href="images/2026-02-11-22-03-17.png" target="_blank"> <img src="images/2026-02-11-22-03-17.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
 #### 点击连接
 
@@ -657,11 +656,11 @@ PASS=123456
   - 账号密码是否填写正确（上一章）
   - 服务端是否正常运行
 
-    <a href="images/2026-02-11-22-03-31.png" target="_blank"> <img src="images/2026-02-11-22-03-31.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
+<a href="images/2026-02-11-22-03-31.png" target="_blank"> <img src="images/2026-02-11-22-03-31.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
 当所有小伙伴都显示 **「连接状态：正常」** 后，大家实际上已经处于同一个虚拟局域网中。
-<a href="images/2026-02-11-22-03-48.png" target="_blank"> <img src="images/2026-02-11-22-03-48.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
+<a href="images/2026-02-11-22-03-48.png" target="_blank"> <img src="images/2026-02-11-22-03-48.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
 ## 总结
 
