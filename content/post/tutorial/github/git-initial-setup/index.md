@@ -3,7 +3,7 @@ title: "新电脑 Git 初始化配置指南"
 date: 2026-02-11
 description: "快速配置新电脑上的 Git 代理、用户信息，解决常见问题"
 categories:
-  - "开发工具"
+  - "教程"
 tags:
   - "Git"
   - "GitHub"

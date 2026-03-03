@@ -3,7 +3,7 @@ title: "Windows Defender 彻底关闭指南"
 date: 2026-02-11
 description: "通过组策略编辑器彻底禁用 Windows Defender 实时保护"
 categories:
-  - "系统工具"
+  - "工具"
 tags:
   - "Windows"
   - "系统优化"

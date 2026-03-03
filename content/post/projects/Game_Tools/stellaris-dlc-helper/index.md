@@ -4,7 +4,7 @@ date: 2026-02-13
 description: "一个简单易用的工具，帮助你解锁群星（Stellaris）游戏的所有 DLC 内容"
 # image: images/cover.jpg
 categories:
-  - "个人项目"
+  - "项目"
 tags:
   - "Stellaris"
   - "群星"

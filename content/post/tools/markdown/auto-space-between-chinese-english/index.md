@@ -4,7 +4,7 @@ date: 2026-02-10
 description: "使用 Pangu-Markdown 插件实现保存时自动添加中英文空格"
 image:
 categories:
-  - "写作工具"
+  - "工具"
 tags:
   - "VS Code"
   - "Markdown"

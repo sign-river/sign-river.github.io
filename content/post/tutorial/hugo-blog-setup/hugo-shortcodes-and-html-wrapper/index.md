@@ -3,7 +3,7 @@ title: "Hugo Theme Stack 进阶：用 Shortcodes 封装常用 HTML 组件"
 date: 2026-03-03
 description: "以复制按钮为例，手把手演示如何在 hugo-theme-stack 中用 Hugo Shortcodes 封装可复用的 HTML 组件，让写作更省心。"
 categories:
-  - "博客搭建"
+  - "教程"
 tags:
   - "Hugo"
   - "Shortcode"

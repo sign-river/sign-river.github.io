@@ -4,7 +4,7 @@ date: 2026-02-14
 description: "通过自定义短语功能，让搜狗输入法快速输入「」和『』直角引号"
 # image: images/cover.jpg
 categories:
-  - "系统工具"
+  - "工具"
 tags:
   - "搜狗输入法"
   - "自定义短语"

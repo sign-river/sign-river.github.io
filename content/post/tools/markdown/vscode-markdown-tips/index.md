@@ -4,7 +4,7 @@ date: 2026-02-10
 description: "VS Code 插件、配置和技巧，让 Markdown 写作更高效"
 image:
 categories:
-  - "写作工具"
+  - "工具"
 tags:
   - "VS Code"
   - "Markdown"

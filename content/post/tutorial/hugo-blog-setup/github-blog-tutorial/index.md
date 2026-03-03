@@ -4,11 +4,11 @@ date: 2026-02-09
 description: "手把手教你使用 Hugo + GitHub Pages 搭建自己的个人博客"
 # image: images/cover.jpg
 categories:
-  - "博客搭建"
+  - "教程"
 tags:
-  - "博客搭建"
-  - "GitHub Pages"
   - "Hugo"
+  - "GitHub Pages"
+  - "博客搭建"
   - "hugo-theme-stack"
   - "Git"
   - "静态网站"

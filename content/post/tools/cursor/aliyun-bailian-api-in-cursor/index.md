@@ -3,13 +3,12 @@ title: "在 Cursor 中接入阿里云百炼 API 教程"
 date: 2026-03-03
 description: "详细教程：在 Cursor 编辑器中配置阿里云百炼 API，使用通义千问等国产大模型进行代码编写和 AI 辅助开发。"
 categories:
-  - "开发工具"
+  - "教程"
 tags:
   - "Cursor"
   - "阿里云百炼"
   - "Qwen"
   - "AI"
-  - "开发工具"
   - "API 集成"
 draft: false
 slug: "cursor-aliyun-bailian-api-setup"

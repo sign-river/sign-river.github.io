@@ -4,7 +4,7 @@ date: 2026-02-10
 description: "PyTorch 的基本概念和环境配置"
 image:
 categories:
-  - "学习笔记"
+  - "笔记"
 tags:
   - "PyTorch"
   - "深度学习"

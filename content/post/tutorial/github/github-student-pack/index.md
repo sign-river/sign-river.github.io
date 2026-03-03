@@ -4,13 +4,12 @@ description: "详细记录东北大学秦皇岛分校学生申请 GitHub Student
 slug: "github-student-pack-neu-qhd"
 date: 2026-02-13
 categories:
-  - 开发工具
+  - "教程"
 tags:
   - GitHub
   - 学生认证
   - 教育优惠
   - 东北大学秦皇岛
-  - 开发工具
   - 免费工具
 image:
 math: false
@@ -20,11 +19,9 @@ draft: false
 > **适用对象**：东北大学秦皇岛分校（NEU Qinhuangdao）在校学生  
 > **认证优势**：免费使用 GitHub Pro、JetBrains 全家桶、Azure 学生订阅等价值上千美元的开发者工具
 
-
 ## 1. 前言
 
 GitHub Student Developer Pack 为学生提供了丰富的免费开发工具和服务。本指南基于东秦学生的实际申请经验编写，**特别记录了"修改浏览器定位"这一解决认证失败的关键技巧**，希望帮助同学们顺利通过认证。
-
 
 ## 2. 东北大学总校学生邮箱的注册与激活
 
@@ -119,7 +116,6 @@ https://mails.neu.edu.cn/coremail/
 
 成功登录后，您将看到邮箱主界面。请点击左上角头像，确认您的邮箱地址后缀为 `@mails.neu.edu.cn`。至此，教育邮箱准备工作完成
 <a href="images/2026-02-13-21-29-45.png" target="_blank"> <img src="images/2026-02-13-21-29-45.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
 
 ## 3. GitHub 账号的标准化配置
 
@@ -354,7 +350,6 @@ GitHub 会校验您的物理位置是否在学校附近。如果您身处校外�
 - Approved (绿色)：恭喜！认证通过。页面提示福利将在 72 小时内到账。
 - Denied (红色)：认证失败。系统会提示具体原因（如图像不清、定位不符等），请根据提示修正后重新尝试。
   <a href="images/2026-02-13-22-26-38.png" target="_blank"> <img src="images/2026-02-13-22-26-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
 
 ## 6. 参考资料
 

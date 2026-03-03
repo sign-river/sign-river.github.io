@@ -4,7 +4,7 @@ date: 2026-03-02
 description: "梳理机器学习与 AI 领域中公平性的主流定义与度量标准"
 image:
 categories:
-  - "学习笔记"
+  - "笔记"
 tags:
   - "公平性"
   - "机器学习"
