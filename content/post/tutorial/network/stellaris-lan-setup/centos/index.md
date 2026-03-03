@@ -9,7 +9,7 @@ hidden: true
 
 > <span style="font-size: 20px; font-weight: bold;">🚀 [点此返回主文章](/p/stellaris-lan-openvpn-guide/)</span>
 
-## 引言
+## 1. 引言
 
 **你需要准备**：
 
@@ -17,27 +17,27 @@ hidden: true
 - 基础工具：**WinSCP**（用于传文件）、**SSH 终端**
 - 一颗折腾的心：虽然步骤较多，但为了流畅的银河征途，一切都是值得的！
 
-## 服务器准备与基础环境搭建
+## 2. 服务器准备与基础环境搭建
 
 俗话说"工欲善其事，必先利其器"。搭建群星联机节点，核心在于网络质量而非服务器的计算性能。本章将指导您完成服务器的选购及基础环境的配置。
 
-### 服务器选购建议
+### 2.1. 服务器选购建议
 
 在购买 VPS 时，请重点关注以下三点：
 
-#### 带宽是核心
+#### 2.1.1. 带宽是核心
 
 群星联机数据交换量较大。根据实测经验，**10Mbps 带宽**大约能支撑 **1～2 车**同时游玩（每车约 10 人），**带宽越大，后期卡顿概率越低**。
 
-#### 地理位置
+#### 2.1.2. 地理位置
 
 尽量选择距离您和朋友们地理位置都比较近的数据中心，以物理手段降低延迟。
 
-#### 配置够用即可
+#### 2.1.3. 配置够用即可
 
 如果这台服务器仅用于群星加速，CPU、内存和硬盘空间可以选最低配（如 1 核 1G），以降低成本。
 
-### 安装必要组件
+### 2.2. 安装必要组件
 
 购买并登录服务器（使用 SSH 工具）后，我们需要安装解压工具、EPEL 源以及核心软件 OpenVPN。请依次执行以下指令（本教程以 CentOS 7 为例）：
 
@@ -47,7 +47,7 @@ hidden: true
 <a href="images/2026-02-11-21-40-51.png" target="_blank"> <img src="images/2026-02-11-21-40-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 <a href="images/2026-02-11-21-41-10.png" target="_blank"> <img src="images/2026-02-11-21-41-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 更新系统软件包
+#### 2.2.1. 更新系统软件包
 
 ```bash
 sudo yum update -y
@@ -56,7 +56,7 @@ sudo yum update -y
 <br>
 <a href="images/2026-02-11-18-30-37.png" target="_blank"> <img src="images/2026-02-11-18-30-37.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 安装 unzip 解压工具
+#### 2.2.2. 安装 unzip 解压工具
 
 （后续解压服务端文件需要用到）
 
@@ -67,7 +67,7 @@ sudo yum install unzip -y
 <br>
 <a href="images/2026-02-11-18-31-46.png" target="_blank"> <img src="images/2026-02-11-18-31-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 安装 EPEL 源
+#### 2.2.3. 安装 EPEL 源
 
 （OpenVPN 通常包含在 EPEL 源中）
 
@@ -78,7 +78,7 @@ sudo yum install epel-release -y
 <br>
 <a href="images/2026-02-11-18-32-10.png" target="_blank"> <img src="images/2026-02-11-18-32-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 安装 OpenVPN
+#### 2.2.4. 安装 OpenVPN
 
 ```bash
 sudo yum install openvpn -y
@@ -86,7 +86,7 @@ sudo yum install openvpn -y
 
 <br>
 <a href="images/2026-02-11-18-32-31.png" target="_blank"> <img src="images/2026-02-11-18-32-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-#### 版本检查（重要！）
+#### 2.2.5. 版本检查（重要！）
 
 安装完成后，输入以下命令查看版本：
 
@@ -106,15 +106,15 @@ openvpn --version
   现在的云服务器系统（如新版 CentOS 或 Debian/Ubuntu）通常会安装较新的版本。  
   ⚠️ **如果您的版本是 2.5 或更高，请务必记住这一点**。因为新版本废弃了旧的加密参数，我们在下一章部署时，**必须手动修改配置文件**（添加 `data-ciphers` 等设置）才能正常连接，否则会导致无法联机。
 
-### 开放防火墙端口（关键步骤）
+### 2.3. 开放防火墙端口（关键步骤）
 
 为了让游戏数据能顺利进出服务器，我们需要开放两个特定的端口：**3074 (UDP)** 和 **3075 (TCP)**。这通常涉及两道关卡：**服务器内部防火墙**和**云厂商安全组**。
 
-#### 第一关：服务器内部防火墙 (Firewalld)
+#### 2.3.1. 第一关：服务器内部防火墙 (Firewalld)
 
 如果您的服务器开启了 firewalld，请执行以下命令放行端口：
 
-#### 检查防火墙状态
+#### 2.3.2. 检查防火墙状态
 
 ```bash
 sudo systemctl status firewalld
@@ -125,25 +125,25 @@ sudo systemctl status firewalld
 如果输出如下图所示，说明你的 firewalld 防火墙服务在正常运行，我们需要继续操作，放行端口 3074(UDP) 和 3075(TCP)
 <a href="images/2026-02-11-18-42-06.png" target="_blank"> <img src="images/2026-02-11-18-42-06.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 放行 3074 (UDP)
+#### 2.3.3. 放行 3074 (UDP)
 
 ```bash
 sudo firewall-cmd --zone=public --add-port=3074/udp --permanent
 ```
 
-#### 放行 3075 (TCP)
+#### 2.3.4. 放行 3075 (TCP)
 
 ```bash
 sudo firewall-cmd --zone=public --add-port=3075/tcp --permanent
 ```
 
-#### 重载配置使其生效
+#### 2.3.5. 重载配置使其生效
 
 ```bash
 sudo firewall-cmd --reload
 ```
 
-#### 验证是否成功
+#### 2.3.6. 验证是否成功
 
 输入以下指令查看开放列表：
 
@@ -155,7 +155,7 @@ sudo firewall-cmd --zone=public --list-ports
 <a href="images/2026-02-11-18-42-27.png" target="_blank"> <img src="images/2026-02-11-18-42-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 如果看到 3074/udp 3075/tcp 字样，即代表操作成功。
 
-#### 第二关：云厂商安全组 (Security Group)
+#### 2.3.7. 第二关：云厂商安全组 (Security Group)
 
 ⚠️ **这是新手最容易忽略的一步！**
 
@@ -179,7 +179,7 @@ sudo firewall-cmd --zone=public --list-ports
   <a href="images/2026-02-11-18-43-17.png" target="_blank"> <img src="images/2026-02-11-18-43-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
   <a href="images/2026-02-11-18-43-25.png" target="_blank"> <img src="images/2026-02-11-18-43-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 特殊情况：共享型 VPS 的端口转发（NAT 映射）
+### 2.4. 特殊情况：共享型 VPS 的端口转发（NAT 映射）
 
 > ⚠️ **以下内容仅适用于购买了「超低价共享型 VPS」的用户，拥有独立公网 IP 的独立服务器用户可直接跳过本节。**
 
@@ -208,17 +208,17 @@ sudo firewall-cmd --zone=public --list-ports
 
 > 💡 **注意**：内部防火墙（Firewalld）和云厂商安全组仍然需要开放 **3074（UDP）** 和 **3075（TCP）**，因为这是 OpenVPN 服务在您虚拟机内部实际监听的端口。端口转发规则是将外部流量"转进来"，服务本身不变。
 
-## 服务端文件部署与核心配置
+## 3. 服务端文件部署与核心配置
 
 在第一章准备好环境后，我们需要将加速器的"心脏"——服务端核心文件部署到服务器中。这一步看似简单，但文件路径的准确性和脚本的执行权限直接决定了后续服务能否启动。
 
 首先，我们需要先从 [原作者博客](https://www.dogfight360.com/blog/1590/#comment-41142) 中下载关键文件 [教程 .zip](https://www.dogfight360.com/blog/wp-content/uploads/2021/07/%E6%95%99%E7%A8%8B.zip), 解压后从中提取出 server.zip
 
-### 使用 WinSCP 上传文件
+### 3.1. 使用 WinSCP 上传文件
 
 为了方便管理，我们推荐使用 [WinSCP 可视化工具](https://winscp.net/eng/download.php) 将文件上传到服务器的临时目录。
 
-#### 建立连接
+#### 3.1.1. 建立连接
 
 1. 打开 WinSCP 软件。
 2. **主机名**：填写您的服务器公网 IP。
@@ -228,7 +228,7 @@ sudo firewall-cmd --zone=public --list-ports
 5. 点击登录，如果是首次连接，点击"是"接受密钥指纹。
    <a href="images/2026-02-11-18-56-03.png" target="_blank"> <img src="images/2026-02-11-18-56-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 上传操作
+#### 3.1.2. 上传操作
 
 1. 登录成功后，软件界面左侧代表您的电脑，右侧代表服务器。
 2. 在右侧（服务器端），双击顶部的 `..` 文件夹图标返回根目录，然后找到并进入 `/tmp` 目录。
@@ -240,11 +240,11 @@ sudo firewall-cmd --zone=public --list-ports
    <a href="images/2026-02-11-18-57-45.png" target="_blank"> <img src="images/2026-02-11-18-57-45.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
    <a href="images/2026-02-11-18-57-52.png" target="_blank"> <img src="images/2026-02-11-18-57-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 解压与部署
+### 3.2. 解压与部署
 
 文件上传完成后，我们需要通过 SSH 终端将其解压到 OpenVPN 的标准配置目录中。
 
-#### 创建标准目录
+#### 3.2.1. 创建标准目录
 
 为了规范化管理，我们统一将文件存放在 `/etc/openvpn` 目录下。输入以下命令创建目录（如果系统已自动创建，此命令会提示已存在，忽略即可）：
 
@@ -252,7 +252,7 @@ sudo firewall-cmd --zone=public --list-ports
 sudo mkdir -p /etc/openvpn
 ```
 
-#### 解压文件
+#### 3.2.2. 解压文件
 
 输入以下命令，将刚才上传到临时目录的文件解压到配置目录：
 
@@ -260,7 +260,7 @@ sudo mkdir -p /etc/openvpn
 sudo unzip /tmp/server.zip -d /etc/openvpn/
 ```
 
-#### 验证解压结果
+#### 3.2.3. 验证解压结果
 
 解压完成后，我们要确认文件是否都在。输入以下命令查看目录内容：
 
@@ -275,13 +275,13 @@ ls -l /etc/openvpn/
 - `checkpsw.sh` （密码验证脚本）
 - `psw-file` （账号密码文件）
 
-### 关键步骤：赋予执行权限
+### 3.3. 关键步骤：赋予执行权限
 
 ⚠️ **这是最容易被新手忽略的一步！**
 
 `checkpsw.sh` 是一个 Shell 脚本，OpenVPN 需要调用它来验证客户端传来的账号密码。如果它没有 **「可执行权限」**，服务器就会 **拒绝所有连接请求**，导致报错。
 
-#### 赋予权限
+#### 3.3.1. 赋予权限
 
 输入以下命令，将脚本标记为可执行文件：
 
@@ -289,7 +289,7 @@ ls -l /etc/openvpn/
 sudo chmod +x /etc/openvpn/checkpsw.sh
 ```
 
-#### 再次验证
+#### 3.3.2. 再次验证
 
 再次输入查看命令：
 
@@ -306,15 +306,15 @@ ls -l /etc/openvpn/checkpsw.sh
 
 至此，所有的文件都已就位，且具备了运行条件。下一章我们将进入最核心、也最复杂的环节：修改配置文件以适配群星的低延迟需求及新版系统的兼容性。
 
-## 核心配置与版本兼容性修正
+## 4. 核心配置与版本兼容性修正
 
 文件部署完成后，我们需要对 OpenVPN 的配置文件进行"手术"。本章的核心目标是：关闭加密以降低延迟，并修正新旧版本的语法差异。
 
-### 修改 TCP 配置文件
+### 4.1. 修改 TCP 配置文件
 
 首先修改 TCP 协议的配置文件。此文件决定了游戏数据的传输方式之一。
 
-#### 打开 tcp 文件
+#### 4.1.1. 打开 tcp 文件
 
 输入以下命令编辑 server_tcp.conf 文件：
 
@@ -325,7 +325,7 @@ sudo vi /etc/openvpn/server_tcp.conf
 <br>
 <a href="images/2026-02-11-21-42-28.png" target="_blank"> <img src="images/2026-02-11-21-42-28.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 编辑 tcp 指南
+#### 4.1.2. 编辑 tcp 指南
 
 进入编辑模式（按 i 键），请根据您的 OpenVPN 版本进行以下修改：
 
@@ -358,15 +358,15 @@ verify-client-cert none
 （新版本彻底移除了旧指令，不替换将无法启动服务）
 <a href="images/2026-02-11-21-44-58.png" target="_blank"> <img src="images/2026-02-11-21-44-58.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 保存 tcp 并文件退出
+#### 4.1.3. 保存 tcp 并文件退出
 
 修改完成后，按 Esc 键，输入 :wq 并回车。
 
-### 修改 UDP 配置文件
+### 4.2. 修改 UDP 配置文件
 
 接下来修改 UDP 配置文件，通常群星联机更推荐使用 UDP 协议，因为它的延迟更低。
 
-#### 打开 udp 文件
+#### 4.2.1. 打开 udp 文件
 
 输入以下命令：
 
@@ -374,7 +374,7 @@ verify-client-cert none
 sudo vi /etc/openvpn/server_udp.conf
 ```
 
-#### 编辑 udp 指南
+#### 4.2.2. 编辑 udp 指南
 
 操作逻辑与 TCP 完全一致，请重复上述步骤：
 
@@ -385,15 +385,15 @@ sudo vi /etc/openvpn/server_udp.conf
 - 2.5.x：将 cipher 改为 data-ciphers none。
 - 2.6.x：同上，并将 client-cert-not-required 替换为 verify-client-cert none。
 
-#### 保存 udp 文件并退出
+#### 4.2.3. 保存 udp 文件并退出
 
 按 Esc 键，输入 :wq 并回车。
 
-### 设置连接账号密码
+### 4.3. 设置连接账号密码
 
 最后，我们需要配置 checkpsw.sh 脚本读取的账号密码文件。客户端连接时必须填写这里设置的内容。
 
-#### 打开密码文件
+#### 4.3.1. 打开密码文件
 
 输入以下命令：
 
@@ -401,7 +401,7 @@ sudo vi /etc/openvpn/server_udp.conf
 sudo vi /etc/openvpn/psw-file
 ```
 
-#### 设置账号
+#### 4.3.2. 设置账号
 
 文件内容的格式非常简单：用户名 空格 密码。
 您可以删除原有的默认内容，填入您自己的账号。
@@ -412,7 +412,7 @@ sudo vi /etc/openvpn/psw-file
 stellaris 123456
 ```
 
-#### 保存退出
+#### 4.3.3. 保存退出
 
 按 Esc 键，输入 :wq 并回车。
 
@@ -420,15 +420,15 @@ stellaris 123456
 
 至此，配置文件的修改工作全部完成。下一章我们将尝试启动服务，并教您如何看懂启动日志来验证修改是否成功。
 
-## 服务启动验证与自动化部署
+## 5. 服务启动验证与自动化部署
 
 配置文件的修改只是纸上谈兵，我们需要通过实际运行来验证服务能否启动。如果配置文件有语法错误（例如 OpenVPN 版本不兼容），在这一步就会暴露出来。确认无误后，我们将配置开机自启。
 
-### 手动启动测试
+### 5.1. 手动启动测试
 
 在后台静默运行之前，我们先在前台手动启动一次，以便直观地看到启动日志。
 
-#### 查找 OpenVPN 主程序路径
+#### 5.1.1. 查找 OpenVPN 主程序路径
 
 输入以下指令查找路径，通常位于 /usr/sbin/openvpn：
 
@@ -439,7 +439,7 @@ sudo find / -name openvpn
 <br>
 <a href="images/2026-02-11-21-49-28.png" target="_blank"> <img src="images/2026-02-11-21-49-28.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 测试 TCP 服务
+#### 5.1.2. 测试 TCP 服务
 
 输入以下指令启动 TCP 服务端（注意路径需与上一步查到的一致）：
 
@@ -450,7 +450,7 @@ sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_tcp.conf
 <br>
 <a href="images/2026-02-11-21-50-01.png" target="_blank"> <img src="images/2026-02-11-21-50-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 观察启动日志
+#### 5.1.3. 观察启动日志
 
 终端会输出一长串日志。请耐心观察最后一行：
 
@@ -459,7 +459,7 @@ sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_tcp.conf
 
 确认成功后，按 `Ctrl + C` 停止服务。
 
-#### 测试 UDP 服务
+#### 5.1.4. 测试 UDP 服务
 
 重复上述步骤，测试 UDP 配置文件：
 
@@ -472,11 +472,11 @@ sudo /usr/sbin/openvpn --cd /etc/openvpn/ --config server_udp.conf
 
 同样等待出现 **`Initialization Sequence Completed`** 后，按 `Ctrl + C` 停止。
 
-### 配置开机自启动
+### 5.2. 配置开机自启动
 
 为了让加速器在服务器重启后自动运行，我们需要将启动命令添加到系统的启动脚本中。
 
-#### 编辑 rc.local 文件
+#### 5.2.1. 编辑 rc.local 文件
 
 输入以下命令打开启动脚本：
 
@@ -487,7 +487,7 @@ sudo vi /etc/rc.d/rc.local
 <br>
 <a href="images/2026-02-11-21-50-25.png" target="_blank"> <img src="images/2026-02-11-21-50-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 添加启动命令
+#### 5.2.2. 添加启动命令
 
 按 i 进入插入模式，使用方向键移动到文件最底部，粘贴以下两行代码：
 <a href="images/2026-02-11-21-50-42.png" target="_blank"> <img src="images/2026-02-11-21-50-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
@@ -500,11 +500,11 @@ sudo vi /etc/rc.d/rc.local
 - ⚠️ **注意**：命令末尾的 `&` 符号绝对不能漏！它代表「在后台运行」。如果漏掉，服务器重启后会卡在启动画面进不去系统。
   <a href="images/2026-02-11-21-50-57.png" target="_blank"> <img src="images/2026-02-11-21-50-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 保存并退出
+#### 5.2.3. 保存并退出
 
 按 Esc 键，输入 :wq 并回车。
 
-#### 赋予脚本执行权限
+#### 5.2.4. 赋予脚本执行权限
 
 ⚠️ **这是很多教程容易漏掉的一步**。在 CentOS 7 中，`rc.local` 默认没有执行权限。如果不执行此命令，开机启动将无效：
 
@@ -514,11 +514,11 @@ sudo chmod +x /etc/rc.d/rc.local
 
 <br>
 <a href="images/2026-02-11-21-51-18.png" target="_blank"> <img src="images/2026-02-11-21-51-18.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-### 重启验证
+### 5.3. 重启验证
 
 为了确保万无一失，我们模拟一次服务器断电重启。
 
-#### 重启服务器
+#### 5.3.1. 重启服务器
 
 输入以下命令重启系统：
 
@@ -528,7 +528,7 @@ sudo reboot
 
 此时 SSH 连接会断开，请等待 1-2 分钟。
 
-#### 验证端口监听状态
+#### 5.3.2. 验证端口监听状态
 
 重新连接 SSH，输入以下指令检查端口是否已在运行：
 
@@ -539,22 +539,22 @@ sudo netstat -anp | grep 307
 <br>
 <a href="images/2026-02-11-21-51-43.png" target="_blank"> <img src="images/2026-02-11-21-51-43.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 确认结果
+#### 5.3.3. 确认结果
 
 观察输出结果：
 
 - 如果看到类似 udp ... 0.0.0.0:3074 和 tcp ... 0.0.0.0:3075 的行，且状态为 LISTEN（TCP）或相关进程存在。
 - 这意味着加速器已经成功在后台自动运行，服务端部署圆满成功！
 
-## 客户端深度配置与联机实测
+## 6. 客户端深度配置与联机实测
 
 服务端配置圆满结束后，最后一步就是配置玩家手中的客户端。本方案使用的是 **UsbEAm LAN Party**，它小巧免安装，通过 TAP 虚拟网卡技术组建虚拟局域网，非常适合群星这种 P2P 联机游戏。
 
-### 下载与安装
+### 6.1. 下载与安装
 
 我们需要准备客户端程序和虚拟网卡驱动。
 
-#### 获取软件
+#### 6.1.1. 获取软件
 
 请前往原作者 Dogfight360 的博客下载最新版客户端（通常名为 UsbEAm_LAN_Party_V1.x.zip）：
 
@@ -568,7 +568,7 @@ sudo netstat -anp | grep 307
 - tap-windows-9.9.2_3.exe（虚拟网卡驱动安装包）
 - customize.ini（节点配置文件）
 
-#### 安装 TAP 驱动
+#### 6.1.2. 安装 TAP 驱动
 
 如果是第一次使用该软件，必须安装 TAP 驱动，否则无法建立虚拟局域网。
 
@@ -577,11 +577,11 @@ sudo netstat -anp | grep 307
 3. 注意：安装过程中无需更改任何默认设置。
    <a href="images/2026-02-11-22-01-59.png" target="_blank"> <img src="images/2026-02-11-22-01-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 配置节点信息
+### 6.2. 配置节点信息
 
 我们需要修改 customize.ini 文件，将我们服务器的信息填进去，让客户端知道去哪里连接。
 
-#### 编辑配置文件
+#### 6.2.1. 编辑配置文件
 
 用记事本打开 customize.ini，清空里面的内容，或者直接修改为以下标准格式：
 <a href="images/2026-02-11-21-59-44.png" target="_blank"> <img src="images/2026-02-11-21-59-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
@@ -601,7 +601,7 @@ USER=stellaris
 PASS=123456
 ```
 
-#### 参数详解（请务必核对）
+#### 6.2.2. 参数详解（请务必核对）
 
 - **Server List**：这里填的名字会显示在软件下拉菜单里
 - **[我的群星节点]**：中括号里的名字必须与 `Server List` 保持一致
@@ -614,20 +614,20 @@ PASS=123456
 
 修改完成后，保存并关闭文件。
 
-### 启动连接与测试
+### 6.3. 启动连接与测试
 
 万事俱备，只欠东风。
 
-#### 启动客户端
+#### 6.3.1. 启动客户端
 
 双击运行 UsbEAm LAN Party V1.2.exe。
 <a href="images/2026-02-11-22-02-15.png" target="_blank"> <img src="images/2026-02-11-22-02-15.png" alt="image" style="max-width: 100%; width:1000px;"/> </a>
 
-#### 选择节点
+#### 6.3.2. 选择节点
 
 在软件界面的下拉框中，找到我们刚才在配置文件里命名的节点（例如"我的群星节点"）。
 
-#### 选择模式（关键！）
+#### 6.3.3. 选择模式（关键！）
 
 在连接按钮的左侧或下方，通常有模式选择。  
 ⚠️ **请务必勾选 UDP 模式**。
@@ -636,7 +636,7 @@ PASS=123456
 
 <a href="images/2026-02-11-22-03-17.png" target="_blank"> <img src="images/2026-02-11-22-03-17.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
-#### 点击连接
+#### 6.3.4. 点击连接
 
 点击 **连接** 按钮。
 
@@ -653,7 +653,7 @@ PASS=123456
 
 <a href="images/2026-02-11-22-03-48.png" target="_blank"> <img src="images/2026-02-11-22-03-48.png" alt="image" style="max-width: 100%; width: 400px;"/> </a>
 
-## 总结
+## 7. 总结
 
 🎉 至此，您的专属群星联机加速节点已部署完毕！
 

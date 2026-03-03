@@ -15,7 +15,7 @@ draft: false
 slug: "cursor-install-plugin-from-github"
 ---
 
-## 为什么需要手动安装？
+## 1. 为什么需要手动安装？
 
 Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好用的插件可能找不到。比如这次要装的中英文自动空格插件（AutoCorrect），它能让你的文档看起来更规范：
 
@@ -24,9 +24,9 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 
 好消息是，Cursor 完全兼容 VSCode 插件，我们可以通过 `.vsix` 文件手动安装。
 
-## 安装步骤
+## 2. 安装步骤
 
-### 第一步：下载插件文件
+### 2.1. 第一步：下载插件文件
 
 点击下载 AutoCorrect 插件：[huacnlee.autocorrect-2.6.4.vsix](plugins/huacnlee.autocorrect-2.6.4.vsix)
 
@@ -34,7 +34,7 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 
 ---
 
-### 第二步：安装插件
+### 2.2. 第二步：安装插件
 
 下载完成后，通过拖拽安装插件：
 
@@ -45,7 +45,7 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 
 ---
 
-### 第三步：使用插件
+### 2.3. 第三步：使用插件
 
 安装完成后重启 Cursor：
 
@@ -70,13 +70,13 @@ Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好�
 <br>
 <a href="images/2026-02-14-12-57-53.png" target="_blank"> <img src="images/2026-02-14-12-57-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 注意事项
+## 3. 注意事项
 
 - 手动安装的插件不会自动更新，需要手动下载新版本重新安装
 - 大部分 VSCode 插件都能在 Cursor 中正常使用
 - 如果 Cursor 商店中已有同名插件，建议先卸载再安装
 
-## 其他插件安装
+## 4. 其他插件安装
 
 这个方法适用于所有 VSCode 插件。如果你需要其他插件的 `.vsix` 文件，可以从 [VSCode 插件市场](https://marketplace.visualstudio.com/) 下载。
 

@@ -13,7 +13,7 @@ draft: false
 slug: "hugo-theme-stack-shortcodes-html-wrapper"
 ---
 
-## 为什么要封装 HTML？
+## 1. 为什么要封装 HTML？
 
 在写博客时，很多时候我们会遇到这样的场景：
 
@@ -23,7 +23,7 @@ slug: "hugo-theme-stack-shortcodes-html-wrapper"
 
 这一篇就以“复制按钮”为例，演示如何在 `hugo-theme-stack` 项目里封装一个可复用的 HTML 组件。
 
-## Shortcodes 基础：放在哪、怎么命名？
+## 2. Shortcodes 基础：放在哪、怎么命名？
 
 Hugo 规则：**所有自定义 Shortcodes 都放在 `layouts/shortcodes/` 目录下**。
 
@@ -44,9 +44,9 @@ Hugo 规则：**所有自定义 Shortcodes 都放在 `layouts/shortcodes/` 目�
 - 文件名 `copybtn.html` → 调用名就是 `copybtn`
 - 名称内不能带 `-` 以外的奇怪字符，建议全小写、用中划线或下划线分隔
 
-## 实战：封装一个“复制按钮”组件
+## 3. 实战：封装一个“复制按钮”组件
 
-### 1. 新建 Shortcode 文件
+### 3.1. 新建 Shortcode 文件
 
 在项目根目录下新建（如果目录不存在就自己创建）：
 
@@ -137,7 +137,7 @@ layouts/shortcodes/copybtn.html
 
 > 你也可以根据自己的审美继续微调按钮样式，只要保证核心逻辑不变即可。
 
-### 2. 在文章里调用复制按钮
+### 3.2. 在文章里调用复制按钮
 
 在任何一篇文章的 `index.md` 中，你可以这样写：
 
@@ -162,7 +162,7 @@ layouts/shortcodes/copybtn.html
 - **复制内容**：`https://api.deepseek.com/v1`
 - **按钮文字**：`DeepSeek API 基础地址`
 
-## 在 hugo-theme-stack 中还能封装些什么？
+## 4. 在 hugo-theme-stack 中还能封装些什么？
 
 `hugo-theme-stack` 本身已经有很好的排版和样式，但通过 Shortcodes，我们可以再往上加一层“写作小组件”，比如：
 
@@ -178,7 +178,7 @@ layouts/shortcodes/copybtn.html
 
 当你发现自己**第三次**在文章里拷贝同一段 HTML 时，就可以考虑把它抽成一个 Shortcode 了。
 
-## 总结
+## 5. 总结
 
 - **Shortcodes 是 Hugo 自带的官方功能**，非常适合在 `hugo-theme-stack` 这种主题里封装常用的 HTML 组件。
 - 把易错、冗长的 HTML + JS 抽成 Shortcode 后，写文章时只需要简单的一行 `{{</* .....*/>}}``，既省时间，又方便后期统一调整样式。

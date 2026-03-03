@@ -16,7 +16,7 @@ draft: false
 slug: "vscode-auto-space-chinese-english"
 ---
 
-## 前言
+## 1. 前言
 
 在编写中英文混排的文档时，在中文和英文之间添加空格是一个良好的排版习惯。这样做可以：
 
@@ -26,17 +26,17 @@ slug: "vscode-auto-space-chinese-english"
 
 但是手动添加空格既繁琐又容易遗漏，本文将介绍如何使用 VS Code 插件实现保存时自动格式化。
 
-## 安装插件
+## 2. 安装插件
 
-### Pangu-Markdown
+### 2.1. Pangu-Markdown
 
 打开 VS Code 扩展商店，搜索 `Pangu-Markdown` 并安装。
 
 <a href="images/2026-02-10-23-47-23.png" target="_blank"> <img src="images/2026-02-10-23-47-23.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 配置自动格式化
+## 3. 配置自动格式化
 
-### settings.json 配置
+### 3.1. settings.json 配置
 
 1. **打开设置**
 
@@ -54,6 +54,6 @@ slug: "vscode-auto-space-chinese-english"
 
    > **注意**：如果配置后没有生效，请尝试重启 VS Code。这是插件生效的必要步骤。
 
-## 总结
+## 4. 总结
 
 配置完成后，使用 `Ctrl+S` 保存文件时，插件会自动在中文和英文之间添加空格，让你专注于内容创作，无需担心排版格式问题。

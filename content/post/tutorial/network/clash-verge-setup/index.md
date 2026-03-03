@@ -16,17 +16,17 @@ draft: false
 slug: "clash-verge-setup-tutorial"
 ---
 
-## 引言
+## 1. 引言
 
 在互联网日益复杂的今天，拥有一台属于自己的远程服务器（VPS）不仅是程序员的练手必备，更是探索更广阔网络世界的基石。相比于购买现成的机场服务，自建节点最大的优势在于独享带宽、数据安全以及完全的可控性。
 
 本教程将手把手教你如何从零开始，搭建一套稳定、高速且现代化的节点服务。我们将采用目前主流且配置简便的方案，即使你对 Linux 命令不熟悉，也能轻松完成。
 
-## 服务器选购与基础环境部署
+## 2. 服务器选购与基础环境部署
 
 一切的开始，我们需要拥有一台位于海外的虚拟服务器（VPS）。本章将指导你完成账号注册、充值以及服务器的各项配置选择。
 
-### 平台选择与账号注册
+### 2.1. 平台选择与账号注册
 
 在众多 VPS 服务商中，本教程首选 Vultr 作为演示平台，主要基于以下几点核心优势：
 
@@ -51,7 +51,7 @@ slug: "clash-verge-setup-tutorial"
 注：新用户注册有时会获赠 $300 的体验金（有效期通常为一个月），这属于新手福利，过期后会自动失效，不必惊慌。
 <a href="images/2026-02-11-12-03-09.png" target="_blank"> <img src="images/2026-02-11-12-03-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 部署服务器 (Deploy Instance)
+### 2.2. 部署服务器 (Deploy Instance)
 
 充值到账后，点击页面右上角的蓝色按钮 Deploy + -> Deploy New Server 开始创建服务器。下面会推荐配置，以确保性价比和兼容性：
 <a href="images/2026-02-11-12-03-21.png" target="_blank"> <img src="images/2026-02-11-12-03-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
@@ -68,7 +68,7 @@ Additional Features（附加功能）：重要提示：请务必找到 Automatic
 Choose Image（操作系统）：选择 Debian，版本建议选择 12 x64。Debian 系统以轻量、稳定著称，相比其他系统更节省服务器资源。
 <a href="images/2026-02-11-12-06-09.png" target="_blank"> <img src="images/2026-02-11-12-06-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 获取服务器信息
+### 2.3. 获取服务器信息
 
 点击底部的 Deploy Now 部署后，等待服务器状态从 Installing 变为 Running。点击服务器名称（如 Cloud Instance）进入详情页，请记录下以下两项关键信息，稍后连接服务器时必须用到：
 <a href="images/2026-02-11-12-06-48.png" target="_blank"> <img src="images/2026-02-11-12-06-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
@@ -78,11 +78,11 @@ Password：root 账户的初始密码（点击眼睛图标可显示，点击复�
 
 <a href="images/2026-02-11-12-07-00.png" target="_blank"> <img src="images/2026-02-11-12-07-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 服务器连接与面板安装
+## 3. 服务器连接与面板安装
 
 购买好服务器后，我们需要通过 SSH（Secure Shell）远程连接到它，并安装可视化的管理面板 3x-ui。
 
-### 建立 SSH 连接
+### 3.1. 建立 SSH 连接
 
 我们需要使用电脑自带的终端工具连接服务器。
 
@@ -103,7 +103,7 @@ ssh root@xx.xx.xxx.xxx
 输入密码：系统会提示 root@... password:。此时输入你刚才复制的服务器密码。注意：Linux 系统为了安全，输入密码时屏幕上不会显示任何字符（包括星号），光标也不会移动。这完全正常，输完密码后直接按回车即可。
 <a href="images/2026-02-11-12-29-20.png" target="_blank"> <img src="images/2026-02-11-12-29-20.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 优化连接稳定性（防断连）
+### 3.2. 优化连接稳定性（防断连）
 
 默认情况下，如果 SSH 连接长时间无操作会自动断开。为了避免安装过程中断，建议先执行以下指令设置“心跳包” 。
 
@@ -115,7 +115,7 @@ echo "ClientAliveCountMax 3" >> /etc/ssh/sshd_config
 systemctl restart ssh
 <a href="images/2026-02-11-12-29-35.png" target="_blank"> <img src="images/2026-02-11-12-29-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 安装 3x-ui 管理面板
+### 3.3. 安装 3x-ui 管理面板
 
 接下来，我们将安装 3x-ui 面板，它能让我们通过网页轻松管理节点。
 
@@ -138,19 +138,19 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 
 <a href="images/2026-02-11-12-31-30.png" target="_blank"> <img src="images/2026-02-11-12-31-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 配置防火墙（开放端口）
+### 3.4. 配置防火墙（开放端口）
 
 为了让外部网络能访问我们的面板和节点，必须配置服务器防火墙开放相应的端口。
 
 请依次执行以下指令：
 
-#### 更新软件源并安装 UFW 防火墙工具
+#### 3.4.1. 更新软件源并安装 UFW 防火墙工具
 
 ```
 apt update && apt install ufw -y
 ```
 
-#### 开放必要端口
+#### 3.4.2. 开放必要端口
 
 ```
 ufw allow ssh      # 开放 SSH 连接端口，防止自己被锁在外面 [cite: 34]
@@ -158,7 +158,7 @@ ufw allow 54321    # 开放刚才设置的面板端口 [cite: 35]
 ufw allow 443      # 开放节点传输端口（后续配置节点时会用到） [cite: 36]
 ```
 
-#### 启用防火墙
+#### 3.4.3. 启用防火墙
 
 ```
 ufw enable
@@ -168,13 +168,13 @@ ufw enable
 <a href="images/2026-02-11-12-32-39.png" target="_blank"> <img src="images/2026-02-11-12-32-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 至此，服务器端的底层环境已经搭建完毕。
 
-## 面板配置与节点创建
+## 4. 面板配置与节点创建
 
-## 第三章：面板配置与节点创建
+## 5. 第三章：面板配置与节点创建
 
 环境搭建完毕后，我们将离开黑色的命令行界面，转到浏览器中进行可视化的操作。本章的核心任务是配置目前业界公认“隐蔽性”最强、且被封锁概率最低的协议组合：**VLESS + TCP + Reality**。
 
-### 1. 登录管理面板
+### 5.1. 登录管理面板
 
 打开您电脑上的浏览器，在地址栏输入访问地址。格式为 `http://你的服务器 IP: 端口号`。
 
@@ -185,7 +185,7 @@ ufw enable
 进入登录页面后，输入我们在上一章安装过程中设置的**用户名**和**密码**，点击登录进入系统仪表盘。
 <a href="images/2026-02-11-12-43-54.png" target="_blank"> <img src="images/2026-02-11-12-43-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 2. 添加并配置入站节点
+### 5.2. 添加并配置入站节点
 
 在左侧菜单栏中找到 **入站列表 (Inbound List)**，点击进入后，选择页面中的绿色按钮 **添加入站 (Add Inbound)**。
 <a href="images/2026-02-11-12-44-07.png" target="_blank"> <img src="images/2026-02-11-12-44-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
@@ -206,17 +206,17 @@ ufw enable
   <a href="images/2026-02-11-12-44-19.png" target="_blank"> <img src="images/2026-02-11-12-44-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
   <a href="images/2026-02-11-12-44-27.png" target="_blank"> <img src="images/2026-02-11-12-44-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 3. 保存并生效
+### 5.3. 保存并生效
 
 确认上述所有信息（尤其是端口和协议）填写无误后，点击窗口底部的 **添加 (Create)** 或**更新 (Create)** 按钮。
 
 添加成功后，您会在列表中看到刚才创建的节点。此时，您的服务器端配置已全部完成，它正静静地等待客户端的连接
 
-## 客户端配置与连通性测试
+## 6. 客户端配置与连通性测试
 
 服务端（VPS）配置完成后，我们还需要在电脑上安装专门的客户端软件，才能将网络流量通过节点进行转发。本教程将以开源、免费且功能强大的 **Clash Verge** 为例进行演示。
 
-### 下载并安装客户端
+### 6.1. 下载并安装客户端
 
 首先，请下载适配您操作系统的 Clash Verge 客户端。
 
@@ -225,17 +225,17 @@ ufw enable
   > <https://github.com/clash-verge-rev/clash-verge-rev/releases>
   - _Windows 用户请下载 `.exe` 安装包（通常为 x64-setup.exe），Mac 用户请下载 `.dmg` 文件。_
 
-### 导出并转换节点配置
+### 6.2. 导出并转换节点配置
 
 由于 Clash 软件无法直接识别原始的 VLESS 链接，我们需要借助工具将其转换为 Clash 专用的配置文件（.yaml 格式）。
 
-#### **获取节点链接**
+#### 6.2.1. **获取节点链接**
 
 回到浏览器中的 **3x-ui 管理面板**，在 **入站列表** 中找到刚才创建的节点。
 点击节点左侧的 **菜单图标**（三个点），选择 **导出链接**，然后点击复制。
 <a href="images/2026-02-11-12-51-16.png" target="_blank"> <img src="images/2026-02-11-12-51-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### **转换配置文件**
+#### 6.2.2. **转换配置文件**
 
 打开本教程专属的配置转换工具：> <http://vless.ysy.fan/>
 
@@ -244,37 +244,37 @@ ufw enable
 - _请务必保存好这个下载下来的 `.yaml` 文件。_
   <a href="images/2026-02-11-12-52-00.png" target="_blank"> <img src="images/2026-02-11-12-52-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 3. 导入配置到 Clash Verge
+### 6.3. 导入配置到 Clash Verge
 
-#### 打开安装好的 **Clash Verge** 软件
+#### 6.3.1. 打开安装好的 **Clash Verge** 软件
 
-#### 点击左侧菜单栏的 **订阅 (Subscription)**，然后点击右上角的 **新建 (New)** 按钮
+#### 6.3.2. 点击左侧菜单栏的 **订阅 (Subscription)**，然后点击右上角的 **新建 (New)** 按钮
 
 <a href="images/2026-02-11-12-53-42.png" target="_blank"> <img src="images/2026-02-11-12-53-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 在弹出的窗口中进行如下设置
+#### 6.3.3. 在弹出的窗口中进行如下设置
 
 - **类型 (Type)**：选择 `Local`（本地文件）。
 - **名称 (Name)**：填写 `MyVPN`（或你喜欢的任何名字）。
 - **文件 (File)**：点击 **选择文件** 按钮，选中刚才下载的 `MyVPN.yaml` 文件。
   <a href="images/2026-02-11-12-53-59.png" target="_blank"> <img src="images/2026-02-11-12-53-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 点击 **保存 (Save)** 按钮
+#### 6.3.4. 点击 **保存 (Save)** 按钮
 
-### 开启代理与连接测试
+### 6.4. 开启代理与连接测试
 
-#### **选择节点**
+#### 6.4.1. **选择节点**
 
 点击软件左侧菜单栏的 **代理 (Proxies)**。在顶部的模式切换中选择 **规则 (Rule)**。此时你应该能在下方列表中看到的节点 `MyVPN`。
 
-#### **连通性测试**
+#### 6.4.2. **连通性测试**
 
 点击节点名称旁边的 **测试图标**（通常是一个类似 WiFi 信号的图标）。
 **\*成功**：如果显示绿色的数字（例如 `187 ms`），代表节点已连通。\* **失败**：如果显示 `Timeout`，请检查 VPS 的防火墙端口是否已开放，或配置步骤是否有误。
 
 <a href="images/2026-02-11-12-54-19.png" target="_blank"> <img src="images/2026-02-11-12-54-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### **开启系统代理**
+#### 6.4.3. **开启系统代理**
 
 确认连接成功后，点击左侧菜单栏的 **设置 (Settings)**，找到 **系统代理 (System Proxy)** 开关并将其**打开**（变为蓝色）。
 <a href="images/2026-02-11-12-53-09.png" target="_blank"> <img src="images/2026-02-11-12-53-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>

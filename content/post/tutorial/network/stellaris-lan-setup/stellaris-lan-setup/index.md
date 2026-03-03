@@ -17,7 +17,7 @@ draft: false
 slug: "stellaris-lan-openvpn-guide"
 ---
 
-## 引言
+## 1. 引言
 
 《群星 (Stellaris)》玩家最大的痛点是什么？往往不是天灾的入侵，而是联机时无休止的“时间停止”、掉线和高延迟。由于群星采用 P2P 联机机制，一旦某位玩家网络波动，整局游戏都会受到影响。
 
@@ -29,7 +29,7 @@ slug: "stellaris-lan-openvpn-guide"
 
 > 📖 原作者博客：[Dogfight360 Blog](https://www.dogfight360.com/blog/1590/#comment-41142)
 
-## 选择你的系统版本
+## 2. 选择你的系统版本
 
 请根据你使用的服务器系统，选择对应教程：
 

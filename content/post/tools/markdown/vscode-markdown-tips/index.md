@@ -16,13 +16,13 @@ draft: false
 slug: "vscode-markdown-format-tips"
 ---
 
-## 前言
+## 1. 前言
 
 在 VS Code 中编写 Markdown 时，常常会遇到各种格式问题：表格对不齐、列表缩进混乱、链接格式错误等。本文将介绍如何通过插件和配置来轻松解决这些问题，让你的 Markdown 写作更加高效。
 
-## 安装插件 markdownlint
+## 2. 安装插件 markdownlint
 
-### 格式检查工具
+### 2.1. 格式检查工具
 
 **功能**：
 
@@ -41,7 +41,7 @@ slug: "vscode-markdown-format-tips"
 | MD022 | 标题前后需要空行 | 添加空行              |
 | MD032 | 列表前后需要空行 | 添加空行              |
 
-### 使用方法
+### 2.2. 使用方法
 
 1. 在拓展商店搜索并安装 markdownlint
 
@@ -65,7 +65,7 @@ slug: "vscode-markdown-format-tips"
 <br>
 <a href="images/2026-02-10-23-23-38.png" target="_blank"> <img src="images/2026-02-10-23-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 总结
+## 3. 总结
 
 之后只要 Ctrl + S 保存文件，就会自动修正 Markdown 格式
 

@@ -15,13 +15,13 @@ draft: false
 slug: "cursor-aliyun-bailian-api-setup"
 ---
 
-## 一、前言
+## 1. 前言
 
 本教程将指导你如何在 Cursor 编辑器中配置阿里云百炼 API，让你可以使用通义千问等国产大模型进行代码编写和 Agent 任务。
 
 > **重要提示**：配置阿里云百炼的请求地址和 API Key 后，Cursor 将仅能调用阿里云百炼平台的模型。如需切换回其他模型提供商（如 OpenAI），需要关闭 **OpenAI API Key** 和 **Override OpenAI Base URL** 设置。请在接入前根据实际需求谨慎选择。
 
-## 二、获取阿里云百炼 API Key
+## 2. 获取阿里云百炼 API Key
 
 1. 登录[阿里云百炼平台](https://bailian.console.aliyun.com/)
 2. 进入 **Coding Plan** 界面
@@ -35,9 +35,9 @@ slug: "cursor-aliyun-bailian-api-setup"
 
 <a href="images/2026-03-03-18-14-21.png" target="_blank"> <img src="images/2026-03-03-18-14-21.png" alt="创建 API Key 界面" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 在 Cursor 中配置阿里云百炼
+## 3. 在 Cursor 中配置阿里云百炼
 
-### 打开模型设置
+### 3.1. 打开模型设置
 
 1. 打开 Cursor 编辑器
 2. 点击右上角设置按钮，进入 **Settings**
@@ -48,7 +48,7 @@ slug: "cursor-aliyun-bailian-api-setup"
 
 <a href="images/2026-03-03-15-11-05.png" target="_blank"> <img src="images/2026-03-03-15-11-05.png" alt="Cursor Models 设置页面" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 配置 API Key 和请求地址
+### 3.2. 配置 API Key 和请求地址
 
 1. 点击 **API Keys** 展开 API 设置区域
 2. 开启 **OpenAI API Key** 开关，在下方文本框中输入刚才复制的 API Key
@@ -58,7 +58,7 @@ slug: "cursor-aliyun-bailian-api-setup"
 
 <a href="images/2026-03-03-18-21-54.png" target="_blank"> <img src="images/2026-03-03-18-21-54.png" alt="API Key 配置界面" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 添加自定义模型
+### 3.3. 添加自定义模型
 
 1. 点击 **View All Models** 按钮
 2. 滚动到页面底部
@@ -70,7 +70,7 @@ slug: "cursor-aliyun-bailian-api-setup"
 
 <a href="images/2026-03-03-18-24-50.png" target="_blank"> <img src="images/2026-03-03-18-24-50.png" alt="添加自定义模型" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 可用模型列表
+#### 3.3.1. 可用模型列表
 
 | 品牌    | 模型                                       | 模型能力                     |
 | ------- | ------------------------------------------ | ---------------------------- |
@@ -92,13 +92,13 @@ slug: "cursor-aliyun-bailian-api-setup"
 
 <a href="images/2026-03-03-18-32-08.png" target="_blank"> <img src="images/2026-03-03-18-32-08.png" alt="启用自定义模型" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 关闭其他模型（可选）
+### 3.4. 关闭其他模型（可选）
 
 为避免误调用，建议关闭其他不可用的模型提供商。注意：接入阿里云百炼后，仅阿里云平台的模型可用。
 
 <a href="images/2026-03-03-18-41-56.png" target="_blank"> <img src="images/2026-03-03-18-41-56.png" alt="关闭其他模型" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 三、开始使用
+## 4. 开始使用
 
 配置完成后，返回 Cursor 主界面的聊天栏，点击模型选择器切换到刚才添加的阿里云百炼模型，即可开始使用。
 

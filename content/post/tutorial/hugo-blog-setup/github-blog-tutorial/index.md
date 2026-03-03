@@ -16,7 +16,7 @@ draft: false
 slug: "hugo-github-pages-blog-tutorial"
 ---
 
-## 前言
+## 1. 前言
 
 在这个信息碎片化的时代，拥有一方完全属于自己的网络天地，是很多技术爱好者和创作者的"浪漫"。无论是记录学习笔记、分享项目经验，还是单纯地碎碎念，一个独立博客都是最好的载体。
 
@@ -26,11 +26,11 @@ slug: "hugo-github-pages-blog-tutorial"
 
 不需要你精通前端代码，只要跟着步骤走，你也能轻松搭建出一个既好看又好用的个人博客。
 
-## 快速起步与仓库搭建
+## 2. 快速起步与仓库搭建
 
 搭建博客最怕的就是繁琐的环境配置。幸运的是，我们不需要在本地一行行敲代码安装 Hugo，直接利用现成的 GitHub 模板，只需点几下鼠标，就能把博客"搬"回家。
 
-### 获取主题模板
+### 2.1. 获取主题模板
 
 首先，我们需要访问 `hugo-theme-stack` 的官方启动模板。这个模板已经预置好了 GitHub Actions 自动构建脚本，能帮我们省去 90% 的配置工作。
 
@@ -40,7 +40,7 @@ slug: "hugo-github-pages-blog-tutorial"
 
 <a href="images/2026-02-10-10-44-47.png" target="_blank"> <img src="images/2026-02-10-10-44-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 创建 GitHub 仓库（关键步骤！）
+### 2.2. 创建 GitHub 仓库（关键步骤！）
 
 这一步至关重要，仓库的命名直接决定了你的博客能不能被访问。
 
@@ -60,7 +60,7 @@ slug: "hugo-github-pages-blog-tutorial"
 
 填写完毕后，点击底部的 **Create repository** 按钮。
 
-### 等待自动部署
+### 2.3. 等待自动部署
 
 仓库创建好后，GitHub 的后台会自动开始工作：
 
@@ -78,11 +78,11 @@ slug: "hugo-github-pages-blog-tutorial"
 
 部署完成后，访问 `https://username.github.io`，如果能看到一个带有 "Hugo Theme Stack" 标题和示例文章的精美页面，恭喜你，你的个人博客雏形已经搭建完成了！🎉
 
-## 基础个性化配置
+## 3. 基础个性化配置
 
 上一章我们成功部署了博客，但现在的博客标题还是默认的 "Hugo Theme Stack Starter"，头像也是默认的。接下来，我们通过修改两个核心配置文件，让博客焕然一新。
 
-### 修改核心站点信息 (config.toml)
+### 3.1. 修改核心站点信息 (config.toml)
 
 这个文件控制着博客最基础的信息，比如网站地址和标题。
 
@@ -114,7 +114,7 @@ slug: "hugo-github-pages-blog-tutorial"
 
 <a href="images/2026-02-10-10-51-33.png" target="_blank"> <img src="images/2026-02-10-10-51-33.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
-### 设置头像与个人简介 (params.toml)
+### 3.2. 设置头像与个人简介 (params.toml)
 
 这个文件主要控制侧边栏的展示内容。
 
@@ -142,7 +142,7 @@ slug: "hugo-github-pages-blog-tutorial"
 
 3. 修改完成后，记得 **Commit changes** 保存
 
-### 上传你的头像图片
+### 3.3. 上传你的头像图片
 
 刚才我们在配置文件里指定了头像路径是 `img/avatar.png`，现在我们需要把真正的图片传上去。
 
@@ -162,7 +162,7 @@ slug: "hugo-github-pages-blog-tutorial"
 
 3. 点击 **Commit changes** 提交更改
 
-### 关键步骤：切换部署分支
+### 3.4. 关键步骤：切换部署分支
 
 很多新手会发现改完配置后博客打不开了，或者显示的还是源码，原因通常是 GitHub Pages 的分支设置不对。我们需要告诉 GitHub：“请展示在这个分支里生成的网页文件”。
 
@@ -177,7 +177,7 @@ slug: "hugo-github-pages-blog-tutorial"
 
 4. 点击 **Save** 保存
 
-### 欣赏你的博客
+### 3.5. 欣赏你的博客
 
 完成上述步骤后，等待几分钟（GitHub Actions 需要一点时间重新构建）。再次访问你的博客链接：
 
@@ -187,11 +187,11 @@ slug: "hugo-github-pages-blog-tutorial"
 
 <a href="images/2026-02-10-10-54-33.png" target="_blank"> <img src="images/2026-02-10-10-54-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 内容管理与初次发布
+## 4. 内容管理与初次发布
 
 现在的博客里充斥着 "Hello World" 和 "Markdown Syntax Guide" 这样的演示文章。我们需要把它们清理干净，然后发布一篇真正属于你的内容。
 
-### 清理演示文章
+### 4.1. 清理演示文章
 
 首先，我们要把“样板房”里的旧家具搬走。
 
@@ -203,7 +203,7 @@ slug: "hugo-github-pages-blog-tutorial"
 
 <a href="images/2026-02-10-10-55-00.png" target="_blank"> <img src="images/2026-02-10-10-55-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 创建第一篇文章
+### 4.2. 创建第一篇文章
 
 Hugo 有一种很好的文章组织方式叫 "Page Bundles"（页面束）。简单来说，就是**给每一篇文章建一个文件夹**，把文章文字（`index.md`）和图片放在一起，这样管理起来非常方便。
 
@@ -257,11 +257,11 @@ categories:                           # 分类设置，直接控制侧边栏的�
 
 <a href="images/2026-02-10-10-57-39.png" target="_blank"> <img src="images/2026-02-10-10-57-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 界面深度优化与汉化
+## 5. 界面深度优化与汉化
 
 这一章我们将深入博客的配置文件，把默认的英文界面改成中文，并去除多余的元素，让博客看起来更专业。
 
-### 配置社交链接 (menu.toml)
+### 5.1. 配置社交链接 (menu.toml)
 
 默认模板左侧栏有 GitHub 和 Twitter 的图标。我们需要把 Twitter 删掉，并把 GitHub 换成你自己的地址。
 
@@ -274,7 +274,7 @@ categories:                           # 分类设置，直接控制侧边栏的�
 
 <a href="images/2026-02-10-11-00-03.png" target="_blank"> <img src="images/2026-02-10-11-00-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 全局语言汉化
+### 5.2. 全局语言汉化
 
 让博客的时间格式、提示文案都变成中文。
 
@@ -291,11 +291,11 @@ categories:                           # 分类设置，直接控制侧边栏的�
 
 <a href="images/2026-02-10-11-00-31.png" target="_blank"> <img src="images/2026-02-10-11-00-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 左侧主菜单汉化（关键！）
+### 5.3. 左侧主菜单汉化（关键！）
 
 左侧的 "Home", "Archives", "Search" 等菜单需要改成中文。这个过程分两步，防止配置冲突。
 
-#### 清理页面独立配置
+#### 5.3.1. 清理页面独立配置
 
 Stack 主题在每个页面的源文件中也定义了菜单，我们需要先删掉它们，以便由统一的配置文件接管。
 
@@ -309,7 +309,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 
 <a href="images/2026-02-10-11-01-04.png" target="_blank"> <img src="images/2026-02-10-11-01-04.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
-#### 重写主菜单配置
+#### 5.3.2. 重写主菜单配置
 
 1. 回到 `config/_default/menu.toml`
 2. **清空** `[[main]]` 相关的旧配置，**复制粘贴**以下内容：
@@ -350,7 +350,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 
 <a href="images/2026-02-10-11-04-07.png" target="_blank"> <img src="images/2026-02-10-11-04-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 隐藏页脚版权信息 (CSS)
+### 5.4. 隐藏页脚版权信息 (CSS)
 
 如果你想让页面底部更清爽，隐藏 "Powered by Hugo" 字样，可以通过自定义 CSS 实现。
 
@@ -368,7 +368,7 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 
 <a href="images/2026-02-10-11-07-06.png" target="_blank"> <img src="images/2026-02-10-11-07-06.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 细节清理
+### 5.5. 细节清理
 
 最后做两个收尾工作：
 
@@ -386,13 +386,13 @@ Stack 主题在每个页面的源文件中也定义了菜单，我们需要先�
 
 <a href="images/2026-02-10-11-08-35.png" target="_blank"> <img src="images/2026-02-10-11-08-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 接入评论系统（Giscus）
+## 6. 接入评论系统（Giscus）
 
 一个没有评论区的博客是没有灵魂的。虽然 Stack 主题自带了 Disqus 支持，但它加载慢且有广告。本章我们将重点介绍 Giscus —— 一个基于 GitHub Discussions 的现代化、免费、无广告的评论系统。
 
 在这里，我们强烈推荐使用 **Giscus**。它利用 GitHub 的 Discussions 功能来存储评论，不仅完全免费、无广告，而且数据完全掌握在你自己的仓库里。
 
-### 开启 GitHub Discussions
+### 6.1. 开启 GitHub Discussions
 
 Giscus 的运作依赖于你仓库的 Discussions 模块。
 
@@ -407,7 +407,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 
 <a href="images/2026-02-10-11-09-42.png" target="_blank"> <img src="images/2026-02-10-11-09-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 安装 Giscus 应用
+### 6.2. 安装 Giscus 应用
 
 我们需要授权 Giscus 机器人访问你的仓库。
 
@@ -424,7 +424,7 @@ Giscus 的运作依赖于你仓库的 Discussions 模块。
 
 <a href="images/2026-02-10-11-10-08.png" target="_blank"> <img src="images/2026-02-10-11-10-08.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
-### 获取配置代码
+### 6.3. 获取配置代码
 
 Giscus 提供了一个可视化工具来生成配置参数。
 
@@ -448,7 +448,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 <a href="images/2026-02-10-11-20-16.png" target="_blank"> <img src="images/2026-02-10-11-20-16.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
-### 写入博客配置 (params.toml)
+### 6.4. 写入博客配置 (params.toml)
 
 现在把获取到的参数填入 Hugo 的配置文件中。
 
@@ -480,7 +480,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 <a href="images/2026-02-10-11-22-16.png" target="_blank"> <img src="images/2026-02-10-11-22-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 清理旧配置 (config.toml)
+### 6.5. 清理旧配置 (config.toml)
 
 为了防止冲突，我们需要确保 Disqus 是关闭的。
 
@@ -490,7 +490,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 <a href="images/2026-02-10-11-22-39.png" target="_blank"> <img src="images/2026-02-10-11-22-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 验证评论区
+### 6.6. 验证评论区
 
 提交所有更改（**Commit changes**）并等待部署完成。刷新你的博客文章页面，滚动到底部。
 
@@ -498,22 +498,22 @@ Giscus 提供了一个可视化工具来生成配置参数。
 
 <a href="images/2026-02-10-11-22-51.png" target="_blank"> <img src="images/2026-02-10-11-22-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 打造高效写作环境
+## 7. 打造高效写作环境
 
 工欲善其事，必先利其器。虽然 GitHub 网页版也能修改文件，但为了更好的写作体验（尤其是图片处理和实时预览），强烈建议将仓库克隆到本地，使用 VS Code 进行管理。
 
-### 准备工作
+### 7.1. 准备工作
 
 1. **克隆仓库**：使用 Git 工具将你的 `username.github.io` 仓库克隆到本地电脑
 2. **打开项目**：右键点击文件夹，选择 "Open with Code"（用 VS Code 打开）
 
 <a href="images/2026-02-10-11-23-38.png" target="_blank"> <img src="images/2026-02-10-11-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 必装插件推荐
+### 7.2. 必装插件推荐
 
 在 VS Code 的扩展商店（Extensions）中搜索并安装以下三个插件，它们将彻底改变你的写作方式。
 
-#### 🛠️ Markdown All in One —— 全能助手
+#### 7.2.1. Markdown All in One —— 全能助手
 
 这是写 Markdown 的必备插件，提供了快捷键、自动补全和格式化功能。
 
@@ -531,7 +531,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 - **表格格式化**：写表格时会自动对齐，强迫症福音。
 - **链接补全**：选中文字输入 `[`，自动包裹为链接格式。
 
-#### 🖼️ Paste Image —— 截图神器
+#### 7.2.2. 🖼️ Paste Image —— 截图神器
 
 在 Markdown 中插入图片通常很麻烦（截图 → 保存 → 改名 → 上传 → 引用）。这个插件能把这些步骤缩减为一步。
 
@@ -547,7 +547,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 - \*\*插件会自动将剪贴板里的图片保存到当前文章的目录下。
 - \*\*自动在文章中插入 `![]（图片路径。png)` 代码，所见即所得。
 
-#### 👁️ Markdown Preview Enhanced —— 实时预览
+#### 7.2.3. 👁️ Markdown Preview Enhanced —— 实时预览
 
 虽然 VS Code 自带预览，但这个插件功能更强大。
 
@@ -559,7 +559,7 @@ Giscus 提供了一个可视化工具来生成配置参数。
 - **数学公式与图表**：完美支持 LaTeX 公式和各种流程图渲染
 - **导出功能**：右键点击预览界面，可以直接导出为 HTML 或 PDF 分享
 
-### 开始你的创作之旅
+### 7.3. 开始你的创作之旅
 
 现在，你的本地写作环境已经配置完毕：
 
@@ -569,9 +569,9 @@ Giscus 提供了一个可视化工具来生成配置参数。
 4. **预览**：用 Preview Enhanced 实时检查效果
 5. **发布**：写完后，在 VS Code 的源代码管理（Source Control）中点击 **Commit** 和 **Sync**，文章就会自动推送到 GitHub 并发布上线！
 
-## 补充内容
+## 8. 补充内容
 
-### link 界面调整
+### 8.1. link 界面调整
 
 默认的友链页面尚未初始化。如果你想添加友情链接，请按照以下步骤操作：
 
@@ -600,7 +600,7 @@ comments: false
 
 <a href="images/![最终效果](2026-02-09-22-34-01.png).png" target="_blank"> <img src="images/![最终效果](2026-02-09-22-34-01.png).png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### Paste Image 图片保存位置
+### 8.2. Paste Image 图片保存位置
 
 在粘贴图片时，默认会把图片在 index.md 文件的同一级目录保存，看上去非常的乱，所以如何在 index.md 旁边开一个 images 文件夹，让图片保存到文件夹里呢？
 解决方案如下：
@@ -616,7 +616,7 @@ comments: false
 
 <a href="images/2026-02-09-23-54-39.png" target="_blank"> <img src="images/2026-02-09-23-54-39.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
-### Paste Image 图片大小调整
+### 8.3. Paste Image 图片大小调整
 
 直接保存的图片无法调整参数，所以我们要把引入图片的代码格式转为 html
 
@@ -638,9 +638,9 @@ comments: false
 
 <a href="images/2026-02-10-00-03-31.png" target="_blank"> <img src="images/2026-02-10-00-03-31.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
-### 文章目录序号嵌套问题
+### 8.4. 文章目录序号嵌套问题
 
-#### 问题描述
+#### 8.4.1. 问题描述
 
 如果你在写文章时，习惯在标题中手动添加序号（如 `## 一、前言` 或 `## 1. 前言`），可能会发现右侧自动生成的目录会出现**双层序号**的尴尬情况。
 
@@ -648,7 +648,7 @@ comments: false
 
 这是因为 Hugo 默认会给目录启用**有序列表**样式，自动在标题前添加一层序号。
 
-#### 解决方案
+#### 8.4.2. 解决方案
 
 我们需要在站点配置中关闭目录的自动编号功能，让目录直接使用文章标题的原始文字。
 
@@ -676,14 +676,14 @@ comments: false
 
 > 💡 **建议**：关闭自动编号后，建议在文章标题中手动添加序号，这样目录结构会更清晰。如果你更喜欢无序号的目录风格，可以保持 `ordered = true` 不变。
 
-## 总结
+## 9. 总结
 
 博客已经搭建完成。接下来的日子里，希望你能把更多的时间花在**记录和分享**上，让这里成为你思想的后花园，而不是一个仅仅为了展示技术的空壳。
 如果这篇教程对你有帮助，或是遇到什么问题，欢迎在下方的评论区留言。
 
 Happy Blogging! 🍻
 
-## 参考资料
+## 10. 参考资料
 
 - [Hugo 官方文档](https://gohugo.io/)
 - [Stack 主题文档](https://stack.jimmycai.com/)

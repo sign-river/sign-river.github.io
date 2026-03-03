@@ -15,6 +15,6 @@ tags:
 math: true
 draft: true
 ---
-## 一、联邦遗忘学习
+## 1. 联邦遗忘学习
 
 ---

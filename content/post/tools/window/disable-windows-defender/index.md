@@ -14,7 +14,7 @@ draft: false
 slug: "disable-windows-defender"
 ---
 
-## 问题背景
+## 1. 问题背景
 
 在日常使用 Windows 系统时，Windows Defender 的实时保护功能有时会带来一些困扰：
 
@@ -25,9 +25,9 @@ slug: "disable-windows-defender"
 
 虽然可以在"设置"中临时关闭实时保护，但系统会在一段时间后自动重新启用。本文介绍如何通过**组策略编辑器**彻底禁用 Windows Defender。
 
-## 操作步骤
+## 2. 操作步骤
 
-### 1. 打开组策略编辑器
+### 2.1. 打开组策略编辑器
 
 按下 `Windows + R` 组合键，打开"运行"窗口。
 
@@ -42,7 +42,7 @@ gpedit.msc
 
 > ⚠️ **注意**：家庭版 Windows 默认不包含组策略编辑器。如果提示找不到 gpedit.msc，需要先安装组策略编辑器功能。
 
-### 2. 导航到 Defender 设置
+### 2.2. 导航到 Defender 设置
 
 在组策略编辑器窗口中，按照以下路径依次展开：
 
@@ -56,7 +56,7 @@ gpedit.msc
 <br>
 <a href="images/2026-02-11-13-02-25.png" target="_blank"> <img src="images/2026-02-11-13-02-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 3. 禁用反恶意软件服务
+### 2.3. 禁用反恶意软件服务
 
 在右侧面板中找到并双击：
 
@@ -73,13 +73,13 @@ gpedit.msc
 3. 点击 **确定**
    <a href="images/2026-02-11-13-03-57.png" target="_blank"> <img src="images/2026-02-11-13-03-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 4. 重启生效
+### 2.4. 重启生效
 
 完成上述设置后，**重启电脑**使配置生效。
 
 重启后，Windows Defender 的实时保护将被彻底关闭，且不会自动重新启用。
 
-## 验证是否成功
+## 3. 验证是否成功
 
 重启后，打开"Windows 安全中心"：
 
@@ -89,7 +89,7 @@ gpedit.msc
 
 如果看到"未进行任何操作"或"实时保护已关闭"的提示，说明设置成功。
 
-## 如何恢复实时保护
+## 4. 如何恢复实时保护
 
 如果将来需要重新启用 Windows Defender：
 
@@ -98,7 +98,7 @@ gpedit.msc
 3. 将其改为 **未配置** 或 **已启用**
 4. 重启电脑
 
-## 总结
+## 5. 总结
 
 通过组策略编辑器禁用 Windows Defender 是一个简单但有效的方法，适合需要长期关闭实时保护的场景。
 

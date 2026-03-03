@@ -13,20 +13,20 @@ tags:
 draft: true
 ---
 
-## 前言
+## 1. 前言
 
 开始学习 PyTorch，记录基础知识和学习心得。
 
-## PyTorch 简介
+## 2. PyTorch 简介
 
 PyTorch 是一个基于 Python 的科学计算包，主要用于：
 
 - 替代 NumPy，利用 GPU 加速
 - 提供灵活的深度学习研究平台
 
-## 环境配置
+## 3. 环境配置
 
-### 配置 Anaconda
+### 3.1. 配置 Anaconda
 
 在开始 PyTorch 学习前，使用 Anaconda 进行环境隔离是最佳选项，避免不同项目的依赖冲突。
 
@@ -42,7 +42,7 @@ Packages (版本选择)：勾选 Python，并选择 3.12 版本。
 
 💡 版本选择思路 (2026 Q1)：推荐选择 Python 3.12。相比于旧版本，它拥有更好的性能；相比于最新的 3.13+ 版本，它在 PyTorch 生态圈（包括 NumPy, Pandas 等依赖库）中的兼容性最为成熟稳定。
 
-### 安装 PyTorch
+### 3.2. 安装 PyTorch
 
 1. 确认显卡驱动与 CUDA 版本
 
@@ -103,9 +103,9 @@ torch.cuda.is_available()
 <br/>
 <a href="images/2026-02-10-22-08-48.png" target="_blank"> <img src="images/2026-02-10-22-08-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 总结
+## 4. 总结
 
-## 参考资料
+## 5. 参考资料
 
 - [PyTorch 官方文档](https://pytorch.org/docs/stable/index.html)
 - [PyTorch 官方教程](https://pytorch.org/tutorials/)
