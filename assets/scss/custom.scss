@@ -37,6 +37,8 @@
   .article-subtitle {
     width: 100% !important;
     margin-top: 20px !important; // 加大标题和简介之间的间距
+    font-size: 1.8rem !important; // 调小简介字体
+    color: var(--card-text-color-secondary) !important; // 使用次要文字颜色
   }
 }
 
