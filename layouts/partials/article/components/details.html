@@ -3,9 +3,13 @@
     <header class="article-category">
         {{- $counter := 0 -}}
         {{- $maxTags := 3 -}}
+        {{- $separatorMargin := "8px" -}}
         {{- with .Site.Params.blog_params -}}
             {{- with .article_card -}}
                 {{- $maxTags = .max_tags -}}
+                {{- with .tag_separator_margin -}}
+                    {{- $separatorMargin = . -}}
+                {{- end -}}
             {{- end -}}
         {{- end -}}
         
@@ -21,8 +25,13 @@
             {{- end -}}
         {{- end -}}
         
+        {{- $firstTag := true -}}
         {{- range .GetTerms "tags" -}}
             {{- if lt $counter $maxTags -}}
+                {{- if $firstTag -}}
+                    <span style="margin: 0 {{ $separatorMargin }};"></span>
+                    {{- $firstTag = false -}}
+                {{- end -}}
                 {{ $color := partial "helper/color-from-str" .LinkTitle }}
                 {{ $BackgroundColor := default $color.BackgroundColor .Params.style.background }}
                 {{ $TextColor := default $color.TextColor .Params.style.color }}
