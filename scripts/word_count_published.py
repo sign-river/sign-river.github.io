@@ -135,9 +135,9 @@ def main():
         k = total_words // 1000
         decimal = (total_words // 100) % 10
         if decimal == 0:
-            print(f" ({k}k字)", end="")
+            print(f" ({k}k 字)", end="")
         else:
-            print(f" ({k}.{decimal}k字)", end="")
+            print(f" ({k}.{decimal}k 字)", end="")
     print(" ← 与左侧边栏统计逻辑一致")
 
 
