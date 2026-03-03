@@ -1,50 +1,30 @@
 <div class="article-details">
-    {{ if or .Params.categories .Params.tags }}
-    <header class="article-category">
-        {{- $counter := 0 -}}
-        {{- $maxTags := 3 -}}
-        {{- $separatorMargin := "8px" -}}
-        {{- with .Site.Params.blog_params -}}
-            {{- with .article_card -}}
-                {{- $maxTags = .max_tags -}}
-                {{- with .tag_separator_margin -}}
-                    {{- $separatorMargin = . -}}
-                {{- end -}}
-            {{- end -}}
-        {{- end -}}
-        
-        {{- range .GetTerms "categories" -}}
-            {{- if lt $counter $maxTags -}}
-                {{ $color := partial "helper/color-from-str" .LinkTitle }}
-                {{ $BackgroundColor := default $color.BackgroundColor .Params.style.background }}
-                {{ $TextColor := default $color.TextColor .Params.style.color }}
-                <a href="{{ .RelPermalink }}" style="background-color: {{ $BackgroundColor | safeCSS }}; color: {{ $TextColor | safeCSS }};">
-                    {{ .LinkTitle }}
-                </a>
-                {{- $counter = add $counter 1 -}}
-            {{- end -}}
-        {{- end -}}
-        
-        {{- $firstTag := true -}}
-        {{- range .GetTerms "tags" -}}
-            {{- if lt $counter $maxTags -}}
-                {{- if $firstTag -}}
-                    <span style="margin: 0 {{ $separatorMargin }};"></span>
-                    {{- $firstTag = false -}}
-                {{- end -}}
-                {{ $color := partial "helper/color-from-str" .LinkTitle }}
-                {{ $BackgroundColor := default $color.BackgroundColor .Params.style.background }}
-                {{ $TextColor := default $color.TextColor .Params.style.color }}
-                <a href="{{ .RelPermalink }}" style="background-color: {{ $BackgroundColor | safeCSS }}; color: {{ $TextColor | safeCSS }};">
-                    {{ .LinkTitle }}
-                </a>
-                {{- $counter = add $counter 1 -}}
-            {{- end -}}
-        {{- end -}}
-    </header>
-    {{ end }}
-
     <div class="article-title-wrapper">
+        <!-- 分类标签：显示在标题前面，同一行 -->
+        {{ if .Params.categories }}
+        <div class="article-category-inline">
+            {{- $counter := 0 -}}
+            {{- $maxCats := 3 -}}
+            {{- with .Site.Params.blog_params -}}
+                {{- with .article_card -}}
+                    {{- $maxCats = .max_tags -}}
+                {{- end -}}
+            {{- end -}}
+            
+            {{- range .GetTerms "categories" -}}
+                {{- if lt $counter $maxCats -}}
+                    {{ $color := partial "helper/color-from-str" .LinkTitle }}
+                    {{ $BackgroundColor := default $color.BackgroundColor .Params.style.background }}
+                    {{ $TextColor := default $color.TextColor .Params.style.color }}
+                    <a href="{{ .RelPermalink }}" style="background-color: {{ $BackgroundColor | safeCSS }}; color: {{ $TextColor | safeCSS }};">
+                        {{ .LinkTitle }}
+                    </a>
+                    {{- $counter = add $counter 1 -}}
+                {{- end -}}
+            {{- end -}}
+        </div>
+        {{ end }}
+        
         <h2 class="article-title">
             <a href="{{ .RelPermalink }}">
                 {{- .Title -}}
@@ -79,6 +59,40 @@
                     {{ T "article.readingTime" .ReadingTime }}
                 </time>
             </div>
+        {{ end }}
+        
+        <!-- Tags 标签：显示在阅读时长后面 -->
+        {{ if .Params.tags }}
+        <div class="article-tags" style="display: inline-flex; gap: 10px; margin-left: 15px;">
+            {{- $counter := 0 -}}
+            {{- $maxTags := 3 -}}
+            {{- $separatorMargin := "8px" -}}
+            {{- $firstTag := true -}}
+            {{- with .Site.Params.blog_params -}}
+                {{- with .article_card -}}
+                    {{- $maxTags = .max_tags -}}
+                    {{- with .tag_separator_margin -}}
+                        {{- $separatorMargin = . -}}
+                    {{- end -}}
+                {{- end -}}
+            {{- end -}}
+            
+            {{- range .GetTerms "tags" -}}
+                {{- if lt $counter $maxTags -}}
+                    {{- if $firstTag -}}
+                        <span style="margin: 0 {{ $separatorMargin }};"></span>
+                        {{- $firstTag = false -}}
+                    {{- end -}}
+                    {{ $color := partial "helper/color-from-str" .LinkTitle }}
+                    {{ $BackgroundColor := default $color.BackgroundColor .Params.style.background }}
+                    {{ $TextColor := default $color.TextColor .Params.style.color }}
+                    <a href="{{ .RelPermalink }}" style="background-color: {{ $BackgroundColor | safeCSS }}; color: {{ $TextColor | safeCSS }};">
+                        {{ .LinkTitle }}
+                    </a>
+                    {{- $counter = add $counter 1 -}}
+                {{- end -}}
+            {{- end -}}
+        </div>
         {{ end }}
     </footer>
     {{ end }}

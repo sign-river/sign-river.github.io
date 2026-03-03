@@ -2,6 +2,86 @@
   display: none;
 }
 
+/* ========== 文章卡片标签样式优化 ========== */
+
+// 分类标签和标题在同一行
+.article-title-wrapper {
+  display: flex !important;
+  flex-direction: row !important; // 改为水平排列
+  align-items: flex-start !important; // 顶部对齐
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 10px !important;
+  width: 100% !important;
+
+  .article-category-inline {
+    display: inline-flex !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+    align-items: center !important;
+
+    a {
+      display: inline-block !important;
+      white-space: nowrap !important;
+      margin: 0 !important;
+    }
+  }
+
+  .article-title {
+    margin: 0 !important;
+    flex: auto !important; // 改为 auto，不强制占满
+    min-width: 0 !important;
+    display: inline-block !important;
+    word-break: break-word !important;
+  }
+
+  .article-subtitle {
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+}
+
+.article-category-inline a,
+.article-tags a {
+  // 降低颜色饱和度，使用半透明背景
+  background-color: rgba(var(--accent-color-rgb, 51, 51, 51), 0.08) !important;
+  color: var(--card-text-color-main) !important;
+  border: 1px solid rgba(var(--accent-color-rgb, 51, 51, 51), 0.15);
+  padding: 6px 14px !important;
+  font-size: 1.3rem !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: var(--tag-border-radius) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+
+  &:hover {
+    background-color: rgba(
+      var(--accent-color-rgb, 51, 51, 51),
+      0.12
+    ) !important;
+    border-color: rgba(var(--accent-color-rgb, 51, 51, 51), 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// 暗色模式：提高对比度
+[data-scheme="dark"] {
+  .article-category-inline a,
+  .article-tags a {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.18) !important;
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
 /* ========== 正文标题层级（仅文章内容，与侧边栏序号无关）========== */
 .article-content {
   overflow-wrap: break-word;
