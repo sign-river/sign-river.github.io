@@ -1,0 +1,87 @@
+<div class="article-details">
+    {{ if or .Params.categories .Params.tags }}
+    <header class="article-category">
+        {{- $counter := 0 -}}
+        {{- $maxTags := 3 -}}
+        {{- with .Site.Params.blog_params -}}
+            {{- with .article_card -}}
+                {{- $maxTags = .max_tags -}}
+            {{- end -}}
+        {{- end -}}
+        
+        {{- range .GetTerms "categories" -}}
+            {{- if lt $counter $maxTags -}}
+                {{ $color := partial "helper/color-from-str" .LinkTitle }}
+                {{ $BackgroundColor := default $color.BackgroundColor .Params.style.background }}
+                {{ $TextColor := default $color.TextColor .Params.style.color }}
+                <a href="{{ .RelPermalink }}" style="background-color: {{ $BackgroundColor | safeCSS }}; color: {{ $TextColor | safeCSS }};">
+                    {{ .LinkTitle }}
+                </a>
+                {{- $counter = add $counter 1 -}}
+            {{- end -}}
+        {{- end -}}
+        
+        {{- range .GetTerms "tags" -}}
+            {{- if lt $counter $maxTags -}}
+                {{ $color := partial "helper/color-from-str" .LinkTitle }}
+                {{ $BackgroundColor := default $color.BackgroundColor .Params.style.background }}
+                {{ $TextColor := default $color.TextColor .Params.style.color }}
+                <a href="{{ .RelPermalink }}" style="background-color: {{ $BackgroundColor | safeCSS }}; color: {{ $TextColor | safeCSS }};">
+                    {{ .LinkTitle }}
+                </a>
+                {{- $counter = add $counter 1 -}}
+            {{- end -}}
+        {{- end -}}
+    </header>
+    {{ end }}
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="{{ .RelPermalink }}">
+                {{- .Title -}}
+            </a>
+        </h2>
+    
+        {{ with .Params.description }}
+        <h3 class="article-subtitle">
+            {{ . }}
+        </h3>
+        {{ end }}
+    </div>
+
+    {{ $showReadingTime := .Params.readingTime | default (.Site.Params.article.readingTime) }}
+    {{ $showDate := not .Date.IsZero }}
+    {{ $showFooter := or $showDate $showReadingTime }}
+    {{ if $showFooter }}
+    <footer class="article-time">
+        {{ if $showDate }}
+            <div>
+                {{ partial "helper/icon" "date" }}
+                <time class="article-time--published" datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+                    {{- .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
+                </time>
+            </div>
+        {{ end }}
+
+        {{ if $showReadingTime }}
+            <div>
+                {{ partial "helper/icon" "clock" }}
+                <time class="article-time--reading">
+                    {{ T "article.readingTime" .ReadingTime }}
+                </time>
+            </div>
+        {{ end }}
+    </footer>
+    {{ end }}
+
+    {{ if .IsTranslated }}
+        <footer class="article-translations">
+            {{ partial "helper/icon" "language" }}
+            <div>
+                {{ range .Translations }}
+                    <a href="{{ .Permalink }}" class="link">{{ .Language.LanguageName }}</a>
+                {{ end }}
+            </div>
+        </footer>
+    {{ end }}
+</div>

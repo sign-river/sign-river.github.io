@@ -1,0 +1,6 @@
+# Ignore Hugo template files
+**/layouts/**/*.html
+**/themes/**/*.html
+
+# Ignore _vendor directory
+_vendor/**
