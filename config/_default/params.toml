@@ -7,7 +7,7 @@ favicon = "/favicon.png"
 # ========== 博客自定义参数 ==========
 [blog_params.article_card]
 # 左上角标签最大显示数量（分类 + tags 总共）
-max_tags = 4
+max_tags = 3
 # 分类标签和 tags 标签之间的间距（像素值，如 "8px", "12px"）
 tag_separator_margin = "0px"
 

@@ -10,61 +10,62 @@
   display: none !important;
 }
 
-// 分类标签和标题在同一行
+// 隐藏分类标签 - 使用更高的优先级
+.article-details .article-category-inline,
+.article-category-inline {
+  display: none !important;
+}
+
+// 分类标签样式（如果需要显示，删除上面的 display: none 即可）
+.article-category-inline a {
+  margin: 0 !important;
+}
+
+// 分类标签和标题分两行显示
 .article-title-wrapper {
-  display: flex !important;
-  flex-direction: row !important; // 改为水平排列
-  align-items: flex-start !important; // 顶部对齐
-  gap: 12px !important;
-  flex-wrap: wrap !important;
+  display: block !important;
   margin-bottom: 10px !important;
   width: 100% !important;
 
-  .article-category-inline {
-    display: inline-flex !important;
-    gap: 8px !important;
-    flex-shrink: 0 !important;
-    align-items: center !important;
-
-    a {
-      display: inline-block !important;
-      white-space: nowrap !important;
-      margin: 0 !important;
-    }
-  }
-
   .article-title {
     margin: 0 !important;
-    flex: auto !important; // 改为 auto，不强制占满
-    min-width: 0 !important;
-    display: inline-block !important;
+    display: block !important;
     word-break: break-word !important;
   }
 
   .article-subtitle {
     width: 100% !important;
-    margin-top: 8px !important;
+    margin-top: 20px !important; // 加大标题和简介之间的间距
   }
 }
 
-// 小屏幕适配
-@media (max-width: 768px) {
-  .article-title-wrapper {
-    flex-direction: column !important; // 垂直排列
-    gap: 8px !important;
+.article-category-inline a {
+  // 降低颜色饱和度，使用半透明背景
+  background-color: rgba(var(--accent-color-rgb, 51, 51, 51), 0.08) !important;
+  color: var(--card-text-color-main) !important;
+  border: 1px solid rgba(var(--accent-color-rgb, 51, 51, 51), 0.15);
+  padding: 8px 16px !important; // 合适的 padding
+  font-size: 1.5rem !important; // 合适的字体大小
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  transition: all 0.3s ease;
+  border-radius: var(--tag-border-radius) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
 
-    .article-category-inline {
-      margin-bottom: 4px !important;
-    }
-
-    .article-title {
-      width: 100% !important;
-      flex: none !important;
-    }
+  &:hover {
+    background-color: rgba(
+      var(--accent-color-rgb, 51, 51, 51),
+      0.12
+    ) !important;
+    border-color: rgba(var(--accent-color-rgb, 51, 51, 51), 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 }
 
-.article-category-inline a,
 .article-tags a {
   // 降低颜色饱和度，使用半透明背景
   background-color: rgba(var(--accent-color-rgb, 51, 51, 51), 0.08) !important;

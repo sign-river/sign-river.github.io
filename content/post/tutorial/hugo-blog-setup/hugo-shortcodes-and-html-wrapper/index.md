@@ -9,6 +9,7 @@ tags:
   - "Shortcode"
   - "hugo-theme-stack"
   - "写作效率"
+  - "博客搭建"
 draft: false
 slug: "hugo-theme-stack-shortcodes-html-wrapper"
 ---
