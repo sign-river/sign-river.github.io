@@ -50,6 +50,8 @@
                     {{- .Date | time.Format (or .Site.Params.dateFormat.published "Jan 02, 2006") -}}
                 </time>
             </div>
+            <!-- 日期后面的间距 -->
+            <span style="margin: 0 0px;"></span>
         {{ end }}
 
         {{ if $showReadingTime }}
@@ -59,11 +61,12 @@
                     {{ T "article.readingTime" .ReadingTime }}
                 </time>
             </div>
+            <!-- 间距绑定在阅读时间后面 -->
+            <span style="margin: 0 0px;" class="tags-spacer"></span>
         {{ end }}
         
         <!-- Tags 标签：显示在阅读时长后面 -->
-        {{ if .Params.tags }}
-        <div class="article-tags" style="display: inline-flex; gap: 10px; margin-left: 15px;">
+        <div class="article-tags tags-list" style="display: inline-flex; gap: 10;">
             {{- $counter := 0 -}}
             {{- $maxTags := 3 -}}
             {{- $separatorMargin := "8px" -}}
@@ -93,7 +96,6 @@
                 {{- end -}}
             {{- end -}}
         </div>
-        {{ end }}
     </footer>
     {{ end }}
 

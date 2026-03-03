@@ -4,6 +4,12 @@
 
 /* ========== 文章卡片标签样式优化 ========== */
 
+// 在文章详情页隐藏 tags 和间距
+.article-page .tags-list,
+.article-page .tags-spacer {
+  display: none !important;
+}
+
 // 分类标签和标题在同一行
 .article-title-wrapper {
   display: flex !important;
@@ -38,6 +44,23 @@
   .article-subtitle {
     width: 100% !important;
     margin-top: 8px !important;
+  }
+}
+
+// 小屏幕适配
+@media (max-width: 768px) {
+  .article-title-wrapper {
+    flex-direction: column !important; // 垂直排列
+    gap: 8px !important;
+
+    .article-category-inline {
+      margin-bottom: 4px !important;
+    }
+
+    .article-title {
+      width: 100% !important;
+      flex: none !important;
+    }
   }
 }
 
@@ -81,6 +104,21 @@
     }
   }
 }
+
+// 暗色模式：浅灰色背景，黑色文字（备选方案）
+// [data-scheme="dark"] {
+//   .article-category-inline a {
+//     background-color: #f0f0f0 !important;
+//     color: #333333 !important;
+//     border: 1px solid #e0e0e0 !important;
+
+//     &:hover {
+//       background-color: #e8e8e8 !important;
+//       border-color: #d0d0d0 !important;
+//       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+//     }
+//   }
+// }
 
 /* ========== 正文标题层级（仅文章内容，与侧边栏序号无关）========== */
 .article-content {
