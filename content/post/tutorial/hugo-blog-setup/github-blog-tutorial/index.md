@@ -1,5 +1,5 @@
 ---
-title: "GitHub 个人博客搭建教程"
+title: "Hugo Theme Stack 入门：GitHub 个人博客搭建全流程"
 date: 2026-02-09
 description: "手把手教你使用 Hugo + GitHub Pages 搭建自己的个人博客"
 # image: images/cover.jpg

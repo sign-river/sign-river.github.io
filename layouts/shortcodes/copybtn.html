@@ -1,0 +1,70 @@
+<button
+  type="button"
+  class="copy-btn-shortcode"
+  data-value="{{ .Get "value" }}"
+  style="
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    color: var(--card-text-color-main); 
+    background-color: var(--card-background);
+    border: 1px solid var(--card-separator-color);
+    border-radius: var(--card-border-radius);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    box-shadow: var(--shadow-l1);
+  "
+  onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+  onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+  onmousedown="this.style.transform='scale(0.96)';"
+  onmouseup="this.style.transform='scale(1)';"
+  onclick="(function(btn){
+    var text = btn.getAttribute('data-value');
+    if (!text || btn.getAttribute('data-copying')) return;
+    
+    var saveToClipboard = function(str) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(str);
+      } else {
+        var el = document.createElement('textarea');
+        el.value = str;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        return Promise.resolve();
+      }
+    };
+
+    saveToClipboard(text).then(function () {
+      btn.setAttribute('data-copying', 'true');
+      var tip = document.createElement('span');
+      tip.textContent = '已复制！';
+      
+      /* 实现你要求的反色逻辑 */
+      tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+      
+      btn.appendChild(tip);
+      setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+
+      setTimeout(function () {
+        tip.style.opacity = '0';
+        setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+      }, 1000);
+    });
+  })(this);"
+>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;">
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+  </svg>
+  
+  <span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+    {{ .Get "label" | default (.Get "value") }}
+  </span>
+</button>
