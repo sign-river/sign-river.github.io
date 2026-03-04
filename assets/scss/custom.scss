@@ -1065,17 +1065,17 @@
     }
 
     input:checked + .toggle-slider {
-      background: var(--accent-color);
+      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.2);
       border-color: var(--accent-color);
 
       &::after {
         left: calc(100% - 16px);
-        background: white;
+        background: var(--accent-color);
       }
     }
 
     .toggle-label {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       white-space: nowrap;
     }
   }

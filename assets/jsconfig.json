@@ -2,7 +2,9 @@
  "compilerOptions": {
   "baseUrl": ".",
   "paths": {
-   "*": null
+   "*": [
+    "..\\_vendor\\github.com\\CaiJimmy\\hugo-theme-stack\\v3\\assets\\*"
+   ]
   }
  }
 }

@@ -6,7 +6,7 @@
 {{ end }}
 {{ define "main" }}
 <form action="{{ .RelPermalink }}" class="search-form"{{ with .OutputFormats.Get "json" -}} data-json="{{ .RelPermalink }}"{{- end }}>
-    <p>
+    <div class="search-input-wrapper">
         <label>{{ T "search.title" }}</label>
         <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
         
@@ -18,18 +18,19 @@
                 {{ partial "helper/icon" "search" }}
             </button>
         </div>
-    </p>
-    
-    <div class="search-filters">
-        <div class="filter-option">
-            <label class="fuzzy-toggle" title="{{ T `search.fuzzyToggle` }}">
-                <input type="checkbox" id="fuzzy-search-toggle" />
-                <span class="toggle-slider"></span>
-                <span class="toggle-label">{{ T "search.fuzzyMatch" }}</span>
-            </label>
-        </div>
     </div>
 </form>
+
+<!-- 筛选面板 -->
+<div class="search-filters">
+    <div class="filter-option">
+        <label class="fuzzy-toggle" title="{{ T `search.fuzzyToggle` }}">
+            <input type="checkbox" id="fuzzy-search-toggle" />
+            <span class="toggle-slider"></span>
+            <span class="toggle-label">{{ T "search.fuzzyMatch" }}</span>
+        </label>
+    </div>
+</div>
 
 <div class="search-result">
     <h3 class="search-result--title section-title"></h3>
