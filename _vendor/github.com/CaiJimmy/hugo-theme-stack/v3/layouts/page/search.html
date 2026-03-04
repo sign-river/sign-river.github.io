@@ -9,11 +9,26 @@
     <p>
         <label>{{ T "search.title" }}</label>
         <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
+        
+        <div class="search-actions">
+            <button type="button" class="filter-toggle" title="{{ T `search.filterTitle` }}">
+                {{ partial "helper/icon" "filter" }}
+            </button>
+            <button title="{{ T `search.title` }}">
+                {{ partial "helper/icon" "search" }}
+            </button>
+        </div>
     </p>
-
-    <button title="{{ T `search.title` }}">
-        {{ partial "helper/icon" "search" }}
-    </button>
+    
+    <div class="search-filters">
+        <div class="filter-option">
+            <label class="fuzzy-toggle" title="{{ T `search.fuzzyToggle` }}">
+                <input type="checkbox" id="fuzzy-search-toggle" />
+                <span class="toggle-slider"></span>
+                <span class="toggle-label">{{ T "search.fuzzyMatch" }}</span>
+            </label>
+        </div>
+    </div>
 </form>
 
 <div class="search-result">
