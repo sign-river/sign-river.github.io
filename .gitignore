@@ -1,3 +1,6 @@
 public
 resources
 .hugo_build.lock
+
+# Hugo 自动生成的文件
+assets/jsconfig.json

@@ -53,6 +53,7 @@
     width: 100%;
     border: 0;
     -webkit-appearance: none;
+    appearance: none;
 
     transition: box-shadow 0.3s ease;
 
@@ -61,6 +62,26 @@
     &:focus {
       outline: 0;
       box-shadow: var(--shadow-l2);
+    }
+
+    // 修复自动填充提示的暗色模式适配
+    &:-webkit-autofill {
+      -webkit-text-fill-color: var(--card-text-color-main) !important;
+      background-color: transparent !important;
+      -webkit-box-shadow: 0 0 0 1000px var(--card-background) inset !important;
+      transition: background-color 5000s ease-in-out 0s !important;
+    }
+  }
+
+  // 全局覆盖 datalist 样式
+  datalist {
+    background: var(--card-background) !important;
+    border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.1)) !important;
+    color: var(--card-text-color-main) !important;
+
+    option {
+      background: var(--card-background) !important;
+      color: var(--card-text-color-main) !important;
     }
   }
 
