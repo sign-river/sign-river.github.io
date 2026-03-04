@@ -51,6 +51,13 @@ class Search {
   private filterToggle: HTMLElement;
   private searchFilters: HTMLElement;
   private isFiltersOpen: boolean = false;
+  private dateRangeSelect: HTMLSelectElement;
+  private customDateRange: HTMLElement;
+  private dateStartInput: HTMLInputElement;
+  private dateEndInput: HTMLInputElement;
+  private selectedDateRange: string = "all";
+  private customStartDate: Date | null = null;
+  private customEndDate: Date | null = null;
   private readonly STORAGE_KEY = "search-fuzzy-match-enabled";
 
   constructor({ form, input, list, resultTitle, resultTitleTemplate }) {
@@ -69,6 +76,16 @@ class Search {
       ".search-filters",
     ) as HTMLElement;
 
+    // 初始化日期筛选
+    this.dateRangeSelect = document.getElementById(
+      "date-range",
+    ) as HTMLSelectElement;
+    this.customDateRange = document.getElementById("custom-date-range");
+    this.dateStartInput = document.getElementById(
+      "date-start",
+    ) as HTMLInputElement;
+    this.dateEndInput = document.getElementById("date-end") as HTMLInputElement;
+
     // 只有在有筛选面板时才初始化相关功能
     if (this.fuzzyToggle && this.searchFilters) {
       // 从本地存储读取用户的设置
@@ -77,6 +94,9 @@ class Search {
 
       // 同步开关状态到 UI
       this.fuzzyToggle.checked = this.isFuzzyMatch;
+
+      // 读取日期筛选设置
+      this.initDateRange();
 
       // 初始化筛选面板
       this.initFilters();
@@ -91,6 +111,9 @@ class Search {
           this.doSearch(this.input.value.split(" "));
         }
       });
+
+      // 监听日期筛选变化
+      this.initDateRangeListener();
     } else {
       // 没有筛选面板时，默认使用精确匹配
       this.isFuzzyMatch = false;
@@ -105,6 +128,109 @@ class Search {
 
     this.bindQueryStringChange();
     this.bindSearchForm();
+  }
+
+  private initDateRange() {
+    if (!this.dateRangeSelect) return;
+
+    // 从 sessionStorage 读取上次的选择（仅在当前会话有效）
+    const savedDateRange = sessionStorage.getItem("search-date-range");
+    this.selectedDateRange = savedDateRange || "all";
+    this.dateRangeSelect.value = this.selectedDateRange;
+
+    // 隐藏自定义日期范围
+    if (this.customDateRange) {
+      this.customDateRange.style.display =
+        this.selectedDateRange === "custom" ? "flex" : "none";
+    }
+  }
+
+  private initDateRangeListener() {
+    if (!this.dateRangeSelect) return;
+
+    // 监听日期范围选择变化
+    this.dateRangeSelect.addEventListener("change", () => {
+      this.selectedDateRange = this.dateRangeSelect.value;
+      // 保存到 sessionStorage（仅在当前会话有效）
+      sessionStorage.setItem("search-date-range", this.selectedDateRange);
+
+      // 显示/隐藏自定义日期范围
+      if (this.customDateRange) {
+        this.customDateRange.style.display =
+          this.selectedDateRange === "custom" ? "flex" : "none";
+      }
+
+      // 重新搜索
+      if (this.input.value.trim() !== "") {
+        this.doSearch(this.input.value.split(" "));
+      }
+    });
+
+    // 监听自定义日期输入
+    if (this.dateStartInput && this.dateEndInput) {
+      const handleCustomDateChange = () => {
+        if (this.dateStartInput.value) {
+          this.customStartDate = new Date(this.dateStartInput.value);
+        }
+        if (this.dateEndInput.value) {
+          this.customEndDate = new Date(this.dateEndInput.value);
+        }
+
+        // 重新搜索
+        if (this.input.value.trim() !== "") {
+          this.doSearch(this.input.value.split(" "));
+        }
+      };
+
+      this.dateStartInput.addEventListener("change", handleCustomDateChange);
+      this.dateEndInput.addEventListener("change", handleCustomDateChange);
+    }
+  }
+
+  /**
+   * 检查文章日期是否符合筛选条件
+   */
+  private isDateInRange(articleDate: string): boolean {
+    if (this.selectedDateRange === "all") {
+      return true;
+    }
+
+    const articleDateObj = new Date(articleDate);
+    const now = new Date();
+
+    switch (this.selectedDateRange) {
+      case "today":
+        const today = new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate(),
+        );
+        return articleDateObj >= today;
+
+      case "week":
+        const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+        return articleDateObj >= weekAgo;
+
+      case "month":
+        const monthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+        return articleDateObj >= monthAgo;
+
+      case "year":
+        const yearAgo = new Date(now.getTime() - 365 * 24 * 60 * 60 * 1000);
+        return articleDateObj >= yearAgo;
+
+      case "custom":
+        if (this.customStartDate && articleDateObj < this.customStartDate) {
+          return false;
+        }
+        if (this.customEndDate && articleDateObj > this.customEndDate) {
+          return false;
+        }
+        return true;
+
+      default:
+        return true;
+    }
   }
 
   private initFilters() {
@@ -229,6 +355,11 @@ class Search {
     );
 
     for (const item of rawData) {
+      // 先检查日期是否符合
+      if (!this.isDateInRange(item.date)) {
+        continue;
+      }
+
       const titleMatches: match[] = [],
         contentMatches: match[] = [];
 
@@ -328,6 +459,11 @@ class Search {
     const similarityThreshold = 0.6; // 提高相似度阈值到 0.6
 
     for (const item of rawData) {
+      // 先检查日期是否符合
+      if (!this.isDateInRange(item.date)) {
+        continue;
+      }
+
       const titleMatches: match[] = [];
       const contentMatches: match[] = [];
       let totalSimilarity = 0;

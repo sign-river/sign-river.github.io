@@ -151,7 +151,7 @@
     background-color: var(--card-background);
     border-radius: var(--card-border-radius);
     box-shadow: var(--shadow-l1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.1));
     clear: both;
 
     &.active {
@@ -159,10 +159,116 @@
       animation: slideDown 0.25s ease-out;
     }
 
+    .filter-section {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.05));
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .filter-section-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--card-text-color-main);
+        margin: 0 0 12px 0;
+      }
+    }
+
     .filter-option {
       display: flex;
       align-items: center;
       margin-bottom: 0;
+
+      &.date-filter {
+        .date-range-select {
+          flex: 1;
+          max-width: 200px;
+          padding: 10px 36px 10px 14px;
+          border-radius: 8px;
+          border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.15));
+          background: var(--card-background);
+          color: var(--card-text-color-main);
+          font-size: 1.3rem;
+          cursor: pointer;
+          outline: none;
+          transition: all 0.3s ease;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+
+          // 自定义下拉箭头 - 使用 CSS 变量颜色
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+          background-size: 16px;
+          color: var(--card-text-color-secondary);
+
+          &:hover {
+            border-color: var(--card-text-color-tertiary);
+            background-color: var(--card-background-hover, rgba(0, 0, 0, 0.02));
+            color: var(--card-text-color-main);
+          }
+
+          &:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px
+              rgba(var(--accent-color-rgb, 51, 51, 51), 0.15);
+            color: var(--card-text-color-main);
+          }
+
+          option {
+            background-color: var(--card-background);
+            color: var(--card-text-color-main);
+            padding: 8px 12px;
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      &.custom-date-range {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+
+        .date-input {
+          flex: 1;
+          max-width: 150px;
+          padding: 10px 12px;
+          border-radius: 8px;
+          border: 1px solid var(--card-border-color, rgba(0, 0, 0, 0.15));
+          background: var(--card-background);
+          color: var(--card-text-color-main);
+          font-size: 1.3rem;
+          outline: none;
+          transition: all 0.3s ease;
+
+          &::placeholder {
+            color: var(--card-text-color-tertiary);
+            opacity: 0.7;
+          }
+
+          &:hover {
+            border-color: var(--card-text-color-tertiary);
+          }
+
+          &:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px
+              rgba(var(--accent-color-rgb, 51, 51, 51), 0.15);
+          }
+        }
+
+        .date-separator {
+          color: var(--card-text-color-tertiary);
+          font-size: 1.3rem;
+          opacity: 0.6;
+        }
+      }
     }
   }
 
@@ -172,7 +278,7 @@
     cursor: pointer;
     user-select: none;
     font-size: 1.4rem;
-    color: var(--card-text-color-secondary);
+    color: var(--card-text-color-main);
     width: 100%;
 
     input {
@@ -182,43 +288,48 @@
     .toggle-slider {
       position: relative;
       flex-shrink: 0;
-      width: 40px;
-      height: 22px;
+      width: 44px;
+      height: 24px;
       background: var(--card-background);
       border: 2px solid var(--card-text-color-tertiary);
-      border-radius: 22px;
-      margin-inline-end: 10px;
+      border-radius: 24px;
+      margin-inline-end: 12px;
       transition: all 0.3s ease;
+      opacity: 0.8;
 
       &::after {
         content: "";
         position: absolute;
         top: 2px;
         inset-inline-start: 2px;
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
         background: var(--card-text-color-tertiary);
         border-radius: 50%;
         transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
     }
 
     &:hover .toggle-slider {
       border-color: var(--accent-color);
+      opacity: 1;
     }
 
     input:checked + .toggle-slider {
-      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.2);
+      background: var(--accent-color);
       border-color: var(--accent-color);
+      opacity: 1;
 
       &::after {
-        inset-inline-start: calc(100% - 16px);
-        background: var(--accent-color);
+        inset-inline-start: calc(100% - 18px);
+        background: #fff;
       }
     }
 
     .toggle-label {
       font-size: 1.4rem;
+      color: var(--card-text-color-main);
       white-space: nowrap;
     }
   }

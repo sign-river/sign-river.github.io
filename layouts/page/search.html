@@ -1,6 +1,6 @@
 {{ define "body-class" }}template-search{{ end }}
 {{ define "head" }}
-    {{- with .OutputFormats.Get "json" -}} 
+    {{- with .OutputFormats.Get "json" -}}
         <link rel="preload" href="{{ .RelPermalink }}" as="fetch" crossorigin="anonymous">
     {{- end -}}
 {{ end }}
@@ -9,7 +9,7 @@
     <div class="search-input-wrapper">
         <label>{{ T "search.title" }}</label>
         <input name="keyword" placeholder="{{ T `search.placeholder` }}" />
-        
+
         <div class="search-actions">
             <button type="button" class="filter-toggle" title="{{ T `search.filterTitle` }}">
                 {{ partial "helper/icon" "filter" }}
@@ -23,12 +23,36 @@
 
 <!-- 筛选面板 -->
 <div class="search-filters">
-    <div class="filter-option">
-        <label class="fuzzy-toggle" title="{{ T `search.fuzzyToggle` }}">
-            <input type="checkbox" id="fuzzy-search-toggle" />
-            <span class="toggle-slider"></span>
-            <span class="toggle-label">{{ T "search.fuzzyMatch" }}</span>
-        </label>
+    <div class="filter-section">
+        <h4 class="filter-section-title">搜索模式</h4>
+        <div class="filter-option">
+            <label class="fuzzy-toggle" title="{{ T `search.fuzzyToggle` }}">
+                <input type="checkbox" id="fuzzy-search-toggle" />
+                <span class="toggle-slider"></span>
+                <span class="toggle-label">{{ T "search.fuzzyMatch" }}</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <h4 class="filter-section-title">发布时间</h4>
+        <div class="filter-option date-filter">
+            <select id="date-range" class="date-range-select">
+                <option value="all">全部时间</option>
+                <option value="today">今天</option>
+                <option value="week">最近 7 天</option>
+                <option value="month">最近 30 天</option>
+                <option value="year">最近 1 年</option>
+                <option value="custom">自定义范围</option>
+            </select>
+        </div>
+
+        <!-- 自定义日期范围（默认隐藏） -->
+        <div class="filter-option custom-date-range" id="custom-date-range" style="display: none;">
+            <input type="date" id="date-start" class="date-input" placeholder="开始日期" />
+            <span class="date-separator">至</span>
+            <input type="date" id="date-end" class="date-input" placeholder="结束日期" />
+        </div>
     </div>
 </div>
 

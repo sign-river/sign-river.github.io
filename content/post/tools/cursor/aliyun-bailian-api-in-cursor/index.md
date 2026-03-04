@@ -102,3 +102,19 @@ slug: "cursor-aliyun-bailian-api-setup"
 配置完成后，返回 Cursor 主界面的聊天栏，点击模型选择器切换到刚才添加的阿里云百炼模型，即可开始使用。
 
 <a href="images/2026-03-03-18-58-12.png" target="_blank"> <img src="images/2026-03-03-18-58-12.png" alt="在聊天栏切换模型" style="max-width: 100%; width: 1000px;"/> </a>
+
+## 5.常见问题
+
+### 5.1. 报错提示“模型不存在”
+
+#### 问题现象：
+
+在使用过程中，系统突然报错并提示模型不存在（如下图）。
+
+<a href="images/2026-03-04-18-11-39.png" target="_blank"> <img src="images/2026-03-04-18-11-39.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
+
+#### 原因与解决方法：
+
+这通常是因为系统自动禁用了 OpenAI API Key。**只需前往设置将其重新开启即可恢复正常。**
+
+<a href="images/2026-03-04-18-12-17.png" target="_blank"> <img src="images/2026-03-04-18-12-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>

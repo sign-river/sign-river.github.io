@@ -1093,3 +1093,45 @@
     max-height: 200px;
   }
 }
+
+/* ========== 搜索页面暗色模式优化 ========== */
+[data-scheme="dark"] {
+  .search-filters {
+    .filter-section-title {
+      color: var(--card-text-color-main) !important;
+    }
+
+    .fuzzy-toggle {
+      color: var(--card-text-color-main) !important;
+
+      .toggle-label {
+        color: var(--card-text-color-main) !important;
+      }
+    }
+
+    .date-range-select {
+      background-color: var(--card-background) !important;
+      color: var(--card-text-color-main) !important;
+      border-color: var(--card-border-color) !important;
+
+      option {
+        background-color: var(--card-background) !important;
+        color: var(--card-text-color-main) !important;
+      }
+    }
+
+    .date-input {
+      background-color: var(--card-background) !important;
+      color: var(--card-text-color-main) !important;
+      border-color: var(--card-border-color) !important;
+
+      &::placeholder {
+        color: var(--card-text-color-tertiary) !important;
+      }
+    }
+
+    .date-separator {
+      color: var(--card-text-color-tertiary) !important;
+    }
+  }
+}
