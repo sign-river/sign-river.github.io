@@ -65,15 +65,6 @@ search:
     resultTitle:
         other: "#PAGES_COUNT pages (#TIME_SECONDS seconds)"
 
-    fuzzyMatch:
-        other: Fuzzy Match
-
-    fuzzyToggle:
-        other: Toggle fuzzy search
-
-    filterTitle:
-        other: Filter options
-
 footer:
     builtWith:
         other: Built with {{ .Generator }}

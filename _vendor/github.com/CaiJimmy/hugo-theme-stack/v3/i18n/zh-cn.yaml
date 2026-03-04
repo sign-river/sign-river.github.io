@@ -59,15 +59,6 @@ search:
     resultTitle:
         other: "#PAGES_COUNT 个结果（用时 #TIME_SECONDS 秒）"
 
-    fuzzyMatch:
-        other: 模糊匹配
-
-    fuzzyToggle:
-        other: 切换模糊匹配
-
-    filterTitle:
-        other: 筛选选项
-
 footer:
     builtWith:
         other: 使用 {{ .Generator }} 构建
