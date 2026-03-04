@@ -11,26 +11,46 @@
 
     <!-- 搜索框 -->
     <div class="tags-search-box">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
+      <div class="search-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
       <input
         type="text"
         id="tag-search"
         placeholder="搜索标签..."
         autocomplete="off"
       />
+      <div class="search-actions">
+        <button type="button" class="filter-toggle" title="筛选选项">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- 筛选面板 -->
+    <div class="search-filters">
+      <div class="filter-option">
+        <label class="fuzzy-toggle">
+          <input type="checkbox" id="tag-fuzzy-toggle" />
+          <span class="toggle-slider"></span>
+          <span class="toggle-label">模糊匹配</span>
+        </label>
+      </div>
     </div>
 
     <!-- 标签统计 -->
@@ -65,22 +85,206 @@
     const tagsList = document.getElementById("tags-list");
     const tags = tagsList.querySelectorAll(".tag-item");
     const noResults = document.getElementById("no-results");
-
-    searchInput.addEventListener("input", function () {
-      const query = this.value.toLowerCase().trim();
+    const filterToggle = document.querySelector(".filter-toggle");
+    const searchFilters = document.querySelector(".search-filters");
+    const fuzzyToggle = document.getElementById("tag-fuzzy-toggle");
+    
+    let isFuzzyMatch = false;
+    let isFiltersOpen = false;
+    
+    // 从本地存储读取设置
+    const savedSetting = localStorage.getItem('tag-search-fuzzy-match');
+    if (savedSetting === 'true') {
+      isFuzzyMatch = true;
+      if (fuzzyToggle) fuzzyToggle.checked = true;
+    }
+    
+    // 筛选面板开关
+    if (filterToggle && searchFilters) {
+      filterToggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        isFiltersOpen = !isFiltersOpen;
+        searchFilters.classList.toggle("active", isFiltersOpen);
+        filterToggle.classList.toggle("active", isFiltersOpen);
+      });
+      
+      // 点击外部关闭面板
+      document.addEventListener("click", function (e) {
+        if (isFiltersOpen && 
+            !searchFilters.contains(e.target) && 
+            !filterToggle.contains(e.target)) {
+          isFiltersOpen = false;
+          searchFilters.classList.remove("active");
+          filterToggle.classList.remove("active");
+        }
+      });
+    }
+    
+    // 模糊匹配开关
+    if (fuzzyToggle) {
+      fuzzyToggle.addEventListener("change", function () {
+        isFuzzyMatch = this.checked;
+        localStorage.setItem('tag-search-fuzzy-match', isFuzzyMatch.toString());
+        // 重新搜索
+        if (searchInput.value.trim()) {
+          performSearch();
+        }
+      });
+    }
+    
+    // 计算词语相似度（针对中文标签优化）
+    function calculateWordSimilarity(word1, word2) {
+      const w1 = word1.toLowerCase();
+      const w2 = word2.toLowerCase();
+      
+      // 完全匹配
+      if (w1 === w2) return 1;
+      
+      // 包含匹配（优先级最高）
+      if (w1.includes(w2)) {
+        // 搜索词是标签的子串
+        const ratio = w2.length / w1.length;
+        return 0.8 + (0.2 * ratio); // 0.8-1.0
+      }
+      if (w2.includes(w1)) {
+        // 标签是搜索词的子串
+        const ratio = w1.length / w2.length;
+        return 0.7 + (0.3 * ratio); // 0.7-1.0
+      }
+      
+      // 中文分词相似度（针对中文优化）
+      // 检查是否有共同的连续字符
+      const commonLength = getCommonSubstringLength(w1, w2);
+      if (commonLength >= 2) {
+        // 有 2 个或以上连续相同字符
+        const maxLen = Math.max(w1.length, w2.length);
+        return 0.6 + (0.4 * commonLength / maxLen);
+      }
+      
+      // 编辑距离（仅当长度相近时使用）
+      const lenDiff = Math.abs(w1.length - w2.length);
+      if (lenDiff > 1) {
+        // 长度差异超过 1 个字符，直接返回低分
+        return 0.3;
+      }
+      
+      const m = w1.length;
+      const n = w2.length;
+      
+      // 短词直接计算编辑距离
+      const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+      
+      for (let i = 0; i <= m; i++) dp[i][0] = i;
+      for (let j = 0; j <= n; j++) dp[0][j] = j;
+      
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          const cost = w1[i - 1] === w2[j - 1] ? 0 : 1;
+          dp[i][j] = Math.min(
+            dp[i - 1][j] + 1,      // 删除
+            dp[i][j - 1] + 1,      // 插入
+            dp[i - 1][j - 1] + cost // 替换
+          );
+        }
+      }
+      
+      const distance = dp[m][n];
+      const maxLen = Math.max(m, n);
+      
+      // 针对短词（<=4 字符）严格匹配
+      if (maxLen <= 4) {
+        if (distance === 0) return 1;
+        if (distance === 1) return 0.75;
+        if (distance === 2) return 0.5;
+        return 0.3;
+      }
+      
+      // 长词按距离比例计算
+      const similarity = 1 - distance / maxLen;
+      return Math.max(0.3, similarity);
+    }
+    
+    // 获取两个字符串的最长公共子串长度
+    function getCommonSubstringLength(str1, str2) {
+      const m = str1.length;
+      const n = str2.length;
+      let maxLen = 0;
+      
+      const dp = Array(m + 1).fill(null).map(() => Array(n + 1).fill(0));
+      
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          if (str1[i - 1] === str2[j - 1]) {
+            dp[i][j] = dp[i - 1][j - 1] + 1;
+            maxLen = Math.max(maxLen, dp[i][j]);
+          }
+        }
+      }
+      
+      return maxLen;
+    }
+    
+    // 执行搜索
+    function performSearch() {
+      const query = searchInput.value.toLowerCase().trim();
       let found = false;
+      let bestMatch = null;
+      let bestScore = 0;
 
       tags.forEach(function (tag) {
         const tagName = tag.getAttribute("data-tag");
-        if (tagName.includes(query)) {
+        const displayElement = tag.querySelector(".tag-name");
+        const actualName = displayElement ? displayElement.textContent.toLowerCase() : tagName;
+        
+        let shouldShow = false;
+        let score = 0;
+        
+        if (isFuzzyMatch && query) {
+          // 模糊匹配模式
+          score = calculateWordSimilarity(actualName, query);
+          shouldShow = score >= 0.6; // 提高相似度阈值到 0.6
+          
+          // 恢复原始文本（去掉高亮）
+          if (displayElement && displayElement.dataset.originalText) {
+            displayElement.textContent = displayElement.dataset.originalText;
+          }
+        } else {
+          // 精确匹配模式
+          shouldShow = actualName.includes(query);
+          score = shouldShow ? 1 : 0;
+        }
+        
+        if (shouldShow) {
           tag.style.display = "";
+          tag.dataset.score = score;
           found = true;
+          
+          if (score > bestScore) {
+            bestScore = score;
+            bestMatch = tag;
+          }
         } else {
           tag.style.display = "none";
         }
       });
-
+      
+      // 按相似度排序
+      const sortedTags = Array.from(tagsList.children).sort((a, b) => {
+        const scoreA = parseFloat(a.dataset.score) || 0;
+        const scoreB = parseFloat(b.dataset.score) || 0;
+        return scoreB - scoreA;
+      });
+      
+      sortedTags.forEach(tag => tagsList.appendChild(tag));
+      
       noResults.style.display = found ? "none" : "";
+    }
+    
+    // 绑定搜索事件
+    searchInput.addEventListener("input", function () {
+      // 防抖
+      clearTimeout(this.searchTimeout);
+      this.searchTimeout = setTimeout(performSearch, 150);
     });
   })();
 </script>

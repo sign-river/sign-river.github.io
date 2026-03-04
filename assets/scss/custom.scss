@@ -910,3 +910,186 @@
     font-size: 1.2rem;
   }
 }
+
+/* ========== 标签搜索框样式 ========== */
+.tags-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-l1);
+  padding: 0;
+  overflow: visible;
+
+  .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: var(--card-text-color-secondary);
+      stroke-width: 2;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 15px 50px 15px 45px; // 左侧给图标留空间，右侧给漏斗留空间
+    border: none;
+    background: transparent;
+    color: var(--card-text-color-main);
+    font-size: 1.5rem;
+    outline: none;
+
+    &::placeholder {
+      color: var(--card-text-color-tertiary);
+    }
+  }
+
+  .search-actions {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    z-index: 10;
+
+    .filter-toggle {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        color: var(--card-text-color-secondary);
+        stroke-width: 2;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
+
+        svg {
+          color: var(--accent-color);
+          transform: scale(1.1);
+        }
+      }
+
+      &.active {
+        background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.15);
+
+        svg {
+          color: var(--accent-color);
+          stroke-width: 2.5;
+        }
+      }
+    }
+  }
+}
+
+/* 筛选面板样式 */
+.search-filters {
+  display: none;
+  margin: 15px 0;
+  padding: 20px;
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--shadow-l1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &.active {
+    display: block;
+    animation: slideDown 0.25s ease-out;
+  }
+
+  .filter-option {
+    display: flex;
+    align-items: center;
+  }
+
+  .fuzzy-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.3rem;
+    color: var(--card-text-color-secondary);
+    width: 100%;
+
+    input {
+      display: none;
+    }
+
+    .toggle-slider {
+      position: relative;
+      flex-shrink: 0;
+      width: 40px;
+      height: 22px;
+      background: var(--card-background);
+      border: 2px solid var(--card-text-color-tertiary);
+      border-radius: 22px;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 14px;
+        height: 14px;
+        background: var(--card-text-color-tertiary);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+    }
+
+    &:hover .toggle-slider {
+      border-color: var(--accent-color);
+    }
+
+    input:checked + .toggle-slider {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+
+      &::after {
+        left: calc(100% - 16px);
+        background: white;
+      }
+    }
+
+    .toggle-label {
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 200px;
+  }
+}
