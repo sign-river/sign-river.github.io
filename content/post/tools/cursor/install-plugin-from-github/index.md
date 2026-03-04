@@ -8,7 +8,6 @@ categories:
 tags:
   - "Cursor"
   - "插件"
-  - "VS Code"
   - "GitHub"
 draft: false
 slug: "cursor-install-plugin-from-github"

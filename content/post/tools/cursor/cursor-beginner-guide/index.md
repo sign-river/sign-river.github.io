@@ -9,7 +9,6 @@ tags:
   - "Cursor"
   - "AI"
   - "编程助手"
-  - "VS Code"
   - "使用技巧"
 draft: false
 slug: "cursor-beginner-guide"
