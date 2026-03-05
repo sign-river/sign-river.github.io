@@ -4,7 +4,7 @@ date: 2026-02-09
 description: "手把手教你使用 Hugo + GitHub Pages 搭建自己的个人博客"
 #image: images/2026-03-04-03-32-43.png
 categories:
-  - "教程"
+  - "博客"
 tags:
   - "Hugo"
   - "GitHub Pages"

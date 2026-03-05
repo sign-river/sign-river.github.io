@@ -3,7 +3,7 @@ title: "如何查找 Gemini 订阅截止日期"
 date: 2026-02-24
 description: "Gemini 订阅截止日期藏得比较深，记录一下具体位置与查找方法，方便下次不用再找半天。"
 categories:
-  - "教程"
+  - "开发"
 tags:
   - "Gemini"
   - "Google"
@@ -14,7 +14,6 @@ slug: "find-gemini-subscription-expiry"
 ---
 
 Gemini（原 Google One AI）的订阅到期时间在网页里藏得比较刁钻，第一次找往往要翻半天。这里记一下**具体查找路径**，方便大家查找。
-
 
 ## 1. 第一步：设置和帮助 → 个人使用场景
 
@@ -28,7 +27,6 @@ Gemini（原 Google One AI）的订阅到期时间在网页里藏得比较刁钻
 
 <a href="images/2026-02-24-14-08-26.png" target="_blank"> <img src="images/2026-02-24-14-08-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-
 ## 2. 第二步：在 Google 账号订阅页查看续订日期
 
 跳转后进入的是 **Google 账号 → 订阅** 页面。页面顶部有返回箭头和「订阅」标题。
@@ -36,7 +34,6 @@ Gemini（原 Google One AI）的订阅到期时间在网页里藏得比较刁钻
 找到 Google One 一栏，这里的续订日期就是你会员到期的时间
 
 <a href="images/2026-02-24-14-10-52.png" target="_blank"> <img src="images/2026-02-24-14-10-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
 
 ## 3. 小结
 

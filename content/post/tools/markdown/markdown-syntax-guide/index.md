@@ -4,7 +4,7 @@ date: 2026-02-10
 description: "Markdown 从基础到进阶的完整语法参考手册"
 image:
 categories:
-  - "工具"
+  - "开发"
 tags:
   - "Markdown"
   - "写作效率"
@@ -51,7 +51,7 @@ Markdown 是一种轻量级标记语言，让你可以用纯文本格式编写�
 **换行**：在行末添加两个空格或使用 `<br>`
 
 ```markdown
-第一行内容  
+第一行内容
 第二行内容（注意上一行末尾有两个空格）
 
 或者使用 HTML 标签：
@@ -60,8 +60,8 @@ Markdown 是一种轻量级标记语言，让你可以用纯文本格式编写�
 在代码段和图片间添加空行更适合用第二种方法
 ```
 
-**效果**：  
-第一行内容  
+**效果**：
+第一行内容
 第二行内容
 
 或者：<br>
@@ -459,13 +459,13 @@ Markdown 支持内嵌 HTML 标签：
 
 <details>
   <summary>点击展开查看更多</summary>
-  
-  这里是隐藏的内容
-  
+
+这里是隐藏的内容
+
 - 可以包含列表
 - 也可以包含其他 Markdown 语法
 - **甚至是粗体**
-  
+
 </details>
 
 ## 12. 数学公式
@@ -478,7 +478,7 @@ Markdown 支持内嵌 HTML 标签：
 这是行内公式 $E = mc^2$
 ```
 
-**效果**：  
+**效果**：
 这是行内公式 $E = mc^2$，还有勾股定理 $a^2 + b^2 = c^2$
 
 **块级公式**：
@@ -557,9 +557,9 @@ $$
 
 **效果**：
 
-<span style="color: red;">这是红色文字</span>  
-<span style="color: blue;">这是蓝色文字</span>  
-<span style="color: green;">这是绿色文字</span>  
+<span style="color: red;">这是红色文字</span>
+<span style="color: blue;">这是蓝色文字</span>
+<span style="color: green;">这是绿色文字</span>
 <span style="color: orange;">这是橙色文字</span>
 
 ## 14. VS Code 快捷键（Markdown All in One）

@@ -4,7 +4,7 @@ date: 2026-02-12
 description: "作为 Cursor 新手，分享使用 Cursor AI 编程助手的心得体会与实用技巧"
 # image: images/cover.jpg
 categories:
-  - "工具"
+  - "开发"
 tags:
   - "Cursor"
   - "AI"

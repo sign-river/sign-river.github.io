@@ -3,7 +3,7 @@ title: "Clash Verge 个人节点搭建完整教程"
 date: 2026-02-11
 description: "从零开始搭建个人代理节点，涵盖 VPS 选购、3x-ui 面板安装到 Clash Verge 客户端配置"
 categories:
-  - "教程"
+  - "系统"
 tags:
   - "Clash Verge"
   - "VPS"

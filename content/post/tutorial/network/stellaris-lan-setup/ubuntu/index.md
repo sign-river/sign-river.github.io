@@ -5,6 +5,17 @@ description: "基于 Ubuntu 24.04 64 位的 OpenVPN 虚拟局域网搭建教程"
 draft: false
 slug: "stellaris-lan-openvpn-ubuntu"
 hidden: true
+categories:
+  - "游戏"
+tags:
+  - "群星"
+  - "Stellaris"
+  - "OpenVPN"
+  - "联机"
+  - "虚拟局域网"
+  - "游戏工具"
+  - "网络配置"
+  - "Ubuntu"
 ---
 
 > <span style="font-size: 20px; font-weight: bold;">🚀 [点此返回主文章](/p/stellaris-lan-openvpn-guide/)</span>
@@ -45,7 +56,7 @@ hidden: true
 
 为方便操作，建议使用 **WindTerm** 作为 SSH 终端：免费、绿色免安装，解压即用，支持多标签与会话管理。
 
-- **国内镜像下载（Windows 64 位便携版）**：  
+- **国内镜像下载（Windows 64 位便携版）**：
   [WindTerm 2.7.0 便携版 (x86_64)](https://gitlink.org.cn/signriver/WindTerm/releases/download/2.7.0-Mirror/WindTerm_2.7.0_Windows_Portable_x86_64.zip)
 
   下载后解压到任意目录，路径中不要有中文，双击运行 `WindTerm.exe` 即可。
@@ -613,7 +624,7 @@ PASS=123456
 
 #### 6.3.3. 选择模式（关键！）
 
-在连接按钮的左侧或下方，通常有模式选择。  
+在连接按钮的左侧或下方，通常有模式选择。
 ⚠️ **请务必勾选 UDP 模式**。
 
 > 💡 群星联机对延迟极其敏感，**UDP 模式去除了 TCP 的握手重传机制**，能显著降低延迟，是本教程的核心优势所在。

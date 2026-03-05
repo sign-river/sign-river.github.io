@@ -3,7 +3,7 @@ title: "Hugo Theme Stack 优化：相关文章推荐配置指南"
 date: 2026-02-11
 description: "解决 Hugo Theme Stack 博客相关文章推荐不精确的问题，让推荐更智能"
 categories:
-  - "教程"
+  - "博客"
 tags:
   - "Hugo"
   - "hugo-theme-stack"

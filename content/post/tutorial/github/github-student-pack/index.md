@@ -4,7 +4,7 @@ description: "详细记录东北大学秦皇岛分校学生申请 GitHub Student
 slug: "github-student-pack-neu-qhd"
 date: 2026-02-13
 categories:
-  - "教程"
+  - "开发"
 tags:
   - GitHub
   - 学生认证
@@ -16,7 +16,7 @@ math: false
 draft: false
 ---
 
-> **适用对象**：东北大学秦皇岛分校（NEU Qinhuangdao）在校学生  
+> **适用对象**：东北大学秦皇岛分校（NEU Qinhuangdao）在校学生
 > **认证优势**：免费使用 GitHub Pro、JetBrains 全家桶、Azure 学生订阅等价值上千美元的开发者工具
 
 ## 1. 前言

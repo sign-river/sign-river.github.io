@@ -3,7 +3,7 @@ title: "Cursor Agent 模式频繁卡死？终极解决方案来了"
 date: 2026-03-05
 description: "使用 Cursor 2.5 及以上版本 Agent 模式时遇到频繁响应卡死？本文分享经验之谈，彻底解决 Unexpected seqno 报错问题"
 categories:
-  - "工具"
+  - "开发"
 tags:
   - "Cursor"
   - "AI"
