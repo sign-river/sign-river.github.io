@@ -35,56 +35,56 @@ def strip_front_matter(text: str) -> str:
 def count_cjk_chars(text: str) -> int:
     """统计 CJK 字符数（模拟 Hugo 的 .WordCount 在 hasCJKLanguage=true 时的行为）。
     去除代码块、HTML 标签、链接等 markdown 语法后统计字符数。"""
-    
+
     # 1. 移除代码块（```...```）
     text = re.sub(r'```[\s\S]*?```', '', text)
-    
+
     # 2. 移除行内代码（`...`）
     text = re.sub(r'`[^`]+`', '', text)
-    
+
     # 3. 移除 HTML 标签
     text = re.sub(r'<[^>]+>', '', text)
-    
+
     # 4. 移除图片语法 ![alt](url)
     text = re.sub(r'!\[([^\]]*)\]\([^\)]+\)', r'\1', text)
-    
+
     # 5. 移除链接，保留文本 [text](url) -> text
     text = re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text)
-    
+
     # 6. 移除标题标记 # ## ###
     text = re.sub(r'^#{1,6}\s+', '', text, flags=re.MULTILINE)
-    
+
     # 7. 移除列表标记 - * +
     text = re.sub(r'^\s*[-*+]\s+', '', text, flags=re.MULTILINE)
-    
+
     # 8. 移除有序列表标记 1. 2.
     text = re.sub(r'^\s*\d+\.\s+', '', text, flags=re.MULTILINE)
-    
+
     # 9. 移除引用标记 >
     text = re.sub(r'^\s*>\s+', '', text, flags=re.MULTILINE)
-    
+
     # 10. 移除粗体/斜体标记 ** * __ _
     text = re.sub(r'\*\*([^\*]+)\*\*', r'\1', text)
     text = re.sub(r'\*([^\*]+)\*', r'\1', text)
     text = re.sub(r'__([^_]+)__', r'\1', text)
     text = re.sub(r'_([^_]+)_', r'\1', text)
-    
+
     # 11. 移除删除线 ~~
     text = re.sub(r'~~([^~]+)~~', r'\1', text)
-    
+
     # 12. 移除水平线 --- ***
     text = re.sub(r'^[-*_]{3,}$', '', text, flags=re.MULTILINE)
-    
+
     # 13. 移除所有空白字符后统计
     non_whitespace = re.sub(r'\s', '', text)
-    
+
     return len(non_whitespace)
 
 
 def main():
     script_dir = Path(__file__).resolve().parent
     base = script_dir.parent
-    
+
     # 只统计 content/post/ 目录，与 mainSections = ["post"] 保持一致
     post_dir = base / "content" / "post"
     if not post_dir.exists():
@@ -101,10 +101,10 @@ def main():
             continue
         title = extract_title(text)
         body = strip_front_matter(text)
-        
+
         # 使用 CJK 字符数统计（模拟 Hugo 的 .WordCount）
         word_count = count_cjk_chars(body)
-        
+
         try:
             rel = md.relative_to(base)
         except ValueError:
@@ -135,9 +135,9 @@ def main():
         k = total_words // 1000
         decimal = (total_words // 100) % 10
         if decimal == 0:
-            print(f" ({k}k 字)", end="")
+            print(f" ({k}k字)", end="")
         else:
-            print(f" ({k}.{decimal}k 字)", end="")
+            print(f" ({k}.{decimal}k字)", end="")
     print(" ← 与左侧边栏统计逻辑一致")
 
 
