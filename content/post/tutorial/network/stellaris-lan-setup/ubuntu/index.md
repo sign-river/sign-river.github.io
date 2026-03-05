@@ -87,17 +87,83 @@ tags:
 
   <a href="images/2026-02-24-21-49-25.png" target="_blank"> <img src="images/2026-02-24-21-49-25.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
 
+> 💡 **连接小贴士**：
+>
+> - **多次尝试**：首次连接可能失败，这是正常现象。如果连接不上，请多试几次，通常第二次或第三次就能成功连接。
+> - **端口放行**：阿里云服务器默认放行 22 端口，但其他云厂商（如腾讯云、华为云等）可能需要在控制台的「安全组」中手动放行 22 端口才能连接。如果遇到连接超时，请登录云控制台检查安全组规则。
+
+<a href="images/2026-03-06-04-50-12.png" target="_blank"> <img src="images/2026-03-06-04-50-12.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 3. 切换到账户标签页，**用户名** 默认填写为 `root`（如果有指定其他 SSH 用户名则填写对应名称），密码填写你在云服务器控制台设置的远程登录密码。
 
    <a href="images/2026-02-24-22-03-47.png" target="_blank"> <img src="images/2026-02-24-22-03-47.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
    <a href="images/2026-02-24-22-05-31.png" target="_blank"> <img src="images/2026-02-24-22-05-31.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
+> ⚠️ **重要：不同云厂商的默认用户名可能不同**：
+>
+> - **阿里云**：默认用户名为 `root`
+> - **腾讯云**：部分镜像默认用户名为 `ubuntu` 或 `centos`
+> - **华为云**：部分镜像默认用户名为 `ubuntu` 或 `root`
+> - **AWS**：默认用户名为 `ec2-user`（Amazon Linux）或 `ubuntu`（Ubuntu 镜像）
+>
+> 请根据您购买的云服务器型号和控制台提示，填写正确的用户名。如果不确定，可以查看云厂商的文档或购买时的邮件通知。
+
 4. 连接成功则如图所示，如果返回上一界面可能是密码有误请重新输入
 
    接下来就可以输入指令对服务器进行操作了
 
    <a href="images/2026-02-24-22-08-44.png" target="_blank"> <img src="images/2026-02-24-22-08-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+#### 2.2.3. 特殊情况：非 root 用户获取 root 权限
+
+> 💡 **仅当您的云服务器默认用户名不是 `root` 时，需要执行本节操作**
+>
+> 如果您在 WindTerm 中使用非 root 用户名（如 `ubuntu`、`centos` 等）成功登录，您会发现无法直接修改 `/etc/` 等系统目录。此时需要先启用 root 账户并设置密码。
+
+1. **首次登录（使用默认用户名）**：
+
+   假设您的默认用户名是 `ubuntu`，在 WindTerm 中填写：
+   - 主机：您的服务器公网 IP
+   - 端口：22（或云厂商指定的 SSH 端口）
+   - 用户名：`ubuntu`（或其他默认用户名）
+   - 密码：您在云服务器控制台设置的密码
+
+2. **设置 root 密码**：
+
+   登录成功后，执行以下命令设置 root 密码：
+
+   ```bash
+   sudo passwd root
+   ```
+
+   系统会提示您输入新密码：
+
+   ```
+   Enter new UNIX password:
+   Retype new UNIX password:
+   ```
+
+   > 💡 **密码输入提示**：在终端输入密码时，**屏幕上不会显示任何字符**（包括星号或圆点），这是 Linux 的安全机制。如果您担心输错，可以：
+   >
+   > - 先在记事本或 QQ 等地方写好密码
+   > - 复制密码
+   > - 在终端中粘贴（右键点击终端窗口或按 Shift+Insert）
+   > - 按回车确认
+
+输入两次密码后，如果显示 `passwd: password updated successfully` 则表示设置成功。
+
+<a href="images/2026-03-06-04-51-03.png" target="_blank"> <img src="images/2026-03-06-04-51-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+3. **重新建立会话（使用 root 用户）**：
+
+   设置完 root 密码后，关闭当前会话（输入 `exit` 或直接关闭窗口），然后在 WindTerm 中重新建立会话：
+   - 主机：您的服务器公网 IP
+   - 端口：22
+   - 用户名：`root`（现在可以改用 root 了）
+   - 密码：刚才设置的 root 密码
+
+   重新连接后，您就拥有了完整的 root 权限，可以继续后续的 OpenVPN 安装和配置了。
 
 #### 2.2.3. 更新系统并安装所需软件
 
@@ -505,6 +571,8 @@ sudo systemctl status openvpn-stellaris-tcp openvpn-stellaris-udp
 ```
 
 <a href="images/2026-02-24-23-27-46.png" target="_blank"> <img src="images/2026-02-24-23-27-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+> 💡 **提示**：查看完服务状态后，按 `Ctrl + C` 即可退出浏览模式，返回命令行提示符。
 
 ### 5.3. 可选：重启验证
 
