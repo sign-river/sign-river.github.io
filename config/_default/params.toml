@@ -48,7 +48,7 @@ subtitle = "热爱编程"
 [sidebar.avatar]
 enabled = true
 local = true
-src = "img/avatar.png"
+src = "img/avatar.webp"  # 使用 WebP 格式，加载更快（从 6MB 优化到 19KB）
 
 ## Social Links
 [[sociallinks]]
@@ -117,7 +117,7 @@ enabled = true
 [comments]
     enabled = true
     provider = "giscus"
-    
+
 [comments.disqusjs]
     shortname = ""
     apiUrl = ""

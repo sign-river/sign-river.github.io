@@ -25,8 +25,9 @@
           loading="lazy"
           alt="Avatar"
         />
-        {{ else }} {{ $avatar := resources.Get (.src) }} {{ if $avatar }} {{
-        $avatarResized := $avatar.Resize "300x" }}
+        {{ else }} {{ $avatar := resources.Get (.src) }} {{ if $avatar }} {{/*
+        使用 WebP 格式压缩头像，优化加载速度 */}} {{ $avatarResized := $avatar.Resize
+        "300x webp" }}
         <img
           src="{{ $avatarResized.RelPermalink }}"
           width="{{ $avatarResized.Width }}"
