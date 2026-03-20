@@ -111,7 +111,30 @@ latexocr
 
 <a href="images/2026-03-21-04-05-48.png" target="_blank"> <img src="images/2026-03-21-04-05-48.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
 
-## 4. 创建一键启动脚本
+## 4. 插入 Word
+
+识别完成后，下方文本框中即为可直接使用的 LaTeX 代码，复制它。
+
+以下图为例，识别结果为：
+
+```
+\operatorname*{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)
+```
+
+<a href="images/识别结果截图.png" target="_blank"> <img src="images/识别结果截图.png" alt="image" style="max-width: 100%; width: 500px;"/> </a>
+
+在 WPS 或 Word 中，光标定位到需要插入公式的位置，点击菜单栏**插入 → 公式**，在弹出的公式编辑框中将识别结果粘贴进去即可。
+
+<a href="images/插入%20Word%20截图.png" target="_blank"> <img src="images/插入%20Word%20截图.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+<a href="images/2026-03-21-04-47-58.png" target="_blank"> <img src="images/2026-03-21-04-47-58.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+> **Word 用户注意**：
+>
+> 1. 粘贴后需要手动切换两个设置，否则公式无法正确渲染：左上角输入类型选择 **LaTeX**（默认是 Unicode）；右侧格式选择**专业**（选"线性"则公式不会转换为排版格式）。
+> 2. Word 不支持 `\operatorname*` 语法和 `$...$` 包裹，粘贴前需手动处理：删去开头的 `$\operatorname*` 及结尾的 `$`。例如 WPS 可直接使用的 `$\operatorname*{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)$`，在 Word 中需改为 `{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)`。
+
+## 5. 创建一键启动脚本
 
 每次使用都要打开 Anaconda Prompt 再手动输命令比较繁琐，可以创建一个批处理脚本实现双击启动。
 
