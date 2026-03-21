@@ -23,7 +23,7 @@ slug: "latex-ocr-for-word-wps"
 
 按 `Win` 键搜索 **Anaconda Prompt**，打开它。
 
-<a href="images/搜索%20Anaconda%20Prompt%20截图.png" target="_blank"> <img src="images/搜索%20Anaconda%20Prompt%20截图.png" alt="image" style="max-width: 100%; width: 700px;"/> </a>
+<a href="images/2026-03-21-19-17-13.png" target="_blank"> <img src="images/2026-03-21-19-17-13.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 在 Anaconda Prompt 中依次输入以下命令，创建并激活一个独立的虚拟环境：
 
@@ -43,7 +43,7 @@ conda activate latexocr
 
 LaTeX-OCR 依赖 PyTorch 运行模型。由于每个人的显卡和系统环境不同，建议前往 [PyTorch 官网](https://pytorch.org/get-started/locally/) 根据自己的配置生成对应的安装指令。
 
-<a href="images/PyTorch%20官网截图.png" target="_blank"> <img src="images/PyTorch%20官网截图.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-03-21-19-17-59.png" target="_blank"> <img src="images/2026-03-21-19-17-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 各选项说明：
 
@@ -63,8 +63,6 @@ LaTeX-OCR 依赖 PyTorch 运行模型。由于每个人的显卡和系统环境�
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
 ```
 
-<a href="images/PyTorch%20安装截图.png" target="_blank"> <img src="images/PyTorch%20安装截图.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
 ### 2.3. 安装 pix2tex
 
 PyTorch 安装完成后，继续输入以下命令安装 LaTeX-OCR（含 GUI 界面）：
@@ -72,8 +70,6 @@ PyTorch 安装完成后，继续输入以下命令安装 LaTeX-OCR（含 GUI 界
 ```bash
 pip install "pix2tex[gui]"
 ```
-
-<a href="images/pix2tex%20安装截图.png" target="_blank"> <img src="images/pix2tex%20安装截图.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 安装完成后，首次运行时会自动下载模型权重文件（约 100MB+），下载完毕后 GUI 窗口会自动弹出。
 
@@ -125,7 +121,7 @@ latexocr
 
 在 WPS 或 Word 中，光标定位到需要插入公式的位置，点击菜单栏**插入 → 公式**，在弹出的公式编辑框中将识别结果粘贴进去即可。
 
-<a href="images/插入%20Word%20截图.png" target="_blank"> <img src="images/插入%20Word%20截图.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-03-21-19-20-05.png" target="_blank"> <img src="images/2026-03-21-19-20-05.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 <a href="images/2026-03-21-04-47-58.png" target="_blank"> <img src="images/2026-03-21-04-47-58.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
@@ -133,6 +129,8 @@ latexocr
 >
 > 1. 粘贴后需要手动切换两个设置，否则公式无法正确渲染：左上角输入类型选择 **LaTeX**（默认是 Unicode）；右侧格式选择**专业**（选"线性"则公式不会转换为排版格式）。
 > 2. Word 不支持 `\operatorname*` 语法和 `$...$` 包裹，粘贴前需手动处理：删去开头的 `$\operatorname*` 及结尾的 `$`。例如 WPS 可直接使用的 `$\operatorname*{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)$`，在 Word 中需改为 `{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)`。
+
+<a href="images/2026-03-21-19-25-18.png" target="_blank"> <img src="images/2026-03-21-19-25-18.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 5. 创建一键启动脚本
 
@@ -153,6 +151,6 @@ ws.run "cmd /c conda run -n latexocr latexocr", 0
 
 之后选中文件按 `F2` 重命名，将其改为 `公式识别.vbs`，双击即可静默启动 LaTeX-OCR（不会弹出黑色命令行窗口）。
 
-> 双击后不会立即弹出窗口，后台仍需要激活环境并启动程序，请耐心等待几秒钟。
+> 双击后不会立即弹出窗口，后台仍需要激活环境并启动程序，请耐心等待几秒钟。如果怎么双击都没有反应，可以检查一下 vbs 文件是否保存成功、内容是否为空。
 
 <a href="images/2026-03-21-04-24-56.png" target="_blank"> <img src="images/2026-03-21-04-24-56.png" alt="image" style="max-width: 100%; width: 300px;"/> </a>

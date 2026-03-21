@@ -13,6 +13,7 @@ import os
 import re
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 # 强制 stdout 使用 UTF-8，避免 Windows 乱码
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
@@ -42,19 +43,19 @@ def extract_referenced_images(md_text: str) -> set[str]:
 
     # Markdown 语法
     for m in RE_MD_IMAGE.finditer(md_text):
-        refs.add(Path(m.group(1).strip()).name)
+        refs.add(unquote(Path(m.group(1).strip()).name))
 
     # HTML 属性
     for m in RE_HTML_ATTR.finditer(md_text):
         path = m.group(1).strip()
         if Path(path).suffix.lower() in IMAGE_EXTENSIONS:
-            refs.add(Path(path).name)
+            refs.add(unquote(Path(path).name))
 
     # YAML front matter 封面字段
     for m in RE_YAML_IMAGE.finditer(md_text):
         path = m.group(1).strip().strip('"\'')
         if path and not path.startswith('#'):
-            refs.add(Path(path).name)
+            refs.add(unquote(Path(path).name))
 
     return refs
 
