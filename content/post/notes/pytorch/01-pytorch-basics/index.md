@@ -2,6 +2,7 @@
 title: "PyTorch 基础入门"
 date: 2026-02-10
 description: "PyTorch 的基本概念和环境配置"
+slug: "pytorch-basics"
 image:
 categories:
   - "笔记"
