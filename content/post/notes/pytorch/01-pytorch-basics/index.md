@@ -104,8 +104,6 @@ torch.cuda.is_available()
 <br/>
 <a href="images/2026-02-10-22-08-48.png" target="_blank"> <img src="images/2026-02-10-22-08-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 4. 总结
-
 ## 5. 参考资料
 
 - [PyTorch 官方文档](https://pytorch.org/docs/stable/index.html)
