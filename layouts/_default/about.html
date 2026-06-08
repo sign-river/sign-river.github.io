@@ -5,21 +5,9 @@
     <div class="about-avatar">
       {{ $avatar := resources.Get .Site.Params.sidebar.avatar.src }} {{ if
       $avatar }}
-      {{/* 使用压缩后的头像，优化加载速度 */}}
-      {{ $avatarResized := $avatar.Resize "300x webp" }}
-      <img
-        src="{{ $avatarResized.RelPermalink }}"
-        width="{{ $avatarResized.Width }}"
-        height="{{ $avatarResized.Height }}"
-        alt="Avatar"
-        loading="lazy"
-      />
+      <img src="{{ $avatar.RelPermalink }}" alt="Avatar" />
       {{ else }}
-      <img
-        src="{{ .Site.Params.sidebar.avatar.src | relURL }}"
-        alt="Avatar"
-        loading="lazy"
-      />
+      <img src="{{ .Site.Params.sidebar.avatar.src | relURL }}" alt="Avatar" />
       {{ end }}
     </div>
     <div class="about-profile-info">

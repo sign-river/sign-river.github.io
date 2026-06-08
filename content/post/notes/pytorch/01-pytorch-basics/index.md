@@ -11,7 +11,7 @@ tags:
   - "深度学习"
   - "Python"
   - "环境配置"
-draft: true
+draft: false
 ---
 
 ## 1. 前言

@@ -35,6 +35,14 @@ draft: false
 - **DOI**：[10.1109/TIFS.2025.3583231](https://doi.org/10.1109/TIFS.2025.3583231)
 - **GitHub**：[https://github.com/XXiaoY/Fededitor](https://github.com/XXiaoY/Fededitor)
 
+论文作者如下 Xiaohan Yuan, Jiqiang Liu(北京交通大学网络空间安全学院院长), Bin Wang, Guorong Chen, Xiangrui Xu, Junyong Wang, Tao Li(海河实验室副主任), Wei Wang(北京交通大学计算机科学与技术学院的正教授)
+
+其中除了刘吉强是北京交通大学网络空间安全学院院长，王伟是北京交通大学计算机科学与技术学院的正教授，李涛是海河实验室副主任，其他人都是背景交通大学的学生以及海河实验室的工作人员，在致谢中作者感谢了海河实验室，所以大体是 Xiaohan Yuan 承担了大部分工作，王伟和刘吉强提供指导，海河实验室提供资源
+
+Xiaohan Yuan 是论文一作，北京交通大学博士在读，在智能交通安全与隐私北京重点实验室，可以看到几乎每篇论文都有王伟的身影，王伟应该是她的导师，他的方向和王伟大体一致，然后这些论文实验室的学生轮流一作
+
+王伟教授 主要方向是联邦学习与车联网，智能交通安全和 AI 对抗
+
 ## 2. 背景与痛点
 
 <a href="images/2026-02-13-19-14-20.png" target="_blank"> <img src="images/2026-02-13-19-14-20.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
