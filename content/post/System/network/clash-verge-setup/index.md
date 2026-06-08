@@ -170,11 +170,9 @@ ufw enable
 
 ## 4. 面板配置与节点创建
 
-## 5. 第三章：面板配置与节点创建
-
 环境搭建完毕后，我们将离开黑色的命令行界面，转到浏览器中进行可视化的操作。本章的核心任务是配置目前业界公认“隐蔽性”最强、且被封锁概率最低的协议组合：**VLESS + TCP + Reality**。
 
-### 5.1. 登录管理面板
+### 4.1. 登录管理面板
 
 打开您电脑上的浏览器，在地址栏输入访问地址。格式为 `http://你的服务器 IP: 端口号`。
 
@@ -185,7 +183,7 @@ ufw enable
 进入登录页面后，输入我们在上一章安装过程中设置的**用户名**和**密码**，点击登录进入系统仪表盘。
 <a href="images/2026-02-11-12-43-54.png" target="_blank"> <img src="images/2026-02-11-12-43-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 5.2. 添加并配置入站节点
+### 4.2. 添加并配置入站节点
 
 在左侧菜单栏中找到 **入站列表 (Inbound List)**，点击进入后，选择页面中的绿色按钮 **添加入站 (Add Inbound)**。
 <a href="images/2026-02-11-12-44-07.png" target="_blank"> <img src="images/2026-02-11-12-44-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
@@ -206,17 +204,17 @@ ufw enable
   <a href="images/2026-02-11-12-44-19.png" target="_blank"> <img src="images/2026-02-11-12-44-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
   <a href="images/2026-02-11-12-44-27.png" target="_blank"> <img src="images/2026-02-11-12-44-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-### 5.3. 保存并生效
+### 4.3. 保存并生效
 
 确认上述所有信息（尤其是端口和协议）填写无误后，点击窗口底部的 **添加 (Create)** 或**更新 (Create)** 按钮。
 
 添加成功后，您会在列表中看到刚才创建的节点。此时，您的服务器端配置已全部完成，它正静静地等待客户端的连接
 
-## 6. 客户端配置与连通性测试
+## 5. 客户端配置与连通性测试
 
 服务端（VPS）配置完成后，我们还需要在电脑上安装专门的客户端软件，才能将网络流量通过节点进行转发。本教程将以开源、免费且功能强大的 **Clash Verge** 为例进行演示。
 
-### 6.1. 下载并安装客户端
+### 5.1. 下载并安装客户端
 
 首先，请下载适配您操作系统的 Clash Verge 客户端。
 
@@ -225,56 +223,144 @@ ufw enable
   > <https://github.com/clash-verge-rev/clash-verge-rev/releases>
   - _Windows 用户请下载 `.exe` 安装包（通常为 x64-setup.exe），Mac 用户请下载 `.dmg` 文件。_
 
-### 6.2. 导出并转换节点配置
+### 5.2. 导出并转换节点配置
 
 由于 Clash 软件无法直接识别原始的 VLESS 链接，我们需要借助工具将其转换为 Clash 专用的配置文件（.yaml 格式）。
 
-#### 6.2.1. **获取节点链接**
+#### 5.2.1. **获取节点链接**
 
 回到浏览器中的 **3x-ui 管理面板**，在 **入站列表** 中找到刚才创建的节点。
 点击节点左侧的 **菜单图标**（三个点），选择 **导出链接**，然后点击复制。
 <a href="images/2026-02-11-12-51-16.png" target="_blank"> <img src="images/2026-02-11-12-51-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 6.2.2. **转换配置文件**
+#### 5.2.2. **手动创建配置文件**
 
-打开本教程专属的配置转换工具：> <http://vless.ysy.fan/>
+> 可按照以下方法手动创建 `.yaml` 配置文件。
 
-- 将刚才复制的 `vless://...` 链接粘贴到网页的输入框中。
-- 依次点击 **生成文件** -> **下载 MyVPN.yaml**。
-- _请务必保存好这个下载下来的 `.yaml` 文件。_
-  <a href="images/2026-02-11-12-52-00.png" target="_blank"> <img src="images/2026-02-11-12-52-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+**第一步：解析 vless 链接**
 
-### 6.3. 导入配置到 Clash Verge
+复制到的节点链接格式如下：
 
-#### 6.3.1. 打开安装好的 **Clash Verge** 软件
+```
+vless://{uuid}@{server}:{port}?type={network}&...&pbk={public-key}&fp={fingerprint}&sni={servername}&sid={short-id}#{name}
+```
 
-#### 6.3.2. 点击左侧菜单栏的 **订阅 (Subscription)**，然后点击右上角的 **新建 (New)** 按钮
+以实际链接为例：
+
+```
+vless://b71c4e29-d0c6-4906-b6a4-956e7ec2d005@64.64.242.65:443?type=tcp&encryption=none&security=reality&pbk=jJZt-0pxC42THHzelBlhE6ObF_bKkmE_5P3sjdLRpz8&fp=chrome&sni=www.microsoft.com&sid=fe69b17bb8440e&spx=%2F#MyVPN
+```
+
+各参数含义如下：
+
+| 链接中的位置      | 参数示例            | 含义                 |
+| ----------------- | ------------------- | -------------------- |
+| `://` 与 `@` 之间 | `b71c4e29-...`      | UUID（用户身份凭证） |
+| `@` 与 `:` 之间   | `64.64.242.65`      | 服务器 IP            |
+| IP 后的 `:` 之后  | `443`               | 端口号               |
+| `type=`           | `tcp`               | 传输协议             |
+| `pbk=`            | `jJZt-0p...`        | Reality 公钥         |
+| `fp=`             | `chrome`            | 客户端指纹           |
+| `sni=`            | `www.microsoft.com` | 伪装域名             |
+| `sid=`            | `fe69b17bb8440e`    | Reality Short ID     |
+| `#` 之后          | `MyVPN`             | 节点备注名           |
+
+**第二步：填入模板**
+
+新建一个文本文件，将后缀命名为 `.yaml`（例如 `MyVPN.yaml`），复制以下模板内容，然后将各占位符替换为上表中解析出的对应值：
+
+```yaml
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: :9090
+
+rule-providers:
+  google:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+proxies:
+  - name: "MyVPN" # 节点名称，可自定义
+    type: vless
+    server: { server } # ← 替换为服务器 IP
+    port: { port } # ← 替换为端口号
+    uuid: { uuid } # ← 替换为 UUID
+    network: { network } # ← 替换为传输协议（如 tcp）
+    tls: true
+    udp: true
+    flow: ""
+    servername: { sni } # ← 替换为 sni= 的值
+    client-fingerprint: { fp } # ← 替换为 fp= 的值
+    reality-opts:
+      public-key: { public-key } # ← 替换为 pbk= 的值
+      short-id: { short-id } # ← 替换为 sid= 的值
+
+proxy-groups:
+  - name: "节点选择"
+    type: select
+    proxies:
+      - "MyVPN"
+      - DIRECT
+
+rules:
+  - RULE-SET,google,节点选择
+  - RULE-SET,proxy,节点选择
+  - RULE-SET,direct,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,节点选择
+```
+
+_请务必保存好填写完毕的 `.yaml` 文件，下一步导入 Clash Verge 时会用到。_
+
+### 5.3. 导入配置到 Clash Verge
+
+#### 5.3.1. 打开安装好的 **Clash Verge** 软件
+
+#### 5.3.2. 点击左侧菜单栏的 **订阅 (Subscription)**，然后点击右上角的 **新建 (New)** 按钮
 
 <a href="images/2026-02-11-12-53-42.png" target="_blank"> <img src="images/2026-02-11-12-53-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 6.3.3. 在弹出的窗口中进行如下设置
+#### 5.3.3. 在弹出的窗口中进行如下设置
 
 - **类型 (Type)**：选择 `Local`（本地文件）。
 - **名称 (Name)**：填写 `MyVPN`（或你喜欢的任何名字）。
 - **文件 (File)**：点击 **选择文件** 按钮，选中刚才下载的 `MyVPN.yaml` 文件。
   <a href="images/2026-02-11-12-53-59.png" target="_blank"> <img src="images/2026-02-11-12-53-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 6.3.4. 点击 **保存 (Save)** 按钮
+#### 5.3.4. 点击 **保存 (Save)** 按钮
 
-### 6.4. 开启代理与连接测试
+### 5.4. 开启代理与连接测试
 
-#### 6.4.1. **选择节点**
+#### 5.4.1. **选择节点**
 
 点击软件左侧菜单栏的 **代理 (Proxies)**。在顶部的模式切换中选择 **规则 (Rule)**。此时你应该能在下方列表中看到的节点 `MyVPN`。
 
-#### 6.4.2. **连通性测试**
+#### 5.4.2. **连通性测试**
 
 点击节点名称旁边的 **测试图标**（通常是一个类似 WiFi 信号的图标）。
 **\*成功**：如果显示绿色的数字（例如 `187 ms`），代表节点已连通。\* **失败**：如果显示 `Timeout`，请检查 VPS 的防火墙端口是否已开放，或配置步骤是否有误。
 
 <a href="images/2026-02-11-12-54-19.png" target="_blank"> <img src="images/2026-02-11-12-54-19.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-#### 6.4.3. **开启系统代理**
+#### 5.4.3. **开启系统代理**
 
 确认连接成功后，点击左侧菜单栏的 **设置 (Settings)**，找到 **系统代理 (System Proxy)** 开关并将其**打开**（变为蓝色）。
 <a href="images/2026-02-11-12-53-09.png" target="_blank"> <img src="images/2026-02-11-12-53-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
