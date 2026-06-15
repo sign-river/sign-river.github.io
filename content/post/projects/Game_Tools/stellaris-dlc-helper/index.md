@@ -10,6 +10,7 @@ tags:
   - "群星"
   - "DLC"
   - "游戏工具"
+  - "游戏"
   - "开源项目"
   - "Windows"
 draft: false
