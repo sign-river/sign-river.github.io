@@ -42,11 +42,11 @@ slug: "mercury-router-mesh-setup"
 
 1. 设置路由器**登录密码**，点击确认进入下一步
 
-<a href="images/2026-06-20-step3-password.png" target="_blank"> <img src="images/2026-06-20-step3-password.png" alt="设置登录密码" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-18-20-27.png" target="_blank"> <img src="images/2026-06-20-18-20-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 2. 在上网设置页面，点击右上角**跳过向导**
 
-<a href="images/2026-06-20-step3-skip-wizard.png" target="_blank"> <img src="images/2026-06-20-step3-skip-wizard.png" alt="跳过向导" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-18-20-37.png" target="_blank"> <img src="images/2026-06-20-18-20-37.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 4. 修改 LAN 口 IP
 
@@ -54,13 +54,13 @@ slug: "mercury-router-mesh-setup"
 
 例如主路由器 IP 为 `192.168.1.1`，子路由可设为 `192.168.1.2`、`192.168.1.3` 或 `192.168.1.4`。改好后点击**保存**，页面会自动重启。
 
-<a href="images/2026-06-20-step4-lan-ip.png" target="_blank"> <img src="images/2026-06-20-step4-lan-ip.png" alt="LAN 口 IP 手动设置" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-18-20-46.png" target="_blank"> <img src="images/2026-06-20-18-20-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 5. 关闭 DHCP
 
 进入 **高级设置 → 网络参数 → DHCP 服务器**，将 DHCP 服务器设为**关**，点击**保存**。
 
-<a href="images/2026-06-20-step5-dhcp-off.png" target="_blank"> <img src="images/2026-06-20-step5-dhcp-off.png" alt="关闭 DHCP 服务器" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-18-20-59.png" target="_blank"> <img src="images/2026-06-20-18-20-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 6. 网线接入 LAN 口
 
