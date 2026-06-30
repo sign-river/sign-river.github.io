@@ -12,7 +12,7 @@ tags:
   - "服务器"
   - "文件下载"
   - "Nginx"
-draft: true
+draft: false
 slug: "file-download-server-setup"
 ---
 
