@@ -26,7 +26,7 @@ slug: "steam-error-03"
 
 在电脑右下角这个隐藏的图标框中右键 Steam 图标，点击退出 Steam
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="删除 Steam 中假入库的游戏，并使用正版 CDK 重新激活覆盖的操作流程。相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="删除 Steam 中假入库的游戏，并使用正版 CDK 重新激活覆盖的操作流程。相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 重新打开 Steam，此时你电脑上的群星游戏文件还在，但是 Steam 库中原来开始游戏按钮已经变成了购买游戏按钮了
 
@@ -37,3 +37,4 @@ slug: "steam-error-03"
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

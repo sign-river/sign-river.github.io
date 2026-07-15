@@ -21,9 +21,9 @@ slug: "paradox-launcher-error-21"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏相关报错截图 2" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 首先只有从 Steam 里打开 p 社启动器，启动器才能显示拥有游戏 stellaris，直接从启动器快捷方式打开启动器，启动器里没有 stellaris，这是正常现象
 
@@ -38,3 +38,4 @@ p 社启动器官网需要挂梯子，如果打不开官网可以去群文件里
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

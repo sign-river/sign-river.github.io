@@ -21,7 +21,7 @@ slug: "stellaris-error-01"
 
 ## 2. 解决方法
 
-<a href="images/error-01.jpeg" target="_blank"><img src="images/error-01.jpeg" alt="最常见的闪退后白框报错相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.jpeg" target="_blank"><img src="images/error-01.jpeg" alt="最常见的闪退后白框报错相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 导致该报错原因很多，但这个白框报错本身除了让你提交日志以外没有提供任何相关信息，你可以跟根据自身的操作步骤和查看游戏的报错日志推测出现该报错的原因，出现该报错的主要原因有以下几点：
 
@@ -54,3 +54,4 @@ mod 冲突，你打的 mod 里有的 mod 互相不适配，你需要找到不适
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

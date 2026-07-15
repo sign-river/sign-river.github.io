@@ -20,10 +20,11 @@ slug: "steam-error-04"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 其实是启动器问题，Shift+Ctrl+Esc 打开任务管理器，找到 Paradox Launcher，右键结束任务即可，需要注意的是，如果你遇到这个报错，任务管理器里多半不止这一个进程，如果有同名进程全部关闭即可。另外这个方法治标不治本，如果你的报错问题没有解决，重新打开游戏还是会复现该情况。解决报错问题请根据游戏报错描述查找报错指南对应条目。
 
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

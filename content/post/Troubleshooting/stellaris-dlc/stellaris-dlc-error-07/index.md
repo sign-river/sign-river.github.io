@@ -21,7 +21,7 @@ slug: "stellaris-dlc-error-07"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 报错原因：
 
@@ -29,7 +29,7 @@ slug: "stellaris-dlc-error-07"
 
 如图，存在多余补丁：
 
-<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 2" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 解决方法：
 
@@ -38,3 +38,4 @@ slug: "stellaris-dlc-error-07"
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

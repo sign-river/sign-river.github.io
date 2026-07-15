@@ -22,9 +22,9 @@ slug: "paradox-launcher-error-26"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。相关报错截图 2" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 报错全文为：糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。请确认您的主目录中是否存在 Documents 文件夹。如果文件夹丢失，请创建并重新启动启动器。如果您使用 OneDrive，请确保 Documents 文件夹可用且可访问。
 
@@ -32,7 +32,7 @@ slug: "paradox-launcher-error-26"
 
 解决案例：
 
-<a href="images/error-03.png" target="_blank"><img src="images/error-03.png" alt="糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。相关报错截图 3" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-03.png" target="_blank"><img src="images/error-03.png" alt="糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 关闭 mcafee 迈克菲的防病毒功能后问题解决，启动器不再报错。
 
@@ -63,3 +63,4 @@ slug: "paradox-launcher-error-26"
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

@@ -22,7 +22,7 @@ slug: "paradox-launcher-error-08"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="启动器报错“游戏数据访问错误。我们没有游戏数据目录的读写权限。请联系支持人员”相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="启动器报错“游戏数据访问错误。我们没有游戏数据目录的读写权限。请联系支持人员”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 方法一：
 
@@ -57,3 +57,4 @@ C:\Users(用户)\用户名\AppData\Local\Programs\Paradox Interactive\launcher�
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

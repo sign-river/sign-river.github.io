@@ -22,15 +22,15 @@ slug: "paradox-launcher-error-20"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="安装时发生严重错误相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="安装时发生严重错误相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="安装时发生严重错误相关报错截图 2" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="安装时发生严重错误相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-03.png" target="_blank"><img src="images/error-03.png" alt="安装时发生严重错误相关报错截图 3" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-03.png" target="_blank"><img src="images/error-03.png" alt="安装时发生严重错误相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-04.png" target="_blank"><img src="images/error-04.png" alt="安装时发生严重错误相关报错截图 4" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-04.png" target="_blank"><img src="images/error-04.png" alt="安装时发生严重错误相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-05.png" target="_blank"><img src="images/error-05.png" alt="安装时发生严重错误相关报错截图 5" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-05.png" target="_blank"><img src="images/error-05.png" alt="安装时发生严重错误相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。
 
@@ -48,31 +48,31 @@ slug: "paradox-launcher-error-20"
 
 提取码：9a9b
 
-<a href="images/error-06.png" target="_blank"><img src="images/error-06.png" alt="安装时发生严重错误相关报错截图 6" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-06.png" target="_blank"><img src="images/error-06.png" alt="安装时发生严重错误相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-07.png" target="_blank"><img src="images/error-07.png" alt="安装时发生严重错误相关报错截图 7" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-07.png" target="_blank"><img src="images/error-07.png" alt="安装时发生严重错误相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 打开程序安装和卸载疑难解答程序后点下一步
 
-<a href="images/error-08.png" target="_blank"><img src="images/error-08.png" alt="安装时发生严重错误相关报错截图 8" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-08.png" target="_blank"><img src="images/error-08.png" alt="安装时发生严重错误相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 选择安装
 
-<a href="images/error-09.png" target="_blank"><img src="images/error-09.png" alt="安装时发生严重错误相关报错截图 9" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-09.png" target="_blank"><img src="images/error-09.png" alt="安装时发生严重错误相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 找到 Paradox Launcher v2 点击下一步
 
-<a href="images/error-10.png" target="_blank"><img src="images/error-10.png" alt="安装时发生严重错误相关报错截图 10" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-10.png" target="_blank"><img src="images/error-10.png" alt="安装时发生严重错误相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 点击是，尝试卸载
 
-<a href="images/error-11.png" target="_blank"><img src="images/error-11.png" alt="安装时发生严重错误相关报错截图 11" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-11.png" target="_blank"><img src="images/error-11.png" alt="安装时发生严重错误相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 之后重新进行启动器的安装，访问官网 https://www.paradoxinteractive.com/our-games/launcher 下载最新的启动器安装程序。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。之后右键点击属性。
 
-<a href="images/error-12.png" target="_blank"><img src="images/error-12.png" alt="安装时发生严重错误相关报错截图 12" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-12.png" target="_blank"><img src="images/error-12.png" alt="安装时发生严重错误相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-13.png" target="_blank"><img src="images/error-13.png" alt="安装时发生严重错误相关报错截图 13" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-13.png" target="_blank"><img src="images/error-13.png" alt="安装时发生严重错误相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 在兼容性选项卡中勾选以管理员身份运行此程序，点击应用，之后重新运行安装程序安装启动器。
 
@@ -88,10 +88,11 @@ C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/
 
 注意安装路径没事不要改，改了路径出问题以后不好修
 
-<a href="images/error-14.png" target="_blank"><img src="images/error-14.png" alt="安装时发生严重错误相关报错截图 14" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-14.png" target="_blank"><img src="images/error-14.png" alt="安装时发生严重错误相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 如果成功解决了启动器无法下载或卸载的问题，并成功安装了启动器，但点击启动器图标后无法打开启动器：比如出现双击启动器图标，但是启动器无反应的情况，虽然在任务管理器中可以看到启动器正在运行，但是实际上并没有打开启动器。另一种情况是在 Steam 中直接启动游戏时，点击“开始游戏”并等待一段时间后，启动器未能打开，且按钮又恢复为“开始游戏”,或者干脆卡在那里不动了。遇到这两种情况，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。如果一切正常就不用管这段，可以直接去游玩了。
 
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

@@ -20,11 +20,11 @@ slug: "steam-error-05"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 方法一：彻底关掉 steam 后重新打开 steam 即可
 
-<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏相关报错截图 2" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 方法二：关掉有可能和 steam 冲突的进程，目前已知的有：
 
@@ -35,3 +35,4 @@ Wps 云盘进程，qq 输入法进程等
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+

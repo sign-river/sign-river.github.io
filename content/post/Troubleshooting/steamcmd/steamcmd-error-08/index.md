@@ -21,9 +21,9 @@ slug: "steamcmd-error-08"
 
 ## 2. 解决方法
 
-<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 1" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-01.png" target="_blank"><img src="images/error-01.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 2" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/error-02.png" target="_blank"><img src="images/error-02.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 在使用 steamcmd 下载 mod 前需要先登录！登录完才能下载！
 
@@ -34,3 +34,4 @@ slug: "steamcmd-error-08"
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+
