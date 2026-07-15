@@ -1,0 +1,33 @@
+{{- /*
+    首页内容丰富度评分（0-100）：
+    - 正文字数按 word_target 线性计分，最高 word_weight 分。
+    - 页面资源中的图片按张计分，最高 image_weight * image_limit 分。
+    - 单篇文章可通过 content_richness 手动覆盖自动评分。
+*/ -}}
+{{- $config := .Site.Params.blog_params.homepage.content_richness -}}
+{{- $wordTarget := int (default 600 $config.word_target) -}}
+{{- $wordWeight := int (default 70 $config.word_weight) -}}
+{{- $imageWeight := int (default 10 $config.image_weight) -}}
+{{- $imageLimit := int (default 3 $config.image_limit) -}}
+
+{{- $wordScore := 0 -}}
+{{- if gt $wordTarget 0 -}}
+    {{- $wordScore = div (mul .WordCount $wordWeight) $wordTarget -}}
+{{- end -}}
+{{- if gt $wordScore $wordWeight -}}
+    {{- $wordScore = $wordWeight -}}
+{{- end -}}
+
+{{- $imageCount := len (.Resources.ByType "image") -}}
+{{- if gt $imageCount $imageLimit -}}
+    {{- $imageCount = $imageLimit -}}
+{{- end -}}
+{{- $imageScore := mul $imageCount $imageWeight -}}
+
+{{- $score := add $wordScore $imageScore -}}
+{{- if isset .Params "content_richness" -}}
+    {{- $score = int .Params.content_richness -}}
+{{- end -}}
+{{- if gt $score 100 -}}{{- $score = 100 -}}{{- end -}}
+{{- if lt $score 0 -}}{{- $score = 0 -}}{{- end -}}
+{{- $score -}}

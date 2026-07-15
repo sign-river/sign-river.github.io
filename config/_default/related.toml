@@ -1,12 +1,18 @@
 # Related contents configuration
 includeNewer = true
-threshold = 80
-toLower = false
+threshold = 60
+toLower = true
+
+# 报错文章使用 related_group 优先匹配同一软件或问题域。
+[[indices]]
+name = "related_group"
+type = "basic"
+weight = 120
 
 [[indices]]
 name = "tags"
-weight = 200
+weight = 60
 
 [[indices]]
 name = "categories"
-weight = 50
+weight = 20

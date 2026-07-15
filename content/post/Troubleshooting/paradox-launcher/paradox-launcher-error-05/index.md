@@ -5,12 +5,12 @@ description: "启动器 DLC 列表出现警告，无法确认此 DLC 的拥有�
 categories:
   - "报错"
 tags:
-  - "Paradox Launcher"
   - "P 社启动器"
+  - "DLC 异常"
   - "启动器故障"
-  - "问题排查"
 draft: false
 slug: "paradox-launcher-error-05"
+related_group: "paradox-launcher"
 ---
 
 > 本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。
@@ -30,4 +30,6 @@ slug: "paradox-launcher-error-05"
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+
+
 

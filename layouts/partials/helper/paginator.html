@@ -1,0 +1,39 @@
+{{- $pages := slice -}}
+
+{{- if .IsHome -}}
+    {{- $pages = where .Site.RegularPages "Section" "in" .Site.Params.mainSections -}}
+    {{- $pages = where $pages "Params.hidden" "!=" true -}}
+
+    {{- $richnessConfig := .Site.Params.blog_params.homepage.content_richness -}}
+    {{- if default false $richnessConfig.enabled -}}
+        {{- $minimumScore := int (default 45 $richnessConfig.minimum_score) -}}
+        {{- $qualified := slice -}}
+        {{- range $pages -}}
+            {{- $score := int (partial "helper/content-richness.html" .) -}}
+            {{- if ge $score $minimumScore -}}
+                {{- $qualified = $qualified | append . -}}
+            {{- end -}}
+        {{- end -}}
+        {{- $pages = $qualified -}}
+    {{- end -}}
+
+    {{- /* 明确保持发布日期倒序，避免评分影响文章排序。 */ -}}
+    {{- $pages = $pages.ByDate.Reverse -}}
+{{- else if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+    {{- $subsections := .Sections -}}
+    {{- $pages = .Pages | complement $subsections -}}
+    {{- $pages = where $pages "Params.hidden" "!=" true -}}
+
+    {{- if eq (len $pages) 0 -}}
+        {{- $pages = $subsections -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if .IsHome -}}
+    {{- $pageSize := int (default 10 .Site.Params.blog_params.homepage.posts_per_page) -}}
+    {{- $pages = .Paginate $pages $pageSize -}}
+{{- else if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
+    {{- $pages = .Paginate $pages -}}
+{{- end -}}
+
+{{- return $pages -}}

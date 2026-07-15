@@ -5,12 +5,12 @@ description: "安装启动器时报错”Windows Installer 打开安装日志文
 categories:
   - "报错"
 tags:
-  - "Paradox Launcher"
   - "P 社启动器"
-  - "启动器故障"
-  - "问题排查"
+  - "安装失败"
+  - "Windows Installer"
 draft: false
 slug: "paradox-launcher-error-11"
+related_group: "paradox-launcher"
 ---
 
 > 本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。
@@ -46,4 +46,6 @@ C:\Users\(你的用户名)\AppData\Local\Paradox Interactive\launcher-v2\logs
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
+
+
 
