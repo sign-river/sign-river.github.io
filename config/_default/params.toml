@@ -16,9 +16,13 @@ tag_separator_margin = "0px"
 posts_per_page = 10
 # 是否显示文章摘要
 show_summary = true
+# 首页「报错」分类最多展示篇数；在候选中按 content_richness 取最高分
+error_category = "报错"
+error_posts_limit = 1
 
 # 首页内容丰富度筛选（0-100 分）
 # 分数 = 正文字数得分（最高 70）+ 配图得分（最高 30）
+# 也可在文章 front matter 用 content_richness 手动覆盖，作为首页排序优先级
 [blog_params.homepage.content_richness]
 enabled = true
 minimum_score = 60

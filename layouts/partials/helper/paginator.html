@@ -17,6 +17,56 @@
         {{- $pages = $qualified -}}
     {{- end -}}
 
+    {{- /* 首页「报错」分类限流：最多保留 error_posts_limit 篇，按 content_richness 从高到低选取。 */ -}}
+    {{- $errorCategory := default "报错" .Site.Params.blog_params.homepage.error_category -}}
+    {{- $errorLimit := int (default 1 .Site.Params.blog_params.homepage.error_posts_limit) -}}
+    {{- if gt $errorLimit 0 -}}
+        {{- $nonErrorPages := slice -}}
+        {{- $errorCandidates := slice -}}
+        {{- range $pages -}}
+            {{- if in .Params.categories $errorCategory -}}
+                {{- $errorCandidates = $errorCandidates | append . -}}
+            {{- else -}}
+                {{- $nonErrorPages = $nonErrorPages | append . -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- $selectedErrors := slice -}}
+        {{- if gt (len $errorCandidates) 0 -}}
+            {{- /* 逐轮选出当前最高分；同分取更新日期更新的。 */ -}}
+            {{- $remaining := $errorCandidates -}}
+            {{- range seq $errorLimit -}}
+                {{- if eq (len $remaining) 0 -}}
+                    {{- break -}}
+                {{- end -}}
+                {{- $bestPage := index $remaining 0 -}}
+                {{- $bestScore := int (partial "helper/content-richness.html" $bestPage) -}}
+                {{- range $remaining -}}
+                    {{- $score := int (partial "helper/content-richness.html" .) -}}
+                    {{- if gt $score $bestScore -}}
+                        {{- $bestPage = . -}}
+                        {{- $bestScore = $score -}}
+                    {{- else if and (eq $score $bestScore) (gt .Date $bestPage.Date) -}}
+                        {{- $bestPage = . -}}
+                    {{- end -}}
+                {{- end -}}
+                {{- $selectedErrors = $selectedErrors | append $bestPage -}}
+                {{- $nextRemaining := slice -}}
+                {{- range $remaining -}}
+                    {{- if ne .Permalink $bestPage.Permalink -}}
+                        {{- $nextRemaining = $nextRemaining | append . -}}
+                    {{- end -}}
+                {{- end -}}
+                {{- $remaining = $nextRemaining -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- $pages = $nonErrorPages -}}
+        {{- range $selectedErrors -}}
+            {{- $pages = $pages | append . -}}
+        {{- end -}}
+    {{- end -}}
+
     {{- /* 明确保持发布日期倒序，避免评分影响文章排序。 */ -}}
     {{- $pages = $pages.ByDate.Reverse -}}
 {{- else if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") -}}
