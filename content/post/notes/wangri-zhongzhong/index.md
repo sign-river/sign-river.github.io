@@ -9,7 +9,7 @@ tags:
   - "怀旧"
   - "童年"
   - "往日种种"
-draft: true
+draft: false
 slug: "wangri-zhongzhong"
 ---
 
