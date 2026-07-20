@@ -12,7 +12,7 @@ tags:
   - Machine Unlearning
   - 深度学习
 math: true
-draft: true
+draft: false
 ---
 
 ## 1. 联邦遗忘学习
