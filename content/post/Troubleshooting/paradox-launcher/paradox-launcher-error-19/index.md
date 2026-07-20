@@ -27,9 +27,9 @@ Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard en
 
 <a href="images/error-03.png" target="_blank"><img src="images/error-03.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-04.png" target="_blank"><img src="images/error-04.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
+<a href="images/error-04.png" target="_blank"><img src="images/error-04.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 4" style="display: block; max-width: 70%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
-<a href="images/error-05.png" target="_blank"><img src="images/error-05.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/></a>
+<a href="images/error-05.png" target="_blank"><img src="images/error-05.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 5" style="display: block; max-width: 70%; width: auto; height: auto; margin: 1rem auto;"/></a>
 
 这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。
 
@@ -94,6 +94,3 @@ C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/
 ## 3. 仍未解决
 
 如果上述方法不适用，建议记录完整报错文字、复现步骤和 `error.log` 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。
-
-
-
