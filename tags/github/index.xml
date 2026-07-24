@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GitHub on YSY的博客</title><link>https://sign-river.github.io/tags/github/</link><description>Recent content in GitHub on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursor 手动安装插件教程：中英文自动空格插件</title><link>https://sign-river.github.io/p/cursor-install-plugin-from-github/</link><pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/cursor-install-plugin-from-github/</guid><description>&lt;h2 id="1-为什么需要手动安装"&gt;1. 为什么需要手动安装？
+&lt;/h2&gt;&lt;p&gt;Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好用的插件可能找不到。比如这次要装的中英文自动空格插件（AutoCorrect），它能让你的文档看起来更规范：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ 格式化前：&lt;code&gt;Cursor是一款基于VSCode的AI编程助手&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;✅ 格式化后：&lt;code&gt;Cursor 是一款基于 VSCode 的 AI 编程助手&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;好消息是，Cursor 完全兼容 VSCode 插件，我们可以通过 &lt;code&gt;.vsix&lt;/code&gt; 文件手动安装。&lt;/p&gt;
+&lt;h2 id="2-安装步骤"&gt;2. 安装步骤
+&lt;/h2&gt;&lt;h3 id="21-第一步下载插件文件"&gt;2.1. 第一步：下载插件文件
+&lt;/h3&gt;&lt;p&gt;点击下载 AutoCorrect 插件：&lt;a class="link" href="plugins/huacnlee.autocorrect-2.6.4.vsix" &gt;huacnlee.autocorrect-2.6.4.vsix&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 这个 &lt;code&gt;.vsix&lt;/code&gt; 文件是 VSCode/Cursor 的插件安装包格式，下载到本地即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id="22-第二步安装插件"&gt;2.2. 第二步：安装插件
+&lt;/h3&gt;&lt;p&gt;下载完成后，通过拖拽安装插件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 Cursor&lt;/li&gt;
+&lt;li&gt;切换到插件界面&lt;/li&gt;
+&lt;li&gt;将下载的 &lt;code&gt;.vsix&lt;/code&gt; 文件&lt;strong&gt;直接拖入 插件窗口&lt;/strong&gt;
+&lt;a href="images/2026-02-14-12-17-12.png" target="_blank"&gt; &lt;img src="images/2026-02-14-12-17-12.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id="23-第三步使用插件"&gt;2.3. 第三步：使用插件
+&lt;/h3&gt;&lt;p&gt;安装完成后重启 Cursor：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开设置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-14-13-00-03.png" target="_blank"&gt; &lt;img src="images/2026-02-14-13-00-03.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;搜索 autocorrect&lt;/li&gt;
+&lt;li&gt;根据需求调整选项&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1. Autocorrect: Enable
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 总开关：决定插件是否开启。勾选它，插件才会在后台运行；如果不勾选，整个插件就相当于停用了。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2. Autocorrect: Enable Lint
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 实时检查提示：勾选后，它会在你编辑时自动检测格式问题，并在有问题的地方（比如“你好World”）下面画波浪线提示你，但不会自动修改，主要是为了让你“看见”哪里有问题。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3. Autocorrect: Format On Save
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 保存时自动修复（推荐勾选）：这是最核心的功能。勾选后，当你按下保存快捷键（Ctrl+S）时，插件会自动把所有检测到的格式错误瞬间修正（比如自动变成“你好 World”）。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-14-12-57-53.png" target="_blank"&gt; &lt;img src="images/2026-02-14-12-57-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="3-注意事项"&gt;3. 注意事项
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;手动安装的插件不会自动更新，需要手动下载新版本重新安装&lt;/li&gt;
+&lt;li&gt;大部分 VSCode 插件都能在 Cursor 中正常使用&lt;/li&gt;
+&lt;li&gt;如果 Cursor 商店中已有同名插件，建议先卸载再安装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-其他插件安装"&gt;4. 其他插件安装
+&lt;/h2&gt;&lt;p&gt;这个方法适用于所有 VSCode 插件。如果你需要其他插件的 &lt;code&gt;.vsix&lt;/code&gt; 文件，可以从 &lt;a class="link" href="https://marketplace.visualstudio.com/" target="_blank" rel="noopener"
+&gt;VSCode 插件市场&lt;/a&gt; 下载。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;小技巧&lt;/strong&gt;：掌握手动安装插件的方法，能让你的 Cursor 更加强大！✨&lt;/p&gt;</description></item><item><title>东秦学生申请 GitHub 学生认证完全指南</title><link>https://sign-river.github.io/p/github-student-pack-neu-qhd/</link><pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/github-student-pack-neu-qhd/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;适用对象&lt;/strong&gt;：东北大学秦皇岛分校（NEU Qinhuangdao）在校学生
+&lt;strong&gt;认证优势&lt;/strong&gt;：免费使用 GitHub Pro、JetBrains 全家桶、Azure 学生订阅等价值上千美元的开发者工具&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;GitHub Student Developer Pack 为学生提供了丰富的免费开发工具和服务。本指南基于东秦学生的实际申请经验编写，&lt;strong&gt;特别记录了&amp;quot;修改浏览器定位&amp;quot;这一解决认证失败的关键技巧&lt;/strong&gt;，希望帮助同学们顺利通过认证。&lt;/p&gt;
+&lt;h2 id="2-东北大学总校学生邮箱的注册与激活"&gt;2. 东北大学总校学生邮箱的注册与激活
+&lt;/h2&gt;&lt;p&gt;申请 GitHub 学生包需要使用学校提供的教育邮箱。对于东秦学生，我们需要注册并激活东北大学总校的邮箱（后缀为 &lt;code&gt;@mails.neu.edu.cn&lt;/code&gt;）。&lt;/p&gt;
+&lt;h3 id="21-前情提要"&gt;2.1. 前情提要
+&lt;/h3&gt;&lt;p&gt;在操作过程中，如果遇到网站加载缓慢、转圈半天然后报错的情况，这通常是学校网站维护或网络波动，并非您的操作问题。请不要焦躁，稍作休息，等一会儿再回来尝试。&lt;/p&gt;
+&lt;h3 id="22-进入邮箱系统与初步尝试"&gt;2.2. 进入邮箱系统与初步尝试
+&lt;/h3&gt;&lt;p&gt;首先，请在浏览器中访问东北大学邮件系统：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="link" href="https://mails.neu.edu.cn/coremail/" target="_blank" rel="noopener"
+&gt;https://mails.neu.edu.cn/coremail/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在登录框下方找到并点击 &lt;strong&gt;新生注册&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-21-21-42.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-21-42.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;注意：无论您是大一新生还是大四老生，只要您之前没有注册过这个邮箱账号，都必须点击“新生注册”入口。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-统一身份认证与密码重置"&gt;2.3. 统一身份认证与密码重置
+&lt;/h3&gt;&lt;p&gt;点击注册后，系统会跳转到“统一身份认证”界面。由于大多数同学不清楚默认密码或已遗忘，我们需要直接走密码重置流程。&lt;/p&gt;
+&lt;h4 id="231-进入重置流程"&gt;2.3.1. 进入重置流程
+&lt;/h4&gt;&lt;p&gt;在登录框下方，点击 &lt;strong&gt;忘记密码&lt;/strong&gt;。
+&lt;a href="images/2026-02-13-21-22-06.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-22-06.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="232-验证账号信息"&gt;2.3.2. 验证账号信息
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;账号&lt;/strong&gt;：输入您的东秦学号（账号是互通的）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;手机&lt;/strong&gt;：使用您在东秦校园账号绑定的手机号。&lt;/li&gt;
+&lt;li&gt;输入图形验证码，点击 &lt;strong&gt;下一步&lt;/strong&gt;。
+&lt;a href="images/2026-02-13-21-22-25.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-22-25.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="233-设置新密码"&gt;2.3.3. 设置新密码
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;系统会向您的手机发送 6 位动态验证码，填入验证码。&lt;/li&gt;
+&lt;li&gt;设置一个新的密码（请务必记住，后续登录全靠它）。&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;完成&lt;/strong&gt;。
+&lt;a href="images/2026-02-13-21-22-47.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-22-47.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="24-二次进入注册流程"&gt;2.4. 二次进入注册流程
+&lt;/h3&gt;&lt;p&gt;密码重置成功后，不要直接登录，我们需要重新走一遍注册入口。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;再次回到邮箱系统首页：&lt;code&gt;https://mails.neu.edu.cn/coremail/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;再次点击 &lt;strong&gt;新生注册&lt;/strong&gt;。
+&lt;a href="images/2026-02-13-21-23-04.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-23-04.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在跳转出的统一身份认证界面，使用您的 &lt;strong&gt;学号&lt;/strong&gt; 和 &lt;strong&gt;刚才重置的新密码&lt;/strong&gt; 进行登录。
+&lt;a href="images/2026-02-13-21-23-34.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-23-34.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;到了绑定邮箱这个界面后，保留这个界面，继续下一步
+&lt;a href="images/2026-02-13-21-25-17.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-25-17.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="25-第三次进入注册流程"&gt;2.5. 第三次进入注册流程
+&lt;/h3&gt;&lt;p&gt;输入网址再回到登录界面，再次点击新生注册&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https://mails.neu.edu.cn/coremail/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-13-21-27-30.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-27-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;p&gt;登录成功后，会进入“新生注册”的信息填写页面，请完善以下信息：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;您的姓名&lt;/strong&gt;：确认无误。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;您的学号&lt;/strong&gt;：确认无误。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;您的邮箱&lt;/strong&gt;：设置您的邮箱前缀。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;邮箱密码&lt;/strong&gt;：设置邮箱的独立密码。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;确认密码&lt;/strong&gt;：再次输入。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;手机号码&lt;/strong&gt;：填入手机号并获取验证码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;填写完毕后，点击 &lt;strong&gt;提交信息&lt;/strong&gt;。
+&lt;a href="images/2026-02-13-21-28-02.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-28-02.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="26-登录邮箱关键避坑点"&gt;2.6. 登录邮箱（关键避坑点）
+&lt;/h3&gt;&lt;p&gt;注册提交后，可能会遇到一个坑：如果直接使用刚才注册的“邮箱账号 + 邮箱密码”登录，系统可能会提示失败或进不去（可能是系统适配问题）。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-21-29-27.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-29-27.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正确登录方式：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;回到邮箱登录首页。&lt;/li&gt;
+&lt;li&gt;即使已经注册好了，也不要直接输账号密码。&lt;/li&gt;
+&lt;li&gt;点击登录框上方的 &lt;strong&gt;统一身份认证登录&lt;/strong&gt; 选项卡。&lt;/li&gt;
+&lt;li&gt;使用 &lt;strong&gt;学号&lt;/strong&gt; 和 &lt;strong&gt;统一身份认证密码&lt;/strong&gt; 进行登录。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;成功登录后，您将看到邮箱主界面。请点击左上角头像，确认您的邮箱地址后缀为 &lt;code&gt;@mails.neu.edu.cn&lt;/code&gt;。至此，教育邮箱准备工作完成
+&lt;a href="images/2026-02-13-21-29-45.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-29-45.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-github-账号的标准化配置"&gt;3. GitHub 账号的标准化配置
+&lt;/h2&gt;&lt;p&gt;拥有了教育邮箱后，我们需要将其绑定到 GitHub 账号上，并完成官方要求的安全设置（2FA）以及个人资料的“学生化”包装。&lt;/p&gt;
+&lt;h3 id="31-准备工作网络环境配置"&gt;3.1. 准备工作：网络环境配置
+&lt;/h3&gt;&lt;p&gt;在登录 GitHub 之前，有一个非常重要的细节需要注意。
+根据实测经验，建议开启 &lt;strong&gt;Steam++&lt;/strong&gt; (Watt Toolkit) 来加速 GitHub。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;避坑指南&lt;/strong&gt;：尽量避免使用其他普通的梯子或代理工具，因为 GitHub 的风控系统可能会检测到 IP 异常，从而影响最终的认证结果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="32-绑定教育邮箱"&gt;3.2. 绑定教育邮箱
+&lt;/h3&gt;&lt;h4 id="321-进入设置页面"&gt;3.2.1. 进入设置页面
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;访问 GitHub 官网：&lt;code&gt;https://github.com/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;登录您的 GitHub 账号（如果没有账号请先注册）。&lt;/li&gt;
+&lt;li&gt;点击右上角的头像，在下拉菜单中选择 &lt;strong&gt;Settings&lt;/strong&gt; (设置)。
+&lt;a href="images/2026-02-13-21-33-23.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-33-23.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="322-添加邮箱"&gt;3.2.2. 添加邮箱
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;在左侧菜单栏中找到并点击 &lt;strong&gt;Emails&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;在 &amp;ldquo;Add email address&amp;rdquo; 输入框中，填入您在第一章注册好的学生邮箱（例如 &lt;code&gt;yourname@mails.neu.edu.cn&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Add&lt;/strong&gt; 按钮。&lt;/li&gt;
+&lt;li&gt;之后点击认证一下，GitHub 会向您的学生邮箱发送一封验证邮件。请登录您的学生邮箱，找到邮件并点击验证链接。&lt;/li&gt;
+&lt;li&gt;找到 &lt;strong&gt;Keep my email addresses private&lt;/strong&gt; 选项。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;务必取消勾选&lt;/strong&gt;（保持 Off 状态）。如果不关闭这个选项，GitHub 在审核时可能无法读取到您的学生邮箱，导致认证失败。
+&lt;a href="images/2026-02-13-21-39-19.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-39-19.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="33-开启双重认证-2fa"&gt;3.3. 开启双重认证 (2FA)
+&lt;/h3&gt;&lt;p&gt;GitHub 现在强制要求开启 2FA (Two-factor authentication) 才能进行某些操作，这也是申请学生包的硬性门槛。&lt;/p&gt;
+&lt;h4 id="331-启用入口"&gt;3.3.1. 启用入口
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;在左侧菜单栏点击 &lt;strong&gt;Password and authentication&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;向下滚动找到 &amp;ldquo;Two-factor authentication&amp;rdquo; 区域。&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Enable two-factor authentication&lt;/strong&gt; 按钮。
+&lt;a href="images/2026-02-13-21-39-55.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-39-55.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="332-配置身份验证器"&gt;3.3.2. 配置身份验证器
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;页面会显示一个二维码。&lt;/li&gt;
+&lt;li&gt;请在手机上下载并安装 &lt;strong&gt;Microsoft Authenticator&lt;/strong&gt; (或其他类似软件)。&lt;/li&gt;
+&lt;li&gt;打开手机 App，扫描屏幕上的二维码。&lt;/li&gt;
+&lt;li&gt;App 会生成一个 6 位数的动态验证码，将其填入 GitHub 网页的输入框中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保存恢复代码&lt;/strong&gt;：系统会生成一组 Recovery Codes（恢复代码），请务必下载并妥善保存。如果您丢失了手机或误删了 App，这是找回账号的唯一凭证。
+&lt;a href="images/2026-02-13-21-40-23.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-40-23.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="34-完善个人资料-关键加分项"&gt;3.4. 完善个人资料 (关键加分项)
+&lt;/h3&gt;&lt;p&gt;为了证明您的“真实学生身份”，我们需要将个人资料修改为符合东秦学生特征的标准格式。&lt;/p&gt;
+&lt;p&gt;在左侧菜单栏点击 &lt;strong&gt;Public profile&lt;/strong&gt;，按照以下标准填写：&lt;/p&gt;
+&lt;h4 id="341-name-姓名"&gt;3.4.1. Name (姓名)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;格式：&lt;strong&gt;名 姓&lt;/strong&gt; (拼音)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;示例：如果您叫张三丰，请填 &lt;strong&gt;Sanfeng Zhang&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注意：不要填昵称，要填真实姓名的拼音，与学生证/校园卡保持一致。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="342-bio-简介"&gt;3.4.2. Bio (简介)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;建议：用英文简单描述一下您的身份。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;示例：Student from School of Computer Science and Engineering, majoring in Software Engineering.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="343-url-链接"&gt;3.4.3. URL (链接)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;填入东秦官网地址：&lt;code&gt;https://www.neuq.edu.cn/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="344-company-学校机构"&gt;3.4.4. Company (学校/机构)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;必须严格填写东秦的英文全称&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内容：&lt;code&gt;Northeastern University at Qinhuangdao&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;注意：不要填简写，也不要只填东北大学总校的名字，要精确到秦皇岛分校。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="345-location-地区"&gt;3.4.5. Location (地区)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;内容：&lt;code&gt;China&lt;/code&gt;
+&lt;a href="images/2026-02-13-21-41-01.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-41-01.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;a href="images/2026-02-13-21-41-39.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-41-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;填写完毕后，点击页面底部的 &lt;strong&gt;Update profile&lt;/strong&gt; 保存修改&lt;/p&gt;
+&lt;h2 id="4-完善账单信息"&gt;4. 完善账单信息
+&lt;/h2&gt;&lt;p&gt;在正式提交学生认证申请之前，我们需要先完善 GitHub 的账单信息（Payment information）。这一步非常关键，因为 GitHub 会校验这里的“名义地址”是否与你的学校所在地（秦皇岛）一致。&lt;/p&gt;
+&lt;h3 id="41-填写账单信息-关键"&gt;4.1. 填写账单信息 (关键)
+&lt;/h3&gt;&lt;h4 id="411-进入入口"&gt;4.1.1. 进入入口
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;点击 GitHub 页面右上角的头像，选择 Settings。&lt;/li&gt;
+&lt;li&gt;在左侧菜单栏找到 Access 区域，点击 Billing and licensing。&lt;/li&gt;
+&lt;li&gt;在展开的子菜单中，点击 Payment information。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="412-填写规范-请严格照抄"&gt;4.1.2. 填写规范 (请严格照抄)
+&lt;/h4&gt;&lt;p&gt;请参照以下标准进行填写，确保与第二章的个人资料保持高度一致：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First name / Last name (姓名)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;格式：名 姓 (拼音)&lt;/li&gt;
+&lt;li&gt;示例：如果您叫张三丰，这里填 Sanfeng 后面填 Zhang。&lt;/li&gt;
+&lt;li&gt;警告：必须填真实姓名的拼音，严禁使用昵称或中文。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Company (公司/学校)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这里的输入框可能自动同步了个人资料，如果没有，请手动填入：&lt;/li&gt;
+&lt;li&gt;Northeastern University at Qinhuangdao&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Address (街道地址)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内容：Northeastern University at Qinhuangdao&lt;/li&gt;
+&lt;li&gt;注意：必须填东秦的英文全称。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;City (城市)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内容：Qinhuangdao&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;State/Province (省份)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内容：Hebei Province&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Country/Region (国家/地区)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择：China
+&lt;a href="images/2026-02-13-21-44-05.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-44-05.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;确认所有信息无误后，点击底部的 Save billing information 保存。&lt;/p&gt;
+&lt;h2 id="5-开始申请流程解决定位问题与上传凭证核心章节"&gt;5. 开始申请流程，解决定位问题与上传凭证（核心章节）
+&lt;/h2&gt;&lt;h3 id="51-进入教育优惠申请入口"&gt;5.1. 进入教育优惠申请入口
+&lt;/h3&gt;&lt;h4 id="511-找到入口"&gt;5.1.1. 找到入口
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;依然在左侧 Billing and licensing 菜单下。&lt;/li&gt;
+&lt;li&gt;点击 Education benefits。&lt;/li&gt;
+&lt;li&gt;在页面右侧找到并找到绿色的 Start an application 按钮，但是先不要点击，先看下一步。
+&lt;a href="images/2026-02-13-21-44-39.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-44-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GitHub 会校验您的物理位置是否在学校附近。如果您身处校外（如寒暑假在家），或者校园网定位不准，直接申请很可能导致认证失败。&lt;/p&gt;
+&lt;p&gt;请务必按照以下“修改浏览器定位”的流程操作：&lt;/p&gt;
+&lt;h4 id="512-打开开发者工具"&gt;5.1.2. 打开开发者工具
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;在当前申请页面，按键盘上的 F12 键（打开开发者工具）。&lt;/li&gt;
+&lt;li&gt;保持开发者工具开启，不要关闭。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="513-调出传感器-sensors-面板"&gt;5.1.3. 调出传感器 (Sensors) 面板
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;在开发者工具窗口中，先点击顶部的 Network (网络) 选项卡。&lt;/li&gt;
+&lt;li&gt;点击右上角的 三个点 图标（更多选项）。&lt;/li&gt;
+&lt;li&gt;在下拉菜单中选择 More tools (更多工具)。&lt;/li&gt;
+&lt;li&gt;在子菜单中选择 Sensors (传感器)。&lt;/li&gt;
+&lt;li&gt;此时，界面下方会出现一个 Sensors 面板。
+&lt;a href="images/2026-02-13-21-59-07.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-59-07.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="514-输入东大坐标参数-严格照抄"&gt;5.1.4. 输入东大坐标参数 (严格照抄)
+&lt;/h4&gt;&lt;p&gt;在 Sensors 面板中进行如下设置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Location: 在下拉框中选择 Other&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Latitude (纬度): 输入 41.7636&lt;/li&gt;
+&lt;li&gt;Longitude (经度): 输入 123.4113&lt;/li&gt;
+&lt;li&gt;Timezone ID: 输入 Asia/Shanghai&lt;/li&gt;
+&lt;li&gt;Locale: 输入 zh-Hans-CN&lt;/li&gt;
+&lt;li&gt;Accuracy: 输入 150
+&lt;a href="images/2026-02-13-21-59-53.png" target="_blank"&gt; &lt;img src="images/2026-02-13-21-59-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="515-刷新页面生效"&gt;5.1.5. 刷新页面生效
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;保持开发者工具（F12）和 Sensors 面板处于开启状态（这一点非常重要，不能关）。&lt;/li&gt;
+&lt;li&gt;后续截图虽然没有截入开发者工具面板，但是一定不能关&lt;/li&gt;
+&lt;li&gt;点击浏览器左上角的 刷新 按钮。&lt;/li&gt;
+&lt;li&gt;页面刷新后，点击绿色的 Start an application 按钮。
+&lt;a href="images/2026-02-13-22-07-26.png" target="_blank"&gt; &lt;img src="images/2026-02-13-22-07-26.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="52-确认身份信息"&gt;5.2. 确认身份信息
+&lt;/h3&gt;&lt;h4 id="521-选择角色"&gt;5.2.1. 选择角色
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Select your role in education: 选择 Student (学生)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="522-确认学校关联"&gt;5.2.2. 确认学校关联
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;由于我们在第二章已经绑定了 @mails.neu.edu.cn 的邮箱，系统会自动识别出学校。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;界面通常会提示：You have verified the email address &amp;hellip; associated with the school Northeastern University, China.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;此时直接点击 Continue (继续) 即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-22-19-42-13.png" target="_blank"&gt; &lt;img src="images/2026-02-22-19-42-13.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;点击 Continue 后，再点击 Share Location（分享定位）。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-22-19-42-59.png" target="_blank"&gt; &lt;img src="images/2026-02-22-19-42-59.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="53-上传学生证件"&gt;5.3. 上传学生证件
+&lt;/h3&gt;&lt;p&gt;定位通过后，页面下方会出现证件上传区域。&lt;/p&gt;
+&lt;h4 id="531-选择凭证类型"&gt;5.3.1. 选择凭证类型
+&lt;/h4&gt;&lt;p&gt;在 Please select the type of proof you would like to provide 下拉菜单中，选择：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Dated school ID - Good (有日期的学生证)
+&lt;a href="images/2026-02-13-22-19-48.png" target="_blank"&gt; &lt;img src="images/2026-02-13-22-19-48.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="532-拍照上传"&gt;5.3.2. 拍照上传
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;浏览器会请求使用摄像头，请务必点击 允许。&lt;/li&gt;
+&lt;li&gt;拿出您的 东北大学秦皇岛分校一卡通（校园卡）。&lt;/li&gt;
+&lt;li&gt;拍摄要求：
+&lt;ul&gt;
+&lt;li&gt;拍摄印有 人像照片 的那一面。&lt;/li&gt;
+&lt;li&gt;确保光线充足，文字清晰可见。&lt;/li&gt;
+&lt;li&gt;手持卡片对准摄像头（第二次点击通常有 3 秒延迟拍摄）。&lt;/li&gt;
+&lt;li&gt;亲测饭卡（一卡通）是可行的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-22-21-45.png" target="_blank"&gt; &lt;img src="images/2026-02-13-22-21-45.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="54-提交与审核结果"&gt;5.4. 提交与审核结果
+&lt;/h3&gt;&lt;h4 id="541-提交申请"&gt;5.4.1. 提交申请
+&lt;/h4&gt;&lt;p&gt;照片上传无误后，点击底部的 Submit 提交申请。&lt;/p&gt;
+&lt;h4 id="542-查看审核状态"&gt;5.4.2. 查看审核状态
+&lt;/h4&gt;&lt;p&gt;提交后页面会显示审核状态，一般 3-4 分钟 即可出结果，请刷新页面查看：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Approved (绿色)：恭喜！认证通过。页面提示福利将在 72 小时内到账。&lt;/li&gt;
+&lt;li&gt;Denied (红色)：认证失败。系统会提示具体原因（如图像不清、定位不符等），请根据提示修正后重新尝试。
+&lt;a href="images/2026-02-13-22-26-38.png" target="_blank"&gt; &lt;img src="images/2026-02-13-22-26-38.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="6-参考资料"&gt;6. 参考资料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://education.github.com/" target="_blank" rel="noopener"
+&gt;GitHub Education 官方网站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://education.github.com/pack" target="_blank" rel="noopener"
+&gt;GitHub Student Developer Pack 福利列表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;</description></item><item><title>新电脑 Git 初始化配置指南</title><link>https://sign-river.github.io/p/git-initial-setup/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/git-initial-setup/</guid><description>&lt;h2 id="1-问题背景"&gt;1. 问题背景
+&lt;/h2&gt;&lt;p&gt;在新电脑上使用 Git 时，常常会因为缺少必要配置而遇到各种问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无法连接 GitHub（网络问题）&lt;/li&gt;
+&lt;li&gt;提交代码时提示缺少用户信息&lt;/li&gt;
+&lt;li&gt;中文文件名显示为乱码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文整理了新机 Git 初始化的完整流程，帮助你快速配置好开发环境。&lt;/p&gt;
+&lt;h2 id="2-配置代理"&gt;2. 配置代理
+&lt;/h2&gt;&lt;p&gt;如果你需要使用代理工具访问 GitHub，首先需要配置 Git 的网络代理。&lt;/p&gt;
+&lt;h3 id="21-查找代理端口"&gt;2.1. 查找代理端口
+&lt;/h3&gt;&lt;p&gt;不同的代理工具使用的端口不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Clash&lt;/strong&gt;：默认端口 &lt;code&gt;7890&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clash Verge&lt;/strong&gt;：默认端口 &lt;code&gt;7897&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;其他工具：可在工具的设置中查看
+&lt;a href="images/2026-02-11-11-28-12.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-28-12.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="22-设置代理"&gt;2.2. 设置代理
+&lt;/h3&gt;&lt;p&gt;在 Git Bash 或终端中输入以下命令（将 &lt;code&gt;7897&lt;/code&gt; 替换为你的实际端口）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global http.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global https.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="23-验证配置"&gt;2.3. 验证配置
+&lt;/h3&gt;&lt;p&gt;输入以下命令查看配置是否生效：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果看到以下输出，说明代理配置成功：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http.proxy=http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https.proxy=http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-11-11-28-50.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-28-50.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="3-配置用户信息"&gt;3. 配置用户信息
+&lt;/h2&gt;&lt;p&gt;Git 在提交代码时需要记录提交者的身份信息。&lt;/p&gt;
+&lt;h3 id="31-设置用户名和邮箱"&gt;3.1. 设置用户名和邮箱
+&lt;/h3&gt;&lt;p&gt;在引号内填入你的 GitHub 用户名和邮箱（建议使用 GitHub 绑定的邮箱）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.name &lt;span class="s2"&gt;&amp;#34;你的 GitHub 用户名&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.email &lt;span class="s2"&gt;&amp;#34;your-email@example.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.name &lt;span class="s2"&gt;&amp;#34;sign-river&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.email &lt;span class="s2"&gt;&amp;#34;example@gmail.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="4-解决中文文件名乱码问题"&gt;4. 解决中文文件名乱码问题
+&lt;/h2&gt;&lt;p&gt;如果你的项目中有中文文件名，Git 默认会将其转义为八进制编码，显示为乱码（如 &lt;code&gt;\344\270\255\346\226\207&lt;/code&gt;）。&lt;/p&gt;
+&lt;h3 id="41-设置显示中文"&gt;4.1. 设置显示中文
+&lt;/h3&gt;&lt;p&gt;执行以下命令禁用路径引号转义：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global core.quotepath &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置后，&lt;code&gt;git status&lt;/code&gt; 等命令就能正常显示中文文件名了。&lt;/p&gt;
+&lt;h2 id="5-完整配置脚本"&gt;5. 完整配置脚本
+&lt;/h2&gt;&lt;p&gt;如果你想一次性完成所有配置，可以复制以下命令并修改对应的值：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 配置代理（根据实际端口修改）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global http.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global https.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 配置用户信息（替换为你的信息）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.name &lt;span class="s2"&gt;&amp;#34;你的用户名&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.email &lt;span class="s2"&gt;&amp;#34;your-email@example.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 解决中文乱码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global core.quotepath &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 查看所有配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="6-常见问题"&gt;6. 常见问题
+&lt;/h2&gt;&lt;h3 id="61-q1-如何取消代理配置"&gt;6.1. Q1: 如何取消代理配置？
+&lt;/h3&gt;&lt;p&gt;如果不再需要代理，可以使用以下命令移除：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --unset http.proxy
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --unset https.proxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="62-q2-如何修改已有的配置"&gt;6.2. Q2: 如何修改已有的配置？
+&lt;/h3&gt;&lt;p&gt;直接重新执行设置命令即可覆盖旧配置，或者使用以下命令编辑配置文件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --edit
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="63-q3-配置是否对所有仓库生效"&gt;6.3. Q3: 配置是否对所有仓库生效？
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;--global&lt;/code&gt; 参数表示全局配置，对当前用户的所有 Git 仓库生效。如果只想针对某个仓库配置，可以去掉 &lt;code&gt;--global&lt;/code&gt; 参数，在仓库目录下执行命令。&lt;/p&gt;
+&lt;h2 id="7-总结"&gt;7. 总结
+&lt;/h2&gt;&lt;p&gt;完成以上配置后，你的新电脑就可以正常使用 Git 进行开发了。这些配置只需要执行一次，之后就可以专注于代码本身。&lt;/p&gt;
+&lt;p&gt;如果遇到其他 Git 相关问题，欢迎在评论区讨论！&lt;/p&gt;</description></item></channel></rss>

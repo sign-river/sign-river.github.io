@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>插件 on YSY的博客</title><link>https://sign-river.github.io/tags/%E6%8F%92%E4%BB%B6/</link><description>Recent content in 插件 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursor 手动安装插件教程：中英文自动空格插件</title><link>https://sign-river.github.io/p/cursor-install-plugin-from-github/</link><pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/cursor-install-plugin-from-github/</guid><description>&lt;h2 id="1-为什么需要手动安装"&gt;1. 为什么需要手动安装？
+&lt;/h2&gt;&lt;p&gt;Cursor 的插件商店并没有完全同步 VSCode 的所有插件，有些好用的插件可能找不到。比如这次要装的中英文自动空格插件（AutoCorrect），它能让你的文档看起来更规范：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ 格式化前：&lt;code&gt;Cursor是一款基于VSCode的AI编程助手&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;✅ 格式化后：&lt;code&gt;Cursor 是一款基于 VSCode 的 AI 编程助手&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;好消息是，Cursor 完全兼容 VSCode 插件，我们可以通过 &lt;code&gt;.vsix&lt;/code&gt; 文件手动安装。&lt;/p&gt;
+&lt;h2 id="2-安装步骤"&gt;2. 安装步骤
+&lt;/h2&gt;&lt;h3 id="21-第一步下载插件文件"&gt;2.1. 第一步：下载插件文件
+&lt;/h3&gt;&lt;p&gt;点击下载 AutoCorrect 插件：&lt;a class="link" href="plugins/huacnlee.autocorrect-2.6.4.vsix" &gt;huacnlee.autocorrect-2.6.4.vsix&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 这个 &lt;code&gt;.vsix&lt;/code&gt; 文件是 VSCode/Cursor 的插件安装包格式，下载到本地即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id="22-第二步安装插件"&gt;2.2. 第二步：安装插件
+&lt;/h3&gt;&lt;p&gt;下载完成后，通过拖拽安装插件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 Cursor&lt;/li&gt;
+&lt;li&gt;切换到插件界面&lt;/li&gt;
+&lt;li&gt;将下载的 &lt;code&gt;.vsix&lt;/code&gt; 文件&lt;strong&gt;直接拖入 插件窗口&lt;/strong&gt;
+&lt;a href="images/2026-02-14-12-17-12.png" target="_blank"&gt; &lt;img src="images/2026-02-14-12-17-12.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id="23-第三步使用插件"&gt;2.3. 第三步：使用插件
+&lt;/h3&gt;&lt;p&gt;安装完成后重启 Cursor：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开设置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-14-13-00-03.png" target="_blank"&gt; &lt;img src="images/2026-02-14-13-00-03.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;搜索 autocorrect&lt;/li&gt;
+&lt;li&gt;根据需求调整选项&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1. Autocorrect: Enable
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 总开关：决定插件是否开启。勾选它，插件才会在后台运行；如果不勾选，整个插件就相当于停用了。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2. Autocorrect: Enable Lint
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 实时检查提示：勾选后，它会在你编辑时自动检测格式问题，并在有问题的地方（比如“你好World”）下面画波浪线提示你，但不会自动修改，主要是为了让你“看见”哪里有问题。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3. Autocorrect: Format On Save
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 保存时自动修复（推荐勾选）：这是最核心的功能。勾选后，当你按下保存快捷键（Ctrl+S）时，插件会自动把所有检测到的格式错误瞬间修正（比如自动变成“你好 World”）。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-14-12-57-53.png" target="_blank"&gt; &lt;img src="images/2026-02-14-12-57-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="3-注意事项"&gt;3. 注意事项
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;手动安装的插件不会自动更新，需要手动下载新版本重新安装&lt;/li&gt;
+&lt;li&gt;大部分 VSCode 插件都能在 Cursor 中正常使用&lt;/li&gt;
+&lt;li&gt;如果 Cursor 商店中已有同名插件，建议先卸载再安装&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-其他插件安装"&gt;4. 其他插件安装
+&lt;/h2&gt;&lt;p&gt;这个方法适用于所有 VSCode 插件。如果你需要其他插件的 &lt;code&gt;.vsix&lt;/code&gt; 文件，可以从 &lt;a class="link" href="https://marketplace.visualstudio.com/" target="_blank" rel="noopener"
+&gt;VSCode 插件市场&lt;/a&gt; 下载。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;小技巧&lt;/strong&gt;：掌握手动安装插件的方法，能让你的 Cursor 更加强大！✨&lt;/p&gt;</description></item><item><title>VS Code 编写 Markdown 如何轻松解决格式问题</title><link>https://sign-river.github.io/p/vscode-markdown-format-tips/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/vscode-markdown-format-tips/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;在 VS Code 中编写 Markdown 时，常常会遇到各种格式问题：表格对不齐、列表缩进混乱、链接格式错误等。本文将介绍如何通过插件和配置来轻松解决这些问题，让你的 Markdown 写作更加高效。&lt;/p&gt;
+&lt;h2 id="2-安装插件-markdownlint"&gt;2. 安装插件 markdownlint
+&lt;/h2&gt;&lt;h3 id="21-格式检查工具"&gt;2.1. 格式检查工具
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实时检查 Markdown 格式&lt;/li&gt;
+&lt;li&gt;自动修复常见问题&lt;/li&gt;
+&lt;li&gt;保持文档规范统一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;常见提示&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;规则&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;解决&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MD001&lt;/td&gt;
+&lt;td&gt;标题层级不连续&lt;/td&gt;
+&lt;td&gt;不要从 # 直接跳到 ###&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD009&lt;/td&gt;
+&lt;td&gt;行尾有多余空格&lt;/td&gt;
+&lt;td&gt;删除行尾空格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD012&lt;/td&gt;
+&lt;td&gt;连续空行超过一行&lt;/td&gt;
+&lt;td&gt;删除多余空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD013&lt;/td&gt;
+&lt;td&gt;行长度超过限制&lt;/td&gt;
+&lt;td&gt;换行或调整配置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD022&lt;/td&gt;
+&lt;td&gt;标题前后需要空行&lt;/td&gt;
+&lt;td&gt;添加空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD032&lt;/td&gt;
+&lt;td&gt;列表前后需要空行&lt;/td&gt;
+&lt;td&gt;添加空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="22-使用方法"&gt;2.2. 使用方法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在拓展商店搜索并安装 markdownlint&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-18-56.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-18-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;打开设置 (json)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-21-47.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-21-47.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-22-18.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-22-18.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;在设置中输入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;editor.codeActionsOnSave&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;source.fixAll.markdownlint&amp;#34;: &amp;#34;explicit&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;editor.formatOnSave&amp;#34;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-10-23-23-38.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="3-总结"&gt;3. 总结
+&lt;/h2&gt;&lt;p&gt;之后只要 Ctrl + S 保存文件，就会自动修正 Markdown 格式&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;最后更新：2026-02-10&lt;/p&gt;</description></item><item><title>VS Code 自动在中英文间添加空格</title><link>https://sign-river.github.io/p/vscode-auto-space-chinese-english/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/vscode-auto-space-chinese-english/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;在编写中英文混排的文档时，在中文和英文之间添加空格是一个良好的排版习惯。这样做可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;提升阅读体验&lt;/strong&gt;：适当的空格让文字更加清晰易读，避免中英文紧贴在一起显得拥挤&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;符合排版规范&lt;/strong&gt;：许多中文排版指南都建议在中英文之间添加空格&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持文档一致性&lt;/strong&gt;：统一的格式让整个文档看起来更专业&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是手动添加空格既繁琐又容易遗漏，本文将介绍如何使用 VS Code 插件实现保存时自动格式化。&lt;/p&gt;
+&lt;h2 id="2-安装插件"&gt;2. 安装插件
+&lt;/h2&gt;&lt;h3 id="21-pangu-markdown"&gt;2.1. Pangu-Markdown
+&lt;/h3&gt;&lt;p&gt;打开 VS Code 扩展商店，搜索 &lt;code&gt;Pangu-Markdown&lt;/code&gt; 并安装。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-47-23.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-47-23.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-配置自动格式化"&gt;3. 配置自动格式化
+&lt;/h2&gt;&lt;h3 id="31-settingsjson-配置"&gt;3.1. settings.json 配置
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;打开设置&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-48-31.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-48-31.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;搜索并启用自动格式化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;搜索 &lt;code&gt;pangu&lt;/code&gt;，勾选 &amp;ldquo;Format On Save&amp;rdquo;（保存时自动格式化）选项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-00-01-13.png" target="_blank"&gt; &lt;img src="images/2026-02-11-00-01-13.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;重启 VS Code&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;配置完成后需要重启 VS Code 才能生效。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果配置后没有生效，请尝试重启 VS Code。这是插件生效的必要步骤。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="4-总结"&gt;4. 总结
+&lt;/h2&gt;&lt;p&gt;配置完成后，使用 &lt;code&gt;Ctrl+S&lt;/code&gt; 保存文件时，插件会自动在中文和英文之间添加空格，让你专注于内容创作，无需担心排版格式问题。&lt;/p&gt;</description></item></channel></rss>

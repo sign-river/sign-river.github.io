@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markdownlint on YSY的博客</title><link>https://sign-river.github.io/tags/markdownlint/</link><description>Recent content in Markdownlint on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/markdownlint/index.xml" rel="self" type="application/rss+xml"/><item><title>VS Code 编写 Markdown 如何轻松解决格式问题</title><link>https://sign-river.github.io/p/vscode-markdown-format-tips/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/vscode-markdown-format-tips/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;在 VS Code 中编写 Markdown 时，常常会遇到各种格式问题：表格对不齐、列表缩进混乱、链接格式错误等。本文将介绍如何通过插件和配置来轻松解决这些问题，让你的 Markdown 写作更加高效。&lt;/p&gt;
+&lt;h2 id="2-安装插件-markdownlint"&gt;2. 安装插件 markdownlint
+&lt;/h2&gt;&lt;h3 id="21-格式检查工具"&gt;2.1. 格式检查工具
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实时检查 Markdown 格式&lt;/li&gt;
+&lt;li&gt;自动修复常见问题&lt;/li&gt;
+&lt;li&gt;保持文档规范统一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;常见提示&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;规则&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;解决&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MD001&lt;/td&gt;
+&lt;td&gt;标题层级不连续&lt;/td&gt;
+&lt;td&gt;不要从 # 直接跳到 ###&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD009&lt;/td&gt;
+&lt;td&gt;行尾有多余空格&lt;/td&gt;
+&lt;td&gt;删除行尾空格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD012&lt;/td&gt;
+&lt;td&gt;连续空行超过一行&lt;/td&gt;
+&lt;td&gt;删除多余空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD013&lt;/td&gt;
+&lt;td&gt;行长度超过限制&lt;/td&gt;
+&lt;td&gt;换行或调整配置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD022&lt;/td&gt;
+&lt;td&gt;标题前后需要空行&lt;/td&gt;
+&lt;td&gt;添加空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD032&lt;/td&gt;
+&lt;td&gt;列表前后需要空行&lt;/td&gt;
+&lt;td&gt;添加空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="22-使用方法"&gt;2.2. 使用方法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在拓展商店搜索并安装 markdownlint&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-18-56.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-18-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;打开设置 (json)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-21-47.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-21-47.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-22-18.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-22-18.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;在设置中输入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;editor.codeActionsOnSave&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;source.fixAll.markdownlint&amp;#34;: &amp;#34;explicit&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;editor.formatOnSave&amp;#34;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-10-23-23-38.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="3-总结"&gt;3. 总结
+&lt;/h2&gt;&lt;p&gt;之后只要 Ctrl + S 保存文件，就会自动修正 Markdown 格式&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;最后更新：2026-02-10&lt;/p&gt;</description></item></channel></rss>

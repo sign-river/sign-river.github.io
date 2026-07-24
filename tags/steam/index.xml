@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Steam on YSY的博客</title><link>https://sign-river.github.io/tags/steam/</link><description>Recent content in Steam on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/steam/index.xml" rel="self" type="application/rss+xml"/><item><title>steam 点开始游戏按钮后打不开游戏，过一会后停止按钮又变成了开始游戏</title><link>https://sign-river.github.io/p/steam-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;steam 点开始游戏按钮后打不开游戏，过一会后停止按钮又变成了开始游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;这其实是一个启动器相关问题，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。运行安装程序后，先卸载旧版启动器，再安装新版启动器即可。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。如果没有卸载旧启动器的选项，可以直接进行安装。安装过程中无需更改路径，因为启动器占用空间非常小，且更改安装路径可能会导致不必要的问题，因此无需将其安装到其他位置以节省 C 盘空间。一次重装可能无法解决问题，如果一次不行可以多尝试几次。&lt;/p&gt;
+&lt;p&gt;如果上述方法无法解决你的问题，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏</title><link>https://sign-river.github.io/p/steam-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;方法一：彻底关掉 steam 后重新打开 steam 即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="关闭游戏后 steam 库中一直显示正在停止，无法彻底关掉游戏相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;方法二：关掉有可能和 steam 冲突的进程，目前已知的有：&lt;/p&gt;
+&lt;p&gt;Wps 云盘进程，qq 输入法进程等&lt;/p&gt;
+&lt;p&gt;关闭方法：通过 Ctrl+Shift+ESC 打开任务管理器，在里面关掉对应进程。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器打开时报错:Steam 运行时通讯错误</title><link>https://sign-river.github.io/p/paradox-launcher-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器打开时报错:Steam 运行时通讯错误。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器打开时报错:Steam 运行时通讯错误相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;启动器版本更新了，在最新版本的启动器文件夹里打一遍补丁就好了，如果你不知道什么是最新版本的文件夹，那你就照着打 dlc 和补丁的视频教程重新做一遍，细节可以参考第 2 条报错。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>删除 Steam 中假入库的游戏，并使用正版 CDK 重新激活覆盖的操作流程。</title><link>https://sign-river.github.io/p/steam-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;删除 Steam 中假入库的游戏，并使用正版 CDK 重新激活覆盖的操作流程。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;这里以游戏群星 stellaris 为例，想在 Steam 库中删除假入库的游戏没必要卸载下载好的游戏文件，二十来 G 重新下一遍挺费事，按照下面的操作来就好：&lt;/p&gt;
+&lt;p&gt;首先打开 Steam 的安装目录，不是游戏目录，是你装 Steam 的目录，在里面找到文件 hid.dll，选中，然后删除&lt;/p&gt;
+&lt;p&gt;在电脑右下角这个隐藏的图标框中右键 Steam 图标，点击退出 Steam&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="删除 Steam 中假入库的游戏，并使用正版 CDK 重新激活覆盖的操作流程。相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;重新打开 Steam，此时你电脑上的群星游戏文件还在，但是 Steam 库中原来开始游戏按钮已经变成了购买游戏按钮了&lt;/p&gt;
+&lt;p&gt;接下来以任意正版形式重新激活即可，比如去 Steam 商店购买游戏，不过不推荐，不打折很贵;或者去小黑盒买 cdk 过来激活，小黑盒买的 cdk 有保障，不会买到盗版，不过小黑盒也不是一直搞活动，不搞活动时的价格和 Steam 商店差不多;如果你想玩 stellaris 的时候不凑巧 Steam 和小黑盒都不打折，可以去 steampy 买 cdk,steampy 一直处于比较低价的区间，不过操作有点麻烦，需要登录 Steam 账号，登录以后你购买 cdk 会直接帮你在库中激活，质量同样有保障。&lt;/p&gt;
+&lt;p&gt;购买完成后刷新 Steam，可以看到购买游戏按钮又变回了开始游戏按钮，此时不管是打 dlc+ 补丁包还是正常玩游戏都不影响了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>时效性问题 2024/5/-）Steam 启动游戏变的特别慢</title><link>https://sign-river.github.io/p/steam-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;时效性问题 2024/5/-）Steam 启动游戏变的特别慢。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;样例：常规情况下在 Steam 中点击 stellaris 开始游戏按钮后会立刻弹出 p 社启动器界面;出现该问题后，等待时间会从几乎没有变成 3-5 分钟，严重影响游戏体验，以下给出几个解决方案：&lt;/p&gt;
+&lt;p&gt;使用 Steam 的同时打开 Steam++;&lt;/p&gt;
+&lt;p&gt;Steam 设置 - 界面 - 参与客户端测试 - 选择 Steam Beta Update;&lt;/p&gt;
+&lt;p&gt;Steam-设置 - 下载 - 关闭“启动着色器预缓存”。&lt;/p&gt;
+&lt;p&gt;个人评价方法 (3) 比较好用&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏</title><link>https://sign-river.github.io/p/steam-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其实是启动器问题，Shift+Ctrl+Esc 打开任务管理器，找到 Paradox Launcher，右键结束任务即可，需要注意的是，如果你遇到这个报错，任务管理器里多半不止这一个进程，如果有同名进程全部关闭即可。另外这个方法治标不治本，如果你的报错问题没有解决，重新打开游戏还是会复现该情况。解决报错问题请根据游戏报错描述查找报错指南对应条目。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on YSY的博客</title><link>https://sign-river.github.io/page/</link><description>Recent content in Pages on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/page/index.xml" rel="self" type="application/rss+xml"/><item><title>archives</title><link>https://sign-river.github.io/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/archives/</guid><description/></item><item><title>Links</title><link>https://sign-river.github.io/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/links/</guid><description>&lt;p&gt;欢迎交换友链！如果你想添加你的链接，请在&lt;a class="link" href="https://sign-river.github.io/guestbook/" &gt;留言板&lt;/a&gt;留言。&lt;/p&gt;</description></item><item><title>Search</title><link>https://sign-river.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/search/</guid><description/></item><item><title>关于我</title><link>https://sign-river.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/about/</guid><description>&lt;h2 id="-你好我是-ysy"&gt;👋 你好，我是 YSY
+&lt;/h2&gt;&lt;p&gt;一名热爱编程和技术探索的开发者，对新技术充满好奇心，喜欢通过代码解决实际问题。&lt;/p&gt;
+&lt;p&gt;这个博客是我的技术笔记本，用于记录学习过程中的点滴收获、项目实践经验、效率工具使用技巧和问题解决方案。希望这些内容能够帮助到有相同需求的朋友。&lt;/p&gt;
+&lt;h3 id="-技术栈"&gt;💻 技术栈
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;前端开发&lt;/strong&gt;: HTML, CSS, JavaScript, Vue.js, React&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;后端开发&lt;/strong&gt;: Python, C++&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据库&lt;/strong&gt;: MySQL&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工具链&lt;/strong&gt;: Git, Docker, Linux, Hugo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-兴趣方向"&gt;🎯 兴趣方向
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;全栈开发与系统架构&lt;/li&gt;
+&lt;li&gt;开源项目贡献&lt;/li&gt;
+&lt;li&gt;技术写作与知识分享&lt;/li&gt;
+&lt;li&gt;效率工具与工作流优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-博客信息"&gt;📚 博客信息
+&lt;/h3&gt;&lt;p&gt;本站基于 &lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo&lt;/a&gt; 静态网站生成器构建，使用 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+&gt;Stack&lt;/a&gt; 主题进行定制化开发，部署在 &lt;a class="link" href="https://pages.github.com/" target="_blank" rel="noopener"
+&gt;GitHub Pages&lt;/a&gt; 上，所有文章源码开源。&lt;/p&gt;
+&lt;h3 id="-找到我"&gt;🔗 找到我
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a class="link" href="https://github.com/sign-river" target="_blank" rel="noopener"
+&gt;@sign-river&lt;/a&gt; - 查看我的开源项目&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bilibili&lt;/strong&gt;: &lt;a class="link" href="https://space.bilibili.com/504574253" target="_blank" rel="noopener"
+&gt;我的主页&lt;/a&gt; - 技术视频分享&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="-版权说明"&gt;📝 版权说明
+&lt;/h3&gt;&lt;p&gt;本站所有原创内容采用 &lt;a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener"
+&gt;CC BY-NC-SA 4.0&lt;/a&gt; 协议，转载请注明出处。&lt;/p&gt;</description></item><item><title>留言板</title><link>https://sign-river.github.io/guestbook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/guestbook/</guid><description>&lt;p&gt;欢迎在下方留言！无论是对博客的建议、技术交流还是随便聊聊，都非常欢迎。&lt;/p&gt;
+&lt;p&gt;留言系统基于 &lt;a class="link" href="https://giscus.app/" target="_blank" rel="noopener"
+&gt;Giscus&lt;/a&gt;，需要使用 GitHub 账号登录后即可留言。&lt;/p&gt;</description></item><item><title>项目</title><link>https://sign-river.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/projects/</guid><description>&lt;p&gt;这里展示了我的个人项目，欢迎查看和交流。&lt;/p&gt;</description></item></channel></rss>

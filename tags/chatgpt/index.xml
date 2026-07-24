@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ChatGPT on YSY的博客</title><link>https://sign-river.github.io/tags/chatgpt/</link><description>Recent content in ChatGPT on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 13 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/chatgpt/index.xml" rel="self" type="application/rss+xml"/><item><title>ChatGPT 频繁「正在重新连接」？开启 Clash TUN 模式即可解决</title><link>https://sign-river.github.io/p/chatgpt-clash-tun-mode-fix/</link><pubDate>Mon, 13 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/chatgpt-clash-tun-mode-fix/</guid><description>&lt;h2 id="1-问题现象"&gt;1. 问题现象
+&lt;/h2&gt;&lt;p&gt;使用 ChatGPT 时，界面顶部频繁弹出 &lt;strong&gt;正在重新连接&lt;/strong&gt;，往往连续重试四五次，看起来已经无法正常使用了。但稍等片刻后，回复又会突然正常输出。&lt;/p&gt;
+&lt;p&gt;这种「先失败、后恢复」的表现容易让人误以为是网络波动或 ChatGPT 服务端不稳定。&lt;/p&gt;
+&lt;h2 id="2-原因分析"&gt;2. 原因分析
+&lt;/h2&gt;&lt;p&gt;问题通常出在代理配置上，而非 ChatGPT 本身。&lt;/p&gt;
+&lt;p&gt;ChatGPT 优先通过 &lt;strong&gt;WebSocket&lt;/strong&gt; 与服务器保持长连接，以实现流式输出。在仅开启系统代理、未启用 TUN 模式的情况下，Clash 往往只能接管浏览器走 HTTP 代理的那部分流量，&lt;strong&gt;WebSocket 连接不一定能稳定经过代理&lt;/strong&gt;，于是反复握手失败，界面便不断显示「正在重新连接」。&lt;/p&gt;
+&lt;p&gt;多次重试之后，客户端会 &lt;strong&gt;降级为普通 HTTP 请求&lt;/strong&gt; 拉取回复。HTTP 走代理通常没有问题，所以最终又能看到正常输出——给人一种「快放弃了又好了」的错觉。&lt;/p&gt;
+&lt;h2 id="3-解决方案开启-clash-tun-模式"&gt;3. 解决方案：开启 Clash TUN 模式
+&lt;/h2&gt;&lt;p&gt;TUN 模式在系统网络层接管全部流量，WebSocket 与 HTTP 都会经过 Clash 路由，长连接不再频繁中断。&lt;/p&gt;
+&lt;h3 id="31-操作步骤"&gt;3.1. 操作步骤
+&lt;/h3&gt;&lt;p&gt;以 Clash Verge 为例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 Clash Verge，确保代理已正常运行&lt;/li&gt;
+&lt;li&gt;进入 &lt;strong&gt;设置&lt;/strong&gt;，找到 &lt;strong&gt;TUN 模式&lt;/strong&gt;（或 &lt;strong&gt;虚拟网卡模式&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;开启 &lt;strong&gt;TUN 模式&lt;/strong&gt;，按提示授予管理员权限（Windows 首次开启需要）&lt;/li&gt;
+&lt;li&gt;重新打开 ChatGPT 页面，发起一次对话验证&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/Clash%20TUN%20模式开启截图.png" target="_blank"&gt; &lt;img src="images/Clash%20TUN%20模式开启截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;若使用其他 Clash 客户端（如 Clash for Windows、Clash Meta 等），同样在设置中开启 TUN / 增强模式即可，名称可能略有不同。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="4-总结"&gt;4. 总结
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;现象&lt;/th&gt;
+&lt;th&gt;原因&lt;/th&gt;
+&lt;th&gt;解决&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;频繁「正在重新连接」&lt;/td&gt;
+&lt;td&gt;WebSocket 未稳定走代理&lt;/td&gt;
+&lt;td&gt;开启 Clash TUN 模式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;重试多次后又能用&lt;/td&gt;
+&lt;td&gt;客户端降级为 HTTP&lt;/td&gt;
+&lt;td&gt;同上，无需额外操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;开启 TUN 模式后，ChatGPT 的 WebSocket 长连接可以稳定经代理转发，流式输出不再反复断连。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows Installer on YSY的博客</title><link>https://sign-river.github.io/tags/windows-installer/</link><description>Recent content in Windows Installer on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/windows-installer/index.xml" rel="self" type="application/rss+xml"/><item><title>Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely</title><link>https://sign-river.github.io/p/paradox-launcher-error-19/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-19/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 4" style="display: block; max-width: 70%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 5" style="display: block; max-width: 70%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。&lt;/p&gt;
+&lt;p&gt;最优先的方法是下载 Windows Installer 修复工具（疑难解答工具）并进行修复，下载网址为&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://support.microsoft.com/zh-cn/topic/2438651" target="_blank" rel="noopener"
+&gt;https://support.microsoft.com/zh-cn/topic/2438651&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者直接在网盘下载&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/a05bf32ce69b" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/a05bf32ce69b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：9a9b&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开程序安装和卸载疑难解答程序后点下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择安装&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到 Paradox Launcher v2 点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击是，尝试卸载&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重新进行启动器的安装，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。之后右键点击属性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在兼容性选项卡中勾选以管理员身份运行此程序，点击应用，之后重新运行安装程序安装启动器。&lt;/p&gt;
+&lt;p&gt;如果问题没有解决，请手动删除以下文件夹：&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;之后再重新运行安装程序，如果有修复或卸载选项，选择 uninstall(卸载),等待卸载完成后再重新安装。&lt;/p&gt;
+&lt;p&gt;注意安装路径没事不要改，改了路径出问题以后不好修&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="Paradox Launcher v2 安装向导提前结束:Paradox Launcher v2 Setup Wizard ended prematurely 相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果成功解决了启动器无法下载或卸载的问题，并成功安装了启动器，但点击启动器图标后无法打开启动器：比如出现双击启动器图标，但是启动器无反应的情况，虽然在任务管理器中可以看到启动器正在运行，但是实际上并没有打开启动器。另一种情况是在 Steam 中直接启动游戏时，点击“开始游戏”并等待一段时间后，启动器未能打开，且按钮又恢复为“开始游戏”,或者干脆卡在那里不动了。遇到这两种情况，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。如果一切正常就不用管这段，可以直接去游玩了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”</title><link>https://sign-river.github.io/p/paradox-launcher-error-11/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-11/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先找到你安装 p 社启动器的位置，比如我安装启动器时没有改过默认的下载路径，那么启动器的日志路径就为&lt;/p&gt;
+&lt;p&gt;C:\Users(你的用户名)\AppData\Local\Paradox Interactive\launcher-v2\logs&lt;/p&gt;
+&lt;p&gt;其中 AppData 为隐藏文件夹，需要在查看-&amp;gt;显示中勾选显示隐藏文件才能看到，操作如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到日志文件夹后回退到 Local 文件夹，右键刚才进入的 Paradox Interactive 文件夹，点击属性&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;切换到“安全”选项卡，点击编辑&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择当前使用的账户或“Everyone”。如果不确定使用的是哪个账户，也不必担心，可以逐一修改所有账户的权限，简单来说就是全改。然后勾选“完全控制”下的“允许”单选框，勾选后其他“允许”框会自动选中。最后点击“确定”。我的电脑上由于文档权限继承自上级文件夹，所以选项是灰色的。如果你是根据报错条目找到这个解决方案的，那你的情况应该是单选框没有勾选，勾选后会显示绿色，和图片中的颜色不同，但不用担心，按照前面说的操作即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>安装启动器遇到报错由于机器上的策略限制，用户安装已被禁用。”User installations are disabled via policy on the machine.”</title><link>https://sign-river.github.io/p/paradox-launcher-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;安装启动器遇到报错由于机器上的策略限制，用户安装已被禁用。”User installations are disabled via policy on the machine.”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="安装启动器遇到报错由于机器上的策略限制，用户安装已被禁用。”User installations are disabled via policy on the machine.”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解决方法一：&lt;/p&gt;
+&lt;p&gt;1、win+R 后在运行里输入 gpedit.msc&lt;/p&gt;
+&lt;p&gt;2、计算机配置管理&amp;raquo;管理模板&amp;raquo;windows 组件&amp;raquo;windows Installer&amp;raquo;禁止用户安装;&lt;/p&gt;
+&lt;p&gt;3、打开它禁用此项就可以了。&lt;/p&gt;
+&lt;p&gt;若方法一不行，请使用方法二：&lt;/p&gt;
+&lt;p&gt;win+R 后在运行里输入 regedit&lt;/p&gt;
+&lt;p&gt;进入注册表目录：&lt;/p&gt;
+&lt;p&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Installer，将 DisableUserlnstalls 的值改为 0 再安装即可&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>安装时发生严重错误</title><link>https://sign-river.github.io/p/paradox-launcher-error-20/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-20/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;安装时发生严重错误。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="安装时发生严重错误相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="安装时发生严重错误相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="安装时发生严重错误相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="安装时发生严重错误相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="安装时发生严重错误相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。&lt;/p&gt;
+&lt;p&gt;最优先的方法是下载 Windows Installer 修复工具（疑难解答工具）并进行修复，下载网址为&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://support.microsoft.com/zh-cn/topic/2438651" target="_blank" rel="noopener"
+&gt;https://support.microsoft.com/zh-cn/topic/2438651&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者直接在网盘下载&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/a05bf32ce69b" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/a05bf32ce69b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：9a9b&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="安装时发生严重错误相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="安装时发生严重错误相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开程序安装和卸载疑难解答程序后点下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="安装时发生严重错误相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择安装&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="安装时发生严重错误相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到 Paradox Launcher v2 点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="安装时发生严重错误相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击是，尝试卸载&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="安装时发生严重错误相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重新进行启动器的安装，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。之后右键点击属性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="安装时发生严重错误相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="安装时发生严重错误相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在兼容性选项卡中勾选以管理员身份运行此程序，点击应用，之后重新运行安装程序安装启动器。&lt;/p&gt;
+&lt;p&gt;如果问题没有解决，请手动删除以下文件夹：&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;之后再重新运行安装程序，如果有修复或卸载选项，选择 uninstall(卸载),等待卸载完成后再重新安装。&lt;/p&gt;
+&lt;p&gt;注意安装路径没事不要改，改了路径出问题以后不好修&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="安装时发生严重错误相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果成功解决了启动器无法下载或卸载的问题，并成功安装了启动器，但点击启动器图标后无法打开启动器：比如出现双击启动器图标，但是启动器无反应的情况，虽然在任务管理器中可以看到启动器正在运行，但是实际上并没有打开启动器。另一种情况是在 Steam 中直接启动游戏时，点击“开始游戏”并等待一段时间后，启动器未能打开，且按钮又恢复为“开始游戏”,或者干脆卡在那里不动了。遇到这两种情况，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。如果一切正常就不用管这段，可以直接去游玩了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>另一个安装正在进行中。在继续此安装之前，您必须完成当前的安装。Another installation is in progress. You must complete that installation before continuing this one.</title><link>https://sign-river.github.io/p/paradox-launcher-error-27/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-27/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;另一个安装正在进行中。在继续此安装之前，您必须完成当前的安装。Another installation is in progress. You must complete that installation before continuing this one.。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="另一个安装正在进行中。在继续此安装之前，您必须完成当前的安装。Another installation is in progress. You must complete that installation before continuing this one.相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;同时按住 Esc+Shift+Ctrl 打开任务管理器，搜索 msiexec.exe，找到 Windows Installer&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="另一个安装正在进行中。在继续此安装之前，您必须完成当前的安装。Another installation is in progress. You must complete that installation before continuing this one.相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;右键点击结束任务即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="另一个安装正在进行中。在继续此安装之前，您必须完成当前的安装。Another installation is in progress. You must complete that installation before continuing this one.相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;</title><link>https://sign-river.github.io/p/paradox-launcher-error-17/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-17/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。&lt;/p&gt;
+&lt;p&gt;最优先的方法是下载 Windows Installer 修复工具（疑难解答工具）并进行修复，下载网址为&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://support.microsoft.com/zh-cn/topic/2438651" target="_blank" rel="noopener"
+&gt;https://support.microsoft.com/zh-cn/topic/2438651&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者直接在网盘下载&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/a05bf32ce69b" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/a05bf32ce69b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：9a9b&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开程序安装和卸载疑难解答程序后点下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择安装&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到 Paradox Launcher v2 点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击是，尝试卸载&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重新进行启动器的安装，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。之后右键点击属性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在兼容性选项卡中勾选以管理员身份运行此程序，点击应用，之后重新运行安装程序安装启动器。&lt;/p&gt;
+&lt;p&gt;如果问题没有解决，请手动删除以下文件夹：&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;之后再重新运行安装程序，如果有修复或卸载选项，选择 uninstall(卸载),等待卸载完成后再重新安装。&lt;/p&gt;
+&lt;p&gt;注意安装路径没事不要改，改了路径出问题以后不好修&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果成功解决了启动器无法下载或卸载的问题，并成功安装了启动器，但点击启动器图标后无法打开启动器：比如出现双击启动器图标，但是启动器无反应的情况，虽然在任务管理器中可以看到启动器正在运行，但是实际上并没有打开启动器。另一种情况是在 Steam 中直接启动游戏时，点击“开始游戏”并等待一段时间后，启动器未能打开，且按钮又恢复为“开始游戏”,或者干脆卡在那里不动了。遇到这两种情况，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。如果一切正常就不用管这段，可以直接去游玩了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”</title><link>https://sign-river.github.io/p/paradox-launcher-error-16/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-16/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;导致该报错具体原因不同。可以根据标题下的详细内容来进一步分析并确定导致报错的具体原因。示例如下：&lt;/p&gt;
+&lt;p&gt;文件缺失导致报错&lt;/p&gt;
+&lt;p&gt;(1)Error: CPatch process error occurred: spawn xxxx \cpatch.exe&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该报错为启动器文件缺失，可以在群文件下载 p 社启动器安装包，卸载掉原 p 社启动器后用安装包安装新启动器，如果该报错仍然出现，那大概率是文件被杀毒软件拦截，建议打开电脑上的杀毒软件，在隔离区内看看有没有 cpatch.exe 或其他文件，将这些文件移出隔离区或加入白名单即可。&lt;/p&gt;
+&lt;p&gt;Error: ENOENT: no such file or directory, open xxxx/package.json&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该报错虽然也为启动器文件缺失，但用常规卸载重装方法可能无法解决该报错，在卸载启动器后，安装启动器前，需要彻底情况电脑上有关启动器的文件，文件夹，下列路径中的文件夹均要删除&lt;/p&gt;
+&lt;p&gt;卸载启动器&lt;/p&gt;
+&lt;p&gt;首先，通过控制面板或其他方式卸载当前的启动器程序。&lt;/p&gt;
+&lt;p&gt;删除相关文件夹&lt;/p&gt;
+&lt;p&gt;在卸载启动器之后，不要直接重新安装启动器，您需要手动删除以下路径中的相关文件夹，确保彻底清除启动器的所有残留文件：&lt;/p&gt;
+&lt;p&gt;C:/Users/&amp;lt;用户名&amp;gt;/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/Users/&amp;lt;用户名&amp;gt;/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/Users/&amp;lt;用户名&amp;gt;/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;文档/Paradox Interactive/.cpatch/&lt;/p&gt;
+&lt;p&gt;Documents/Paradox Interactive/ 目录下所有以 launcher-v2 开头的文件夹&lt;/p&gt;
+&lt;p&gt;重新安装启动器&lt;/p&gt;
+&lt;p&gt;清除所有相关文件夹后，运行启动器的安装程序进行重新安装。安装完成后，启动器应该可以正常工作。&lt;/p&gt;
+&lt;p&gt;通过这种方式可以有效避免由于文件残留导致的错误。&lt;/p&gt;
+&lt;p&gt;缺少权限导致报错&lt;/p&gt;
+&lt;p&gt;创建文件夹错误&lt;/p&gt;
+&lt;p&gt;Error: EPERM: operation not permitted, mkdir xxxx(路径)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该报错是由于文件夹权限不足引发的。解决方法如下：根据路径定位到该文件夹，右键点击并选择“属性”，然后进入“安全”选项卡，点击“编辑”。在权限列表中勾选“完全控制”后点击“确定”。如果不清楚自己的账户信息，可以将列表中所有组和用户名的权限都设置为“完全控制”。&lt;/p&gt;
+&lt;p&gt;访问日志错误&lt;/p&gt;
+&lt;p&gt;Error: EPERM: operation not permitted,open xxxx&lt;/p&gt;
+&lt;p&gt;\launcher-xxxx-xx-xx.log&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;详细解决方案请跳转安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”&lt;/p&gt;
+&lt;p&gt;其他错误&lt;/p&gt;
+&lt;p&gt;启动相关错误&lt;/p&gt;
+&lt;p&gt;TypeError: Object has been destroyed&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;导致该报错的具体诱因未知，猜测与 Windows 快速启动（Fast Startup）与休眠相关，解决方法为：在关机前退出 steam 程序即可。&lt;/p&gt;
+&lt;p&gt;启动器文件损坏错误&lt;/p&gt;
+&lt;p&gt;SyntaxError: Error parsing C:\Users...: Unexpected token '&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.jpeg" target="_blank"&gt;&lt;img src="images/error-07.jpeg" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;启动器文件损坏，下载最新的启动器安装程序重新安装一下启动器就好了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.</title><link>https://sign-river.github.io/p/paradox-launcher-error-18/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-18/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。&lt;/p&gt;
+&lt;p&gt;最优先的方法是下载 Windows Installer 修复工具（疑难解答工具）并进行修复，下载网址为&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://support.microsoft.com/zh-cn/topic/2438651" target="_blank" rel="noopener"
+&gt;https://support.microsoft.com/zh-cn/topic/2438651&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者直接在网盘下载&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/a05bf32ce69b" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/a05bf32ce69b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：9a9b&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开程序安装和卸载疑难解答程序后点下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择安装&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到 Paradox Launcher v2 点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击是，尝试卸载&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重新进行启动器的安装，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。之后右键点击属性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在兼容性选项卡中勾选以管理员身份运行此程序，点击应用，之后重新运行安装程序安装启动器。&lt;/p&gt;
+&lt;p&gt;如果问题没有解决，请手动删除以下文件夹：&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;之后再重新运行安装程序，如果有修复或卸载选项，选择 uninstall(卸载),等待卸载完成后再重新安装。&lt;/p&gt;
+&lt;p&gt;注意安装路径没事不要改，改了路径出问题以后不好修&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果成功解决了启动器无法下载或卸载的问题，并成功安装了启动器，但点击启动器图标后无法打开启动器：比如出现双击启动器图标，但是启动器无反应的情况，虽然在任务管理器中可以看到启动器正在运行，但是实际上并没有打开启动器。另一种情况是在 Steam 中直接启动游戏时，点击“开始游戏”并等待一段时间后，启动器未能打开，且按钮又恢复为“开始游戏”,或者干脆卡在那里不动了。遇到这两种情况，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。如果一切正常就不用管这段，可以直接去游玩了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

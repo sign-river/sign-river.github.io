@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Word on YSY的博客</title><link>https://sign-river.github.io/tags/word/</link><description>Recent content in Word on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/word/index.xml" rel="self" type="application/rss+xml"/><item><title>用 LaTeX-OCR 在 Word/WPS 中优雅地插入数学公式</title><link>https://sign-river.github.io/p/latex-ocr-for-word-wps/</link><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/latex-ocr-for-word-wps/</guid><description>&lt;h2 id="1-前置准备"&gt;1. 前置准备
+&lt;/h2&gt;&lt;p&gt;本工具基于 Python 运行，建议使用 Anaconda 管理 Python 环境。如果尚未安装，可以参考：&lt;a class="link" href="https://sign-river.github.io/p/anaconda-install-guide/" &gt;Anaconda 安装教程&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="2-安装-latex-ocr"&gt;2. 安装 LaTeX-OCR
+&lt;/h2&gt;&lt;p&gt;按 &lt;code&gt;Win&lt;/code&gt; 键搜索 &lt;strong&gt;Anaconda Prompt&lt;/strong&gt;，打开它。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-17-13.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-17-13.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 Anaconda Prompt 中依次输入以下命令，创建并激活一个独立的虚拟环境：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;conda create -n latexocr &lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;3.12
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-03-21-03-45-36.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-45-36.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;conda activate latexocr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-03-21-03-45-49.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-45-49.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-安装-pytorch"&gt;2.2. 安装 PyTorch
+&lt;/h3&gt;&lt;p&gt;LaTeX-OCR 依赖 PyTorch 运行模型。由于每个人的显卡和系统环境不同，建议前往 &lt;a class="link" href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener"
+&gt;PyTorch 官网&lt;/a&gt; 根据自己的配置生成对应的安装指令。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-17-59.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-17-59.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;各选项说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PyTorch Build&lt;/strong&gt;：选 &lt;code&gt;Stable&lt;/code&gt;（稳定版）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Your OS&lt;/strong&gt;：选对应操作系统，Windows 用户选 &lt;code&gt;Windows&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Package&lt;/strong&gt;：选 &lt;code&gt;Pip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Language&lt;/strong&gt;：选 &lt;code&gt;Python&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compute Platform&lt;/strong&gt;：有 NVIDIA 显卡选对应的 CUDA 版本，没有独显或不确定选 &lt;code&gt;CPU&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何确认自己的 CUDA 版本：按 &lt;code&gt;Win + R&lt;/code&gt; 输入 &lt;code&gt;cmd&lt;/code&gt; 回车，在终端输入 &lt;code&gt;nvidia-smi&lt;/code&gt;，右上角显示的即为支持的最高 CUDA 版本。选择时要保证选的版本 &lt;strong&gt;≤&lt;/strong&gt; 该数字。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;选好后复制页面生成的命令，粘贴到 Anaconda Prompt 中执行即可（文件较大约 2GB+，请耐心等待）。&lt;/p&gt;
+&lt;p&gt;以 CUDA 13.0 为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="23-安装-pix2tex"&gt;2.3. 安装 pix2tex
+&lt;/h3&gt;&lt;p&gt;PyTorch 安装完成后，继续输入以下命令安装 LaTeX-OCR（含 GUI 界面）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pip install &lt;span class="s2"&gt;&amp;#34;pix2tex[gui]&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成后，首次运行时会自动下载模型权重文件（约 100MB+），下载完毕后 GUI 窗口会自动弹出。&lt;/p&gt;
+&lt;h2 id="3-使用方法"&gt;3. 使用方法
+&lt;/h2&gt;&lt;p&gt;安装完成后，在 Anaconda Prompt 中输入以下命令启动 LaTeX-OCR：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;latexocr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/启动命令截图.png" target="_blank"&gt; &lt;img src="images/启动命令截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;启动后界面如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/GUI界面截图.png" target="_blank"&gt; &lt;img src="images/GUI界面截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;界面各选项说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Format&lt;/strong&gt;：输出格式选择
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Raw&lt;/code&gt;：原始 LaTeX 代码&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LaTeX-$&lt;/code&gt;：行内公式格式（适合嵌在文字中间）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LaTeX-$$&lt;/code&gt;：独立公式格式（适合单独一行展示）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sympy&lt;/code&gt;：Python sympy 格式（复杂公式容易报错，日常不推荐）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Snip [Alt+S]&lt;/strong&gt;：截图识别快捷键&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Temperature&lt;/strong&gt;：识别参数，值越低越保守准确，默认 0.33 即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有三种方式输入公式图片：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用其他截图工具截图后，直接将图片&lt;strong&gt;粘贴&lt;/strong&gt;到顶部白色区域&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Snip&lt;/strong&gt; 按钮，使用程序内置截图框选公式区域&lt;/li&gt;
+&lt;li&gt;先单击程序窗口使其成为焦点，再按 &lt;strong&gt;Alt+S&lt;/strong&gt; 快捷键截图&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;截图后程序会自动识别公式，结果显示在中间文本框中，直接复制即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-04-05-48.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-05-48.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="4-插入-word"&gt;4. 插入 Word
+&lt;/h2&gt;&lt;p&gt;识别完成后，下方文本框中即为可直接使用的 LaTeX 代码，复制它。&lt;/p&gt;
+&lt;p&gt;以下图为例，识别结果为：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\operatorname*{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/识别结果截图.png" target="_blank"&gt; &lt;img src="images/识别结果截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 WPS 或 Word 中，光标定位到需要插入公式的位置，点击菜单栏&lt;strong&gt;插入 → 公式&lt;/strong&gt;，在弹出的公式编辑框中将识别结果粘贴进去即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-20-05.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-20-05.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-04-47-58.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-47-58.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Word 用户注意&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;粘贴后需要手动切换两个设置，否则公式无法正确渲染：左上角输入类型选择 &lt;strong&gt;LaTeX&lt;/strong&gt;（默认是 Unicode）；右侧格式选择&lt;strong&gt;专业&lt;/strong&gt;（选&amp;quot;线性&amp;quot;则公式不会转换为排版格式）。&lt;/li&gt;
+&lt;li&gt;Word 不支持 &lt;code&gt;\operatorname*&lt;/code&gt; 语法和 &lt;code&gt;$...$&lt;/code&gt; 包裹，粘贴前需手动处理：删去开头的 &lt;code&gt;$\operatorname*&lt;/code&gt; 及结尾的 &lt;code&gt;$&lt;/code&gt;。例如 WPS 可直接使用的 &lt;code&gt;$\operatorname*{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)$&lt;/code&gt;，在 Word 中需改为 &lt;code&gt;{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-25-18.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-25-18.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="5-创建一键启动脚本"&gt;5. 创建一键启动脚本
+&lt;/h2&gt;&lt;p&gt;每次使用都要打开 Anaconda Prompt 再手动输命令比较繁琐，可以创建一个批处理脚本实现双击启动。&lt;/p&gt;
+&lt;p&gt;在桌面新建一个文本文档，输入以下内容：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Set ws = CreateObject(&amp;#34;Wscript.Shell&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ws.run &amp;#34;cmd /c conda run -n latexocr latexocr&amp;#34;, 0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-03-21-04-25-44.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-25-44.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;按 &lt;code&gt;Ctrl+S&lt;/code&gt; 保存。如果看不到文件后缀名，在文件资源管理器中点击顶部&lt;strong&gt;查看 → 显示 → 文件扩展名&lt;/strong&gt;将其勾选。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/显示文件扩展名截图.png" target="_blank"&gt; &lt;img src="images/显示文件扩展名截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后选中文件按 &lt;code&gt;F2&lt;/code&gt; 重命名，将其改为 &lt;code&gt;公式识别.vbs&lt;/code&gt;，双击即可静默启动 LaTeX-OCR（不会弹出黑色命令行窗口）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;双击后不会立即弹出窗口，后台仍需要激活环境并启动程序，请耐心等待几秒钟。如果怎么双击都没有反应，可以检查一下 vbs 文件是否保存成功、内容是否为空。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-04-24-56.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-24-56.png" alt="image" style="max-width: 100%; width: 300px;"/&gt; &lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

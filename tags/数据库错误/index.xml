@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据库错误 on YSY的博客</title><link>https://sign-river.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%99%E8%AF%AF/</link><description>Recent content in 数据库错误 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%94%99%E8%AF%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>启动器数据库错误，数据库迁移失败</title><link>https://sign-river.github.io/p/paradox-launcher-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器数据库错误，数据库迁移失败。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="启动器数据库错误，数据库迁移失败相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该问题一般出现在安装新启动器之后，在大部分情况下，关闭启动器重新启动后该报错会消失。如果该报错频繁弹出，可根据报错提示，按照路径前往文件夹&lt;/p&gt;
+&lt;p&gt;C:\用户\（你的用户名）\文档\Paradox Interactive\Stellaris&lt;/p&gt;
+&lt;p&gt;找到文件 launcher-v2.sqlite，然后删除掉它，之后重新启动启动器，问题解决。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

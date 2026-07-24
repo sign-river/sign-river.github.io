@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on YSY的博客</title><link>https://sign-river.github.io/tags/ubuntu/</link><description>Recent content in Ubuntu on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 30 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>从零搭建文件下载服务器完整教程</title><link>https://sign-river.github.io/p/file-download-server-setup/</link><pubDate>Tue, 30 Jun 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/file-download-server-setup/</guid><description>&lt;h2 id="1-概述"&gt;1. 概述
+&lt;/h2&gt;&lt;p&gt;本文记录在阿里云 ECS 上搭建文件下载服务的完整流程：购买服务器、安装 Nginx、配置目录浏览，最后通过公网 IP 访问下载页面。&lt;/p&gt;
+&lt;h2 id="2-购买服务器"&gt;2. 购买服务器
+&lt;/h2&gt;&lt;h3 id="21-打开产品页并选择优惠套餐"&gt;2.1. 打开产品页并选择优惠套餐
+&lt;/h3&gt;&lt;p&gt;打开 &lt;a class="link" href="https://www.aliyun.com/product/ecs?spm=5176.30275541.J_ZGek9Blx07Hclc3Ddt9dg.2.3c872f3dr4kUFP&amp;amp;scm=20140722.S_card@@%E4%BA%A7%E5%93%81@@163972.S_new~UND~card.ID_card@@%E4%BA%A7%E5%93%81@@163972-RL_%E6%9C%8D%E5%8A%A1%E5%99%A8-LOC_2024SPSearchCard-OR_ser-PAR1_0bc059b717827943826333110e2327-V_4-RE_new13-P0_0-P1_0" target="_blank" rel="noopener"
+&gt;阿里云 ECS 产品页&lt;/a&gt;，选择 &lt;strong&gt;99 元/年&lt;/strong&gt; 的优惠套餐并点击购买。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-30-13-00-11.png" target="_blank"&gt; &lt;img src="images/2026-06-30-13-00-11.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-服务器配置与下单"&gt;2.2. 服务器配置与下单
+&lt;/h3&gt;&lt;p&gt;操作系统选择 &lt;strong&gt;Ubuntu 24.04 64 位&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/操作系统选择截图.png" target="_blank"&gt; &lt;img src="images/操作系统选择截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;勾选 &lt;strong&gt;自动续费&lt;/strong&gt;，避免到期后实例被释放。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/自动续费选项截图.png" target="_blank"&gt; &lt;img src="images/自动续费选项截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="23-连接服务器"&gt;2.3. 连接服务器
+&lt;/h3&gt;&lt;p&gt;实例创建完成后，进入 ECS 控制台，找到对应实例，点击 &lt;strong&gt;远程连接&lt;/strong&gt;，使用阿里云自带的远程连接功能接入。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/阿里云远程连接截图.png" target="_blank"&gt; &lt;img src="images/阿里云远程连接截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-部署相关软件"&gt;3. 部署相关软件
+&lt;/h2&gt;&lt;h3 id="31-基础环境准备"&gt;3.1. 基础环境准备
+&lt;/h3&gt;&lt;p&gt;接入服务器后，依次执行以下命令。&lt;/p&gt;
+&lt;h4 id="311-更新系统软件包"&gt;3.1.1. 更新系统软件包
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo apt upgrade -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id="312-创建下载目录"&gt;3.1.2. 创建下载目录
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo mkdir -p /var/www/download
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id="313-设置目录权限"&gt;3.1.3. 设置目录权限
+&lt;/h4&gt;&lt;p&gt;将目录所有权赋予当前用户和 Nginx 组：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chown -R &lt;span class="nv"&gt;$USER&lt;/span&gt;:www-data /var/www/download
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod -R &lt;span class="m"&gt;755&lt;/span&gt; /var/www/download
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="32-安装-nginx"&gt;3.2. 安装 Nginx
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install nginx -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="33-删除默认站点"&gt;3.3. 删除默认站点
+&lt;/h3&gt;&lt;p&gt;删除 Nginx 自带的默认页面，避免与后续配置冲突：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo rm -f /etc/nginx/sites-enabled/default
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="34-配置-nginx"&gt;3.4. 配置 Nginx
+&lt;/h3&gt;&lt;p&gt;在远程连接界面左侧的 &lt;strong&gt;文件管理&lt;/strong&gt; 中，依次展开 &lt;code&gt;/etc&lt;/code&gt; → &lt;code&gt;nginx&lt;/code&gt; → &lt;code&gt;conf.d&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/进入%20conf.d%20目录截图.png" target="_blank"&gt; &lt;img src="images/进入%20conf.d%20目录截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;右键点击 &lt;code&gt;conf.d&lt;/code&gt; 文件夹，选择 &lt;strong&gt;新建文件&lt;/strong&gt;，命名为 &lt;code&gt;download.conf&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/新建%20download.conf%20文件截图.png" target="_blank"&gt; &lt;img src="images/新建%20download.conf%20文件截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;双击打开 &lt;code&gt;download.conf&lt;/code&gt;，写入以下配置：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-30-13-53-46.png" target="_blank"&gt; &lt;img src="images/2026-06-30-13-53-46.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="s"&gt;default_server&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="s"&gt;[::]:80&lt;/span&gt; &lt;span class="s"&gt;default_server&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;root&lt;/span&gt; &lt;span class="s"&gt;/var/www/download&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;autoindex&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;autoindex_exact_size&lt;/span&gt; &lt;span class="no"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;autoindex_localtime&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;charset&lt;/span&gt; &lt;span class="s"&gt;utf-8&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 核心限速策略：前 5MB 满速，之后限制在 100 KB/s
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;limit_rate_after&lt;/span&gt; &lt;span class="mi"&gt;5m&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;limit_rate&lt;/span&gt; &lt;span class="mi"&gt;100k&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;按 &lt;strong&gt;Ctrl+S&lt;/strong&gt; 保存。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/download.conf%20文件编辑截图.png" target="_blank"&gt; &lt;img src="images/download.conf%20文件编辑截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;回到终端，检查配置语法：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nginx -t
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;输出 &lt;code&gt;syntax is ok&lt;/code&gt; 和 &lt;code&gt;test is successful&lt;/code&gt; 即表示配置正确。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-30-13-57-41.png" target="_blank"&gt; &lt;img src="images/2026-06-30-13-57-41.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;重启 Nginx 使配置生效：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl restart nginx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="4-挂载文件供下载"&gt;4. 挂载文件供下载
+&lt;/h2&gt;&lt;h3 id="41-创建测试文件"&gt;4.1. 创建测试文件
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Hello, this is a test file!&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; sudo tee /var/www/download/test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="42-访问下载界面"&gt;4.2. 访问下载界面
+&lt;/h3&gt;&lt;p&gt;在浏览器访问 &lt;code&gt;http://&amp;lt;公网IP&amp;gt;/&lt;/code&gt;，将 &lt;code&gt;&amp;lt;公网IP&amp;gt;&lt;/code&gt; 替换为实例的公网地址。例如 &lt;code&gt;http://59.110.167.218/&lt;/code&gt;，页面会列出 &lt;code&gt;/var/www/download&lt;/code&gt; 目录下的文件，其中包含刚创建的 &lt;code&gt;test.txt&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/文件下载界面截图.png" target="_blank"&gt; &lt;img src="images/文件下载界面截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="43-上传文件"&gt;4.3. 上传文件
+&lt;/h3&gt;&lt;p&gt;后续如需添加文件，在 &lt;strong&gt;文件管理&lt;/strong&gt; 中打开 &lt;code&gt;/var/www/download&lt;/code&gt;，点击左上角 &lt;strong&gt;上传文件&lt;/strong&gt;，选中目标文件即可。上传完成后刷新浏览器页面即可看到新文件。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/上传文件截图.png" target="_blank"&gt; &lt;img src="images/上传文件截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-30-14-08-35.png" target="_blank"&gt; &lt;img src="images/2026-06-30-14-08-35.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="5-总结"&gt;5. 总结
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;路径 / 地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;下载目录&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/var/www/download&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Nginx 配置&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/etc/nginx/conf.d/download.conf&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;访问地址&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;http://&amp;lt;公网IP&amp;gt;/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;新增文件&lt;/td&gt;
+&lt;td&gt;文件管理上传至下载目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item></channel></rss>

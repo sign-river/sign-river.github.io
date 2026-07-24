@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>环境配置 on YSY的博客</title><link>https://sign-river.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link><description>Recent content in 环境配置 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 10 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>PyTorch 基础入门</title><link>https://sign-river.github.io/p/pytorch-basics/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/pytorch-basics/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;开始学习 PyTorch，记录基础知识和学习心得。&lt;/p&gt;
+&lt;h2 id="2-pytorch-简介"&gt;2. PyTorch 简介
+&lt;/h2&gt;&lt;p&gt;PyTorch 是一个基于 Python 的科学计算包，主要用于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;替代 NumPy，利用 GPU 加速&lt;/li&gt;
+&lt;li&gt;提供灵活的深度学习研究平台&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-环境配置"&gt;3. 环境配置
+&lt;/h2&gt;&lt;h3 id="31-配置-anaconda"&gt;3.1. 配置 Anaconda
+&lt;/h3&gt;&lt;p&gt;在开始 PyTorch 学习前，使用 Anaconda 进行环境隔离是最佳选项，避免不同项目的依赖冲突。&lt;/p&gt;
+&lt;p&gt;操作步骤：&lt;/p&gt;
+&lt;p&gt;点击底部的 Create 按钮。&lt;/p&gt;
+&lt;p&gt;Name (名称)：设置为 pytorch（清晰明了，便于识别）。&lt;/p&gt;
+&lt;p&gt;Packages (版本选择)：勾选 Python，并选择 3.12 版本。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-21-30-21.png" target="_blank"&gt; &lt;img src="images/2026-02-10-21-30-21.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;💡 版本选择思路 (2026 Q1)：推荐选择 Python 3.12。相比于旧版本，它拥有更好的性能；相比于最新的 3.13+ 版本，它在 PyTorch 生态圈（包括 NumPy, Pandas 等依赖库）中的兼容性最为成熟稳定。&lt;/p&gt;
+&lt;h3 id="32-安装-pytorch"&gt;3.2. 安装 PyTorch
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;确认显卡驱动与 CUDA 版本&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在安装 GPU 版本的 PyTorch 前，必须确认显卡驱动支持的最高 CUDA 版本。&lt;/p&gt;
+&lt;p&gt;操作：Win + R 打开运行 -&amp;gt; 输入 cmd -&amp;gt; 输入指令 nvidia-smi。&lt;/p&gt;
+&lt;p&gt;关键信息：查看右上角的 CUDA Version（例如：13.1）。&lt;/p&gt;
+&lt;p&gt;⚠️ 重要原则：官网下载时选择的 CUDA 版本（Runtime）必须 &amp;lt;= 电脑显示的 CUDA 版本（Driver）。&lt;/p&gt;
+&lt;p&gt;win+r，输入 cmd 回车打开终端，在终端输入 nvidia-smi 回车，第一行最右边就是适合你选择的 CUDA 版本&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-21-53-17.png" target="_blank"&gt; &lt;img src="images/2026-02-10-21-53-17.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-21-53-50.png" target="_blank"&gt; &lt;img src="images/2026-02-10-21-53-50.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;获取安装指令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;前往 &lt;a class="link" href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener"
+&gt;PyTorch 官网&lt;/a&gt;，根据机器配置选择：&lt;/p&gt;
+&lt;p&gt;PyTorch Build: Stable&lt;/p&gt;
+&lt;p&gt;Your OS: Windows&lt;/p&gt;
+&lt;p&gt;Package: Pip&lt;/p&gt;
+&lt;p&gt;Language: Python&lt;/p&gt;
+&lt;p&gt;Compute Platform: CUDA 13.0 (根据上一步确认的版本选择，这里选 13.0 是安全的，因为 13.0 &amp;lt; 13.1)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-21-55-27.png" target="_blank"&gt; &lt;img src="images/2026-02-10-21-55-27.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;执行安装&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;打开 Anaconda Navigator，找到 pytorch 环境。&lt;/p&gt;
+&lt;p&gt;点击播放键 ▶️ -&amp;gt; 选择 Open Terminal（这一步确保了命令是在虚拟环境中运行）。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-22-00-24.png" target="_blank"&gt; &lt;img src="images/2026-02-10-22-00-24.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;粘贴并运行官网生成的指令：&lt;/p&gt;
+&lt;p&gt;(注：下载文件较大，约 2GB+，请耐心等待)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-22-02-31.png" target="_blank"&gt; &lt;img src="images/2026-02-10-22-02-31.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;验证安装 (Verification)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;安装完成后，必须验证 PyTorch 能否正确调用 GPU。在当前终端输入 python 进入交互模式：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;import torch
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;# 检查 CUDA 是否可用，返回 True 即为成功
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;torch.cuda.is_available()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br/&gt;
+&lt;a href="images/2026-02-10-22-08-48.png" target="_blank"&gt; &lt;img src="images/2026-02-10-22-08-48.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="5-参考资料"&gt;5. 参考资料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://pytorch.org/docs/stable/index.html" target="_blank" rel="noopener"
+&gt;PyTorch 官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://pytorch.org/tutorials/" target="_blank" rel="noopener"
+&gt;PyTorch 官方教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

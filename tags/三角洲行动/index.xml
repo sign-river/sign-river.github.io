@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>三角洲行动 on YSY的博客</title><link>https://sign-river.github.io/tags/%E4%B8%89%E8%A7%92%E6%B4%B2%E8%A1%8C%E5%8A%A8/</link><description>Recent content in 三角洲行动 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 05 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E4%B8%89%E8%A7%92%E6%B4%B2%E8%A1%8C%E5%8A%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>PC 端《三角洲行动》启动画面放大、纯色闪屏的解决方案</title><link>https://sign-river.github.io/p/delta-force-dpi-scaling-fix/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/delta-force-dpi-scaling-fix/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;前言&lt;/strong&gt;：如果你第一次启动《三角洲行动》时遇到画面放大或纯色闪屏，别慌！这是 Windows 高 DPI 缩放与游戏引擎的冲突。本文提供解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1--问题现象"&gt;1. 🔍 问题现象
+&lt;/h2&gt;&lt;p&gt;第一次启动《三角洲行动》时可能遇到以下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;画面异常放大&lt;/strong&gt;：游戏图像被放大多倍，只能看到界面的一小部分，鼠标无法点击目标按钮&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;假花屏&amp;rdquo;&lt;/strong&gt;：能听到游戏音效，但屏幕显示单一颜色交替闪动，不显示游戏内容&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反复重启才能进&lt;/strong&gt;：遇到上述情况只能强退，需多次重启才能正常进入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2--问题原因"&gt;2. 🔍 问题原因
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;这不是显卡故障&lt;/strong&gt;，而是 Windows 高 DPI 缩放与游戏引擎的冲突。&lt;/p&gt;
+&lt;p&gt;使用 2.5K 或更高分辨率屏幕时，Windows 默认开启 125% 或 150% 系统缩放。游戏启动时，引擎未能正确接管屏幕，Windows 将系统缩放强加在全屏游戏画面上，造成&amp;quot;二次放大&amp;quot;，导致渲染出错，表现为画面缩小或纯色闪屏。&lt;/p&gt;
+&lt;h2 id="3--解决方案nvidia-应用设置"&gt;3. 🛠️ 解决方案：NVIDIA 应用设置
+&lt;/h2&gt;&lt;h3 id="31-详细步骤"&gt;3.1 详细步骤
+&lt;/h3&gt;&lt;p&gt;打开电脑上的 &lt;strong&gt;NVIDIA 应用&lt;/strong&gt;（NVIDIA App），在左侧导航栏点击 &lt;strong&gt;图形&lt;/strong&gt; 选项卡。&lt;/p&gt;
+&lt;p&gt;在程序列表中找到并点击 &lt;strong&gt;三角洲行动&lt;/strong&gt;（Delta Force）。&lt;/p&gt;
+&lt;p&gt;在右侧找到 &lt;strong&gt;游戏已优化&lt;/strong&gt; 选项，点击 &lt;strong&gt;恢复&lt;/strong&gt; 按钮后面的小三角展开详细设置。&lt;/p&gt;
+&lt;p&gt;在展开的设置面板中，找到 &lt;strong&gt;显示模式&lt;/strong&gt; 选项，在下拉菜单中选择 &lt;strong&gt;无边框窗口化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-07-21-51-54.png" target="_blank"&gt; &lt;img src="images/2026-03-07-21-51-54.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;设置完成后无需额外保存，直接关闭 NVIDIA 应用即可。&lt;/p&gt;
+&lt;h2 id="4--验证效果"&gt;4. ✅ 验证效果
+&lt;/h2&gt;&lt;p&gt;重新打开游戏，画面应该能正常显示，不再出现放大或纯色闪屏问题。&lt;/p&gt;
+&lt;p&gt;如果问题仍然存在，可以尝试重启电脑后再启动游戏。&lt;/p&gt;
+&lt;h2 id="5--总结"&gt;5. 📝 总结
+&lt;/h2&gt;&lt;p&gt;《三角洲行动》启动时的画面放大和纯色闪屏问题，本质上是 Windows 高 DPI 缩放与游戏引擎的冲突。&lt;/p&gt;
+&lt;p&gt;通过 NVIDIA 应用将显示模式设置为 &lt;strong&gt;无边框窗口化&lt;/strong&gt;，可以让游戏正确接管画面渲染，彻底解决问题。这种方法简单快捷，无需修改任何文件属性。&lt;/p&gt;
+&lt;p&gt;希望这篇文章能帮助到遇到同样问题的朋友！如果还有什么新的方法，欢迎在评论区留言交流。&lt;/p&gt;</description></item></channel></rss>

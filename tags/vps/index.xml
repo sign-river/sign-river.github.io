@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VPS on YSY的博客</title><link>https://sign-river.github.io/tags/vps/</link><description>Recent content in VPS on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml"/><item><title>Clash Verge 个人节点搭建完整教程</title><link>https://sign-river.github.io/p/clash-verge-setup-tutorial/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/clash-verge-setup-tutorial/</guid><description>&lt;h2 id="1-引言"&gt;1. 引言
+&lt;/h2&gt;&lt;p&gt;在互联网日益复杂的今天，拥有一台属于自己的远程服务器（VPS）不仅是程序员的练手必备，更是探索更广阔网络世界的基石。相比于购买现成的机场服务，自建节点最大的优势在于独享带宽、数据安全以及完全的可控性。&lt;/p&gt;
+&lt;p&gt;本教程将手把手教你如何从零开始，搭建一套稳定、高速且现代化的节点服务。我们将采用目前主流且配置简便的方案，即使你对 Linux 命令不熟悉，也能轻松完成。&lt;/p&gt;
+&lt;h2 id="2-服务器选购与基础环境部署"&gt;2. 服务器选购与基础环境部署
+&lt;/h2&gt;&lt;p&gt;一切的开始，我们需要拥有一台位于海外的虚拟服务器（VPS）。本章将指导你完成账号注册、充值以及服务器的各项配置选择。&lt;/p&gt;
+&lt;h3 id="21-平台选择与账号注册"&gt;2.1. 平台选择与账号注册
+&lt;/h3&gt;&lt;p&gt;在众多 VPS 服务商中，本教程首选 Vultr 作为演示平台，主要基于以下几点核心优势：&lt;/p&gt;
+&lt;p&gt;支付便捷：直接支持 支付宝 (Alipay) 扫码付款，无需准备境外信用卡或 PayPal，这是对国内用户最友好的功能之一。&lt;/p&gt;
+&lt;p&gt;性价比高：提供“共享 CPU (Shared CPU)”的基础方案，价格低廉，完全满足个人节点的性能需求。&lt;/p&gt;
+&lt;p&gt;线路优势：拥有洛杉矶 (Los Angeles) 等优质数据中心，作为国际网络枢纽，其信号连接相对畅通，延迟较低。&lt;/p&gt;
+&lt;p&gt;新手福利：新用户注册往往会获赠一定额度的体验金（例如 $300），虽然通常有有效期限制（如 30 天），但足以让你免费完成初期的搭建和测试。&lt;/p&gt;
+&lt;p&gt;注册账号：访问 Vultr 官网（&lt;a class="link" href="https://my.vultr.com/%ef%bc%89%e8%bf%9b%e8%a1%8c%e6%b3%a8%e5%86%8c%e5%b9%b6%e7%99%bb%e5%bd%95" target="_blank" rel="noopener"
+&gt;https://my.vultr.com/）进行注册并登录&lt;/a&gt; 。
+&lt;a href="images/2026-02-11-11-59-25.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-59-25.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+账号充值：&lt;/p&gt;
+&lt;p&gt;登录后点击左侧菜单栏的 Account（账户）。&lt;/p&gt;
+&lt;p&gt;在支付方式中选择 Alipay（支付宝），这对国内用户非常方便。
+&lt;a href="images/2026-02-11-12-02-41.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-02-41.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+填写必要的账单信息（可用拼音），选择充值金额（例如 $10 或 $25），勾选同意条款并点击 Pay with Alipay 完成支付。&lt;/p&gt;
+&lt;p&gt;注：新用户注册有时会获赠 $300 的体验金（有效期通常为一个月），这属于新手福利，过期后会自动失效，不必惊慌。
+&lt;a href="images/2026-02-11-12-03-09.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-03-09.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-部署服务器-deploy-instance"&gt;2.2. 部署服务器 (Deploy Instance)
+&lt;/h3&gt;&lt;p&gt;充值到账后，点击页面右上角的蓝色按钮 Deploy + -&amp;gt; Deploy New Server 开始创建服务器。下面会推荐配置，以确保性价比和兼容性：
+&lt;a href="images/2026-02-11-12-03-21.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-03-21.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+Choose Type（服务器类型）：选择 Shared CPU（共享 CPU）。对于个人节点而言，共享核心的性能完全足够，且价格最实惠。&lt;/p&gt;
+&lt;p&gt;Choose Location（地区选择）：建议选择 Americas -&amp;gt; Los Angeles（洛杉矶）。这里是中美海底光缆的登陆点之一，作为网络枢纽，通常能提供较好的连接速度和信号稳定性。&lt;/p&gt;
+&lt;p&gt;Choose Plan（配置套餐）：根据个人预算选择。通常选择 $5.00/month（1 vCPU, 1GB Memory）的配置即可满足日常 4K 视频浏览等需求。&lt;/p&gt;
+&lt;p&gt;Additional Features（附加功能）：重要提示：请务必找到 Automatic Backups（自动备份）选项并点击 Disable（关闭）。&lt;/p&gt;
+&lt;p&gt;理由：自动备份需要额外收费。对于这种随时可以销毁重建的节点服务器，开启备份不仅浪费钱，也没有太大的实际意义。
+&lt;a href="images/2026-02-11-12-04-37.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-04-37.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+Choose Image（操作系统）：选择 Debian，版本建议选择 12 x64。Debian 系统以轻量、稳定著称，相比其他系统更节省服务器资源。
+&lt;a href="images/2026-02-11-12-06-09.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-06-09.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="23-获取服务器信息"&gt;2.3. 获取服务器信息
+&lt;/h3&gt;&lt;p&gt;点击底部的 Deploy Now 部署后，等待服务器状态从 Installing 变为 Running。点击服务器名称（如 Cloud Instance）进入详情页，请记录下以下两项关键信息，稍后连接服务器时必须用到：
+&lt;a href="images/2026-02-11-12-06-48.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-06-48.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+IP Address：服务器的公网 IP 地址。&lt;/p&gt;
+&lt;p&gt;Password：root 账户的初始密码（点击眼睛图标可显示，点击复制图标可直接复制）&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-12-07-00.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-07-00.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-服务器连接与面板安装"&gt;3. 服务器连接与面板安装
+&lt;/h2&gt;&lt;p&gt;购买好服务器后，我们需要通过 SSH（Secure Shell）远程连接到它，并安装可视化的管理面板 3x-ui。&lt;/p&gt;
+&lt;h3 id="31-建立-ssh-连接"&gt;3.1. 建立 SSH 连接
+&lt;/h3&gt;&lt;p&gt;我们需要使用电脑自带的终端工具连接服务器。&lt;/p&gt;
+&lt;p&gt;右键点击“开始”菜单，选择 Windows PowerShell 或 终端。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-12-26-07.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-26-07.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在终端中输入以下指令（请将 xx.xx.xxx.xxx 替换为你刚才在 Vultr 后台复制的 IP 地址）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh root@xx.xx.xxx.xxx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;连接过程中的注意事项：&lt;/p&gt;
+&lt;p&gt;首次连接确认：输入指令回车后，若提示 Are you sure you want to continue connecting (yes/no/[fingerprint])?，请输入 yes 并回车。&lt;/p&gt;
+&lt;p&gt;输入密码：系统会提示 root@&amp;hellip; password:。此时输入你刚才复制的服务器密码。注意：Linux 系统为了安全，输入密码时屏幕上不会显示任何字符（包括星号），光标也不会移动。这完全正常，输完密码后直接按回车即可。
+&lt;a href="images/2026-02-11-12-29-20.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-29-20.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="32-优化连接稳定性防断连"&gt;3.2. 优化连接稳定性（防断连）
+&lt;/h3&gt;&lt;p&gt;默认情况下，如果 SSH 连接长时间无操作会自动断开。为了避免安装过程中断，建议先执行以下指令设置“心跳包” 。&lt;/p&gt;
+&lt;p&gt;请依次复制以下三行指令，在终端中粘贴并回车执行：&lt;/p&gt;
+&lt;p&gt;Bash
+echo &amp;ldquo;ClientAliveInterval 60&amp;rdquo; &amp;raquo; /etc/ssh/sshd_config
+echo &amp;ldquo;ClientAliveCountMax 3&amp;rdquo; &amp;raquo; /etc/ssh/sshd_config
+systemctl restart ssh
+&lt;a href="images/2026-02-11-12-29-35.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-29-35.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="33-安装-3x-ui-管理面板"&gt;3.3. 安装 3x-ui 管理面板
+&lt;/h3&gt;&lt;p&gt;接下来，我们将安装 3x-ui 面板，它能让我们通过网页轻松管理节点。&lt;/p&gt;
+&lt;p&gt;复制以下一键安装脚本到终端并回车：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-11-12-30-45.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-30-45.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+安装引导设置：
+&lt;p&gt;脚本启动后，会询问是否自定义端口。输入 y 并回车。&lt;/p&gt;
+&lt;p&gt;设置面板端口：建议输入一个好记的数字，例如 54321，然后回车。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-12-31-07.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-31-07.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+安装完成后，终端会显示你的登录信息，包括访问地址（http://IP: 端口） 。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-12-31-30.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-31-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="34-配置防火墙开放端口"&gt;3.4. 配置防火墙（开放端口）
+&lt;/h3&gt;&lt;p&gt;为了让外部网络能访问我们的面板和节点，必须配置服务器防火墙开放相应的端口。&lt;/p&gt;
+&lt;p&gt;请依次执行以下指令：&lt;/p&gt;
+&lt;h4 id="341-更新软件源并安装-ufw-防火墙工具"&gt;3.4.1. 更新软件源并安装 UFW 防火墙工具
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;apt update &amp;amp;&amp;amp; apt install ufw -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id="342-开放必要端口"&gt;3.4.2. 开放必要端口
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw allow ssh # 开放 SSH 连接端口，防止自己被锁在外面 [cite: 34]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw allow 54321 # 开放刚才设置的面板端口 [cite: 35]
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw allow 443 # 开放节点传输端口（后续配置节点时会用到） [cite: 36]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id="343-启用防火墙"&gt;3.4.3. 启用防火墙
+&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ufw enable
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;（如果提示 Command may disrupt existing ssh connections，输入 y 确认即可）
+&lt;a href="images/2026-02-11-12-32-39.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-32-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+至此，服务器端的底层环境已经搭建完毕。&lt;/p&gt;
+&lt;h2 id="4-面板配置与节点创建"&gt;4. 面板配置与节点创建
+&lt;/h2&gt;&lt;p&gt;环境搭建完毕后，我们将离开黑色的命令行界面，转到浏览器中进行可视化的操作。本章的核心任务是配置目前业界公认“隐蔽性”最强、且被封锁概率最低的协议组合：&lt;strong&gt;VLESS + TCP + Reality&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id="41-登录管理面板"&gt;4.1. 登录管理面板
+&lt;/h3&gt;&lt;p&gt;打开您电脑上的浏览器，在地址栏输入访问地址。格式为 &lt;code&gt;http://你的服务器 IP: 端口号&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;例如，如果您的 IP 是 &lt;code&gt;192.168.1.1&lt;/code&gt;，安装时设置的端口是 &lt;code&gt;54321&lt;/code&gt;，则完整地址为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="link" href="http://192.168.1.1:54321" target="_blank" rel="noopener"
+&gt;http://192.168.1.1:54321&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;进入登录页面后，输入我们在上一章安装过程中设置的&lt;strong&gt;用户名&lt;/strong&gt;和&lt;strong&gt;密码&lt;/strong&gt;，点击登录进入系统仪表盘。
+&lt;a href="images/2026-02-11-12-43-54.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-43-54.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="42-添加并配置入站节点"&gt;4.2. 添加并配置入站节点
+&lt;/h3&gt;&lt;p&gt;在左侧菜单栏中找到 &lt;strong&gt;入站列表 (Inbound List)&lt;/strong&gt;，点击进入后，选择页面中的绿色按钮 &lt;strong&gt;添加入站 (Add Inbound)&lt;/strong&gt;。
+&lt;a href="images/2026-02-11-12-44-07.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-44-07.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+此时会弹出一个详细的配置窗口，这是整个教程最关键的一步。请严格按照以下参数进行设置，未提及的选项保持默认即可：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;备注 (Remark)&lt;/strong&gt;：&lt;code&gt;MyVPN&lt;/code&gt; （或者任何您喜欢的名字）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;协议 (Protocol)&lt;/strong&gt;：&lt;code&gt;vless&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;端口 (Port)&lt;/strong&gt;：&lt;code&gt;443&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;注意：这里必须填 443，因为我们在配置防火墙时专门开放了这个端口。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;传输 (Network)&lt;/strong&gt;：&lt;code&gt;tcp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全 (Security)&lt;/strong&gt;：&lt;code&gt;reality&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;重要：选择此项后，下方会出现更多关于伪装的设置选项。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;uTLS&lt;/strong&gt;：&lt;code&gt;chrome&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;目标网站 (Target)&lt;/strong&gt;：&lt;code&gt;www.microsoft.com:443&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SNI 域名 (SNI)&lt;/strong&gt;：&lt;code&gt;www.microsoft.com&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;原理：Reality 协议会将您的流量伪装成访问微软官网，从而在防火墙面前“隐身”。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公钥/私钥 (Public/Private Key)&lt;/strong&gt;：点击输入框下方的 &lt;strong&gt;&lt;code&gt;Get New Cert&lt;/code&gt;&lt;/strong&gt; 按钮，系统会自动生成一串密钥。
+&lt;a href="images/2026-02-11-12-44-19.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-44-19.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;a href="images/2026-02-11-12-44-27.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-44-27.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="43-保存并生效"&gt;4.3. 保存并生效
+&lt;/h3&gt;&lt;p&gt;确认上述所有信息（尤其是端口和协议）填写无误后，点击窗口底部的 &lt;strong&gt;添加 (Create)&lt;/strong&gt; 或&lt;strong&gt;更新 (Create)&lt;/strong&gt; 按钮。&lt;/p&gt;
+&lt;p&gt;添加成功后，您会在列表中看到刚才创建的节点。此时，您的服务器端配置已全部完成，它正静静地等待客户端的连接&lt;/p&gt;
+&lt;h2 id="5-客户端配置与连通性测试"&gt;5. 客户端配置与连通性测试
+&lt;/h2&gt;&lt;p&gt;服务端（VPS）配置完成后，我们还需要在电脑上安装专门的客户端软件，才能将网络流量通过节点进行转发。本教程将以开源、免费且功能强大的 &lt;strong&gt;Clash Verge&lt;/strong&gt; 为例进行演示。&lt;/p&gt;
+&lt;h3 id="51-下载并安装客户端"&gt;5.1. 下载并安装客户端
+&lt;/h3&gt;&lt;p&gt;首先，请下载适配您操作系统的 Clash Verge 客户端。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GitHub 官方下载&lt;/strong&gt;（推荐）：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class="link" href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener"
+&gt;https://github.com/clash-verge-rev/clash-verge-rev/releases&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Windows 用户请下载 &lt;code&gt;.exe&lt;/code&gt; 安装包（通常为 x64-setup.exe），Mac 用户请下载 &lt;code&gt;.dmg&lt;/code&gt; 文件。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="52-导出并转换节点配置"&gt;5.2. 导出并转换节点配置
+&lt;/h3&gt;&lt;p&gt;由于 Clash 软件无法直接识别原始的 VLESS 链接，我们需要借助工具将其转换为 Clash 专用的配置文件（.yaml 格式）。&lt;/p&gt;
+&lt;h4 id="521-获取节点链接"&gt;5.2.1. &lt;strong&gt;获取节点链接&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;回到浏览器中的 &lt;strong&gt;3x-ui 管理面板&lt;/strong&gt;，在 &lt;strong&gt;入站列表&lt;/strong&gt; 中找到刚才创建的节点。
+点击节点左侧的 &lt;strong&gt;菜单图标&lt;/strong&gt;（三个点），选择 &lt;strong&gt;导出链接&lt;/strong&gt;，然后点击复制。
+&lt;a href="images/2026-02-11-12-51-16.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-51-16.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="522-手动创建配置文件"&gt;5.2.2. &lt;strong&gt;手动创建配置文件&lt;/strong&gt;
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;可按照以下方法手动创建 &lt;code&gt;.yaml&lt;/code&gt; 配置文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;第一步：解析 vless 链接&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;复制到的节点链接格式如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vless://{uuid}@{server}:{port}?type={network}&amp;amp;...&amp;amp;pbk={public-key}&amp;amp;fp={fingerprint}&amp;amp;sni={servername}&amp;amp;sid={short-id}#{name}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;以实际链接为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;vless://b71c4e29-d0c6-4906-b6a4-956e7ec2d005@64.64.242.65:443?type=tcp&amp;amp;encryption=none&amp;amp;security=reality&amp;amp;pbk=jJZt-0pxC42THHzelBlhE6ObF_bKkmE_5P3sjdLRpz8&amp;amp;fp=chrome&amp;amp;sni=www.microsoft.com&amp;amp;sid=fe69b17bb8440e&amp;amp;spx=%2F#MyVPN
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;各参数含义如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;链接中的位置&lt;/th&gt;
+&lt;th&gt;参数示例&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;://&lt;/code&gt; 与 &lt;code&gt;@&lt;/code&gt; 之间&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;b71c4e29-...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;UUID（用户身份凭证）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;@&lt;/code&gt; 与 &lt;code&gt;:&lt;/code&gt; 之间&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;64.64.242.65&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;服务器 IP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IP 后的 &lt;code&gt;:&lt;/code&gt; 之后&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;443&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;端口号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;type=&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tcp&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;传输协议&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;pbk=&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;jJZt-0p...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Reality 公钥&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;fp=&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;chrome&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;客户端指纹&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sni=&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;www.microsoft.com&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;伪装域名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sid=&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;fe69b17bb8440e&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Reality Short ID&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;#&lt;/code&gt; 之后&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;MyVPN&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;节点备注名&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;第二步：填入模板&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;新建一个文本文件，将后缀命名为 &lt;code&gt;.yaml&lt;/code&gt;（例如 &lt;code&gt;MyVPN.yaml&lt;/code&gt;），复制以下模板内容，然后将各占位符替换为上表中解析出的对应值：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;port&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;7890&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;socks-port&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;7891&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;allow-lan&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;mode&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;rule&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;log-level&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;info&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;external-controller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;9090&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;rule-providers&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;google&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;http&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;behavior&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;domain&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;path&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;./ruleset/google.yaml&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;86400&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;proxy&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;http&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;behavior&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;domain&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;path&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;./ruleset/proxy.yaml&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;86400&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;direct&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;http&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;behavior&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;domain&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;path&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;./ruleset/direct.yaml&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;86400&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;proxies&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;MyVPN&amp;#34;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# 节点名称，可自定义&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;vless&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;server&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;server }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为服务器 IP&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;port&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;port }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为端口号&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;uuid&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;uuid }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为 UUID&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;network }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为传输协议（如 tcp）&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;tls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;udp&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;flow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;servername&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;sni }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为 sni= 的值&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;client-fingerprint&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;fp }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为 fp= 的值&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;reality-opts&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;public-key&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;public-key }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为 pbk= 的值&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;short-id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;short-id }&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;# ← 替换为 sid= 的值&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;proxy-groups&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;节点选择&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;select&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;proxies&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="s2"&gt;&amp;#34;MyVPN&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;DIRECT&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;rules&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;RULE-SET,google,节点选择&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;RULE-SET,proxy,节点选择&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;RULE-SET,direct,DIRECT&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;GEOIP,CN,DIRECT&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;MATCH,节点选择&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;请务必保存好填写完毕的 &lt;code&gt;.yaml&lt;/code&gt; 文件，下一步导入 Clash Verge 时会用到。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id="53-导入配置到-clash-verge"&gt;5.3. 导入配置到 Clash Verge
+&lt;/h3&gt;&lt;h4 id="531-打开安装好的-clash-verge-软件"&gt;5.3.1. 打开安装好的 &lt;strong&gt;Clash Verge&lt;/strong&gt; 软件
+&lt;/h4&gt;&lt;h4 id="532-点击左侧菜单栏的-订阅-subscription然后点击右上角的-新建-new-按钮"&gt;5.3.2. 点击左侧菜单栏的 &lt;strong&gt;订阅 (Subscription)&lt;/strong&gt;，然后点击右上角的 &lt;strong&gt;新建 (New)&lt;/strong&gt; 按钮
+&lt;/h4&gt;&lt;p&gt;&lt;a href="images/2026-02-11-12-53-42.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-53-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="533-在弹出的窗口中进行如下设置"&gt;5.3.3. 在弹出的窗口中进行如下设置
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;类型 (Type)&lt;/strong&gt;：选择 &lt;code&gt;Local&lt;/code&gt;（本地文件）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;名称 (Name)&lt;/strong&gt;：填写 &lt;code&gt;MyVPN&lt;/code&gt;（或你喜欢的任何名字）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文件 (File)&lt;/strong&gt;：点击 &lt;strong&gt;选择文件&lt;/strong&gt; 按钮，选中刚才下载的 &lt;code&gt;MyVPN.yaml&lt;/code&gt; 文件。
+&lt;a href="images/2026-02-11-12-53-59.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-53-59.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="534-点击-保存-save-按钮"&gt;5.3.4. 点击 &lt;strong&gt;保存 (Save)&lt;/strong&gt; 按钮
+&lt;/h4&gt;&lt;h3 id="54-开启代理与连接测试"&gt;5.4. 开启代理与连接测试
+&lt;/h3&gt;&lt;h4 id="541-选择节点"&gt;5.4.1. &lt;strong&gt;选择节点&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;点击软件左侧菜单栏的 &lt;strong&gt;代理 (Proxies)&lt;/strong&gt;。在顶部的模式切换中选择 &lt;strong&gt;规则 (Rule)&lt;/strong&gt;。此时你应该能在下方列表中看到的节点 &lt;code&gt;MyVPN&lt;/code&gt;。&lt;/p&gt;
+&lt;h4 id="542-连通性测试"&gt;5.4.2. &lt;strong&gt;连通性测试&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;点击节点名称旁边的 &lt;strong&gt;测试图标&lt;/strong&gt;（通常是一个类似 WiFi 信号的图标）。
+&lt;strong&gt;*成功&lt;/strong&gt;：如果显示绿色的数字（例如 &lt;code&gt;187 ms&lt;/code&gt;），代表节点已连通。* &lt;strong&gt;失败&lt;/strong&gt;：如果显示 &lt;code&gt;Timeout&lt;/code&gt;，请检查 VPS 的防火墙端口是否已开放，或配置步骤是否有误。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-12-54-19.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-54-19.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="543-开启系统代理"&gt;5.4.3. &lt;strong&gt;开启系统代理&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;确认连接成功后，点击左侧菜单栏的 &lt;strong&gt;设置 (Settings)&lt;/strong&gt;，找到 &lt;strong&gt;系统代理 (System Proxy)&lt;/strong&gt; 开关并将其&lt;strong&gt;打开&lt;/strong&gt;（变为蓝色）。
+&lt;a href="images/2026-02-11-12-53-09.png" target="_blank"&gt; &lt;img src="images/2026-02-11-12-53-09.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+此时，打开浏览器访问 Google 或 YouTube，如果能顺利加载，恭喜你！你已经成功从零开始搭建了属于自己的高速节点。&lt;/p&gt;</description></item></channel></rss>

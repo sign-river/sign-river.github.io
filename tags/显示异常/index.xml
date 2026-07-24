@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>显示异常 on YSY的博客</title><link>https://sign-river.github.io/tags/%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/</link><description>Recent content in 显示异常 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E6%98%BE%E7%A4%BA%E5%BC%82%E5%B8%B8/index.xml" rel="self" type="application/rss+xml"/><item><title>打开游戏黑屏但音乐正常播放</title><link>https://sign-river.github.io/p/stellaris-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开游戏黑屏但音乐正常播放。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;在电脑设置 &amp;gt; 系统 &amp;gt; 屏幕中关闭 HDR 并重启游戏，如果未生效重启电脑后重试。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开游戏以后界面过大，不显示按钮</title><link>https://sign-river.github.io/p/stellaris-error-11/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-11/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开游戏以后界面过大，不显示按钮。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打开游戏以后界面过大，不显示按钮相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;分辨率问题，退出重进看看有没有效果，如果没有可以参考下面链接的视频删掉指定文件，让系统重新创建一个默认的 (你是佬的话直接改文件也行),如果是正版可以直接去启动器里调整分辨率，或者看显示模式是不是窗口，如果是的话调成全屏。&lt;/p&gt;
+&lt;p&gt;文件位置：&lt;/p&gt;
+&lt;p&gt;C:\Users(你的用户名)\Documents\Paradox Interactive\Stellaris\settings.txt&lt;/p&gt;
+&lt;p&gt;参考视频：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1q14y1v7Jg/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1q14y1v7Jg/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动游戏报错无法创建图形设备:Failed to create a graphics device.</title><link>https://sign-river.github.io/p/paradox-launcher-error-10/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-10/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动游戏报错无法创建图形设备:Failed to create a graphics device.。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;方法一：最实用的办法，如果以前能打开游戏，这次突然打不开游戏了，那就重启电脑，多重启几次，大概率解决该问题，如果不行，再试方法二。&lt;/p&gt;
+&lt;p&gt;方法二：首先同时按【WIN+R】键，打开【运行】对话框。输入【dxdiag】，点【确定】打开【directx 诊断工具】。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在【directx 诊断工具】中切换到【显示】选项卡，如果这三项不是已启用说明出现了问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先在桌面空白处右键选择【新建】-【文本文档】,在文档内输入以下内容后保存&lt;/p&gt;
+&lt;p&gt;Windows Registry Editor Version 5.00&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;EmulationOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;SoftwareOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DirectDraw]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;EmulationOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D\Drivers]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;SoftwareOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将文件名后缀改为.reg 后双击运行该文件，点击确定即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你的文件没有拓展名，打开文件资源管理器，点击【查看】，【显示】，勾选【文件拓展名】即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重复最开始的步骤打开【directx 诊断工具】查看是否修改成功。&lt;/p&gt;
+&lt;p&gt;如果没有生效可能是系统版本过旧不支持无 BOM 的 UTF-8，可以把记事本保存的格式改为 ANSI 后保存并重新运行。&lt;/p&gt;
+&lt;p&gt;如果采用此方法未成功修改注册表，可以选择手动修改，修改前记得备份注册表以备不测。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

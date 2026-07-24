@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SteamCMD on YSY的博客</title><link>https://sign-river.github.io/tags/steamcmd/</link><description>Recent content in SteamCMD on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/steamcmd/index.xml" rel="self" type="application/rss+xml"/><item><title>不断重复正在下载更新，但是进度条不变</title><link>https://sign-river.github.io/p/steamcmd-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;不断重复正在下载更新，但是进度条不变。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="不断重复正在下载更新，但是进度条不变相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用 SteamCMD 时也需要加速器，就像使用 Steam 客户端一样。不过，如果你使用 Steam++ 进行加速，不能直接开启 Steam 的加速模式，而是需要在加速设置中将模式切换为 PAC 模式。或者，如果你有其他梯子，也可以直接使用全局加速模式。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="不断重复正在下载更新，但是进度条不变相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>出现报错 ERROR！Download item xxxxxxxxxx failed(Failure).</title><link>https://sign-river.github.io/p/steamcmd-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;出现报错 ERROR！Download item xxxxxxxxxx failed(Failure).。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该报错常见于两种情况：&lt;/p&gt;
+&lt;p&gt;第一种情况：如果你在输入指令 workshop_download_item 255710 2428316487 (这里取一个不支持匿名用户下载的样例指令) 并按回车后立即报错，说明该 Mod 不支持匿名用户下载，必须使用拥有该游戏的账号登录 SteamCMD 才能正常下载。&lt;/p&gt;
+&lt;p&gt;第二种情况：如果指令执行后等待一段时间才报错，可能是因为 SteamCMD 的超时机制所致。它在设定时间内未完成下载任务会自动判定为失败。此类问题多发生在网络较慢或 Mod 文件较大的情况下，即使实际仍在下载过程中，也可能因未在时限内完成而中断。&lt;/p&gt;
+&lt;p&gt;解决方法：对于第二种情况，可以反复执行相同的下载命令（如：workshop_download_item 255710 2428316487）。每次执行都会在上次中断处继续下载。根据网络状况，可能需要重复多次（如十几次甚至二十次）才能成功完成下载。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>出现报错 Fatal Error: Steam needs to be online to update. Please confirm your network connection and try again</title><link>https://sign-river.github.io/p/steamcmd-error-09/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-09/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;出现报错 Fatal Error: Steam needs to be online to update. Please confirm your network connection and try again。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;开个 VPN 即可，或者开 steam++,细节看报错指南七 -4;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>出现报错:httpclient.cpp (72) : Assertion Failed: Can't use HTTPS because steamcommon was compiled without ENABLE_OPENSSLCONNECTION</title><link>https://sign-river.github.io/p/steamcmd-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;出现报错:httpclient.cpp (72) : Assertion Failed: Can&amp;rsquo;t use HTTPS because steamcommon was compiled without ENABLE_OPENSSLCONNECTION。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;可能是你的版本过旧或者配置文件出了问题，比较简单的解决方案就是，卸载原 steamcmd 并删除残余文件，重新下载 steamcmd 并安装，下载链接：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip" target="_blank" rel="noopener"
+&gt;https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>出现报错:httpclient.cpp (91) : Assertion Failed: Can't use HTTPS because steamcommon was compiled without ENABLE_OPENSSL_CONNECTIO</title><link>https://sign-river.github.io/p/steamcmd-error-06/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-06/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;出现报错:httpclient.cpp (91) : Assertion Failed: Can&amp;rsquo;t use HTTPS because steamcommon was compiled without ENABLE_OPENSSL_CONNECTIO。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该报错常见于两种情况：&lt;/p&gt;
+&lt;p&gt;开启了加速器，但加速模式不当，例如未正确配置为全局或指定代理，可能导致连接异常。此时可尝试关闭加速器并重启 SteamCMD，通常报错会消失。&lt;/p&gt;
+&lt;p&gt;未开启加速器时出现报错，在启用加速器后问题得到解决。这种情况下，建议使用 Steam++ 并启用 PAC 模式进行加速，或使用其他梯子开启全局代理。有关 Steam++ 的具体配置方法，请参考本报错指南中的条目 七 -4。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>出现报错!!! Fatal Error: Steamcmd 需要 250MB 可用磁盘空间用于更新。</title><link>https://sign-river.github.io/p/steamcmd-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;出现报错!!! Fatal Error: Steamcmd 需要 250MB 可用磁盘空间用于更新。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="出现报错!!! Fatal Error: Steamcmd 需要 250MB 可用磁盘空间用于更新。相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有时权限问题可能阻止正确写入磁盘，尝试以管理员身份运行 steamcmd.exe。不过每次重启都需要重新选择以管理员身份运行，想一劳永逸可以右键图标，在属性中勾选以管理员身份运行。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开 steamcmd 后直接闪退</title><link>https://sign-river.github.io/p/steamcmd-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开 steamcmd 后直接闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;当前 SteamCMD 的存放路径中包含中文字符，建议将整个 steamcmd 文件夹移动到不含中文的路径中，例如直接放在 D 盘或 E 盘的根目录下，以避免下载或运行时出现错误。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>登录时无法输入密码，输入密码时不显示字符</title><link>https://sign-river.github.io/p/steamcmd-error-10/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-10/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;登录时无法输入密码，输入密码时不显示字符。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="登录时无法输入密码，输入密码时不显示字符相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在命令行界面输入密码时不会显示任何字符（包括掩码符号），这是系统的正常设计行为而非程序缺陷。表面上密码没输进去，实际上已经输进去了，只是看不见而已。所以你只需要正常输完密码，然后回车就能成功登录了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>每次下载时总会下载之前已经下载过的东西</title><link>https://sign-river.github.io/p/steamcmd-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;每次下载时总会下载之前已经下载过的东西。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;在下载 mod 前删掉 Steamcmd 中的 steamapps 和 userdata 两个文件夹，删之前记得看看 steamapps 文件夹里有没有之前下载完还没来的及移出去的 mod。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>下载到一半 cmd 界面突然闪退</title><link>https://sign-river.github.io/p/steamcmd-error-11/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-11/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;下载到一半 cmd 界面突然闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;加速器没挂好，用稳定点的加速器，一个实际案例是用小黑盒不行，换成 steam++ 后成功下载&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>下载时报错“ERROR! Not logged on.”</title><link>https://sign-river.github.io/p/steamcmd-error-08/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-08/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;下载时报错“ERROR! Not logged on.”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在使用 steamcmd 下载 mod 前需要先登录！登录完才能下载！&lt;/p&gt;
+&lt;p&gt;详细流程可以参考视频：&lt;/p&gt;
+&lt;p&gt;【【群星教程】如何用 steamcmd 下载创意工坊的 mod?】https://www.bilibili.com/video/BV1Ju4y1v7B2/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

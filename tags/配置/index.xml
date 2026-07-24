@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>配置 on YSY的博客</title><link>https://sign-river.github.io/tags/%E9%85%8D%E7%BD%AE/</link><description>Recent content in 配置 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Theme Stack 优化：相关文章推荐配置指南</title><link>https://sign-river.github.io/p/hugo-related-posts-config/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/hugo-related-posts-config/</guid><description>&lt;h2 id="1-问题背景"&gt;1. 问题背景
+&lt;/h2&gt;&lt;p&gt;在使用 Hugo Theme Stack 主题搭建博客时，你可能会发现一个问题：文章底部的&amp;quot;相关文章&amp;quot;推荐有时候并不那么&amp;quot;相关&amp;quot;。&lt;/p&gt;
+&lt;p&gt;比如，一篇关于 &lt;strong&gt;WPS 图片处理技巧&lt;/strong&gt;的文章，可能会被推荐到一篇讲 &lt;strong&gt;Markdown 语法&lt;/strong&gt;的文章下方。虽然它们都属于&amp;quot;效率工具&amp;quot;分类，但实际上是完全不同领域的内容 —— WPS 是办公软件，Markdown 是写作语法，两者八竿子打不着。
+&lt;a href="images/2026-02-11-11-15-08.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-15-08.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+这就是 Hugo 默认相关文章推荐配置带来的问题。&lt;/p&gt;
+&lt;h2 id="2-默认配置分析"&gt;2. 默认配置分析
+&lt;/h2&gt;&lt;p&gt;Hugo 的相关文章功能由 &lt;code&gt;config/_default/related.toml&lt;/code&gt; 文件控制。让我们先看看默认配置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Related contents configuration&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;includeNewer&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;threshold&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;toLower&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="21-配置参数说明"&gt;2.1. 配置参数说明
+&lt;/h3&gt;&lt;h4 id="211-全局配置参数"&gt;2.1.1. 全局配置参数
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;threshold（阈值）&lt;/strong&gt;：60&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;相关性分数的阈值（范围 0-100）&lt;/li&gt;
+&lt;li&gt;只有得分达到或超过 60 分的页面才会被推荐&lt;/li&gt;
+&lt;li&gt;⚠️ 如果阈值设置过高，可能导致推荐内容过少甚至为空&lt;/li&gt;
+&lt;li&gt;建议：内容较少的博客可以设置为 50-60，内容丰富的可以设置为 70-80&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;includeNewer&lt;/strong&gt;：true&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;允许推荐比当前文章发布时间更晚的文章&lt;/li&gt;
+&lt;li&gt;🔄 &lt;strong&gt;动态特性&lt;/strong&gt;：当你发布新文章时，如果它与旧文章相关，会自动出现在旧文章的推荐列表中&lt;/li&gt;
+&lt;li&gt;这意味着旧文章的推荐内容会随着新内容的发布而动态更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;toLower&lt;/strong&gt;：false&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在匹配时不将关键字转换为小写，保持区分大小写&lt;/li&gt;
+&lt;li&gt;例如：标签 &amp;ldquo;Hugo&amp;rdquo; 和 &amp;ldquo;hugo&amp;rdquo; 会被视为不同的标签&lt;/li&gt;
+&lt;li&gt;💡 建议设置为 &lt;code&gt;true&lt;/code&gt; 可以产生更准确的匹配结果（虽会轻微影响性能）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="212-索引与权重配置"&gt;2.1.2. 索引与权重配置
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;tags（标签）&lt;/strong&gt;：权重 100&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用文章 Front Matter 中的 &lt;code&gt;tags&lt;/code&gt; 作为匹配依据&lt;/li&gt;
+&lt;li&gt;在相似度计算中，标签匹配的重要性是 100&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;categories（分类）&lt;/strong&gt;：权重 200&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用文章 Front Matter 中的 &lt;code&gt;categories&lt;/code&gt; 作为匹配依据&lt;/li&gt;
+&lt;li&gt;在相似度计算中，分类匹配的重要性是 200&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;当前配置下，分类的重要性是标签的 2 倍&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="22-hugo-相似度算法说明"&gt;2.2. Hugo 相似度算法说明
+&lt;/h3&gt;&lt;p&gt;⚠️ &lt;strong&gt;重要概念&lt;/strong&gt;：权重不是简单的加分机制！&lt;/p&gt;
+&lt;p&gt;Hugo 使用&lt;strong&gt;加权相似度算法&lt;/strong&gt;来计算文章间的相关性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于每个索引（tags 和 categories），Hugo 会计算两篇文章的&lt;strong&gt;匹配度&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;将各索引的匹配度乘以对应的&lt;strong&gt;权重&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;综合计算出一个 &lt;strong&gt;0-100 的相似度分数&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;只有相似度 ≥ threshold 时才推荐&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;关键点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;权重的&lt;strong&gt;比例&lt;/strong&gt;才是关键，不是绝对值&lt;/li&gt;
+&lt;li&gt;categories 权重 200 vs tags 权重 100，意味着分类的重要性是标签的 &lt;strong&gt;2 倍&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;不是说&amp;quot;有一个相同分类就得 200 分&amp;quot;，而是说分类匹配对最终相似度的影响更大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;实际举例&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;文章 A&lt;/strong&gt;：与当前文章有相同的分类，但标签完全不同&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文章 B&lt;/strong&gt;：与当前文章有相同的标签，但分类不同&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;结果&lt;/strong&gt;：文章 B 的得分会显著高于文章 A，因为它命中了权重更高的索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;结合高阈值的影响&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当 threshold = 80 时，仅靠 categories（权重较低）带来的匹配可能不足以达到 80 分&lt;/li&gt;
+&lt;li&gt;这套配置倾向于只推荐那些&lt;strong&gt;标签高度重合&lt;/strong&gt;的文章，或者&lt;strong&gt;同时在标签和分类上都有重合&lt;/strong&gt;的文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-问题所在"&gt;2.3. 问题所在
+&lt;/h3&gt;&lt;p&gt;在默认配置下，&lt;strong&gt;分类的权重是标签的 2 倍&lt;/strong&gt;（200 vs 100），这导致：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分类匹配在相似度计算中占主导地位&lt;/li&gt;
+&lt;li&gt;所有标注为&amp;quot;效率工具&amp;quot;的文章，即使标签完全不同，也可能因为分类权重过高而被互相推荐&lt;/li&gt;
+&lt;li&gt;所有标注为&amp;quot;深度学习&amp;quot;的文章，即使具体方向不同（理论研究 vs 应用实践），也容易被判定为相关&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;宽泛的分类掩盖了标签的精确性&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-优化方案"&gt;3. 优化方案
+&lt;/h2&gt;&lt;h3 id="31-核心思路"&gt;3.1. 核心思路
+&lt;/h3&gt;&lt;p&gt;我们需要&lt;strong&gt;提高推荐标准&lt;/strong&gt;，让 Hugo 只推荐真正相似的文章。有两个调整方向：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;提高阈值&lt;/strong&gt;：让匹配要求更严格&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调整权重&lt;/strong&gt;：降低分类的重要性，提高标签的重要性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="32-推荐配置"&gt;3.2. 推荐配置
+&lt;/h3&gt;&lt;p&gt;打开 &lt;code&gt;config/_default/related.toml&lt;/code&gt;，修改为以下内容：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Related contents configuration&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;includeNewer&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;threshold&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="c"&gt;# 从 60 提高到 80&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;toLower&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="c"&gt;# 从 100 提高到 200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="c"&gt;# 从 200 降低到 100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="33-为什么这样改"&gt;3.3. 为什么这样改？
+&lt;/h3&gt;&lt;h4 id="331-阈值提升60--80"&gt;3.3.1. 阈值提升（60 → 80）
+&lt;/h4&gt;&lt;p&gt;更高的阈值意味着需要更高的相似度才能被推荐。&lt;/p&gt;
+&lt;h4 id="332-权重反转"&gt;3.3.2. 权重反转
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;标签权重提升（100 → 200）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标签通常更具体、更能代表文章的核心内容&lt;/li&gt;
+&lt;li&gt;例如：&amp;ldquo;PyTorch&amp;rdquo;、&amp;ldquo;WPS&amp;rdquo;、&amp;ldquo;Markdown&amp;rdquo; 这些标签直接指向具体技术&lt;/li&gt;
+&lt;li&gt;提高权重后，标签匹配对相似度的影响更大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;分类权重降低（200 → 100）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分类往往比较宽泛（如&amp;quot;效率工具&amp;quot;、&amp;ldquo;学习笔记&amp;rdquo;）&lt;/li&gt;
+&lt;li&gt;降低权重后，仅凭分类相同不足以达到高相似度&lt;/li&gt;
+&lt;li&gt;现在标签的重要性是分类的 2 倍（200:100）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-实施步骤"&gt;4. 实施步骤
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;打开配置文件&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;config/_default/related.toml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;修改配置&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将 &lt;code&gt;threshold&lt;/code&gt; 从 60 改为 80&lt;/li&gt;
+&lt;li&gt;交换 &lt;code&gt;tags&lt;/code&gt; 和 &lt;code&gt;categories&lt;/code&gt; 的权重
+&lt;a href="images/2026-02-11-11-12-42.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-12-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;保存并提交&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果使用 GitHub Pages，推送到仓库会自动部署&lt;/li&gt;
+&lt;li&gt;如果本地测试，运行 &lt;code&gt;hugo server&lt;/code&gt; 查看效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;验证效果&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打开博客的任意文章页面&lt;/li&gt;
+&lt;li&gt;滚动到底部查看&amp;quot;相关文章&amp;quot;推荐&lt;/li&gt;
+&lt;li&gt;检查推荐的文章是否更贴合主题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="5-总结"&gt;5. 总结
+&lt;/h2&gt;&lt;p&gt;Hugo 的相关文章推荐功能非常强大，但默认配置对于内容多样化的博客来说不够精确。通过调整 &lt;code&gt;threshold&lt;/code&gt;（阈值）和 &lt;code&gt;weight&lt;/code&gt;（权重），我们可以让推荐结果更加智能。&lt;/p&gt;
+&lt;p&gt;希望这篇教程能帮助你打造一个更好的阅读体验！如果有任何问题，欢迎在评论区讨论。&lt;/p&gt;
+&lt;h2 id="6-参考资料"&gt;6. 参考资料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://gohugo.io/content-management/related/" target="_blank" rel="noopener"
+&gt;Hugo Related Content 官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://stack.jimmycai.com/" target="_blank" rel="noopener"
+&gt;Stack 主题文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>新电脑 Git 初始化配置指南</title><link>https://sign-river.github.io/p/git-initial-setup/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/git-initial-setup/</guid><description>&lt;h2 id="1-问题背景"&gt;1. 问题背景
+&lt;/h2&gt;&lt;p&gt;在新电脑上使用 Git 时，常常会因为缺少必要配置而遇到各种问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无法连接 GitHub（网络问题）&lt;/li&gt;
+&lt;li&gt;提交代码时提示缺少用户信息&lt;/li&gt;
+&lt;li&gt;中文文件名显示为乱码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文整理了新机 Git 初始化的完整流程，帮助你快速配置好开发环境。&lt;/p&gt;
+&lt;h2 id="2-配置代理"&gt;2. 配置代理
+&lt;/h2&gt;&lt;p&gt;如果你需要使用代理工具访问 GitHub，首先需要配置 Git 的网络代理。&lt;/p&gt;
+&lt;h3 id="21-查找代理端口"&gt;2.1. 查找代理端口
+&lt;/h3&gt;&lt;p&gt;不同的代理工具使用的端口不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Clash&lt;/strong&gt;：默认端口 &lt;code&gt;7890&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clash Verge&lt;/strong&gt;：默认端口 &lt;code&gt;7897&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;其他工具：可在工具的设置中查看
+&lt;a href="images/2026-02-11-11-28-12.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-28-12.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="22-设置代理"&gt;2.2. 设置代理
+&lt;/h3&gt;&lt;p&gt;在 Git Bash 或终端中输入以下命令（将 &lt;code&gt;7897&lt;/code&gt; 替换为你的实际端口）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global http.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global https.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="23-验证配置"&gt;2.3. 验证配置
+&lt;/h3&gt;&lt;p&gt;输入以下命令查看配置是否生效：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果看到以下输出，说明代理配置成功：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;http.proxy=http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;https.proxy=http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-11-11-28-50.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-28-50.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="3-配置用户信息"&gt;3. 配置用户信息
+&lt;/h2&gt;&lt;p&gt;Git 在提交代码时需要记录提交者的身份信息。&lt;/p&gt;
+&lt;h3 id="31-设置用户名和邮箱"&gt;3.1. 设置用户名和邮箱
+&lt;/h3&gt;&lt;p&gt;在引号内填入你的 GitHub 用户名和邮箱（建议使用 GitHub 绑定的邮箱）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.name &lt;span class="s2"&gt;&amp;#34;你的 GitHub 用户名&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.email &lt;span class="s2"&gt;&amp;#34;your-email@example.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.name &lt;span class="s2"&gt;&amp;#34;sign-river&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.email &lt;span class="s2"&gt;&amp;#34;example@gmail.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="4-解决中文文件名乱码问题"&gt;4. 解决中文文件名乱码问题
+&lt;/h2&gt;&lt;p&gt;如果你的项目中有中文文件名，Git 默认会将其转义为八进制编码，显示为乱码（如 &lt;code&gt;\344\270\255\346\226\207&lt;/code&gt;）。&lt;/p&gt;
+&lt;h3 id="41-设置显示中文"&gt;4.1. 设置显示中文
+&lt;/h3&gt;&lt;p&gt;执行以下命令禁用路径引号转义：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global core.quotepath &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置后，&lt;code&gt;git status&lt;/code&gt; 等命令就能正常显示中文文件名了。&lt;/p&gt;
+&lt;h2 id="5-完整配置脚本"&gt;5. 完整配置脚本
+&lt;/h2&gt;&lt;p&gt;如果你想一次性完成所有配置，可以复制以下命令并修改对应的值：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 配置代理（根据实际端口修改）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global http.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global https.proxy http://127.0.0.1:7897
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 配置用户信息（替换为你的信息）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.name &lt;span class="s2"&gt;&amp;#34;你的用户名&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.email &lt;span class="s2"&gt;&amp;#34;your-email@example.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 解决中文乱码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global core.quotepath &lt;span class="nb"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 查看所有配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="6-常见问题"&gt;6. 常见问题
+&lt;/h2&gt;&lt;h3 id="61-q1-如何取消代理配置"&gt;6.1. Q1: 如何取消代理配置？
+&lt;/h3&gt;&lt;p&gt;如果不再需要代理，可以使用以下命令移除：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --unset http.proxy
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --unset https.proxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="62-q2-如何修改已有的配置"&gt;6.2. Q2: 如何修改已有的配置？
+&lt;/h3&gt;&lt;p&gt;直接重新执行设置命令即可覆盖旧配置，或者使用以下命令编辑配置文件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global --edit
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="63-q3-配置是否对所有仓库生效"&gt;6.3. Q3: 配置是否对所有仓库生效？
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;--global&lt;/code&gt; 参数表示全局配置，对当前用户的所有 Git 仓库生效。如果只想针对某个仓库配置，可以去掉 &lt;code&gt;--global&lt;/code&gt; 参数，在仓库目录下执行命令。&lt;/p&gt;
+&lt;h2 id="7-总结"&gt;7. 总结
+&lt;/h2&gt;&lt;p&gt;完成以上配置后，你的新电脑就可以正常使用 Git 进行开发了。这些配置只需要执行一次，之后就可以专注于代码本身。&lt;/p&gt;
+&lt;p&gt;如果遇到其他 Git 相关问题，欢迎在评论区讨论！&lt;/p&gt;</description></item></channel></rss>

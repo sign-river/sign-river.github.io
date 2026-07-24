@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>订阅 on YSY的博客</title><link>https://sign-river.github.io/tags/%E8%AE%A2%E9%98%85/</link><description>Recent content in 订阅 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E8%AE%A2%E9%98%85/index.xml" rel="self" type="application/rss+xml"/><item><title>如何查找 Gemini 订阅截止日期</title><link>https://sign-river.github.io/p/find-gemini-subscription-expiry/</link><pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/find-gemini-subscription-expiry/</guid><description>&lt;p&gt;Gemini（原 Google One AI）的订阅到期时间在网页里藏得比较刁钻，第一次找往往要翻半天。这里记一下&lt;strong&gt;具体查找路径&lt;/strong&gt;，方便大家查找。&lt;/p&gt;
+&lt;h2 id="1-第一步设置和帮助--个人使用场景"&gt;1. 第一步：设置和帮助 → 个人使用场景
+&lt;/h2&gt;&lt;p&gt;在 &lt;a class="link" href="https://gemini.google.com" target="_blank" rel="noopener"
+&gt;Gemini&lt;/a&gt; 页面，&lt;strong&gt;唯一的入口&lt;/strong&gt;是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击左侧边栏底部的 &lt;strong&gt;「设置和帮助」&lt;/strong&gt;，展开或进入设置相关页面。&lt;/li&gt;
+&lt;li&gt;在随之出现的内容里进入 &lt;strong&gt;「个人使用场景」&lt;/strong&gt;（Personal Usage Scenarios）。&lt;/li&gt;
+&lt;li&gt;在该页的 &lt;strong&gt;「你的付费内容」&lt;/strong&gt; 区块中，点击下方的 &lt;strong&gt;「管理与你的 Google 账号关联的订阅」&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;点击后会跳转到 Google 账号的订阅页面。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-24-14-08-26.png" target="_blank"&gt; &lt;img src="images/2026-02-24-14-08-26.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="2-第二步在-google-账号订阅页查看续订日期"&gt;2. 第二步：在 Google 账号订阅页查看续订日期
+&lt;/h2&gt;&lt;p&gt;跳转后进入的是 &lt;strong&gt;Google 账号 → 订阅&lt;/strong&gt; 页面。页面顶部有返回箭头和「订阅」标题。&lt;/p&gt;
+&lt;p&gt;找到 Google One 一栏，这里的续订日期就是你会员到期的时间&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-24-14-10-52.png" target="_blank"&gt; &lt;img src="images/2026-02-24-14-10-52.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-小结"&gt;3. 小结
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;路径总结&lt;/strong&gt;：打开 Gemini → &lt;strong&gt;设置和帮助&lt;/strong&gt; → &lt;strong&gt;个人使用场景&lt;/strong&gt; → 点击「管理与你的 Google 账号关联的订阅」→ 在跳转后的「订阅」页中，看「由 Google 管理」里对应订阅卡片上的 &lt;strong&gt;「续订日期」&lt;/strong&gt; 即可。&lt;/p&gt;</description></item></channel></rss>

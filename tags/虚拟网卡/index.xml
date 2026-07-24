@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>虚拟网卡 on YSY的博客</title><link>https://sign-river.github.io/tags/%E8%99%9A%E6%8B%9F%E7%BD%91%E5%8D%A1/</link><description>Recent content in 虚拟网卡 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E8%99%9A%E6%8B%9F%E7%BD%91%E5%8D%A1/index.xml" rel="self" type="application/rss+xml"/><item><title>网卡安装过程中卡死，无法安装虚拟网卡</title><link>https://sign-river.github.io/p/multiplayer-accelerator-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/multiplayer-accelerator-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;网卡安装过程中卡死，无法安装虚拟网卡。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;目前可行案例：用网卡修复工具修复后重新运行安装程序&lt;/p&gt;
+&lt;p&gt;工具链接：&lt;/p&gt;
+&lt;p&gt;夸克：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/3b392d315d13" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/3b392d315d13&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;百度：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1RvH_OEHGykazxGJj6RcIIQ?pwd=xxnx" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1RvH_OEHGykazxGJj6RcIIQ?pwd=xxnx&lt;/a&gt; 提取码：xxnx&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>已经安装网卡但是仍报错”未检测到虚拟网卡！请先安装目录下的 tap-windows-9.9.2.3.exe”</title><link>https://sign-river.github.io/p/multiplayer-accelerator-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/multiplayer-accelerator-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;已经安装网卡但是仍报错”未检测到虚拟网卡！请先安装目录下的 tap-windows-9.9.2.3.exe”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="已经安装网卡但是仍报错”未检测到虚拟网卡！请先安装目录下的 tap-windows-9.9.2.3.exe”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="已经安装网卡但是仍报错”未检测到虚拟网卡！请先安装目录下的 tap-windows-9.9.2.3.exe”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;出现该问题通常是因为电脑上安装了某些可能影响网卡的软件，如银行业务程序等。这些软件可能会屏蔽虚拟网卡（例如 VPN、虚拟机或其他网络虚拟化工具），以防范安全风险或欺诈行为。解决方法是卸载这些软件，若卸载后问题仍未解决，请尝试重启电脑。如果某些软件对您非常重要，无法卸载，建议换用其他设备进行游戏。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器</title><link>https://sign-river.github.io/p/multiplayer-accelerator-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/multiplayer-accelerator-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;虚拟网卡在加速器没连上时显示被拔出是正常现象，连接不上节点多半是配置文件过时了，加速器节点的服务器或者密码换了你不知道，去下载最新的加速器即可。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>下载失败 on YSY的博客</title><link>https://sign-river.github.io/tags/%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5/</link><description>Recent content in 下载失败 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5/index.xml" rel="self" type="application/rss+xml"/><item><title>不断重复正在下载更新，但是进度条不变</title><link>https://sign-river.github.io/p/steamcmd-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;不断重复正在下载更新，但是进度条不变。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="不断重复正在下载更新，但是进度条不变相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用 SteamCMD 时也需要加速器，就像使用 Steam 客户端一样。不过，如果你使用 Steam++ 进行加速，不能直接开启 Steam 的加速模式，而是需要在加速设置中将模式切换为 PAC 模式。或者，如果你有其他梯子，也可以直接使用全局加速模式。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="不断重复正在下载更新，但是进度条不变相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>出现报错 ERROR！Download item xxxxxxxxxx failed(Failure).</title><link>https://sign-river.github.io/p/steamcmd-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;出现报错 ERROR！Download item xxxxxxxxxx failed(Failure).。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该报错常见于两种情况：&lt;/p&gt;
+&lt;p&gt;第一种情况：如果你在输入指令 workshop_download_item 255710 2428316487 (这里取一个不支持匿名用户下载的样例指令) 并按回车后立即报错，说明该 Mod 不支持匿名用户下载，必须使用拥有该游戏的账号登录 SteamCMD 才能正常下载。&lt;/p&gt;
+&lt;p&gt;第二种情况：如果指令执行后等待一段时间才报错，可能是因为 SteamCMD 的超时机制所致。它在设定时间内未完成下载任务会自动判定为失败。此类问题多发生在网络较慢或 Mod 文件较大的情况下，即使实际仍在下载过程中，也可能因未在时限内完成而中断。&lt;/p&gt;
+&lt;p&gt;解决方法：对于第二种情况，可以反复执行相同的下载命令（如：workshop_download_item 255710 2428316487）。每次执行都会在上次中断处继续下载。根据网络状况，可能需要重复多次（如十几次甚至二十次）才能成功完成下载。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>每次下载时总会下载之前已经下载过的东西</title><link>https://sign-river.github.io/p/steamcmd-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;每次下载时总会下载之前已经下载过的东西。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;在下载 mod 前删掉 Steamcmd 中的 steamapps 和 userdata 两个文件夹，删之前记得看看 steamapps 文件夹里有没有之前下载完还没来的及移出去的 mod。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>下载到一半 cmd 界面突然闪退</title><link>https://sign-river.github.io/p/steamcmd-error-11/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-11/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;下载到一半 cmd 界面突然闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;加速器没挂好，用稳定点的加速器，一个实际案例是用小黑盒不行，换成 steam++ 后成功下载&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>下载时报错“ERROR! Not logged on.”</title><link>https://sign-river.github.io/p/steamcmd-error-08/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steamcmd-error-08/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;下载时报错“ERROR! Not logged on.”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="下载时报错“ERROR! Not logged on.”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在使用 steamcmd 下载 mod 前需要先登录！登录完才能下载！&lt;/p&gt;
+&lt;p&gt;详细流程可以参考视频：&lt;/p&gt;
+&lt;p&gt;【【群星教程】如何用 steamcmd 下载创意工坊的 mod?】https://www.bilibili.com/video/BV1Ju4y1v7B2/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏</title><link>https://sign-river.github.io/p/paradox-launcher-error-21/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-21/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="在 p 社启动器无法添加已经下载完成的群星游戏，选择目录后显示生成错误，所选目录中没有已安装的游戏相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先只有从 Steam 里打开 p 社启动器，启动器才能显示拥有游戏 stellaris，直接从启动器快捷方式打开启动器，启动器里没有 stellaris，这是正常现象&lt;/p&gt;
+&lt;p&gt;如果你从 Steam 打开启动器，但启动器里还是没有游戏，解决方案如下：&lt;/p&gt;
+&lt;p&gt;去 p 社启动器官网下载最新的启动器安装程序，安装一遍即可，官网链接：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;p 社启动器官网需要挂梯子，如果打不开官网可以去群文件里找，在”p 社最新启动器下载”文件夹里。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

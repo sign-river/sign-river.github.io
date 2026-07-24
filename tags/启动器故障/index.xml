@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>启动器故障 on YSY的博客</title><link>https://sign-river.github.io/tags/%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%85%E9%9A%9C/</link><description>Recent content in 启动器故障 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E5%90%AF%E5%8A%A8%E5%99%A8%E6%95%85%E9%9A%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>P 社启动器总是更新失败</title><link>https://sign-river.github.io/p/paradox-launcher-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;P 社启动器总是更新失败。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;到官网下启动器安装包，或者直接下群里的安装包，如果群里的安装包跟不上时代了记得提醒群主更新&lt;/p&gt;
+&lt;p&gt;官网链接：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装教程：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1tEJmz5EVk/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1tEJmz5EVk/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开启动器报错启动程序错误：无法启动启动器:bootstrapper error :couldn't start launcher</title><link>https://sign-river.github.io/p/paradox-launcher-error-14/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-14/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开启动器报错启动程序错误：无法启动启动器:bootstrapper error :couldn&amp;rsquo;t start launcher。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打开启动器报错启动程序错误：无法启动启动器:bootstrapper error :couldn't start launcher 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果在启动启动器时看到这样的错误，则说明防病毒程序发挥了作用，这意味着您的防病毒程序将文件 bootstrapper.exe 标记为潜在病毒并将其隔离。&lt;/p&gt;
+&lt;p&gt;要解决此问题，请执行以下操作：&lt;/p&gt;
+&lt;p&gt;打开防病毒程序并查看隔离列表（某些程序称之为病毒箱）。如果文件在那里，请恢复它并将其标记为安全，然后启动游戏，它应该可以正常工作。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开启动器时报错无法找到配置文件。”Unable to locate the configuration file”</title><link>https://sign-river.github.io/p/paradox-launcher-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开启动器时报错无法找到配置文件。”Unable to locate the configuration file”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打开启动器时报错无法找到配置文件。”Unable to locate the configuration file”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;很大概率因为是启动器版本更新了，生成了新的文件夹，你之前打的启动器 dlc 补丁还在旧文件夹里。这个问题按照教程重新在新文件里打一遍补丁就好了，比如之前在 2023.12 文件夹里打了补丁，启动器更新后在 2023.13.1 文件夹里重新打一遍即可，如果最新版本的文件夹里没有 resource 文件夹，说明你的启动器还没有更新到这个版本，按照日期找第二新的文件夹即可，如果分不清哪个是最新的就把能打补丁的文件都打一遍补丁。不过从 2024 版本的启动器开始这个报错可能移除了，改为了本节第 3 条报错。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打开启动器时报错无法找到配置文件。”Unable to locate the configuration file”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器 DLC 列表出现警告，无法确认此 DLC 的拥有者</title><link>https://sign-river.github.io/p/paradox-launcher-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器 DLC 列表出现警告，无法确认此 DLC 的拥有者。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="启动器 DLC 列表出现警告，无法确认此 DLC 的拥有者相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;正常情况不影响使用，只是不美观，想消掉这个警告可以看教程视频，跟着操作一遍就好&lt;/p&gt;
+&lt;p&gt;【【群星教程】群星 Stellaris-V3.14.1DLC 保姆级安装演示】https://www.bilibili.com/video/BV1rW4vetEEN/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器安装报错 2503</title><link>https://sign-river.github.io/p/paradox-launcher-error-06/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-06/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器安装报错 2503。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器安装报错 2503 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将安装包移动至 D 盘盘符下，方便操作&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动器安装报错 2503 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;右键点击安装包，点击属性，选择安全选项卡，复制这里的路径，比如我这里的路径是 D:\paradox-launcher-installer-2024_12.msi&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动器安装报错 2503 相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;同时按下 Shift+Ctrl+Esc，或者右键 windows，点击任务管理器选项打开任务管理器 (以任何方式打开任务管理器都可以),点击运行新任务，在文本框内输入刚刚复制的路径，勾选以系统管理员权限创建此任务，然后点击确定，之后跟着安装流程正常安装即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动器安装报错 2503 相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动器安装报错 2503 相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动器安装报错 2503 相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器报错“游戏数据访问错误。我们没有游戏数据目录的读写权限。请联系支持人员”</title><link>https://sign-river.github.io/p/paradox-launcher-error-08/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-08/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器报错“游戏数据访问错误。我们没有游戏数据目录的读写权限。请联系支持人员”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器报错“游戏数据访问错误。我们没有游戏数据目录的读写权限。请联系支持人员”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;方法一：&lt;/p&gt;
+&lt;p&gt;转到 Windows 安全中心&lt;/p&gt;
+&lt;p&gt;在“病毒和威胁防护设置”下，点击“管理设置”&lt;/p&gt;
+&lt;p&gt;向下滚动到“受控文件夹访问”，然后单击“管理受控文件夹访问权限”&lt;/p&gt;
+&lt;p&gt;点击“允许应用通过受控文件夹访问”&lt;/p&gt;
+&lt;p&gt;点击“+添加允许的应用程序”，然后点击“浏览所有应用程序”&lt;/p&gt;
+&lt;p&gt;将以下文件添加进去&lt;/p&gt;
+&lt;p&gt;C:\Users(用户)\用户名\AppData\Local\Programs\Paradox Interactive\launcher，在其中找到你当前启动器版本的文件，如 launcher-v2.2024.10，进入该文件夹，添加文件 Paradox Launcher.exe。上述是默认路径，如果你启动器安装到了其他的地方，按照你自己的路径即可。&lt;/p&gt;
+&lt;p&gt;在 Steam 的库中右键 stellaris 图标，管理-&amp;gt;浏览本地文件，找到 dowser.exe 和 stellaris.exe，把它们添加进去&lt;/p&gt;
+&lt;p&gt;回到 windows 安全中心，在”勒索软件防护”下，再次执行上述操作&lt;/p&gt;
+&lt;p&gt;方法二：&lt;/p&gt;
+&lt;p&gt;如果感到 windows 安全防护没有必要存在，我们可以直接把它关掉一劳永逸&lt;/p&gt;
+&lt;p&gt;同时按下 win+R，输入 gpedit.msc，打开策略组编辑器&lt;/p&gt;
+&lt;p&gt;通过计算机配置&amp;raquo;管理模版&amp;raquo;windows 组件&amp;raquo;Microsoft Defender 防病毒&lt;/p&gt;
+&lt;p&gt;在右侧找到”允许反恶意软件服务始终保持运行状态”,双击打开，选择已禁用，点击确定即可&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器打开时报错:Steam 运行时通讯错误</title><link>https://sign-river.github.io/p/paradox-launcher-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器打开时报错:Steam 运行时通讯错误。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器打开时报错:Steam 运行时通讯错误相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;启动器版本更新了，在最新版本的启动器文件夹里打一遍补丁就好了，如果你不知道什么是最新版本的文件夹，那你就照着打 dlc 和补丁的视频教程重新做一遍，细节可以参考第 2 条报错。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.</title><link>https://sign-river.github.io/p/paradox-launcher-error-13/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-13/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;情况一：电脑上缺少启动器，或者卸载启动器后有部分残留，需要重装启动器&lt;/p&gt;
+&lt;p&gt;下载 p 社启动器安装包 paradox-launcher-installer-2024_11.msi，打开后点击 remove 删掉当前启动器。(最好下载最新版本的安装包)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;再次打开安装包，重新安装 p 社启动器，尽量不要修改启动器的安装位置&lt;/p&gt;
+&lt;p&gt;安装完成后重新打开游戏即可&lt;/p&gt;
+&lt;p&gt;情况二：启动器文件夹没有足够的权限，需要修改文件夹权限&lt;/p&gt;
+&lt;p&gt;根据报错里的路径找到 Paradox Interactive 文件夹，这里我用我的电脑做一个演示&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;右键文件夹，点击属性&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;切换到“安全”选项卡，点击编辑&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择当前使用的账户或“Everyone”。如果不确定使用的是哪个账户，也不必担心，可以逐一修改所有账户的权限，简单来说就是全改。然后勾选“完全控制”下的“允许”单选框，勾选后其他“允许”框会自动选中。最后点击“确定”。我的电脑上由于文档权限继承自上级文件夹，所以选项是灰色的。如果你是根据报错条目找到这个解决方案的，那你的情况应该是单选框没有勾选，勾选后会显示绿色，和图片中的颜色不同，但不用担心，按照前面说的操作即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器启动时报错找到了 Paradox Launcher 的安装，但无法正常工作。您是否想重新安装？:A Paradox Launcher installation was found, but it's not working.Would you like to reinstall?</title><link>https://sign-river.github.io/p/paradox-launcher-error-24/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-24/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器启动时报错找到了 Paradox Launcher 的安装，但无法正常工作。您是否想重新安装？:A Paradox Launcher installation was found, but it&amp;rsquo;s not working.Would you like to reinstall?。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器启动时报错找到了 Paradox Launcher 的安装，但无法正常工作。您是否想重新安装？:A Paradox Launcher installation was found, but it's not working.Would you like to reinstall？相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击否后会出现两种不同的报错&lt;/p&gt;
+&lt;p&gt;情况一：无法找到有效的启动器安装&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动器启动时报错找到了 Paradox Launcher 的安装，但无法正常工作。您是否想重新安装？:A Paradox Launcher installation was found, but it's not working.Would you like to reinstall？相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;详细解决方案请跳转启动器打开时报错找不到有效的 Paradox Launcher 安装:Oops!Could not locate a valid installation of the Paradox Launcher.&lt;/p&gt;
+&lt;p&gt;情况二：无法启动 Paradox Launcher&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动器启动时报错找到了 Paradox Launcher 的安装，但无法正常工作。您是否想重新安装？:A Paradox Launcher installation was found, but it's not working.Would you like to reinstall？相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;详细解决方案请跳转无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径)&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器数据库错误，数据库迁移失败</title><link>https://sign-river.github.io/p/paradox-launcher-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器数据库错误，数据库迁移失败。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="启动器数据库错误，数据库迁移失败相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该问题一般出现在安装新启动器之后，在大部分情况下，关闭启动器重新启动后该报错会消失。如果该报错频繁弹出，可根据报错提示，按照路径前往文件夹&lt;/p&gt;
+&lt;p&gt;C:\用户\（你的用户名）\文档\Paradox Interactive\Stellaris&lt;/p&gt;
+&lt;p&gt;找到文件 launcher-v2.sqlite，然后删除掉它，之后重新启动启动器，问题解决。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径)</title><link>https://sign-river.github.io/p/paradox-launcher-error-25/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-25/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径)。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径) 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这两个报错捆绑出现，第一条报错提示系统检测到你已经安装了 Paradox 启动器，但无法正常启动。第二条报错进一步说明了问题的原因，具体内容为：操作需要管理员权限（&amp;ldquo;The requested operation requires elevation&amp;rdquo;）。通过分析报错中的路径 C:\Users\86147\AppData\Local\Programs\Paradox Interactive\launcher\bootstrapper-v2.exe，可以确定问题出在启动器的引导程序 bootstrapper-v2.exe。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，请按照以下步骤操作：&lt;/p&gt;
+&lt;p&gt;找到 bootstrapper-v2.exe 文件，右键点击并选择“属性”。&lt;/p&gt;
+&lt;p&gt;转到“兼容性”选项卡，取消选中“以管理员身份运行此程序”。&lt;/p&gt;
+&lt;p&gt;点击“应用”并保存更改。&lt;/p&gt;
+&lt;p&gt;之所以会出现这个报错，是因为启动器引导程序被设置为以管理员身份运行，而 Steam 启动时默认以普通权限运行。由于普通权限的 Steam 无法调用需要管理员权限的启动器引导程序，因此导致启动失败。&lt;/p&gt;
+&lt;p&gt;如果你遇到类似的报错，虽然具体细节可能不同，但可以根据上述逻辑进行推理，找出问题所在并采取相应的解决方案。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径) 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.</title><link>https://sign-river.github.io/p/paradox-launcher-error-18/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-18/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。&lt;/p&gt;
+&lt;p&gt;最优先的方法是下载 Windows Installer 修复工具（疑难解答工具）并进行修复，下载网址为&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://support.microsoft.com/zh-cn/topic/2438651" target="_blank" rel="noopener"
+&gt;https://support.microsoft.com/zh-cn/topic/2438651&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者直接在网盘下载&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/a05bf32ce69b" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/a05bf32ce69b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：9a9b&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开程序安装和卸载疑难解答程序后点下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择安装&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到 Paradox Launcher v2 点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击是，尝试卸载&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重新进行启动器的安装，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。之后右键点击属性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在兼容性选项卡中勾选以管理员身份运行此程序，点击应用，之后重新运行安装程序安装启动器。&lt;/p&gt;
+&lt;p&gt;如果问题没有解决，请手动删除以下文件夹：&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;之后再重新运行安装程序，如果有修复或卸载选项，选择 uninstall(卸载),等待卸载完成后再重新安装。&lt;/p&gt;
+&lt;p&gt;注意安装路径没事不要改，改了路径出问题以后不好修&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="无法删除旧版本的 Paradox Launcher v2:The older version of Paradox Launcher v2 cannot be removed. Contact your technical support group.相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果成功解决了启动器无法下载或卸载的问题，并成功安装了启动器，但点击启动器图标后无法打开启动器：比如出现双击启动器图标，但是启动器无反应的情况，虽然在任务管理器中可以看到启动器正在运行，但是实际上并没有打开启动器。另一种情况是在 Steam 中直接启动游戏时，点击“开始游戏”并等待一段时间后，启动器未能打开，且按钮又恢复为“开始游戏”,或者干脆卡在那里不动了。遇到这两种情况，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。如果一切正常就不用管这段，可以直接去游玩了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>无法找到有效的 p 社启动器文件:Could not locate a valid installation of the Paradox Launcher</title><link>https://sign-river.github.io/p/paradox-launcher-error-22/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-22/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;无法找到有效的 p 社启动器文件:Could not locate a valid installation of the Paradox Launcher。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="无法找到有效的 p 社启动器文件:Could not locate a valid installation of the Paradox Launcher 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。运行安装程序后，先卸载旧版启动器，再安装新版启动器即可。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

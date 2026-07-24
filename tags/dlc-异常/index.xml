@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DLC 异常 on YSY的博客</title><link>https://sign-river.github.io/tags/dlc-%E5%BC%82%E5%B8%B8/</link><description>Recent content in DLC 异常 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/dlc-%E5%BC%82%E5%B8%B8/index.xml" rel="self" type="application/rss+xml"/><item><title>打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活</title><link>https://sign-river.github.io/p/stellaris-dlc-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;去游戏根目录，找到 dlc 文件夹，进去把所有 dlc 文件全删掉，然后下载 dlc 一键安装程序一键安装一下。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;记得只删里面的文件，不要把文件夹也删了&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;dlc 一键安装程序下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://gitlink.org.cn/signriver/file-warehouse/releases/download/v/Stellaris-DLC-Helper-v1.0.5.zip" target="_blank" rel="noopener"
+&gt;https://gitlink.org.cn/signriver/file-warehouse/releases/download/v/Stellaris-DLC-Helper-v1.0.5.zip&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活</title><link>https://sign-river.github.io/p/stellaris-dlc-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;确认下你下载的补丁包对不对的上版本，如果你 4.0 游戏下载 3.14 版本的补丁包，肯定会缺失 4.0 才出的新 dlc.群文件有全 dlc+ 补丁包，升级包和单独 dlc 包，如果你不清楚该下哪个包，下当前游戏版本对应的全 dlc 补丁包即可。&lt;/p&gt;
+&lt;p&gt;另外如果你确实下载的是当前版本对应的补丁包，那就去游戏根目录下的 dlc 文件夹里看看各个 dlc 子文件夹是否存在文件夹嵌套现象，如下图&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开 &lt;code&gt;dlc039_stargazer&lt;/code&gt; 文件夹后，应直接显示所有 DLC 内容文件；若仍存在多余的子文件夹，请将其中的文件手动移动到正确位置。此类问题通常由解压过程中的错误引起。&lt;/p&gt;
+&lt;p&gt;记得更新游戏本体，比如有个哥们打了 4.1 的 dlc 问我为什么没有生效，截图一看选的版本是 4.0.23&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你所有方法都试过了还不行，那就下载群文件全 dlc+ 补丁那个，全部替换，dlc 和补丁肯定有一个出问题了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后启动器列表和游戏内都没有 dlc</title><link>https://sign-river.github.io/p/stellaris-dlc-error-06/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-06/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后启动器列表和游戏内都没有 dlc。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;如果启动器列表有 dlc，跳转去看三 -22．打完 dlc 补丁包后启动器显示有 dlc，但进游戏后没有&lt;/p&gt;
+&lt;p&gt;如果启动器列表和游戏内均无 dlc，先去 steam 验证文件完整性，验证后重新打 dlc+ 补丁即可。&lt;/p&gt;
+&lt;p&gt;另外需要注意一种情况，自解压格式的补丁包不能直接解压到目的文件夹，必须得先解压到别处，再复制过去，点击替换才能成功打上 dlc 和补丁。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后启动器显示有 dlc，但进游戏后没有</title><link>https://sign-river.github.io/p/stellaris-dlc-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后启动器显示有 dlc，但进游戏后没有。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;这种情况可能由以下原因导致：&lt;/p&gt;
+&lt;p&gt;游戏本体是否为正版&lt;/p&gt;
+&lt;p&gt;使用 DLC+ 补丁包的前提是你的游戏本体必须是正版。正版购买有以下两种途径：&lt;/p&gt;
+&lt;p&gt;通过 Steam 直接购买游戏本体；&lt;/p&gt;
+&lt;p&gt;购买正版 CDK，并在 Steam 库界面左下角激活。如果你通过“按住 Win+X，找到 PowerShell（管理员）（A），在代码框中输入代码进行激活”的方式激活游戏，那么你买到的可能是假货。假入库的游戏无法生效 DLC+ 补丁，而且可能导致 Steam 红信等不稳定问题。如果发现自己购买的是假货，可以参考报错指南五 -3“删除 Steam 中假入库的游戏，并使用正版 CDK 重新激活覆盖”的操作流程。&lt;/p&gt;
+&lt;p&gt;补丁文件是否成功替换&lt;/p&gt;
+&lt;p&gt;检查 DLC+ 补丁包里的文件是否成功替换到了游戏根目录。有些玩家在复制时，只替换了 DLC 文件夹的内容，而没有替换三个补丁文件。&lt;/p&gt;
+&lt;p&gt;如果出现这种情况，请按以下方式操作：&lt;/p&gt;
+&lt;p&gt;分四次分别复制 DLC 文件夹和三个补丁文件。&lt;/p&gt;
+&lt;p&gt;将它们依次粘贴到游戏根目录，确保补丁和文件都被正确替换。&lt;/p&gt;
+&lt;p&gt;启动器与游戏本体的区别&lt;/p&gt;
+&lt;p&gt;启动器和游戏是两个独立的模块。即便在启动器文件夹里打了补丁，启动器会显示已拥有全部 DLC，这并不意味着游戏本体也包含了 DLC。补丁只会影响游戏本体，不会改变启动器中的显示。因此，启动器显示有 DLC ≠ 游戏内有 DLC。&lt;/p&gt;
+&lt;p&gt;若你已确认打补丁位置正确，但仍然遇到问题，请检查以下事项：&lt;/p&gt;
+&lt;p&gt;确保补丁包完整且版本为最新。如果补丁包缺失文件，将导致 DLC 或补丁不生效。&lt;/p&gt;
+&lt;p&gt;请仔细核对补丁步骤，确保没有打错位置。可以观看补丁教程视频并对照步骤进行操作。&lt;/p&gt;
+&lt;p&gt;【群星凝聚力使用方法及群星报错指南】&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1tEJmz5EVk/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1tEJmz5EVk/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;验证文件完整性问题&lt;/p&gt;
+&lt;p&gt;切勿在 Steam 中点击“验证文件完整性”，因为此操作会覆盖你刚打的补丁。补丁打完后千万不要验证文件完整性。如果已经点击过验证，重新按照教程操作补丁即可。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory</title><link>https://sign-river.github.io/p/stellaris-dlc-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;报错原因：&lt;/p&gt;
+&lt;p&gt;该问题通常是由于此前安装过其他补丁包，但旧补丁文件未完全删除，导致不同补丁之间发生文件冲突，从而引发报错。&lt;/p&gt;
+&lt;p&gt;如图，存在多余补丁：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;p&gt;如果不确定到底多了哪些补丁，请先删除游戏根目录下除文件夹以外的所有文件，随后在 Steam 中验证游戏文件的完整性。待缺失或损坏的原始文件恢复完成后，再重新安装当前补丁包。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>解压 dlc 补丁包后发现 dlc 序号不连续</title><link>https://sign-river.github.io/p/stellaris-dlc-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;解压 dlc 补丁包后发现 dlc 序号不连续。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;如图：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="解压 dlc 补丁包后发现 dlc 序号不连续相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;部分玩家看到 DLC 序号不连续，会怀疑是不是缺少了某个 DLC。这里需要说明几点：&lt;/p&gt;
+&lt;p&gt;大面积序号缺失的情况&lt;/p&gt;
+&lt;p&gt;如果 DLC 序号出现了大面积的空缺，那确实有可能是缺少了部分 DLC。上图展示的是 Stellaris 在 4.1 版本时的全部 DLC，共有 32 个文件夹，你可以据此进行逐一核对。&lt;/p&gt;
+&lt;p&gt;序号空缺的正常情况&lt;/p&gt;
+&lt;p&gt;Stellaris 的 DLC 更新并不是严格按照序号顺序进行的，因此出现序号空缺是正常现象。也就是说，即使存在某些序号的缺口，也不一定意味着 DLC 文件缺失。&lt;/p&gt;
+&lt;p&gt;如何进一步确认&lt;/p&gt;
+&lt;p&gt;如果你已经核对过，确认 DLC 文件本身没有缺少，但游戏内确实缺少某些 DLC，请参考本章节的其他条目，逐一对照排查。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>解压 dlc 补丁包后文件夹里只有 dlc 没有补丁</title><link>https://sign-river.github.io/p/stellaris-dlc-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;解压 dlc 补丁包后文件夹里只有 dlc 没有补丁。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;你的电脑上的杀毒软件可能误判补丁为威胁并进行了屏蔽。常见的误杀补丁的杀毒软件包括 360、迈克菲以及 Windows 自带的 Windows Defender。解决方法有两种：一是卸载杀毒软件，二是将补丁添加到杀毒软件的白名单中，以确保其正常运行。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器 DLC 列表出现警告，无法确认此 DLC 的拥有者</title><link>https://sign-river.github.io/p/paradox-launcher-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器 DLC 列表出现警告，无法确认此 DLC 的拥有者。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="启动器 DLC 列表出现警告，无法确认此 DLC 的拥有者相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;正常情况不影响使用，只是不美观，想消掉这个警告可以看教程视频，跟着操作一遍就好&lt;/p&gt;
+&lt;p&gt;【【群星教程】群星 Stellaris-V3.14.1DLC 保姆级安装演示】https://www.bilibili.com/video/BV1rW4vetEEN/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。</title><link>https://sign-river.github.io/p/paradox-launcher-error-26/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-26/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;报错全文如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;糟糕！发生错误！我们无法找到您的 Documents 文件夹。无法修改 DLC、MOD 和游戏设置。您在运行游戏时可能会遇到问题。请确认您的主目录中是否存在 Documents 文件夹。如果文件夹丢失，请创建并重新启动启动器。如果您使用 OneDrive，请确保 Documents 文件夹可用且可访问。
+&lt;a href="images/2026-07-20-23-18-28.png" target="_blank"&gt; &lt;img src="images/2026-07-20-23-18-28.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="images/2026-07-20-23-18-37.png" target="_blank"&gt; &lt;img src="images/2026-07-20-23-18-37.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该问题通常由安全软件拦截，或者 Windows 的“文档”文件夹路径配置错误引起。可以依次尝试以下两种解决方法。&lt;/p&gt;
+&lt;h3 id="21-关闭安全软件防护"&gt;2.1. 关闭安全软件防护
+&lt;/h3&gt;&lt;p&gt;首先检查系统中是否安装了杀毒软件，例如 360 安全卫士、McAfee 等。建议暂时关闭其“实时防护”和“防病毒”功能，或者将 Paradox 启动器及 Stellaris（群星）游戏主程序添加至信任列表或白名单，避免安全软件拦截、干扰程序运行。&lt;/p&gt;
+&lt;p&gt;已有案例在关闭 McAfee（迈克菲）的防病毒功能后解决了该问题，启动器不再报错。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-07-20-23-24-52.png" target="_blank"&gt; &lt;img src="images/2026-07-20-23-24-52.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-修复-windows-文档文件夹路径"&gt;2.2. 修复 Windows 文档文件夹路径
+&lt;/h3&gt;&lt;p&gt;另一个成功案例是通过修改注册表修复 Windows 的“文档”文件夹路径。如果关闭安全软件后仍未解决，可以继续尝试此方法。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;修改注册表存在风险，操作前建议先导出相关注册表项作为备份。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="221-确认文档路径异常"&gt;2.2.1. 确认文档路径异常
+&lt;/h4&gt;&lt;p&gt;按 &lt;code&gt;Win + R&lt;/code&gt;，输入以下命令并回车：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;shell:Personal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果出现“位置不可用”，并显示 &lt;code&gt;F:\nvidia&lt;/code&gt; 等路径，说明 Windows 的“文档”文件夹被错误地指向了该位置，而对应磁盘或文件夹目前不存在或无法访问。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-07-20-23-25-04.png" target="_blank"&gt; &lt;img src="images/2026-07-20-23-25-04.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="222-修改注册表中的文档路径"&gt;2.2.2. 修改注册表中的文档路径
+&lt;/h4&gt;&lt;p&gt;再次按 &lt;code&gt;Win + R&lt;/code&gt;，输入 &lt;code&gt;regedit&lt;/code&gt; 并回车，打开注册表编辑器。在顶部地址栏输入以下路径：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;计算机\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-07-20-23-25-19.png" target="_blank"&gt; &lt;img src="images/2026-07-20-23-25-19.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在右侧找到 &lt;code&gt;Personal&lt;/code&gt;，双击打开，然后将“数值数据”修改为：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;%USERPROFILE%\Documents
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;点击 &lt;strong&gt;确定&lt;/strong&gt; 保存。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-07-20-23-25-29.png" target="_blank"&gt; &lt;img src="images/2026-07-20-23-25-29.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="223-创建新的文档文件夹"&gt;2.2.3. 创建新的文档文件夹
+&lt;/h4&gt;&lt;p&gt;按 &lt;code&gt;Win + R&lt;/code&gt;，输入 &lt;code&gt;cmd&lt;/code&gt; 并回车。在打开的命令提示符中执行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-cmd" data-lang="cmd"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;mkdir&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="nv"&gt;%USERPROFILE%&lt;/span&gt;&lt;span class="s2"&gt;\Documents&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;该命令会在当前用户目录下创建新的“文档”文件夹。如果系统提示文件夹已经存在，直接跳过即可。&lt;/p&gt;
+&lt;h4 id="224-重启并验证"&gt;2.2.4. 重启并验证
+&lt;/h4&gt;&lt;p&gt;重启电脑，再次按 &lt;code&gt;Win + R&lt;/code&gt; 并输入：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;shell:Personal
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此时应该可以正确打开当前用户的“文档”文件夹。随后重新启动 Paradox 启动器，检查报错是否消失，并确认 DLC、MOD 和游戏设置是否可以正常修改。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

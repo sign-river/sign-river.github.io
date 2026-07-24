@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>图片处理 on YSY的博客</title><link>https://sign-river.github.io/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/</link><description>Recent content in 图片处理 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 09 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>WPS 复制图片模糊问题完美解决方案</title><link>https://sign-river.github.io/p/wps-image-blur-solution/</link><pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/wps-image-blur-solution/</guid><description>&lt;h2 id="1-问题描述"&gt;1. 问题描述
+&lt;/h2&gt;&lt;p&gt;在使用 WPS Office 时，很多人会遇到这样的困扰：明明文档里的图片看起来很清晰，但一旦复制粘贴到其他地方（如微信、PPT、网页等），图片就变得模糊不清。&lt;/p&gt;
+&lt;p&gt;这个问题的根本原因是什么？又该如何解决呢？&lt;/p&gt;
+&lt;h2 id="2-原因分析"&gt;2. 原因分析
+&lt;/h2&gt;&lt;h3 id="21-wps-默认压缩机制"&gt;2.1. WPS 默认压缩机制
+&lt;/h3&gt;&lt;p&gt;WPS 为了减小文件体积，会对插入的图片进行自动压缩。当你复制图片时，复制的是压缩后的版本，而不是原始高清图片。&lt;/p&gt;
+&lt;h2 id="3-解决方案"&gt;3. 解决方案
+&lt;/h2&gt;&lt;h3 id="31-先放大再复制就是清晰图片了"&gt;3.1. 先放大再复制就是清晰图片了
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;操作步骤&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 WPS 文档中&lt;strong&gt;点击图片右边的放大镜按钮&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-09-42-16.png" target="_blank"&gt; &lt;img src="images/2026-02-10-09-42-16.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Ctrl+C 或者直接右键复制即可&lt;/li&gt;
+&lt;li&gt;该往哪粘往哪粘，现在就是清晰的了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="4-总结"&gt;4. 总结
+&lt;/h2&gt;&lt;p&gt;从 WPS 复制图片模糊的问题，本质上是软件的默认压缩机制导致的。先手动放大一下再复制就没事了。&lt;/p&gt;
+&lt;p&gt;希望这篇教程能帮助你告别模糊图片的困扰！如果有其他疑问，欢迎在评论区留言讨论。&lt;/p&gt;
+&lt;hr&gt;</description></item></channel></rss>

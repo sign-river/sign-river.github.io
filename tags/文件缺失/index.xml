@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文件缺失 on YSY的博客</title><link>https://sign-river.github.io/tags/%E6%96%87%E4%BB%B6%E7%BC%BA%E5%A4%B1/</link><description>Recent content in 文件缺失 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E6%96%87%E4%BB%B6%E7%BC%BA%E5%A4%B1/index.xml" rel="self" type="application/rss+xml"/><item><title>点击开始游戏时直接闪退，没有任何报错</title><link>https://sign-river.github.io/p/stellaris-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;点击开始游戏时直接闪退，没有任何报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;注意这里指的是打开游戏时闪退，如果你是 Steam 里启动游戏按钮点了没反应，压根没打开游戏，请跳转 steam 点开始游戏按钮后打不开游戏，过一会后停止按钮又变成了开始游戏。&lt;/p&gt;
+&lt;p&gt;对于这种情况，可以在路径 C:\Users(你的用户名)\文档 (Documents)\Paradox Interactive\Stellaris\logs 中找到报错日志 error.log，打开日志可以看到报错的详细情况，如果报错日志是空的，跳转到游戏加载到 100% 后闪退&lt;/p&gt;
+&lt;p&gt;常见的报错如下：&lt;/p&gt;
+&lt;p&gt;dlc 文件缺失，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="点击开始游戏时直接闪退，没有任何报错相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这种情况可能是电脑上的杀毒软件把 dlc 部分文件识别为病毒软件并且将其删除，解决这个问题的方法也很简单，把现有的 dlc 文件全部删掉，下载新的 dlc+ 补丁包，重新打上即可。注意如果不想让这个问题反复出现，建议筛查电脑中的杀毒软件，看看到底是哪个软件干的，并把群星的文件夹设置为白名单，避免再次被删除。&lt;/p&gt;
+&lt;p&gt;如果你顺着这个路径没找到文档，那问题就出在你的文档上，你想想你把你文档改哪去了，见到一个把文档位置改进 U 盘里的，你找不到文档程序自然也找不到，把文档位置改回去问题就解决了&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="点击开始游戏时直接闪退，没有任何报错相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>解压 dlc 补丁包后发现 dlc 序号不连续</title><link>https://sign-river.github.io/p/stellaris-dlc-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;解压 dlc 补丁包后发现 dlc 序号不连续。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;如图：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="解压 dlc 补丁包后发现 dlc 序号不连续相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;部分玩家看到 DLC 序号不连续，会怀疑是不是缺少了某个 DLC。这里需要说明几点：&lt;/p&gt;
+&lt;p&gt;大面积序号缺失的情况&lt;/p&gt;
+&lt;p&gt;如果 DLC 序号出现了大面积的空缺，那确实有可能是缺少了部分 DLC。上图展示的是 Stellaris 在 4.1 版本时的全部 DLC，共有 32 个文件夹，你可以据此进行逐一核对。&lt;/p&gt;
+&lt;p&gt;序号空缺的正常情况&lt;/p&gt;
+&lt;p&gt;Stellaris 的 DLC 更新并不是严格按照序号顺序进行的，因此出现序号空缺是正常现象。也就是说，即使存在某些序号的缺口，也不一定意味着 DLC 文件缺失。&lt;/p&gt;
+&lt;p&gt;如何进一步确认&lt;/p&gt;
+&lt;p&gt;如果你已经核对过，确认 DLC 文件本身没有缺少，但游戏内确实缺少某些 DLC，请参考本章节的其他条目，逐一对照排查。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”</title><link>https://sign-river.github.io/p/paradox-launcher-error-16/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-16/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;导致该报错具体原因不同。可以根据标题下的详细内容来进一步分析并确定导致报错的具体原因。示例如下：&lt;/p&gt;
+&lt;p&gt;文件缺失导致报错&lt;/p&gt;
+&lt;p&gt;(1)Error: CPatch process error occurred: spawn xxxx \cpatch.exe&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该报错为启动器文件缺失，可以在群文件下载 p 社启动器安装包，卸载掉原 p 社启动器后用安装包安装新启动器，如果该报错仍然出现，那大概率是文件被杀毒软件拦截，建议打开电脑上的杀毒软件，在隔离区内看看有没有 cpatch.exe 或其他文件，将这些文件移出隔离区或加入白名单即可。&lt;/p&gt;
+&lt;p&gt;Error: ENOENT: no such file or directory, open xxxx/package.json&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该报错虽然也为启动器文件缺失，但用常规卸载重装方法可能无法解决该报错，在卸载启动器后，安装启动器前，需要彻底情况电脑上有关启动器的文件，文件夹，下列路径中的文件夹均要删除&lt;/p&gt;
+&lt;p&gt;卸载启动器&lt;/p&gt;
+&lt;p&gt;首先，通过控制面板或其他方式卸载当前的启动器程序。&lt;/p&gt;
+&lt;p&gt;删除相关文件夹&lt;/p&gt;
+&lt;p&gt;在卸载启动器之后，不要直接重新安装启动器，您需要手动删除以下路径中的相关文件夹，确保彻底清除启动器的所有残留文件：&lt;/p&gt;
+&lt;p&gt;C:/Users/&amp;lt;用户名&amp;gt;/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/Users/&amp;lt;用户名&amp;gt;/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/Users/&amp;lt;用户名&amp;gt;/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;文档/Paradox Interactive/.cpatch/&lt;/p&gt;
+&lt;p&gt;Documents/Paradox Interactive/ 目录下所有以 launcher-v2 开头的文件夹&lt;/p&gt;
+&lt;p&gt;重新安装启动器&lt;/p&gt;
+&lt;p&gt;清除所有相关文件夹后，运行启动器的安装程序进行重新安装。安装完成后，启动器应该可以正常工作。&lt;/p&gt;
+&lt;p&gt;通过这种方式可以有效避免由于文件残留导致的错误。&lt;/p&gt;
+&lt;p&gt;缺少权限导致报错&lt;/p&gt;
+&lt;p&gt;创建文件夹错误&lt;/p&gt;
+&lt;p&gt;Error: EPERM: operation not permitted, mkdir xxxx(路径)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;该报错是由于文件夹权限不足引发的。解决方法如下：根据路径定位到该文件夹，右键点击并选择“属性”，然后进入“安全”选项卡，点击“编辑”。在权限列表中勾选“完全控制”后点击“确定”。如果不清楚自己的账户信息，可以将列表中所有组和用户名的权限都设置为“完全控制”。&lt;/p&gt;
+&lt;p&gt;访问日志错误&lt;/p&gt;
+&lt;p&gt;Error: EPERM: operation not permitted,open xxxx&lt;/p&gt;
+&lt;p&gt;\launcher-xxxx-xx-xx.log&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;详细解决方案请跳转安装启动器时报错”Windows Installer 打开安装日志文件时发生错误。请检查指定的日志文件位置是否存在并且可以写入”&lt;/p&gt;
+&lt;p&gt;其他错误&lt;/p&gt;
+&lt;p&gt;启动相关错误&lt;/p&gt;
+&lt;p&gt;TypeError: Object has been destroyed&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;导致该报错的具体诱因未知，猜测与 Windows 快速启动（Fast Startup）与休眠相关，解决方法为：在关机前退出 steam 程序即可。&lt;/p&gt;
+&lt;p&gt;启动器文件损坏错误&lt;/p&gt;
+&lt;p&gt;SyntaxError: Error parsing C:\Users...: Unexpected token '&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.jpeg" target="_blank"&gt;&lt;img src="images/error-07.jpeg" alt="启动器报错在主进程中发生了 JavaScript 错误:“A JavaScript error occurred in the main process”相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;启动器文件损坏，下载最新的启动器安装程序重新安装一下启动器就好了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏似乎出现崩溃或意外终止，缺少.NET Framework 等</title><link>https://sign-river.github.io/p/paradox-launcher-error-09/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-09/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏似乎出现崩溃或意外终止，缺少.NET Framework 等。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;首先这个报错有两种情况，第一种情况，退出代码是 null:&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;遇到这个报错，去查看一下你的 stellaris.exe 的权限设置的是不是以管理员身份启动，如果是的话就把以管理员身份启动关掉，因为启动器是普通用户身份而 stellaris.exe 是管理员，导致启动器没有权限去调用 stellaris.exe&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第二种情况，退出代码是一串数字：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.jpeg" target="_blank"&gt;&lt;img src="images/error-03.jpeg" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你没有购买游戏本体，那可能是游戏存放路径有中文导致的&lt;/p&gt;
+&lt;p&gt;如果你购买了游戏本体，但刚下载没有安装凝聚力 dlc 则：&lt;/p&gt;
+&lt;p&gt;优先更新显卡驱动，如果还不行则在启动器中将显示模式修改为无边框全屏&lt;/p&gt;
+&lt;p&gt;如果你安装了凝聚力 dlc，则：&lt;/p&gt;
+&lt;p&gt;出现该报错的原因种类繁多，根本原因是游戏文件缺失或损坏，给出以下两个大类，几个方案，请根据自身情况选择对应方法：&lt;/p&gt;
+&lt;p&gt;第一大类：设备上有杀毒软件，隔离了补丁导致报错&lt;/p&gt;
+&lt;p&gt;感谢群友”猪 1226211946”提供的问题解决方案&lt;/p&gt;
+&lt;p&gt;对于设备上存在杀毒软件的朋友可以检查一下杀毒软件是否拦截了游戏程序或者游戏文件，比如目前已知的会隔离游戏补丁的杀毒软件迈克菲 (McAfee)(如下图所示)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;杀毒软件隔离补丁可能会出现第一天刚打完补丁可以正常使用 dlc，但第二天重新登录的时候 dlc 消失的情况，如果确定是杀毒软件导致该报错，在杀毒软件中关闭实时扫描即可。如果不想删杀毒软件可以把文件添加进白名单，下面演示一下迈菲克的添加白名单操作过程：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;把补丁移动到 stellaris 根目录以后通过以下操作把补丁加入白名单&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第二大类：补丁方面出了问题导致文件缺失&lt;/p&gt;
+&lt;p&gt;打补丁时打错了位置导致报错，如果你只打过一次补丁，可以对照着下载的补丁把游戏根目录里刚打的补丁文件和文件夹全部删掉，在 Steam 里右键 stellaris-&amp;gt;属性-&amp;gt;已安装文件-&amp;gt;验证文件完整性后，根据正确流程重新打一遍补丁。&lt;/p&gt;
+&lt;p&gt;曾经多次打补丁，打过各种来源的不同补丁，如不同种类的 dlc 补丁，不同类型的联机补丁等，到最后不同补丁相互冲突，游戏直接崩溃。解决方法（感谢群友浅浅提供的方法），首先删除 dlc 和 dlc_metadata 文件夹 (图一),然后删除下面所有的文件 (图二),之后去 Steam 里右键 stellaris-&amp;gt;属性-&amp;gt;已安装文件-&amp;gt;验证文件完整性把缺失的游戏文件补回来，最后重新打一遍补丁和 dlc。此举的目的是在保证能清除掉杂乱的补丁文件的同时尽可能少的删除文件，减少之后重新下载文件的时间。如果觉得不保险，可以选择记住 stellaris 根目录文件夹的位置，直接卸载 stellaris，然后回到 stellaris 根目录文件夹，删除文件夹内剩余的所有文件，之后重新下载 stellaris，打一遍补丁。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打了不正确的补丁导致报错出现。当上述两种方法都解决不了问题的时候，就要从外部来找原因了。正常情况下补丁包由三个补丁文件和一个 dlc 文件夹组成 (图 1),打开 dlc 文件夹后可以看到所有 dlc 文件 (图 2),打开任意 dlc 文件后里面是 dlc 的子文件 (图 3)。如果补丁包内部出现了问题，比如图二的 dlc16 打开之后不是像图三这样的子文件，而是像图四这样，里面还有一个文件夹，说明该 dlc 多嵌套了一层，这样的补丁打完就会报错，解决方法为找到补丁的发布者，告知错误类型并寻求正确的补丁包，之后重复第 2 步，清除干净之前的补丁后打上新的补丁包。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 1&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 2 图 3&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 4&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

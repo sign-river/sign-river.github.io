@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>使用技巧 on YSY的博客</title><link>https://sign-river.github.io/tags/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</link><description>Recent content in 使用技巧 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 08 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursor 新旧界面切换方法：编辑器模式 vs Agents 模式</title><link>https://sign-river.github.io/p/switch-cursor-ui-mode/</link><pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/switch-cursor-ui-mode/</guid><description>&lt;p&gt;Cursor 在近期的版本更新中引入了全新的 &lt;strong&gt;Agents 界面&lt;/strong&gt;，交互逻辑与之前以编辑器为核心的经典界面有较大差异。如果你更习惯旧版的操作方式，或者想在两种界面之间来回切换，本文记录了具体方法。&lt;/p&gt;
+&lt;h2 id="1-两种界面的区别"&gt;1. 两种界面的区别
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;经典编辑器界面&lt;/th&gt;
+&lt;th&gt;Agents 界面（新版）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;定位&lt;/td&gt;
+&lt;td&gt;以代码编辑器为主，AI 作为辅助侧边栏&lt;/td&gt;
+&lt;td&gt;以对话为核心，AI 主导整个工作流&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;聊天窗口&lt;/td&gt;
+&lt;td&gt;侧边栏 Chat / Composer 面板&lt;/td&gt;
+&lt;td&gt;独立的全功能 Agent 会话界面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;适合场景&lt;/td&gt;
+&lt;td&gt;边写代码边问 AI&lt;/td&gt;
+&lt;td&gt;把复杂任务整体交给 AI 完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="2-切换方法"&gt;2. 切换方法
+&lt;/h2&gt;&lt;h3 id="21-从编辑器界面切换到-agents-界面"&gt;2.1 从编辑器界面切换到 Agents 界面
+&lt;/h3&gt;&lt;p&gt;在经典编辑器界面中，点击右上角蓝色的 &lt;strong&gt;Agents Window&lt;/strong&gt; 按钮即可切换到新版 Agents 界面。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-08-21-36-53.png" target="_blank"&gt; &lt;img src="images/2026-06-08-21-36-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-从-agents-界面切换回编辑器界面"&gt;2.2 从 Agents 界面切换回编辑器界面
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;第一步&lt;/strong&gt;：点击左上角的 &lt;strong&gt;New Agent&lt;/strong&gt;（快捷键 &lt;code&gt;Ctrl+N&lt;/code&gt;）开启一个新的对话窗口。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-08-21-38-30.png" target="_blank"&gt; &lt;img src="images/2026-06-08-21-38-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第二步&lt;/strong&gt;：点击右上角的 &lt;strong&gt;Editor Window&lt;/strong&gt; 按钮，即可切换回经典编辑器界面。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-08-21-40-57.png" target="_blank"&gt; &lt;img src="images/2026-06-08-21-40-57.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;</description></item><item><title>Anaconda 安装教程</title><link>https://sign-river.github.io/p/anaconda-install-guide/</link><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/anaconda-install-guide/</guid><description>&lt;h2 id="1-下载安装包"&gt;1. 下载安装包
+&lt;/h2&gt;&lt;p&gt;前往 &lt;a class="link" href="https://www.anaconda.com/download" target="_blank" rel="noopener"
+&gt;Anaconda 官网&lt;/a&gt; 下载安装包。
+进入页面后，点击 &lt;strong&gt;Skip Registration&lt;/strong&gt;（跳过注册）即可直接下载，无需注册账号。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-20-23-42-46.png" target="_blank"&gt; &lt;img src="images/2026-03-20-23-31-03.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;跳过注册后，根据自己的操作系统选择对应的版本下载。以 Windows 为例，点击 &lt;strong&gt;Anaconda Distribution&lt;/strong&gt; 下的 &lt;strong&gt;Windows 64-Bit Graphical Installer&lt;/strong&gt; 即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-20-23-42-46.png" target="_blank"&gt; &lt;img src="images/2026-03-20-23-42-46.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="2-安装"&gt;2. 安装
+&lt;/h2&gt;&lt;p&gt;下载完成后，双击安装程序（&lt;code&gt;.exe&lt;/code&gt; 文件）启动安装向导。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-20-23-45-39.png" target="_blank"&gt; &lt;img src="images/2026-03-20-23-45-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="21-欢迎界面"&gt;2.1. 欢迎界面
+&lt;/h3&gt;&lt;p&gt;打开安装向导后，点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/欢迎界面截图.png" target="_blank"&gt; &lt;img src="images/欢迎界面截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-许可协议"&gt;2.2. 许可协议
+&lt;/h3&gt;&lt;p&gt;阅读许可协议后，点击 &lt;strong&gt;I Agree&lt;/strong&gt; 同意并继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/许可协议截图.png" target="_blank"&gt; &lt;img src="images/许可协议截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="23-选择安装类型"&gt;2.3. 选择安装类型
+&lt;/h3&gt;&lt;p&gt;选择 &lt;strong&gt;Just Me&lt;/strong&gt;（默认推荐），然后点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-03-14-52.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-14-52.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="24-选择安装位置"&gt;2.4. 选择安装位置
+&lt;/h3&gt;&lt;p&gt;默认安装路径为 &lt;code&gt;C:\Users\用户名\anaconda3&lt;/code&gt;，建议保持默认，直接点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;若需要安装到其他位置，请注意：&lt;strong&gt;路径中不能含有中文&lt;/strong&gt;，否则可能导致运行异常。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-03-15-34.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-15-34.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="25-高级安装选项"&gt;2.5. 高级安装选项
+&lt;/h3&gt;&lt;p&gt;建议&lt;strong&gt;全部勾选&lt;/strong&gt;，然后点击 &lt;strong&gt;Install&lt;/strong&gt; 开始安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create shortcuts&lt;/strong&gt;：创建快捷方式，方便从开始菜单启动 Anaconda 相关工具&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add installation to my PATH&lt;/strong&gt;：将 Anaconda 加入系统环境变量，这样在普通 cmd/PowerShell 中也能直接使用 &lt;code&gt;conda&lt;/code&gt; 命令。虽然安装器标注了&amp;quot;不推荐&amp;quot;，但那主要是针对同时安装了多个 Python 的用户，担心产生冲突。如果你只使用 Anaconda，勾上更方便；如果你熟悉环境变量配置，也可以不勾，后续手动添加&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Register Anaconda3 as my default Python&lt;/strong&gt;：将 Anaconda 的 Python 注册为系统默认 Python，VSCode、PyCharm 等工具可自动识别&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clear the package cache upon completion&lt;/strong&gt;：安装完成后清理缓存，释放磁盘空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-03-20-03.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-20-03.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="26-安装完成"&gt;2.6. 安装完成
+&lt;/h3&gt;&lt;p&gt;等待安装进度条跑完，提示 &lt;strong&gt;Installation Complete&lt;/strong&gt; 后，点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/安装完成截图.png" target="_blank"&gt; &lt;img src="images/安装完成截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="27-云端推广页"&gt;2.7. 云端推广页
+&lt;/h3&gt;&lt;p&gt;这是 Anaconda 的云服务推广页面，直接点击 &lt;strong&gt;Next&lt;/strong&gt; 跳过即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/云端推广页截图.png" target="_blank"&gt; &lt;img src="images/云端推广页截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="28-完成安装"&gt;2.8. 完成安装
+&lt;/h3&gt;&lt;p&gt;取消勾选 &lt;strong&gt;Welcome to Anaconda&lt;/strong&gt;，然后点击 &lt;strong&gt;Finish&lt;/strong&gt; 完成安装。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/完成安装截图.png" target="_blank"&gt; &lt;img src="images/完成安装截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-验证安装"&gt;3. 验证安装
+&lt;/h2&gt;&lt;p&gt;按 &lt;code&gt;Win + R&lt;/code&gt; 打开运行窗口，输入 &lt;code&gt;cmd&lt;/code&gt; 后回车打开命令提示符。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/运行窗口截图.png" target="_blank"&gt; &lt;img src="images/运行窗口截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在命令提示符中依次输入以下命令验证安装是否成功：&lt;/p&gt;
+&lt;p&gt;输入 &lt;code&gt;python&lt;/code&gt; 回车，若显示 Python 版本信息（如 &lt;code&gt;Python 3.13.9 | packaged by Anaconda&lt;/code&gt;）则说明 Python 安装正常，输入 &lt;code&gt;exit()&lt;/code&gt; 退出。&lt;/p&gt;
+&lt;p&gt;再输入 &lt;code&gt;conda --version&lt;/code&gt;，若显示版本号（如 &lt;code&gt;conda 25.11.1&lt;/code&gt;）则说明 Anaconda 安装成功。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/验证截图.png" target="_blank"&gt; &lt;img src="images/验证截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;</description></item><item><title>用 LaTeX-OCR 在 Word/WPS 中优雅地插入数学公式</title><link>https://sign-river.github.io/p/latex-ocr-for-word-wps/</link><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/latex-ocr-for-word-wps/</guid><description>&lt;h2 id="1-前置准备"&gt;1. 前置准备
+&lt;/h2&gt;&lt;p&gt;本工具基于 Python 运行，建议使用 Anaconda 管理 Python 环境。如果尚未安装，可以参考：&lt;a class="link" href="https://sign-river.github.io/p/anaconda-install-guide/" &gt;Anaconda 安装教程&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="2-安装-latex-ocr"&gt;2. 安装 LaTeX-OCR
+&lt;/h2&gt;&lt;p&gt;按 &lt;code&gt;Win&lt;/code&gt; 键搜索 &lt;strong&gt;Anaconda Prompt&lt;/strong&gt;，打开它。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-17-13.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-17-13.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 Anaconda Prompt 中依次输入以下命令，创建并激活一个独立的虚拟环境：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;conda create -n latexocr &lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;3.12
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-03-21-03-45-36.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-45-36.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;conda activate latexocr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-03-21-03-45-49.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-45-49.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-安装-pytorch"&gt;2.2. 安装 PyTorch
+&lt;/h3&gt;&lt;p&gt;LaTeX-OCR 依赖 PyTorch 运行模型。由于每个人的显卡和系统环境不同，建议前往 &lt;a class="link" href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener"
+&gt;PyTorch 官网&lt;/a&gt; 根据自己的配置生成对应的安装指令。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-17-59.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-17-59.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;各选项说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PyTorch Build&lt;/strong&gt;：选 &lt;code&gt;Stable&lt;/code&gt;（稳定版）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Your OS&lt;/strong&gt;：选对应操作系统，Windows 用户选 &lt;code&gt;Windows&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Package&lt;/strong&gt;：选 &lt;code&gt;Pip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Language&lt;/strong&gt;：选 &lt;code&gt;Python&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compute Platform&lt;/strong&gt;：有 NVIDIA 显卡选对应的 CUDA 版本，没有独显或不确定选 &lt;code&gt;CPU&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如何确认自己的 CUDA 版本：按 &lt;code&gt;Win + R&lt;/code&gt; 输入 &lt;code&gt;cmd&lt;/code&gt; 回车，在终端输入 &lt;code&gt;nvidia-smi&lt;/code&gt;，右上角显示的即为支持的最高 CUDA 版本。选择时要保证选的版本 &lt;strong&gt;≤&lt;/strong&gt; 该数字。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;选好后复制页面生成的命令，粘贴到 Anaconda Prompt 中执行即可（文件较大约 2GB+，请耐心等待）。&lt;/p&gt;
+&lt;p&gt;以 CUDA 13.0 为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="23-安装-pix2tex"&gt;2.3. 安装 pix2tex
+&lt;/h3&gt;&lt;p&gt;PyTorch 安装完成后，继续输入以下命令安装 LaTeX-OCR（含 GUI 界面）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pip install &lt;span class="s2"&gt;&amp;#34;pix2tex[gui]&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成后，首次运行时会自动下载模型权重文件（约 100MB+），下载完毕后 GUI 窗口会自动弹出。&lt;/p&gt;
+&lt;h2 id="3-使用方法"&gt;3. 使用方法
+&lt;/h2&gt;&lt;p&gt;安装完成后，在 Anaconda Prompt 中输入以下命令启动 LaTeX-OCR：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;latexocr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/启动命令截图.png" target="_blank"&gt; &lt;img src="images/启动命令截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;启动后界面如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/GUI界面截图.png" target="_blank"&gt; &lt;img src="images/GUI界面截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;界面各选项说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Format&lt;/strong&gt;：输出格式选择
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Raw&lt;/code&gt;：原始 LaTeX 代码&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LaTeX-$&lt;/code&gt;：行内公式格式（适合嵌在文字中间）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LaTeX-$$&lt;/code&gt;：独立公式格式（适合单独一行展示）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sympy&lt;/code&gt;：Python sympy 格式（复杂公式容易报错，日常不推荐）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Snip [Alt+S]&lt;/strong&gt;：截图识别快捷键&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Temperature&lt;/strong&gt;：识别参数，值越低越保守准确，默认 0.33 即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有三种方式输入公式图片：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用其他截图工具截图后，直接将图片&lt;strong&gt;粘贴&lt;/strong&gt;到顶部白色区域&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;Snip&lt;/strong&gt; 按钮，使用程序内置截图框选公式区域&lt;/li&gt;
+&lt;li&gt;先单击程序窗口使其成为焦点，再按 &lt;strong&gt;Alt+S&lt;/strong&gt; 快捷键截图&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;截图后程序会自动识别公式，结果显示在中间文本框中，直接复制即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-04-05-48.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-05-48.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="4-插入-word"&gt;4. 插入 Word
+&lt;/h2&gt;&lt;p&gt;识别完成后，下方文本框中即为可直接使用的 LaTeX 代码，复制它。&lt;/p&gt;
+&lt;p&gt;以下图为例，识别结果为：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;\operatorname*{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/识别结果截图.png" target="_blank"&gt; &lt;img src="images/识别结果截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在 WPS 或 Word 中，光标定位到需要插入公式的位置，点击菜单栏&lt;strong&gt;插入 → 公式&lt;/strong&gt;，在弹出的公式编辑框中将识别结果粘贴进去即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-20-05.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-20-05.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-04-47-58.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-47-58.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Word 用户注意&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;粘贴后需要手动切换两个设置，否则公式无法正确渲染：左上角输入类型选择 &lt;strong&gt;LaTeX&lt;/strong&gt;（默认是 Unicode）；右侧格式选择&lt;strong&gt;专业&lt;/strong&gt;（选&amp;quot;线性&amp;quot;则公式不会转换为排版格式）。&lt;/li&gt;
+&lt;li&gt;Word 不支持 &lt;code&gt;\operatorname*&lt;/code&gt; 语法和 &lt;code&gt;$...$&lt;/code&gt; 包裹，粘贴前需手动处理：删去开头的 &lt;code&gt;$\operatorname*&lt;/code&gt; 及结尾的 &lt;code&gt;$&lt;/code&gt;。例如 WPS 可直接使用的 &lt;code&gt;$\operatorname*{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)$&lt;/code&gt;，在 Word 中需改为 &lt;code&gt;{min}_{w}F(w)=\sum_{k=1}^{K}p_{k}F_{k}(w)&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-19-25-18.png" target="_blank"&gt; &lt;img src="images/2026-03-21-19-25-18.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="5-创建一键启动脚本"&gt;5. 创建一键启动脚本
+&lt;/h2&gt;&lt;p&gt;每次使用都要打开 Anaconda Prompt 再手动输命令比较繁琐，可以创建一个批处理脚本实现双击启动。&lt;/p&gt;
+&lt;p&gt;在桌面新建一个文本文档，输入以下内容：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Set ws = CreateObject(&amp;#34;Wscript.Shell&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ws.run &amp;#34;cmd /c conda run -n latexocr latexocr&amp;#34;, 0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-03-21-04-25-44.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-25-44.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;按 &lt;code&gt;Ctrl+S&lt;/code&gt; 保存。如果看不到文件后缀名，在文件资源管理器中点击顶部&lt;strong&gt;查看 → 显示 → 文件扩展名&lt;/strong&gt;将其勾选。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/显示文件扩展名截图.png" target="_blank"&gt; &lt;img src="images/显示文件扩展名截图.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后选中文件按 &lt;code&gt;F2&lt;/code&gt; 重命名，将其改为 &lt;code&gt;公式识别.vbs&lt;/code&gt;，双击即可静默启动 LaTeX-OCR（不会弹出黑色命令行窗口）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;双击后不会立即弹出窗口，后台仍需要激活环境并启动程序，请耐心等待几秒钟。如果怎么双击都没有反应，可以检查一下 vbs 文件是否保存成功、内容是否为空。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-04-24-56.png" target="_blank"&gt; &lt;img src="images/2026-03-21-04-24-56.png" alt="image" style="max-width: 100%; width: 300px;"/&gt; &lt;/a&gt;&lt;/p&gt;</description></item><item><title>Cursor Agent 模式频繁卡死？终极解决方案来了</title><link>https://sign-river.github.io/p/cursor-agent-freeze-fix/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/cursor-agent-freeze-fix/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;前言&lt;/strong&gt;：此教程为经验之谈，也是遇到报错后到处找解决方法总结出的解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在使用 Cursor 2.5 版本及以上的 Agent 模式进行开发时，你是否遇到过频繁的响应卡死问题？具体表现为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;模型刚开始回复几句，或者刚显示 &lt;code&gt;Explored X files&lt;/code&gt; 后，就陷入无休止的 &lt;code&gt;Taking longer than expected...&lt;/code&gt; 加载状态&lt;/li&gt;
+&lt;li&gt;最终会彻底断联，并抛出报错提示：&lt;code&gt;Unexpected seqno: 2 != 1. Please try again, or contact support if the issue persists.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;特别是在&lt;strong&gt;后台常驻开启代理软件&lt;/strong&gt;的情况下，这个问题尤为高发。&lt;/p&gt;
+&lt;h2 id="1--问题复现"&gt;1. 🔍 问题复现
+&lt;/h2&gt;&lt;p&gt;笔者刚开始使用时就遇到这个问题，一开始以为是网络问题，所以在设置里把 HTTP/2 改成了 HTTP/1.1：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-05-13-27-04.png" target="_blank"&gt; &lt;img src="images/2026-03-05-13-27-04.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;但没想到还是不行，问题依然存在。经过多次尝试和查找资料，终于找到了解决方案。&lt;/p&gt;
+&lt;h2 id="2--原因分析"&gt;2. 🔍 原因分析
+&lt;/h2&gt;&lt;p&gt;这个问题通常由两方面因素叠加导致：&lt;/p&gt;
+&lt;h3 id="21-网络流传输中断"&gt;2.1 网络流传输中断
+&lt;/h3&gt;&lt;p&gt;代理软件的路由规则干扰了 Cursor 与大模型 API 之间的长连接（特别是 HTTP/2 多路复用），导致接收的数据包序号错乱（即 seqno 匹配不上）。&lt;/p&gt;
+&lt;h3 id="22-本地代码库索引卡死"&gt;2.2 本地代码库索引卡死
+&lt;/h3&gt;&lt;p&gt;当网络出现异常或项目频繁变动时，Cursor 在本地建立的 AI 代码向量数据库（Codebase Index）可能会损坏或陷入死循环。当 Agent 试图去检索项目上下文时，后台进程就会彻底卡死。&lt;/p&gt;
+&lt;h2 id="3--终极解决方案重建项目索引"&gt;3. 🛠️ 终极解决方案：重建项目索引
+&lt;/h2&gt;&lt;p&gt;这是最直接有效的方法，可以彻底清空错乱的本地缓存并恢复正常。&lt;/p&gt;
+&lt;h3 id="31-操作步骤"&gt;3.1 操作步骤
+&lt;/h3&gt;&lt;h4 id="311-第一步打开-cursor-设置"&gt;3.1.1 第一步：打开 Cursor 设置
+&lt;/h4&gt;&lt;p&gt;点击右上角齿轮图标 ⚙️，或使用快捷键 &lt;code&gt;Ctrl + ,&lt;/code&gt; 打开设置界面。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-05-13-27-57.png" target="_blank"&gt; &lt;img src="images/2026-03-05-13-27-57.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="312-第二步找到-indexing--docs"&gt;3.1.2 第二步：找到 Indexing &amp;amp; Docs
+&lt;/h4&gt;&lt;p&gt;在左侧菜单栏中向下滚动，找到并点击 &lt;code&gt;Indexing &amp;amp; Docs&lt;/code&gt; 选项。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-05-13-28-19.png" target="_blank"&gt; &lt;img src="images/2026-03-05-13-28-19.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="313-第三步查看索引状态"&gt;3.1.3 第三步：查看索引状态
+&lt;/h4&gt;&lt;p&gt;在右侧面板的 Codebase 区域，你会看到当前项目的代码索引状态（通常会显示 100% 但其实后台已经卡死）。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-05-13-28-38.png" target="_blank"&gt; &lt;img src="images/2026-03-05-13-28-38.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="314-第四步删除索引关键步骤"&gt;3.1.4 第四步：删除索引（关键步骤）
+&lt;/h4&gt;&lt;p&gt;⚠️ &lt;strong&gt;关键一步&lt;/strong&gt;：不要点 &lt;code&gt;Sync&lt;/code&gt;，直接点击右侧的 🗑️ &lt;code&gt;Delete Index&lt;/code&gt; 按钮，彻底清空可能损坏的向量数据库缓存。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-05-13-28-55.png" target="_blank"&gt; &lt;img src="images/2026-03-05-13-28-55.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="315-第五步重新建立索引"&gt;3.1.5 第五步：重新建立索引
+&lt;/h4&gt;&lt;p&gt;删除后，点击 &lt;code&gt;Compute Index&lt;/code&gt;（或等待其自动开始），让进度条重新跑到 100%。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-05-13-29-19.png" target="_blank"&gt; &lt;img src="images/2026-03-05-13-29-19.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="4--验证效果"&gt;4. ✅ 验证效果
+&lt;/h2&gt;&lt;p&gt;完成上述操作后，回到聊天窗口再次尝试，卡死和报错问题即刻消失。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-05-13-36-19.png" target="_blank"&gt; &lt;img src="images/2026-03-05-13-36-19.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="5--总结"&gt;5. 📝 总结
+&lt;/h2&gt;&lt;p&gt;Cursor Agent 模式的卡死问题主要由网络流传输中断和本地代码库索引损坏导致。通过重建项目索引，可以彻底解决 &lt;code&gt;Unexpected seqno&lt;/code&gt; 报错和频繁卡死的问题。&lt;/p&gt;
+&lt;p&gt;希望这篇文章能帮助到遇到同样问题的朋友！如果还有什么新的方法，欢迎在评论区留言交流。&lt;/p&gt;</description></item><item><title>PC 端《三角洲行动》启动画面放大、纯色闪屏的解决方案</title><link>https://sign-river.github.io/p/delta-force-dpi-scaling-fix/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/delta-force-dpi-scaling-fix/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;前言&lt;/strong&gt;：如果你第一次启动《三角洲行动》时遇到画面放大或纯色闪屏，别慌！这是 Windows 高 DPI 缩放与游戏引擎的冲突。本文提供解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1--问题现象"&gt;1. 🔍 问题现象
+&lt;/h2&gt;&lt;p&gt;第一次启动《三角洲行动》时可能遇到以下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;画面异常放大&lt;/strong&gt;：游戏图像被放大多倍，只能看到界面的一小部分，鼠标无法点击目标按钮&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;假花屏&amp;rdquo;&lt;/strong&gt;：能听到游戏音效，但屏幕显示单一颜色交替闪动，不显示游戏内容&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反复重启才能进&lt;/strong&gt;：遇到上述情况只能强退，需多次重启才能正常进入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2--问题原因"&gt;2. 🔍 问题原因
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;这不是显卡故障&lt;/strong&gt;，而是 Windows 高 DPI 缩放与游戏引擎的冲突。&lt;/p&gt;
+&lt;p&gt;使用 2.5K 或更高分辨率屏幕时，Windows 默认开启 125% 或 150% 系统缩放。游戏启动时，引擎未能正确接管屏幕，Windows 将系统缩放强加在全屏游戏画面上，造成&amp;quot;二次放大&amp;quot;，导致渲染出错，表现为画面缩小或纯色闪屏。&lt;/p&gt;
+&lt;h2 id="3--解决方案nvidia-应用设置"&gt;3. 🛠️ 解决方案：NVIDIA 应用设置
+&lt;/h2&gt;&lt;h3 id="31-详细步骤"&gt;3.1 详细步骤
+&lt;/h3&gt;&lt;p&gt;打开电脑上的 &lt;strong&gt;NVIDIA 应用&lt;/strong&gt;（NVIDIA App），在左侧导航栏点击 &lt;strong&gt;图形&lt;/strong&gt; 选项卡。&lt;/p&gt;
+&lt;p&gt;在程序列表中找到并点击 &lt;strong&gt;三角洲行动&lt;/strong&gt;（Delta Force）。&lt;/p&gt;
+&lt;p&gt;在右侧找到 &lt;strong&gt;游戏已优化&lt;/strong&gt; 选项，点击 &lt;strong&gt;恢复&lt;/strong&gt; 按钮后面的小三角展开详细设置。&lt;/p&gt;
+&lt;p&gt;在展开的设置面板中，找到 &lt;strong&gt;显示模式&lt;/strong&gt; 选项，在下拉菜单中选择 &lt;strong&gt;无边框窗口化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-07-21-51-54.png" target="_blank"&gt; &lt;img src="images/2026-03-07-21-51-54.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;设置完成后无需额外保存，直接关闭 NVIDIA 应用即可。&lt;/p&gt;
+&lt;h2 id="4--验证效果"&gt;4. ✅ 验证效果
+&lt;/h2&gt;&lt;p&gt;重新打开游戏，画面应该能正常显示，不再出现放大或纯色闪屏问题。&lt;/p&gt;
+&lt;p&gt;如果问题仍然存在，可以尝试重启电脑后再启动游戏。&lt;/p&gt;
+&lt;h2 id="5--总结"&gt;5. 📝 总结
+&lt;/h2&gt;&lt;p&gt;《三角洲行动》启动时的画面放大和纯色闪屏问题，本质上是 Windows 高 DPI 缩放与游戏引擎的冲突。&lt;/p&gt;
+&lt;p&gt;通过 NVIDIA 应用将显示模式设置为 &lt;strong&gt;无边框窗口化&lt;/strong&gt;，可以让游戏正确接管画面渲染，彻底解决问题。这种方法简单快捷，无需修改任何文件属性。&lt;/p&gt;
+&lt;p&gt;希望这篇文章能帮助到遇到同样问题的朋友！如果还有什么新的方法，欢迎在评论区留言交流。&lt;/p&gt;</description></item><item><title>Cursor 使用心得：AI 编程助手的初体验</title><link>https://sign-river.github.io/p/cursor-beginner-guide/</link><pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/cursor-beginner-guide/</guid><description>&lt;h2 id="1-常用设置"&gt;1. 常用设置
+&lt;/h2&gt;&lt;h3 id="11-切换中文界面"&gt;1.1. 切换中文界面
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;按下 &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; 打开命令面板&lt;/li&gt;
+&lt;li&gt;输入 &lt;code&gt;display&lt;/code&gt;，选择&amp;quot;配置显示语言&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-12-18-08-19.png" target="_blank"&gt; &lt;img src="images/2026-02-12-18-08-19.png" alt="配置显示语言" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;在语言列表中选择&amp;quot;中文（简体）&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-12-18-09-24.png" target="_blank"&gt; &lt;img src="images/2026-02-12-18-09-24.png" alt="选择中文" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="12-查看剩余请求次数"&gt;1.2. 查看剩余请求次数
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;点击右上角的设置图标&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-12-18-52-45.png" target="_blank"&gt; &lt;img src="images/2026-02-12-18-52-45.png" alt="打开设置" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;在 &lt;code&gt;Agents&lt;/code&gt; 选项中找到 &lt;code&gt;Usage Summary&lt;/code&gt;，在下拉框中选择 &lt;code&gt;Always&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-12-19-09-12.png" target="_blank"&gt; &lt;img src="images/2026-02-12-19-09-12.png" alt="设置使用量显示" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;设置完成后，在消息框底部就能看到当前使用的次数和剩余的次数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-12-19-11-08.png" target="_blank"&gt; &lt;img src="images/2026-02-12-19-11-08.png" alt="查看使用情况" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="13-切换主题"&gt;1.3. 切换主题
+&lt;/h3&gt;&lt;p&gt;依次点击菜单栏的 文件 &amp;gt; 首选项 &amp;gt; 主题 &amp;gt; 颜色主题。在弹出的列表中，您可以上下浏览预览效果，点击即可应用您喜欢的配色。
+&lt;a href="images/2026-02-12-21-17-15.png" target="_blank"&gt; &lt;img src="images/2026-02-12-21-17-15.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="2-工作模式介绍"&gt;2. 工作模式介绍
+&lt;/h2&gt;&lt;p&gt;Cursor 提供了多种工作模式，可根据不同场景选择使用：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-12-19-25-17.png" target="_blank"&gt; &lt;img src="images/2026-02-12-19-25-17.png" alt="工作模式选择界面" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="21-agent自动执行模式"&gt;2.1. Agent（自动执行模式）
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：全自动执行模式，也是默认模式。可自动搜索代码库、修改多个文件、运行终端命令。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：有明确功能需求时，例如&amp;quot;为模型添加数据增强模块&amp;quot;、&amp;ldquo;实现用户登录功能&amp;quot;等具体开发任务。&lt;/p&gt;
+&lt;h3 id="22-plan规划模式"&gt;2.2. Plan（规划模式）
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：先规划后执行。深入分析项目后输出详细的 Markdown 格式方案文档，待用户确认后再执行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：复杂任务或重大重构，需要在动手前审查方案，例如&amp;quot;重构整个项目架构&amp;rdquo;、&amp;ldquo;设计数据库方案&amp;quot;等。&lt;/p&gt;
+&lt;h3 id="23-debug调试模式"&gt;2.3. Debug（调试模式）
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：专注于问题排查。针对错误提出假设，自动插入临时日志代码辅助定位问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：程序报错、逻辑错误、性能问题等需要深入调试的情况。&lt;/p&gt;
+&lt;h3 id="24-ask问答模式"&gt;2.4. Ask（问答模式）
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：仅回答问题和解释原理，不会修改任何代码文件。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：学习原理、理解代码逻辑、概念解释等，例如&amp;quot;解释 CTC Loss 的计算原理&amp;rdquo;、&amp;ldquo;这段代码的作用是什么&amp;quot;等。&lt;/p&gt;
+&lt;h3 id="25-last-used-mode上次使用模式"&gt;2.5. Last Used Mode（上次使用模式）
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：快捷切换到上一次使用的工作模式，方便模式间快速切换。&lt;/p&gt;
+&lt;h2 id="3-模型选择指南"&gt;3. 模型选择指南
+&lt;/h2&gt;&lt;h3 id="31-claude-opus-46--总设计师"&gt;3.1. Claude Opus 4.6 —— 总设计师
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：思考缓慢但推理深度强，上下文极长（100 万 Token），价格相对较高。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;架构设计&lt;/strong&gt;：规划新项目的目录结构、数据库方案等从 0 到 1 的设计工作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;疑难问题&lt;/strong&gt;：涉及多线程、分布式一致性等难以复现的复杂 Bug&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全局重构&lt;/strong&gt;：修改核心数据结构，需要确保几十个相关文件不出错的任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：该模型会消耗&amp;quot;思维 Token&amp;quot;进行规划，虽然价格较贵，但能有效避免返工。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="32-gpt-53-codex--极速执行者"&gt;3.2. GPT-5.3 Codex —— 极速执行者
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：响应速度极快，擅长命令行操作，但有时会使用占位符敷衍了事。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;交互式编程&lt;/strong&gt;：快速调整前端样式（CSS/React 组件）、编写简单脚本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;错误修复&lt;/strong&gt;：针对终端报错进行快速自动修复&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;快速原型&lt;/strong&gt;：需要在短时间内尝试多种方案&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="33-composer-15--多文件管家"&gt;3.3. Composer 1.5 —— 多文件管家
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：Cursor 原生模型，专门强化了同时编辑多个文件的能力。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;跨文件任务&lt;/strong&gt;：例如&amp;quot;把整个项目的登录方式从 JWT 改成 OAuth2&amp;quot;等需要修改多个文件的任务，它能记住任务状态，避免遗漏&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="34-claude-sonnet-45--主力中场"&gt;3.4. Claude Sonnet 4.5 —— 主力中场
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：性能均衡，速度比 Opus 快且价格便宜，稳定性比 Codex 好。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;日常开发&lt;/strong&gt;：80% 的常规编码任务（编写接口、SQL 等）都可以使用该模型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="35-gemini-3-pro--文档专家"&gt;3.5. Gemini 3 Pro —— 文档专家
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;：上下文特别大（200 万 + Token），读取文档的成本很低。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;适用场景&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;查阅资料&lt;/strong&gt;：处理大量技术文档，在整个代码库中进行全局检索&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="36-关于自动模式auto-mode"&gt;3.6. 关于自动模式（Auto Mode）
+&lt;/h3&gt;&lt;p&gt;⚠️ &lt;strong&gt;强烈建议关闭自动模式&lt;/strong&gt;，手动选择模型。主要原因：&lt;/p&gt;
+&lt;h4 id="361-成本优先导致能力下降"&gt;3.6.1. 成本优先导致能力下降
+&lt;/h4&gt;&lt;p&gt;虽然理论上应该根据任务难度分配模型，但实际上为了节省成本，经常将复杂任务分配给能力较弱的低价模型（比如 mini 版），导致代码质量下降。&lt;/p&gt;
+&lt;h4 id="362-存在严重-bug"&gt;3.6.2. 存在严重 Bug
+&lt;/h4&gt;&lt;p&gt;存在&amp;quot;Zombie Revert&amp;rdquo;（僵尸回滚）问题，频繁切换模型可能导致文件状态冲突，代码被悄悄回滚到旧版本。&lt;/p&gt;
+&lt;h4 id="363-计费不透明"&gt;3.6.3. 计费不透明
+&lt;/h4&gt;&lt;p&gt;即使分配了能力较弱的模型，也可能按溢价计费，除非任务极简单，否则不建议使用。&lt;/p&gt;
+&lt;h2 id="4-常见问题"&gt;4. 常见问题
+&lt;/h2&gt;&lt;h3 id="41-模型不工作model-not-available"&gt;4.1. 模型不工作：Model not available
+&lt;/h3&gt;&lt;p&gt;&lt;a href="images/2026-02-12-21-20-47.png" target="_blank"&gt; &lt;img src="images/2026-02-12-21-20-47.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果遇到模型不可用的问题，可以尝试以下解决方案：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在设置中找到 &lt;code&gt;Network&lt;/code&gt; 选项&lt;/li&gt;
+&lt;li&gt;将网络协议改为 &lt;code&gt;HTTP 1.0&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-12-21-01-11.png" target="_blank"&gt; &lt;img src="images/2026-02-12-21-01-11.png" alt="修改网络设置" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="42-模型耗-token-太快"&gt;4.2. 模型耗 token 太快
+&lt;/h3&gt;&lt;p&gt;为了节省 Token 额度，强烈建议勤开新对话。因为 AI 模型本身不记事，在同一个对话框里，每次提问它都会被迫把之前所有的历史记录（包括旧代码和长篇问答）重新读取一遍。对话越长，‘上下文包袱’越重，导致你问一个简单问题都可能消耗数千 Token。及时开启 New Chat 可以切断这些不必要的旧上下文，是节省额度最直接有效的方法&lt;/p&gt;
+&lt;h2 id="5-总结"&gt;5. 总结
+&lt;/h2&gt;&lt;p&gt;Cursor 作为一款 AI 编程助手，提供了多种工作模式和模型选择，能够满足不同场景的开发需求。合理选择工作模式和模型，可以显著提升开发效率。建议：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;日常开发&lt;/strong&gt;：使用 Claude Sonnet 4.5&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;复杂架构&lt;/strong&gt;：使用 Claude Opus 4.6&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;快速原型&lt;/strong&gt;：使用 GPT-5.3 Codex&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多文件重构&lt;/strong&gt;：使用 Composer 1.5&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文档查阅&lt;/strong&gt;：使用 Gemini 3 Pro&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;手动选择模型比自动模式更可靠！&lt;/p&gt;</description></item></channel></rss>

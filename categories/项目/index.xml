@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>项目 on YSY的博客</title><link>https://sign-river.github.io/categories/%E9%A1%B9%E7%9B%AE/</link><description>Recent content in 项目 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 13 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/categories/%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>Stellaris DLC Helper - 群星 DLC 解锁工具</title><link>https://sign-river.github.io/p/stellaris-dlc-helper/</link><pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-helper/</guid><description>&lt;h2 id="1-stellaris-dlc-helper---快速上手指南"&gt;1. Stellaris DLC Helper - 快速上手指南
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;三分钟学会使用本工具，解锁群星全部 DLC&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="2-这个工具是干什么的"&gt;2. 这个工具是干什么的？
+&lt;/h2&gt;&lt;p&gt;一个帮你给群星游戏解锁所有 DLC 的小工具，简单来说就是：&lt;strong&gt;点几下鼠标，所有 DLC 就能用了&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-16-58-48.png" target="_blank"&gt; &lt;img src="images/2026-02-13-16-58-48.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-怎么开始"&gt;3. 怎么开始？
+&lt;/h2&gt;&lt;h3 id="31-第一步下载工具"&gt;3.1. 第一步：下载工具
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;去 &lt;a class="link" href="https://github.com/sign-river/Stellaris-DLC-Helper/releases/latest" target="_blank" rel="noopener"
+&gt;Releases 页面&lt;/a&gt; 或者&lt;a class="link" href="https://qm.qq.com/q/ZNGagKl346" target="_blank" rel="noopener"
+&gt;群文件&lt;/a&gt;下载最新版本&lt;/li&gt;
+&lt;li&gt;下载后解压到任意文件夹（建议放在容易找到的地方）&lt;/li&gt;
+&lt;li&gt;双击 &lt;code&gt;Stellaris_DLC_Helper.exe&lt;/code&gt; 运行
+&lt;a href="images/2026-02-13-16-57-33.png" target="_blank"&gt; &lt;img src="images/2026-02-13-16-57-33.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt; 这个工具只支持 Windows 系统！&lt;/p&gt;
+&lt;h2 id="4-使用教程"&gt;4. 使用教程
+&lt;/h2&gt;&lt;h3 id="41-第一次使用"&gt;4.1. 第一次使用
+&lt;/h3&gt;&lt;h4 id="411-运行程序"&gt;4.1.1. 运行程序
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;双击 exe 文件启动程序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第一次运行会弹出更新检查和公告&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果不想每次打开都看公告的话可以勾选&amp;quot;本版本不再显示此公告&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-03-52.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-03-52.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="412-选择游戏目录"&gt;4.1.2. 选择游戏目录
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;程序会自动尝试找到你的群星游戏安装位置&lt;/li&gt;
+&lt;li&gt;如果没找到，点击&amp;quot;浏览&amp;quot;按钮，手动选择游戏文件夹
+&lt;a href="images/2026-02-13-17-06-52.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-06-52.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="413-点击一键解锁"&gt;4.1.3. 点击&amp;quot;一键解锁&amp;quot;
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点一下，剩下的交给程序自动完成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;它会自动：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打上解锁补丁&lt;/li&gt;
+&lt;li&gt;下载所有 DLC 文件&lt;/li&gt;
+&lt;li&gt;安装 DLC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-08-24.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-08-24.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="414-等待完成"&gt;4.1.4. 等待完成
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;下载过程中会显示实时速度和进度&lt;/li&gt;
+&lt;li&gt;下载完成后会自动安装&lt;/li&gt;
+&lt;li&gt;看到&amp;quot;解锁成功&amp;quot;提示就好了
+&lt;a href="images/2026-02-13-17-09-52.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-09-52.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;a href="images/2026-02-13-17-10-53.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-10-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="415-启动游戏"&gt;4.1.5. 启动游戏
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;正常通过 Steam 启动群星游戏&lt;/li&gt;
+&lt;li&gt;进入游戏后就能看到所有 DLC 了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="5-日常使用"&gt;5. 日常使用
+&lt;/h2&gt;&lt;h3 id="51-游戏更新了怎么办"&gt;5.1. 游戏更新了怎么办？
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;打开工具&lt;/li&gt;
+&lt;li&gt;再次点击&amp;quot;一键解锁&amp;quot;&lt;/li&gt;
+&lt;li&gt;程序会自动下载新版本的 DLC&lt;/li&gt;
+&lt;li&gt;完成后就能玩了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="511-手动测速"&gt;5.1.1. 手动测速
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;点击&amp;quot;设置&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;切换到&amp;quot;测速&amp;quot;选项卡&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;开始测速&amp;quot;查看下载速度
+&lt;a href="images/2026-02-13-17-15-41.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-15-41.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="52-暂停继续下载"&gt;5.2. 暂停/继续下载
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;下载过程中可以点击&amp;quot;暂停下载&amp;quot;&lt;/li&gt;
+&lt;li&gt;想继续下载时点击&amp;quot;继续下载&amp;quot;&lt;/li&gt;
+&lt;li&gt;支持断点续传，不用担心网络中断
+&lt;a href="images/2026-02-13-17-16-33.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-16-33.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;a href="images/2026-02-13-17-16-46.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-16-46.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="6-工具按钮说明"&gt;6. 工具按钮说明
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;按钮&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;一键解锁&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;自动完成所有操作：下载→安装→打补丁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;浏览&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;手动选择游戏安装目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;设置&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;打开设置窗口，可以测速、查看日志、清理缓存、恢复补丁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;还原游戏&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;把游戏恢复到原始状态（移除所有 DLC 和补丁）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;暂停下载&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;暂停正在进行的下载&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;继续下载&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;继续之前暂停的下载&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="7-常见问题"&gt;7. 常见问题
+&lt;/h2&gt;&lt;h3 id="71-第一次用需要准备什么"&gt;7.1. 第一次用，需要准备什么？
+&lt;/h3&gt;&lt;p&gt;什么都不用准备！只需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 电脑&lt;/li&gt;
+&lt;li&gt;已经在 steam 激活了正版群星本体&lt;/li&gt;
+&lt;li&gt;能上网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="72-会不会封号"&gt;7.2. 会不会封号？
+&lt;/h3&gt;&lt;p&gt;这是一个本地工具，只修改你电脑上的游戏文件，&lt;strong&gt;不涉及 Steam 账号&lt;/strong&gt;，所以不会封号。&lt;/p&gt;
+&lt;h3 id="73-下载的文件保存在哪里"&gt;7.3. 下载的文件保存在哪里？
+&lt;/h3&gt;&lt;p&gt;默认保存在工具目录下的 &lt;code&gt;Stellaris_DLC_Cache&lt;/code&gt; 文件夹里。&lt;/p&gt;
+&lt;h3 id="74-怎么知道-dlc-装成功了"&gt;7.4. 怎么知道 DLC 装成功了？
+&lt;/h3&gt;&lt;p&gt;启动游戏后：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入游戏主菜单&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;内容&amp;quot;或查看 DLC 列表&lt;/li&gt;
+&lt;li&gt;看到所有 DLC 都显示可用即安装成功
+&lt;a href="images/2026-02-13-17-32-10.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-32-10.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="75-检测到补丁文件缺失"&gt;7.5. 检测到补丁文件缺失
+&lt;/h3&gt;&lt;p&gt;&lt;a href="images/2026-02-13-17-44-15.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-44-15.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击&amp;quot;设置&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;切换到&amp;quot;高级功能&amp;quot;选项卡&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;恢复补丁&amp;quot;下载补丁内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-44-56.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-44-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果还是缺失，则为杀毒软件误杀补丁，请把补丁添加进杀毒软件的白名单，补丁存放路径如下 Stellaris-DLC-Helper\patches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-48-37.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-48-37.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="76-工具下载的是什么"&gt;7.6. 工具下载的是什么？
+&lt;/h3&gt;&lt;p&gt;下载的是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DLC 的资源文件（.dlc 文件）&lt;/li&gt;
+&lt;li&gt;CreamAPI 补丁（用于解锁 DLC）&lt;/li&gt;
+&lt;li&gt;游戏必需的配置文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="77-想要卸载-dlc-和补丁怎么办"&gt;7.7. 想要卸载 DLC 和补丁怎么办？
+&lt;/h3&gt;&lt;p&gt;在工具里点击&amp;quot;卸载 dlc&amp;quot;和&amp;quot;移除补丁&amp;quot;按钮即可
+&lt;a href="images/2026-02-13-17-33-32.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-33-32.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="78-提示找不到游戏目录"&gt;7.8. 提示&amp;quot;找不到游戏目录&amp;quot;？
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;点击&amp;quot;浏览&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;找到 Stellaris 游戏的安装文件夹&lt;/li&gt;
+&lt;li&gt;正确的文件夹里应该有 &lt;code&gt;stellaris.exe&lt;/code&gt; 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="79-下载失败或者出错了"&gt;7.9. 下载失败或者出错了？
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;检查网络连接&lt;/li&gt;
+&lt;li&gt;尝试在&amp;quot;设置→测速&amp;quot;里手动测速，换个源&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;一键解锁&amp;quot;重新试一次&lt;/li&gt;
+&lt;li&gt;如果还是不行，到 &lt;a class="link" href="https://github.com/sign-river/Stellaris-DLC-Helper/issues" target="_blank" rel="noopener"
+&gt;Issues&lt;/a&gt; 反馈&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="710-工具会自动更新吗"&gt;7.10. 工具会自动更新吗？
+&lt;/h3&gt;&lt;p&gt;A: 会的！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每次启动都会检查更新&lt;/li&gt;
+&lt;li&gt;有新版本会提示你&lt;/li&gt;
+&lt;li&gt;可以选择更新或跳过&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="711-占用多少空间"&gt;7.11. 占用多少空间？
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;工具本身：约 30 MB&lt;/li&gt;
+&lt;li&gt;DLC 缓存：约 1GB（可以在设置里清理）&lt;/li&gt;
+&lt;li&gt;总共：约 1GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="8-进阶功能"&gt;8. 进阶功能
+&lt;/h2&gt;&lt;h3 id="81-手动选择-dlc"&gt;8.1. 手动选择 DLC
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在主界面取消勾选不需要的 DLC&lt;/li&gt;
+&lt;li&gt;只下载你需要的部分
+&lt;a href="images/2026-02-13-17-38-15.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-38-15.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="82-查看操作日志"&gt;8.2. 查看操作日志
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;点击&amp;quot;设置&amp;quot;&lt;/li&gt;
+&lt;li&gt;切换到&amp;quot;日志&amp;quot;选项卡&lt;/li&gt;
+&lt;li&gt;可以查看所有操作记录
+&lt;a href="images/2026-02-13-17-39-42.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-39-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="83-清理缓存"&gt;8.3. 清理缓存
+&lt;/h3&gt;&lt;p&gt;在工具里点击&amp;quot;清理缓存&amp;quot;按钮即可
+&lt;a href="images/2026-02-13-17-40-24.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-40-24.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="9-需要帮助"&gt;9. 需要帮助？
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;查看报错指南&lt;/strong&gt;：&lt;a class="link" href="https://www.kdocs.cn/l/cdVvg4OgHMzj" target="_blank" rel="noopener"
+&gt;完整使用手册&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反馈问题&lt;/strong&gt;：&lt;a class="link" href="https://github.com/sign-river/Stellaris-DLC-Helper/issues" target="_blank" rel="noopener"
+&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;加入 QQ 群&lt;/strong&gt;：1051774780&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="10-重要提示"&gt;10. 重要提示
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;仅供学习交流使用&lt;/strong&gt;，请支持正版游戏&lt;/li&gt;
+&lt;li&gt;使用本工具造成的任何后果，用户自行承担&lt;/li&gt;
+&lt;li&gt;建议定期备份游戏存档&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="11-开始使用吧"&gt;11. 开始使用吧
+&lt;/h2&gt;&lt;p&gt;就这么简单：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;✅ 下载工具&lt;/li&gt;
+&lt;li&gt;✅ 运行程序&lt;/li&gt;
+&lt;li&gt;✅ 点击&amp;quot;一键解锁&amp;quot;&lt;/li&gt;
+&lt;li&gt;✅ 启动游戏&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;祝你游戏愉快！&lt;/strong&gt; 🚀&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="12-附录服务端管理手册"&gt;12. 附录：服务端管理手册
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本节仅供服务器管理员参考。如果你是普通玩家，到这里就可以了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当游戏版本或 DLC 发生更新，需要在服务端执行相应的文件同步操作，详见以下专属指南：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span style="font-size: 18px; font-weight: bold;"&gt;🛠️ &lt;a class="link" href="https://sign-river.github.io/p/stellaris-server-update-guide/" &gt;群星 DLC 服务端更新操作手册&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description></item></channel></rss>

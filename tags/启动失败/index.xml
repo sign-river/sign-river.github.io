@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>启动失败 on YSY的博客</title><link>https://sign-river.github.io/tags/%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/</link><description>Recent content in 启动失败 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/index.xml" rel="self" type="application/rss+xml"/><item><title>steam 点开始游戏按钮后打不开游戏，过一会后停止按钮又变成了开始游戏</title><link>https://sign-river.github.io/p/steam-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;steam 点开始游戏按钮后打不开游戏，过一会后停止按钮又变成了开始游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;这其实是一个启动器相关问题，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。运行安装程序后，先卸载旧版启动器，再安装新版启动器即可。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。如果没有卸载旧启动器的选项，可以直接进行安装。安装过程中无需更改路径，因为启动器占用空间非常小，且更改安装路径可能会导致不必要的问题，因此无需将其安装到其他位置以节省 C 盘空间。一次重装可能无法解决问题，如果一次不行可以多尝试几次。&lt;/p&gt;
+&lt;p&gt;如果上述方法无法解决你的问题，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>安装启动器报错无法打开密钥:Could not open key</title><link>https://sign-river.github.io/p/paradox-launcher-error-15/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-15/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;安装启动器报错无法打开密钥:Could not open key。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="安装启动器报错无法打开密钥:Could not open key 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提示：该解决方案为互联网搜罗整合而来，未经实际操作验证，如果您使用该方案成功解决了问题，请将细节反馈给 3217344726，以便完善报错指南&lt;/p&gt;
+&lt;p&gt;解决方案：&lt;/p&gt;
+&lt;p&gt;win+R，输入 cmd 后回车，复制以下字段粘贴到至 cmd 后再次回车即可，之后重新尝试安装启动器&lt;/p&gt;
+&lt;p&gt;secedit /configure /cfg %windir%\inf\defltbase.inf /db defltbase.sdb /verbose&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开启动器报错启动程序错误：无法启动启动器:bootstrapper error :couldn't start launcher</title><link>https://sign-river.github.io/p/paradox-launcher-error-14/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-14/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开启动器报错启动程序错误：无法启动启动器:bootstrapper error :couldn&amp;rsquo;t start launcher。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打开启动器报错启动程序错误：无法启动启动器:bootstrapper error :couldn't start launcher 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果在启动启动器时看到这样的错误，则说明防病毒程序发挥了作用，这意味着您的防病毒程序将文件 bootstrapper.exe 标记为潜在病毒并将其隔离。&lt;/p&gt;
+&lt;p&gt;要解决此问题，请执行以下操作：&lt;/p&gt;
+&lt;p&gt;打开防病毒程序并查看隔离列表（某些程序称之为病毒箱）。如果文件在那里，请恢复它并将其标记为安全，然后启动游戏，它应该可以正常工作。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory</title><link>https://sign-river.github.io/p/stellaris-dlc-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;报错原因：&lt;/p&gt;
+&lt;p&gt;该问题通常是由于此前安装过其他补丁包，但旧补丁文件未完全删除，导致不同补丁之间发生文件冲突，从而引发报错。&lt;/p&gt;
+&lt;p&gt;如图，存在多余补丁：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;p&gt;如果不确定到底多了哪些补丁，请先删除游戏根目录下除文件夹以外的所有文件，随后在 Steam 中验证游戏文件的完整性。待缺失或损坏的原始文件恢复完成后，再重新安装当前补丁包。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>点击开始游戏时直接闪退，没有任何报错</title><link>https://sign-river.github.io/p/stellaris-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;点击开始游戏时直接闪退，没有任何报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;注意这里指的是打开游戏时闪退，如果你是 Steam 里启动游戏按钮点了没反应，压根没打开游戏，请跳转 steam 点开始游戏按钮后打不开游戏，过一会后停止按钮又变成了开始游戏。&lt;/p&gt;
+&lt;p&gt;对于这种情况，可以在路径 C:\Users(你的用户名)\文档 (Documents)\Paradox Interactive\Stellaris\logs 中找到报错日志 error.log，打开日志可以看到报错的详细情况，如果报错日志是空的，跳转到游戏加载到 100% 后闪退&lt;/p&gt;
+&lt;p&gt;常见的报错如下：&lt;/p&gt;
+&lt;p&gt;dlc 文件缺失，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="点击开始游戏时直接闪退，没有任何报错相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这种情况可能是电脑上的杀毒软件把 dlc 部分文件识别为病毒软件并且将其删除，解决这个问题的方法也很简单，把现有的 dlc 文件全部删掉，下载新的 dlc+ 补丁包，重新打上即可。注意如果不想让这个问题反复出现，建议筛查电脑中的杀毒软件，看看到底是哪个软件干的，并把群星的文件夹设置为白名单，避免再次被删除。&lt;/p&gt;
+&lt;p&gt;如果你顺着这个路径没找到文档，那问题就出在你的文档上，你想想你把你文档改哪去了，见到一个把文档位置改进 U 盘里的，你找不到文档程序自然也找不到，把文档位置改回去问题就解决了&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="点击开始游戏时直接闪退，没有任何报错相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。</title><link>https://sign-river.github.io/p/paradox-launcher-error-23/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-23/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;出现此情况通常是由于缺少部分运行库，您可以通过访问微软官网下载安装最新版本的 Microsoft Visual C++ Redistributable 来解决。官网链接：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170" target="_blank" rel="noopener"
+&gt;https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者从网盘下载&lt;/p&gt;
+&lt;p&gt;夸克：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/7b1bea936b6b" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/7b1bea936b6b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;百度：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1k4EFIAI4hXPuHwWW_5Regg?pwd=b7xm" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1k4EFIAI4hXPuHwWW_5Regg?pwd=b7xm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：b7xm&lt;/p&gt;
+&lt;p&gt;下载完成后，点击安装并完成安装过程。安装结束后重启电脑，重新打开电脑之后以管理员身份运行 Steam，然后直接通过 Steam 启动游戏即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动游戏报错无法创建图形设备:Failed to create a graphics device.</title><link>https://sign-river.github.io/p/paradox-launcher-error-10/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-10/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动游戏报错无法创建图形设备:Failed to create a graphics device.。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;方法一：最实用的办法，如果以前能打开游戏，这次突然打不开游戏了，那就重启电脑，多重启几次，大概率解决该问题，如果不行，再试方法二。&lt;/p&gt;
+&lt;p&gt;方法二：首先同时按【WIN+R】键，打开【运行】对话框。输入【dxdiag】，点【确定】打开【directx 诊断工具】。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在【directx 诊断工具】中切换到【显示】选项卡，如果这三项不是已启用说明出现了问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先在桌面空白处右键选择【新建】-【文本文档】,在文档内输入以下内容后保存&lt;/p&gt;
+&lt;p&gt;Windows Registry Editor Version 5.00&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DirectDraw]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;EmulationOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Direct3D\Drivers]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;SoftwareOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\DirectDraw]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;EmulationOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Direct3D\Drivers]&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;SoftwareOnly&amp;rdquo;=dword:00000000&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将文件名后缀改为.reg 后双击运行该文件，点击确定即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你的文件没有拓展名，打开文件资源管理器，点击【查看】，【显示】，勾选【文件拓展名】即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="启动游戏报错无法创建图形设备:Failed to create a graphics device.相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重复最开始的步骤打开【directx 诊断工具】查看是否修改成功。&lt;/p&gt;
+&lt;p&gt;如果没有生效可能是系统版本过旧不支持无 BOM 的 UTF-8，可以把记事本保存的格式改为 ANSI 后保存并重新运行。&lt;/p&gt;
+&lt;p&gt;如果采用此方法未成功修改注册表，可以选择手动修改，修改前记得备份注册表以备不测。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>时效性问题 2024/5/-）Steam 启动游戏变的特别慢</title><link>https://sign-river.github.io/p/steam-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;时效性问题 2024/5/-）Steam 启动游戏变的特别慢。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;样例：常规情况下在 Steam 中点击 stellaris 开始游戏按钮后会立刻弹出 p 社启动器界面;出现该问题后，等待时间会从几乎没有变成 3-5 分钟，严重影响游戏体验，以下给出几个解决方案：&lt;/p&gt;
+&lt;p&gt;使用 Steam 的同时打开 Steam++;&lt;/p&gt;
+&lt;p&gt;Steam 设置 - 界面 - 参与客户端测试 - 选择 Steam Beta Update;&lt;/p&gt;
+&lt;p&gt;Steam-设置 - 下载 - 关闭“启动着色器预缓存”。&lt;/p&gt;
+&lt;p&gt;个人评价方法 (3) 比较好用&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径)</title><link>https://sign-river.github.io/p/paradox-launcher-error-25/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-25/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径)。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径) 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这两个报错捆绑出现，第一条报错提示系统检测到你已经安装了 Paradox 启动器，但无法正常启动。第二条报错进一步说明了问题的原因，具体内容为：操作需要管理员权限（&amp;ldquo;The requested operation requires elevation&amp;rdquo;）。通过分析报错中的路径 C:\Users\86147\AppData\Local\Programs\Paradox Interactive\launcher\bootstrapper-v2.exe，可以确定问题出在启动器的引导程序 bootstrapper-v2.exe。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，请按照以下步骤操作：&lt;/p&gt;
+&lt;p&gt;找到 bootstrapper-v2.exe 文件，右键点击并选择“属性”。&lt;/p&gt;
+&lt;p&gt;转到“兼容性”选项卡，取消选中“以管理员身份运行此程序”。&lt;/p&gt;
+&lt;p&gt;点击“应用”并保存更改。&lt;/p&gt;
+&lt;p&gt;之所以会出现这个报错，是因为启动器引导程序被设置为以管理员身份运行，而 Steam 启动时默认以普通权限运行。由于普通权限的 Steam 无法调用需要管理员权限的启动器引导程序，因此导致启动失败。&lt;/p&gt;
+&lt;p&gt;如果你遇到类似的报错，虽然具体细节可能不同，但可以根据上述逻辑进行推理，找出问题所在并采取相应的解决方案。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="无法启动 Paradox Launcher:Could not start the Paradox Launcher at(xxx 路径) 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>无法找到有效的 p 社启动器文件:Could not locate a valid installation of the Paradox Launcher</title><link>https://sign-river.github.io/p/paradox-launcher-error-22/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-22/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;无法找到有效的 p 社启动器文件:Could not locate a valid installation of the Paradox Launcher。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="无法找到有效的 p 社启动器文件:Could not locate a valid installation of the Paradox Launcher 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。运行安装程序后，先卸载旧版启动器，再安装新版启动器即可。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版群星修改语言文件后启动游戏闪退报错</title><link>https://sign-river.github.io/p/stellaris-offline-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星修改语言文件后启动游戏闪退报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;语言文件要严格按照教程视频修改，如果改的有偏差会导致游戏无法正常读取文件，导致闪退。如果已经出问题了，就清空文件里的信息，把以下代码复制进文件，然后 Ctrl+S 保存即可。&lt;/p&gt;
+&lt;p&gt;l_simp_chinese:&lt;/p&gt;
+&lt;p&gt;l_english:0 &amp;ldquo;英语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_braz_por:0 &amp;ldquo;巴西葡萄牙语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_german:0 &amp;ldquo;德语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_french:0 &amp;ldquo;法国&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_spanish:0 &amp;ldquo;西班牙语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_polish:0 &amp;ldquo;波兰语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_russian:0 &amp;ldquo;俄语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_simp_chinese:0 &amp;ldquo;中文&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_japanese:0 &amp;ldquo;日本人&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_korean:0 &amp;ldquo;韩国&amp;rdquo;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版群星一打开就闪退</title><link>https://sign-river.github.io/p/stellaris-offline-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星一打开就闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="学习版群星一打开就闪退相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="学习版群星一打开就闪退相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;路径中有中文，类似于”下载”这样，至于最前面那个”此电脑”不影响，把整个文件夹移动到全英文路径下即可，或者直接放到盘符下&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏</title><link>https://sign-river.github.io/p/steam-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/steam-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="游戏报错无法打开，但 steam 库中显示游戏一直在运行，无法关闭游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其实是启动器问题，Shift+Ctrl+Esc 打开任务管理器，找到 Paradox Launcher，右键结束任务即可，需要注意的是，如果你遇到这个报错，任务管理器里多半不止这一个进程，如果有同名进程全部关闭即可。另外这个方法治标不治本，如果你的报错问题没有解决，重新打开游戏还是会复现该情况。解决报错问题请根据游戏报错描述查找报错指南对应条目。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

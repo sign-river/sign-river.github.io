@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows Defender on YSY的博客</title><link>https://sign-river.github.io/tags/windows-defender/</link><description>Recent content in Windows Defender on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/windows-defender/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows Defender 彻底关闭指南</title><link>https://sign-river.github.io/p/disable-windows-defender/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/disable-windows-defender/</guid><description>&lt;h2 id="1-问题背景"&gt;1. 问题背景
+&lt;/h2&gt;&lt;p&gt;在日常使用 Windows 系统时，Windows Defender 的实时保护功能有时会带来一些困扰：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;占用系统资源，导致电脑卡顿&lt;/li&gt;
+&lt;li&gt;误报软件为病毒（尤其是开发工具和破解软件）&lt;/li&gt;
+&lt;li&gt;自动删除或隔离某些文件&lt;/li&gt;
+&lt;li&gt;与其他安全软件冲突&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;虽然可以在&amp;quot;设置&amp;quot;中临时关闭实时保护，但系统会在一段时间后自动重新启用。本文介绍如何通过&lt;strong&gt;组策略编辑器&lt;/strong&gt;彻底禁用 Windows Defender。&lt;/p&gt;
+&lt;h2 id="2-操作步骤"&gt;2. 操作步骤
+&lt;/h2&gt;&lt;h3 id="21-打开组策略编辑器"&gt;2.1. 打开组策略编辑器
+&lt;/h3&gt;&lt;p&gt;按下 &lt;code&gt;Windows + R&lt;/code&gt; 组合键，打开&amp;quot;运行&amp;quot;窗口。&lt;/p&gt;
+&lt;p&gt;在输入框中输入以下命令并按回车：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;gpedit.msc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-11-13-05-10.png" target="_blank"&gt; &lt;img src="images/2026-02-11-13-05-10.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;注意&lt;/strong&gt;：家庭版 Windows 默认不包含组策略编辑器。如果提示找不到 gpedit.msc，需要先安装组策略编辑器功能。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="22-导航到-defender-设置"&gt;2.2. 导航到 Defender 设置
+&lt;/h3&gt;&lt;p&gt;在组策略编辑器窗口中，按照以下路径依次展开：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;计算机配置
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; → 管理模板
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; → Windows 组件
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; → Windows Defender 防病毒程序
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-11-13-02-25.png" target="_blank"&gt; &lt;img src="images/2026-02-11-13-02-25.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h3 id="23-禁用反恶意软件服务"&gt;2.3. 禁用反恶意软件服务
+&lt;/h3&gt;&lt;p&gt;在右侧面板中找到并双击：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;允许反恶意软件服务始终保持运行状态
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-11-13-03-21.png" target="_blank"&gt; &lt;img src="images/2026-02-11-13-03-21.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+在弹出的设置窗口中：
+&lt;ol&gt;
+&lt;li&gt;选择 &lt;strong&gt;已禁用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;应用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;确定&lt;/strong&gt;
+&lt;a href="images/2026-02-11-13-03-57.png" target="_blank"&gt; &lt;img src="images/2026-02-11-13-03-57.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="24-重启生效"&gt;2.4. 重启生效
+&lt;/h3&gt;&lt;p&gt;完成上述设置后，&lt;strong&gt;重启电脑&lt;/strong&gt;使配置生效。&lt;/p&gt;
+&lt;p&gt;重启后，Windows Defender 的实时保护将被彻底关闭，且不会自动重新启用。&lt;/p&gt;
+&lt;h2 id="3-验证是否成功"&gt;3. 验证是否成功
+&lt;/h2&gt;&lt;p&gt;重启后，打开&amp;quot;Windows 安全中心&amp;quot;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;按 &lt;code&gt;Windows + I&lt;/code&gt; 打开设置&lt;/li&gt;
+&lt;li&gt;进入 &lt;strong&gt;隐私和安全性&lt;/strong&gt; → &lt;strong&gt;Windows 安全中心&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;点击 &lt;strong&gt;病毒和威胁防护&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果看到&amp;quot;未进行任何操作&amp;quot;或&amp;quot;实时保护已关闭&amp;quot;的提示，说明设置成功。&lt;/p&gt;
+&lt;h2 id="4-如何恢复实时保护"&gt;4. 如何恢复实时保护
+&lt;/h2&gt;&lt;p&gt;如果将来需要重新启用 Windows Defender：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;再次打开组策略编辑器（&lt;code&gt;gpedit.msc&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;找到同样的设置项&lt;/li&gt;
+&lt;li&gt;将其改为 &lt;strong&gt;未配置&lt;/strong&gt; 或 &lt;strong&gt;已启用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;重启电脑&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="5-总结"&gt;5. 总结
+&lt;/h2&gt;&lt;p&gt;通过组策略编辑器禁用 Windows Defender 是一个简单但有效的方法，适合需要长期关闭实时保护的场景。&lt;/p&gt;
+&lt;p&gt;但请记住：&lt;strong&gt;安全性和便利性往往是一对矛盾&lt;/strong&gt;。关闭防护的同时，也要承担相应的风险。建议根据实际需求谨慎操作。&lt;/p&gt;</description></item></channel></rss>

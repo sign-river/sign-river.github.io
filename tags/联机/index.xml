@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>联机 on YSY的博客</title><link>https://sign-river.github.io/tags/%E8%81%94%E6%9C%BA/</link><description>Recent content in 联机 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 11 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E8%81%94%E6%9C%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>群星联机优化指南：基于 OpenVPN 搭建低延迟虚拟局域网</title><link>https://sign-river.github.io/p/stellaris-lan-openvpn-guide/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-lan-openvpn-guide/</guid><description>&lt;h2 id="1-引言"&gt;1. 引言
+&lt;/h2&gt;&lt;p&gt;《群星 (Stellaris)》玩家最大的痛点是什么？往往不是天灾的入侵，而是联机时无休止的“时间停止”、掉线和高延迟。由于群星采用 P2P 联机机制，一旦某位玩家网络波动，整局游戏都会受到影响。&lt;/p&gt;
+&lt;p&gt;群星采用 P2P 联机，市面上的加速器往往难以对症下药。本系列教程将手把手教你搭建一个专属于你和小伙伴的联机加速节点。&lt;/p&gt;
+&lt;p&gt;本方案基于 &lt;strong&gt;OpenVPN TAP 模式&lt;/strong&gt;，通过 &lt;strong&gt;去除加密环节&lt;/strong&gt; 来极致优化传输速度，实测 &lt;strong&gt;10Mbps 带宽即可流畅支撑 1～2 车联机&lt;/strong&gt;（每车约 10 人）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特别致谢&lt;/strong&gt;：本教程方案核心及加速器客户端由大佬 &lt;strong&gt;Dogfight360&lt;/strong&gt; 免费提供，教程基础内容由 &lt;strong&gt;唏噓南溪&lt;/strong&gt; 编写。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📖 原作者博客：&lt;a class="link" href="https://www.dogfight360.com/blog/1590/#comment-41142" target="_blank" rel="noopener"
+&gt;Dogfight360 Blog&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="2-选择你的系统版本"&gt;2. 选择你的系统版本
+&lt;/h2&gt;&lt;p&gt;请根据你使用的服务器系统，选择对应教程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚀 &lt;a class="link" href="https://sign-river.github.io/p/stellaris-lan-openvpn-ubuntu/" &gt;点此查看 Ubuntu / Debian 现代系统搭建指南（强烈推荐）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📜 &lt;a class="link" href="https://sign-river.github.io/p/stellaris-lan-openvpn-centos/" &gt;点此查看 CentOS 7 旧版系统搭建指南（仅供参考）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;</description></item></channel></rss>

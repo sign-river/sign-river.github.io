@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>论文阅读 on YSY的博客</title><link>https://sign-river.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</link><description>Recent content in 论文阅读 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 22 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml"/><item><title>论文阅读：Falcon - Fair Active Learning using Multi-armed Bandits</title><link>https://sign-river.github.io/p/falcon-fair-active-learning/</link><pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/falcon-fair-active-learning/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学术声明 / Academic Statement&lt;/strong&gt;
+本文是个人学习笔记，仅用于学术交流和知识分享，非商业用途。
+文中观点为作者个人理解和分析，不代表原论文作者立场。
+如需引用原论文，请查阅官方出版版本。
+版权归原论文作者和 VLDB Endowment 所有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-论文基本信息"&gt;1. 论文基本信息
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;标题&lt;/strong&gt;：Falcon: Fair Active Learning using Multi-armed Bandits&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作者&lt;/strong&gt;：Ki Hyun Tae, Hantian Zhang, Jaeyoung Park, Kexin Rong, Steven Euijong Whang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单位&lt;/strong&gt;：KAIST / Georgia Institute of Technology&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发表期刊&lt;/strong&gt;：Proceedings of the VLDB Endowment, Vol. 17, No. 5, 2024，pp. 952–965&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt;：&lt;a class="link" href="https://doi.org/10.14778/3641204.3641207" target="_blank" rel="noopener"
+&gt;10.14778/3641204.3641207&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;：&lt;a class="link" href="https://github.com/khtae8250/Falcon" target="_blank" rel="noopener"
+&gt;https://github.com/khtae8250/Falcon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-背景与痛点"&gt;2. 背景与痛点
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-22-15-19-45.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-19-45.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="21-传统主动学习会恶化公平性"&gt;2.1 传统主动学习会恶化公平性
+&lt;/h3&gt;&lt;p&gt;传统 AL 唯一的 KPI 是“提升模型整体准确率”，它通常倾向于挑选模型最不确定的样本。假设某个少数群体在当前数据集中本就缺乏代表性，如果 AL 盲目追求整体准确率而不特意挑选该群体的样本，标注后的新数据集会使得不同群体间的准确率差异进一步拉大，导致模型更加不公平。&lt;/p&gt;
+&lt;h3 id="22-标签缺失困境"&gt;2.2 标签缺失困境
+&lt;/h3&gt;&lt;p&gt;为了提升公平性，我们必须针对性地去扩充“目标子群”的样本。但矛盾在于：我们在挑选样本时，这些样本是“无标签”的！如果用模型现有的预测结果去生成“伪标签”也不靠谱，因为 AL 专挑模型“拿不准”的样本，这些样本的伪标签错误率极高。&lt;/p&gt;
+&lt;h3 id="23-准确率与公平性的固有冲突"&gt;2.3 准确率与公平性的固有冲突
+&lt;/h3&gt;&lt;p&gt;在许多真实场景下，公平性目标与准确率目标是相互冲突的。比如，一个在整体准确率上表现完美的分类器，如果不加干预，往往无法保证在各个子群体上具有相同的正类预测率。如何在有限的标注预算下，优雅地平衡这两者，是一个工程和理论上的双重难题。&lt;/p&gt;
+&lt;h2 id="3-方法概述"&gt;3. 方法概述
+&lt;/h2&gt;&lt;h3 id="31-公平性定义回顾"&gt;3.1 公平性定义回顾
+&lt;/h3&gt;&lt;p&gt;作者首先概述了多种主流的公平性定义：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-35-20.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-35-20.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;人口统计学均等性（Demographic Parity, DP）&lt;/strong&gt;：不考虑模型的预测准确率，要求模型对各群体（如不同性别、族裔）给出正类预测的比例基本相同，即仅按群体分布强行实现表面上的公平。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;均衡概率（Equalized Odds, ED）&lt;/strong&gt;：要求对于正类样本，各群体被正确判为正类的概率一致；对于负类，各群体被判为负类的概率也要一致，也就是无论正反向，不同群体的准确率相当。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;平等机会（Equal Opportunity, EO）&lt;/strong&gt;：只关注正向，即对于所有实际为正的样本，各群体被判定为正的概率必须一致，不考虑负例。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预测一致性（Predictive Parity, PP）&lt;/strong&gt;：要求模型在不同群体中判为正类的样本，其实际为正的比例需大体一致，也就是预测出的“好人”在各群体中都同样可靠。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;均衡错误率（Equal Error Rate, EER）&lt;/strong&gt;：要求各群体在错误分类上的比率相同，不能让某一群体承担更高的错误风险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="32-整体流程"&gt;3.2 整体流程
+&lt;/h3&gt;&lt;p&gt;Falcon 的整体工作流程如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-14-36-30.png" target="_blank"&gt; &lt;img src="images/2026-03-22-14-36-30.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;确定公平性准则&lt;/strong&gt;：用户指定一种公平性定义（如 DP、EO 等），作为后续优化的目标；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;识别目标子群体&lt;/strong&gt;：算法根据当前模型状态和验证集，自动识别当前最需要补充样本的目标子群；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;策略选择&lt;/strong&gt;：利用**对抗性多臂老虎机（Adversarial MAB）**机制，结合历史反馈，动态选择当前最优的采样策略；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;试错标注&lt;/strong&gt;：从未标注数据池中依据所选策略挑选样本交由人工标注——若标签与预期相符，则加入训练集；若不符，则暂缓纳入（postpone）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型更新与反馈&lt;/strong&gt;：用新增标注数据重训模型，依据公平性改善情况更新 MAB 参数；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;循环迭代&lt;/strong&gt;：重复步骤 2–5，直至标注预算耗尽，逐步实现公平性与准确率的平衡提升。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="4-核心方法详解"&gt;4. 核心方法详解
+&lt;/h2&gt;&lt;p&gt;首先目标群体样本的标签是缺失的。最直接的想法是：让现在的模型去“猜”一个伪标签。但是在主动学习中，我们最想要的是信息量大的样本。但是信息量大的样本正是模型最拿不准的样本，如果你让模型去猜它最拿不准的样本，猜错的概率极大。把带有错误标签的样本强行喂给模型，不仅学不到东西，还会引入更严重的偏见。
+所以就尝试筛选出最有价值的样本花钱请人工标注，如果符合要求就直接用，不符合要求就先搁置，可能以后处理其他目标时会用到&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-22-41.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-22-41.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对于推迟错误样本使用的可行性作者也进行了证明，首先作者引用信息论中的香浓熵证明当样本预测概率为 0.5 时他的信息量达到最大，所以作者就进行了一个简单的实验，把试错法和其他基线算法对比，其他算法认为人工标注的样本不管是好是坏只要用于训练就对模型性能有帮助，而试错法会推迟使用不合规定的样本，最终结果一目了然，试错法推迟了 4000 个样本中的近 2900 个，只使用了其中 1100 个，同时只选取预测概率为 0.5 的样本，但试错法的性能远超其他基线模型。&lt;/p&gt;
+&lt;p&gt;虽然试错法已经很优秀了，但是他浪费的标注费用有些高，所以接下来我们就要解决这个问题&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-40-33.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-40-33.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在选择样本策略时，我们会遇到如下难题：以图为例，模型对某一群体的样本进行了偏见可视化，虚线右侧为正类，左侧为负类的位置。假设有两个未标注的样本，分别位于虚线两侧。假如我们想要减少偏见，需要推动决策边界（虚线）左移。理论上，最理想的做法是选择左侧的未标注样本并希望其真实标签为正类，这样模型会大幅调整决策边界，从而降低偏见。但现实中，左侧样本大概率与其周围样本一致，属于负类。如果该样本被标注为负类，就白白浪费了一次宝贵的标注机会，这属于高风险高收益的尝试。相比之下，右侧的未标注样本很可能是正类，但是标注出来对模型影响有限，算是低风险低回报的策略。如何在高风险高收益与低风险低回报之间权衡取舍，是样本选择策略需要重点解决的问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-53-22.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-53-22.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一个自然的想法是：既然始终选取预测概率为 0.5 的样本效果不理想，那如果始终选择概率为 0.3 或 0.7 的样本会不会更好？针对这一疑问，作者进行了实证分析。实验结果表明，在数据集 a 中，群体 1 在初期以 0.5 概率样本表现最佳，但后期 0.7 概率样本的效果反超；而群体 2 则始终以 0.5 概率样本效果最好。这说明同一数据集中，不同子群体适合不同的采样策略。同时，横向比较 a、b 两个数据集可以发现，a 集中各子群以 0.7 概率样本表现普遍优于 0.3；而在 b 集中恰好相反，0.3 概率效果高于 0.7。由此可见，单一固定的采样策略难以兼顾不同群体和不同数据分布的公平性需求，因此需要一种灵活、可动态调整的策略来进行样本选择——这正是引入对抗性多臂老虎机（Adversarial MAB）方法的动因。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-23-13-23-17.png" target="_blank"&gt; &lt;img src="images/2026-03-23-13-23-17.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;与传统多臂老虎机（MAB）不同，对抗性多臂老虎机在每次选择后，拉杆（即选择某策略）的概率会动态调整，这种机制更贴合我们在实际训练中遇到的动态环境。例如：最初我们可能优先优化某个弱势群体，但随着优化的推进，该群体表现提升，甚至变为新的“强势”群体，此时就需要将资源转向其它尚未得到足够关注的群体以实现整体平衡。&lt;/p&gt;
+&lt;p&gt;为此，作者引入了经典的 EXP3 算法。EXP3 的核心思想是：奖励高的策略，其被选概率将在下一轮中指数级增加，但与此同时仍会保留一部分探索性——即始终为所有策略保留一定的基础概率，避免算法陷入局部最优。这种自适应调整机制能兼顾公平性与模型整体表现。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-16-53-42.png" target="_blank"&gt; &lt;img src="images/2026-03-22-16-53-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在实际应用中，作者发现存在两个主要挑战。首先，由于每轮被主动标注并纳入训练的样本数量很少（例如一万个样本中仅有十个被人工标注），即便这些样本对模型性能的提升极其有限（如仅提升 0.00001），对抗性多臂老虎机（EXP3 算法）的反馈信号也会非常弱，难以有效调整策略。为解决这一问题，作者采用了预先多轮训练，记录参数变化的基线；随后将每轮因标注新增样本带来的变化幅度与该基线归一化，将归一化后的结果限定在 0-1 区间，再送入 EXP3 算法进行更新，这样能稳定激励信号，提升策略调整的敏感性。&lt;/p&gt;
+&lt;p&gt;其次，EXP3 本身容易陷入局部最优：比如初期某个采样概率（如 0.4）表现较好、被频繁强化，久而久之其概率会被指数级放大，导致其他采样概率（如 0.5）几乎被排挤，后续即便 0.5 更合适也难以“翻身”。为此，作者提出了“奖励传播”机制：当某个采样概率被强化时，会将一半的奖励分摊给其相邻的概率（如 0.4 被强化，则 0.3 和 0.5 也获得部分奖励），以保证探索空间的多样性，使其他策略在后期仍有机会切换出来，从而有效缓解陷入局部最优的问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-32-28.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-32-28.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在解决样本选择与处理策略后，下一步的核心目标是有效权衡公平性与模型准确率。为追求公平性而显著牺牲准确率是不可取的。因此，FALcon 框架在每轮训练中引入了一个权衡参数 λ：每轮训练以 (1-λ) 的概率采用常规主动学习策略，专注提升模型准确率；以 λ 的概率按照 FALcon 的公平性机制进行样本选择和模型优化，实现公平与准确性的动态平衡。&lt;/p&gt;
+&lt;h2 id="5-实验设计与结果"&gt;5. 实验设计与结果
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-22-16-54-58.png" target="_blank"&gt; &lt;img src="images/2026-03-22-16-54-58.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者在实验中选择了公平性学习领域中最具代表性的数据集，公平性得分采用所有子群体（群体）的性能最高值与最低值之差来衡量，差值越大表示公平性越差。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-28-26.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-28-26.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对比方法涵盖了传统的主动学习策略，如信息熵（Entropy）和随机采样（Random），同时引入了专为公平主动学习设计的先进方法（SOTA），如 FaL 和 D-FA2L。模型方面，作者采用了逻辑回归和基础神经网络，而未选择如 Transformer 或 ResNet 这类复杂模型，原因有三：首先，所用数据集类型以表格数据为主，复杂模型优势不明显；其次，主动学习需频繁对新样本进行重训练，复杂网络训练代价高昂；最后，简化模型有助于排除模型本身能力对实验结果的干扰，使实验更能反映采样策略（如多臂老虎机机制）的实际效果。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-13-25.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-13-25.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从结果图中可以看出，FALcon 在群体平权和公平性指标上显著优于其他方法，实现了高公平性，而其他算法则存在高准确率但公平性较低的问题。此外，FALcon 通过调整 λ 参数，能够灵活实现不同的准确率与公平性组合，用户可根据实际需求自主权衡选择。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-26-08.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-26-08.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以表格的形式看更清晰，之前最新的算法只能略微提升公平性，但是我们的算法有碾压式的提升&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-27-14.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-27-14.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;而且我们的算法不仅效果好，耗时也不长，算是耗时最短的那一批&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-44-57.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-44-57.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从图 7 可以看出，虽然我们的方法在与固定概率策略相比时并非最优，但其表现已经非常接近最优方案。考虑到在实际应用中我们无法拥有“上帝视角”，需要合理分配预算进行探索，因此能取得与最优策略相近的效果已经极具实用价值，充分体现了方法的有效性和探索带来的收益。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-47-07.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-47-07.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 8 详细展示了多臂老虎机策略的动态调整过程。初始时，各拉杆（采样策略）被选择的概率均为 0.1。随着迭代推进，0.6 拉杆因表现优异逐渐被算法“青睐”，其被选概率稳步提升并趋于 0.4，而其他拉杆的选择概率则逐步降低，趋近于零。从图 b 的对比实验也可以看出，作者用各种固定概率策略进行了测试，最终结果验证了 0.6 确实是表现最优的选择方案。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-58-02.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-58-02.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表五是每批次样本数量对结果的影响，虽然批次数量为 1 时效果最好，但是考虑到计算成本，默认选 10&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-59-18.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-59-18.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表六是拉杆数量对结果的影响，结果表明拉杆并不是越多越好，当拉杆数量提升到 9 时，性能反而有所下降，毕竟探索也有成本，最后研究发现拉杆设置 3-5 个即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-18-10-42.png" target="_blank"&gt; &lt;img src="images/2026-03-22-18-10-42.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表七是消融实验，可以看到仅仅装上试错推迟机制，公平性就从 0.1 提升到了 0.8，整个算法里试错推迟机制起码起到 80% 的作用，不过对抗性多臂老虎机虽然对性能提升小，但是作者提到他节省了高达 25% 左右的标注预算，比起性能提升他更能省钱&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-18-14-23.png" target="_blank"&gt; &lt;img src="images/2026-03-22-18-14-23.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表八是作者给别人的算法装上自己研究的试错推迟机制，可以看到他人算法的性能有很大提升，但是还是不及我们的算法&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-18-17-04.png" target="_blank"&gt; &lt;img src="images/2026-03-22-18-17-04.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之前提到我们用的算法是 exp3，但是市面上有更复杂先进的算法，作者一一尝试后证明，不用情况下不同算法都有可能是最佳算法，而且大家差距不大，不如用最基础的减小算法难度和复杂度&lt;/p&gt;
+&lt;h2 id="6-关于联邦遗忘学习的拓展"&gt;6. 关于联邦遗忘学习的拓展
+&lt;/h2&gt;&lt;p&gt;论文中中的公平性主要关注于不同子群体间的表现差异。如果发现某些子群体处于不公平状态，可以采用多臂老虎机选择采样策略，从样本池中优先挑选弱势群体的样本交由人工标注，标注后再判断是否纳入训练，不合适则推迟使用。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-23-13-49-08.png" target="_blank"&gt; &lt;img src="images/2026-03-23-13-49-08.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将这一思路映射到联邦遗忘学习场景下，公平性需同时关注客户端之间及其内部子群体的分布。当某个客户端选择退出并触发遗忘后，可能会导致特定子群体的代表性显著下降。例如，若仅有退出客户端包含大量少数民族数据，其他客户端相关数据稀缺，那么离开该客户端后模型将对少数民族群体产生偏见或能力不足。&lt;/p&gt;
+&lt;p&gt;为缓解这种公平性损失，可以将其余客户端视为备选样本池。具体而言，优先筛选与退出客户端数据分布相近的客户端，让这些客户端参与新一轮训练，并提取其梯度以辅助补偿遗忘导致的性能损失。客户端的选择同样可以借鉴对抗式多臂老虎机算法：首先根据已提交的梯度大致推断各客户端的数据类型，对于即将退出的客户端，先对比数据特征从其它客户端中做初步筛选，再结合多臂老虎机策略动态选择最合适的候选客户端进行训练。当这些客户端训练并提交梯度后，若其对全局模型的公平性等指标有帮助则采纳更新，否则可以拒绝相应更新，进一步提升全局模型的公平和鲁棒性。&lt;/p&gt;
+&lt;p&gt;如果通信太大，担心白上传梯度，可以让客户端在本地进行检验，如果公平性有提升再上传&lt;/p&gt;
+&lt;p&gt;(还可以考虑全局模型在每个客户端的准确度，这也是一种公平)&lt;/p&gt;
+&lt;h2 id="7-参考文献"&gt;7. 参考文献
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;原文引用格式（ACM）：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Ki Hyun Tae, Hantian Zhang, Jaeyoung Park, Kexin Rong, and Steven Euijong Whang.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;Falcon: Fair Active Learning using Multi-armed Bandits.&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Proc. VLDB Endow. 17, 5 (2024), 952–965.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DOI: 10.14778/3641204.3641207
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;相关链接：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;论文 DOI：&lt;a class="link" href="https://doi.org/10.14778/3641204.3641207" target="_blank" rel="noopener"
+&gt;https://doi.org/10.14778/3641204.3641207&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;代码仓库：&lt;a class="link" href="https://github.com/khtae8250/Falcon" target="_blank" rel="noopener"
+&gt;https://github.com/khtae8250/Falcon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>论文阅读：DPUL - Dual-Phase Federated Deep Unlearning via Weight-Aware Rollback and Reconstruction</title><link>https://sign-river.github.io/p/dpul-paper-reading/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/dpul-paper-reading/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学术声明 / Academic Statement&lt;/strong&gt;
+本文是个人学习笔记，仅用于学术交流和知识分享，非商业用途。
+文中观点为作者个人理解和分析，不代表原论文作者立场。
+如需引用原论文，请查阅官方出版版本。
+版权归原论文作者所有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-论文基本信息"&gt;1. 论文基本信息
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;标题&lt;/strong&gt;：Dual-Phase Federated Deep Unlearning via Weight-Aware Rollback and Reconstruction&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作者&lt;/strong&gt;：Changjun Zhou, Jintao Zheng, Leyou Yang, Pengfei Wang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单位&lt;/strong&gt;：Zhejiang Normal University / Nanjing University of Information Science and Technology / Dalian University of Technology&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发表会议&lt;/strong&gt;：IEEE INFOCOM 2026（已接收）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预印本&lt;/strong&gt;：&lt;a class="link" href="https://arxiv.org/abs/2512.13381" target="_blank" rel="noopener"
+&gt;arXiv:2512.13381&lt;/a&gt; [cs.LG], 2025&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt;：&lt;a class="link" href="https://doi.org/10.48550/arXiv.2512.13381" target="_blank" rel="noopener"
+&gt;10.48550/arXiv.2512.13381&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;：&lt;a class="link" href="https://github.com/00taotao/DPUL" target="_blank" rel="noopener"
+&gt;https://github.com/00taotao/DPUL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这篇论文是基于权重感知回滚与重构的双阶段联邦深度遗忘，作者是 Changjun Zhou*
+, Jintao Zheng*
+, Leyou Yang†
+, Pengfei Wang‡，分别来自&lt;/p&gt;
+&lt;p&gt;&amp;rsquo;&amp;rsquo; 浙江师范大学计算机科学与技术学院&lt;/p&gt;
+&lt;p&gt;† 南京信息工程大学软件学院&lt;/p&gt;
+&lt;p&gt;‡ 大连理工大学&lt;/p&gt;
+&lt;p&gt;其中一作周昌军是浙江师范大学博士生导师，早期生物计算方向，在学校简介里挂的都是 dna 和计算机科学相关的论文，但是年份比较久，从 dplp 的搜索中可以看出当前主要方向是群智能和全局优化，偶尔涉及强化学习和联邦学习;&lt;/p&gt;
+&lt;p&gt;Jintao Zheng 应该是学生，网上各种途径搜不到他的确切信息，但是在四作王鹏飞的论文中出现了两次，一次是识别，一次就是本论文联邦遗忘，可能是和王鹏飞有联系的学生&lt;/p&gt;
+&lt;p&gt;杨乐游 硕士生导师，ccf 服务计算专委会执行委员，论文发布不是很频繁，主攻无线通信网络与资源分配&lt;/p&gt;
+&lt;p&gt;王鹏飞 博士生导师 主要方向是联邦遗忘和多模态大模型&lt;/p&gt;
+&lt;p&gt;推测王鹏飞教授作为大老板提供了课题方向和算力，然后周昌军教授计算功底扎实设计了算法，杨乐游可能在通信与网络方面提出意见，然后 Jintao Zheng 负责敲代码和完成实验验证，论文中 github 链接也是 Jintao Zheng 提供的&lt;/p&gt;
+&lt;h2 id="2-背景与痛点"&gt;2. 背景与痛点
+&lt;/h2&gt;&lt;p&gt;总问题是联邦遗忘学习有恢复速度慢 (slow recovery),成本高 (high costs.) 以及未处理残留隐私痕迹的问题，
+什么是残留隐私痕迹:
+他的本质其实是间接的特征记忆，联邦学习是一个多轮聚合的过程。在历史的通信轮次中，目标客户端将包含自己隐私的权重更新传给了服务器，服务器将它聚合成了全局模型 (Global Model)。紧接着，其他正常的客户端下载了这个包含了目标节点特征的全局模型，并在这个被污染的基座上继续进行本地训练。这就导致了这些正常客户端随后上传的新权重中，已经不可避免地结合了目标客户端的底层特征。这就是所谓的 Residual Privacy Traces。&lt;/p&gt;
+&lt;p&gt;像 FURR 引入快速重训练，用海森矩阵近似加速训练过程，FedEraser 利用服务器存储的历史更新提升效率，都旨在提升恢复速度，但是这些方法依旧依赖客户端，虽然减轻了单个客户端的计算量，但是因为客户端和服务器通信以及资源分配的问题，依旧有巨大的成本和时间损耗;而且随着模型越来越复杂，使得客户端隐私遗忘方法 (privacy unlearning methods) 的成本急剧飙升 (surged dramatically) ,联邦知识蒸馏（FUKD）通过利用服务器端海量数据和长时间处理来提炼并恢复模型，但该方法已无法满足大规模模型反向学习的场景需求。另外，所有的方案都没有尝试去处理残留隐私痕迹。为此，作者提出了既能解决成本和时间问题，又能适应模型复杂度不断攀升环境，同时还能处理残留隐私痕迹的 DPUL 方案&lt;/p&gt;
+&lt;p&gt;所以当下我们要解决的问题有两个，其一就是其他人解决的不好的成本和时间问题，另一个残留隐私痕迹的问题。对于第一个问题作者直接采用无客户端的方案，省去了协调客户端的成本和通信的时间，方案的成本和时间消耗都能大幅下降，而对于引申出的服务器处理大规模模型的问题，首先方案中引用&lt;strong&gt;LoRA（Low-Rank Adaptation）&lt;/strong&gt; 微调技术。其核心思想是：大模型在微调时，参数变化量虽然表面上是一个巨大的矩阵，但其内在维度极低——真正有意义的变化只集中在少数几个主方向上。因此，可以用两个小矩阵的乘积来近似这一变化量，训练时只修改两个小矩阵。其次方案采用双阶段遗忘过程，首先利用目标客户端参数与全局参数之间的关联性 (the relationship between the target client’s and global parameters) 来筛选出高权重参数，然后采用记忆回滚机制 (memory rollback method) 处理这些参数，这样可以节省大量时间;而对于剩下的低权重参数
+β-VAE 网络的重构特性，使模型能够遗忘次要影响，这样用一个重新训练的轻量模型去修补一个庞大的预处理模型，比传统的数据驱动训练快了几个数量级，最后通过整合小型数据集和投影方法加速模型精度恢复。&lt;/p&gt;
+&lt;p&gt;对于第二个的问题的解决方案则已经包含在了针对低权重参数的处理方案中，通过β-VAE 网络的重构特性重构所有的参数以消除目标客户端的贡献。&lt;/p&gt;
+&lt;p&gt;虽然方法优势很多，但是执行起来又遇到很多三个新问题：第一，在模型参数规模庞大的情况下如何筛选出高权重贡献的参数？第二，如何确保最佳的 VAE 网络训练方法，使重构参数后遗忘模型的准确度能尽可能的高，但重构参数和原始模型的差异最大？第三遗忘后的模型必须保持高性能;为此作者依次给出了答案，第一对于高权重贡献参数的筛选，作者通过参数更新幅度来进行判断，如果更新幅度超出平均值太多，则判定为高权重贡献参数，直接回滚到最早的低权重状态;第二，大规模模型的海量数据对于 VAE 网络来说无法承受，所以作者引入了多头训练机制 (multi-head training mechanism),通过分割参数并行训练 VAE 网络来确保遗忘效率，同时通过降低维度让 VAE 网络具备精细调控准确度和差异的能力。第三遗忘后模型要保持高性能，因为服务器本身只有一个很小的数据集，所以作者引入了投影机制来确保恢复的速度和质量。&lt;/p&gt;
+&lt;p&gt;传统方法在处理遗忘时，往往采用破坏性的参数移除策略，不仅导致模型结构受损，遗忘效果难以保证，而且后续如知识蒸馏等技术也难以实现有效收敛，存在较大安全隐患。&lt;/p&gt;
+&lt;p&gt;DPUL 针对上述不足，实现了高效且安全的遗忘机制。其思路是对不同权重级别的参数采用有针对性的策略：对于影响较大的高权重参数，直接回滚以彻底消除其历史影响；对于低权重参数，则通过微调配合 VAE 网络重构，进一步抹除潜在的隐私痕迹。该方法兼容大规模模型，并且大幅提升了模型安全性和实用性。&lt;/p&gt;
+&lt;h2 id="3-算法核心思路与详细设计"&gt;3. 算法核心思路与详细设计
+&lt;/h2&gt;&lt;p&gt;作者首先梳理了现有的主要方法，包括早期的重训练策略、针对特定场景的问题定制算法，以及面向大模型的联邦知识蒸馏方法。由于本研究的算法同样能够适配大模型，因此联邦知识蒸馏成为了对比分析中的核心参考对象。&lt;/p&gt;
+&lt;h2 id="4-核心方法详解"&gt;4. 核心方法详解
+&lt;/h2&gt;&lt;h3 id="41-记忆回滚memory-rollback"&gt;4.1 记忆回滚（Memory Rollback）
+&lt;/h3&gt;&lt;p&gt;图中橙色表示待遗忘模型，绿色代表全局模型，红色则是对高权重参数进行了回溯处理后的预处理模型。具体流程为：算法从初始轮次开始，每轮递增，逐步对比当前轮次下待遗忘模型与全局模型的参数。当发现待遗忘模型中某些参数的变化幅度显著（视为高权重参数）时，系统会调用上一轮次的预处理模型，并用上一轮中对应的参数直接覆盖本轮的高权重参数，实现快速回滚。高权重参数的判定方式基于阈值设定：如图所示，公式左侧分子为客户端在第 t 轮第 i 个参数的变化幅度，分母 λ 为作者设定的阈值系数，右侧则是除目标客户端外其余客户端在该参数上的平均更新幅度。当目标客户端对某参数的更新幅度超过其他全部客户端平均更新幅度的 λ 倍时，即触发回溯机制。&lt;/p&gt;
+&lt;h3 id="42-重建遗忘reconstruction-unlearning"&gt;4.2 重建遗忘（Reconstruction Unlearning）
+&lt;/h3&gt;&lt;p&gt;作者采用分治的方式，将模型参数均匀切片，分别对原始模型和预处理模型中的对应切片配对，作为 VAE 的输入样本。每一对切片独立训练一个 β-VAE，大大降低了大模型训练的计算与存储压力。在训练阶段，VAE 先将输入映射为均值和方差，通过重参数化采样生成新参数。随后，根据采样结果重建参数，并利用损失函数端到端地反向传播优化网络，从而让 VAE 学习如何将历史原始模型映射到历史预处理模型。具体而言，损失函数如图所示：左侧重构损失用于拉近当前模型重建参数与目标模型参数的相似度，右侧 KL 散度正则项则用于去除低权重参数中的噪声。最终，将训练好的所有切片 VAE 集合应用到当前模型，对各参数分片分别生成并拼接，形成最终满足遗忘要求的遗忘模型。&lt;/p&gt;
+&lt;h3 id="43-投影增强恢复projected-boost-recovery"&gt;4.3 投影增强恢复（Projected Boost Recovery）
+&lt;/h3&gt;&lt;p&gt;整体流程如下：当客户端发起遗忘请求后，服务器启动遗忘机制，首先检查历史全局模型，并与历史客户端模型进行对比，识别出受目标客户端影响显著的高权重参数，通过参数回滚方式生成预处理模型。随后，利用原始模型与上一步得到的原始预处理模型共同训练 VAE 网络，再以当前原始模型为输入，经过 VAE 重构后获得初步遗忘模型。接下来，通过一小部分用于模型校准的绿色辅助数据集，来确定优化方向，提升遗忘模型的性能。加速器组件则基于当前模型准确率，检索相应历史全局模型，借用其更新步长，并结合当前更新方向，计算出最终的参数更新向量，实现投影增强，生成投影模型。如此循环多个轮次，最终得到性能恢复后的遗忘模型作为最终结果。&lt;/p&gt;
+&lt;h2 id="5-实验设计与结果"&gt;5. 实验设计与结果
+&lt;/h2&gt;&lt;p&gt;本实验选用了四个主流图像分类数据集：CIFAR-10、CINIC-10、CIFAR-100 和 ImageNet-Tiny，并均按照非独立同分布（Non-IID）方式进行划分。CIFAR-10 和 CIFAR-100 分别包含 10 类和 100 类常见物体的低分辨率彩色图片；CINIC-10 是对 CIFAR-10 的扩展，图片数量更多，数据更加复杂；ImageNet-Tiny 是从 ImageNet 精简获取的小型子集，分辨率更低但包含丰富类别。这些数据集能够更真实地模拟联邦学习环境下各客户端数据分布的多样性。&lt;/p&gt;
+&lt;p&gt;对比方法方面，实验涵盖了标准的联邦学习（FL）、重训练（Retrain）、快速重训练（Rapid Retrain, RR）、参数回滚（Federated Eraser, FE）、梯度上升（Projected Gradient Ascent, PGA）、联邦知识蒸馏（Federated Knowledge Distillation, FKD）和辅助提升（Boost Training, BT）等典型方法。&lt;/p&gt;
+&lt;p&gt;为了全面评估遗忘效果与安全性，攻击方式选用后门注入攻击。评测指标则包括模型的准确率、损失值和计算消耗时间。&lt;/p&gt;
+&lt;p&gt;图 5 展示了不同算法的准确率恢复速度，可以看到我们的 DPUL 算法不仅稳定，而且准确率比其他算法都要高出 1%-5%&lt;/p&gt;
+&lt;p&gt;图 6 展示了损失值变化，DPUL 展示出最快的下降幅度，同时没有像 FA 和 RR 一样展现出意外上升的情况，彰显了 DPUL 方法卓越的稳定性&lt;/p&gt;
+&lt;p&gt;图 7 展示了不同算法随着客户端数量增加计算时长的变化，因为 DPUL 不依靠客户端，所以计算时长不随客户端数量增加而变化，确保了运行时间的稳定，训练速度比完全重训快 12 倍，比 FE 和 RR 快 4 倍&lt;/p&gt;
+&lt;p&gt;图 8 用后门攻击准确率展示模型对客户端数据的遗忘效果，可以看到 DPUL 的攻击数据准确率和重训模型相当，证明 DPUL 能有效清除客户端的贡献，同时与同样运行在服务器的联邦蒸馏来比，展现出卓越的稳定性，因为联邦蒸馏后面出现了反弹的迹象&lt;/p&gt;
+&lt;p&gt;表一展示了消融实验的结果。可以看到，仅仅进行记忆回滚，就能将后门攻击的识别概率有效压制到个位数，说明记忆回滚是实现有效遗忘的核心环节。VAE 部分进一步作用于低权重参数，虽然会带来轻微的准确率下降，但这种损失是为了确保彻底遗忘而付出的合理代价。实验中还对比了未使用受污染模型、仅通过额外训练和投影增强进行恢复的方式，虽然这种情况下后门识别率同样很低，但这是因为模型根本未暴露于后门数据，导致模型准确率大幅下跌，缺乏实际可用性，说明单纯追求遗忘而忽视能力恢复并不可取。此外，若在受污染模型上直接进行增强训练，遗忘效果显著变差，再次印证记忆回滚的重要性。最后，随着各个核心组件的逐步引入，模型各项指标持续提升，验证了算法各部分的实际价值与协同作用。&lt;/p&gt;
+&lt;p&gt;原文： &amp;ldquo;Examining the first row (FL and MP) alongside the second row (FL, MP, and DU), we note a slight reduction in accuracy. This is because DU undergoes additional parameter reconstruction to validate its effectiveness.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;专业翻译： “通过对比第一行（FL 和 MP）与第二行（FL、MP 和 DU），我们注意到准确率有轻微的下降。这是因为 DU（VAE 模块）经历了额外的参数重构过程，以此来验证其（遗忘）的有效性。”&lt;/p&gt;
+&lt;p&gt;原文： &amp;ldquo;For residual minor contributions, incorporating the DU module (fourth row) decreases clean accuracy, whereas atk accuracy remains relatively unchanged, demonstrating its role in further unlearning.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;专业翻译： “针对残留的微小贡献，引入 DU 模块（第四行）会降低干净数据集的准确率，而攻击准确率保持相对不变，这证明了它在‘进一步深度遗忘 (further unlearning)’中的作用。”&lt;/p&gt;
+&lt;p&gt;图 9 随着训练轮次变化模型的准确率，可以看到在低训练轮次，DPUL 拥有碾压的效果，即使训练波次上涨，其他算法的准确率也上涨，但是 DPUL 依旧处于第一&lt;/p&gt;
+&lt;p&gt;图 10 展示随着客户端增多准确率的变化，因为随着客户端增多，数据量增加，模型难以学到统一特征导致算法性能均有下降，但是在其中 DPUL 还是尽量保持稳定，而联邦蒸馏则出现断崖式下跌&lt;/p&gt;
+&lt;p&gt;参数对实验性能的影响，β是 VAE 的正则化控制参数，越小越不能过滤隐私细节，越大越容易损失结构，λ是决定高权重阈值的参数，I 是决定训练 VAE 时切多少块&lt;/p&gt;
+&lt;h2 id="6-参考文献"&gt;6. 参考文献
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;原文引用格式（arXiv）：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Zhou&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;J&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Zheng&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Yang&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;P&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Wang&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;Dual-Phase Federated Deep Unlearning via Weight-Aware Rollback and Reconstruction,&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;arXiv&lt;/span&gt; &lt;span class="n"&gt;preprint&lt;/span&gt; &lt;span class="n"&gt;arXiv&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;2512.13381&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;2025.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;相关链接：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;论文预印本：&lt;a class="link" href="https://arxiv.org/abs/2512.13381" target="_blank" rel="noopener"
+&gt;https://arxiv.org/abs/2512.13381&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;代码仓库：&lt;a class="link" href="https://github.com/00taotao/DPUL" target="_blank" rel="noopener"
+&gt;https://github.com/00taotao/DPUL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>论文阅读：FedEditor - Efficient and Effective Federated Unlearning</title><link>https://sign-river.github.io/p/fededitor-paper-reading/</link><pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/fededitor-paper-reading/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学术声明 / Academic Statement&lt;/strong&gt;
+本文是个人学习笔记，仅用于学术交流和知识分享，非商业用途。
+文中观点为作者个人理解和分析，不代表原论文作者立场。
+如需引用原论文，请查阅官方出版版本。
+版权归原论文作者和 IEEE 所有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="1-论文基本信息"&gt;1. 论文基本信息
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;标题&lt;/strong&gt;：FedEditor: Efficient and Effective Federated Unlearning in Cooperative Intelligent Transportation Systems&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作者&lt;/strong&gt;：Xiaohan Yuan, Jiqiang Liu, Bin Wang, Guorong Chen, Xiangrui Xu, Junyong Wang, Tao Li, Wei Wang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单位&lt;/strong&gt;：Beijing Jiaotong University, Haihe Lab of ITAI&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发表期刊&lt;/strong&gt;：IEEE Transactions on Information Forensics and Security, Vol. 20, 2025&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;页码&lt;/strong&gt;：6560-6575&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt;：&lt;a class="link" href="https://doi.org/10.1109/TIFS.2025.3583231" target="_blank" rel="noopener"
+&gt;10.1109/TIFS.2025.3583231&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;：&lt;a class="link" href="https://github.com/XXiaoY/Fededitor" target="_blank" rel="noopener"
+&gt;https://github.com/XXiaoY/Fededitor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;论文作者如下 Xiaohan Yuan, Jiqiang Liu(北京交通大学网络空间安全学院院长), Bin Wang, Guorong Chen, Xiangrui Xu, Junyong Wang, Tao Li(海河实验室副主任), Wei Wang(北京交通大学计算机科学与技术学院的正教授)&lt;/p&gt;
+&lt;p&gt;其中除了刘吉强是北京交通大学网络空间安全学院院长，王伟是北京交通大学计算机科学与技术学院的正教授，李涛是海河实验室副主任，其他人都是背景交通大学的学生以及海河实验室的工作人员，在致谢中作者感谢了海河实验室，所以大体是 Xiaohan Yuan 承担了大部分工作，王伟和刘吉强提供指导，海河实验室提供资源&lt;/p&gt;
+&lt;p&gt;Xiaohan Yuan 是论文一作，北京交通大学博士在读，在智能交通安全与隐私北京重点实验室，可以看到几乎每篇论文都有王伟的身影，王伟应该是她的导师，他的方向和王伟大体一致，然后这些论文实验室的学生轮流一作&lt;/p&gt;
+&lt;p&gt;王伟教授 主要方向是联邦学习与车联网，智能交通安全和 AI 对抗&lt;/p&gt;
+&lt;h2 id="2-背景与痛点"&gt;2. 背景与痛点
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-02-13-19-14-20.png" target="_blank"&gt; &lt;img src="images/2026-02-13-19-14-20.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在车联网时代，AI 模型极其依赖海量数据的训练。但随之而来的是严峻的隐私挑战。
+随着 GDPR 等法规的出台，‘被遗忘权’成了硬性指标。无论是用户要求删除隐私数据，还是我们发现某批数据被恶意投毒，系统都必须具备一种能力：从训练好的模型中，干净彻底地剥离掉特定数据的影响。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-15-10-28-39.png" target="_blank"&gt; &lt;img src="images/2026-02-15-10-28-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;左边展示了联邦忘却学习在车联网中的标准流程，目标车辆在发起遗忘请求后，服务器将全局模型分发给所有客户端，目标车辆对模型进行修改，剩余车辆则继续进行本地训练，最后所有车辆把修改后的模型传回服务器，服务器对所有客户端的模型进行聚合后得到遗忘后的全局模型。&lt;/p&gt;
+&lt;p&gt;虽然流程已经定型，但是细节上却出现了各种问题，首先对于被动遗忘算法来说，他需要服务器带着所有客户端回退模型版本同时依靠剩余数据进行多轮重训，虽然他确实能达到较好的遗忘效果以及保持剩余数据预测的精确度，但是他需要所有客户端在线且耗时间很长，这对于车联网的应用场景是不可接受的，首先路况瞬息万变，长时间的训练会导致客户端无法及时获取最新的数据，不能及时应对变化的路况，其次车辆与服务器间的带宽无法支撑如此大规模的数据传输，最后，服务器无法确保能联系到所有车辆，如果车辆开上高速或开进山村，这都会导致服务器和车辆失联，所以被动联邦遗忘学习无法适用协作智能交通系统的场景。&lt;/p&gt;
+&lt;p&gt;而主动联邦遗忘算法，因为缺乏明确的优化目标，只能笼统的进行优化，这就可能会导致模型为达到遗忘的目标大幅修改参数，最终导致数据遗忘不彻底，或者是剩余数据灾难性遗忘的结果。为此有人提出对参数的修改范围进行界定，通过预设阈值的方法尝试使遗忘模型和原始模型对剩余数据的表现一致，但由于缺乏先验知识，没人清楚删除待遗忘数据后的模型参数长什么样，所以这个阈值难以设定。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-23-04.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-23-04.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-18-51.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-18-51.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;为此，我们提出了 FedEditor 算法，首先在定位上他是一个高效的主动遗忘算法，与被动重训不同，它允许车辆在本地主动进行修改，其次在方法上 FedEditor 创新性的提出了表征层面的局部遗忘策略
+他包含两个核心部件，一个是目标导向遗忘，他通过引入错误质心来作为目标，解决了我们刚才提到的缺乏目标的问题，另一个是模型性能修复，他利用剩余数据和正则化约束保护模型的关键知识，防止灾难性遗忘
+接下来我们将详细讲解算法细节&lt;/p&gt;
+&lt;h2 id="3-算法核心思路"&gt;3. 算法核心思路
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-21-21-24-27.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-24-27.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文首先回顾了集中式场景下的传统机器遗忘方法。尽管这些方法均面向拥有完整数据的单体服务器设计，但其核心思路为联邦遗忘提供了重要参考，大致可分为两类：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;精确遗忘&lt;/strong&gt;的代表是 SISA 框架，其核心策略是&lt;strong&gt;数据分片&lt;/strong&gt;：将训练数据预先切分为若干独立子集，当遗忘请求到来时，仅需对包含目标数据的子模型进行重训，而无需重训整个模型，从而显著降低了时间开销。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;近似遗忘&lt;/strong&gt;则放弃完全重训的追求，转而通过直接修改模型参数来近似达到遗忘效果。典型方法包括：&lt;strong&gt;决策边界收缩与扩展&lt;/strong&gt;，针对分类器进行微调，通过调整决策边界来消除目标数据的影响；以及&lt;strong&gt;参数分布对齐&lt;/strong&gt;，通过调整当前模型的参数分布，使其尽量逼近一个从未见过遗忘数据的理想模型。&lt;/p&gt;
+&lt;p&gt;然而，上述方法均基于集中式数据假设，无法直接迁移到数据分散、通信受限的车联网联邦学习场景，这也正是本文需要解决的核心问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-27-29.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-27-29.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;当前联邦遗忘算法可分为&lt;strong&gt;被动联邦遗忘&lt;/strong&gt;与&lt;strong&gt;主动联邦遗忘&lt;/strong&gt;两大类。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;被动联邦遗忘&lt;/strong&gt;依赖服务器协调所有客户端共同执行遗忘操作，主要方法有两种：其一是 &lt;strong&gt;FedEraser&lt;/strong&gt;，它不再对模型进行完全重训，而是利用历史梯度更新记录进行参数回溯，再引导剩余客户端在当前基础上进行多轮校准训练，从而间接消除目标数据在历史更新中留下的影响；其二是文献 [17] 提出的贡献回滚方案，服务器持续记录每个客户端的参数贡献量，遗忘时直接撤销目标客户端的历史贡献，再对全局模型进行修复。然而，被动联邦遗忘对服务器的持续在线和大量通信开销有较强依赖，难以适应车联网的动态连接环境。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主动联邦遗忘&lt;/strong&gt;则由客户端在本地独立完成遗忘操作，无需服务器深度介入。最直接的思路是&lt;strong&gt;梯度上升（Gradient Ascent）&lt;/strong&gt;：既然模型通过梯度下降&amp;quot;记住&amp;quot;了训练数据，反向施加梯度上升便能让模型&amp;quot;忘记&amp;quot;目标数据。但纯粹的梯度上升副作用显著，容易在消除目标数据影响的同时破坏模型在剩余数据上的知识，因此后续工作引入了 &lt;strong&gt;EWC（Elastic Weight Consolidation）&lt;/strong&gt; 正则化约束，对参数修改幅度加以限制，以保护关键权重不被过度扰动。此外，文献 [27] 提出的方法与本文的 FedEditor 有异曲同工之妙：该方法通过 &lt;strong&gt;KL 散度&lt;/strong&gt;约束遗忘数据的输出分布，使当前模型的行为趋近于一个从未见过目标数据的理想模型。两者的关键区别在于作用层次——文献 [27] 的约束作用于&lt;strong&gt;分类器的输出层&lt;/strong&gt;，而 FedEditor 则直接干预更底层的&lt;strong&gt;特征提取器&lt;/strong&gt;，实现表征层面的精准遗忘。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-31-42.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-31-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过对上述方法的系统梳理，FedEditor 的设计目标逐渐清晰：&lt;strong&gt;遗忘要彻底&lt;/strong&gt;（目标数据的影响须被完全消除）、&lt;strong&gt;知识要保留&lt;/strong&gt;（模型在剩余数据上的性能不能出现灾难性下降）、&lt;strong&gt;效率要高&lt;/strong&gt;（在车联网这种实时性要求极高的场景下，遗忘过程必须足够轻量和快速）。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-32-22.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-32-22.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;具体来说，我们需要通过高效的遗忘算法生成一个遗忘模型，使其在性能和行为上尽可能接近理想的“理想模型”（即完全移除目标数据后重新训练得到的模型）。其核心思想是通过特定手段，使遗忘后的模型在待遗忘数据上的表现与对非成员数据类似。从评估角度来看，是否成功遗忘的标准通常采用成员推理攻击：训练一个判别模型来区分数据是否为成员。如果新模型能够有效误导该判别器，使其将待遗忘数据识别为非成员，则视为遗忘成功。同时，新的模型还需确保对其他数据的准确性不受影响，也就是说，其特征提取结果需与原模型高度一致，实现知识的完整保留。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-35-20.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-35-20.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然而，传统的被动联邦遗忘算法由于耗时过长难以满足实际需求，而梯度上升方法效果也有限——在模型过拟合时难以彻底遗忘目标数据，正常情况下又容易经过多轮训练后导致剩余知识的灾难性遗忘。面对这些局限，作者选择突破常规，创新性地提出了全新的解决思路。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-36-06.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-36-06.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前面提到，为了让训练后的模型对遗忘数据的“看法”与非成员数据一致，我们需要找到合适的衡量指标。作者通过定量分析发现，在原始模型中，待遗忘（成员）数据的交叉熵一般较小且波动较小，说明模型对这些数据有高度自信；而对于非成员数据，交叉熵则普遍较大且波动很大，反映出模型缺乏信心。在“理想模型”——即已经完全移除目标数据并重新训练得到的模型——中，待遗忘数据表现出与非成员数据一致的高交叉熵和不稳定性，表明这些数据已被模型“遗忘”。因此，如果希望模型把待遗忘数据当做“陌生人”，核心目标就是显著提升其交叉熵，使其表现接近非成员数据。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-36-13.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-36-13.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;除了定量指标之外，表征分布的可视化（如图 4）也进一步揭示了特征层的变化：原始模型下，成员数据的特征分布紧密且边界清晰，显示出模型强烈的区分能力；而在理想模型中，遗忘数据的特征分布变得分散模糊，完全融入背景，与成员数据融为一体，标志着模型已不再识别这些数据。从本质上讲，让待遗忘数据变成“陌生人”的关键，就是打破其原本紧密的聚类结构，使其在特征空间内变得杂乱、无序。&lt;/p&gt;
+&lt;p&gt;那么，如何高效且精确地打散这些特征，使遗忘彻底生效？接下来我们将详细介绍 FedEditor 的核心算法设计。&lt;/p&gt;
+&lt;h2 id="4-核心方法详解"&gt;4. 核心方法详解
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-21-21-37-28.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-37-28.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在论文中，FedEditor 的算法流程如图所示：当某个客户端发起遗忘请求后，先从服务器获取全局模型，随后仅针对特征提取器进行精细、局部的修改，实现主动遗忘。这一创新点区别于传统的联邦遗忘方法。与以往依赖梯度上升直接调整全局参数（如文献 11）或修改输出层（如文献 27）的做法不同，FedEditor 选择“手术式”地干预特征提取器，将遗忘作用精确聚焦于表征层。通过调整特征提取器的参数，打破原本紧密聚类的成员特征分布，使其变得分散、无序，从而逼近“理想模型”的特性。&lt;/p&gt;
+&lt;p&gt;可以类比为：特征提取器如同“眼睛”，分类器如同“大脑”。当眼睛准确地将“5”对应的特征传给大脑时，大脑很容易识别为数字 5。但如果改变了“眼睛”的参数，使其输出的特征与原标签弱相关，大脑也难以做出准确判断。这就是 FedEditor 遗忘的基本思想。&lt;/p&gt;
+&lt;p&gt;具体操作流程如下：首先利用非成员数据，通过原始模型的特征提取器计算每个错误类别的特征中心（绿色圆圈和星星，星星代表各类别均值中心）；再用待遗忘数据，通过同样的特征提取层获得其初始特征向量（左侧红点）。对于每一个待遗忘样本，都会选择其最近的错误类别中心作为目标，通过优化使该样本经过修改后的特征提取器输出从原始位置逐步“推离”并朝该错误类别中心“靠拢”。在这一过程中，原始特征位置提供动力，目标位置产生牵引，参数变化通过权重正则化加以约束，分类损失保障剩余数据的预测准确性。最终，原本聚集的待遗忘样本的特征会因为各自最近的错误类别中心不同而被拉扯到不同方向，特征分布整体被打散，原标签与特征不再高度对应，分类器对它们的预测置信度降低、交叉熵显著升高，实现模型对其“陌生化”——使成员推理攻击也难以分辨，达到真正的遗忘效果。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：为什么要用非成员数据来计算错误类别中心，而不是直接用训练数据呢？以“遗忘数字 5 的图片”为例，如果我们用训练集中“7”这一类别来作为错误类别中心，看似无害，但实际上，成员数据（即参与过训练的数据）与模型的拟合高度相关。如果用成员数据计算错误类别中心，待遗忘样本在特征空间被引导靠近这些点时，会不可避免地染上成员数据的特征分布。由于模型对成员数据本就具有高置信度，此时即便模型从“高置信度的 5”识别为“高置信度的 7”，置信度依然很高，反而让攻击者依旧容易通过成员推理攻击判断该样本参与过训练——即使预测标签错了，只要置信度高异常就仍有泄漏风险。因此，选取非成员数据（未被模型训练过的数据）计算错误类别中心，可以最大化减少遗忘过程中成员特征的“染色”，避免模型对这些点形成异常自信，从而实现更彻底的遗忘和更强的抗推理攻击能力。
+至于“非成员数据”具体该如何选择，其实通常直接采用训练集对应的测试集即可——即便没有严格对应的测试集，选择其他相似分布的测试数据也完全可行。实验证明，只要数据未被模型训练过，都可以作为合格的非成员数据用于错误类别中心的计算。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-00-14.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-00-14.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;前文提到，原始特征向量为推力，错误类别中心为拉力，这种说法容易流于抽象。那么，FedEditor 的遗忘机制究竟是如何在算法层面实现的呢？这里，作者提出了基于模型的对比学习（contrastive learning）的创新思路。与传统对比学习仅对不同增强版本的同类样本进行“拉近正样本、推远负样本”不同，MOON 算法的突破在于将对比对象从数据维度扩展到了模型维度，通过让本地模型与全局模型间的特征距离拉近，提升联邦训练的稳定性。&lt;/p&gt;
+&lt;p&gt;FedEditor 则在此基础上进一步创新，对正负样本对的定义做了巧妙翻转：正样本对设定为“错误类别中心”，负样本对则为“原始正确类别的特征中心”。在优化过程中，每一个待遗忘样本被有意拉近至与其标签错误的类别中心，同时远离其原本所属类别中心。这一机制促使成员数据在特征空间内失去原有紧密聚类的结构，分布变得分散、模糊，从而达到遗忘目标并有效削弱成员推理攻击的能力。&lt;/p&gt;
+&lt;p&gt;相关的计算流程如下：首先，遍历所有非成员数据，计算得到各类别的错误类别中心。然后，对于每一个待遗忘样本，选择其最近的错误类别中心作为“正样本对”，并将原始正确类别的特征中心作为“负样本对”。在定义损失函数时，采用对比学习的经典结构：优化目标是增强锚点（待遗忘样本特征）与新目标（最近错误类别中心）之间的相似度，同时削弱与原类别中心的相似度。具体而言，分子部分衡量锚点与新目标的相似性，分母部分则综合了与新目标和旧目标的相似性。通过最小化该损失函数，可以推动特征提取器更好地将待遗忘数据的特征远离原类别，同时向错误类别靠拢，有效打散原有的聚类特征，从而实现遗忘目的。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-07-39.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-07-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;与此同时，模型修复模块中的两个关键损失函数在持续发挥作用：其一，记忆保留损失（即交叉熵损失）确保模型对剩余数据的预测准确性不受遗忘过程影响；其二，偏差抵抗损失（即权重正则化）则限制参数变化幅度，防止模型结构发生较大偏移。这三项损失（加上遗忘损失）通过加权求和，共同组成算法的全局损失函数，有效引导模型实现精准、可控的参数调整。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-21-37-28.png" target="_blank"&gt; &lt;img src="images/2026-03-21-21-37-28.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;回到整体流程，在完成局部模型修改后，客户端将新模型上传到服务器，由服务器进行聚合。随后，为评估遗忘效果，会基于原始模型输出，用成员数据和非成员数据训练一个二分类器（成员推理攻击器），再利用该分类器检测新模型对待遗忘数据的判别效果。如果分类器在新模型上难以分辨成员与非成员数据，则判定遗忘成功。&lt;/p&gt;
+&lt;h2 id="5-实验设计与结果"&gt;5. 实验设计与结果
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-21-22-10-37.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-10-37.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;算法设计完成后，进入实验评估阶段，以全面验证所提方法的有效性与优越性。为此，作者围绕算法性能提出了四个核心问题，后续将结合具体实验数据一一解答。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-11-08.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-11-08.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;实验部分，作者选用了五个经典图像数据集（FMNIST、CIFAR10、SVHN、CIFAR100、GTSRB）和两个表格数据集（LOAN 和 BAIOT）来全面验证方法的有效性。其中，FMNIST（Fashion-MNIST）用于服饰图像分类，CIFAR10 和 CIFAR100 用于通用物体识别，SVHN 主要针对街景数字识别，GTSRB 则用于交通标志分类；LOAN 和 BAIOT 数据集分别涉及贷款欺诈检测和物联网设备异常检测。实验评价指标包括遗忘效率、遗忘质量和预测性能三大类标准。在遗忘质量评估方面，作者同时采用了后门检测、基于指标的分析和基于模型的评测三种方法以确保结论的客观全面。对比方案则涵盖了基于 FedAvg 训练的原始模型、彻底重训练得到的理想模型，以及多个主流被动和主动联邦遗忘算法。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-14-40.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-14-40.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在训练效率方面，被动遗忘算法虽然通常能够获得更高的准确率，但其训练过程十分耗时。比如 Eraser 的整体流程复杂，Rap_train 需要计算二阶导数矩阵，Con_train 则需用剩余数据重新训练多轮，因此耗费的时间成本较高。相比之下，主动遗忘算法在效率上有显著优势。虽然 FedEditor 并不是所有主动算法中最快的方案（如 Ram_lab 通过随机标签处理在速度上更有优势，而 FedEditor 需计算质心并构造正负样本对，耗时略长），但 FedEditor 作为主动遗忘方法，兼顾了效率与准确性：其训练速度远超被动遗忘算法，同时在剩余数据上的准确率不仅明显高于其他主动算法，还几乎与被动遗忘算法持平甚至略有超越。尤其在车联网等对安全性要求极高的场景下，为提升剩余数据的识别精度、哪怕多花费几秒训练时间也是完全值得的。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-17-22.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-17-22.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;针对问题 2，即遗忘的有效性，从实验结果可以看出，FedEditor 在遗忘任务上表现十分出色。尽管与部分对比方法相比，遗忘识别率未必最低，但已经显著降低了模型对待遗忘数据的记忆，充分实现了预期的遗忘目标。同时，值得注意的是，遗忘识别率并非越低越好。例如，完全重训练的模型遗忘识别率也无法降到 0，而有些算法虽然实现了极低的遗忘识别率，却以牺牲剩余数据的准确性为代价，整体表现反而不佳。&lt;/p&gt;
+&lt;p&gt;这里需要重点解释一下论文中用来衡量“遗忘干净程度”的两个核心指标：JSD to Re_train↓ 和 AD to Re_train↓。这两个指标的关键点在于后缀的“to Re_train” —— 即和彻底删数据、从头完整重训（Retrain）的“黄金标准”模型进行对比。“↓”代表数值越小越好，也就是遗忘模型和重训模型的差距越小越好。&lt;/p&gt;
+&lt;p&gt;具体来说：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;JSD (Jensen-Shannon Divergence，詹森 - 香农散度)：这个指标用来衡量概率分布之间的相似度。在本场景下，就是比较你的遗忘模型与重训模型，在同一个测试样本上输出的预测概率分布有多相像。JSD 值越接近 0，说明你的遗忘模型在输出层上已经非常接近于“完美遗忘”的重训模型，没有残留异常行为，遗忘够“干净”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AD (Activation Distance / Absolute Distance，激活距离/绝对距离)：这个指标反映两个模型在处理相同输入时，其内部特征表示或输出向量之间的空间距离。如果说 JSD 比的是“猜的结果”，AD 看的则是底层“思考过程”上的接近程度。AD 越低，表示遗忘模型在神经元、特征层参数等深层面也已和重训模型非常接近，遗忘的效果非常彻底。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;论文实验展示，FedEditor 在这两个核心指标（JSD to Re_train↓ 和 AD to Re_train↓）上的表现整体优于基准模型，说明其遗忘算法不仅实现了高效“删除”，而且最小化了与重训的差距，在不影响剩余数据性能的前提下，遗忘结果足够彻底和“纯净”。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-20-16.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-20-16.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从熵分布图可以直观地看出，FedEditor 有效地模拟了重训练效果：蓝色表示原始模型，其熵分布集中且数值较低，而重训练模型和遗忘模型的熵分布整体更高、更分散，并且二者在分布区域上高度重叠，显示出遗忘模型成功逼近了理想的重训练状态。进一步，通过特征表示的可视化结果也能明显看出模型调整后的作用：图 a 展示的是基准模型，不同类别的数据在特征空间中聚成明显的团块，类别间区分清晰；图 c 则表明在彻底重训练后，待遗忘数据的原本聚类被有效打散，分布渗透到其他类别的团块之中，模型已无法准确区分这些待遗忘样本的原始类别。图 d 进一步展示了特征分布的动态变化：蓝色为成员数据，绿色为非成员数据，粉色代表待遗忘数据的初始状态，黄色为遗忘后状态。可见，遗忘后待遗忘数据的特征向量由原先的高度聚集状态被有意识地驱散，分布到非成员数据周围，与作者提出的设计目标高度一致。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-28-31.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-28-31.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于第三个问题预测能力的准确性，可以看到图中 FedEditor 的数据非常亮眼，在各个算法中都名列前茅，这因为 FedEditor 有明确的对齐目标，而且专注于表示层的修改，相比之下，Rap_train 等被动方法虽然准确但太慢，而 GA 等主动方法虽然快但会严重破坏模型性能。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-29-44.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-29-44.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;全局损失函数由三部分组成，通过消融实验证明三部分缺一不可，且 FedEditor 精心选择 a 和 r 最后取得了平衡点
+为什么不涉及β，在多目标优化中，通常需要选定一个基准。由于 lr 代表的是“保持正常功能”这个最基础的目标，作者把它设为 1（基准单位）。默认 a 是 10,r 是 0.1&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-31-30.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-31-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不同分布的非成员数据对模型训练的影响：图中从左到右，所选非成员数据集的质量依次降低，但实验结果显示，无论非成员数据质量如何，模型的遗忘效果与剩余数据的准确率基本保持稳定。这表明，甚至随意选取一些无关图片作为非成员数据，也能够有效支撑算法实现遗忘目标。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-32-17.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-32-17.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;FedEditor 带来的额外计算和通信开销极小。实验还表明，即使显著降低非成员数据的比例，对最终模型性能和遗忘效果的影响也非常有限，算法鲁棒性较强，无需高比例非成员数据即可达到理想表现。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-34-41.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-34-41.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者还进一步通过实验探究了能否实现对整类对象的遗忘（如遗忘所有猫或所有狗）。结果显示，在原始模型中，模型的注意力主要集中在动物的眼睛、鼻子等关键区域，以辅助类别判别；而理想模型则不再关注这些区域。经过 FedEditor 算法处理后，模型的注意力分布与理想重训练模型高度一致，充分证明了该方法在整类遗忘场景下同样具备良好效果和可行性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-22-37-21.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-37-21.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最后，作者还在多种车联网现实复杂场景下对 FedEditor 的稳定性进行了深入验证。实验涵盖了不同类别和任务设置，即使在各种极端或高难度的环境中，FedEditor 依然展现出显著的稳健性。尽管任务复杂度提升会带来模型性能的轻微下降，但整体表现依然优异，各项指标变化均处于可接受范围之内，充分证明了算法的通用性与稳定性。&lt;/p&gt;
+&lt;h2 id="6-总结与思考"&gt;6. 总结与思考
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-21-22-40-51.png" target="_blank"&gt; &lt;img src="images/2026-03-21-22-40-51.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;FedEditor 创新性地将轻量级本地遗忘机制集成到联邦学习流程中。针对待遗忘车辆的数据，FedEditor 精确构建了目标对齐方案，并结合表征空间净化技术，有效消除了遗忘数据对全局模型的影响。同时，FedEditor 利用目标车辆的剩余数据优化模型输出分布，通过引入正则化项抑制模型漂移，确保在遗忘过程中全局模型的预测能力稳定。大量实验结果进一步验证，FedEditor 能以高效率完成有效遗忘，同时几乎不影响全局模型对遗忘数据以外样本的预测性能。&lt;/p&gt;
+&lt;h2 id="7-参考文献"&gt;7. 参考文献
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;原文引用格式（IEEE 格式）：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;X. Yuan, J. Liu, B. Wang, G. Chen, X. Xu, J. Wang, T. Li, and W. Wang,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;FedEditor: Efficient and Effective Federated Unlearning in Cooperative
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Intelligent Transportation Systems,&amp;#34; IEEE Transactions on Information
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Forensics and Security, vol. 20, pp. 6560-6575, 2025.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DOI: 10.1109/TIFS.2025.3583231
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;相关链接：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;论文 DOI: &lt;a class="link" href="https://doi.org/10.1109/TIFS.2025.3583231" target="_blank" rel="noopener"
+&gt;https://doi.org/10.1109/TIFS.2025.3583231&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;代码仓库：&lt;a class="link" href="https://github.com/XXiaoY/Fededitor" target="_blank" rel="noopener"
+&gt;https://github.com/XXiaoY/Fededitor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;</description></item></channel></rss>

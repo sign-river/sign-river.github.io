@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>显卡驱动 on YSY的博客</title><link>https://sign-river.github.io/tags/%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link><description>Recent content in 显卡驱动 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>加载进入游戏后点击新游戏闪退</title><link>https://sign-river.github.io/p/stellaris-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏后点击新游戏闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该问题通常不会在报错日志中体现，主要原因多为显卡驱动异常或兼容性冲突。&lt;/p&gt;
+&lt;p&gt;建议首先更新显卡驱动至最新版本。该操作在多数情况下可直接解决问题，我帮网友解决该问题就用的这个方法。说来奇妙，本来都没往显卡驱动这方面想，以为是 mod 问题，结果我用向日葵远程帮忙查看问题的时候无事发生，我一断开连接马上闪退，遂考虑到显卡驱动问题。&lt;/p&gt;
+&lt;p&gt;如果更新驱动后仍然闪退，那可能是其他虚拟设备造成的，比如 MuMu 模拟器中的 GameViewer 远程控制软件。这个软件兼容性问题较多，建议卸载后重启电脑，一般就能恢复正常。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏加载进度到 100% 后闪退</title><link>https://sign-river.github.io/p/stellaris-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏加载进度到 100% 后闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;打开启动器和游戏时没有任何报错，但在加载进度到 100% 时会突然闪退，并且不会生成错误日志。&lt;/p&gt;
+&lt;p&gt;这种情况大概率是由于显卡驱动过旧导致的，建议更新显卡驱动。注意：下载驱动安装包后必须执行安装，仅仅下载是不生效的。&lt;/p&gt;
+&lt;p&gt;DirectX 诊断信息文件查看方法：&lt;/p&gt;
+&lt;p&gt;按下 Win+R，输入 dxdiag 并回车；&lt;/p&gt;
+&lt;p&gt;在打开的窗口中点击“保存所有信息”；&lt;/p&gt;
+&lt;p&gt;这样即可生成 DirectX 诊断信息文件，其中有显卡驱动和显卡功能的详细记录，可通过查看此文件来比对问题的改善情况。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏似乎出现崩溃或意外终止，缺少.NET Framework 等</title><link>https://sign-river.github.io/p/paradox-launcher-error-09/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-09/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏似乎出现崩溃或意外终止，缺少.NET Framework 等。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;首先这个报错有两种情况，第一种情况，退出代码是 null:&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;遇到这个报错，去查看一下你的 stellaris.exe 的权限设置的是不是以管理员身份启动，如果是的话就把以管理员身份启动关掉，因为启动器是普通用户身份而 stellaris.exe 是管理员，导致启动器没有权限去调用 stellaris.exe&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第二种情况，退出代码是一串数字：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.jpeg" target="_blank"&gt;&lt;img src="images/error-03.jpeg" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你没有购买游戏本体，那可能是游戏存放路径有中文导致的&lt;/p&gt;
+&lt;p&gt;如果你购买了游戏本体，但刚下载没有安装凝聚力 dlc 则：&lt;/p&gt;
+&lt;p&gt;优先更新显卡驱动，如果还不行则在启动器中将显示模式修改为无边框全屏&lt;/p&gt;
+&lt;p&gt;如果你安装了凝聚力 dlc，则：&lt;/p&gt;
+&lt;p&gt;出现该报错的原因种类繁多，根本原因是游戏文件缺失或损坏，给出以下两个大类，几个方案，请根据自身情况选择对应方法：&lt;/p&gt;
+&lt;p&gt;第一大类：设备上有杀毒软件，隔离了补丁导致报错&lt;/p&gt;
+&lt;p&gt;感谢群友”猪 1226211946”提供的问题解决方案&lt;/p&gt;
+&lt;p&gt;对于设备上存在杀毒软件的朋友可以检查一下杀毒软件是否拦截了游戏程序或者游戏文件，比如目前已知的会隔离游戏补丁的杀毒软件迈克菲 (McAfee)(如下图所示)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;杀毒软件隔离补丁可能会出现第一天刚打完补丁可以正常使用 dlc，但第二天重新登录的时候 dlc 消失的情况，如果确定是杀毒软件导致该报错，在杀毒软件中关闭实时扫描即可。如果不想删杀毒软件可以把文件添加进白名单，下面演示一下迈菲克的添加白名单操作过程：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;把补丁移动到 stellaris 根目录以后通过以下操作把补丁加入白名单&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第二大类：补丁方面出了问题导致文件缺失&lt;/p&gt;
+&lt;p&gt;打补丁时打错了位置导致报错，如果你只打过一次补丁，可以对照着下载的补丁把游戏根目录里刚打的补丁文件和文件夹全部删掉，在 Steam 里右键 stellaris-&amp;gt;属性-&amp;gt;已安装文件-&amp;gt;验证文件完整性后，根据正确流程重新打一遍补丁。&lt;/p&gt;
+&lt;p&gt;曾经多次打补丁，打过各种来源的不同补丁，如不同种类的 dlc 补丁，不同类型的联机补丁等，到最后不同补丁相互冲突，游戏直接崩溃。解决方法（感谢群友浅浅提供的方法），首先删除 dlc 和 dlc_metadata 文件夹 (图一),然后删除下面所有的文件 (图二),之后去 Steam 里右键 stellaris-&amp;gt;属性-&amp;gt;已安装文件-&amp;gt;验证文件完整性把缺失的游戏文件补回来，最后重新打一遍补丁和 dlc。此举的目的是在保证能清除掉杂乱的补丁文件的同时尽可能少的删除文件，减少之后重新下载文件的时间。如果觉得不保险，可以选择记住 stellaris 根目录文件夹的位置，直接卸载 stellaris，然后回到 stellaris 根目录文件夹，删除文件夹内剩余的所有文件，之后重新下载 stellaris，打一遍补丁。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打了不正确的补丁导致报错出现。当上述两种方法都解决不了问题的时候，就要从外部来找原因了。正常情况下补丁包由三个补丁文件和一个 dlc 文件夹组成 (图 1),打开 dlc 文件夹后可以看到所有 dlc 文件 (图 2),打开任意 dlc 文件后里面是 dlc 的子文件 (图 3)。如果补丁包内部出现了问题，比如图二的 dlc16 打开之后不是像图三这样的子文件，而是像图四这样，里面还有一个文件夹，说明该 dlc 多嵌套了一层，这样的补丁打完就会报错，解决方法为找到补丁的发布者，告知错误类型并寻求正确的补丁包，之后重复第 2 步，清除干净之前的补丁后打上新的补丁包。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 1&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 2 图 3&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="游戏似乎出现崩溃或意外终止，缺少.NET Framework 等相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 4&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>最常见的闪退后白框报错</title><link>https://sign-river.github.io/p/stellaris-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;最常见的闪退后白框报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="最常见的闪退后白框报错相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;导致该报错原因很多，但这个白框报错本身除了让你提交日志以外没有提供任何相关信息，你可以跟根据自身的操作步骤和查看游戏的报错日志推测出现该报错的原因，出现该报错的主要原因有以下几点：&lt;/p&gt;
+&lt;p&gt;(注：报错日志路径 &lt;code&gt;C:\Users\&amp;lt;你的用户名&amp;gt;\Documents\Paradox Interactive\Stellaris\logs\error.log&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;mod 冲突，你打的 mod 里有的 mod 互相不适配，你需要找到不适配的 mod 并清理掉它；&lt;/p&gt;
+&lt;p&gt;如果你认为自己没有打 mod 或者已经把 mod 删除干净了，你应该打开启动器，切换到播放集界面，观察 mod 有没有真的清除干净。&lt;/p&gt;
+&lt;p&gt;运算量爆炸，电脑无法支撑游戏导致发生卡退，这种情况大多出现在游戏后期或者大量舰队作战的时候，解决方法是换更好的配置，或者在舰队作战的时候不要点击去看，不点进去看就会流畅很多；&lt;/p&gt;
+&lt;p&gt;在 P 社更新后出现的一些时效性 bug，其特点是玩家在游戏过程中玩了一段时间后，突然发生闪退，且每次加载存档并继续游戏时，时间推进到某个特定年份（例如 2300 年或 2350 年左右）时，游戏会固定闪退。这类 bug 的典型例子如 3.10.2 版本中的“灭国闪退”问题。为了解决存档闪退问题，可以尝试以下方法：通过干预相关事件，避免触发致使游戏崩溃的情况。例如，针对“灭国闪退”bug，玩家可以采取措施拯救即将灭亡的国家，从而避免闪退。其他类似的事件也可以通过类似方式解决。如果在挖掘遗址时遇到闪退问题，可以尝试停止挖掘；若是殖民时闪退，则尝试更换殖民球进行操作。此外，有群友提供了一种替代方案：加载原本会闪退的存档后，暂停时间流动，直接保存并修改存档名，再读取修改后的存档，通常可以顺利继续游戏。&lt;/p&gt;
+&lt;p&gt;全学习版群星改语言文件没改对，细节看本文档四 -4 学习版群星修改语言文件后启动游戏闪退报错&lt;/p&gt;
+&lt;p&gt;未知错误？??,玄学解决方法，回退到旧版本后再更新到新版本即可解决问题。&lt;/p&gt;
+&lt;p&gt;手柄驱动过旧引发冲突，更新手柄的驱动或卸载手柄驱动即可&lt;/p&gt;
+&lt;p&gt;如果游戏以窗口模式可以正常运行，但切换为全屏或无边框全屏就会闪退，此时可以尝试右键 stellaris.exe，在兼容性选项卡中勾选禁用全屏优化和以管理员身份启动。点击应用后尝试启动游戏，如果成功则不再调整，如果失败取消勾选禁用全屏优化和以管理员身份启动，应用后再次启动游戏。&lt;/p&gt;
+&lt;p&gt;在未安装 mod 时，游戏能够正常运行；但安装 mod 并确认没有冲突后，游戏仍然闪退。这时，可以尝试扩展虚拟内存，具体操作方法请参考网上相关教程。如果其他磁盘被加密导致无法扩展虚拟内存，可以考虑解除加密或直接在 C 盘设置。如果 C 盘空间不足，请先扩展 C 盘空间，再进行虚拟内存扩展，否则可能导致系统卡顿。可参考的教程：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1a142197a9/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=19dcf32d8641182f1f159b50887e0cf8" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1a142197a9/?spm_id_from=333.337.search-card.all.click&amp;vd_source=19dcf32d8641182f1f159b50887e0cf8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;显卡驱动过旧，更新显卡驱动即可。&lt;/p&gt;
+&lt;p&gt;如果在加载游戏时，游戏总是在某个特定进度处闪退，可以尝试在 Steam 中验证游戏文件完整性，并重新启动游戏。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>群星 on YSY的博客</title><link>https://sign-river.github.io/tags/%E7%BE%A4%E6%98%9F/</link><description>Recent content in 群星 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E7%BE%A4%E6%98%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>打开游戏黑屏但音乐正常播放</title><link>https://sign-river.github.io/p/stellaris-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开游戏黑屏但音乐正常播放。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;在电脑设置 &amp;gt; 系统 &amp;gt; 屏幕中关闭 HDR 并重启游戏，如果未生效重启电脑后重试。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开游戏时报错缺少某某 dll</title><link>https://sign-river.github.io/p/stellaris-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开游戏时报错缺少某某 dll。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;方法一：去下一个驱动修复软件，或者下载群里的 DirectX 修复一下&lt;/p&gt;
+&lt;p&gt;方法二：到网上搜索并下载对应的 dll，把下载的 dll 复制后放在 C:\Windows\System32 和 C:\Windows\SysWOW64 中。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开游戏以后界面过大，不显示按钮</title><link>https://sign-river.github.io/p/stellaris-error-11/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-11/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开游戏以后界面过大，不显示按钮。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打开游戏以后界面过大，不显示按钮相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;分辨率问题，退出重进看看有没有效果，如果没有可以参考下面链接的视频删掉指定文件，让系统重新创建一个默认的 (你是佬的话直接改文件也行),如果是正版可以直接去启动器里调整分辨率，或者看显示模式是不是窗口，如果是的话调成全屏。&lt;/p&gt;
+&lt;p&gt;文件位置：&lt;/p&gt;
+&lt;p&gt;C:\Users(你的用户名)\Documents\Paradox Interactive\Stellaris\settings.txt&lt;/p&gt;
+&lt;p&gt;参考视频：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1q14y1v7Jg/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1q14y1v7Jg/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活</title><link>https://sign-river.github.io/p/stellaris-dlc-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;去游戏根目录，找到 dlc 文件夹，进去把所有 dlc 文件全删掉，然后下载 dlc 一键安装程序一键安装一下。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;记得只删里面的文件，不要把文件夹也删了&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但一部分旧的 dlc 没有被激活相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;dlc 一键安装程序下载地址：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://gitlink.org.cn/signriver/file-warehouse/releases/download/v/Stellaris-DLC-Helper-v1.0.5.zip" target="_blank" rel="noopener"
+&gt;https://gitlink.org.cn/signriver/file-warehouse/releases/download/v/Stellaris-DLC-Helper-v1.0.5.zip&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活</title><link>https://sign-river.github.io/p/stellaris-dlc-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;确认下你下载的补丁包对不对的上版本，如果你 4.0 游戏下载 3.14 版本的补丁包，肯定会缺失 4.0 才出的新 dlc.群文件有全 dlc+ 补丁包，升级包和单独 dlc 包，如果你不清楚该下哪个包，下当前游戏版本对应的全 dlc 补丁包即可。&lt;/p&gt;
+&lt;p&gt;另外如果你确实下载的是当前版本对应的补丁包，那就去游戏根目录下的 dlc 文件夹里看看各个 dlc 子文件夹是否存在文件夹嵌套现象，如下图&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开 &lt;code&gt;dlc039_stargazer&lt;/code&gt; 文件夹后，应直接显示所有 DLC 内容文件；若仍存在多余的子文件夹，请将其中的文件手动移动到正确位置。此类问题通常由解压过程中的错误引起。&lt;/p&gt;
+&lt;p&gt;记得更新游戏本体，比如有个哥们打了 4.1 的 dlc 问我为什么没有生效，截图一看选的版本是 4.0.23&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打完 dlc 补丁包后其他 dlc 正常激活，但最新的一个或几个 dlc 没有被激活相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果你所有方法都试过了还不行，那就下载群文件全 dlc+ 补丁那个，全部替换，dlc 和补丁肯定有一个出问题了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后启动器列表和游戏内都没有 dlc</title><link>https://sign-river.github.io/p/stellaris-dlc-error-06/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-06/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后启动器列表和游戏内都没有 dlc。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;如果启动器列表有 dlc，跳转去看三 -22．打完 dlc 补丁包后启动器显示有 dlc，但进游戏后没有&lt;/p&gt;
+&lt;p&gt;如果启动器列表和游戏内均无 dlc，先去 steam 验证文件完整性，验证后重新打 dlc+ 补丁即可。&lt;/p&gt;
+&lt;p&gt;另外需要注意一种情况，自解压格式的补丁包不能直接解压到目的文件夹，必须得先解压到别处，再复制过去，点击替换才能成功打上 dlc 和补丁。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后启动器显示有 dlc，但进游戏后没有</title><link>https://sign-river.github.io/p/stellaris-dlc-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后启动器显示有 dlc，但进游戏后没有。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;这种情况可能由以下原因导致：&lt;/p&gt;
+&lt;p&gt;游戏本体是否为正版&lt;/p&gt;
+&lt;p&gt;使用 DLC+ 补丁包的前提是你的游戏本体必须是正版。正版购买有以下两种途径：&lt;/p&gt;
+&lt;p&gt;通过 Steam 直接购买游戏本体；&lt;/p&gt;
+&lt;p&gt;购买正版 CDK，并在 Steam 库界面左下角激活。如果你通过“按住 Win+X，找到 PowerShell（管理员）（A），在代码框中输入代码进行激活”的方式激活游戏，那么你买到的可能是假货。假入库的游戏无法生效 DLC+ 补丁，而且可能导致 Steam 红信等不稳定问题。如果发现自己购买的是假货，可以参考报错指南五 -3“删除 Steam 中假入库的游戏，并使用正版 CDK 重新激活覆盖”的操作流程。&lt;/p&gt;
+&lt;p&gt;补丁文件是否成功替换&lt;/p&gt;
+&lt;p&gt;检查 DLC+ 补丁包里的文件是否成功替换到了游戏根目录。有些玩家在复制时，只替换了 DLC 文件夹的内容，而没有替换三个补丁文件。&lt;/p&gt;
+&lt;p&gt;如果出现这种情况，请按以下方式操作：&lt;/p&gt;
+&lt;p&gt;分四次分别复制 DLC 文件夹和三个补丁文件。&lt;/p&gt;
+&lt;p&gt;将它们依次粘贴到游戏根目录，确保补丁和文件都被正确替换。&lt;/p&gt;
+&lt;p&gt;启动器与游戏本体的区别&lt;/p&gt;
+&lt;p&gt;启动器和游戏是两个独立的模块。即便在启动器文件夹里打了补丁，启动器会显示已拥有全部 DLC，这并不意味着游戏本体也包含了 DLC。补丁只会影响游戏本体，不会改变启动器中的显示。因此，启动器显示有 DLC ≠ 游戏内有 DLC。&lt;/p&gt;
+&lt;p&gt;若你已确认打补丁位置正确，但仍然遇到问题，请检查以下事项：&lt;/p&gt;
+&lt;p&gt;确保补丁包完整且版本为最新。如果补丁包缺失文件，将导致 DLC 或补丁不生效。&lt;/p&gt;
+&lt;p&gt;请仔细核对补丁步骤，确保没有打错位置。可以观看补丁教程视频并对照步骤进行操作。&lt;/p&gt;
+&lt;p&gt;【群星凝聚力使用方法及群星报错指南】&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1tEJmz5EVk/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1tEJmz5EVk/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;验证文件完整性问题&lt;/p&gt;
+&lt;p&gt;切勿在 Steam 中点击“验证文件完整性”，因为此操作会覆盖你刚打的补丁。补丁打完后千万不要验证文件完整性。如果已经点击过验证，重新按照教程操作补丁即可。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory</title><link>https://sign-river.github.io/p/stellaris-dlc-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;报错原因：&lt;/p&gt;
+&lt;p&gt;该问题通常是由于此前安装过其他补丁包，但旧补丁文件未完全删除，导致不同补丁之间发生文件冲突，从而引发报错。&lt;/p&gt;
+&lt;p&gt;如图，存在多余补丁：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="打完 dlc 补丁包后启动游戏报错[SmokeAPI] Panic! Failed to hook function ISteamClient_GetISteamInventory via virtual function swap: Failed to hook function: ISteamClient_GetISteamInventory 相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;p&gt;如果不确定到底多了哪些补丁，请先删除游戏根目录下除文件夹以外的所有文件，随后在 Steam 中验证游戏文件的完整性。待缺失或损坏的原始文件恢复完成后，再重新安装当前补丁包。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>点击开始游戏时直接闪退，没有任何报错</title><link>https://sign-river.github.io/p/stellaris-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;点击开始游戏时直接闪退，没有任何报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;注意这里指的是打开游戏时闪退，如果你是 Steam 里启动游戏按钮点了没反应，压根没打开游戏，请跳转 steam 点开始游戏按钮后打不开游戏，过一会后停止按钮又变成了开始游戏。&lt;/p&gt;
+&lt;p&gt;对于这种情况，可以在路径 C:\Users(你的用户名)\文档 (Documents)\Paradox Interactive\Stellaris\logs 中找到报错日志 error.log，打开日志可以看到报错的详细情况，如果报错日志是空的，跳转到游戏加载到 100% 后闪退&lt;/p&gt;
+&lt;p&gt;常见的报错如下：&lt;/p&gt;
+&lt;p&gt;dlc 文件缺失，如下图：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="点击开始游戏时直接闪退，没有任何报错相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这种情况可能是电脑上的杀毒软件把 dlc 部分文件识别为病毒软件并且将其删除，解决这个问题的方法也很简单，把现有的 dlc 文件全部删掉，下载新的 dlc+ 补丁包，重新打上即可。注意如果不想让这个问题反复出现，建议筛查电脑中的杀毒软件，看看到底是哪个软件干的，并把群星的文件夹设置为白名单，避免再次被删除。&lt;/p&gt;
+&lt;p&gt;如果你顺着这个路径没找到文档，那问题就出在你的文档上，你想想你把你文档改哪去了，见到一个把文档位置改进 U 盘里的，你找不到文档程序自然也找不到，把文档位置改回去问题就解决了&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="点击开始游戏时直接闪退，没有任何报错相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏并选择国家后，在进入游戏地图时闪退</title><link>https://sign-river.github.io/p/stellaris-error-09/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-09/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏并选择国家后，在进入游戏地图时闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;首先，尝试清空所有 MOD。如果去除 MOD 后游戏能够正常运行，说明是某个 MOD 引起的问题，可能是版本过旧或存在冲突。此时，可以逐个排查并去除有问题的 MOD。&lt;/p&gt;
+&lt;p&gt;如果去掉所有 MOD 后仍然出现闪退，且卸载重装游戏也无法解决，可能是存储在电脑文档中的游戏设置或 MOD 相关文件出了问题。此时，进入路径 C:\Users(你的用户名)\Documents\Paradox Interactive\Stellaris，复制 C:\Users\32173\Documents\Paradox Interactive\Stellaris\save games 文件夹并保存在其他位置，因为该文件夹包含你的游戏存档。然后，删除整个 Stellaris 文件夹（确保删除的是文档中的 Stellaris 文件夹，而不是 Steam 目录中的）。卸载重装游戏不会删除该文件夹，因此需要手动删除以重置设置文件。重启游戏后，游戏会自动生成一个新的 Stellaris 文件夹。如果想恢复之前的存档，将保存的 save games 文件夹粘贴回文档中的 Stellaris 文件夹即可。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏并游玩一两分钟后闪退</title><link>https://sign-river.github.io/p/stellaris-error-10/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-10/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏并游玩一两分钟后闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;目前唯一已知可行的办法是重装系统&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏后点击新游戏闪退</title><link>https://sign-river.github.io/p/stellaris-error-07/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-07/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏后点击新游戏闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该问题通常不会在报错日志中体现，主要原因多为显卡驱动异常或兼容性冲突。&lt;/p&gt;
+&lt;p&gt;建议首先更新显卡驱动至最新版本。该操作在多数情况下可直接解决问题，我帮网友解决该问题就用的这个方法。说来奇妙，本来都没往显卡驱动这方面想，以为是 mod 问题，结果我用向日葵远程帮忙查看问题的时候无事发生，我一断开连接马上闪退，遂考虑到显卡驱动问题。&lt;/p&gt;
+&lt;p&gt;如果更新驱动后仍然闪退，那可能是其他虚拟设备造成的，比如 MuMu 模拟器中的 GameViewer 远程控制软件。这个软件兼容性问题较多，建议卸载后重启电脑，一般就能恢复正常。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏后在游戏主界面闪退</title><link>https://sign-river.github.io/p/stellaris-error-06/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-06/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏后在游戏主界面闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该报错区别于第一条白框闪退报错，该报错一般出现于游戏加载读条结束后一段时间，已经进入了游戏注界面，但不久后闪退。(如下图，进入以下游戏界面后闪退)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;出现该报错的可能是是因为系统自带的安全系统限制了游戏对文件夹的访问，只要关掉文件夹限制访问即可。&lt;/p&gt;
+&lt;p&gt;操作如下：打开设置，选择隐私和安全性，进入 windows 安全中心，选择病毒和威胁防护。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以在保护历史记录中看到被限制访问文件夹的进程，比如该图中群星被限制访问自己的文件夹，极其抽象。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解决方法也很简单，只要进入病毒和防护，在勒索软件防护中把文件夹限制访问关掉即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏后在自定义国家界面闪退</title><link>https://sign-river.github.io/p/stellaris-error-08/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-08/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏后在自定义国家界面闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;目前已知可行方法：删除 c 盘游戏数据文件夹后，重装游戏，然后重启电脑后打开游戏&lt;/p&gt;
+&lt;p&gt;c 盘游戏数据位置:C:\Users(你的用户名)\Documents\Paradox Interactive\Stellaris&lt;/p&gt;
+&lt;p&gt;注意如果你有在意的存档，把\Stellaris\save games 文件夹复制保留一份，游戏能正常运行后再粘贴回去&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>解压 dlc 补丁包后发现 dlc 序号不连续</title><link>https://sign-river.github.io/p/stellaris-dlc-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;解压 dlc 补丁包后发现 dlc 序号不连续。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;如图：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="解压 dlc 补丁包后发现 dlc 序号不连续相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;部分玩家看到 DLC 序号不连续，会怀疑是不是缺少了某个 DLC。这里需要说明几点：&lt;/p&gt;
+&lt;p&gt;大面积序号缺失的情况&lt;/p&gt;
+&lt;p&gt;如果 DLC 序号出现了大面积的空缺，那确实有可能是缺少了部分 DLC。上图展示的是 Stellaris 在 4.1 版本时的全部 DLC，共有 32 个文件夹，你可以据此进行逐一核对。&lt;/p&gt;
+&lt;p&gt;序号空缺的正常情况&lt;/p&gt;
+&lt;p&gt;Stellaris 的 DLC 更新并不是严格按照序号顺序进行的，因此出现序号空缺是正常现象。也就是说，即使存在某些序号的缺口，也不一定意味着 DLC 文件缺失。&lt;/p&gt;
+&lt;p&gt;如何进一步确认&lt;/p&gt;
+&lt;p&gt;如果你已经核对过，确认 DLC 文件本身没有缺少，但游戏内确实缺少某些 DLC，请参考本章节的其他条目，逐一对照排查。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>解压 dlc 补丁包后文件夹里只有 dlc 没有补丁</title><link>https://sign-river.github.io/p/stellaris-dlc-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;解压 dlc 补丁包后文件夹里只有 dlc 没有补丁。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;你的电脑上的杀毒软件可能误判补丁为威胁并进行了屏蔽。常见的误杀补丁的杀毒软件包括 360、迈克菲以及 Windows 自带的 Windows Defender。解决方法有两种：一是卸载杀毒软件，二是将补丁添加到杀毒软件的白名单中，以确保其正常运行。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>退出游戏时游戏卡死，只能强制关闭游戏</title><link>https://sign-river.github.io/p/stellaris-error-13/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-13/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;退出游戏时游戏卡死，只能强制关闭游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;开了云存档导致的，把 steam 云关了就好了，不过关掉之后记得时不时给你存档备份一下，不然换个电脑或者不小心把存档删了你存档就没了&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="退出游戏时游戏卡死，只能强制关闭游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="退出游戏时游戏卡死，只能强制关闭游戏相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版群星无法调中文 (正版直接在启动器里调)</title><link>https://sign-river.github.io/p/stellaris-offline-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星无法调中文 (正版直接在启动器里调)。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;(1) 点击~键然后输入指令 switchlanguage l_simp_chinese 回车即可&lt;/p&gt;
+&lt;p&gt;(2) 或者根据教程视频改下文件&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1Xu4y1q7Ly/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1Xu4y1q7Ly/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版群星修改语言文件后启动游戏闪退报错</title><link>https://sign-river.github.io/p/stellaris-offline-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星修改语言文件后启动游戏闪退报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;语言文件要严格按照教程视频修改，如果改的有偏差会导致游戏无法正常读取文件，导致闪退。如果已经出问题了，就清空文件里的信息，把以下代码复制进文件，然后 Ctrl+S 保存即可。&lt;/p&gt;
+&lt;p&gt;l_simp_chinese:&lt;/p&gt;
+&lt;p&gt;l_english:0 &amp;ldquo;英语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_braz_por:0 &amp;ldquo;巴西葡萄牙语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_german:0 &amp;ldquo;德语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_french:0 &amp;ldquo;法国&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_spanish:0 &amp;ldquo;西班牙语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_polish:0 &amp;ldquo;波兰语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_russian:0 &amp;ldquo;俄语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_simp_chinese:0 &amp;ldquo;中文&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_japanese:0 &amp;ldquo;日本人&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_korean:0 &amp;ldquo;韩国&amp;rdquo;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版群星一打开就闪退</title><link>https://sign-river.github.io/p/stellaris-offline-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星一打开就闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="学习版群星一打开就闪退相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="学习版群星一打开就闪退相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;路径中有中文，类似于”下载”这样，至于最前面那个”此电脑”不影响，把整个文件夹移动到全英文路径下即可，或者直接放到盘符下&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版用 JSGME 打 mod 后发现 mod 没有生效</title><link>https://sign-river.github.io/p/stellaris-offline-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版用 JSGME 打 mod 后发现 mod 没有生效。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.jpeg" target="_blank"&gt;&lt;img src="images/error-02.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解压问题，多套了一层文件夹，解压后 mod 文件夹内应直接为 mod 文件，比如文件夹 2984861984 点开后直接就是 mod 的内容文件，如果类似 2984861984 的文件夹外还包含一个仅用于表述 mod 名称的文件夹，如”懒人的更多工作岗位与住房”,只需要去掉最外层的名称文件夹再打入 mod 即可&lt;/p&gt;
+&lt;p&gt;比如下图就是有多余文件夹&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.jpeg" target="_blank"&gt;&lt;img src="images/error-03.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;而去掉前面的文件夹才是正确的形式&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.jpeg" target="_blank"&gt;&lt;img src="images/error-04.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏加载到 5% 固定卡死</title><link>https://sign-river.github.io/p/stellaris-error-14/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-14/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏加载到 5% 固定卡死。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="游戏加载到 5% 固定卡死相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="游戏加载到 5% 固定卡死相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;群星 4.2 版本搞出来的新 bug，官方建议右键 stellaris，选中属性，在启动选项中输入-opengl&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏加载进度到 100% 后闪退</title><link>https://sign-river.github.io/p/stellaris-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏加载进度到 100% 后闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;打开启动器和游戏时没有任何报错，但在加载进度到 100% 时会突然闪退，并且不会生成错误日志。&lt;/p&gt;
+&lt;p&gt;这种情况大概率是由于显卡驱动过旧导致的，建议更新显卡驱动。注意：下载驱动安装包后必须执行安装，仅仅下载是不生效的。&lt;/p&gt;
+&lt;p&gt;DirectX 诊断信息文件查看方法：&lt;/p&gt;
+&lt;p&gt;按下 Win+R，输入 dxdiag 并回车；&lt;/p&gt;
+&lt;p&gt;在打开的窗口中点击“保存所有信息”；&lt;/p&gt;
+&lt;p&gt;这样即可生成 DirectX 诊断信息文件，其中有显卡驱动和显卡功能的详细记录，可通过查看此文件来比对问题的改善情况。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏校验码和别人不一样，无法加入联机房间</title><link>https://sign-river.github.io/p/stellaris-error-12/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-12/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏校验码和别人不一样，无法加入联机房间。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;游戏校验码和游戏文件完整性有关，部分学习版群星因为文件变动导致校验码被改变，这个没办法，建议入手正版群星本体，方便联机，也方便打 mod。&lt;/p&gt;
+&lt;p&gt;如果你有正版本体，但校验码还是不对，那是因为你打了 mod，大部分 mod 会改变校验码，去启动器里把你打的 mod 都卸了，校验码就正常了。当然如果你们想 mod 联机，只需要协商一下打相同的 mod 并确保 mod 在播放集中的排序一致即可，此时你们的校验码也同样相同，可以正常联机。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>最常见的闪退后白框报错</title><link>https://sign-river.github.io/p/stellaris-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;最常见的闪退后白框报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="最常见的闪退后白框报错相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;导致该报错原因很多，但这个白框报错本身除了让你提交日志以外没有提供任何相关信息，你可以跟根据自身的操作步骤和查看游戏的报错日志推测出现该报错的原因，出现该报错的主要原因有以下几点：&lt;/p&gt;
+&lt;p&gt;(注：报错日志路径 &lt;code&gt;C:\Users\&amp;lt;你的用户名&amp;gt;\Documents\Paradox Interactive\Stellaris\logs\error.log&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;mod 冲突，你打的 mod 里有的 mod 互相不适配，你需要找到不适配的 mod 并清理掉它；&lt;/p&gt;
+&lt;p&gt;如果你认为自己没有打 mod 或者已经把 mod 删除干净了，你应该打开启动器，切换到播放集界面，观察 mod 有没有真的清除干净。&lt;/p&gt;
+&lt;p&gt;运算量爆炸，电脑无法支撑游戏导致发生卡退，这种情况大多出现在游戏后期或者大量舰队作战的时候，解决方法是换更好的配置，或者在舰队作战的时候不要点击去看，不点进去看就会流畅很多；&lt;/p&gt;
+&lt;p&gt;在 P 社更新后出现的一些时效性 bug，其特点是玩家在游戏过程中玩了一段时间后，突然发生闪退，且每次加载存档并继续游戏时，时间推进到某个特定年份（例如 2300 年或 2350 年左右）时，游戏会固定闪退。这类 bug 的典型例子如 3.10.2 版本中的“灭国闪退”问题。为了解决存档闪退问题，可以尝试以下方法：通过干预相关事件，避免触发致使游戏崩溃的情况。例如，针对“灭国闪退”bug，玩家可以采取措施拯救即将灭亡的国家，从而避免闪退。其他类似的事件也可以通过类似方式解决。如果在挖掘遗址时遇到闪退问题，可以尝试停止挖掘；若是殖民时闪退，则尝试更换殖民球进行操作。此外，有群友提供了一种替代方案：加载原本会闪退的存档后，暂停时间流动，直接保存并修改存档名，再读取修改后的存档，通常可以顺利继续游戏。&lt;/p&gt;
+&lt;p&gt;全学习版群星改语言文件没改对，细节看本文档四 -4 学习版群星修改语言文件后启动游戏闪退报错&lt;/p&gt;
+&lt;p&gt;未知错误？??,玄学解决方法，回退到旧版本后再更新到新版本即可解决问题。&lt;/p&gt;
+&lt;p&gt;手柄驱动过旧引发冲突，更新手柄的驱动或卸载手柄驱动即可&lt;/p&gt;
+&lt;p&gt;如果游戏以窗口模式可以正常运行，但切换为全屏或无边框全屏就会闪退，此时可以尝试右键 stellaris.exe，在兼容性选项卡中勾选禁用全屏优化和以管理员身份启动。点击应用后尝试启动游戏，如果成功则不再调整，如果失败取消勾选禁用全屏优化和以管理员身份启动，应用后再次启动游戏。&lt;/p&gt;
+&lt;p&gt;在未安装 mod 时，游戏能够正常运行；但安装 mod 并确认没有冲突后，游戏仍然闪退。这时，可以尝试扩展虚拟内存，具体操作方法请参考网上相关教程。如果其他磁盘被加密导致无法扩展虚拟内存，可以考虑解除加密或直接在 C 盘设置。如果 C 盘空间不足，请先扩展 C 盘空间，再进行虚拟内存扩展，否则可能导致系统卡顿。可参考的教程：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1a142197a9/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=19dcf32d8641182f1f159b50887e0cf8" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1a142197a9/?spm_id_from=333.337.search-card.all.click&amp;vd_source=19dcf32d8641182f1f159b50887e0cf8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;显卡驱动过旧，更新显卡驱动即可。&lt;/p&gt;
+&lt;p&gt;如果在加载游戏时，游戏总是在某个特定进度处闪退，可以尝试在 Steam 中验证游戏文件完整性，并重新启动游戏。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>Stellaris DLC Helper - 群星 DLC 解锁工具</title><link>https://sign-river.github.io/p/stellaris-dlc-helper/</link><pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-dlc-helper/</guid><description>&lt;h2 id="1-stellaris-dlc-helper---快速上手指南"&gt;1. Stellaris DLC Helper - 快速上手指南
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;三分钟学会使用本工具，解锁群星全部 DLC&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="2-这个工具是干什么的"&gt;2. 这个工具是干什么的？
+&lt;/h2&gt;&lt;p&gt;一个帮你给群星游戏解锁所有 DLC 的小工具，简单来说就是：&lt;strong&gt;点几下鼠标，所有 DLC 就能用了&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-16-58-48.png" target="_blank"&gt; &lt;img src="images/2026-02-13-16-58-48.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-怎么开始"&gt;3. 怎么开始？
+&lt;/h2&gt;&lt;h3 id="31-第一步下载工具"&gt;3.1. 第一步：下载工具
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;去 &lt;a class="link" href="https://github.com/sign-river/Stellaris-DLC-Helper/releases/latest" target="_blank" rel="noopener"
+&gt;Releases 页面&lt;/a&gt; 或者&lt;a class="link" href="https://qm.qq.com/q/ZNGagKl346" target="_blank" rel="noopener"
+&gt;群文件&lt;/a&gt;下载最新版本&lt;/li&gt;
+&lt;li&gt;下载后解压到任意文件夹（建议放在容易找到的地方）&lt;/li&gt;
+&lt;li&gt;双击 &lt;code&gt;Stellaris_DLC_Helper.exe&lt;/code&gt; 运行
+&lt;a href="images/2026-02-13-16-57-33.png" target="_blank"&gt; &lt;img src="images/2026-02-13-16-57-33.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt; 这个工具只支持 Windows 系统！&lt;/p&gt;
+&lt;h2 id="4-使用教程"&gt;4. 使用教程
+&lt;/h2&gt;&lt;h3 id="41-第一次使用"&gt;4.1. 第一次使用
+&lt;/h3&gt;&lt;h4 id="411-运行程序"&gt;4.1.1. 运行程序
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;双击 exe 文件启动程序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第一次运行会弹出更新检查和公告&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果不想每次打开都看公告的话可以勾选&amp;quot;本版本不再显示此公告&amp;quot;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-03-52.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-03-52.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="412-选择游戏目录"&gt;4.1.2. 选择游戏目录
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;程序会自动尝试找到你的群星游戏安装位置&lt;/li&gt;
+&lt;li&gt;如果没找到，点击&amp;quot;浏览&amp;quot;按钮，手动选择游戏文件夹
+&lt;a href="images/2026-02-13-17-06-52.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-06-52.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="413-点击一键解锁"&gt;4.1.3. 点击&amp;quot;一键解锁&amp;quot;
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点一下，剩下的交给程序自动完成&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;它会自动：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打上解锁补丁&lt;/li&gt;
+&lt;li&gt;下载所有 DLC 文件&lt;/li&gt;
+&lt;li&gt;安装 DLC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-08-24.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-08-24.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="414-等待完成"&gt;4.1.4. 等待完成
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;下载过程中会显示实时速度和进度&lt;/li&gt;
+&lt;li&gt;下载完成后会自动安装&lt;/li&gt;
+&lt;li&gt;看到&amp;quot;解锁成功&amp;quot;提示就好了
+&lt;a href="images/2026-02-13-17-09-52.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-09-52.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;a href="images/2026-02-13-17-10-53.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-10-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="415-启动游戏"&gt;4.1.5. 启动游戏
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;正常通过 Steam 启动群星游戏&lt;/li&gt;
+&lt;li&gt;进入游戏后就能看到所有 DLC 了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="5-日常使用"&gt;5. 日常使用
+&lt;/h2&gt;&lt;h3 id="51-游戏更新了怎么办"&gt;5.1. 游戏更新了怎么办？
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;打开工具&lt;/li&gt;
+&lt;li&gt;再次点击&amp;quot;一键解锁&amp;quot;&lt;/li&gt;
+&lt;li&gt;程序会自动下载新版本的 DLC&lt;/li&gt;
+&lt;li&gt;完成后就能玩了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="511-手动测速"&gt;5.1.1. 手动测速
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;点击&amp;quot;设置&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;切换到&amp;quot;测速&amp;quot;选项卡&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;开始测速&amp;quot;查看下载速度
+&lt;a href="images/2026-02-13-17-15-41.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-15-41.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="52-暂停继续下载"&gt;5.2. 暂停/继续下载
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;下载过程中可以点击&amp;quot;暂停下载&amp;quot;&lt;/li&gt;
+&lt;li&gt;想继续下载时点击&amp;quot;继续下载&amp;quot;&lt;/li&gt;
+&lt;li&gt;支持断点续传，不用担心网络中断
+&lt;a href="images/2026-02-13-17-16-33.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-16-33.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;a href="images/2026-02-13-17-16-46.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-16-46.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="6-工具按钮说明"&gt;6. 工具按钮说明
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;按钮&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;一键解锁&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;自动完成所有操作：下载→安装→打补丁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;浏览&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;手动选择游戏安装目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;设置&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;打开设置窗口，可以测速、查看日志、清理缓存、恢复补丁&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;还原游戏&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;把游戏恢复到原始状态（移除所有 DLC 和补丁）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;暂停下载&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;暂停正在进行的下载&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;继续下载&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;继续之前暂停的下载&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="7-常见问题"&gt;7. 常见问题
+&lt;/h2&gt;&lt;h3 id="71-第一次用需要准备什么"&gt;7.1. 第一次用，需要准备什么？
+&lt;/h3&gt;&lt;p&gt;什么都不用准备！只需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 电脑&lt;/li&gt;
+&lt;li&gt;已经在 steam 激活了正版群星本体&lt;/li&gt;
+&lt;li&gt;能上网&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="72-会不会封号"&gt;7.2. 会不会封号？
+&lt;/h3&gt;&lt;p&gt;这是一个本地工具，只修改你电脑上的游戏文件，&lt;strong&gt;不涉及 Steam 账号&lt;/strong&gt;，所以不会封号。&lt;/p&gt;
+&lt;h3 id="73-下载的文件保存在哪里"&gt;7.3. 下载的文件保存在哪里？
+&lt;/h3&gt;&lt;p&gt;默认保存在工具目录下的 &lt;code&gt;Stellaris_DLC_Cache&lt;/code&gt; 文件夹里。&lt;/p&gt;
+&lt;h3 id="74-怎么知道-dlc-装成功了"&gt;7.4. 怎么知道 DLC 装成功了？
+&lt;/h3&gt;&lt;p&gt;启动游戏后：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入游戏主菜单&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;内容&amp;quot;或查看 DLC 列表&lt;/li&gt;
+&lt;li&gt;看到所有 DLC 都显示可用即安装成功
+&lt;a href="images/2026-02-13-17-32-10.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-32-10.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="75-检测到补丁文件缺失"&gt;7.5. 检测到补丁文件缺失
+&lt;/h3&gt;&lt;p&gt;&lt;a href="images/2026-02-13-17-44-15.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-44-15.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击&amp;quot;设置&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;切换到&amp;quot;高级功能&amp;quot;选项卡&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;恢复补丁&amp;quot;下载补丁内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-44-56.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-44-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果还是缺失，则为杀毒软件误杀补丁，请把补丁添加进杀毒软件的白名单，补丁存放路径如下 Stellaris-DLC-Helper\patches&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-02-13-17-48-37.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-48-37.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="76-工具下载的是什么"&gt;7.6. 工具下载的是什么？
+&lt;/h3&gt;&lt;p&gt;下载的是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DLC 的资源文件（.dlc 文件）&lt;/li&gt;
+&lt;li&gt;CreamAPI 补丁（用于解锁 DLC）&lt;/li&gt;
+&lt;li&gt;游戏必需的配置文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="77-想要卸载-dlc-和补丁怎么办"&gt;7.7. 想要卸载 DLC 和补丁怎么办？
+&lt;/h3&gt;&lt;p&gt;在工具里点击&amp;quot;卸载 dlc&amp;quot;和&amp;quot;移除补丁&amp;quot;按钮即可
+&lt;a href="images/2026-02-13-17-33-32.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-33-32.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="78-提示找不到游戏目录"&gt;7.8. 提示&amp;quot;找不到游戏目录&amp;quot;？
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;点击&amp;quot;浏览&amp;quot;按钮&lt;/li&gt;
+&lt;li&gt;找到 Stellaris 游戏的安装文件夹&lt;/li&gt;
+&lt;li&gt;正确的文件夹里应该有 &lt;code&gt;stellaris.exe&lt;/code&gt; 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="79-下载失败或者出错了"&gt;7.9. 下载失败或者出错了？
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;检查网络连接&lt;/li&gt;
+&lt;li&gt;尝试在&amp;quot;设置→测速&amp;quot;里手动测速，换个源&lt;/li&gt;
+&lt;li&gt;点击&amp;quot;一键解锁&amp;quot;重新试一次&lt;/li&gt;
+&lt;li&gt;如果还是不行，到 &lt;a class="link" href="https://github.com/sign-river/Stellaris-DLC-Helper/issues" target="_blank" rel="noopener"
+&gt;Issues&lt;/a&gt; 反馈&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="710-工具会自动更新吗"&gt;7.10. 工具会自动更新吗？
+&lt;/h3&gt;&lt;p&gt;A: 会的！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每次启动都会检查更新&lt;/li&gt;
+&lt;li&gt;有新版本会提示你&lt;/li&gt;
+&lt;li&gt;可以选择更新或跳过&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="711-占用多少空间"&gt;7.11. 占用多少空间？
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;工具本身：约 30 MB&lt;/li&gt;
+&lt;li&gt;DLC 缓存：约 1GB（可以在设置里清理）&lt;/li&gt;
+&lt;li&gt;总共：约 1GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="8-进阶功能"&gt;8. 进阶功能
+&lt;/h2&gt;&lt;h3 id="81-手动选择-dlc"&gt;8.1. 手动选择 DLC
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在主界面取消勾选不需要的 DLC&lt;/li&gt;
+&lt;li&gt;只下载你需要的部分
+&lt;a href="images/2026-02-13-17-38-15.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-38-15.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="82-查看操作日志"&gt;8.2. 查看操作日志
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;点击&amp;quot;设置&amp;quot;&lt;/li&gt;
+&lt;li&gt;切换到&amp;quot;日志&amp;quot;选项卡&lt;/li&gt;
+&lt;li&gt;可以查看所有操作记录
+&lt;a href="images/2026-02-13-17-39-42.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-39-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="83-清理缓存"&gt;8.3. 清理缓存
+&lt;/h3&gt;&lt;p&gt;在工具里点击&amp;quot;清理缓存&amp;quot;按钮即可
+&lt;a href="images/2026-02-13-17-40-24.png" target="_blank"&gt; &lt;img src="images/2026-02-13-17-40-24.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="9-需要帮助"&gt;9. 需要帮助？
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;查看报错指南&lt;/strong&gt;：&lt;a class="link" href="https://www.kdocs.cn/l/cdVvg4OgHMzj" target="_blank" rel="noopener"
+&gt;完整使用手册&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反馈问题&lt;/strong&gt;：&lt;a class="link" href="https://github.com/sign-river/Stellaris-DLC-Helper/issues" target="_blank" rel="noopener"
+&gt;GitHub Issues&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;加入 QQ 群&lt;/strong&gt;：1051774780&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="10-重要提示"&gt;10. 重要提示
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;仅供学习交流使用&lt;/strong&gt;，请支持正版游戏&lt;/li&gt;
+&lt;li&gt;使用本工具造成的任何后果，用户自行承担&lt;/li&gt;
+&lt;li&gt;建议定期备份游戏存档&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="11-开始使用吧"&gt;11. 开始使用吧
+&lt;/h2&gt;&lt;p&gt;就这么简单：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;✅ 下载工具&lt;/li&gt;
+&lt;li&gt;✅ 运行程序&lt;/li&gt;
+&lt;li&gt;✅ 点击&amp;quot;一键解锁&amp;quot;&lt;/li&gt;
+&lt;li&gt;✅ 启动游戏&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;祝你游戏愉快！&lt;/strong&gt; 🚀&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="12-附录服务端管理手册"&gt;12. 附录：服务端管理手册
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本节仅供服务器管理员参考。如果你是普通玩家，到这里就可以了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当游戏版本或 DLC 发生更新，需要在服务端执行相应的文件同步操作，详见以下专属指南：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span style="font-size: 18px; font-weight: bold;"&gt;🛠️ &lt;a class="link" href="https://sign-river.github.io/p/stellaris-server-update-guide/" &gt;群星 DLC 服务端更新操作手册&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>群星联机优化指南：基于 OpenVPN 搭建低延迟虚拟局域网</title><link>https://sign-river.github.io/p/stellaris-lan-openvpn-guide/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-lan-openvpn-guide/</guid><description>&lt;h2 id="1-引言"&gt;1. 引言
+&lt;/h2&gt;&lt;p&gt;《群星 (Stellaris)》玩家最大的痛点是什么？往往不是天灾的入侵，而是联机时无休止的“时间停止”、掉线和高延迟。由于群星采用 P2P 联机机制，一旦某位玩家网络波动，整局游戏都会受到影响。&lt;/p&gt;
+&lt;p&gt;群星采用 P2P 联机，市面上的加速器往往难以对症下药。本系列教程将手把手教你搭建一个专属于你和小伙伴的联机加速节点。&lt;/p&gt;
+&lt;p&gt;本方案基于 &lt;strong&gt;OpenVPN TAP 模式&lt;/strong&gt;，通过 &lt;strong&gt;去除加密环节&lt;/strong&gt; 来极致优化传输速度，实测 &lt;strong&gt;10Mbps 带宽即可流畅支撑 1～2 车联机&lt;/strong&gt;（每车约 10 人）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特别致谢&lt;/strong&gt;：本教程方案核心及加速器客户端由大佬 &lt;strong&gt;Dogfight360&lt;/strong&gt; 免费提供，教程基础内容由 &lt;strong&gt;唏噓南溪&lt;/strong&gt; 编写。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📖 原作者博客：&lt;a class="link" href="https://www.dogfight360.com/blog/1590/#comment-41142" target="_blank" rel="noopener"
+&gt;Dogfight360 Blog&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="2-选择你的系统版本"&gt;2. 选择你的系统版本
+&lt;/h2&gt;&lt;p&gt;请根据你使用的服务器系统，选择对应教程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚀 &lt;a class="link" href="https://sign-river.github.io/p/stellaris-lan-openvpn-ubuntu/" &gt;点此查看 Ubuntu / Debian 现代系统搭建指南（强烈推荐）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📜 &lt;a class="link" href="https://sign-river.github.io/p/stellaris-lan-openvpn-centos/" &gt;点此查看 CentOS 7 旧版系统搭建指南（仅供参考）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;</description></item></channel></rss>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>网络故障 on YSY的博客</title><link>https://sign-river.github.io/tags/%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C/</link><description>Recent content in 网络故障 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>按照创建加速器节点教程创建加速器节点后无法连接至节点，不管是 TCP 还是 UDP 都不行</title><link>https://sign-river.github.io/p/multiplayer-accelerator-error-06/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/multiplayer-accelerator-error-06/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;按照创建加速器节点教程创建加速器节点后无法连接至节点，不管是 TCP 还是 UDP 都不行。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;记得开放服务器的对应端口，不只是虚拟机里要开，你买服务器用的云平台上也要开，云平台也会限制服务器的端口。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>联机加速器打开时报错：读取数据失败，请检查本机网络/DNS 是否正常/再次重试！</title><link>https://sign-river.github.io/p/multiplayer-accelerator-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/multiplayer-accelerator-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;联机加速器打开时报错：读取数据失败，请检查本机网络/DNS 是否正常/再次重试!。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="联机加速器打开时报错：读取数据失败，请检查本机网络/DNS 是否正常/再次重试！相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先打开设置，选择网络和 Internet，点击高级网络设置&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="联机加速器打开时报错：读取数据失败，请检查本机网络/DNS 是否正常/再次重试！相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到你当前使用的网络，点击小三角展开详细信息，点击更多适配选项后的编辑按钮&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="联机加速器打开时报错：读取数据失败，请检查本机网络/DNS 是否正常/再次重试！相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在弹出的窗口中取消勾选 ipv6，然后点击确定保存设置&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="联机加速器打开时报错：读取数据失败，请检查本机网络/DNS 是否正常/再次重试！相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;</title><link>https://sign-river.github.io/p/paradox-launcher-error-17/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/paradox-launcher-error-17/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-05.png" target="_blank"&gt;&lt;img src="images/error-05.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 5" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这一串报错是最近最常出现的报错小连招，一般情况下，在玩盗版游戏后，补票正版游戏并重新安装启动器时;或者以不合适的方式删除旧启动器时会出现该报错。该报错的原因是旧启动器的文件没有删除干净，残留的文件影响了新启动器的下载，解决方法如下。&lt;/p&gt;
+&lt;p&gt;最优先的方法是下载 Windows Installer 修复工具（疑难解答工具）并进行修复，下载网址为&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://support.microsoft.com/zh-cn/topic/2438651" target="_blank" rel="noopener"
+&gt;https://support.microsoft.com/zh-cn/topic/2438651&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或者直接在网盘下载&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.quark.cn/s/a05bf32ce69b" target="_blank" rel="noopener"
+&gt;https://pan.quark.cn/s/a05bf32ce69b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b" target="_blank" rel="noopener"
+&gt;https://pan.baidu.com/s/1VqVdd-65iQxVZlphttl-rQ?pwd=9a9b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;提取码：9a9b&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-06.png" target="_blank"&gt;&lt;img src="images/error-06.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 6" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-07.png" target="_blank"&gt;&lt;img src="images/error-07.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 7" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开程序安装和卸载疑难解答程序后点下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-08.png" target="_blank"&gt;&lt;img src="images/error-08.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 8" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;选择安装&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-09.png" target="_blank"&gt;&lt;img src="images/error-09.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 9" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到 Paradox Launcher v2 点击下一步&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-10.png" target="_blank"&gt;&lt;img src="images/error-10.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 10" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;点击是，尝试卸载&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-11.png" target="_blank"&gt;&lt;img src="images/error-11.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 11" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之后重新进行启动器的安装，访问官网 &lt;a class="link" href="https://www.paradoxinteractive.com/our-games/launcher" target="_blank" rel="noopener"
+&gt;https://www.paradoxinteractive.com/our-games/launcher&lt;/a&gt; 下载最新的启动器安装程序。如果无法打开官网，也可以在群文件中的“P 社最新启动器”文件夹中找到下载文件。之后右键点击属性。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-12.png" target="_blank"&gt;&lt;img src="images/error-12.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 12" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-13.png" target="_blank"&gt;&lt;img src="images/error-13.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 13" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在兼容性选项卡中勾选以管理员身份运行此程序，点击应用，之后重新运行安装程序安装启动器。&lt;/p&gt;
+&lt;p&gt;如果问题没有解决，请手动删除以下文件夹：&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Programs/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Local/Paradox Interactive/&lt;/p&gt;
+&lt;p&gt;C:/users/(用户名)/AppData/Roaming/Paradox Interactive/launcher-v2/&lt;/p&gt;
+&lt;p&gt;之后再重新运行安装程序，如果有修复或卸载选项，选择 uninstall(卸载),等待卸载完成后再重新安装。&lt;/p&gt;
+&lt;p&gt;注意安装路径没事不要改，改了路径出问题以后不好修&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-14.png" target="_blank"&gt;&lt;img src="images/error-14.png" alt="启动器安装报错您尝试使用的功能位于不可用的网络资源上:The feature you are trying to use is on a network resource that is unavailable;相关报错截图 14" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如果成功解决了启动器无法下载或卸载的问题，并成功安装了启动器，但点击启动器图标后无法打开启动器：比如出现双击启动器图标，但是启动器无反应的情况，虽然在任务管理器中可以看到启动器正在运行，但是实际上并没有打开启动器。另一种情况是在 Steam 中直接启动游戏时，点击“开始游戏”并等待一段时间后，启动器未能打开，且按钮又恢复为“开始游戏”,或者干脆卡在那里不动了。遇到这两种情况，请跳转启动器安装完成后无法打开，点击无任何反应，但在任务管理器中可以看到启动器正在运行。如果一切正常就不用管这段，可以直接去游玩了。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器</title><link>https://sign-river.github.io/p/multiplayer-accelerator-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/multiplayer-accelerator-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="在适配器设置中看网络电缆被拔出，启动加速器连接不到服务器相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;虚拟网卡在加速器没连上时显示被拔出是正常现象，连接不上节点多半是配置文件过时了，加速器节点的服务器或者密码换了你不知道，去下载最新的加速器即可。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习版 on YSY的博客</title><link>https://sign-river.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%89%88/</link><description>Recent content in 学习版 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%89%88/index.xml" rel="self" type="application/rss+xml"/><item><title>学习版群星无法调中文 (正版直接在启动器里调)</title><link>https://sign-river.github.io/p/stellaris-offline-error-02/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-02/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星无法调中文 (正版直接在启动器里调)。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;(1) 点击~键然后输入指令 switchlanguage l_simp_chinese 回车即可&lt;/p&gt;
+&lt;p&gt;(2) 或者根据教程视频改下文件&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1Xu4y1q7Ly/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1Xu4y1q7Ly/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版群星修改语言文件后启动游戏闪退报错</title><link>https://sign-river.github.io/p/stellaris-offline-error-04/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-04/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星修改语言文件后启动游戏闪退报错。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;语言文件要严格按照教程视频修改，如果改的有偏差会导致游戏无法正常读取文件，导致闪退。如果已经出问题了，就清空文件里的信息，把以下代码复制进文件，然后 Ctrl+S 保存即可。&lt;/p&gt;
+&lt;p&gt;l_simp_chinese:&lt;/p&gt;
+&lt;p&gt;l_english:0 &amp;ldquo;英语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_braz_por:0 &amp;ldquo;巴西葡萄牙语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_german:0 &amp;ldquo;德语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_french:0 &amp;ldquo;法国&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_spanish:0 &amp;ldquo;西班牙语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_polish:0 &amp;ldquo;波兰语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_russian:0 &amp;ldquo;俄语&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_simp_chinese:0 &amp;ldquo;中文&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_japanese:0 &amp;ldquo;日本人&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;l_korean:0 &amp;ldquo;韩国&amp;rdquo;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版群星一打开就闪退</title><link>https://sign-river.github.io/p/stellaris-offline-error-01/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-01/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版群星一打开就闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="学习版群星一打开就闪退相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="学习版群星一打开就闪退相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;路径中有中文，类似于”下载”这样，至于最前面那个”此电脑”不影响，把整个文件夹移动到全英文路径下即可，或者直接放到盘符下&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>学习版用 JSGME 打 mod 后发现 mod 没有生效</title><link>https://sign-river.github.io/p/stellaris-offline-error-03/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-offline-error-03/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;学习版用 JSGME 打 mod 后发现 mod 没有生效。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.jpeg" target="_blank"&gt;&lt;img src="images/error-01.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.jpeg" target="_blank"&gt;&lt;img src="images/error-02.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解压问题，多套了一层文件夹，解压后 mod 文件夹内应直接为 mod 文件，比如文件夹 2984861984 点开后直接就是 mod 的内容文件，如果类似 2984861984 的文件夹外还包含一个仅用于表述 mod 名称的文件夹，如”懒人的更多工作岗位与住房”,只需要去掉最外层的名称文件夹再打入 mod 即可&lt;/p&gt;
+&lt;p&gt;比如下图就是有多余文件夹&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.jpeg" target="_blank"&gt;&lt;img src="images/error-03.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;而去掉前面的文件夹才是正确的形式&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.jpeg" target="_blank"&gt;&lt;img src="images/error-04.jpeg" alt="学习版用 JSGME 打 mod 后发现 mod 没有生效相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item></channel></rss>

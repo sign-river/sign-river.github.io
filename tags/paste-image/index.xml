@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Paste Image on YSY的博客</title><link>https://sign-river.github.io/tags/paste-image/</link><description>Recent content in Paste Image on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/paste-image/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Theme Stack 进阶：控制图片大小与点击效果</title><link>https://sign-river.github.io/p/hugo-stack-image-size-control/</link><pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/hugo-stack-image-size-control/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文基于 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+&gt;hugo-theme-stack&lt;/a&gt; 主题，其他主题的配置路径和渲染行为可能有所不同，请以各自主题的文档为准。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在使用 &lt;a class="link" href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image" target="_blank" rel="noopener"
+&gt;Paste Image&lt;/a&gt; 插件往文章里粘贴截图时，插件默认生成的 Markdown 语法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;![&lt;span class="nt"&gt;image&lt;/span&gt;](&lt;span class="na"&gt;images/2026-02-21-12-13-26.png&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这种写法最简洁，hugo-theme-stack 也自带点击放大的交互效果。但它的缺点是&lt;strong&gt;无法控制图片的显示尺寸&lt;/strong&gt;，当截图分辨率很高时，图片会撑满整个内容区域，视觉上较为突兀。&lt;/p&gt;
+&lt;p&gt;本文整理了两种可以控制图片显示尺寸的方案，各有优缺点，可以根据场景选择。&lt;/p&gt;
+&lt;h2 id="2-方案一a--img--点击另开标签页查看原图"&gt;2. 方案一：&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; + &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; —— 点击另开标签页查看原图
+&lt;/h2&gt;&lt;h3 id="21-写法"&gt;2.1. 写法
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;images/2026-02-21-12-13-26.png&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;target&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;images/2026-02-21-12-13-26.png&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;image&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;max-width: 100%; width: 1000px;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过 &lt;code&gt;width&lt;/code&gt; 控制缩略图的最大显示宽度（单位 px），&lt;code&gt;max-width: 100%&lt;/code&gt; 保证在小屏幕上不会溢出。&lt;/p&gt;
+&lt;h3 id="22-效果"&gt;2.2. 效果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;缩略图&lt;strong&gt;清晰&lt;/strong&gt;，直接展示原图缩放后的效果&lt;/li&gt;
+&lt;li&gt;点击图片后会在&lt;strong&gt;新标签页&lt;/strong&gt;中打开原图，方便查看细节，关闭标签页即可返回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-适合场景"&gt;2.3. 适合场景
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图片内容细节丰富，需要让读者能放大查看（如截图、流程图、配置界面等）&lt;/li&gt;
+&lt;li&gt;希望缩略图尽量清晰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="24-配合-paste-image-自动生成"&gt;2.4. 配合 Paste Image 自动生成
+&lt;/h3&gt;&lt;p&gt;可以将 Paste Image 插件的 &lt;code&gt;Insert Pattern&lt;/code&gt; 改为以下内容，之后粘贴截图时会自动生成方案一的格式，无需手动修改：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;a href=&amp;#34;${imageFilePath}&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;img src=&amp;#34;${imageFilePath}&amp;#34; alt=&amp;#34;image&amp;#34; style=&amp;#34;max-width: 100%; width: 1000px;&amp;#34;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/a&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在 VS Code 中打开设置，搜索 &lt;code&gt;Paste Image: Insert Pattern&lt;/code&gt;，将默认值替换为上方内容即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-21-14-31-22.png" target="_blank"&gt; &lt;img src="images/2026-02-21-14-31-22.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-方案二div-容器--markdown-图片--通过容器控制宽度"&gt;3. 方案二：&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 容器 + Markdown 图片 —— 通过容器控制宽度
+&lt;/h2&gt;&lt;h3 id="31-写法"&gt;3.1. 写法
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;max-width: 700px; margin: 0 auto;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ![image](images/2026-02-21-12-13-26.png)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href="images/2026-02-21-14-43-56.png" target="_blank"&gt; &lt;img src="images/2026-02-21-14-43-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 标签与 &lt;code&gt;![image]&lt;/code&gt; 之间必须有空行，这里的代码段因为 md 格式问题无法展现，记得自己加上空行，Hugo 才会正确将内部内容识别为 Markdown 并渲染。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="32-效果"&gt;3.2. 效果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图片宽度跟随外层 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 的 &lt;code&gt;max-width&lt;/code&gt; 决定，修改容器宽度即可调整图片大小&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;margin: 0 auto&lt;/code&gt; 使图片居中显示&lt;/li&gt;
+&lt;li&gt;缩略图&lt;strong&gt;略微模糊&lt;/strong&gt;，因为浏览器会对 Markdown 渲染出的 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 进行拉伸或压缩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="33-适合场景"&gt;3.3. 适合场景
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;需要将多张图片统一控制在相同宽度&lt;/li&gt;
+&lt;li&gt;希望保留主题自带的放大效果，同时能控制缩略图尺寸&lt;/li&gt;
+&lt;li&gt;希望图片居中且大小可控&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="34-注意事项"&gt;3.4. 注意事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果图片原始宽度比容器 &lt;code&gt;max-width&lt;/code&gt; 小，图片会被拉伸放大，可能变模糊，建议 &lt;code&gt;max-width&lt;/code&gt; 值不超过图片原始宽度&lt;/li&gt;
+&lt;li&gt;方案二&lt;strong&gt;无法通过 Paste Image 自动生成&lt;/strong&gt;，需要在使用时手动将图片语法嵌套进 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 容器中&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows 用户&lt;/strong&gt;：建议同时搜索 &lt;code&gt;Force Unix Style Separator&lt;/code&gt; 并勾选，这样生成的路径会是正斜杠 &lt;code&gt;images/xxx.png&lt;/code&gt;，网页中图片才能正常加载（否则会是反斜杠 &lt;code&gt;images\xxx.png&lt;/code&gt;，可能 404）。 &lt;a href="images/2026-02-22-13-37-30.png" target="_blank"&gt; &lt;img src="images/2026-02-22-13-37-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;最后更新：2026-02-21&lt;/p&gt;</description></item></channel></rss>

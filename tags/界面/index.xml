@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>界面 on YSY的博客</title><link>https://sign-river.github.io/tags/%E7%95%8C%E9%9D%A2/</link><description>Recent content in 界面 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 08 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E7%95%8C%E9%9D%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>Cursor 新旧界面切换方法：编辑器模式 vs Agents 模式</title><link>https://sign-river.github.io/p/switch-cursor-ui-mode/</link><pubDate>Mon, 08 Jun 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/switch-cursor-ui-mode/</guid><description>&lt;p&gt;Cursor 在近期的版本更新中引入了全新的 &lt;strong&gt;Agents 界面&lt;/strong&gt;，交互逻辑与之前以编辑器为核心的经典界面有较大差异。如果你更习惯旧版的操作方式，或者想在两种界面之间来回切换，本文记录了具体方法。&lt;/p&gt;
+&lt;h2 id="1-两种界面的区别"&gt;1. 两种界面的区别
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;经典编辑器界面&lt;/th&gt;
+&lt;th&gt;Agents 界面（新版）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;定位&lt;/td&gt;
+&lt;td&gt;以代码编辑器为主，AI 作为辅助侧边栏&lt;/td&gt;
+&lt;td&gt;以对话为核心，AI 主导整个工作流&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;聊天窗口&lt;/td&gt;
+&lt;td&gt;侧边栏 Chat / Composer 面板&lt;/td&gt;
+&lt;td&gt;独立的全功能 Agent 会话界面&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;适合场景&lt;/td&gt;
+&lt;td&gt;边写代码边问 AI&lt;/td&gt;
+&lt;td&gt;把复杂任务整体交给 AI 完成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="2-切换方法"&gt;2. 切换方法
+&lt;/h2&gt;&lt;h3 id="21-从编辑器界面切换到-agents-界面"&gt;2.1 从编辑器界面切换到 Agents 界面
+&lt;/h3&gt;&lt;p&gt;在经典编辑器界面中，点击右上角蓝色的 &lt;strong&gt;Agents Window&lt;/strong&gt; 按钮即可切换到新版 Agents 界面。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-08-21-36-53.png" target="_blank"&gt; &lt;img src="images/2026-06-08-21-36-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-从-agents-界面切换回编辑器界面"&gt;2.2 从 Agents 界面切换回编辑器界面
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;第一步&lt;/strong&gt;：点击左上角的 &lt;strong&gt;New Agent&lt;/strong&gt;（快捷键 &lt;code&gt;Ctrl+N&lt;/code&gt;）开启一个新的对话窗口。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-08-21-38-30.png" target="_blank"&gt; &lt;img src="images/2026-06-08-21-38-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第二步&lt;/strong&gt;：点击右上角的 &lt;strong&gt;Editor Window&lt;/strong&gt; 按钮，即可切换回经典编辑器界面。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-06-08-21-40-57.png" target="_blank"&gt; &lt;img src="images/2026-06-08-21-40-57.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

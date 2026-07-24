@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>主动学习 on YSY的博客</title><link>https://sign-river.github.io/tags/%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 主动学习 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 22 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>论文阅读：Falcon - Fair Active Learning using Multi-armed Bandits</title><link>https://sign-river.github.io/p/falcon-fair-active-learning/</link><pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/falcon-fair-active-learning/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学术声明 / Academic Statement&lt;/strong&gt;
+本文是个人学习笔记，仅用于学术交流和知识分享，非商业用途。
+文中观点为作者个人理解和分析，不代表原论文作者立场。
+如需引用原论文，请查阅官方出版版本。
+版权归原论文作者和 VLDB Endowment 所有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-论文基本信息"&gt;1. 论文基本信息
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;标题&lt;/strong&gt;：Falcon: Fair Active Learning using Multi-armed Bandits&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作者&lt;/strong&gt;：Ki Hyun Tae, Hantian Zhang, Jaeyoung Park, Kexin Rong, Steven Euijong Whang&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;单位&lt;/strong&gt;：KAIST / Georgia Institute of Technology&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发表期刊&lt;/strong&gt;：Proceedings of the VLDB Endowment, Vol. 17, No. 5, 2024，pp. 952–965&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DOI&lt;/strong&gt;：&lt;a class="link" href="https://doi.org/10.14778/3641204.3641207" target="_blank" rel="noopener"
+&gt;10.14778/3641204.3641207&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;：&lt;a class="link" href="https://github.com/khtae8250/Falcon" target="_blank" rel="noopener"
+&gt;https://github.com/khtae8250/Falcon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-背景与痛点"&gt;2. 背景与痛点
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-22-15-19-45.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-19-45.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="21-传统主动学习会恶化公平性"&gt;2.1 传统主动学习会恶化公平性
+&lt;/h3&gt;&lt;p&gt;传统 AL 唯一的 KPI 是“提升模型整体准确率”，它通常倾向于挑选模型最不确定的样本。假设某个少数群体在当前数据集中本就缺乏代表性，如果 AL 盲目追求整体准确率而不特意挑选该群体的样本，标注后的新数据集会使得不同群体间的准确率差异进一步拉大，导致模型更加不公平。&lt;/p&gt;
+&lt;h3 id="22-标签缺失困境"&gt;2.2 标签缺失困境
+&lt;/h3&gt;&lt;p&gt;为了提升公平性，我们必须针对性地去扩充“目标子群”的样本。但矛盾在于：我们在挑选样本时，这些样本是“无标签”的！如果用模型现有的预测结果去生成“伪标签”也不靠谱，因为 AL 专挑模型“拿不准”的样本，这些样本的伪标签错误率极高。&lt;/p&gt;
+&lt;h3 id="23-准确率与公平性的固有冲突"&gt;2.3 准确率与公平性的固有冲突
+&lt;/h3&gt;&lt;p&gt;在许多真实场景下，公平性目标与准确率目标是相互冲突的。比如，一个在整体准确率上表现完美的分类器，如果不加干预，往往无法保证在各个子群体上具有相同的正类预测率。如何在有限的标注预算下，优雅地平衡这两者，是一个工程和理论上的双重难题。&lt;/p&gt;
+&lt;h2 id="3-方法概述"&gt;3. 方法概述
+&lt;/h2&gt;&lt;h3 id="31-公平性定义回顾"&gt;3.1 公平性定义回顾
+&lt;/h3&gt;&lt;p&gt;作者首先概述了多种主流的公平性定义：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-35-20.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-35-20.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;人口统计学均等性（Demographic Parity, DP）&lt;/strong&gt;：不考虑模型的预测准确率，要求模型对各群体（如不同性别、族裔）给出正类预测的比例基本相同，即仅按群体分布强行实现表面上的公平。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;均衡概率（Equalized Odds, ED）&lt;/strong&gt;：要求对于正类样本，各群体被正确判为正类的概率一致；对于负类，各群体被判为负类的概率也要一致，也就是无论正反向，不同群体的准确率相当。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;平等机会（Equal Opportunity, EO）&lt;/strong&gt;：只关注正向，即对于所有实际为正的样本，各群体被判定为正的概率必须一致，不考虑负例。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预测一致性（Predictive Parity, PP）&lt;/strong&gt;：要求模型在不同群体中判为正类的样本，其实际为正的比例需大体一致，也就是预测出的“好人”在各群体中都同样可靠。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;均衡错误率（Equal Error Rate, EER）&lt;/strong&gt;：要求各群体在错误分类上的比率相同，不能让某一群体承担更高的错误风险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="32-整体流程"&gt;3.2 整体流程
+&lt;/h3&gt;&lt;p&gt;Falcon 的整体工作流程如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-14-36-30.png" target="_blank"&gt; &lt;img src="images/2026-03-22-14-36-30.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;确定公平性准则&lt;/strong&gt;：用户指定一种公平性定义（如 DP、EO 等），作为后续优化的目标；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;识别目标子群体&lt;/strong&gt;：算法根据当前模型状态和验证集，自动识别当前最需要补充样本的目标子群；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;策略选择&lt;/strong&gt;：利用**对抗性多臂老虎机（Adversarial MAB）**机制，结合历史反馈，动态选择当前最优的采样策略；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;试错标注&lt;/strong&gt;：从未标注数据池中依据所选策略挑选样本交由人工标注——若标签与预期相符，则加入训练集；若不符，则暂缓纳入（postpone）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型更新与反馈&lt;/strong&gt;：用新增标注数据重训模型，依据公平性改善情况更新 MAB 参数；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;循环迭代&lt;/strong&gt;：重复步骤 2–5，直至标注预算耗尽，逐步实现公平性与准确率的平衡提升。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="4-核心方法详解"&gt;4. 核心方法详解
+&lt;/h2&gt;&lt;p&gt;首先目标群体样本的标签是缺失的。最直接的想法是：让现在的模型去“猜”一个伪标签。但是在主动学习中，我们最想要的是信息量大的样本。但是信息量大的样本正是模型最拿不准的样本，如果你让模型去猜它最拿不准的样本，猜错的概率极大。把带有错误标签的样本强行喂给模型，不仅学不到东西，还会引入更严重的偏见。
+所以就尝试筛选出最有价值的样本花钱请人工标注，如果符合要求就直接用，不符合要求就先搁置，可能以后处理其他目标时会用到&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-22-41.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-22-41.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对于推迟错误样本使用的可行性作者也进行了证明，首先作者引用信息论中的香浓熵证明当样本预测概率为 0.5 时他的信息量达到最大，所以作者就进行了一个简单的实验，把试错法和其他基线算法对比，其他算法认为人工标注的样本不管是好是坏只要用于训练就对模型性能有帮助，而试错法会推迟使用不合规定的样本，最终结果一目了然，试错法推迟了 4000 个样本中的近 2900 个，只使用了其中 1100 个，同时只选取预测概率为 0.5 的样本，但试错法的性能远超其他基线模型。&lt;/p&gt;
+&lt;p&gt;虽然试错法已经很优秀了，但是他浪费的标注费用有些高，所以接下来我们就要解决这个问题&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-40-33.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-40-33.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在选择样本策略时，我们会遇到如下难题：以图为例，模型对某一群体的样本进行了偏见可视化，虚线右侧为正类，左侧为负类的位置。假设有两个未标注的样本，分别位于虚线两侧。假如我们想要减少偏见，需要推动决策边界（虚线）左移。理论上，最理想的做法是选择左侧的未标注样本并希望其真实标签为正类，这样模型会大幅调整决策边界，从而降低偏见。但现实中，左侧样本大概率与其周围样本一致，属于负类。如果该样本被标注为负类，就白白浪费了一次宝贵的标注机会，这属于高风险高收益的尝试。相比之下，右侧的未标注样本很可能是正类，但是标注出来对模型影响有限，算是低风险低回报的策略。如何在高风险高收益与低风险低回报之间权衡取舍，是样本选择策略需要重点解决的问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-15-53-22.png" target="_blank"&gt; &lt;img src="images/2026-03-22-15-53-22.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;一个自然的想法是：既然始终选取预测概率为 0.5 的样本效果不理想，那如果始终选择概率为 0.3 或 0.7 的样本会不会更好？针对这一疑问，作者进行了实证分析。实验结果表明，在数据集 a 中，群体 1 在初期以 0.5 概率样本表现最佳，但后期 0.7 概率样本的效果反超；而群体 2 则始终以 0.5 概率样本效果最好。这说明同一数据集中，不同子群体适合不同的采样策略。同时，横向比较 a、b 两个数据集可以发现，a 集中各子群以 0.7 概率样本表现普遍优于 0.3；而在 b 集中恰好相反，0.3 概率效果高于 0.7。由此可见，单一固定的采样策略难以兼顾不同群体和不同数据分布的公平性需求，因此需要一种灵活、可动态调整的策略来进行样本选择——这正是引入对抗性多臂老虎机（Adversarial MAB）方法的动因。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-23-13-23-17.png" target="_blank"&gt; &lt;img src="images/2026-03-23-13-23-17.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;与传统多臂老虎机（MAB）不同，对抗性多臂老虎机在每次选择后，拉杆（即选择某策略）的概率会动态调整，这种机制更贴合我们在实际训练中遇到的动态环境。例如：最初我们可能优先优化某个弱势群体，但随着优化的推进，该群体表现提升，甚至变为新的“强势”群体，此时就需要将资源转向其它尚未得到足够关注的群体以实现整体平衡。&lt;/p&gt;
+&lt;p&gt;为此，作者引入了经典的 EXP3 算法。EXP3 的核心思想是：奖励高的策略，其被选概率将在下一轮中指数级增加，但与此同时仍会保留一部分探索性——即始终为所有策略保留一定的基础概率，避免算法陷入局部最优。这种自适应调整机制能兼顾公平性与模型整体表现。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-16-53-42.png" target="_blank"&gt; &lt;img src="images/2026-03-22-16-53-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在实际应用中，作者发现存在两个主要挑战。首先，由于每轮被主动标注并纳入训练的样本数量很少（例如一万个样本中仅有十个被人工标注），即便这些样本对模型性能的提升极其有限（如仅提升 0.00001），对抗性多臂老虎机（EXP3 算法）的反馈信号也会非常弱，难以有效调整策略。为解决这一问题，作者采用了预先多轮训练，记录参数变化的基线；随后将每轮因标注新增样本带来的变化幅度与该基线归一化，将归一化后的结果限定在 0-1 区间，再送入 EXP3 算法进行更新，这样能稳定激励信号，提升策略调整的敏感性。&lt;/p&gt;
+&lt;p&gt;其次，EXP3 本身容易陷入局部最优：比如初期某个采样概率（如 0.4）表现较好、被频繁强化，久而久之其概率会被指数级放大，导致其他采样概率（如 0.5）几乎被排挤，后续即便 0.5 更合适也难以“翻身”。为此，作者提出了“奖励传播”机制：当某个采样概率被强化时，会将一半的奖励分摊给其相邻的概率（如 0.4 被强化，则 0.3 和 0.5 也获得部分奖励），以保证探索空间的多样性，使其他策略在后期仍有机会切换出来，从而有效缓解陷入局部最优的问题。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-32-28.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-32-28.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在解决样本选择与处理策略后，下一步的核心目标是有效权衡公平性与模型准确率。为追求公平性而显著牺牲准确率是不可取的。因此，FALcon 框架在每轮训练中引入了一个权衡参数 λ：每轮训练以 (1-λ) 的概率采用常规主动学习策略，专注提升模型准确率；以 λ 的概率按照 FALcon 的公平性机制进行样本选择和模型优化，实现公平与准确性的动态平衡。&lt;/p&gt;
+&lt;h2 id="5-实验设计与结果"&gt;5. 实验设计与结果
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-22-16-54-58.png" target="_blank"&gt; &lt;img src="images/2026-03-22-16-54-58.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者在实验中选择了公平性学习领域中最具代表性的数据集，公平性得分采用所有子群体（群体）的性能最高值与最低值之差来衡量，差值越大表示公平性越差。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-28-26.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-28-26.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对比方法涵盖了传统的主动学习策略，如信息熵（Entropy）和随机采样（Random），同时引入了专为公平主动学习设计的先进方法（SOTA），如 FaL 和 D-FA2L。模型方面，作者采用了逻辑回归和基础神经网络，而未选择如 Transformer 或 ResNet 这类复杂模型，原因有三：首先，所用数据集类型以表格数据为主，复杂模型优势不明显；其次，主动学习需频繁对新样本进行重训练，复杂网络训练代价高昂；最后，简化模型有助于排除模型本身能力对实验结果的干扰，使实验更能反映采样策略（如多臂老虎机机制）的实际效果。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-13-25.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-13-25.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从结果图中可以看出，FALcon 在群体平权和公平性指标上显著优于其他方法，实现了高公平性，而其他算法则存在高准确率但公平性较低的问题。此外，FALcon 通过调整 λ 参数，能够灵活实现不同的准确率与公平性组合，用户可根据实际需求自主权衡选择。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-26-08.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-26-08.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以表格的形式看更清晰，之前最新的算法只能略微提升公平性，但是我们的算法有碾压式的提升&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-27-14.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-27-14.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;而且我们的算法不仅效果好，耗时也不长，算是耗时最短的那一批&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-44-57.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-44-57.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;从图 7 可以看出，虽然我们的方法在与固定概率策略相比时并非最优，但其表现已经非常接近最优方案。考虑到在实际应用中我们无法拥有“上帝视角”，需要合理分配预算进行探索，因此能取得与最优策略相近的效果已经极具实用价值，充分体现了方法的有效性和探索带来的收益。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-47-07.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-47-07.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;图 8 详细展示了多臂老虎机策略的动态调整过程。初始时，各拉杆（采样策略）被选择的概率均为 0.1。随着迭代推进，0.6 拉杆因表现优异逐渐被算法“青睐”，其被选概率稳步提升并趋于 0.4，而其他拉杆的选择概率则逐步降低，趋近于零。从图 b 的对比实验也可以看出，作者用各种固定概率策略进行了测试，最终结果验证了 0.6 确实是表现最优的选择方案。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-58-02.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-58-02.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表五是每批次样本数量对结果的影响，虽然批次数量为 1 时效果最好，但是考虑到计算成本，默认选 10&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-17-59-18.png" target="_blank"&gt; &lt;img src="images/2026-03-22-17-59-18.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表六是拉杆数量对结果的影响，结果表明拉杆并不是越多越好，当拉杆数量提升到 9 时，性能反而有所下降，毕竟探索也有成本，最后研究发现拉杆设置 3-5 个即可&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-18-10-42.png" target="_blank"&gt; &lt;img src="images/2026-03-22-18-10-42.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表七是消融实验，可以看到仅仅装上试错推迟机制，公平性就从 0.1 提升到了 0.8，整个算法里试错推迟机制起码起到 80% 的作用，不过对抗性多臂老虎机虽然对性能提升小，但是作者提到他节省了高达 25% 左右的标注预算，比起性能提升他更能省钱&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-18-14-23.png" target="_blank"&gt; &lt;img src="images/2026-03-22-18-14-23.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;表八是作者给别人的算法装上自己研究的试错推迟机制，可以看到他人算法的性能有很大提升，但是还是不及我们的算法&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-18-17-04.png" target="_blank"&gt; &lt;img src="images/2026-03-22-18-17-04.png" alt="image" style="max-width: 100%; width: 600px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之前提到我们用的算法是 exp3，但是市面上有更复杂先进的算法，作者一一尝试后证明，不用情况下不同算法都有可能是最佳算法，而且大家差距不大，不如用最基础的减小算法难度和复杂度&lt;/p&gt;
+&lt;h2 id="6-关于联邦遗忘学习的拓展"&gt;6. 关于联邦遗忘学习的拓展
+&lt;/h2&gt;&lt;p&gt;论文中中的公平性主要关注于不同子群体间的表现差异。如果发现某些子群体处于不公平状态，可以采用多臂老虎机选择采样策略，从样本池中优先挑选弱势群体的样本交由人工标注，标注后再判断是否纳入训练，不合适则推迟使用。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-23-13-49-08.png" target="_blank"&gt; &lt;img src="images/2026-03-23-13-49-08.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将这一思路映射到联邦遗忘学习场景下，公平性需同时关注客户端之间及其内部子群体的分布。当某个客户端选择退出并触发遗忘后，可能会导致特定子群体的代表性显著下降。例如，若仅有退出客户端包含大量少数民族数据，其他客户端相关数据稀缺，那么离开该客户端后模型将对少数民族群体产生偏见或能力不足。&lt;/p&gt;
+&lt;p&gt;为缓解这种公平性损失，可以将其余客户端视为备选样本池。具体而言，优先筛选与退出客户端数据分布相近的客户端，让这些客户端参与新一轮训练，并提取其梯度以辅助补偿遗忘导致的性能损失。客户端的选择同样可以借鉴对抗式多臂老虎机算法：首先根据已提交的梯度大致推断各客户端的数据类型，对于即将退出的客户端，先对比数据特征从其它客户端中做初步筛选，再结合多臂老虎机策略动态选择最合适的候选客户端进行训练。当这些客户端训练并提交梯度后，若其对全局模型的公平性等指标有帮助则采纳更新，否则可以拒绝相应更新，进一步提升全局模型的公平和鲁棒性。&lt;/p&gt;
+&lt;p&gt;如果通信太大，担心白上传梯度，可以让客户端在本地进行检验，如果公平性有提升再上传&lt;/p&gt;
+&lt;p&gt;(还可以考虑全局模型在每个客户端的准确度，这也是一种公平)&lt;/p&gt;
+&lt;h2 id="7-参考文献"&gt;7. 参考文献
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;原文引用格式（ACM）：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Ki Hyun Tae, Hantian Zhang, Jaeyoung Park, Kexin Rong, and Steven Euijong Whang.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;#34;Falcon: Fair Active Learning using Multi-armed Bandits.&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Proc. VLDB Endow. 17, 5 (2024), 952–965.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;DOI: 10.14778/3641204.3641207
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;相关链接：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;论文 DOI：&lt;a class="link" href="https://doi.org/10.14778/3641204.3641207" target="_blank" rel="noopener"
+&gt;https://doi.org/10.14778/3641204.3641207&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;代码仓库：&lt;a class="link" href="https://github.com/khtae8250/Falcon" target="_blank" rel="noopener"
+&gt;https://github.com/khtae8250/Falcon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>游戏故障 on YSY的博客</title><link>https://sign-river.github.io/tags/%E6%B8%B8%E6%88%8F%E6%95%85%E9%9A%9C/</link><description>Recent content in 游戏故障 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E6%B8%B8%E6%88%8F%E6%95%85%E9%9A%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>打开游戏黑屏但音乐正常播放</title><link>https://sign-river.github.io/p/stellaris-error-05/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-05/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开游戏黑屏但音乐正常播放。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;在电脑设置 &amp;gt; 系统 &amp;gt; 屏幕中关闭 HDR 并重启游戏，如果未生效重启电脑后重试。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>打开游戏以后界面过大，不显示按钮</title><link>https://sign-river.github.io/p/stellaris-error-11/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-11/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;打开游戏以后界面过大，不显示按钮。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="打开游戏以后界面过大，不显示按钮相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;分辨率问题，退出重进看看有没有效果，如果没有可以参考下面链接的视频删掉指定文件，让系统重新创建一个默认的 (你是佬的话直接改文件也行),如果是正版可以直接去启动器里调整分辨率，或者看显示模式是不是窗口，如果是的话调成全屏。&lt;/p&gt;
+&lt;p&gt;文件位置：&lt;/p&gt;
+&lt;p&gt;C:\Users(你的用户名)\Documents\Paradox Interactive\Stellaris\settings.txt&lt;/p&gt;
+&lt;p&gt;参考视频：&lt;/p&gt;
+&lt;p&gt;&lt;a class="link" href="https://www.bilibili.com/video/BV1q14y1v7Jg/?share_source=copy_web&amp;amp;vd_source=04becf7d20fdc437d804d92aa7ca4370" target="_blank" rel="noopener"
+&gt;https://www.bilibili.com/video/BV1q14y1v7Jg/?share_source=copy_web&amp;vd_source=04becf7d20fdc437d804d92aa7ca4370&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏并选择国家后，在进入游戏地图时闪退</title><link>https://sign-river.github.io/p/stellaris-error-09/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-09/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏并选择国家后，在进入游戏地图时闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;首先，尝试清空所有 MOD。如果去除 MOD 后游戏能够正常运行，说明是某个 MOD 引起的问题，可能是版本过旧或存在冲突。此时，可以逐个排查并去除有问题的 MOD。&lt;/p&gt;
+&lt;p&gt;如果去掉所有 MOD 后仍然出现闪退，且卸载重装游戏也无法解决，可能是存储在电脑文档中的游戏设置或 MOD 相关文件出了问题。此时，进入路径 C:\Users(你的用户名)\Documents\Paradox Interactive\Stellaris，复制 C:\Users\32173\Documents\Paradox Interactive\Stellaris\save games 文件夹并保存在其他位置，因为该文件夹包含你的游戏存档。然后，删除整个 Stellaris 文件夹（确保删除的是文档中的 Stellaris 文件夹，而不是 Steam 目录中的）。卸载重装游戏不会删除该文件夹，因此需要手动删除以重置设置文件。重启游戏后，游戏会自动生成一个新的 Stellaris 文件夹。如果想恢复之前的存档，将保存的 save games 文件夹粘贴回文档中的 Stellaris 文件夹即可。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏并游玩一两分钟后闪退</title><link>https://sign-river.github.io/p/stellaris-error-10/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-10/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏并游玩一两分钟后闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;目前唯一已知可行的办法是重装系统&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏后在游戏主界面闪退</title><link>https://sign-river.github.io/p/stellaris-error-06/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-06/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏后在游戏主界面闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;该报错区别于第一条白框闪退报错，该报错一般出现于游戏加载读条结束后一段时间，已经进入了游戏注界面，但不久后闪退。(如下图，进入以下游戏界面后闪退)&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;出现该报错的可能是是因为系统自带的安全系统限制了游戏对文件夹的访问，只要关掉文件夹限制访问即可。&lt;/p&gt;
+&lt;p&gt;操作如下：打开设置，选择隐私和安全性，进入 windows 安全中心，选择病毒和威胁防护。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可以在保护历史记录中看到被限制访问文件夹的进程，比如该图中群星被限制访问自己的文件夹，极其抽象。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-03.png" target="_blank"&gt;&lt;img src="images/error-03.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 3" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解决方法也很简单，只要进入病毒和防护，在勒索软件防护中把文件夹限制访问关掉即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-04.png" target="_blank"&gt;&lt;img src="images/error-04.png" alt="加载进入游戏后在游戏主界面闪退相关报错截图 4" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>加载进入游戏后在自定义国家界面闪退</title><link>https://sign-river.github.io/p/stellaris-error-08/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-08/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;加载进入游戏后在自定义国家界面闪退。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;目前已知可行方法：删除 c 盘游戏数据文件夹后，重装游戏，然后重启电脑后打开游戏&lt;/p&gt;
+&lt;p&gt;c 盘游戏数据位置:C:\Users(你的用户名)\Documents\Paradox Interactive\Stellaris&lt;/p&gt;
+&lt;p&gt;注意如果你有在意的存档，把\Stellaris\save games 文件夹复制保留一份，游戏能正常运行后再粘贴回去&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>退出游戏时游戏卡死，只能强制关闭游戏</title><link>https://sign-river.github.io/p/stellaris-error-13/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-13/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;退出游戏时游戏卡死，只能强制关闭游戏。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;开了云存档导致的，把 steam 云关了就好了，不过关掉之后记得时不时给你存档备份一下，不然换个电脑或者不小心把存档删了你存档就没了&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="退出游戏时游戏卡死，只能强制关闭游戏相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="退出游戏时游戏卡死，只能强制关闭游戏相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏加载到 5% 固定卡死</title><link>https://sign-river.github.io/p/stellaris-error-14/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-14/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏加载到 5% 固定卡死。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/error-01.png" target="_blank"&gt;&lt;img src="images/error-01.png" alt="游戏加载到 5% 固定卡死相关报错截图 1" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/error-02.png" target="_blank"&gt;&lt;img src="images/error-02.png" alt="游戏加载到 5% 固定卡死相关报错截图 2" style="display: block; max-width: 100%; width: auto; height: auto; margin: 1rem auto;"/&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;群星 4.2 版本搞出来的新 bug，官方建议右键 stellaris，选中属性，在启动选项中输入-opengl&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>游戏校验码和别人不一样，无法加入联机房间</title><link>https://sign-river.github.io/p/stellaris-error-12/</link><pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/stellaris-error-12/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1-报错现象"&gt;1. 报错现象
+&lt;/h2&gt;&lt;p&gt;游戏校验码和别人不一样，无法加入联机房间。&lt;/p&gt;
+&lt;h2 id="2-解决方法"&gt;2. 解决方法
+&lt;/h2&gt;&lt;p&gt;游戏校验码和游戏文件完整性有关，部分学习版群星因为文件变动导致校验码被改变，这个没办法，建议入手正版群星本体，方便联机，也方便打 mod。&lt;/p&gt;
+&lt;p&gt;如果你有正版本体，但校验码还是不对，那是因为你打了 mod，大部分 mod 会改变校验码，去启动器里把你打的 mod 都卸了，校验码就正常了。当然如果你们想 mod 联机，只需要协商一下打相同的 mod 并确保 mod 在播放集中的排序一致即可，此时你们的校验码也同样相同，可以正常联机。&lt;/p&gt;
+&lt;h2 id="3-仍未解决"&gt;3. 仍未解决
+&lt;/h2&gt;&lt;p&gt;如果上述方法不适用，建议记录完整报错文字、复现步骤和 &lt;code&gt;error.log&lt;/code&gt; 内容后再进一步排查。也可以联系原文作者（QQ：3217344726）反馈，以便补充或修正方案。&lt;/p&gt;</description></item><item><title>PC 端《三角洲行动》启动画面放大、纯色闪屏的解决方案</title><link>https://sign-river.github.io/p/delta-force-dpi-scaling-fix/</link><pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/delta-force-dpi-scaling-fix/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;前言&lt;/strong&gt;：如果你第一次启动《三角洲行动》时遇到画面放大或纯色闪屏，别慌！这是 Windows 高 DPI 缩放与游戏引擎的冲突。本文提供解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="1--问题现象"&gt;1. 🔍 问题现象
+&lt;/h2&gt;&lt;p&gt;第一次启动《三角洲行动》时可能遇到以下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;画面异常放大&lt;/strong&gt;：游戏图像被放大多倍，只能看到界面的一小部分，鼠标无法点击目标按钮&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;ldquo;假花屏&amp;rdquo;&lt;/strong&gt;：能听到游戏音效，但屏幕显示单一颜色交替闪动，不显示游戏内容&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反复重启才能进&lt;/strong&gt;：遇到上述情况只能强退，需多次重启才能正常进入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2--问题原因"&gt;2. 🔍 问题原因
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;这不是显卡故障&lt;/strong&gt;，而是 Windows 高 DPI 缩放与游戏引擎的冲突。&lt;/p&gt;
+&lt;p&gt;使用 2.5K 或更高分辨率屏幕时，Windows 默认开启 125% 或 150% 系统缩放。游戏启动时，引擎未能正确接管屏幕，Windows 将系统缩放强加在全屏游戏画面上，造成&amp;quot;二次放大&amp;quot;，导致渲染出错，表现为画面缩小或纯色闪屏。&lt;/p&gt;
+&lt;h2 id="3--解决方案nvidia-应用设置"&gt;3. 🛠️ 解决方案：NVIDIA 应用设置
+&lt;/h2&gt;&lt;h3 id="31-详细步骤"&gt;3.1 详细步骤
+&lt;/h3&gt;&lt;p&gt;打开电脑上的 &lt;strong&gt;NVIDIA 应用&lt;/strong&gt;（NVIDIA App），在左侧导航栏点击 &lt;strong&gt;图形&lt;/strong&gt; 选项卡。&lt;/p&gt;
+&lt;p&gt;在程序列表中找到并点击 &lt;strong&gt;三角洲行动&lt;/strong&gt;（Delta Force）。&lt;/p&gt;
+&lt;p&gt;在右侧找到 &lt;strong&gt;游戏已优化&lt;/strong&gt; 选项，点击 &lt;strong&gt;恢复&lt;/strong&gt; 按钮后面的小三角展开详细设置。&lt;/p&gt;
+&lt;p&gt;在展开的设置面板中，找到 &lt;strong&gt;显示模式&lt;/strong&gt; 选项，在下拉菜单中选择 &lt;strong&gt;无边框窗口化&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-07-21-51-54.png" target="_blank"&gt; &lt;img src="images/2026-03-07-21-51-54.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;设置完成后无需额外保存，直接关闭 NVIDIA 应用即可。&lt;/p&gt;
+&lt;h2 id="4--验证效果"&gt;4. ✅ 验证效果
+&lt;/h2&gt;&lt;p&gt;重新打开游戏，画面应该能正常显示，不再出现放大或纯色闪屏问题。&lt;/p&gt;
+&lt;p&gt;如果问题仍然存在，可以尝试重启电脑后再启动游戏。&lt;/p&gt;
+&lt;h2 id="5--总结"&gt;5. 📝 总结
+&lt;/h2&gt;&lt;p&gt;《三角洲行动》启动时的画面放大和纯色闪屏问题，本质上是 Windows 高 DPI 缩放与游戏引擎的冲突。&lt;/p&gt;
+&lt;p&gt;通过 NVIDIA 应用将显示模式设置为 &lt;strong&gt;无边框窗口化&lt;/strong&gt;，可以让游戏正确接管画面渲染，彻底解决问题。这种方法简单快捷，无需修改任何文件属性。&lt;/p&gt;
+&lt;p&gt;希望这篇文章能帮助到遇到同样问题的朋友！如果还有什么新的方法，欢迎在评论区留言交流。&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>中文排版 on YSY的博客</title><link>https://sign-river.github.io/tags/%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88/</link><description>Recent content in 中文排版 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 14 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88/index.xml" rel="self" type="application/rss+xml"/><item><title>搜狗输入法自定义短语：快速输入直角引号</title><link>https://sign-river.github.io/p/sogou-corner-brackets/</link><pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/sogou-corner-brackets/</guid><description>&lt;h2 id="1-为什么需要直角引号"&gt;1. 为什么需要直角引号？
+&lt;/h2&gt;&lt;p&gt;在中文排版中，直角引号「」和『』比普通引号 &amp;quot;&amp;quot; 更加规范和美观，特别适合用于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;📝 学术论文和正式文档&lt;/li&gt;
+&lt;li&gt;📖 书籍和杂志排版&lt;/li&gt;
+&lt;li&gt;🎨 设计作品中的文字说明&lt;/li&gt;
+&lt;li&gt;💬 强调引用内容时&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相比普通的弯引号，直角引号在视觉上更加醒目，也更符合传统中文排版规范。&lt;/p&gt;
+&lt;h2 id="2-直角引号的区别"&gt;2. 直角引号的区别
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;普通引号&lt;/strong&gt;：&amp;quot;&amp;quot;、''&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;直角引号&lt;/strong&gt;：「」、『』&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用规则：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;「」用于第一层引用（相当于双引号 &amp;ldquo;&amp;quot;）&lt;/li&gt;
+&lt;li&gt;『』用于第二层引用，即引用中的引用（相当于单引号 &amp;lsquo;&amp;rsquo;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例&lt;/strong&gt;：他说「这本书里写着『天行健，君子以自强不息』」&lt;/p&gt;
+&lt;h2 id="3-设置方法"&gt;3. 设置方法
+&lt;/h2&gt;&lt;h3 id="31-第一步开启自定义短语功能"&gt;3.1. 第一步：开启自定义短语功能
+&lt;/h3&gt;&lt;p&gt;打开搜狗输入法设置界面，选择属性设置-&amp;gt;高级，勾选自定义短语。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-14-18-28-49.png" target="_blank"&gt; &lt;img src="images/2026-02-14-18-28-49.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="32-第二步添加新短语"&gt;3.2. 第二步：添加新短语
+&lt;/h3&gt;&lt;p&gt;进入自定义短语设置，点击添加新短语。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-14-18-35-02.png" target="_blank"&gt; &lt;img src="images/2026-02-14-18-35-02.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="33-第三步设置直角引号"&gt;3.3. 第三步：设置直角引号「」
+&lt;/h3&gt;&lt;p&gt;缩写可以自拟，这里我用 &amp;ldquo;syh&amp;rdquo; 意指&amp;quot;第一层引号&amp;rdquo;，下方文本框输入直角引号「」即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-14-18-45-11.png" target="_blank"&gt; &lt;img src="images/2026-02-14-18-45-11.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="34-第四步使用效果"&gt;3.4. 第四步：使用效果
+&lt;/h3&gt;&lt;p&gt;以后输入 syh 即可快速打出直角引号「」。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-14-18-45-26.png" target="_blank"&gt; &lt;img src="images/2026-02-14-18-45-26.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="35-第五步添加嵌套引号"&gt;3.5. 第五步：添加嵌套引号『』
+&lt;/h3&gt;&lt;p&gt;同理可以添加第二层引号『』，用于引用中的引用。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-14-18-47-26.png" target="_blank"&gt; &lt;img src="images/2026-02-14-18-47-26.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="4-总结"&gt;4. 总结
+&lt;/h2&gt;&lt;p&gt;通过搜狗输入法的自定义短语功能，我们可以快速输入直角引号，让中文文档的排版更加规范美观。你也可以用同样的方法添加其他常用符号，提升输入效率！&lt;/p&gt;</description></item><item><title>VS Code 自动在中英文间添加空格</title><link>https://sign-river.github.io/p/vscode-auto-space-chinese-english/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/vscode-auto-space-chinese-english/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;在编写中英文混排的文档时，在中文和英文之间添加空格是一个良好的排版习惯。这样做可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;提升阅读体验&lt;/strong&gt;：适当的空格让文字更加清晰易读，避免中英文紧贴在一起显得拥挤&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;符合排版规范&lt;/strong&gt;：许多中文排版指南都建议在中英文之间添加空格&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持文档一致性&lt;/strong&gt;：统一的格式让整个文档看起来更专业&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是手动添加空格既繁琐又容易遗漏，本文将介绍如何使用 VS Code 插件实现保存时自动格式化。&lt;/p&gt;
+&lt;h2 id="2-安装插件"&gt;2. 安装插件
+&lt;/h2&gt;&lt;h3 id="21-pangu-markdown"&gt;2.1. Pangu-Markdown
+&lt;/h3&gt;&lt;p&gt;打开 VS Code 扩展商店，搜索 &lt;code&gt;Pangu-Markdown&lt;/code&gt; 并安装。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-47-23.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-47-23.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-配置自动格式化"&gt;3. 配置自动格式化
+&lt;/h2&gt;&lt;h3 id="31-settingsjson-配置"&gt;3.1. settings.json 配置
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;打开设置&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-48-31.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-48-31.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;搜索并启用自动格式化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;搜索 &lt;code&gt;pangu&lt;/code&gt;，勾选 &amp;ldquo;Format On Save&amp;rdquo;（保存时自动格式化）选项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-00-01-13.png" target="_blank"&gt; &lt;img src="images/2026-02-11-00-01-13.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;重启 VS Code&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;配置完成后需要重启 VS Code 才能生效。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果配置后没有生效，请尝试重启 VS Code。这是插件生效的必要步骤。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="4-总结"&gt;4. 总结
+&lt;/h2&gt;&lt;p&gt;配置完成后，使用 &lt;code&gt;Ctrl+S&lt;/code&gt; 保存文件时，插件会自动在中文和英文之间添加空格，让你专注于内容创作，无需担心排版格式问题。&lt;/p&gt;</description></item></channel></rss>

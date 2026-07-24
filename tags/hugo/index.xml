@@ -1,0 +1,1495 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on YSY的博客</title><link>https://sign-river.github.io/tags/hugo/</link><description>Recent content in Hugo on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 03 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Theme Stack 进阶：用 Shortcodes 封装常用 HTML 组件</title><link>https://sign-river.github.io/p/hugo-theme-stack-shortcodes-html-wrapper/</link><pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/hugo-theme-stack-shortcodes-html-wrapper/</guid><description>&lt;h2 id="1-为什么要封装-html"&gt;1. 为什么要封装 HTML？
+&lt;/h2&gt;&lt;p&gt;在写博客时，很多时候我们会遇到这样的场景：&lt;/p&gt;
+&lt;p&gt;默认的 Markdown 格式无法满足排版或功能需求，比如想插入一个自定义样式的提示框、好看的标签或者一键复制的按钮。如果直接在文章里写 HTML，内容会变得很混乱，而且后续维护和复用都很不方便。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hugo 提供的 Shortcodes 功能，刚好就是为这种“写一次、处处复用”的场景准备的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这一篇就以“复制按钮”为例，演示如何在 &lt;code&gt;hugo-theme-stack&lt;/code&gt; 项目里封装一个可复用的 HTML 组件。&lt;/p&gt;
+&lt;h2 id="2-shortcodes-基础放在哪怎么命名"&gt;2. Shortcodes 基础：放在哪、怎么命名？
+&lt;/h2&gt;&lt;p&gt;Hugo 规则：&lt;strong&gt;所有自定义 Shortcodes 都放在 &lt;code&gt;layouts/shortcodes/&lt;/code&gt; 目录下&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-16-35-08.png" target="_blank"&gt; &lt;img src="images/2026-03-03-16-35-08.png" alt="image" style="max-width: 100%; width: 300px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;比如我想做一个点击按钮就能复制指定文字的组件，就可以这样操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新建文件：&lt;code&gt;layouts/shortcodes/copybtn.html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;之后在任意文章里，都可以通过以下格式调用组件：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{&amp;lt; copybtn value=&amp;#34;待复制文字&amp;#34; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;命名规则：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文件名 &lt;code&gt;copybtn.html&lt;/code&gt; → 调用名就是 &lt;code&gt;copybtn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;名称内不能带 &lt;code&gt;-&lt;/code&gt; 以外的奇怪字符，建议全小写、用中划线或下划线分隔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-实战封装一个复制按钮组件"&gt;3. 实战：封装一个“复制按钮”组件
+&lt;/h2&gt;&lt;h3 id="31-新建-shortcode-文件"&gt;3.1. 新建 Shortcode 文件
+&lt;/h3&gt;&lt;p&gt;在项目根目录下新建（如果目录不存在就自己创建）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;layouts/shortcodes/copybtn.html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-03-03-16-35-08.png" target="_blank"&gt; &lt;img src="images/2026-03-03-16-35-08.png" alt="image" style="max-width: 100%; width: 300px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;填入下面这段代码：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;span class="lnt"&gt;59
+&lt;/span&gt;&lt;span class="lnt"&gt;60
+&lt;/span&gt;&lt;span class="lnt"&gt;61
+&lt;/span&gt;&lt;span class="lnt"&gt;62
+&lt;/span&gt;&lt;span class="lnt"&gt;63
+&lt;/span&gt;&lt;span class="lnt"&gt;64
+&lt;/span&gt;&lt;span class="lnt"&gt;65
+&lt;/span&gt;&lt;span class="lnt"&gt;66
+&lt;/span&gt;&lt;span class="lnt"&gt;67
+&lt;/span&gt;&lt;span class="lnt"&gt;68
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-gdscript3" data-lang="gdscript3"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;button&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;button&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;copy-btn-shortcode&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;{{ .Get &amp;#34;&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34; }}&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;relative&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;inline&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;flex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;align&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;items&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;gap&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;card&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;background&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;card&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;background&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="n"&gt;solid&lt;/span&gt; &lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;card&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;separator&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;card&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;cursor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pointer&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;transition&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;all&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;cubic&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bezier&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;box&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;shadow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;var&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;shadow&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;onmouseover&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;this.style.backgroundColor=&amp;#39;var(--code-background)&amp;#39;; this.style.borderColor=&amp;#39;var(--accent-color)&amp;#39;;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;onmouseout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;this.style.backgroundColor=&amp;#39;var(--card-background)&amp;#39;; this.style.borderColor=&amp;#39;var(--card-separator-color)&amp;#39;;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;onmousedown&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;this.style.transform=&amp;#39;scale(0.96)&amp;#39;;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;onmouseup&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;this.style.transform=&amp;#39;scale(1)&amp;#39;;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;onclick&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;(function(btn){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;var&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;data-value&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;data-copying&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;var&lt;/span&gt; &lt;span class="n"&gt;saveToClipboard&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;navigator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clipboard&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;navigator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clipboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writeText&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;navigator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clipboard&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writeText&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;var&lt;/span&gt; &lt;span class="n"&gt;el&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;textarea&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;el&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;el&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;el&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execCommand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;copy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;removeChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;el&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;Promise&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;saveToClipboard&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;then&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;data-copying&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;true&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;var&lt;/span&gt; &lt;span class="n"&gt;tip&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;span&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;tip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;textContent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;已复制！&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;tip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cssText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tip&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt; &lt;span class="n"&gt;tip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;tip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-42px&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;tip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;opacity&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;setTimeout&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;function&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;tip&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; &lt;span class="n"&gt;btn&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;removeAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;data-copying&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;})(&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;svg&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;14&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;14&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;viewBox&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;0 0 24 24&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;fill&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;none&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;stroke&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;currentColor&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;stroke&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;stroke&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linecap&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;round&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;stroke&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;linejoin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;round&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;opacity: 0.8;&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;rect&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;9&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;9&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;13&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;13&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;rx&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;ry&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;rect&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;svg&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;span&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Get&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;label&amp;#34;&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Get&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;value&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;button&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里有几个重要点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;.Get &amp;quot;value&amp;quot;&lt;/code&gt;&lt;/strong&gt;：读取调用 Shortcode 时传入的 &lt;code&gt;value&lt;/code&gt; 参数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;.Get &amp;quot;label&amp;quot;&lt;/code&gt;&lt;/strong&gt;：展示在按钮上的文字，没传就回退到 &lt;code&gt;value&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你也可以根据自己的审美继续微调按钮样式，只要保证核心逻辑不变即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="32-在文章里调用复制按钮"&gt;3.2. 在文章里调用复制按钮
+&lt;/h3&gt;&lt;p&gt;在任何一篇文章的 &lt;code&gt;index.md&lt;/code&gt; 中，你可以这样写：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;在下方的文本框里粘贴 {{&amp;lt; copybtn value=&amp;#34;https://api.deepseek.com/v1&amp;#34; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;效果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;按钮显示为：&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="https://api.deepseek.com/v1"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+https://api.deepseek.com/v1
+&lt;/span&gt;
+&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;点击按钮：地址被复制到剪贴板，上方短暂出现“已复制！”的深色气泡提示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你想让按钮显示的内容和实际复制的内容不一样，例如显示一段更短的说明文字，可以加上 &lt;code&gt;label&lt;/code&gt; 参数：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{&amp;lt; copybtn value=&amp;#34;https://api.deepseek.com/v1&amp;#34; label=&amp;#34;DeepSeek API 基础地址&amp;#34; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="https://api.deepseek.com/v1"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+DeepSeek API 基础地址
+&lt;/span&gt;
+&lt;/button&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;复制内容&lt;/strong&gt;：&lt;code&gt;https://api.deepseek.com/v1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;按钮文字&lt;/strong&gt;：&lt;code&gt;DeepSeek API 基础地址&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-在-hugo-theme-stack-中还能封装些什么"&gt;4. 在 hugo-theme-stack 中还能封装些什么？
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;hugo-theme-stack&lt;/code&gt; 本身已经有很好的排版和样式，但通过 Shortcodes，我们可以再往上加一层“写作小组件”，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;高亮提示块&lt;/strong&gt;：成功/警告/危险提示（例如 &lt;code&gt;{{&amp;lt; hint type=&amp;quot;warning&amp;quot; &amp;gt;}}&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内嵌对比卡片&lt;/strong&gt;：对比两个工具、两种写法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;代码运行按钮&lt;/strong&gt;：一键复制命令、打开外部 Playground 等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通用思路都是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 &lt;code&gt;layouts/shortcodes/&lt;/code&gt; 里写好 HTML + 少量 JS/CSS&lt;/li&gt;
+&lt;li&gt;设计好几个易懂的参数（例如 &lt;code&gt;type&lt;/code&gt;、&lt;code&gt;title&lt;/code&gt;、&lt;code&gt;value&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;在 Markdown 里用一行 &lt;code&gt; {{&amp;lt; .....&amp;gt;}}&lt;/code&gt; 调用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;当你发现自己&lt;strong&gt;第三次&lt;/strong&gt;在文章里拷贝同一段 HTML 时，就可以考虑把它抽成一个 Shortcode 了。&lt;/p&gt;
+&lt;h2 id="5-总结"&gt;5. 总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Shortcodes 是 Hugo 自带的官方功能&lt;/strong&gt;，非常适合在 &lt;code&gt;hugo-theme-stack&lt;/code&gt; 这种主题里封装常用的 HTML 组件。&lt;/li&gt;
+&lt;li&gt;把易错、冗长的 HTML + JS 抽成 Shortcode 后，写文章时只需要简单的一行 `{{&amp;lt; &amp;hellip;..&amp;gt;}}``，既省时间，又方便后期统一调整样式。&lt;/li&gt;
+&lt;li&gt;你可以从本篇的复制按钮开始，逐步把自己常用的“套路组件”（提示框、按钮组、代码块说明等）都封装成 Shortcodes，让博客真正变成一个&lt;strong&gt;为写作服务的系统&lt;/strong&gt;，而不是反过来被配置绑架。&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Hugo Theme Stack 进阶：控制图片大小与点击效果</title><link>https://sign-river.github.io/p/hugo-stack-image-size-control/</link><pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/hugo-stack-image-size-control/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文基于 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+&gt;hugo-theme-stack&lt;/a&gt; 主题，其他主题的配置路径和渲染行为可能有所不同，请以各自主题的文档为准。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在使用 &lt;a class="link" href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image" target="_blank" rel="noopener"
+&gt;Paste Image&lt;/a&gt; 插件往文章里粘贴截图时，插件默认生成的 Markdown 语法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;![&lt;span class="nt"&gt;image&lt;/span&gt;](&lt;span class="na"&gt;images/2026-02-21-12-13-26.png&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这种写法最简洁，hugo-theme-stack 也自带点击放大的交互效果。但它的缺点是&lt;strong&gt;无法控制图片的显示尺寸&lt;/strong&gt;，当截图分辨率很高时，图片会撑满整个内容区域，视觉上较为突兀。&lt;/p&gt;
+&lt;p&gt;本文整理了两种可以控制图片显示尺寸的方案，各有优缺点，可以根据场景选择。&lt;/p&gt;
+&lt;h2 id="2-方案一a--img--点击另开标签页查看原图"&gt;2. 方案一：&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; + &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; —— 点击另开标签页查看原图
+&lt;/h2&gt;&lt;h3 id="21-写法"&gt;2.1. 写法
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;images/2026-02-21-12-13-26.png&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;target&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;images/2026-02-21-12-13-26.png&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;image&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;max-width: 100%; width: 1000px;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过 &lt;code&gt;width&lt;/code&gt; 控制缩略图的最大显示宽度（单位 px），&lt;code&gt;max-width: 100%&lt;/code&gt; 保证在小屏幕上不会溢出。&lt;/p&gt;
+&lt;h3 id="22-效果"&gt;2.2. 效果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;缩略图&lt;strong&gt;清晰&lt;/strong&gt;，直接展示原图缩放后的效果&lt;/li&gt;
+&lt;li&gt;点击图片后会在&lt;strong&gt;新标签页&lt;/strong&gt;中打开原图，方便查看细节，关闭标签页即可返回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-适合场景"&gt;2.3. 适合场景
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图片内容细节丰富，需要让读者能放大查看（如截图、流程图、配置界面等）&lt;/li&gt;
+&lt;li&gt;希望缩略图尽量清晰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="24-配合-paste-image-自动生成"&gt;2.4. 配合 Paste Image 自动生成
+&lt;/h3&gt;&lt;p&gt;可以将 Paste Image 插件的 &lt;code&gt;Insert Pattern&lt;/code&gt; 改为以下内容，之后粘贴截图时会自动生成方案一的格式，无需手动修改：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;a href=&amp;#34;${imageFilePath}&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;img src=&amp;#34;${imageFilePath}&amp;#34; alt=&amp;#34;image&amp;#34; style=&amp;#34;max-width: 100%; width: 1000px;&amp;#34;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/a&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在 VS Code 中打开设置，搜索 &lt;code&gt;Paste Image: Insert Pattern&lt;/code&gt;，将默认值替换为上方内容即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-21-14-31-22.png" target="_blank"&gt; &lt;img src="images/2026-02-21-14-31-22.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-方案二div-容器--markdown-图片--通过容器控制宽度"&gt;3. 方案二：&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 容器 + Markdown 图片 —— 通过容器控制宽度
+&lt;/h2&gt;&lt;h3 id="31-写法"&gt;3.1. 写法
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;max-width: 700px; margin: 0 auto;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ![image](images/2026-02-21-12-13-26.png)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href="images/2026-02-21-14-43-56.png" target="_blank"&gt; &lt;img src="images/2026-02-21-14-43-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 标签与 &lt;code&gt;![image]&lt;/code&gt; 之间必须有空行，这里的代码段因为 md 格式问题无法展现，记得自己加上空行，Hugo 才会正确将内部内容识别为 Markdown 并渲染。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="32-效果"&gt;3.2. 效果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图片宽度跟随外层 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 的 &lt;code&gt;max-width&lt;/code&gt; 决定，修改容器宽度即可调整图片大小&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;margin: 0 auto&lt;/code&gt; 使图片居中显示&lt;/li&gt;
+&lt;li&gt;缩略图&lt;strong&gt;略微模糊&lt;/strong&gt;，因为浏览器会对 Markdown 渲染出的 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 进行拉伸或压缩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="33-适合场景"&gt;3.3. 适合场景
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;需要将多张图片统一控制在相同宽度&lt;/li&gt;
+&lt;li&gt;希望保留主题自带的放大效果，同时能控制缩略图尺寸&lt;/li&gt;
+&lt;li&gt;希望图片居中且大小可控&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="34-注意事项"&gt;3.4. 注意事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果图片原始宽度比容器 &lt;code&gt;max-width&lt;/code&gt; 小，图片会被拉伸放大，可能变模糊，建议 &lt;code&gt;max-width&lt;/code&gt; 值不超过图片原始宽度&lt;/li&gt;
+&lt;li&gt;方案二&lt;strong&gt;无法通过 Paste Image 自动生成&lt;/strong&gt;，需要在使用时手动将图片语法嵌套进 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 容器中&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows 用户&lt;/strong&gt;：建议同时搜索 &lt;code&gt;Force Unix Style Separator&lt;/code&gt; 并勾选，这样生成的路径会是正斜杠 &lt;code&gt;images/xxx.png&lt;/code&gt;，网页中图片才能正常加载（否则会是反斜杠 &lt;code&gt;images\xxx.png&lt;/code&gt;，可能 404）。 &lt;a href="images/2026-02-22-13-37-30.png" target="_blank"&gt; &lt;img src="images/2026-02-22-13-37-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;最后更新：2026-02-21&lt;/p&gt;</description></item><item><title>Hugo Theme Stack 优化：相关文章推荐配置指南</title><link>https://sign-river.github.io/p/hugo-related-posts-config/</link><pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/hugo-related-posts-config/</guid><description>&lt;h2 id="1-问题背景"&gt;1. 问题背景
+&lt;/h2&gt;&lt;p&gt;在使用 Hugo Theme Stack 主题搭建博客时，你可能会发现一个问题：文章底部的&amp;quot;相关文章&amp;quot;推荐有时候并不那么&amp;quot;相关&amp;quot;。&lt;/p&gt;
+&lt;p&gt;比如，一篇关于 &lt;strong&gt;WPS 图片处理技巧&lt;/strong&gt;的文章，可能会被推荐到一篇讲 &lt;strong&gt;Markdown 语法&lt;/strong&gt;的文章下方。虽然它们都属于&amp;quot;效率工具&amp;quot;分类，但实际上是完全不同领域的内容 —— WPS 是办公软件，Markdown 是写作语法，两者八竿子打不着。
+&lt;a href="images/2026-02-11-11-15-08.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-15-08.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+这就是 Hugo 默认相关文章推荐配置带来的问题。&lt;/p&gt;
+&lt;h2 id="2-默认配置分析"&gt;2. 默认配置分析
+&lt;/h2&gt;&lt;p&gt;Hugo 的相关文章功能由 &lt;code&gt;config/_default/related.toml&lt;/code&gt; 文件控制。让我们先看看默认配置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Related contents configuration&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;includeNewer&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;threshold&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;toLower&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="21-配置参数说明"&gt;2.1. 配置参数说明
+&lt;/h3&gt;&lt;h4 id="211-全局配置参数"&gt;2.1.1. 全局配置参数
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;threshold（阈值）&lt;/strong&gt;：60&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;相关性分数的阈值（范围 0-100）&lt;/li&gt;
+&lt;li&gt;只有得分达到或超过 60 分的页面才会被推荐&lt;/li&gt;
+&lt;li&gt;⚠️ 如果阈值设置过高，可能导致推荐内容过少甚至为空&lt;/li&gt;
+&lt;li&gt;建议：内容较少的博客可以设置为 50-60，内容丰富的可以设置为 70-80&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;includeNewer&lt;/strong&gt;：true&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;允许推荐比当前文章发布时间更晚的文章&lt;/li&gt;
+&lt;li&gt;🔄 &lt;strong&gt;动态特性&lt;/strong&gt;：当你发布新文章时，如果它与旧文章相关，会自动出现在旧文章的推荐列表中&lt;/li&gt;
+&lt;li&gt;这意味着旧文章的推荐内容会随着新内容的发布而动态更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;toLower&lt;/strong&gt;：false&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在匹配时不将关键字转换为小写，保持区分大小写&lt;/li&gt;
+&lt;li&gt;例如：标签 &amp;ldquo;Hugo&amp;rdquo; 和 &amp;ldquo;hugo&amp;rdquo; 会被视为不同的标签&lt;/li&gt;
+&lt;li&gt;💡 建议设置为 &lt;code&gt;true&lt;/code&gt; 可以产生更准确的匹配结果（虽会轻微影响性能）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="212-索引与权重配置"&gt;2.1.2. 索引与权重配置
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;tags（标签）&lt;/strong&gt;：权重 100&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用文章 Front Matter 中的 &lt;code&gt;tags&lt;/code&gt; 作为匹配依据&lt;/li&gt;
+&lt;li&gt;在相似度计算中，标签匹配的重要性是 100&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;categories（分类）&lt;/strong&gt;：权重 200&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用文章 Front Matter 中的 &lt;code&gt;categories&lt;/code&gt; 作为匹配依据&lt;/li&gt;
+&lt;li&gt;在相似度计算中，分类匹配的重要性是 200&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;当前配置下，分类的重要性是标签的 2 倍&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="22-hugo-相似度算法说明"&gt;2.2. Hugo 相似度算法说明
+&lt;/h3&gt;&lt;p&gt;⚠️ &lt;strong&gt;重要概念&lt;/strong&gt;：权重不是简单的加分机制！&lt;/p&gt;
+&lt;p&gt;Hugo 使用&lt;strong&gt;加权相似度算法&lt;/strong&gt;来计算文章间的相关性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于每个索引（tags 和 categories），Hugo 会计算两篇文章的&lt;strong&gt;匹配度&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;将各索引的匹配度乘以对应的&lt;strong&gt;权重&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;综合计算出一个 &lt;strong&gt;0-100 的相似度分数&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;只有相似度 ≥ threshold 时才推荐&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;关键点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;权重的&lt;strong&gt;比例&lt;/strong&gt;才是关键，不是绝对值&lt;/li&gt;
+&lt;li&gt;categories 权重 200 vs tags 权重 100，意味着分类的重要性是标签的 &lt;strong&gt;2 倍&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;不是说&amp;quot;有一个相同分类就得 200 分&amp;quot;，而是说分类匹配对最终相似度的影响更大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;实际举例&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;文章 A&lt;/strong&gt;：与当前文章有相同的分类，但标签完全不同&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文章 B&lt;/strong&gt;：与当前文章有相同的标签，但分类不同&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;结果&lt;/strong&gt;：文章 B 的得分会显著高于文章 A，因为它命中了权重更高的索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;结合高阈值的影响&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当 threshold = 80 时，仅靠 categories（权重较低）带来的匹配可能不足以达到 80 分&lt;/li&gt;
+&lt;li&gt;这套配置倾向于只推荐那些&lt;strong&gt;标签高度重合&lt;/strong&gt;的文章，或者&lt;strong&gt;同时在标签和分类上都有重合&lt;/strong&gt;的文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-问题所在"&gt;2.3. 问题所在
+&lt;/h3&gt;&lt;p&gt;在默认配置下，&lt;strong&gt;分类的权重是标签的 2 倍&lt;/strong&gt;（200 vs 100），这导致：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分类匹配在相似度计算中占主导地位&lt;/li&gt;
+&lt;li&gt;所有标注为&amp;quot;效率工具&amp;quot;的文章，即使标签完全不同，也可能因为分类权重过高而被互相推荐&lt;/li&gt;
+&lt;li&gt;所有标注为&amp;quot;深度学习&amp;quot;的文章，即使具体方向不同（理论研究 vs 应用实践），也容易被判定为相关&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;宽泛的分类掩盖了标签的精确性&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-优化方案"&gt;3. 优化方案
+&lt;/h2&gt;&lt;h3 id="31-核心思路"&gt;3.1. 核心思路
+&lt;/h3&gt;&lt;p&gt;我们需要&lt;strong&gt;提高推荐标准&lt;/strong&gt;，让 Hugo 只推荐真正相似的文章。有两个调整方向：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;提高阈值&lt;/strong&gt;：让匹配要求更严格&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调整权重&lt;/strong&gt;：降低分类的重要性，提高标签的重要性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="32-推荐配置"&gt;3.2. 推荐配置
+&lt;/h3&gt;&lt;p&gt;打开 &lt;code&gt;config/_default/related.toml&lt;/code&gt;，修改为以下内容：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;# Related contents configuration&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;includeNewer&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;threshold&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt; &lt;span class="c"&gt;# 从 60 提高到 80&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;toLower&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt; &lt;span class="c"&gt;# 从 100 提高到 200&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;indices&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="c"&gt;# 从 200 降低到 100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="33-为什么这样改"&gt;3.3. 为什么这样改？
+&lt;/h3&gt;&lt;h4 id="331-阈值提升60--80"&gt;3.3.1. 阈值提升（60 → 80）
+&lt;/h4&gt;&lt;p&gt;更高的阈值意味着需要更高的相似度才能被推荐。&lt;/p&gt;
+&lt;h4 id="332-权重反转"&gt;3.3.2. 权重反转
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;标签权重提升（100 → 200）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标签通常更具体、更能代表文章的核心内容&lt;/li&gt;
+&lt;li&gt;例如：&amp;ldquo;PyTorch&amp;rdquo;、&amp;ldquo;WPS&amp;rdquo;、&amp;ldquo;Markdown&amp;rdquo; 这些标签直接指向具体技术&lt;/li&gt;
+&lt;li&gt;提高权重后，标签匹配对相似度的影响更大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;分类权重降低（200 → 100）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分类往往比较宽泛（如&amp;quot;效率工具&amp;quot;、&amp;ldquo;学习笔记&amp;rdquo;）&lt;/li&gt;
+&lt;li&gt;降低权重后，仅凭分类相同不足以达到高相似度&lt;/li&gt;
+&lt;li&gt;现在标签的重要性是分类的 2 倍（200:100）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-实施步骤"&gt;4. 实施步骤
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;打开配置文件&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;config/_default/related.toml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;修改配置&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将 &lt;code&gt;threshold&lt;/code&gt; 从 60 改为 80&lt;/li&gt;
+&lt;li&gt;交换 &lt;code&gt;tags&lt;/code&gt; 和 &lt;code&gt;categories&lt;/code&gt; 的权重
+&lt;a href="images/2026-02-11-11-12-42.png" target="_blank"&gt; &lt;img src="images/2026-02-11-11-12-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;保存并提交&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果使用 GitHub Pages，推送到仓库会自动部署&lt;/li&gt;
+&lt;li&gt;如果本地测试，运行 &lt;code&gt;hugo server&lt;/code&gt; 查看效果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;验证效果&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打开博客的任意文章页面&lt;/li&gt;
+&lt;li&gt;滚动到底部查看&amp;quot;相关文章&amp;quot;推荐&lt;/li&gt;
+&lt;li&gt;检查推荐的文章是否更贴合主题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="5-总结"&gt;5. 总结
+&lt;/h2&gt;&lt;p&gt;Hugo 的相关文章推荐功能非常强大，但默认配置对于内容多样化的博客来说不够精确。通过调整 &lt;code&gt;threshold&lt;/code&gt;（阈值）和 &lt;code&gt;weight&lt;/code&gt;（权重），我们可以让推荐结果更加智能。&lt;/p&gt;
+&lt;p&gt;希望这篇教程能帮助你打造一个更好的阅读体验！如果有任何问题，欢迎在评论区讨论。&lt;/p&gt;
+&lt;h2 id="6-参考资料"&gt;6. 参考资料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://gohugo.io/content-management/related/" target="_blank" rel="noopener"
+&gt;Hugo Related Content 官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://stack.jimmycai.com/" target="_blank" rel="noopener"
+&gt;Stack 主题文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Hugo Theme Stack 入门：GitHub 个人博客搭建全流程</title><link>https://sign-river.github.io/p/hugo-github-pages-blog-tutorial/</link><pubDate>Mon, 09 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/hugo-github-pages-blog-tutorial/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;在这个信息碎片化的时代，拥有一方完全属于自己的网络天地，是很多技术爱好者和创作者的&amp;quot;浪漫&amp;quot;。无论是记录学习笔记、分享项目经验，还是单纯地碎碎念，一个独立博客都是最好的载体。&lt;/p&gt;
+&lt;p&gt;市面上的博客框架很多，经过一番折腾和对比，我最终选择了 Hugo。它速度极快，生成的静态页面安全稳定，配合 GitHub Pages 可以实现完全免费的托管。而在主题选择上，我使用了设计感极佳的卡片式主题 Stack，它不仅美观，而且功能非常完善。&lt;/p&gt;
+&lt;p&gt;这篇教程是我在踩坑和摸索后的总结。为了让大家少走弯路，我将原本零散的记录整理成了这篇&amp;quot;手把手&amp;quot;指南。本教程将涵盖从仓库创建、环境部署，到界面汉化、评论区接入，甚至包括如何高效地用 VS Code 写文章的全流程。&lt;/p&gt;
+&lt;p&gt;不需要你精通前端代码，只要跟着步骤走，你也能轻松搭建出一个既好看又好用的个人博客。&lt;/p&gt;
+&lt;h2 id="2-快速起步与仓库搭建"&gt;2. 快速起步与仓库搭建
+&lt;/h2&gt;&lt;p&gt;搭建博客最怕的就是繁琐的环境配置。幸运的是，我们不需要在本地一行行敲代码安装 Hugo，直接利用现成的 GitHub 模板，只需点几下鼠标，就能把博客&amp;quot;搬&amp;quot;回家。&lt;/p&gt;
+&lt;h3 id="21-获取主题模板"&gt;2.1. 获取主题模板
+&lt;/h3&gt;&lt;p&gt;首先，我们需要访问 &lt;code&gt;hugo-theme-stack&lt;/code&gt; 的官方启动模板。这个模板已经预置好了 GitHub Actions 自动构建脚本，能帮我们省去 90% 的配置工作。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;模板地址&lt;/strong&gt;：&lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+&gt;https://github.com/CaiJimmy/hugo-theme-stack-starter&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;进入页面后，点击右上角的 &lt;strong&gt;Use this template&lt;/strong&gt;（使用此模板）按钮，然后选择 &lt;strong&gt;Create a new repository&lt;/strong&gt;（创建新仓库）。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-44-47.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-44-47.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-创建-github-仓库关键步骤"&gt;2.2. 创建 GitHub 仓库（关键步骤！）
+&lt;/h3&gt;&lt;p&gt;这一步至关重要，仓库的命名直接决定了你的博客能不能被访问。&lt;/p&gt;
+&lt;p&gt;在 &lt;strong&gt;Repository name&lt;/strong&gt;（仓库名称）一栏中，&lt;strong&gt;必须&lt;/strong&gt;按照以下格式填写：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;你的 GitHub username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/2026-02-10-10-49-03.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-49-03.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;注意事项：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;格式严格&lt;/strong&gt;：&lt;code&gt;github.io&lt;/code&gt; 前面的部分必须和你的 GitHub 账户名完全一致（大小写最好也保持一致）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;示例&lt;/strong&gt;：如果你的 GitHub 用户名是 &lt;code&gt;sign-river&lt;/code&gt;，那么仓库名必须是 &lt;code&gt;sign-river.github.io&lt;/code&gt;。如果不这样填，后续 GitHub Pages 将无法自动部署，你会遇到 404 错误&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限设置&lt;/strong&gt;：选择 &lt;strong&gt;Public&lt;/strong&gt;（公开），这样 GitHub Pages 才能免费托管你的网站&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;填写完毕后，点击底部的 &lt;strong&gt;Create repository&lt;/strong&gt; 按钮。&lt;/p&gt;
+&lt;h3 id="23-等待自动部署"&gt;2.3. 等待自动部署
+&lt;/h3&gt;&lt;p&gt;仓库创建好后，GitHub 的后台会自动开始工作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击仓库顶部的 &lt;strong&gt;Actions&lt;/strong&gt; 标签页&lt;/li&gt;
+&lt;li&gt;你会看到一个名为 &lt;code&gt;Initial commit&lt;/code&gt; 或 &lt;code&gt;pages-build-deployment&lt;/code&gt; 的工作流正在运行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;部署状态说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 &lt;strong&gt;黄色旋转图标&lt;/strong&gt;：表示正在部署中，请耐心等待（通常需要 1-2 分钟）&lt;/li&gt;
+&lt;li&gt;🟢 &lt;strong&gt;绿色对勾图标&lt;/strong&gt;：表示部署成功！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-46-40.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-46-40.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-46-54.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-46-54.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;部署完成后，访问 &lt;code&gt;https://username.github.io&lt;/code&gt;，如果能看到一个带有 &amp;ldquo;Hugo Theme Stack&amp;rdquo; 标题和示例文章的精美页面，恭喜你，你的个人博客雏形已经搭建完成了！🎉&lt;/p&gt;
+&lt;h2 id="3-基础个性化配置"&gt;3. 基础个性化配置
+&lt;/h2&gt;&lt;p&gt;上一章我们成功部署了博客，但现在的博客标题还是默认的 &amp;ldquo;Hugo Theme Stack Starter&amp;rdquo;，头像也是默认的。接下来，我们通过修改两个核心配置文件，让博客焕然一新。&lt;/p&gt;
+&lt;h3 id="31-修改核心站点信息-configtoml"&gt;3.1. 修改核心站点信息 (config.toml)
+&lt;/h3&gt;&lt;p&gt;这个文件控制着博客最基础的信息，比如网站地址和标题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在你的仓库主页，点击进入 &lt;code&gt;config/_default&lt;/code&gt; 文件夹&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-50-05.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-50-05.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;找到并点击 &lt;code&gt;config.toml&lt;/code&gt; 文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-50-25.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-50-25.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;点击文件右上角的 &lt;strong&gt;铅笔图标&lt;/strong&gt;（Edit this file）进入编辑模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-50-35.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-50-35.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;
+&lt;p&gt;找到以下两行并进行修改：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;# 将此链接修改为你自己的仓库地址（注意最后要有斜杠 /)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;baseurl&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;https://username.github.io/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;# 修改为你喜欢的博客名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;title&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;YSY 的博客&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-51-00.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-51-00.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;修改完成后，点击页面底部的绿色按钮 &lt;strong&gt;Commit changes&lt;/strong&gt; 保存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-51-33.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-51-33.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="32-设置头像与个人简介-paramstoml"&gt;3.2. 设置头像与个人简介 (params.toml)
+&lt;/h3&gt;&lt;p&gt;这个文件主要控制侧边栏的展示内容。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;回到 &lt;code&gt;config/_default&lt;/code&gt; 文件夹，这次我们要修改 &lt;code&gt;params.toml&lt;/code&gt; 文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-52-01.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-52-01.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;
+&lt;p&gt;同样点击铅笔图标编辑，找到 &lt;code&gt;[sidebar]&lt;/code&gt; 区域，参考下图修改：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;sidebar&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;# 侧边栏显示的表情符号&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;emoji&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;🐱&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;# 侧边栏显示的个人简介/副标题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;subtitle&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;热爱编程&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;sidebar&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;avatar&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;# 启用头像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;enabled&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c"&gt;# 头像必须放在 assets/img/ 目录下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;src&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;img/avatar.png&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-52-29.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-52-29.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;修改完成后，记得 &lt;strong&gt;Commit changes&lt;/strong&gt; 保存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="33-上传你的头像图片"&gt;3.3. 上传你的头像图片
+&lt;/h3&gt;&lt;p&gt;刚才我们在配置文件里指定了头像路径是 &lt;code&gt;img/avatar.png&lt;/code&gt;，现在我们需要把真正的图片传上去。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;回到仓库根目录，依次进入 &lt;code&gt;assets&lt;/code&gt; -&amp;gt; &lt;code&gt;img&lt;/code&gt; 文件夹&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-53-03.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-53-03.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-53-11.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-53-11.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;点击右上角的 &lt;strong&gt;Add file&lt;/strong&gt; → &lt;strong&gt;Upload files&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-53-31.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-53-31.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;将你准备好的头像图片重命名为 &lt;code&gt;avatar.png&lt;/code&gt;（注意后缀名要匹配），然后拖拽上传&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-53-44.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-53-44.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;点击 &lt;strong&gt;Commit changes&lt;/strong&gt; 提交更改&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="34-关键步骤切换部署分支"&gt;3.4. 关键步骤：切换部署分支
+&lt;/h3&gt;&lt;p&gt;很多新手会发现改完配置后博客打不开了，或者显示的还是源码，原因通常是 GitHub Pages 的分支设置不对。我们需要告诉 GitHub：“请展示在这个分支里生成的网页文件”。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入仓库顶部的 &lt;strong&gt;Settings&lt;/strong&gt;（设置）选项卡&lt;/li&gt;
+&lt;li&gt;在左侧菜单栏找到 &lt;strong&gt;Pages&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在 &lt;strong&gt;Build and deployment&lt;/strong&gt; 区域进行以下配置：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Source&lt;/strong&gt; 选择 &lt;strong&gt;Deploy from a branch&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Branch&lt;/strong&gt;（分支）下拉菜单中，一定要选择 &lt;strong&gt;gh-pages&lt;/strong&gt; 分支（而不是 master/main）&lt;/li&gt;
+&lt;li&gt;文件夹保持 &lt;code&gt;/(root)&lt;/code&gt; 不变&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-54-02.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-54-02.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;点击 &lt;strong&gt;Save&lt;/strong&gt; 保存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="35-欣赏你的博客"&gt;3.5. 欣赏你的博客
+&lt;/h3&gt;&lt;p&gt;完成上述步骤后，等待几分钟（GitHub Actions 需要一点时间重新构建）。再次访问你的博客链接：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;https://username.github.io&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;现在，你应该能看到博客标题变了，左侧也换成了你的头像和简介。是不是更有成就感了？&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-54-33.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-54-33.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="4-内容管理与初次发布"&gt;4. 内容管理与初次发布
+&lt;/h2&gt;&lt;p&gt;现在的博客里充斥着 &amp;ldquo;Hello World&amp;rdquo; 和 &amp;ldquo;Markdown Syntax Guide&amp;rdquo; 这样的演示文章。我们需要把它们清理干净，然后发布一篇真正属于你的内容。&lt;/p&gt;
+&lt;h3 id="41-清理演示文章"&gt;4.1. 清理演示文章
+&lt;/h3&gt;&lt;p&gt;首先，我们要把“样板房”里的旧家具搬走。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 GitHub 仓库中，进入 &lt;code&gt;content/post&lt;/code&gt; 文件夹&lt;/li&gt;
+&lt;li&gt;你会看到 &lt;code&gt;hello-world&lt;/code&gt;、&lt;code&gt;markdown-syntax&lt;/code&gt; 等文件夹&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全部删除&lt;/strong&gt;：点击右上角的 &lt;strong&gt;&amp;hellip;&lt;/strong&gt; → &lt;strong&gt;Delete directory&lt;/strong&gt;，或者直接在本地操作删除&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-54-50.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-54-50.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-55-00.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-55-00.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="42-创建第一篇文章"&gt;4.2. 创建第一篇文章
+&lt;/h3&gt;&lt;p&gt;Hugo 有一种很好的文章组织方式叫 &amp;ldquo;Page Bundles&amp;rdquo;（页面束）。简单来说，就是&lt;strong&gt;给每一篇文章建一个文件夹&lt;/strong&gt;，把文章文字（&lt;code&gt;index.md&lt;/code&gt;）和图片放在一起，这样管理起来非常方便。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 &lt;code&gt;content/post&lt;/code&gt; 目录下，点击 &lt;strong&gt;Add file&lt;/strong&gt; → &lt;strong&gt;Create new file&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-55-13.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-55-13.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;在文件名输入框中填写：&lt;code&gt;post/my-first-post/index.md&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;注意：输入 &lt;code&gt;/&lt;/code&gt; 会自动创建文件夹&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-55-26.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-55-26.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;输入文章内容，格式如下：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;# 1. Front Matter （元数据配置区） - 决定了文章在网站后台和侧边栏的展示
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;title: &amp;#34;我的 Python 工具箱计划&amp;#34; # 文章标题
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;date: 2025-12-28 # 发布日期，影响排序
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;description: &amp;#34;我正在搭建一个。..&amp;#34; # 摘要，显示在列表页和侧边栏简介
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;image: # 封面图路径，留空则不显示
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;categories: # 分类设置，直接控制侧边栏的导航分类
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - &amp;#34;Python&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - &amp;#34;项目开发&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;# 2. 正文内容区 - 读者实际阅读的内容
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;## 大家好 👋
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;# 使用 ## 开头表示二级标题，侧边栏目录（TOC）会自动抓取它
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;这里输入你的文章正文内容。你可以描述你的项目背景、学习心得等。
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;### 这个工具将支持：
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;# 使用三级标题细分内容
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* Web 端直接运行 Python # 无序列表项
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* 鼠标拖动查看 3D 模型 # 无序列表项
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;* 完全不需要配置服务器 # 无序列表项
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;保持关注！
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;发布与验证
+&lt;ul&gt;
+&lt;li&gt;滚动到页面底部，在 &lt;strong&gt;Commit changes&lt;/strong&gt; 中填写“发布第一篇文章”，然后点击绿色按钮提交&lt;/li&gt;
+&lt;li&gt;等待 GitHub Actions 构建完成（通常几十秒）&lt;/li&gt;
+&lt;li&gt;刷新你的博客首页&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;✨ &lt;strong&gt;见证时刻&lt;/strong&gt;：原本的英文演示文章消失了，取而代之的是你刚刚写的“我的第一篇博客”！点击标题进去，能看到你写的内容。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-57-39.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-57-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="5-界面深度优化与汉化"&gt;5. 界面深度优化与汉化
+&lt;/h2&gt;&lt;p&gt;这一章我们将深入博客的配置文件，把默认的英文界面改成中文，并去除多余的元素，让博客看起来更专业。&lt;/p&gt;
+&lt;h3 id="51-配置社交链接-menutoml"&gt;5.1. 配置社交链接 (menu.toml)
+&lt;/h3&gt;&lt;p&gt;默认模板左侧栏有 GitHub 和 Twitter 的图标。我们需要把 Twitter 删掉，并把 GitHub 换成你自己的地址。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-10-59-51.png" target="_blank"&gt; &lt;img src="images/2026-02-10-10-59-51.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 &lt;code&gt;config/_default&lt;/code&gt; 文件夹，打开 &lt;code&gt;menu.toml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;找到 &lt;code&gt;[[social]]&lt;/code&gt; 区域&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;修改 GitHub&lt;/strong&gt;：将 &lt;code&gt;url&lt;/code&gt; 修改为你自己的 GitHub 主页地址&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;删除 Twitter&lt;/strong&gt;：直接删除整个 Twitter 的配置块（从 &lt;code&gt;[[social]]&lt;/code&gt; 到 &lt;code&gt;icon = &amp;quot;brand-twitter&amp;quot;&lt;/code&gt; 的部分）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-00-03.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-00-03.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="52-全局语言汉化"&gt;5.2. 全局语言汉化
+&lt;/h3&gt;&lt;p&gt;让博客的时间格式、提示文案都变成中文。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;打开 &lt;code&gt;config/_default/config.toml&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;找到并修改以下三项配置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;languageCode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zh-cn&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;defaultContentLanguage&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zh-cn&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;hasCJKLanguage&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-00-21.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-00-21.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-00-31.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-00-31.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="53-左侧主菜单汉化关键"&gt;5.3. 左侧主菜单汉化（关键！）
+&lt;/h3&gt;&lt;p&gt;左侧的 &amp;ldquo;Home&amp;rdquo;, &amp;ldquo;Archives&amp;rdquo;, &amp;ldquo;Search&amp;rdquo; 等菜单需要改成中文。这个过程分两步，防止配置冲突。&lt;/p&gt;
+&lt;h4 id="531-清理页面独立配置"&gt;5.3.1. 清理页面独立配置
+&lt;/h4&gt;&lt;p&gt;Stack 主题在每个页面的源文件中也定义了菜单，我们需要先删掉它们，以便由统一的配置文件接管。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;分别找到以下 3 个文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;content/page/archives/index.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;content/page/search/index.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;content/page/links/index.md&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;编辑文件&lt;/strong&gt;：删除文件头部 &lt;code&gt;menu:&lt;/code&gt; 及其下方缩进的内容（通常是 &lt;code&gt;main:&lt;/code&gt; 和 &lt;code&gt;params:&lt;/code&gt; 那几行）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;注意：保留最上方的 &lt;code&gt;title&lt;/code&gt;、&lt;code&gt;slug&lt;/code&gt; 等信息，以及最下方的 &lt;code&gt;---&lt;/code&gt; 分隔线，只删 menu 模块&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-01-04.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-01-04.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="532-重写主菜单配置"&gt;5.3.2. 重写主菜单配置
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;回到 &lt;code&gt;config/_default/menu.toml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;清空&lt;/strong&gt; &lt;code&gt;[[main]]&lt;/code&gt; 相关的旧配置，&lt;strong&gt;复制粘贴&lt;/strong&gt;以下内容：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;identifier&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;home&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;首页&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;icon&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;home&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;identifier&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;archives&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;归档&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;/archives/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;icon&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;archives&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;identifier&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;search&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;搜索&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;/search/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;icon&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;search&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;identifier&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;links&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;name&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;友链&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;url&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;/links/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;weight&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;params&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;icon&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;link&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-04-07.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-04-07.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="54-隐藏页脚版权信息-css"&gt;5.4. 隐藏页脚版权信息 (CSS)
+&lt;/h3&gt;&lt;p&gt;如果你想让页面底部更清爽，隐藏 &amp;ldquo;Powered by Hugo&amp;rdquo; 字样，可以通过自定义 CSS 实现。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;进入 &lt;code&gt;assets/scss/&lt;/code&gt; 文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建或编辑 &lt;code&gt;custom.scss&lt;/code&gt; 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加以下代码：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;site-footer&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;powerby&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-05-23.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-05-23.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-07-06.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-07-06.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="55-细节清理"&gt;5.5. 细节清理
+&lt;/h3&gt;&lt;p&gt;最后做两个收尾工作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;修改网站图标 (Favicon)&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;准备一张正方形的小图片，重命名为 &lt;code&gt;favicon.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;上传到仓库的 &lt;code&gt;static&lt;/code&gt; 文件夹下（如果没有该文件夹，请在根目录新建一个）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-07-37.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-07-37.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;&lt;strong&gt;删除多余分类&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;进入 &lt;code&gt;content/categories&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除 &lt;code&gt;example-category&lt;/code&gt; 文件夹，保持分类清爽&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-07-56.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-07-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-08-35.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-08-35.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="6-接入评论系统giscus"&gt;6. 接入评论系统（Giscus）
+&lt;/h2&gt;&lt;p&gt;一个没有评论区的博客是没有灵魂的。虽然 Stack 主题自带了 Disqus 支持，但它加载慢且有广告。本章我们将重点介绍 Giscus —— 一个基于 GitHub Discussions 的现代化、免费、无广告的评论系统。&lt;/p&gt;
+&lt;p&gt;在这里，我们强烈推荐使用 &lt;strong&gt;Giscus&lt;/strong&gt;。它利用 GitHub 的 Discussions 功能来存储评论，不仅完全免费、无广告，而且数据完全掌握在你自己的仓库里。&lt;/p&gt;
+&lt;h3 id="61-开启-github-discussions"&gt;6.1. 开启 GitHub Discussions
+&lt;/h3&gt;&lt;p&gt;Giscus 的运作依赖于你仓库的 Discussions 模块。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开你的博客 GitHub 仓库页面&lt;/li&gt;
+&lt;li&gt;点击上方的 &lt;strong&gt;Settings&lt;/strong&gt;（设置）选项卡&lt;/li&gt;
+&lt;li&gt;在 &lt;strong&gt;General&lt;/strong&gt; 页面向下滚动，找到 &lt;strong&gt;Features&lt;/strong&gt; 区域&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-09-21.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-09-21.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;勾选 &lt;strong&gt;Discussions&lt;/strong&gt; 选项
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;提示：这一步非常关键，如果不开启，后续评论将无法写入&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-09-42.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-09-42.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="62-安装-giscus-应用"&gt;6.2. 安装 Giscus 应用
+&lt;/h3&gt;&lt;p&gt;我们需要授权 Giscus 机器人访问你的仓库。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;访问 Giscus 应用页面：&lt;a class="link" href="https://github.com/apps/giscus" target="_blank" rel="noopener"
+&gt;https://github.com/apps/giscus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;点击绿色的 &lt;strong&gt;Install&lt;/strong&gt; 按钮&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-09-53.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-09-53.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;
+&lt;p&gt;在权限选择页面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择 &lt;strong&gt;Only select repositories&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在下拉菜单中找到并选中你用来存放博客的仓库（&lt;code&gt;username.github.io&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击 &lt;strong&gt;Install&lt;/strong&gt; 完成安装&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-10-08.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-10-08.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="63-获取配置代码"&gt;6.3. 获取配置代码
+&lt;/h3&gt;&lt;p&gt;Giscus 提供了一个可视化工具来生成配置参数。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;访问 Giscus 官网：&lt;a class="link" href="https://giscus.app/zh-CN" target="_blank" rel="noopener"
+&gt;https://giscus.app/zh-CN&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;配置仓库&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在“仓库”一栏，输入 &lt;code&gt;你的用户名/你的仓库名&lt;/code&gt;（例如 &lt;code&gt;sign-river/sign-river.github.io&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;等待下方出现绿色的“成功！该仓库满足所有条件”提示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-19-17.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-19-17.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;&lt;strong&gt;配置分类&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;在“Discussion 分类”中，推荐选择 &lt;strong&gt;Announcements&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;注意：这决定了评论会出现在仓库 Discussions 的哪个板块下&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-18-37.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-18-37.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;&lt;strong&gt;生成代码&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;滚动到页面底部的“启用 giscus”部分&lt;/li&gt;
+&lt;li&gt;你会看到一段生成的 &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; 代码。&lt;strong&gt;不要直接复制这段代码&lt;/strong&gt;，我们只需要其中的几个关键参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-20-16.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-20-16.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="64-写入博客配置-paramstoml"&gt;6.4. 写入博客配置 (params.toml)
+&lt;/h3&gt;&lt;p&gt;现在把获取到的参数填入 Hugo 的配置文件中。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;回到你的仓库，打开 &lt;code&gt;config/_default/params.toml&lt;/code&gt; 文件&lt;/li&gt;
+&lt;li&gt;找到 &lt;code&gt;[comments]&lt;/code&gt; 区域，将 &lt;code&gt;enabled&lt;/code&gt; 设置为 &lt;code&gt;true&lt;/code&gt;，&lt;code&gt;provider&lt;/code&gt; 设置为 &lt;code&gt;&amp;quot;giscus&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-21-59.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-21-59.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;
+&lt;p&gt;找到 &lt;code&gt;[comments.giscus]&lt;/code&gt; 区域，根据刚才网页生成的信息填写：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;enabled&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;provider&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;giscus&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;giscus&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;repo&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;你的用户名/仓库名&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;repoID&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;从 Giscus 官网生成的代码中复制&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;category&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Announcements&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;categoryID&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;从 Giscus 官网生成的代码中复制&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;mapping&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;pathname&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;lightTheme&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;light&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;darkTheme&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;dark&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;reactionsEnabled&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;emitMetadata&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;关键点&lt;/strong&gt;：&lt;code&gt;repoID&lt;/code&gt; 和 &lt;code&gt;categoryID&lt;/code&gt; 是两串乱码一样的字符，必须从 Giscus 官网生成的代码中精确复制。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-22-16.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-22-16.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="65-清理旧配置-configtoml"&gt;6.5. 清理旧配置 (config.toml)
+&lt;/h3&gt;&lt;p&gt;为了防止冲突，我们需要确保 Disqus 是关闭的。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 &lt;code&gt;config/_default/config.toml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;找到 &lt;code&gt;disqusShortname&lt;/code&gt; 这一行&lt;/li&gt;
+&lt;li&gt;在行首添加 &lt;code&gt;#&lt;/code&gt; 号将其注释掉，或者直接删除该行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-22-39.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-22-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="66-验证评论区"&gt;6.6. 验证评论区
+&lt;/h3&gt;&lt;p&gt;提交所有更改（&lt;strong&gt;Commit changes&lt;/strong&gt;）并等待部署完成。刷新你的博客文章页面，滚动到底部。&lt;/p&gt;
+&lt;p&gt;如果一切顺利，你应该能看到一个漂亮的评论框，支持使用 GitHub 账号登录发表评论。所有的评论都会自动同步到你 GitHub 仓库的 Discussions 版块中。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-22-51.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-22-51.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="7-打造高效写作环境"&gt;7. 打造高效写作环境
+&lt;/h2&gt;&lt;p&gt;工欲善其事，必先利其器。虽然 GitHub 网页版也能修改文件，但为了更好的写作体验（尤其是图片处理和实时预览），强烈建议将仓库克隆到本地，使用 VS Code 进行管理。&lt;/p&gt;
+&lt;h3 id="71-准备工作"&gt;7.1. 准备工作
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;克隆仓库&lt;/strong&gt;：使用 Git 工具将你的 &lt;code&gt;username.github.io&lt;/code&gt; 仓库克隆到本地电脑&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;打开项目&lt;/strong&gt;：右键点击文件夹，选择 &amp;ldquo;Open with Code&amp;rdquo;（用 VS Code 打开）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-23-38.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="72-必装插件推荐"&gt;7.2. 必装插件推荐
+&lt;/h3&gt;&lt;p&gt;在 VS Code 的扩展商店（Extensions）中搜索并安装以下三个插件，它们将彻底改变你的写作方式。&lt;/p&gt;
+&lt;h4 id="721-markdown-all-in-one--全能助手"&gt;7.2.1. Markdown All in One —— 全能助手
+&lt;/h4&gt;&lt;p&gt;这是写 Markdown 的必备插件，提供了快捷键、自动补全和格式化功能。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-24-08.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-24-08.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;常用快捷键&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;加粗&lt;/strong&gt;：&lt;code&gt;Ctrl + B&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;斜体&lt;/strong&gt;：&lt;code&gt;Ctrl + I&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;删除线&lt;/strong&gt;：&lt;code&gt;Alt + S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调整标题级别&lt;/strong&gt;：&lt;code&gt;Ctrl + Shift + ]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;自动功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;表格格式化&lt;/strong&gt;：写表格时会自动对齐，强迫症福音。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接补全&lt;/strong&gt;：选中文字输入 &lt;code&gt;[&lt;/code&gt;，自动包裹为链接格式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="722--paste-image--截图神器"&gt;7.2.2. 🖼️ Paste Image —— 截图神器
+&lt;/h4&gt;&lt;p&gt;在 Markdown 中插入图片通常很麻烦（截图 → 保存 → 改名 → 上传 → 引用）。这个插件能把这些步骤缩减为一步。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-24-30.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-24-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用任意截图工具（如微信截图或 &lt;code&gt;Win + Shift + S&lt;/code&gt;）截图&lt;/li&gt;
+&lt;li&gt;在 VS Code 的 Markdown 文件中，按下 &lt;strong&gt;&lt;code&gt;Ctrl + Alt + V&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;神奇效果&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;**插件会自动将剪贴板里的图片保存到当前文章的目录下。&lt;/li&gt;
+&lt;li&gt;**自动在文章中插入 &lt;code&gt;![]（图片路径。png)&lt;/code&gt; 代码，所见即所得。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="723--markdown-preview-enhanced--实时预览"&gt;7.2.3. 👁️ Markdown Preview Enhanced —— 实时预览
+&lt;/h4&gt;&lt;p&gt;虽然 VS Code 自带预览，但这个插件功能更强大。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-24-46.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-24-46.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;同步滚动&lt;/strong&gt;：左边编辑，右边预览自动跟随，不迷路&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数学公式与图表&lt;/strong&gt;：完美支持 LaTeX 公式和各种流程图渲染&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;导出功能&lt;/strong&gt;：右键点击预览界面，可以直接导出为 HTML 或 PDF 分享&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="73-开始你的创作之旅"&gt;7.3. 开始你的创作之旅
+&lt;/h3&gt;&lt;p&gt;现在，你的本地写作环境已经配置完毕：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;新建&lt;/strong&gt;：在 &lt;code&gt;content/post&lt;/code&gt; 下新建文件夹和 &lt;code&gt;index.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;写作&lt;/strong&gt;：用 Markdown All in One 快速排版&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配图&lt;/strong&gt;：用 Paste Image 一键粘贴截图&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预览&lt;/strong&gt;：用 Preview Enhanced 实时检查效果&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发布&lt;/strong&gt;：写完后，在 VS Code 的源代码管理（Source Control）中点击 &lt;strong&gt;Commit&lt;/strong&gt; 和 &lt;strong&gt;Sync&lt;/strong&gt;，文章就会自动推送到 GitHub 并发布上线！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="8-补充内容"&gt;8. 补充内容
+&lt;/h2&gt;&lt;h3 id="81-link-界面调整"&gt;8.1. link 界面调整
+&lt;/h3&gt;&lt;p&gt;默认的友链页面尚未初始化。如果你想添加友情链接，请按照以下步骤操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;定位配置文件 在博客的本地根目录下，找到 Links 页面的源文件（通常位于 source/links/index.md）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-11-29-33.png" target="_blank"&gt; &lt;img src="images/2026-02-10-11-29-33.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;编辑链接信息 复制以下配置代码，覆盖或添加到文件中。你可以根据需要修改 links 下的列表项。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;title: Links
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;links:
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - title: GitHub
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; description: 欢迎访问我的代码仓库
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; website: https://github.com/sign-river
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; - title: Bilibili
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; description: 我的 b 站账户
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; website: https://space.bilibili.com/504574253?spm_id_from=333.1007.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; image: https://www.bilibili.com/favicon.ico
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;comments: false
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href="images/![最终效果](2026-02-09-22-34-01.png).png" target="_blank"&gt; &lt;img src="images/![最终效果](2026-02-09-22-34-01.png).png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="82-paste-image-图片保存位置"&gt;8.2. Paste Image 图片保存位置
+&lt;/h3&gt;&lt;p&gt;在粘贴图片时，默认会把图片在 index.md 文件的同一级目录保存，看上去非常的乱，所以如何在 index.md 旁边开一个 images 文件夹，让图片保存到文件夹里呢？
+解决方案如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 vscode 设置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-09-23-54-32.png" target="_blank"&gt; &lt;img src="images/2026-02-09-23-54-32.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;搜索 paste image&lt;/li&gt;
+&lt;li&gt;找到 Path&lt;/li&gt;
+&lt;li&gt;在原参数后添加/images 即可&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows 用户&lt;/strong&gt;：建议同时搜索 &lt;code&gt;Force Unix Style Separator&lt;/code&gt; 并勾选，这样生成的路径会是正斜杠 &lt;code&gt;images/xxx.png&lt;/code&gt;，网页中图片才能正常加载（否则会是反斜杠 &lt;code&gt;images\xxx.png&lt;/code&gt;，可能 404）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-09-23-54-39.png" target="_blank"&gt; &lt;img src="images/2026-02-09-23-54-39.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="83-paste-image-图片大小调整"&gt;8.3. Paste Image 图片大小调整
+&lt;/h3&gt;&lt;p&gt;直接保存的图片无法调整参数，所以我们要把引入图片的代码格式转为 html&lt;/p&gt;
+&lt;p&gt;解决方案如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 vscode 设置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-09-23-54-32.png" target="_blank"&gt; &lt;img src="images/2026-02-09-23-54-32.png" alt="调整参数" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;搜索搜索 paste image&lt;/li&gt;
+&lt;li&gt;找到 Insert Pattern&lt;/li&gt;
+&lt;li&gt;删除原参数修改为&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;img src=&amp;#34;${imageFilePath}&amp;#34; alt=&amp;#34;image&amp;#34; width=&amp;#34;600&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start="5"&gt;
+&lt;li&gt;调整图片大小时修改 width 值即可&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-00-03-31.png" target="_blank"&gt; &lt;img src="images/2026-02-10-00-03-31.png" alt="image" style="max-width: 100%; width: 700px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="84-文章目录序号嵌套问题"&gt;8.4. 文章目录序号嵌套问题
+&lt;/h3&gt;&lt;h4 id="841-问题描述"&gt;8.4.1. 问题描述
+&lt;/h4&gt;&lt;p&gt;如果你在写文章时，习惯在标题中手动添加序号（如 &lt;code&gt;## 一、前言&lt;/code&gt; 或 &lt;code&gt;## 1. 前言&lt;/code&gt;），可能会发现右侧自动生成的目录会出现&lt;strong&gt;双层序号&lt;/strong&gt;的尴尬情况。&lt;/p&gt;
+&lt;p&gt;例如：文章标题是 &lt;code&gt;## 一、前言&lt;/code&gt;，但目录显示却变成了 &lt;code&gt;1. 一、前言&lt;/code&gt;，看上去非常不美观。&lt;/p&gt;
+&lt;p&gt;这是因为 Hugo 默认会给目录启用&lt;strong&gt;有序列表&lt;/strong&gt;样式，自动在标题前添加一层序号。&lt;/p&gt;
+&lt;h4 id="842-解决方案"&gt;8.4.2. 解决方案
+&lt;/h4&gt;&lt;p&gt;我们需要在站点配置中关闭目录的自动编号功能，让目录直接使用文章标题的原始文字。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;操作步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定位配置文件&lt;/strong&gt;：在仓库中找到 &lt;code&gt;config/_default/markup.toml&lt;/code&gt; 文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;修改参数&lt;/strong&gt;：找到 &lt;code&gt;[tableOfContents]&lt;/code&gt; 区域，将 &lt;code&gt;ordered&lt;/code&gt; 属性由 &lt;code&gt;true&lt;/code&gt; 改为 &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;tableOfContents&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;endLevel&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;ordered&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt; &lt;span class="c"&gt;# 改这里：true → false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;startLevel&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;保存并提交&lt;/strong&gt;：点击 &lt;strong&gt;Commit changes&lt;/strong&gt; 保存修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;效果对比：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;修改前&lt;/th&gt;
+&lt;th&gt;修改后&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;目录显示：&lt;code&gt;1. 一、前言&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;目录显示：&lt;code&gt;一、前言&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;目录显示：&lt;code&gt;2. 二、获取 API Key&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;目录显示：&lt;code&gt;二、获取 API Key&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;建议&lt;/strong&gt;：关闭自动编号后，建议在文章标题中手动添加序号，这样目录结构会更清晰。如果你更喜欢无序号的目录风格，可以保持 &lt;code&gt;ordered = true&lt;/code&gt; 不变。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="9-总结"&gt;9. 总结
+&lt;/h2&gt;&lt;p&gt;博客已经搭建完成。接下来的日子里，希望你能把更多的时间花在&lt;strong&gt;记录和分享&lt;/strong&gt;上，让这里成为你思想的后花园，而不是一个仅仅为了展示技术的空壳。
+如果这篇教程对你有帮助，或是遇到什么问题，欢迎在下方的评论区留言。&lt;/p&gt;
+&lt;p&gt;Happy Blogging! 🍻&lt;/p&gt;
+&lt;h2 id="10-参考资料"&gt;10. 参考资料
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
+&gt;Hugo 官方文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://stack.jimmycai.com/" target="_blank" rel="noopener"
+&gt;Stack 主题文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://docs.github.com/pages" target="_blank" rel="noopener"
+&gt;GitHub Pages 文档&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

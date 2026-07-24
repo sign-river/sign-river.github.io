@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Anaconda on YSY的博客</title><link>https://sign-river.github.io/tags/anaconda/</link><description>Recent content in Anaconda on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/anaconda/index.xml" rel="self" type="application/rss+xml"/><item><title>Anaconda 安装教程</title><link>https://sign-river.github.io/p/anaconda-install-guide/</link><pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/anaconda-install-guide/</guid><description>&lt;h2 id="1-下载安装包"&gt;1. 下载安装包
+&lt;/h2&gt;&lt;p&gt;前往 &lt;a class="link" href="https://www.anaconda.com/download" target="_blank" rel="noopener"
+&gt;Anaconda 官网&lt;/a&gt; 下载安装包。
+进入页面后，点击 &lt;strong&gt;Skip Registration&lt;/strong&gt;（跳过注册）即可直接下载，无需注册账号。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-20-23-42-46.png" target="_blank"&gt; &lt;img src="images/2026-03-20-23-31-03.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;跳过注册后，根据自己的操作系统选择对应的版本下载。以 Windows 为例，点击 &lt;strong&gt;Anaconda Distribution&lt;/strong&gt; 下的 &lt;strong&gt;Windows 64-Bit Graphical Installer&lt;/strong&gt; 即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-20-23-42-46.png" target="_blank"&gt; &lt;img src="images/2026-03-20-23-42-46.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="2-安装"&gt;2. 安装
+&lt;/h2&gt;&lt;p&gt;下载完成后，双击安装程序（&lt;code&gt;.exe&lt;/code&gt; 文件）启动安装向导。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-20-23-45-39.png" target="_blank"&gt; &lt;img src="images/2026-03-20-23-45-39.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="21-欢迎界面"&gt;2.1. 欢迎界面
+&lt;/h3&gt;&lt;p&gt;打开安装向导后，点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/欢迎界面截图.png" target="_blank"&gt; &lt;img src="images/欢迎界面截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="22-许可协议"&gt;2.2. 许可协议
+&lt;/h3&gt;&lt;p&gt;阅读许可协议后，点击 &lt;strong&gt;I Agree&lt;/strong&gt; 同意并继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/许可协议截图.png" target="_blank"&gt; &lt;img src="images/许可协议截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="23-选择安装类型"&gt;2.3. 选择安装类型
+&lt;/h3&gt;&lt;p&gt;选择 &lt;strong&gt;Just Me&lt;/strong&gt;（默认推荐），然后点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-03-14-52.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-14-52.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="24-选择安装位置"&gt;2.4. 选择安装位置
+&lt;/h3&gt;&lt;p&gt;默认安装路径为 &lt;code&gt;C:\Users\用户名\anaconda3&lt;/code&gt;，建议保持默认，直接点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;若需要安装到其他位置，请注意：&lt;strong&gt;路径中不能含有中文&lt;/strong&gt;，否则可能导致运行异常。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-03-15-34.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-15-34.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="25-高级安装选项"&gt;2.5. 高级安装选项
+&lt;/h3&gt;&lt;p&gt;建议&lt;strong&gt;全部勾选&lt;/strong&gt;，然后点击 &lt;strong&gt;Install&lt;/strong&gt; 开始安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create shortcuts&lt;/strong&gt;：创建快捷方式，方便从开始菜单启动 Anaconda 相关工具&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add installation to my PATH&lt;/strong&gt;：将 Anaconda 加入系统环境变量，这样在普通 cmd/PowerShell 中也能直接使用 &lt;code&gt;conda&lt;/code&gt; 命令。虽然安装器标注了&amp;quot;不推荐&amp;quot;，但那主要是针对同时安装了多个 Python 的用户，担心产生冲突。如果你只使用 Anaconda，勾上更方便；如果你熟悉环境变量配置，也可以不勾，后续手动添加&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Register Anaconda3 as my default Python&lt;/strong&gt;：将 Anaconda 的 Python 注册为系统默认 Python，VSCode、PyCharm 等工具可自动识别&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Clear the package cache upon completion&lt;/strong&gt;：安装完成后清理缓存，释放磁盘空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="images/2026-03-21-03-20-03.png" target="_blank"&gt; &lt;img src="images/2026-03-21-03-20-03.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="26-安装完成"&gt;2.6. 安装完成
+&lt;/h3&gt;&lt;p&gt;等待安装进度条跑完，提示 &lt;strong&gt;Installation Complete&lt;/strong&gt; 后，点击 &lt;strong&gt;Next&lt;/strong&gt; 继续。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/安装完成截图.png" target="_blank"&gt; &lt;img src="images/安装完成截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="27-云端推广页"&gt;2.7. 云端推广页
+&lt;/h3&gt;&lt;p&gt;这是 Anaconda 的云服务推广页面，直接点击 &lt;strong&gt;Next&lt;/strong&gt; 跳过即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/云端推广页截图.png" target="_blank"&gt; &lt;img src="images/云端推广页截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="28-完成安装"&gt;2.8. 完成安装
+&lt;/h3&gt;&lt;p&gt;取消勾选 &lt;strong&gt;Welcome to Anaconda&lt;/strong&gt;，然后点击 &lt;strong&gt;Finish&lt;/strong&gt; 完成安装。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/完成安装截图.png" target="_blank"&gt; &lt;img src="images/完成安装截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-验证安装"&gt;3. 验证安装
+&lt;/h2&gt;&lt;p&gt;按 &lt;code&gt;Win + R&lt;/code&gt; 打开运行窗口，输入 &lt;code&gt;cmd&lt;/code&gt; 后回车打开命令提示符。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/运行窗口截图.png" target="_blank"&gt; &lt;img src="images/运行窗口截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在命令提示符中依次输入以下命令验证安装是否成功：&lt;/p&gt;
+&lt;p&gt;输入 &lt;code&gt;python&lt;/code&gt; 回车，若显示 Python 版本信息（如 &lt;code&gt;Python 3.13.9 | packaged by Anaconda&lt;/code&gt;）则说明 Python 安装正常，输入 &lt;code&gt;exit()&lt;/code&gt; 退出。&lt;/p&gt;
+&lt;p&gt;再输入 &lt;code&gt;conda --version&lt;/code&gt;，若显示版本号（如 &lt;code&gt;conda 25.11.1&lt;/code&gt;）则说明 Anaconda 安装成功。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/验证截图.png" target="_blank"&gt; &lt;img src="images/验证截图.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Unlearning on YSY的博客</title><link>https://sign-river.github.io/tags/machine-unlearning/</link><description>Recent content in Machine Unlearning on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 13 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/machine-unlearning/index.xml" rel="self" type="application/rss+xml"/><item><title>联邦遗忘学习基础知识</title><link>https://sign-river.github.io/p/federated-unlearning-fundamentals/</link><pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/federated-unlearning-fundamentals/</guid><description>&lt;h2 id="1-联邦遗忘学习"&gt;1. 联邦遗忘学习
+&lt;/h2&gt;&lt;h3 id="11-机器遗忘的本质"&gt;1.1 机器遗忘的本质
+&lt;/h3&gt;&lt;p&gt;在机器遗忘学习（Machine Unlearning）的语境下，所谓&amp;quot;遗忘数据&amp;quot;，并非指在物理存储介质上删除原始数据文件，而是指&lt;strong&gt;对模型的权重参数进行定向修改，使模型的行为表现等价于从未在该数据上进行过训练&lt;/strong&gt;。这一过程的核心目标是消除特定样本对模型参数分布的影响，同时尽可能保留模型在剩余数据上的泛化能力。&lt;/p&gt;
+&lt;h3 id="12-主流遗忘范式"&gt;1.2 主流遗忘范式
+&lt;/h3&gt;&lt;p&gt;学术界目前主流的遗忘方法大致可归纳为以下三类范式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;精确遗忘 / 重训练（Exact Unlearning / Retraining）&lt;/strong&gt;：将待遗忘样本从原始训练集中物理移除后，对模型从零开始重新训练。该方法遗忘效果最为彻底，理论上不存在任何残留影响，但在联邦学习场景下代价极高——每次遗忘请求都需要所有参与节点同步进行完整重训，通信开销与算力开销均难以承受。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;近似遗忘（Approximate Unlearning）&lt;/strong&gt;：当前论文中最常见的方法路线，核心思想是&amp;quot;逆向消除梯度贡献&amp;quot;。模型训练阶段通过梯度下降记忆数据特征，遗忘阶段则对应地施加&lt;strong&gt;梯度上升（Gradient Ascent）&lt;strong&gt;或注入特定噪声，以反向抵消目标样本当初对模型参数造成的更新量。在公平性场景下，该范式还可通过构造针对敏感属性（如性别、种族）的&lt;/strong&gt;公平性损失函数&lt;/strong&gt;，向模型注入反向梯度，冲刷偏置权重，实现对敏感特征的脱敏处理。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;分片隔离（Sharding / SISA）&lt;/strong&gt;：联邦学习场景下的专属优化方案。其核心思路是将训练数据与模型参数按一定策略切分为若干独立的&amp;quot;碎片（Shard）&amp;quot;，避免所有数据混合训练。当某客户端发起遗忘请求时，服务端仅需对涉及该数据的特定碎片执行重训，其余碎片保持不变，从而在保证遗忘效果的同时大幅降低计算与通信开销。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-主动学习"&gt;2. 主动学习
+&lt;/h2&gt;&lt;h3 id="21-主动学习的动机"&gt;2.1 主动学习的动机
+&lt;/h3&gt;&lt;p&gt;在传统监督学习中，模型训练依赖大量已标注数据的一次性输入。然而在现实场景中，未标注数据（如互联网上的海量图片、文本）获取成本极低，而人工标注（如由医学专家逐一标注影像中的病灶位置）却代价高昂、耗时极长。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主动学习（Active Learning）&lt;/strong&gt; 正是为了解决这一&amp;quot;标注成本&amp;quot;瓶颈而提出的学习范式：通过让模型主动挑选最有价值的样本交由专家标注，在有限的标注预算内最大化模型性能的提升。&lt;/p&gt;
+&lt;h3 id="22-主动学习的核心流程"&gt;2.2 主动学习的核心流程
+&lt;/h3&gt;&lt;p&gt;主动学习可以类比为**&amp;ldquo;学生主动向老师提问&amp;rdquo;**的过程——模型不是被动地接受所有数据，而是主动挑出自己最困惑的问题寻求解答。其标准流程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;初始化&lt;/strong&gt;：使用少量人工标注数据训练一个初始基础模型；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主动查询（Query Strategy）&lt;/strong&gt;：基础模型扫描海量未标注数据，依据特定策略（如熵值最大、置信度最低）挑选出&lt;strong&gt;信息量最大&lt;/strong&gt;、对当前模型&lt;strong&gt;最具挑战性&lt;/strong&gt;的少数样本；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;专家标注（Oracle）&lt;/strong&gt;：将挑选出的样本交由人类专家（论文中称为 Oracle）打上真实标签；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型更新&lt;/strong&gt;：将新标注的高价值样本加入训练集，重新训练或微调模型；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;循环迭代&lt;/strong&gt;：重复步骤 2–4，直至模型性能达标或标注预算耗尽。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;主动学习的核心假设是：&lt;strong&gt;并非所有数据对模型的贡献是等价的&lt;/strong&gt;。少数关键样本所携带的信息量，可能远超大量普通样本。因此，有策略地选择标注对象，能够以远低于全量标注的成本达到相近甚至更优的模型效果。&lt;/p&gt;
+&lt;/blockquote&gt;</description></item></channel></rss>

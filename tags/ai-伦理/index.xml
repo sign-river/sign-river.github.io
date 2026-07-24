@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI 伦理 on YSY的博客</title><link>https://sign-river.github.io/tags/ai-%E4%BC%A6%E7%90%86/</link><description>Recent content in AI 伦理 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 02 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/ai-%E4%BC%A6%E7%90%86/index.xml" rel="self" type="application/rss+xml"/><item><title>公平性的定义</title><link>https://sign-river.github.io/p/fairness-definition/</link><pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/fairness-definition/</guid><description>&lt;h2 id="1-公平性问题的基本形态"&gt;1. 公平性问题的基本形态
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-22-13-04-01.png" target="_blank"&gt; &lt;img src="images/2026-03-22-13-04-01.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="11-种族与群体歧视"&gt;1.1. 种族与群体歧视
+&lt;/h3&gt;&lt;p&gt;机器学习模型对偏见十分敏感。即使未显式使用种族等敏感属性，模型仍可能在预测与决策中&lt;strong&gt;隐式引入&lt;/strong&gt;这些因素。典型表现包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;误判与标准单一&lt;/strong&gt;：如将某族裔的犯罪风险系统性高估，或仅以某一群体的审美/标准作为判定依据，使其他群体在 AI 决策中处于劣势。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据偏差的传导&lt;/strong&gt;：若训练数据以某一群体为主（如仅用某族裔数据训练），模型在面对其他群体时容易产生错误或歧视性判断。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;偏见的放大&lt;/strong&gt;：在招聘筛选等场景中，模型可能无意识地「学习」并&lt;strong&gt;放大&lt;/strong&gt;既有社会偏见。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="12-边缘群体被忽视"&gt;1.2. 边缘群体被忽视
+&lt;/h3&gt;&lt;p&gt;长期被边缘化的群体若未被充分纳入数据与学习过程，模型会缺乏其代表性，导致对这些群体的服务不足或歧视&lt;strong&gt;加剧&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id="13-联邦场景下的客户端公平"&gt;1.3. 联邦场景下的客户端公平
+&lt;/h3&gt;&lt;p&gt;在联邦学习中还存在&lt;strong&gt;客户端维度&lt;/strong&gt;的公平问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据重叠与遗忘冲突&lt;/strong&gt;：客户端间数据可能重叠。满足某一客户端的遗忘请求（删除某类数据）时，可能损害依赖该数据的其他客户端的性能与精度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;非 IID 与模型偏向&lt;/strong&gt;：客户端数据多为&lt;strong&gt;非独立同分布（Non-IID）&lt;/strong&gt;，模型容易偏向数据量或特征更「强势」的客户端，导致对弱势客户端不公平。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-公平性与联邦遗忘学习的关系"&gt;2. 公平性与联邦遗忘学习的关系
+&lt;/h2&gt;&lt;p&gt;联邦遗忘学习（Federated Unlearning）与公平性存在双向关系：既可被用来&lt;strong&gt;促进公平&lt;/strong&gt;，也可能&lt;strong&gt;加剧不公平&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-13-09-23.png" target="_blank"&gt; &lt;img src="images/2026-03-22-13-09-23.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="21-利用遗忘学习促进公平"&gt;2.1. 利用遗忘学习促进公平
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;事后去偏&lt;/strong&gt;：传统公平性研究侧重在训练阶段预防偏见。遗忘学习提供了一种&lt;strong&gt;事后&lt;/strong&gt;思路——在训练结束后，针对性地削弱或移除与偏见相关的参数或数据影响，在尽量保持模型性能的前提下实现去偏。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缓解过拟合&lt;/strong&gt;：联邦遗忘还能用于主动遗忘过时、冗余或有害的样本，修复过拟合，间接有利于泛化与公平。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="22-遗忘学习可能损害公平"&gt;2.2. 遗忘学习可能损害公平
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;过度遗忘&lt;/strong&gt;：若遗忘程度过深，可能删掉&lt;strong&gt;代表性本就不足&lt;/strong&gt;的群体数据，导致对这些群体的预测准确性下降，&lt;strong&gt;加剧&lt;/strong&gt;不公平。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;遗忘不足&lt;/strong&gt;：若遗忘不彻底，偏见相关影响仍有残留，公平性目标难以达成。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高敏感场景&lt;/strong&gt;：招聘、信用评分、医疗 AI 等场景中，公平性极为关键，上述风险的影响尤为突出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-直接删除偏见内容的局限"&gt;2.3. 直接删除偏见内容的局限
+&lt;/h3&gt;&lt;p&gt;单纯删除「偏见内容」或敏感标签（如种族、肤色）往往不够：&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-22-13-13-38.png" target="_blank"&gt; &lt;img src="images/2026-03-22-13-13-38.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;偏见转移&lt;/strong&gt;：模型可能不再直接使用种族，转而依赖与种族高度相关的&lt;strong&gt;代理变量&lt;/strong&gt;（如居住地区、姓名、语言、生活习惯等），使偏见从明处转向暗处，难以检测与治理。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;防御设计困难&lt;/strong&gt;：若模型完全失去「反面教材」或可解释的偏见表征，针对性的公平性防御与审计会变得更难设计。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-维持公平性的主要技术手段"&gt;3. 维持公平性的主要技术手段
+&lt;/h2&gt;&lt;p&gt;&lt;a href="images/2026-03-22-13-28-03.png" target="_blank"&gt; &lt;img src="images/2026-03-22-13-28-03.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="31-数据预处理"&gt;3.1. 数据预处理
+&lt;/h3&gt;&lt;p&gt;从源头介入，在模型训练之前通过调整数据的构成来改善公平性，属于**预处理（Pre-processing）**方法。常见策略包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;重采样（Resampling）&lt;/strong&gt;：对代表性不足的群体进行过采样，或对主导群体进行欠采样，使各群体在训练集中的比例更加均衡。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;重标注（Relabeling）&lt;/strong&gt;：识别并修正训练数据中存在偏见的标签，从根源消除偏差。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公平主动学习（Fair Active Learning）&lt;/strong&gt;：在标注预算有限的情况下，优先选取能够提升弱势群体代表性的样本交由专家标注，以最小的标注成本最大化公平性收益。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="32-公平遗忘感知重训"&gt;3.2. 公平遗忘感知重训
+&lt;/h3&gt;&lt;p&gt;在遗忘过程中&lt;strong&gt;同时&lt;/strong&gt;优化公平性：边做「遗忘手术」边施加公平约束或重训，使删除/更新后的模型在统计特性上仍满足既定公平准则（如不同群体间性能差距可控）。&lt;/p&gt;
+&lt;h3 id="33-基于正则化的遗忘"&gt;3.3. 基于正则化的遗忘
+&lt;/h3&gt;&lt;p&gt;在遗忘算法中引入&lt;strong&gt;数学约束&lt;/strong&gt;，强制模型在参数更新或「模糊化」过程中遵守公平性准则，避免遗忘操作破坏公平指标。&lt;/p&gt;
+&lt;h3 id="34-遗忘后去偏"&gt;3.4. 遗忘后去偏
+&lt;/h3&gt;&lt;p&gt;采用两阶段策略：先完成数据/参数层面的遗忘，再对所得模型做一次&lt;strong&gt;专门的去偏或公平性微调&lt;/strong&gt;，作为「做完手术再打磨」的补充步骤。&lt;/p&gt;</description></item></channel></rss>

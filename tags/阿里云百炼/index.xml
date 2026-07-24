@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>阿里云百炼 on YSY的博客</title><link>https://sign-river.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%99%BE%E7%82%BC/</link><description>Recent content in 阿里云百炼 on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 03 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E7%99%BE%E7%82%BC/index.xml" rel="self" type="application/rss+xml"/><item><title>在 Cursor 中接入阿里云百炼 API 教程</title><link>https://sign-river.github.io/p/cursor-aliyun-bailian-api-setup/</link><pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/cursor-aliyun-bailian-api-setup/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;本教程将指导你如何在 Cursor 编辑器中配置阿里云百炼 API，让你可以使用通义千问等国产大模型进行代码编写和 Agent 任务。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;重要提示&lt;/strong&gt;：配置阿里云百炼的请求地址和 API Key 后，Cursor 将仅能调用阿里云百炼平台的模型。如需切换回其他模型提供商（如 OpenAI），需要关闭 &lt;strong&gt;OpenAI API Key&lt;/strong&gt; 和 &lt;strong&gt;Override OpenAI Base URL&lt;/strong&gt; 设置。请在接入前根据实际需求谨慎选择。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="2-获取阿里云百炼-api-key"&gt;2. 获取阿里云百炼 API Key
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;登录&lt;a class="link" href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener"
+&gt;阿里云百炼平台&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;进入 &lt;strong&gt;Coding Plan&lt;/strong&gt; 界面&lt;/li&gt;
+&lt;li&gt;选择合适的套餐并完成购买&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-06-50.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-06-50.png" alt="阿里云百炼 Coding Plan 界面" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="4"&gt;
+&lt;li&gt;进入 &lt;strong&gt;我的订阅&lt;/strong&gt; 页面&lt;/li&gt;
+&lt;li&gt;创建新的 API Key&lt;/li&gt;
+&lt;li&gt;复制生成的 API Key 备用&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-14-21.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-14-21.png" alt="创建 API Key 界面" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-在-cursor-中配置阿里云百炼"&gt;3. 在 Cursor 中配置阿里云百炼
+&lt;/h2&gt;&lt;h3 id="31-打开模型设置"&gt;3.1. 打开模型设置
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;打开 Cursor 编辑器&lt;/li&gt;
+&lt;li&gt;点击右上角设置按钮，进入 &lt;strong&gt;Settings&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-15-25.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-15-25.png" alt="Cursor 设置入口" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;在左侧导航栏找到 &lt;strong&gt;Models&lt;/strong&gt; 标签页&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-15-11-05.png" target="_blank"&gt; &lt;img src="images/2026-03-03-15-11-05.png" alt="Cursor Models 设置页面" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="32-配置-api-key-和请求地址"&gt;3.2. 配置 API Key 和请求地址
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;点击 &lt;strong&gt;API Keys&lt;/strong&gt; 展开 API 设置区域&lt;/li&gt;
+&lt;li&gt;开启 &lt;strong&gt;OpenAI API Key&lt;/strong&gt; 开关，在下方文本框中输入刚才复制的 API Key&lt;/li&gt;
+&lt;li&gt;开启 &lt;strong&gt;Override OpenAI Base URL&lt;/strong&gt; 开关，在下方文本框输入：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="https://coding.dashscope.aliyuncs.com/v1"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+https://coding.dashscope.aliyuncs.com/v1
+&lt;/span&gt;
+&lt;/button&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-21-54.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-21-54.png" alt="API Key 配置界面" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="33-添加自定义模型"&gt;3.3. 添加自定义模型
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;点击 &lt;strong&gt;View All Models&lt;/strong&gt; 按钮&lt;/li&gt;
+&lt;li&gt;滚动到页面底部&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-23-44.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-23-44.png" alt="模型列表页面" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;点击 &lt;strong&gt;Add Custom Model&lt;/strong&gt; 按钮&lt;/li&gt;
+&lt;li&gt;依次填入模型名称并点击 &lt;strong&gt;Add&lt;/strong&gt; 添加&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-24-50.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-24-50.png" alt="添加自定义模型" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="331-可用模型列表"&gt;3.3.1. 可用模型列表
+&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;品牌&lt;/th&gt;
+&lt;th&gt;模型&lt;/th&gt;
+&lt;th&gt;模型能力&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;千问&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="qwen3.5-plus"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+qwen3.5-plus
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成、深度思考、视觉理解&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;千问&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="qwen3-max-2026-01-23"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+qwen3-max-2026-01-23
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成、深度思考&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;千问&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="qwen3-coder-next"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+qwen3-coder-next
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;千问&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="qwen3-coder-plus"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+qwen3-coder-plus
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;智谱&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="glm-5"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+glm-5
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成、深度思考&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;智谱&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="glm-4.7"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+glm-4.7
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成、深度思考&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Kimi&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="kimi-k2.5"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+kimi-k2.5
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成、深度思考、视觉理解&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MiniMax&lt;/td&gt;
+&lt;td&gt;&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="MiniMax-M2.5"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+MiniMax-M2.5
+&lt;/span&gt;
+&lt;/button&gt;&lt;/td&gt;
+&lt;td&gt;文本生成、深度思考&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;推荐配置&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;日常使用&lt;/strong&gt;：&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="qwen3.5-plus"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+qwen3.5-plus
+&lt;/span&gt;
+&lt;/button&gt;（综合性能最佳）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;复杂问题&lt;/strong&gt;：&lt;button
+type="button"
+class="copy-btn-shortcode"
+data-value="qwen3-max-2026-01-23"
+style="
+position: relative;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+font-size: 14px;
+font-family: var(--font-family);
+color: var(--card-text-color-main);
+background-color: var(--card-background);
+border: 1px solid var(--card-separator-color);
+border-radius: var(--card-border-radius);
+cursor: pointer;
+transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+user-select: none;
+box-shadow: var(--shadow-l1);
+"
+onmouseover="this.style.backgroundColor='var(--code-background)'; this.style.borderColor='var(--accent-color)';"
+onmouseout="this.style.backgroundColor='var(--card-background)'; this.style.borderColor='var(--card-separator-color)';"
+onmousedown="this.style.transform='scale(0.96)';"
+onmouseup="this.style.transform='scale(1)';"
+onclick="(function(btn){
+var text = btn.getAttribute('data-value');
+if (!text || btn.getAttribute('data-copying')) return;
+var saveToClipboard = function(str) {
+if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {
+return navigator.clipboard.writeText(str);
+} else {
+var el = document.createElement('textarea');
+el.value = str;
+document.body.appendChild(el);
+el.select();
+document.execCommand('copy');
+document.body.removeChild(el);
+return Promise.resolve();
+}
+};
+saveToClipboard(text).then(function () {
+btn.setAttribute('data-copying', 'true');
+var tip = document.createElement('span');
+tip.textContent = '已复制！';
+/* 实现你要求的反色逻辑 */
+tip.style.cssText = 'position:absolute; top:-35px; left:50%; transform:translateX(-50%); background:var(--card-text-color-main); color:var(--body-background); font-size:12px; padding:4px 12px; border-radius:4px; white-space:nowrap; pointer-events:none; opacity:0; transition:all .3s ease; z-index:100; font-weight:bold; box-shadow: var(--shadow-l3); border: 1px solid var(--card-separator-color);';
+btn.appendChild(tip);
+setTimeout(function(){ tip.style.opacity = '1'; tip.style.top = '-42px'; }, 10);
+setTimeout(function () {
+tip.style.opacity = '0';
+setTimeout(function () { tip.remove(); btn.removeAttribute('data-copying'); }, 300);
+}, 1000);
+});
+})(this);"
+&gt;
+&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.8;"&gt;
+&lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2"&gt;&lt;/rect&gt;
+&lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;span style="max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"&gt;
+qwen3-max-2026-01-23
+&lt;/span&gt;
+&lt;/button&gt;（处理高难度任务）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ol start="5"&gt;
+&lt;li&gt;添加完成后，开启模型对应的开关（显示绿色表示已启用）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-32-08.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-32-08.png" alt="启用自定义模型" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="34-关闭其他模型可选"&gt;3.4. 关闭其他模型（可选）
+&lt;/h3&gt;&lt;p&gt;为避免误调用，建议关闭其他不可用的模型提供商。注意：接入阿里云百炼后，仅阿里云平台的模型可用。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-41-56.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-41-56.png" alt="关闭其他模型" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="4-开始使用"&gt;4. 开始使用
+&lt;/h2&gt;&lt;p&gt;配置完成后，返回 Cursor 主界面的聊天栏，点击模型选择器切换到刚才添加的阿里云百炼模型，即可开始使用。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-03-18-58-12.png" target="_blank"&gt; &lt;img src="images/2026-03-03-18-58-12.png" alt="在聊天栏切换模型" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="5常见问题"&gt;5.常见问题
+&lt;/h2&gt;&lt;h3 id="51-报错提示模型不存在"&gt;5.1. 报错提示“模型不存在”
+&lt;/h3&gt;&lt;h4 id="问题现象"&gt;问题现象：
+&lt;/h4&gt;&lt;p&gt;在使用过程中，系统突然报错并提示模型不存在（如下图）。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-04-18-11-39.png" target="_blank"&gt; &lt;img src="images/2026-03-04-18-11-39.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="原因与解决方法"&gt;原因与解决方法：
+&lt;/h4&gt;&lt;p&gt;这通常是因为系统自动禁用了 OpenAI API Key。&lt;strong&gt;只需前往设置将其重新开启即可恢复正常。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-03-04-18-12-17.png" target="_blank"&gt; &lt;img src="images/2026-03-04-18-12-17.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

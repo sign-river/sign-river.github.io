@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VS Code on YSY的博客</title><link>https://sign-river.github.io/tags/vs-code/</link><description>Recent content in VS Code on YSY的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 21 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://sign-river.github.io/tags/vs-code/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Theme Stack 进阶：控制图片大小与点击效果</title><link>https://sign-river.github.io/p/hugo-stack-image-size-control/</link><pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/hugo-stack-image-size-control/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;本文基于 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener"
+&gt;hugo-theme-stack&lt;/a&gt; 主题，其他主题的配置路径和渲染行为可能有所不同，请以各自主题的文档为准。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在使用 &lt;a class="link" href="https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image" target="_blank" rel="noopener"
+&gt;Paste Image&lt;/a&gt; 插件往文章里粘贴截图时，插件默认生成的 Markdown 语法如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;![&lt;span class="nt"&gt;image&lt;/span&gt;](&lt;span class="na"&gt;images/2026-02-21-12-13-26.png&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这种写法最简洁，hugo-theme-stack 也自带点击放大的交互效果。但它的缺点是&lt;strong&gt;无法控制图片的显示尺寸&lt;/strong&gt;，当截图分辨率很高时，图片会撑满整个内容区域，视觉上较为突兀。&lt;/p&gt;
+&lt;p&gt;本文整理了两种可以控制图片显示尺寸的方案，各有优缺点，可以根据场景选择。&lt;/p&gt;
+&lt;h2 id="2-方案一a--img--点击另开标签页查看原图"&gt;2. 方案一：&lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; + &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; —— 点击另开标签页查看原图
+&lt;/h2&gt;&lt;h3 id="21-写法"&gt;2.1. 写法
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;images/2026-02-21-12-13-26.png&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;target&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;images/2026-02-21-12-13-26.png&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;image&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;max-width: 100%; width: 1000px;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过 &lt;code&gt;width&lt;/code&gt; 控制缩略图的最大显示宽度（单位 px），&lt;code&gt;max-width: 100%&lt;/code&gt; 保证在小屏幕上不会溢出。&lt;/p&gt;
+&lt;h3 id="22-效果"&gt;2.2. 效果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;缩略图&lt;strong&gt;清晰&lt;/strong&gt;，直接展示原图缩放后的效果&lt;/li&gt;
+&lt;li&gt;点击图片后会在&lt;strong&gt;新标签页&lt;/strong&gt;中打开原图，方便查看细节，关闭标签页即可返回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="23-适合场景"&gt;2.3. 适合场景
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图片内容细节丰富，需要让读者能放大查看（如截图、流程图、配置界面等）&lt;/li&gt;
+&lt;li&gt;希望缩略图尽量清晰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="24-配合-paste-image-自动生成"&gt;2.4. 配合 Paste Image 自动生成
+&lt;/h3&gt;&lt;p&gt;可以将 Paste Image 插件的 &lt;code&gt;Insert Pattern&lt;/code&gt; 改为以下内容，之后粘贴截图时会自动生成方案一的格式，无需手动修改：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;a href=&amp;#34;${imageFilePath}&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;img src=&amp;#34;${imageFilePath}&amp;#34; alt=&amp;#34;image&amp;#34; style=&amp;#34;max-width: 100%; width: 1000px;&amp;#34;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;/a&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在 VS Code 中打开设置，搜索 &lt;code&gt;Paste Image: Insert Pattern&lt;/code&gt;，将默认值替换为上方内容即可。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-21-14-31-22.png" target="_blank"&gt; &lt;img src="images/2026-02-21-14-31-22.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-方案二div-容器--markdown-图片--通过容器控制宽度"&gt;3. 方案二：&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 容器 + Markdown 图片 —— 通过容器控制宽度
+&lt;/h2&gt;&lt;h3 id="31-写法"&gt;3.1. 写法
+&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;max-width: 700px; margin: 0 auto;&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ![image](images/2026-02-21-12-13-26.png)
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;p&gt;&lt;a href="images/2026-02-21-14-43-56.png" target="_blank"&gt; &lt;img src="images/2026-02-21-14-43-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 标签与 &lt;code&gt;![image]&lt;/code&gt; 之间必须有空行，这里的代码段因为 md 格式问题无法展现，记得自己加上空行，Hugo 才会正确将内部内容识别为 Markdown 并渲染。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="32-效果"&gt;3.2. 效果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;图片宽度跟随外层 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 的 &lt;code&gt;max-width&lt;/code&gt; 决定，修改容器宽度即可调整图片大小&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;margin: 0 auto&lt;/code&gt; 使图片居中显示&lt;/li&gt;
+&lt;li&gt;缩略图&lt;strong&gt;略微模糊&lt;/strong&gt;，因为浏览器会对 Markdown 渲染出的 &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; 进行拉伸或压缩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="33-适合场景"&gt;3.3. 适合场景
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;需要将多张图片统一控制在相同宽度&lt;/li&gt;
+&lt;li&gt;希望保留主题自带的放大效果，同时能控制缩略图尺寸&lt;/li&gt;
+&lt;li&gt;希望图片居中且大小可控&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="34-注意事项"&gt;3.4. 注意事项
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;如果图片原始宽度比容器 &lt;code&gt;max-width&lt;/code&gt; 小，图片会被拉伸放大，可能变模糊，建议 &lt;code&gt;max-width&lt;/code&gt; 值不超过图片原始宽度&lt;/li&gt;
+&lt;li&gt;方案二&lt;strong&gt;无法通过 Paste Image 自动生成&lt;/strong&gt;，需要在使用时手动将图片语法嵌套进 &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt; 容器中&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows 用户&lt;/strong&gt;：建议同时搜索 &lt;code&gt;Force Unix Style Separator&lt;/code&gt; 并勾选，这样生成的路径会是正斜杠 &lt;code&gt;images/xxx.png&lt;/code&gt;，网页中图片才能正常加载（否则会是反斜杠 &lt;code&gt;images\xxx.png&lt;/code&gt;，可能 404）。 &lt;a href="images/2026-02-22-13-37-30.png" target="_blank"&gt; &lt;img src="images/2026-02-22-13-37-30.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;最后更新：2026-02-21&lt;/p&gt;</description></item><item><title>VS Code 编写 Markdown 如何轻松解决格式问题</title><link>https://sign-river.github.io/p/vscode-markdown-format-tips/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/vscode-markdown-format-tips/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;在 VS Code 中编写 Markdown 时，常常会遇到各种格式问题：表格对不齐、列表缩进混乱、链接格式错误等。本文将介绍如何通过插件和配置来轻松解决这些问题，让你的 Markdown 写作更加高效。&lt;/p&gt;
+&lt;h2 id="2-安装插件-markdownlint"&gt;2. 安装插件 markdownlint
+&lt;/h2&gt;&lt;h3 id="21-格式检查工具"&gt;2.1. 格式检查工具
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实时检查 Markdown 格式&lt;/li&gt;
+&lt;li&gt;自动修复常见问题&lt;/li&gt;
+&lt;li&gt;保持文档规范统一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;常见提示&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;规则&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;解决&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MD001&lt;/td&gt;
+&lt;td&gt;标题层级不连续&lt;/td&gt;
+&lt;td&gt;不要从 # 直接跳到 ###&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD009&lt;/td&gt;
+&lt;td&gt;行尾有多余空格&lt;/td&gt;
+&lt;td&gt;删除行尾空格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD012&lt;/td&gt;
+&lt;td&gt;连续空行超过一行&lt;/td&gt;
+&lt;td&gt;删除多余空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD013&lt;/td&gt;
+&lt;td&gt;行长度超过限制&lt;/td&gt;
+&lt;td&gt;换行或调整配置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD022&lt;/td&gt;
+&lt;td&gt;标题前后需要空行&lt;/td&gt;
+&lt;td&gt;添加空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MD032&lt;/td&gt;
+&lt;td&gt;列表前后需要空行&lt;/td&gt;
+&lt;td&gt;添加空行&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="22-使用方法"&gt;2.2. 使用方法
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在拓展商店搜索并安装 markdownlint&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-18-56.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-18-56.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;打开设置 (json)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-21-47.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-21-47.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-22-18.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-22-18.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;在设置中输入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;editor.codeActionsOnSave&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;source.fixAll.markdownlint&amp;#34;: &amp;#34;explicit&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;#34;editor.formatOnSave&amp;#34;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;br&gt;
+&lt;a href="images/2026-02-10-23-23-38.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-23-38.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;
+&lt;h2 id="3-总结"&gt;3. 总结
+&lt;/h2&gt;&lt;p&gt;之后只要 Ctrl + S 保存文件，就会自动修正 Markdown 格式&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;最后更新：2026-02-10&lt;/p&gt;</description></item><item><title>VS Code 自动在中英文间添加空格</title><link>https://sign-river.github.io/p/vscode-auto-space-chinese-english/</link><pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate><guid>https://sign-river.github.io/p/vscode-auto-space-chinese-english/</guid><description>&lt;h2 id="1-前言"&gt;1. 前言
+&lt;/h2&gt;&lt;p&gt;在编写中英文混排的文档时，在中文和英文之间添加空格是一个良好的排版习惯。这样做可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;提升阅读体验&lt;/strong&gt;：适当的空格让文字更加清晰易读，避免中英文紧贴在一起显得拥挤&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;符合排版规范&lt;/strong&gt;：许多中文排版指南都建议在中英文之间添加空格&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保持文档一致性&lt;/strong&gt;：统一的格式让整个文档看起来更专业&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是手动添加空格既繁琐又容易遗漏，本文将介绍如何使用 VS Code 插件实现保存时自动格式化。&lt;/p&gt;
+&lt;h2 id="2-安装插件"&gt;2. 安装插件
+&lt;/h2&gt;&lt;h3 id="21-pangu-markdown"&gt;2.1. Pangu-Markdown
+&lt;/h3&gt;&lt;p&gt;打开 VS Code 扩展商店，搜索 &lt;code&gt;Pangu-Markdown&lt;/code&gt; 并安装。&lt;/p&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-47-23.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-47-23.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="3-配置自动格式化"&gt;3. 配置自动格式化
+&lt;/h2&gt;&lt;h3 id="31-settingsjson-配置"&gt;3.1. settings.json 配置
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;打开设置&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-10-23-48-31.png" target="_blank"&gt; &lt;img src="images/2026-02-10-23-48-31.png" alt="image" style="max-width: 100%; width: 500px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;搜索并启用自动格式化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;搜索 &lt;code&gt;pangu&lt;/code&gt;，勾选 &amp;ldquo;Format On Save&amp;rdquo;（保存时自动格式化）选项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href="images/2026-02-11-00-01-13.png" target="_blank"&gt; &lt;img src="images/2026-02-11-00-01-13.png" alt="image" style="max-width: 100%; width: 1000px;"/&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;重启 VS Code&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;配置完成后需要重启 VS Code 才能生效。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：如果配置后没有生效，请尝试重启 VS Code。这是插件生效的必要步骤。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="4-总结"&gt;4. 总结
+&lt;/h2&gt;&lt;p&gt;配置完成后，使用 &lt;code&gt;Ctrl+S&lt;/code&gt; 保存文件时，插件会自动在中文和英文之间添加空格，让你专注于内容创作，无需担心排版格式问题。&lt;/p&gt;</description></item></channel></rss>
