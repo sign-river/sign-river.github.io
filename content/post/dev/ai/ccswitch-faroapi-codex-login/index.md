@@ -1,6 +1,6 @@
 ---
 title: "使用 CC Switch 管理 Faro API 密钥并登录 Codex 桌面版"
-date: 2026-07-25
+date: 2026-07-25T00:00:00+08:00
 description: "介绍如何在 Windows 上安装 CC Switch，添加并测试 Faro API 配置，再通过 API 密钥登录 Codex 桌面版。"
 categories:
   - "开发"
