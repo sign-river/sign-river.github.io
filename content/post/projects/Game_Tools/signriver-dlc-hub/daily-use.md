@@ -5,12 +5,13 @@ type: "project-docs"
 url: "/p/signriver-dlc-hub/daily-use/"
 weight: 20
 toc: true
-draft: true
+draft: false
 ---
 
 ## 常用操作
 
 待补充。
+
 
 ## 配置说明
 
@@ -19,4 +20,3 @@ draft: true
 ## 更新与维护
 
 待补充。
-

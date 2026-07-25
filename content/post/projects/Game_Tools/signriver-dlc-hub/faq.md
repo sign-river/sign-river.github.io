@@ -5,7 +5,7 @@ type: "project-docs"
 url: "/p/signriver-dlc-hub/faq/"
 weight: 30
 toc: true
-draft: true
+draft: false
 ---
 
 ## 问题一
@@ -19,4 +19,3 @@ draft: true
 ## 获取帮助
 
 项目仓库：[sign-river/SignRiver-DLC-Hub](https://github.com/sign-river/SignRiver-DLC-Hub)
-

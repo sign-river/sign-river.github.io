@@ -8,7 +8,7 @@ tags:
   - "Stellaris"
   - "游戏工具"
   - "开源项目"
-draft: true
+draft: false
 slug: "signriver-dlc-hub"
 url: "/p/signriver-dlc-hub/"
 redirect_to: "/p/signriver-dlc-hub/getting-started/"

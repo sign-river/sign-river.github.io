@@ -5,12 +5,13 @@ type: "project-docs"
 url: "/p/signriver-dlc-hub/getting-started/"
 weight: 10
 toc: true
-draft: true
+draft: false
 ---
 
 ## 前置条件
 
 待补充。
+
 
 ## 安装
 
@@ -19,4 +20,3 @@ draft: true
 ## 第一次使用
 
 待补充。
-
