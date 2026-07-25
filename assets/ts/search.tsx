@@ -1,3 +1,5 @@
+import createElement from "ts/createElement";
+
 interface pageData {
   title: string;
   date: string;
@@ -37,6 +39,30 @@ function replaceHTMLEnt(str) {
 
 function escapeRegExp(string) {
   return string.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&");
+}
+
+function buildSearchRegex(keywords: string[]) {
+  const patterns = new Set<string>();
+
+  for (const keyword of keywords) {
+    const trimmed = keyword.trim();
+    if (trimmed === "") continue;
+
+    patterns.add(escapeRegExp(trimmed));
+
+    // Chinese queries are often entered without spaces. For a longer phrase,
+    // allow its beginning and ending terms to be near one another so related
+    // content is found without broad single-term matches.
+    const cjkRuns = trimmed.match(/[\u3400-\u9fff]{4,}/g) || [];
+    for (const run of cjkRuns) {
+      const first = escapeRegExp(run.substring(0, 2));
+      const last = escapeRegExp(run.substring(run.length - 2));
+      patterns.add(`${first}[\\s\\S]{0,160}${last}`);
+      patterns.add(`${last}[\\s\\S]{0,160}${first}`);
+    }
+  }
+
+  return new RegExp(Array.from(patterns).join("|"), "gi");
 }
 
 class Search {
@@ -343,16 +369,7 @@ class Search {
   private async searchKeywords(keywords: string[]) {
     const rawData = await this.getData();
     const results: pageData[] = [];
-
-    const regex = new RegExp(
-      keywords
-        .filter((v, index, arr) => {
-          arr[index] = escapeRegExp(v);
-          return v.trim() !== "";
-        })
-        .join("|"),
-      "gi",
-    );
+    const regex = buildSearchRegex(keywords);
 
     for (const item of rawData) {
       // 先检查日期是否符合
@@ -402,6 +419,53 @@ class Search {
     return results.sort((a, b) => {
       return b.matchCount - a.matchCount;
     });
+  }
+
+  private async searchExactKeywords(keywords: string[]) {
+    const rawData = await this.getData();
+    const results: pageData[] = [];
+    const regex = new RegExp(
+      keywords
+        .filter((keyword) => keyword.trim() !== "")
+        .map((keyword) => escapeRegExp(keyword))
+        .join("|"),
+      "gi",
+    );
+
+    for (const item of rawData) {
+      if (!this.isDateInRange(item.date)) continue;
+
+      const titleMatches: match[] = [];
+      const contentMatches: match[] = [];
+      const result = { ...item, preview: "", matchCount: 0 };
+
+      for (const match of Array.from(item.content.matchAll(regex))) {
+        contentMatches.push({
+          start: match.index,
+          end: match.index + match[0].length,
+        });
+      }
+
+      for (const match of Array.from(item.title.matchAll(regex))) {
+        titleMatches.push({
+          start: match.index,
+          end: match.index + match[0].length,
+        });
+      }
+
+      if (titleMatches.length > 0) {
+        result.title = Search.processMatches(result.title, titleMatches, false);
+      }
+      result.preview =
+        contentMatches.length > 0
+          ? Search.processMatches(result.content, contentMatches)
+          : replaceHTMLEnt(result.content.substring(0, 140));
+      result.matchCount = titleMatches.length + contentMatches.length;
+
+      if (result.matchCount > 0) results.push(result);
+    }
+
+    return results.sort((a, b) => b.matchCount - a.matchCount);
   }
 
   /**
@@ -559,7 +623,7 @@ class Search {
 
     let results;
     if (this.isFuzzyMatch) {
-      results = await this.searchFuzzy(keywords);
+      results = await this.searchExactKeywords(keywords);
     } else {
       results = await this.searchKeywords(keywords);
     }
