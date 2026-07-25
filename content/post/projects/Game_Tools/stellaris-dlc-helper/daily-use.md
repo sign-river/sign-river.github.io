@@ -15,9 +15,14 @@ toc: true
 
 在“设置”的测速页执行测速，比较可用下载源的速度后再继续操作。
 
+![测速界面](/p/stellaris-dlc-helper/images/2026-02-13-17-15-41.png)
+
 ## 暂停与继续
 
 操作进行中可以暂停；恢复时继续即可。工具支持断点续传，网络短暂中断不需要从头开始。
 
-更多界面说明和截图见 [完整使用手册](/p/stellaris-dlc-helper/)。
+![暂停操作](/p/stellaris-dlc-helper/images/2026-02-13-17-16-33.png)
 
+![继续操作](/p/stellaris-dlc-helper/images/2026-02-13-17-16-46.png)
+
+日志、缓存和其他界面功能见 [进阶功能](/p/stellaris-dlc-helper/advanced/)。

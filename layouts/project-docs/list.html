@@ -1,6 +1,16 @@
 {{ define "body-class" }}article-page project-docs-page{{ end }}
 
+{{ define "head" }}
+{{ with .Params.redirect_to }}
+<meta http-equiv="refresh" content="0; url={{ . }}" />
+{{ end }}
+{{ end }}
+
 {{ define "main" }}
+{{ with .Params.redirect_to }}
+<p class="project-docs-redirect">正在跳转至 <a href="{{ . }}">快速开始</a>。</p>
+<script>window.location.replace('{{ . }}');</script>
+{{ else }}
 {{ $pages := .RegularPages.ByWeight }}
 <div class="project-docs-layout">
   <nav class="project-docs-nav" aria-label="项目文档目录">
@@ -31,6 +41,7 @@
 {{ partialCached "footer/footer" . }}
 {{ partialCached "article/components/photoswipe" . }}
 {{ partial "article/components/mermaid" . }}
+{{ end }}
 {{ end }}
 
 {{ define "right-sidebar" }}{{ end }}

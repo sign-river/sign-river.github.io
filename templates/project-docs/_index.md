@@ -10,20 +10,9 @@ tags:
 draft: true
 slug: "project-slug"
 url: "/p/project-slug/"
+redirect_to: "/p/project-slug/getting-started/"
 type: "project-docs"
 weight: 1
 ---
 
-## 项目简介
-
-说明项目用途、目标用户和主要能力。
-
-## 获取项目
-
-- GitHub：<https://github.com/owner/repository>
-- 下载：填写 Release 或部署地址
-
-## 文档导航
-
-从左侧目录选择需要的章节；新项目至少保留“快速开始”和“常见问题”。
-
+项目首页仅用于兼容旧链接，并自动跳转到“快速开始”。项目简介、下载信息和使用说明应拆分到对应的子页面。
