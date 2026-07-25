@@ -22,6 +22,15 @@ projects:
       - 开源项目
       - GUI
     status: completed
+  - title: SignRiver DLC Hub
+    description: 群星 DLC 工具项目文档，包含安装、日常操作与常见问题。
+    website: https://sign-river.github.io/p/signriver-dlc-hub/getting-started/
+    repo: https://github.com/sign-river/SignRiver-DLC-Hub
+    tags:
+      - Stellaris
+      - 游戏工具
+      - 开源项目
+    status: active
 comments: false
 ---
 
