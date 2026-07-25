@@ -1,0 +1,44 @@
+{{ define "body-class" }}article-page project-docs-page{{ end }}
+
+{{ define "main" }}
+{{ $section := .CurrentSection }}
+{{ $pages := $section.RegularPages.ByWeight }}
+{{ $currentIndex := -1 }}
+{{ range $index, $page := $pages }}{{ if eq $page.RelPermalink $.RelPermalink }}{{ $currentIndex = $index }}{{ end }}{{ end }}
+
+<div class="project-docs-layout">
+  <nav class="project-docs-nav" aria-label="项目文档目录">
+    <p class="project-docs-nav__label">项目文档</p>
+    <a class="project-docs-nav__project{{ if eq .RelPermalink $section.RelPermalink }} is-active{{ end }}" href="{{ $section.RelPermalink }}">{{ $section.Title }}</a>
+    <ol>
+      {{ range $pages }}
+      <li><a class="{{ if eq .RelPermalink $.RelPermalink }}is-active{{ end }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ol>
+  </nav>
+
+  <article class="main-article project-docs-article">
+    {{ partial "article/components/header" . }}
+    <div class="article-content">{{ .Content }}</div>
+
+    {{ if ge $currentIndex 0 }}
+    <nav class="project-docs-pager" aria-label="文档翻页">
+      {{ with index $pages (sub $currentIndex 1) }}
+      <a class="project-docs-pager__previous" href="{{ .RelPermalink }}"><span>上一页</span>{{ .Title }}</a>
+      {{ else }}
+      <a class="project-docs-pager__previous" href="{{ $section.RelPermalink }}"><span>返回首页</span>{{ $section.Title }}</a>
+      {{ end }}
+      {{ with index $pages (add $currentIndex 1) }}
+      <a class="project-docs-pager__next" href="{{ .RelPermalink }}"><span>下一页</span>{{ .Title }}</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </article>
+</div>
+
+{{ partialCached "footer/footer" . }}
+{{ partialCached "article/components/photoswipe" . }}
+{{ partial "article/components/mermaid" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}{{ end }}

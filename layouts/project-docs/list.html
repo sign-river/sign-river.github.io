@@ -1,0 +1,36 @@
+{{ define "body-class" }}article-page project-docs-page{{ end }}
+
+{{ define "main" }}
+{{ $pages := .RegularPages.ByWeight }}
+<div class="project-docs-layout">
+  <nav class="project-docs-nav" aria-label="项目文档目录">
+    <p class="project-docs-nav__label">项目文档</p>
+    <a class="project-docs-nav__project is-active" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <ol>
+      {{ range $pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ol>
+  </nav>
+
+  <article class="main-article project-docs-article">
+    {{ partial "article/components/header" . }}
+    <div class="article-content">{{ .Content }}</div>
+    <section class="project-docs-index" aria-label="文档章节">
+      <h2>文档目录</h2>
+      {{ range $pages }}
+      <a class="project-docs-index__item" href="{{ .RelPermalink }}">
+        <strong>{{ .Title }}</strong>
+        {{ with .Description }}<span>{{ . }}</span>{{ end }}
+      </a>
+      {{ end }}
+    </section>
+  </article>
+</div>
+
+{{ partialCached "footer/footer" . }}
+{{ partialCached "article/components/photoswipe" . }}
+{{ partial "article/components/mermaid" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}{{ end }}

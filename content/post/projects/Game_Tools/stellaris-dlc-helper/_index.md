@@ -15,6 +15,9 @@ tags:
   - "Windows"
 draft: false
 slug: "stellaris-dlc-helper"
+url: "/p/stellaris-dlc-helper/"
+type: "project-docs"
+weight: 1
 ---
 
 ## 1. Stellaris DLC Helper - 快速上手指南
