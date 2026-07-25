@@ -57,7 +57,7 @@ Packages (版本选择)：勾选 Python，并选择 3.12 版本。
 
 win+r，输入 cmd 回车打开终端，在终端输入 nvidia-smi 回车，第一行最右边就是适合你选择的 CUDA 版本
 
-<a href="images/2026-02-10-21-53-17.png" target="_blank"> <img src="images/2026-02-10-21-53-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-10-21-53-17.png" target="_blank"> <img src="images/2026-02-10-21-53-17.png" alt="image" style="max-width: 50%; width: 1000px;"/> </a>
 
 <a href="images/2026-02-10-21-53-50.png" target="_blank"> <img src="images/2026-02-10-21-53-50.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 

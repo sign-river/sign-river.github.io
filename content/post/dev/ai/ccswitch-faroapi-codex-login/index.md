@@ -40,7 +40,7 @@ slug: "ccswitch-faroapi-codex-login"
 
 双击下载的 `.msi` 文件运行安装程序。在安装向导中点击 **Next**，按提示完成安装。
 
-<a href="images/2026-07-25-00-20-55.png" target="_blank" rel="noopener"><img src="images/2026-07-25-00-20-55.png" alt="CC Switch 安装向导" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/2026-07-25-00-20-55.png" target="_blank" rel="noopener"><img src="images/2026-07-25-00-20-55.png" alt="CC Switch 安装向导" style="max-width: 100%; width: 600px;"/></a>
 
 安装完成后打开 CC Switch。程序首次启动时可能停留在 **Claude Code** 页面，这是正常现象。
 
@@ -103,7 +103,7 @@ slug: "ccswitch-faroapi-codex-login"
 
 Codex 桌面版可能仍在使用启动时读取的旧配置，因此应用供应商后需要彻底退出并重新启动 Codex。不要只关闭主窗口，应从 Windows 系统托盘退出 Codex，确保它不再驻留后台。
 
-<a href="images/2026-07-25-00-23-39.png" target="_blank" rel="noopener"><img src="images/2026-07-25-00-23-39.png" alt="从 Windows 系统托盘彻底退出 Codex" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/2026-07-25-00-23-39.png" target="_blank" rel="noopener"><img src="images/2026-07-25-00-23-39.png" alt="从 Windows 系统托盘彻底退出 Codex" style="max-width: 100%; width: 400px;"/></a>
 
 ## 5. 验证 API 密钥登录状态
 

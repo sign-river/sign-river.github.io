@@ -40,7 +40,7 @@ Nilesoft Shell 是一款强大的 Windows 右键菜单自定义工具，让你�
 
 安装完成后，右键点击桌面，即可看到 Nilesoft Shell 的默认菜单。默认配置已经包含了许多实用功能，比如快速访问系统工具、文件操作等。
 
-<a href="images/2026-02-14-19-32-51.png" target="_blank"> <img src="images/2026-02-14-19-32-51.png" alt="默认菜单效果" style="max-width: 100%; width: 400px;"/> </a>
+<a href="images/2026-02-14-19-32-51.png" target="_blank"> <img src="images/2026-02-14-19-32-51.png" alt="默认菜单效果" style="max-width: 50%; width: 400px;"/> </a>
 
 这只是冰山一角，接下来我们将学习如何自定义菜单！
 
@@ -100,7 +100,7 @@ import 'imports/taskbar.nss'
 1. 在开始菜单搜索 `nilesoft` 或直接运行安装目录下的 `shell.exe`
 2. 在弹出的窗口中选择 **Restart Explorer**（重启资源管理器）
 
-<a href="images/2026-02-14-20-48-20.png" target="_blank"> <img src="images/2026-02-14-20-48-20.png" alt="重启资源管理器" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-14-20-48-20.png" target="_blank"> <img src="images/2026-02-14-20-48-20.png" alt="重启资源管理器" style="max-width: 70%; width: 1000px;"/> </a>
 
 **三个选项说明：**
 
@@ -130,7 +130,7 @@ remove((find = "护眼卫士"));
 
 保存后重启资源管理器，该选项即可消失。
 
-<a href="images/2026-02-14-20-54-39.png" target="_blank"> <img src="images/2026-02-14-20-54-39.png" alt="移除前后对比" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-14-20-54-39.png" target="_blank"> <img src="images/2026-02-14-20-54-39.png" alt="移除前后对比" style="max-width: 60%; width: 1000px;"/> </a>
 
 **⚠️ 注意事项：**
 
@@ -225,7 +225,7 @@ item(title='搜索选中内容'
 
 **效果展示：**
 
-<a href="images/2026-02-14-21-44-48.png" target="_blank"> <img src="images/2026-02-14-21-44-48.png" alt="添加网址效果" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-14-21-44-48.png" target="_blank"> <img src="images/2026-02-14-21-44-48.png" alt="添加网址效果" style="max-width: 70%; width: 1000px;"/> </a>
 
 ## 6. 进阶操作
 
@@ -569,7 +569,7 @@ Nilesoft Shell 默认菜单为英文，对中文用户不够友好。下面提�
 
 **症状示例：**
 
-<a href="images/2026-02-14-22-04-10.png" target="_blank"> <img src="images/2026-02-14-22-04-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-14-22-04-10.png" target="_blank"> <img src="images/2026-02-14-22-04-10.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
 **原因分析：**
 

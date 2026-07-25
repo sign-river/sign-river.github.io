@@ -150,7 +150,7 @@ Cursor 提供了多种工作模式，可根据不同场景选择使用：
 
 ### 4.1. 模型不工作：Model not available
 
-<a href="images/2026-02-12-21-20-47.png" target="_blank"> <img src="images/2026-02-12-21-20-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-02-12-21-20-47.png" target="_blank"> <img src="images/2026-02-12-21-20-47.png" alt="image" style="max-width: 50%; width: 1000px;"/> </a>
 
 如果遇到模型不可用的问题，可以尝试以下解决方案：
 

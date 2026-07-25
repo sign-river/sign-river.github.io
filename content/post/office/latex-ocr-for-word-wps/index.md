@@ -23,7 +23,7 @@ slug: "latex-ocr-for-word-wps"
 
 按 `Win` 键搜索 **Anaconda Prompt**，打开它。
 
-<a href="images/2026-03-21-19-17-13.png" target="_blank"> <img src="images/2026-03-21-19-17-13.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-03-21-19-17-13.png" target="_blank"> <img src="images/2026-03-21-19-17-13.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
 在 Anaconda Prompt 中依次输入以下命令，创建并激活一个独立的虚拟环境：
 
@@ -147,7 +147,7 @@ ws.run "cmd /c conda run -n latexocr latexocr", 0
 
 按 `Ctrl+S` 保存。如果看不到文件后缀名，在文件资源管理器中点击顶部**查看 → 显示 → 文件扩展名**将其勾选。
 
-<a href="images/显示文件扩展名截图.png" target="_blank"> <img src="images/显示文件扩展名截图.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/显示文件扩展名截图.png" target="_blank"> <img src="images/显示文件扩展名截图.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
 之后选中文件按 `F2` 重命名，将其改为 `公式识别.vbs`，双击即可静默启动 LaTeX-OCR（不会弹出黑色命令行窗口）。
 

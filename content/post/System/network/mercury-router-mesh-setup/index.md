@@ -22,15 +22,15 @@ slug: "mercury-router-mesh-setup"
 
 1. 拔出路由器 **WAN 口**上的网线
 
-<a href="images/2026-06-20-17-57-11.png" target="_blank"> <img src="images/2026-06-20-17-57-11.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-17-57-11.png" target="_blank"> <img src="images/2026-06-20-17-57-11.png" alt="image" style="max-width: 40%; width: 1000px;"/> </a>
 
 2. **长按**路由器上的复位键，重置路由器
 
-<a href="images/2026-06-20-17-57-30.png" target="_blank"> <img src="images/2026-06-20-17-57-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-17-57-30.png" target="_blank"> <img src="images/2026-06-20-17-57-30.png" alt="image" style="max-width: 40%; width: 1000px;"/> </a>
 
 3. 等到指示灯**绿灯闪烁**，说明复位成功
 
-<a href="images/2026-06-20-17-57-49.png" target="_blank"> <img src="images/2026-06-20-17-57-49.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-17-57-49.png" target="_blank"> <img src="images/2026-06-20-17-57-49.png" alt="image" style="max-width: 40%; width: 1000px;"/> </a>
 
 ## 2. 进入管理页面
 
@@ -68,6 +68,6 @@ slug: "mercury-router-mesh-setup"
 
 若路由器会自动识别 WAN 口，需先在设置里**关闭自动识别 WAN 口**选项，再插网线。
 
-<a href="images/2026-06-20-step6-plug-lan.png" target="_blank"> <img src="images/2026-06-20-step6-plug-lan.png" alt="网线插入 LAN 口" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-06-20-step6-plug-lan.png" target="_blank"> <img src="images/2026-06-20-step6-plug-lan.png" alt="网线插入 LAN 口" style="max-width: 40%; width: 1000px;"/> </a>
 
 插上网线后，组网流程结束。
