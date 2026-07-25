@@ -3,6 +3,7 @@
         <!-- 分类标签：显示在标题前面，同一行 -->
         {{ if .Params.categories }}
         <div class="article-category-inline">
+            <span class="article-category-inline__label">分类</span>
             {{- $counter := 0 -}}
             {{- $maxCats := 3 -}}
             {{- with .Site.Params.blog_params -}}

@@ -3,7 +3,7 @@ title: "如何关闭 Steam 手机版令牌"
 date: 2026-07-25
 description: "记录在 Steam 手机版中移除 Steam Guard 手机令牌的入口、确认提示与注意事项。"
 categories:
-  - "生活"
+  - "游戏"
 tags:
   - "Steam"
   - "Steam Guard"
