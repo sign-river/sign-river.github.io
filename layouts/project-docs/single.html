@@ -24,12 +24,16 @@
     {{ if ge $currentIndex 0 }}
     <nav class="project-docs-pager" aria-label="文档翻页">
       {{ with index $pages (sub $currentIndex 1) }}
-      <a class="project-docs-pager__previous" href="{{ .RelPermalink }}"><span>上一页</span>{{ .Title }}</a>
-      {{ else }}
-      <a class="project-docs-pager__previous" href="{{ $section.RelPermalink }}"><span>返回首页</span>{{ $section.Title }}</a>
+      <a class="project-docs-pager__previous" href="{{ .RelPermalink }}">
+        <span class="project-docs-pager__eyebrow">&larr; 上一页</span>
+        <strong>{{ .Title }}</strong>
+      </a>
       {{ end }}
       {{ with index $pages (add $currentIndex 1) }}
-      <a class="project-docs-pager__next" href="{{ .RelPermalink }}"><span>下一页</span>{{ .Title }}</a>
+      <a class="project-docs-pager__next" href="{{ .RelPermalink }}">
+        <span class="project-docs-pager__eyebrow">下一页 &rarr;</span>
+        <strong>{{ .Title }}</strong>
+      </a>
       {{ end }}
     </nav>
     {{ end }}

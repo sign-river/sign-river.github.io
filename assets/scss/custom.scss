@@ -701,29 +701,51 @@
 }
 
 .project-docs-pager {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid var(--card-separator-color);
 
   a {
-    max-width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 92px;
+    padding: 16px 18px;
+    border: 1px solid var(--card-separator-color);
+    border-radius: 6px;
+    background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.04);
     color: var(--accent-color);
-    font-size: 1.45rem;
     text-decoration: none;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      border-color: var(--accent-color);
+      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
+      transform: translateY(-2px);
+    }
   }
 
-  span {
+  &__eyebrow {
     display: block;
     margin-bottom: 4px;
     color: var(--card-text-color-secondary);
     font-size: 1.2rem;
   }
 
+  strong {
+    font-size: 1.55rem;
+    line-height: 1.35;
+  }
+
   &__next {
-    margin-left: auto;
+    grid-column: 2;
+    align-items: flex-end;
     text-align: right;
   }
 }
@@ -736,6 +758,14 @@
   .project-docs-nav {
     position: static;
     margin-bottom: 20px;
+  }
+
+  .project-docs-pager {
+    grid-template-columns: 1fr;
+
+    &__next {
+      grid-column: 1;
+    }
   }
 }
 
