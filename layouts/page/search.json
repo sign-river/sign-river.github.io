@@ -1,0 +1,26 @@
+{{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections -}}
+{{- $result := slice -}}
+
+{{- range $pages -}}
+    {{- /* Hidden pages stay out of listings; opt-in pages remain discoverable in site search. */ -}}
+    {{- if or (ne .Params.hidden true) (eq .Params.searchable true) -}}
+        {{- $data := dict "title" .Title "date" .Date "permalink" .Permalink "content" (.Plain) -}}
+
+        {{- $image := partialCached "helper/image" (dict "Context" . "Type" "articleList") .RelPermalink "articleList" -}}
+        {{- if $image.exists -}}
+            {{- $imagePermalink := "" -}}
+            {{- if and $image.resource (default true .Page.Site.Params.imageProcessing.cover.enabled) -}}
+                {{- $thumbnail := $image.resource.Fill "120x120" -}}
+                {{- $imagePermalink = (absURL $thumbnail.Permalink) -}}
+            {{- else -}}
+                {{- $imagePermalink = $image.permalink -}}
+            {{- end -}}
+
+            {{- $data = merge $data (dict "image" (absURL $imagePermalink)) -}}
+        {{- end -}}
+
+        {{- $result = $result | append $data -}}
+    {{- end -}}
+{{- end -}}
+
+{{ jsonify $result }}

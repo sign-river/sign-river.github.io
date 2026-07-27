@@ -5,6 +5,7 @@ description: "基于 CentOS 7 的 OpenVPN 虚拟局域网搭建教程（旧版�
 draft: false
 slug: "stellaris-lan-openvpn-centos"
 hidden: true
+searchable: true
 categories:
   - "游戏"
 tags:
