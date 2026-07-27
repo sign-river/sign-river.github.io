@@ -6,6 +6,8 @@ draft: false
 slug: "stellaris-lan-openvpn-centos"
 hidden: true
 searchable: true
+guide: "/p/stellaris-lan-openvpn-guide/"
+guide_title: "群星联机优化指南"
 categories:
   - "系统"
 tags:
@@ -18,8 +20,6 @@ tags:
   - "网络配置"
   - "CentOS"
 ---
-
-> <span style="font-size: 20px; font-weight: bold;">🚀 [点此返回主文章](/p/stellaris-lan-openvpn-guide/)</span>
 
 ## 1. 引言
 

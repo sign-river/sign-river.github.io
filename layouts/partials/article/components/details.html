@@ -1,4 +1,14 @@
 <div class="article-details">
+    {{ with .Params.guide }}
+    <nav class="article-guide-nav" aria-label="返回主指南">
+        <a href="{{ . | relURL }}">
+            {{ partial "helper/icon" "back" }}
+            <span class="article-guide-nav__label">返回专题</span>
+            <span class="article-guide-nav__title">{{ default "主指南" $.Params.guide_title }}</span>
+        </a>
+    </nav>
+    {{ end }}
+
     <div class="article-title-wrapper">
         <!-- 分类标签：显示在标题前面，同一行 -->
         {{ if .Params.categories }}

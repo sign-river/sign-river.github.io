@@ -163,17 +163,52 @@
 // }
 
 /* ========== 正文标题层级（仅文章内容，与侧边栏序号无关）========== */
-.article-guide-link {
-  margin: 0 44px 1.5rem;
+.article-guide-nav {
+  max-width: 100%;
 
   a {
-    color: var(--accent-color);
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 100%;
+    padding: 7px 10px;
+    border: 1px solid var(--card-separator-color);
+    border-radius: 6px;
+    background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.06);
+    color: var(--card-text-color-secondary);
+    line-height: 1.35;
     text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
 
     &:hover {
-      text-decoration: underline;
+      border-color: var(--accent-color);
+      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
+      color: var(--accent-color);
     }
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    stroke-width: 1.8;
+  }
+
+  &__label {
+    flex: 0 0 auto;
+    color: var(--card-text-color-tertiary);
+    font-size: 1.2rem;
+  }
+
+  &__title {
+    min-width: 0;
+    color: var(--card-text-color-main);
+    font-size: 1.35rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -595,8 +630,9 @@
     );
     color: var(--accent-color);
     border-radius: var(--tag-border-radius);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
+    line-height: 1.4;
   }
 
   .project-links {
