@@ -14,6 +14,15 @@ hasCJKLanguage = true
 # Ignore README files in content directory
 ignoreFiles = ["README\\.md$", "readme\\.md$"]
 
+[outputs]
+home = ["HTML", "RSS", "SitemapText"]
+
+[outputFormats.SitemapText]
+mediaType = "text/plain"
+baseName = "sitemap-pages"
+isPlainText = true
+notAlternative = true
+
 # Change it to your Disqus shortname before using
 # disqusShortname = "sign-river-blog"
 

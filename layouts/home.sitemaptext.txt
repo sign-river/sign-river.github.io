@@ -1,0 +1,4 @@
+{{- printf "%s\n" .Site.Home.Permalink -}}
+{{- range .Site.RegularPages -}}
+{{ printf "%s\n" .Permalink -}}
+{{- end -}}

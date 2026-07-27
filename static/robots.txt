@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sign-river.github.io/sitemap-pages.txt
