@@ -1,0 +1,142 @@
+Watching for changes in D:/project/blogs/sign-river.github.io/_vendor/github.com/CaiJimmy/hugo-theme-stack/v3/archetypes, D:/project/blogs/sign-river.github.io/_vendor/github.com/CaiJimmy/hugo-theme-stack/v3/assets/{icons,img,scss,ts}, D:/project/blogs/sign-river.github.io/_vendor/github.com/CaiJimmy/hugo-theme-stack/v3/data, D:/project/blogs/sign-river.github.io/_vendor/github.com/CaiJimmy/hugo-theme-stack/v3/i18n, D:/project/blogs/sign-river.github.io/_vendor/github.com/CaiJimmy/hugo-theme-stack/v3/layouts/{_default,page,partials,shortcodes}, D:/project/blogs/sign-river.github.io/archetypes, D:/project/blogs/sign-river.github.io/assets/{icons,img,scss,ts}, D:/project/blogs/sign-river.github.io/content/{page,post}, D:/project/blogs/sign-river.github.io/data, D:/project/blogs/sign-river.github.io/i18n, ... and 2 more
+Watching for config changes in D:\project\blogs\sign-river.github.io\config\_default, D:\project\blogs\sign-river.github.io\_vendor\github.com\CaiJimmy\hugo-theme-stack\v3\hugo.yaml, D:\project\blogs\sign-river.github.io\go.mod
+Start building sites … 
+hugo v0.155.3-8a858213b73907e823e2be2b5640a0ce4c04d295+extended windows/amd64 BuildDate=2026-02-08T16:40:42Z VendorInfo=gohugoio
+
+
+                  │ ZH - CN 
+──────────────────┼─────────
+ Pages            │     528 
+ Paginator pages  │      52 
+ Non-page files   │     690 
+ Static files     │       4 
+ Processed images │       1 
+ Aliases          │     193 
+ Cleaned          │       0 
+
+Built in 634 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) 
+Press Ctrl+C to stop
+
+Change detected, rebuilding site (#1).
+2026-07-28 03:36:00.553 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 194 ms
+
+Change detected, rebuilding site (#2).
+2026-07-28 03:36:02.555 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 207 ms
+
+Change detected, rebuilding site (#3).
+2026-07-28 03:36:04.554 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 205 ms
+
+Change detected, rebuilding site (#4).
+2026-07-28 03:36:13.558 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 213 ms
+
+Change detected, rebuilding site (#5).
+2026-07-28 03:36:24.553 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 218 ms
+
+Change detected, rebuilding site (#6).
+2026-07-28 03:36:27.054 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 196 ms
+
+Change detected, rebuilding site (#7).
+2026-07-28 03:36:28.053 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 204 ms
+
+Change detected, rebuilding site (#8).
+2026-07-28 03:36:38.554 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 192 ms
+
+Change detected, rebuilding site (#9).
+2026-07-28 03:36:40.053 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 200 ms
+
+Change detected, rebuilding site (#10).
+2026-07-28 03:36:41.554 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 204 ms
+
+Change detected, rebuilding site (#11).
+2026-07-28 03:36:43.054 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 205 ms
+
+Change detected, rebuilding site (#12).
+2026-07-28 03:36:47.058 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 197 ms
+
+Change detected, rebuilding site (#13).
+2026-07-28 03:37:14.053 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 190 ms
+
+Change detected, rebuilding site (#14).
+2026-07-28 03:37:17.054 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 202 ms
+
+Change detected, rebuilding site (#15).
+2026-07-28 03:37:22.053 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 195 ms
+
+Change detected, rebuilding site (#16).
+2026-07-28 03:37:33.054 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 190 ms
+
+Change detected, rebuilding site (#17).
+2026-07-28 03:37:37.053 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 203 ms
+
+Change detected, rebuilding site (#18).
+2026-07-28 03:37:43.054 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 208 ms
+
+Change detected, rebuilding site (#19).
+2026-07-28 03:37:46.054 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 203 ms
+
+Change detected, rebuilding site (#20).
+2026-07-28 03:37:46.554 +0800
+Source changed /post/system/teamviewer-remote-control-phone/index.md
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Total in 214 ms

@@ -56,49 +56,49 @@ slug: "teamviewer-remote-control-phone"
 
 在手机上打开 TeamViewer QuickSupport，先进入“设置”。
 
-<a href="images/2026-07-28-02-54-50.png" target="_blank"><img src="images/2026-07-28-02-54-50.png" alt="打开 QuickSupport 设置" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-54-50.png" target="_blank"><img src="images/2026-07-28-02-54-50.png" alt="打开 QuickSupport 设置" style="max-width: 30%; width: 1000px;"></a>
 
 进入“权限”。
 
-<a href="images/2026-07-28-02-55-10.png" target="_blank"><img src="images/2026-07-28-02-55-10.png" alt="QuickSupport 权限页面" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-55-10.png" target="_blank"><img src="images/2026-07-28-02-55-10.png" alt="QuickSupport 权限页面" style="max-width: 30%; width: 300px;"></a>
 
 打开“远程控制”功能。
 
-<a href="images/2026-07-28-02-55-32.png" target="_blank"><img src="images/2026-07-28-02-55-32.png" alt="启用远程控制功能" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-55-32.png" target="_blank"><img src="images/2026-07-28-02-55-32.png" alt="启用远程控制功能" style="max-width: 30%; width: 300px;"></a>
 
 首次启用时，需要按提示安装 TeamViewer 的控制插件。点击“安装”下载并安装插件，完成后选择打开 **Universal Add-On**。
 
-<a href="images/2026-07-28-02-56-29.png" target="_blank"><img src="images/2026-07-28-02-56-29.png" alt="安装 TeamViewer 控制插件" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-56-29.png" target="_blank"><img src="images/2026-07-28-02-56-29.png" alt="安装 TeamViewer 控制插件" style="max-width: 30%; width: 300px;"></a>
 
 在系统页面中选择“已下载的应用”。
 
-<a href="images/2026-07-28-02-56-47.png" target="_blank"><img src="images/2026-07-28-02-56-47.png" alt="选择已下载的应用" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-56-47.png" target="_blank"><img src="images/2026-07-28-02-56-47.png" alt="选择已下载的应用" style="max-width: 30%; width: 300px;"></a>
 
 找到并打开 TeamViewer Universal Add-On 的授权项。
 
-<a href="images/2026-07-28-02-57-03.png" target="_blank"><img src="images/2026-07-28-02-57-03.png" alt="打开 Universal Add-On 授权项" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-57-03.png" target="_blank"><img src="images/2026-07-28-02-57-03.png" alt="打开 Universal Add-On 授权项" style="max-width: 30%; width: 300px;"></a>
 
 部分手机会提示该应用的权限受到限制。这通常是系统针对侧载应用或无障碍服务的安全保护。请根据手机品牌和系统提示，进入应用权限管理页解除限制，再返回此处完成启用。
 
-<a href="images/2026-07-28-02-58-12.png" target="_blank"><img src="images/2026-07-28-02-58-12.png" alt="解除应用权限限制" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-58-12.png" target="_blank"><img src="images/2026-07-28-02-58-12.png" alt="解除应用权限限制" style="max-width: 30%; width: 300px;"></a>
 
 接着返回 QuickSupport 的权限页，进入“存储空间”。
 
-<a href="images/2026-07-28-02-58-57.png" target="_blank"><img src="images/2026-07-28-02-58-57.png" alt="授予存储空间权限" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-58-57.png" target="_blank"><img src="images/2026-07-28-02-58-57.png" alt="授予存储空间权限" style="max-width: 30%; width: 300px;"></a>
 
 授予所需权限。如果再次出现权限受限提示，按系统页面给出的步骤解除限制后重试即可。
 
-<a href="images/2026-07-28-02-59-41.png" target="_blank"><img src="images/2026-07-28-02-59-41.png" alt="完成存储空间授权" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-02-59-41.png" target="_blank"><img src="images/2026-07-28-02-59-41.png" alt="完成存储空间授权" style="max-width: 30%; width: 300px;"></a>
 
 ## 4. 加入会话并开始控制
 
 返回 QuickSupport 首页，点击“加入会话”。
 
-<a href="images/2026-07-28-03-00-00.png" target="_blank"><img src="images/2026-07-28-03-00-00.png" alt="在手机端加入会话" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-03-00-00.png" target="_blank"><img src="images/2026-07-28-03-00-00.png" alt="在手机端加入会话" style="max-width: 30%; width: 300px;"></a>
 
 输入电脑端发送的会话码，点击“加入”。
 
-<a href="images/2026-07-28-03-03-22.png" target="_blank"><img src="images/2026-07-28-03-03-22.png" alt="输入 TeamViewer 会话码" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-03-03-22.png" target="_blank"><img src="images/2026-07-28-03-03-22.png" alt="输入 TeamViewer 会话码" style="max-width: 30%; width: 300px;"></a>
 
 此时回到电脑端，点击“加入会议”。
 
@@ -106,7 +106,7 @@ slug: "teamviewer-remote-control-phone"
 
 手机端会要求确认身份或允许本次连接。确认协助者身份无误后，点击允许。
 
-<a href="images/2026-07-28-03-04-02.png" target="_blank"><img src="images/2026-07-28-03-04-02.png" alt="手机端确认远程连接" style="max-width: 100%; width: 1000px;"></a>
+<a href="images/2026-07-28-03-04-02.png" target="_blank"><img src="images/2026-07-28-03-04-02.png" alt="手机端确认远程连接" style="max-width: 30%; width: 300px;"></a>
 
 连接建立后，电脑端即可显示并控制手机画面。
 
