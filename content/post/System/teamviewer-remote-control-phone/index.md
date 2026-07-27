@@ -1,6 +1,6 @@
 ---
 title: "使用 TeamViewer 远程控制手机：Android 连接流程与注意事项"
-date: 2026-07-28
+date: 2026-07-27
 description: "记录通过 TeamViewer 从电脑远程协助 Android 手机的安装、授权、连接和断开流程。"
 categories:
   - "系统"
