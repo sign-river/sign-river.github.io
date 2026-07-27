@@ -12,6 +12,11 @@ tags:
   - "界面"
 draft: false
 slug: "switch-cursor-ui-mode"
+related_group: "cursor"
+hidden: true
+searchable: true
+guide: "/p/cursor-troubleshooting-guide/"
+guide_title: "Cursor 使用指南"
 ---
 
 Cursor 在近期的版本更新中引入了全新的 **Agents 界面**，交互逻辑与之前以编辑器为核心的经典界面有较大差异。如果你更习惯旧版的操作方式，或者想在两种界面之间来回切换，本文记录了具体方法。

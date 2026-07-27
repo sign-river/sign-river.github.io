@@ -11,6 +11,10 @@ tags:
 draft: false
 slug: "steam-error-04"
 related_group: "steam"
+hidden: true
+searchable: true
+guide: "/p/steam-troubleshooting-guide/"
+guide_title: "Steam 常见问题解决指南"
 ---
 
 > 本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。

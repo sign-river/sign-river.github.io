@@ -3,7 +3,7 @@ title: "Hugo Theme Stack 进阶：控制图片大小与点击效果"
 date: 2026-02-21
 description: "在 hugo-theme-stack 主题中，介绍两种自定义图片显示效果的方案：可点击新标签页查看原图的 HTML 写法，以及通过 div 容器控制宽度的 Markdown 写法"
 categories:
-  - "博客"
+  - "系统"
 tags:
   - "Hugo"
   - "hugo-theme-stack"
@@ -13,6 +13,11 @@ tags:
   - "博客搭建"
 draft: false
 slug: "hugo-stack-image-size-control"
+related_group: "hugo-site-maintenance"
+hidden: true
+searchable: true
+guide: "/p/blog-site-maintenance-guide/"
+guide_title: "Hugo 博客搭建与维护指南"
 ---
 
 ## 1. 前言

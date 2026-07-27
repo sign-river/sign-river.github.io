@@ -163,6 +163,20 @@
 // }
 
 /* ========== 正文标题层级（仅文章内容，与侧边栏序号无关）========== */
+.article-guide-link {
+  margin: 0 44px 1.5rem;
+
+  a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 .article-content {
   overflow-wrap: break-word;
   word-break: break-word;

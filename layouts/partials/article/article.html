@@ -1,0 +1,17 @@
+<article class="{{ if .Params.image }}has-image {{ end }}main-article">
+    {{ partial "article/components/header" . }}
+
+    {{ with .Params.guide }}
+        <div class="article-guide-link">
+            <a href="{{ . | relURL }}">返回 {{ default "主指南" $.Params.guide_title }}</a>
+        </div>
+    {{ end }}
+
+    {{ partial "article/components/content" . }}
+
+    {{ partial "article/components/footer" . }}
+
+    {{ if or .Params.math .Site.Params.article.math }}
+        {{ partialCached "article/components/math.html" . }}
+    {{ end }}
+</article>

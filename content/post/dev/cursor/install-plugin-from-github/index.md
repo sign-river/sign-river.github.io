@@ -11,6 +11,11 @@ tags:
   - "GitHub"
 draft: false
 slug: "cursor-install-plugin-from-github"
+related_group: "cursor"
+hidden: true
+searchable: true
+guide: "/p/cursor-troubleshooting-guide/"
+guide_title: "Cursor 使用指南"
 ---
 
 ## 1. 为什么需要手动安装？

@@ -7,7 +7,7 @@ slug: "stellaris-lan-openvpn-centos"
 hidden: true
 searchable: true
 categories:
-  - "游戏"
+  - "系统"
 tags:
   - "群星"
   - "Stellaris"

@@ -11,6 +11,10 @@ tags:
 draft: false
 slug: "paradox-launcher-error-28"
 related_group: "paradox-launcher"
+hidden: true
+searchable: true
+guide: "/p/paradox-launcher-troubleshooting-guide/"
+guide_title: "P 社启动器报错解决指南"
 ---
 
 > 本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。

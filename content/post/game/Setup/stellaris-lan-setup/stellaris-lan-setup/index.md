@@ -3,7 +3,7 @@ title: "群星联机优化指南：基于 OpenVPN 搭建低延迟虚拟局域网
 date: 2026-02-11
 description: "手把手教你搭建专为群星等 P2P 联机游戏优化的虚拟局域网，告别卡顿和不同步"
 categories:
-  - "游戏"
+  - "系统"
 tags:
   - "群星"
   - "Stellaris"

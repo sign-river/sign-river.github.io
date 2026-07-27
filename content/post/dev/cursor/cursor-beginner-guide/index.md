@@ -12,6 +12,11 @@ tags:
   - "使用技巧"
 draft: false
 slug: "cursor-beginner-guide"
+related_group: "cursor"
+hidden: true
+searchable: true
+guide: "/p/cursor-troubleshooting-guide/"
+guide_title: "Cursor 使用指南"
 ---
 
 ## 1. 常用设置

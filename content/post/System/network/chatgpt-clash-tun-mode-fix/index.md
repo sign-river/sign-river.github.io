@@ -3,7 +3,7 @@ title: "ChatGPT 频繁「正在重新连接」？开启 Clash TUN 模式即可�
 date: 2026-07-13
 description: "ChatGPT 工作时反复显示正在重新连接，重试多次后才正常输出？原因是 WebSocket 未走代理退化为 HTTP，开启 Clash TUN 模式即可解决"
 categories:
-  - "系统"
+  - "开发"
 tags:
   - "ChatGPT"
   - "Clash"

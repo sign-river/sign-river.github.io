@@ -12,6 +12,10 @@ tags:
 draft: false
 slug: "stellaris-dlc-error-02"
 related_group: "stellaris-dlc"
+hidden: true
+searchable: true
+guide: "/p/stellaris-dlc-troubleshooting-guide/"
+guide_title: "群星 DLC 异常解决指南"
 ---
 
 > 本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。

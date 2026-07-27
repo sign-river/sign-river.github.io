@@ -11,6 +11,10 @@ tags:
 draft: false
 slug: "steamcmd-error-06"
 related_group: "steamcmd"
+hidden: true
+searchable: true
+guide: "/p/steamcmd-troubleshooting-guide/"
+guide_title: "SteamCMD 常见问题解决指南"
 ---
 
 > 本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。

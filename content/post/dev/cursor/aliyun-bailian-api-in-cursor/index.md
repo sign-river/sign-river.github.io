@@ -12,6 +12,11 @@ tags:
   - "API 集成"
 draft: false
 slug: "cursor-aliyun-bailian-api-setup"
+related_group: "cursor"
+hidden: true
+searchable: true
+guide: "/p/cursor-troubleshooting-guide/"
+guide_title: "Cursor 使用指南"
 ---
 
 ## 1. 前言

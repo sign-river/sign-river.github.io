@@ -12,6 +12,11 @@ tags:
   - "使用技巧"
 draft: false
 slug: "cursor-agent-freeze-fix"
+related_group: "cursor"
+hidden: true
+searchable: true
+guide: "/p/cursor-troubleshooting-guide/"
+guide_title: "Cursor 使用指南"
 ---
 
 > 💡 **前言**：此教程为经验之谈，也是遇到报错后到处找解决方法总结出的解决方案。

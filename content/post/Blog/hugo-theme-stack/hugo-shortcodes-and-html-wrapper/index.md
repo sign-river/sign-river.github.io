@@ -3,7 +3,7 @@ title: "Hugo Theme Stack 进阶：用 Shortcodes 封装常用 HTML 组件"
 date: 2026-03-03
 description: "以复制按钮为例，手把手演示如何在 hugo-theme-stack 中用 Hugo Shortcodes 封装可复用的 HTML 组件，让写作更省心。"
 categories:
-  - "博客"
+  - "系统"
 tags:
   - "Hugo"
   - "Shortcode"
@@ -12,6 +12,11 @@ tags:
   - "博客搭建"
 draft: false
 slug: "hugo-theme-stack-shortcodes-html-wrapper"
+related_group: "hugo-site-maintenance"
+hidden: true
+searchable: true
+guide: "/p/blog-site-maintenance-guide/"
+guide_title: "Hugo 博客搭建与维护指南"
 ---
 
 ## 1. 为什么要封装 HTML？

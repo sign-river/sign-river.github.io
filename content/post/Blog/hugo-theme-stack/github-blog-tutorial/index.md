@@ -4,7 +4,7 @@ date: 2026-02-09
 description: "手把手教你使用 Hugo + GitHub Pages 搭建自己的个人博客"
 #image: images/2026-03-04-03-32-43.png
 categories:
-  - "博客"
+  - "系统"
 tags:
   - "Hugo"
   - "GitHub Pages"
@@ -14,6 +14,11 @@ tags:
   - "静态网站"
 draft: false
 slug: "hugo-github-pages-blog-tutorial"
+related_group: "hugo-site-maintenance"
+hidden: true
+searchable: true
+guide: "/p/blog-site-maintenance-guide/"
+guide_title: "Hugo 博客搭建与维护指南"
 ---
 
 ## 1. 前言
