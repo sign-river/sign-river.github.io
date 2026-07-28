@@ -10,23 +10,23 @@ tags:
   - "下载工具"
   - "浏览器扩展"
   - "软件安装"
-draft: true
+draft: false
 slug: "idm-free-trial-install-guide"
 ---
 
-首先到 idm 官网 https://www.internetdownloadmanager.com/下载最新版 idm
+首先前往[idm 官网](https://www.internetdownloadmanager.com/) 下载最新版 idm
 
 <a href="images/2026-07-29-00-18-15.png" target="_blank"> <img src="images/2026-07-29-00-18-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-跟随指引一路安装完成
+双击安装程序后，跟随安装指引一路下一步直到安装完成
 
 <a href="images/2026-07-29-00-18-53.png" target="_blank"> <img src="images/2026-07-29-00-18-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-在浏览器选择启动拓展程序
+打开浏览器浏览器选择启动 idm 拓展程序
 
 <a href="images/2026-07-29-00-19-48.png" target="_blank"> <img src="images/2026-07-29-00-19-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-然后去 github https://github.com/tytsxai/IDM-Activation-Script-Chinese的release下载补丁包，也可以只点击这里https://gitlink.org.cn/signriver/file-warehouse/releases/download/idm/IDM-Activation-Script.zip下载镜像
+然后去 [github 项目](https://github.com/tytsxai/IDM-Activation-Script-Chinese)的 release 下载补丁包，也可以只[点击这里](https://gitlink.org.cn/signriver/file-warehouse/releases/download/idm/IDM-Activation-Script.zip)下载镜像
 
 <a href="images/2026-07-29-00-21-04.png" target="_blank"> <img src="images/2026-07-29-00-21-04.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
@@ -34,11 +34,11 @@ slug: "idm-free-trial-install-guide"
 
 <a href="images/2026-07-29-00-23-53.png" target="_blank"> <img src="images/2026-07-29-00-23-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-下载解压后有如下两个关键文件，原 release 里还有些 md 但是不影响使用加上太乱了，我就去掉了，运行只需要这两个
+下载解压后有如下两个关键文件，原 release 里其实还有些 md 但是不影响使用，加上文件夹太混乱不方便使用，我就删掉了，运行只需要这两个
 
 <a href="images/2026-07-29-00-24-55.png" target="_blank"> <img src="images/2026-07-29-00-24-55.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-点击开始激活并授予程序请求的权限，就可以进到菜单界面
+双击启动带有开始激活字样的文件，并授予程序请求的权限，进入到菜单界面
 
 <a href="images/2026-07-29-00-25-44.png" target="_blank"> <img src="images/2026-07-29-00-25-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
@@ -54,6 +54,6 @@ slug: "idm-free-trial-install-guide"
 
 <a href="images/2026-07-29-00-27-57.png" target="_blank"> <img src="images/2026-07-29-00-27-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-至此激活完毕，重新启动 idm 发现已激活
+至此激活完毕，重新启动可以看到 idm 已激活
 
 <a href="images/2026-07-29-00-28-32.png" target="_blank"> <img src="images/2026-07-29-00-28-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
