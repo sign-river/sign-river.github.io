@@ -77,7 +77,7 @@ LM Studio 已提供简体中文界面。点击左下角的 **Settings**：
 
 如果磁盘空间和下载时间允许，也可以同时下载其他模型进行比较，例如 9B 模型或不同微调版本。模型越大，对显存、内存和加载参数的要求也越高；建议先确认 4B 模型可以稳定运行，再尝试更大的模型。
 
-<a href="images/2026-08-01-00-53-54.png" target="_blank"><img src="images/2026-08-01-00-53-54.png" alt="其他可下载模型" style="max-width: 100%; width: 1000px;"/></a>
+<a href="images/2026-08-01-00-53-54.png" target="_blank"><img src="images/2026-08-01-00-53-54.png" alt="其他可下载模型" style="max-width: 40%; width: 1000px;"/></a>
 
 右上角的下载列表会显示下载进度、速度和剩余时间：
 

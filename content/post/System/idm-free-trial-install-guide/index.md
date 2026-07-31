@@ -1,7 +1,7 @@
 ---
-title: "IDM 免费试用安装指南"
+title: "IDM 免费使用安装指南"
 date: 2026-07-28
-description: "介绍如何获取并激活 Internet Download Manager（IDM）的免费试用期功能"
+description: "介绍如何获取并激活 Internet Download Manager（IDM）"
 categories:
   - "系统"
 tags:
@@ -22,7 +22,7 @@ slug: "idm-free-trial-install-guide"
 
 双击运行下载的安装程序，按照提示一路点击"下一步"直至安装完成。
 
-<a href="images/2026-07-29-00-18-53.png" target="_blank"> <img src="images/2026-07-29-00-18-53.png" alt="IDM 安装完成界面，显示安装成功提示" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-07-29-00-18-53.png" target="_blank"> <img src="images/2026-07-29-00-18-53.png" alt="IDM 安装完成界面，显示安装成功提示" style="max-width: 50%; width: 1000px;"/> </a>
 
 > 💡 **提示**：如果您想让 IDM 在安装完成后立刻接管浏览器的下载任务，请在继续安装前关闭所有的浏览器窗口。同时，安装结束后您需要重新打开浏览器。
 
@@ -50,13 +50,13 @@ slug: "idm-free-trial-install-guide"
 
 双击运行 `开始激活.cmd` 文件，当系统提示授予权限时点击"是"，进入命令行菜单界面：
 
-<a href="images/2026-07-29-00-25-44.png" target="_blank"> <img src="images/2026-07-29-00-25-44.png" alt="IDM 激活脚本主菜单，显示多个选项供用户选择" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-07-29-00-25-44.png" target="_blank"> <img src="images/2026-07-29-00-25-44.png" alt="IDM 激活脚本主菜单，显示多个选项供用户选择" style="max-width: 70%; width: 1000px;"/> </a>
 
 ## 第五步：执行激活操作
 
 在菜单中输入 **`2`**（激活模式），系统将自动处理激活流程，进入如下界面显示激活结果：
 
-<a href="images/2026-07-29-00-26-24.png" target="_blank"> <img src="images/2026-07-29-00-26-24.png" alt="IDM 激活脚本执行结果，显示 IDM 激活功能已完成" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-07-29-00-26-24.png" target="_blank"> <img src="images/2026-07-29-00-26-24.png" alt="IDM 激活脚本执行结果，显示 IDM 激活功能已完成" style="max-width: 70%; width: 1000px;"/> </a>
 
 > ⚠️ **警告**：对某些用户而言（设置），IDM 可能会显示假阳性序列号提示。如果你遇到这种情况，请使用冻结激活选项（输入 `1`）。
 
@@ -68,7 +68,7 @@ slug: "idm-free-trial-install-guide"
 
 返回主菜单，选择 **`4`**（禁用 IDM 更新）选项：
 
-<a href="images/2026-07-29-00-27-57.png" target="_blank"> <img src="images/2026-07-29-00-27-57.png" alt="IDM 激活脚本主菜单，显示禁用更新选项" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-07-29-00-27-57.png" target="_blank"> <img src="images/2026-07-29-00-27-57.png" alt="IDM 激活脚本主菜单，显示禁用更新选项" style="max-width: 70%; width: 1000px;"/> </a>
 
 > 💡 **提示**：停留在当前版本可避免更新后激活失效，但也不再获得官方修复。如需恢复更新检查，请在主菜单选择 `5`（恢复 IDM 更新提示）。
 
@@ -76,7 +76,7 @@ slug: "idm-free-trial-install-guide"
 
 激活完成后，重新启动 IDM 软件即可看到授权信息弹窗，确认激活成功：
 
-<a href="images/2026-07-29-00-28-32.png" target="_blank"> <img src="images/2026-07-29-00-28-32.png" alt="IDM 激活成功界面，显示授权信息弹窗" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-07-29-00-28-32.png" target="_blank"> <img src="images/2026-07-29-00-28-32.png" alt="IDM 激活成功界面，显示授权信息弹窗" style="max-width: 70%; width: 1000px;"/> </a>
 
 ---
 
