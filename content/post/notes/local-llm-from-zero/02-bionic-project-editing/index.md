@@ -3,6 +3,11 @@ title: "从零开始玩转本地模型（二）：用 Bionic 修改项目文件"
 date: 2026-07-31
 description: "在 Bionic 中使用本地模型读取项目上下文、修改文件，并完成变更检查与验证。"
 slug: "bionic-project-editing"
+related_group: "local-llm-from-zero"
+hidden: true
+searchable: true
+guide: "/p/local-llm-from-zero-guide/"
+guide_title: "从零开始玩转本地模型"
 image:
 categories:
   - "笔记"

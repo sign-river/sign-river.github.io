@@ -3,6 +3,11 @@ title: "从零开始玩转本地模型（一）：Windows 本地部署流程"
 date: 2026-07-30
 description: "从零开始在 Windows 上部署本地模型，完成运行环境、模型与基础工具的准备。"
 slug: "windows-local-model-deployment"
+related_group: "local-llm-from-zero"
+hidden: true
+searchable: true
+guide: "/p/local-llm-from-zero-guide/"
+guide_title: "从零开始玩转本地模型"
 image:
 categories:
   - "笔记"
