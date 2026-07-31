@@ -15,118 +15,130 @@ tags:
 draft: false
 ---
 
-首先确认系统配置
-LM Studio 官方建议 Windows 电脑至少配备 16GB 内存和 4GB 独立显存
-准备硬盘空间
+这篇文章以 LM Studio 为例，记录如何在 Windows 上下载并运行第一个本地大语言模型。完成后，你可以直接在本机与模型对话；后续文章会在此基础上继续介绍 API 服务和更多使用方式。
 
-建议至少预留：
+## 一、开始前的准备
 
-20GB
-虽然单个 4B 量化模型不会占这么多，但后续你可能还会下载：
+先确认电脑的内存、显存和磁盘空间。LM Studio 官方建议 Windows 设备至少具备 16GB 内存和 4GB 独立显存。显存越充足，可运行的模型越大，能够设置的上下文也越长。
 
-Qwen3.5-4B；
-Qwen3.5-9B；
-不同量化版本；
-微调后导出的模型。
+磁盘建议至少预留 20GB。单个 4B 量化模型通常不需要这么多空间，但实际使用时很容易继续下载不同规模或不同量化版本的模型，例如：
 
-模型最好放在空间比较充足的 D 盘或其他固态硬盘上。
+- Qwen3.5-4B、Qwen3.5-9B 等不同参数规模的模型；
+- 同一模型的不同量化版本；
+- 微调后导出的模型文件。
 
-二、下载安装 LM Studio
+模型文件建议存放在空间充足的 SSD 上，例如 D 盘。这样既能避免系统盘很快被占满，也能缩短模型加载时间。
 
-进入 LM Studio 官方下载页面 https://lmstudio.ai/download，选择：
+## 二、下载安装 LM Studio
 
-<a href="images/2026-07-31-01-12-10.png" target="_blank"> <img src="images/2026-07-31-01-12-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+前往 [LM Studio 官方下载页面](https://lmstudio.ai/download)，选择 Windows 版本：
 
-下载后运行安装程序，按照默认选项安装即可。LM Studio 官方支持 Windows x64，x64 电脑要求处理器支持 AVX2；近些年的 Intel 和 AMD 桌面处理器通常都支持。
+<a href="images/2026-07-31-01-12-10.png" target="_blank"><img src="images/2026-07-31-01-12-10.png" alt="LM Studio 下载页面" style="max-width: 100%; width: 1000px;"/></a>
 
-安装完成后打开 LM Studio。
-选给全部用户安装有可能会莫名其妙终止安装，选为自己安装即可
+下载完成后运行安装程序，通常按默认选项安装即可。LM Studio 支持 Windows x64；处理器需要支持 AVX2，近年的 Intel 与 AMD 桌面处理器一般都满足这一要求。
 
-前面让你下载一个模型，可以选择跳过，
+安装时若选择“为所有用户安装”后安装程序异常退出，可以改为“仅为我安装”。安装完成后启动 LM Studio。首次启动时如果提示下载模型，可以先跳过，稍后在应用内选择模型更方便。
 
-接下来的设置如图设置，1. Turn on Developer Mode
+建议在初始设置中开启以下两项：
 
-即开启开发者模式。2. Start local LLM service on login
+1. `Turn on Developer Mode`：开启开发者模式，为后续调用本地服务做准备。
+2. `Start local LLM service on login`：登录 Windows 后在后台自动启动 LM Studio 的本地模型服务。
 
-即：
+<a href="images/2026-07-31-01-23-15.png" target="_blank"><img src="images/2026-07-31-01-23-15.png" alt="LM Studio 初始设置" style="max-width: 100%; width: 1000px;"/></a>
 
-每次登录 Windows 时，自动在后台启动 LM Studio 的本地模型服务。
+### 切换为简体中文
 
-<a href="images/2026-07-31-01-23-15.png" target="_blank"> <img src="images/2026-07-31-01-23-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+LM Studio 已提供简体中文界面。点击左下角的 **Settings**：
 
-LM Studio 支持简体中文界面。
+<a href="images/2026-07-31-01-24-11.png" target="_blank"><img src="images/2026-07-31-01-24-11.png" alt="LM Studio 设置入口" style="max-width: 100%; width: 1000px;"/></a>
 
-进入左下角：
+在 **General** 中将语言改为“简体中文”：
 
-Settings
-<a href="images/2026-07-31-01-24-11.png" target="_blank"> <img src="images/2026-07-31-01-24-11.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-找到：
+<a href="images/2026-07-31-01-28-11.png" target="_blank"><img src="images/2026-07-31-01-28-11.png" alt="选择简体中文" style="max-width: 100%; width: 1000px;"/></a>
 
-在 General
+部分界面暂未完成汉化，属于正常情况，并非设置没有生效。
 
-选择：
+## 三、下载第一个模型
 
-简体中文
-<a href="images/2026-07-31-01-28-11.png" target="_blank"> <img src="images/2026-07-31-01-28-11.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-对，目前汉化并不完整，不是你设置错了。
+点击右侧的模型下载入口：
 
-接下来点击右侧下载模型
+<a href="images/2026-07-31-01-30-41.png" target="_blank"><img src="images/2026-07-31-01-30-41.png" alt="模型下载入口" style="max-width: 100%; width: 1000px;"/></a>
 
-<a href="images/2026-07-31-01-30-41.png" target="_blank"> <img src="images/2026-07-31-01-30-41.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+以 8GB 显存的 RTX 5070 Laptop GPU 为例，推荐先下载 `qwen/qwen3.5-4b` 的 **GGUF / Q4_K_M** 版本。该量化文件约为 3.75GB，支持中文、图片输入和推理模式；对于 8GB 显存来说，它能为上下文缓存和桌面显示预留一定空间，适合作为首次部署的起点。
 
-以我 5070 8gb 为例 可以下载 qwen/qwen3.5-4b — GGUF — Q4_K_M
-Qwen3.5-4B 的 LM Studio 推荐量化文件约 3.75GB，支持中文、多模态图片输入和推理模式；模型本身是 4B 参数，官方页面标注最低系统内存需求为 4GB。它不会把你的 8GB 显存全部吃满，还能给上下文缓存和桌面显示留出空间。
+在搜索框输入模型名称，选择列表中推荐的第一个量化文件并点击下载：
 
-搜索，点击下载第一个
+<a href="images/2026-07-31-01-33-42.png" target="_blank"><img src="images/2026-07-31-01-33-42.png" alt="下载 Qwen3.5-4B 模型" style="max-width: 100%; width: 1000px;"/></a>
 
-<a href="images/2026-07-31-01-33-42.png" target="_blank"> <img src="images/2026-07-31-01-33-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+如果磁盘空间和下载时间允许，也可以同时下载其他模型进行比较，例如 9B 模型或不同微调版本。模型越大，对显存、内存和加载参数的要求也越高；建议先确认 4B 模型可以稳定运行，再尝试更大的模型。
 
-当然如果有大把空闲时间让电脑下载，可以多下几个，比如稍微勉强一点的 9b 模型，还有解限版
+<a href="images/2026-08-01-00-53-54.png" target="_blank"><img src="images/2026-08-01-00-53-54.png" alt="其他可下载模型" style="max-width: 100%; width: 1000px;"/></a>
 
-<a href="images/2026-08-01-00-53-54.png" target="_blank"> <img src="images/2026-08-01-00-53-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+右上角的下载列表会显示下载进度、速度和剩余时间：
 
-在右上角的下载列表可以看到更详细的下载进度
+<a href="images/2026-07-31-01-55-18.png" target="_blank"><img src="images/2026-07-31-01-55-18.png" alt="模型下载进度" style="max-width: 100%; width: 1000px;"/></a>
 
-<a href="images/2026-07-31-01-55-18.png" target="_blank"> <img src="images/2026-07-31-01-55-18.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+## 四、确认硬件设置
 
-设置 → Hardware（硬件）
+打开 **Settings -> Hardware**：
 
-<a href="images/2026-08-01-00-47-41.png" target="_blank"> <img src="images/2026-08-01-00-47-41.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-00-47-41.png" target="_blank"><img src="images/2026-08-01-00-47-41.png" alt="硬件设置入口" style="max-width: 100%; width: 1000px;"/></a>
 
-这三项全部开启，他们的作用是 xxxx
+确认 LM Studio 已识别到显卡，并开启图中标出的三项：
 
-<a href="images/2026-08-01-00-48-14.png" target="_blank"> <img src="images/2026-08-01-00-48-14.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+- 启用 NVIDIA GPU：允许 LM Studio 使用 CUDA 在显卡上推理；
+- 限制模型卸载使用的 GPU 内存：让 LM Studio 按可用显存与内存评估模型加载，降低资源不足时卡死或加载失败的概率；
+- 将 KV 缓存卸载到 GPU 内存：把上下文缓存尽量放到显存中，通常能提升生成速度。
 
-点击选择要加载的模型
+<a href="images/2026-08-01-00-48-14.png" target="_blank"><img src="images/2026-08-01-00-48-14.png" alt="显卡与 KV 缓存设置" style="max-width: 100%; width: 1000px;"/></a>
 
-<a href="images/2026-08-01-00-55-15.png" target="_blank"> <img src="images/2026-08-01-00-55-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+如果没有识别到 CUDA 显卡，请先检查 NVIDIA 驱动是否正常安装。此时仍可使用 CPU 运行模型，但速度会慢很多。
 
-勾选手动选择模型参数，然后选择最基础的第一个试试能不能行
+## 五、加载模型并完成首次对话
 
-<a href="images/2026-08-01-00-57-01.png" target="_blank"> <img src="images/2026-08-01-00-57-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+点击顶部的模型选择器，选择刚刚下载的模型：
 
-上下文长度：8192，保持不变。
-GPU 卸载：32，已经拉到最右边，代表全部层尽量放进显卡，保持不变。
-预计显存占用 3.73GB
-勾选 Remember settings for qwen3.5-4b，以后加载这个模型不用重复设置。
-Show advanced settings 更加详尽的设置，目前只是测试能不能成功运行，暂时不用开启。
-设置好后点击加载模型
+<a href="images/2026-08-01-00-55-15.png" target="_blank"><img src="images/2026-08-01-00-55-15.png" alt="选择要加载的模型" style="max-width: 100%; width: 1000px;"/></a>
 
-<a href="images/2026-08-01-01-00-34.png" target="_blank"> <img src="images/2026-08-01-01-00-34.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+首次加载建议勾选手动设置模型参数，先使用最基础的预设确认模型是否可以正常运行：
 
-如果没有选择成功，就点击上面这个再选一下
+<a href="images/2026-08-01-00-57-01.png" target="_blank"><img src="images/2026-08-01-00-57-01.png" alt="模型加载参数" style="max-width: 100%; width: 1000px;"/></a>
 
-<a href="images/2026-08-01-01-01-55.png" target="_blank"> <img src="images/2026-08-01-01-01-55.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+对于前面的 Qwen3.5-4B 示例，可使用以下设置：
 
-然后发一句话试试：请用中文介绍你自己，并说明你能完成哪些任务。可以看到成功运行
+- **上下文长度**：保持 `8192`；
+- **GPU 卸载**：保持 `32`。滑到最右侧表示尽可能将模型层放入显卡；
+- **预计显存占用**：约 `3.73GB`，可作为是否适配当前设备的参考；
+- **Remember settings for qwen3.5-4b**：勾选后，下次加载该模型无需重复设置；
+- **Show advanced settings**：首次验证运行时不必开启。
 
-<a href="images/2026-08-01-01-03-11.png" target="_blank"> <img src="images/2026-08-01-01-03-11.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+设置完成后点击加载模型：
 
-如果要运行更大的模型比如 9b 的这个，就要适当的拉低一些设置，比如上下文改为 4096，打开拓展设置，Max Concurrent Predictions：4 → 1
-这是同时生成回答的数量个人聊天只需要 1，
+<a href="images/2026-08-01-01-00-34.png" target="_blank"><img src="images/2026-08-01-01-00-34.png" alt="加载模型" style="max-width: 100%; width: 1000px;"/></a>
 
-评估批处理大小：2048 → 512
-2048 对 9B＋8GB 显存过于激进。先设 512，稳定后可以尝试 1024。
-Physical Batch Size：512 → 256
+如果顶部模型选择器没有切换成功，点击图中的按钮重新选择一次：
 
-<a href="images/2026-08-01-01-10-35.png" target="_blank"> <img src="images/2026-08-01-01-10-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-01-01-55.png" target="_blank"><img src="images/2026-08-01-01-01-55.png" alt="重新选择已加载模型" style="max-width: 100%; width: 1000px;"/></a>
+
+随后输入一条简单的测试消息，例如：
+
+> 请用中文介绍你自己，并说明你能完成哪些任务。
+
+能够正常生成中文回复，就说明本地模型已经成功运行。
+
+<a href="images/2026-08-01-01-03-11.png" target="_blank"><img src="images/2026-08-01-01-03-11.png" alt="本地模型成功运行" style="max-width: 100%; width: 1000px;"/></a>
+
+## 六、8GB 显存尝试 9B 模型
+
+8GB 显存运行 9B 模型属于较紧张的配置。若加载失败、显存不足或生成不稳定，可以在加载页面适当降低参数：
+
+- **上下文长度**：`8192` 调整为 `4096`；
+- 在高级设置中，将 **Max Concurrent Predictions** 从 `4` 改为 `1`。个人对话通常只需要同时生成一个回复；
+- 将 **评估批处理大小** 从 `2048` 降至 `512`。稳定后可以再尝试提升到 `1024`；
+- 将 **Physical Batch Size** 从 `512` 降至 `256`。
+
+这些调整会牺牲一部分吞吐量，换取更低的峰值显存占用和更好的稳定性。不同模型、量化版本和后台程序的资源占用并不相同，应以 LM Studio 显示的预计显存占用与实际运行情况为准。
+
+<a href="images/2026-08-01-01-10-35.png" target="_blank"><img src="images/2026-08-01-01-10-35.png" alt="9B 模型的高级加载设置" style="max-width: 100%; width: 1000px;"/></a>
+
+至此，Windows 上的本地模型运行环境已经准备完成。下一步可以继续配置本地 API 服务，让其他工具也能调用这个模型。
