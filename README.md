@@ -69,11 +69,20 @@ hugo server -D
 
 ## ✍️ 写作流程
 
-1. 在 `content/post/分类/` 下创建文章文件夹
-2. 创建 `index.md` 作为文章主文件
-3. 图片放在同级的 `images/` 文件夹中
-4. 提交并推送到 GitHub
-5. GitHub Actions 自动构建部署
+本站固定使用三种文章模板体系：
+
+1. **普通单篇文章**：一个 `index.md` 完整承载内容
+2. **专题总分架构**：一篇公开主指南聚合多篇可搜索的隐藏子文章
+3. **项目介绍文档**：一个 `_index.md` 配合多个带导航的项目子页面
+
+新建文章前必须先阅读 [文章模板体系](docs/文章模板.md)，按其中的判断规则选择一种，并复制 `templates/` 下的对应模板。
+
+选定模板后：
+
+1. 在 `content/post/` 的对应分类下创建内容
+2. 图片放在内容同级的 `images/` 文件夹中
+3. 按模板的发布前清单检查并运行 `hugo`
+4. 提交并推送到 GitHub，由 GitHub Actions 自动构建部署
 
 详细教程见：[GitHub 个人博客搭建教程](https://sign-river.github.io/p/github-blog-tutorial/)
 
