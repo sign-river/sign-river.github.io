@@ -10,7 +10,7 @@ tags:
   - "并行开发"
   - "本地开发"
   - "Git"
-draft: true
+draft: false
 slug: "codex-parallel-development"
 ---
 
