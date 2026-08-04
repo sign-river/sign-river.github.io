@@ -1388,3 +1388,60 @@
     }
   }
 }
+
+
+/* ========== 合集主指南：子文章跳转卡片 ========== */
+.is-guide .article-content ul:has(> li > a) {
+  list-style: none;
+  padding-left: 0;
+
+  > li {
+    margin: 0.7em 0;
+
+    > a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 16px;
+      border: 1px solid var(--card-separator-color);
+      border-radius: 8px;
+      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.05);
+      color: var(--card-text-color-main);
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.45;
+      text-decoration: none;
+      box-shadow: none !important;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+
+      &::after {
+        content: "→";
+        margin-left: auto;
+        flex: 0 0 auto;
+        color: var(--accent-color);
+        font-weight: 700;
+      }
+
+      &:hover {
+        background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
+        border-color: var(--accent-color);
+        box-shadow: none !important;
+        transform: translateX(3px);
+      }
+    }
+  }
+}
+
+/* 暗色模式：提升卡片对比度 */
+[data-scheme="dark"] .is-guide .article-content ul:has(> li > a) > li > a {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: var(--accent-color);
+  }
+}

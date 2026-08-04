@@ -1,4 +1,4 @@
-<article class="{{ if .Params.image }}has-image {{ end }}main-article">
+<article class="{{ if .Params.image }}has-image {{ end }}main-article{{ if and .Params.related_group (not .Params.guide) }} is-guide{{ end }}">
     {{ partial "article/components/header" . }}
 
     {{ partial "article/components/content" . }}
