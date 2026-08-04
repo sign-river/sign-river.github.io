@@ -12,6 +12,11 @@ tags:
   - "API 密钥"
 draft: false
 slug: "ccswitch-faroapi-codex-login"
+related_group: "ccswitch"
+hidden: true
+searchable: true
+guide: "/p/ccswitch-guide/"
+guide_title: "CC Switch 使用指南"
 ---
 
 本文以 Windows 和 CC Switch v3.18.0 为例，介绍如何将 Faro API 提供的 API 密钥添加到 CC Switch，并让 Codex 桌面版使用这套配置。后续需要更换接口或密钥时，也可以直接在 CC Switch 中统一管理。

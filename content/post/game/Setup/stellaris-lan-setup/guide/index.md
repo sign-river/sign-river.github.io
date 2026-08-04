@@ -14,6 +14,8 @@ tags:
   - "网络配置"
 draft: false
 slug: "stellaris-lan-openvpn-guide"
+related_group: "stellaris-lan-setup"
+content_richness: 100
 ---
 
 ## 1. 引言

@@ -4,6 +4,7 @@ date: 2026-02-22
 description: "基于 Ubuntu 24.04 64 位的 OpenVPN 虚拟局域网搭建教程"
 draft: false
 slug: "stellaris-lan-openvpn-ubuntu"
+related_group: "stellaris-lan-setup"
 hidden: true
 searchable: true
 guide: "/p/stellaris-lan-openvpn-guide/"

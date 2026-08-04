@@ -4,6 +4,7 @@ date: 2026-02-11
 description: "基于 CentOS 7 的 OpenVPN 虚拟局域网搭建教程（旧版，仅供参考）"
 draft: false
 slug: "stellaris-lan-openvpn-centos"
+related_group: "stellaris-lan-setup"
 hidden: true
 searchable: true
 guide: "/p/stellaris-lan-openvpn-guide/"
