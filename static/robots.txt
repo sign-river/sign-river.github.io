@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sign-river.github.io/sitemap.xml
-Sitemap: https://sign-river.github.io/sitemap-pages.txt
+Sitemap: https://ysy.fan/sitemap.xml
+Sitemap: https://ysy.fan/sitemap-pages.txt

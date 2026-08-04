@@ -2,7 +2,7 @@
 
 我的个人技术博客，使用 Hugo + Stack 主题搭建，托管在 GitHub Pages。
 
-🔗 **在线访问**：[https://sign-river.github.io](https://sign-river.github.io)
+🔗 **在线访问**：[https://ysy.fan](https://ysy.fan)
 
 ---
 
@@ -84,7 +84,7 @@ hugo server -D
 3. 按模板的发布前清单检查并运行 `hugo`
 4. 提交并推送到 GitHub，由 GitHub Actions 自动构建部署
 
-详细教程见：[GitHub 个人博客搭建教程](https://sign-river.github.io/p/github-blog-tutorial/)
+详细教程见：[GitHub 个人博客搭建教程](https://ysy.fan/p/github-blog-tutorial/)
 
 ## 🔄 更新主题
 
