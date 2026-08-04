@@ -1,6 +1,6 @@
 ---
 title: "解决 Google Search Console 无法抓取 GitHub Pages 站点地图"
-date: 2026-08-05
+date: 2026-08-04
 description: "记录 GitHub Pages 站点地图在 Google Search Console 中长期显示“无法抓取”的排查过程与可行解决方案。"
 categories:
   - "系统"
@@ -11,7 +11,7 @@ tags:
   - "SEO"
   - "站点维护"
   - "自定义域名"
-draft: true
+draft: false
 slug: "github-pages-google-sitemap-fix"
 related_group: "hugo-site-maintenance"
 hidden: true
@@ -19,6 +19,7 @@ searchable: true
 guide: "/p/blog-site-maintenance-guide/"
 guide_title: "Hugo 博客搭建与维护指南"
 ---
+
 本文记录 GitHub Pages 博客的站点地图在 Google Search Console 中长期显示“无法抓取”的排查过程与最终解决方案，供遇到同样问题的朋友参考。
 
 ## 1. 问题现象

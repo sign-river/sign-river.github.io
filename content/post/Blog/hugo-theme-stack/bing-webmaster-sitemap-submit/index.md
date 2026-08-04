@@ -1,6 +1,6 @@
 ---
 title: "在 Bing Webmaster Tools 提交站点地图"
-date: 2026-08-05
+date: 2026-08-04
 description: "介绍如何将 GitHub Pages 博客提交到 Bing Webmaster Tools：添加站点、完成验证并提交站点地图，让 Bing 快速收录。"
 categories:
   - "系统"
@@ -11,7 +11,7 @@ tags:
   - "GitHub Pages"
   - "SEO"
   - "站点维护"
-draft: true
+draft: false
 slug: "bing-webmaster-sitemap-submit"
 related_group: "hugo-site-maintenance"
 hidden: true
@@ -19,6 +19,7 @@ searchable: true
 guide: "/p/blog-site-maintenance-guide/"
 guide_title: "Hugo 博客搭建与维护指南"
 ---
+
 本文介绍如何将 GitHub Pages 博客提交到 Bing Webmaster Tools，几分钟即可完成站点验证与站点地图提交，让 Bing 快速收录你的内容。
 
 本文是《[解决 Google Search Console 无法抓取 GitHub Pages 站点地图](/p/github-pages-google-sitemap-fix/)》的姊妹篇，记录 Bing 侧的提交流程。
