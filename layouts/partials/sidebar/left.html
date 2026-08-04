@@ -111,8 +111,7 @@
     </li>
     {{ end }} {{/* ===== 站点统计 ===== */}}
     <li class="sidebar-stats-wrapper">
-      {{- $pages := where .Site.RegularPages "Type" "in"
-      .Site.Params.mainSections -}} {{- $totalWords := 0 -}} {{- range $pages
+      {{- $pages := where .Site.RegularPages "Section" "post" -}} {{- $totalWords := 0 -}} {{- range $pages
       -}} {{- $totalWords = add $totalWords .WordCount -}} {{- end -}}
       <div class="sidebar-stats">
         <div class="sidebar-stats-item">
