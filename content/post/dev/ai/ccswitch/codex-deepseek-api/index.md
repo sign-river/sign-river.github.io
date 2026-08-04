@@ -44,7 +44,8 @@ guide_title: "CC Switch 使用指南"
 
 双击下载的 `.msi` 文件运行安装程序。在安装向导中点击 **Next**，按提示完成安装。
 
-<a href="images/2026-07-25-00-20-55.png" target="_blank" rel="noopener"><img src="images/2026-07-25-00-20-55.png" alt="CC Switch 安装向导" style="max-width: 100%; width: 600px;"/></a>
+<a href="images/2026-07-25-00-20-55.png" target="_blank" rel="noopener"><img src="images/2026-07-25-00-20-55.png" alt="CC Switch 安装向导" style="max-width: 30
+%; width: 600px;"/></a>
 
 安装完成后打开 CC Switch。程序首次启动时可能停留在 **Claude Code** 页面，这是正常现象。
 
@@ -99,8 +100,10 @@ DeepSeek V4 Pro 目前尚未适配 Codex，可以将其删除。
 
 彻底退出 Codex 后重新打开。
 
-<a href="images/2026-08-04-22-17-56.png" target="_blank"> <img src="images/2026-08-04-22-17-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-08-04-22-17-56.png" target="_blank"> <img src="images/2026-08-04-22-17-56.png" alt="image" style="max-width: 40%; width: 1000px;"/> </a>
+
 重新打开后，即可在 Codex 中成功使用 DeepSeek。
+
 <a href="images/2026-08-04-22-18-35.png" target="_blank"> <img src="images/2026-08-04-22-18-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 5. 总结
