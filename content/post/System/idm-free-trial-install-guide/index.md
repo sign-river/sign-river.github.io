@@ -1,5 +1,5 @@
 ---
-title: "IDM 免费使用安装指南"
+title: "IDM 破解安装指南"
 date: 2026-07-28
 description: "介绍如何获取并激活 Internet Download Manager（IDM）"
 categories:

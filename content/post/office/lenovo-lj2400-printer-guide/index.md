@@ -73,23 +73,23 @@ LJ2400 通过 USB 连接电脑，纸张由前方纸盒送入，并从顶部出�
 
 按 `Win + X`，打开“设备管理器”，再展开“通用串行总线控制器”。确认其中显示 **Lenovo LJ2400** 后，再继续安装驱动；若未显示该设备，请先检查 USB 数据线和接口。
 
-<a href="images/2026-08-01-19-34-59.png" target="_blank"> <img src="images/2026-08-01-19-34-59.png" alt="从 Win+X 菜单打开设备管理器" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-34-59.png" target="_blank"> <img src="images/2026-08-01-19-34-59.png" alt="从 Win+X 菜单打开设备管理器" style="max-width: 40%; width: 1000px;"/> </a>
 
-<a href="images/2026-08-01-19-35-40.png" target="_blank"> <img src="images/2026-08-01-19-35-40.png" alt="设备管理器中显示 Lenovo LJ2400" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-35-40.png" target="_blank"> <img src="images/2026-08-01-19-35-40.png" alt="设备管理器中显示 Lenovo LJ2400" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 3.2. 下载并准备驱动
 
 打开 [联想打印机驱动下载页](https://www.lenovoimage.com/index.php/services/servers_driver)，搜索 `LJ2400`，下载与系统版本对应的驱动包并解压。
 
-<a href="images/2026-08-01-19-38-09.png" target="_blank"> <img src="images/2026-08-01-19-38-09.png" alt="联想打印机驱动下载页面搜索 LJ2400" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-38-09.png" target="_blank"> <img src="images/2026-08-01-19-38-09.png" alt="联想打印机驱动下载页面搜索 LJ2400" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="images/2026-08-01-19-38-39.png" target="_blank"> <img src="images/2026-08-01-19-38-39.png" alt="LJ2400 驱动下载结果" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-38-39.png" target="_blank"> <img src="images/2026-08-01-19-38-39.png" alt="LJ2400 驱动下载结果" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="images/2026-08-01-19-44-01.png" target="_blank"> <img src="images/2026-08-01-19-44-01.png" alt="解压后的 LJ2400 驱动文件" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-44-01.png" target="_blank"> <img src="images/2026-08-01-19-44-01.png" alt="解压后的 LJ2400 驱动文件" style="max-width: 100%; width: 1000px;"/> </a>
 
 建议将解压后的文件夹移至全英文路径，例如 `C:\LJ2400`，以免旧版安装程序因路径包含中文而无法启动。
 
-<a href="images/2026-08-01-19-46-05.png" target="_blank"> <img src="images/2026-08-01-19-46-05.png" alt="将驱动文件放在全英文路径" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-46-05.png" target="_blank"> <img src="images/2026-08-01-19-46-05.png" alt="将驱动文件放在全英文路径" style="max-width: 100%; width: 1000px;"/> </a>
 
 ### 3.3. 运行安装程序
 
@@ -98,7 +98,7 @@ LJ2400 通过 USB 连接电脑，纸张由前方纸盒送入，并从顶部出�
 3. 选择“打印机驱动程序”，在许可证协议提示中选择“是”。
 4. 按安装向导提示点击“下一步”，等待安装完成；注册页面可直接跳过。
 
-<a href="images/2026-08-01-19-48-16.png" target="_blank"> <img src="images/2026-08-01-19-48-16.png" alt="以管理员身份运行 start.exe" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-48-16.png" target="_blank"> <img src="images/2026-08-01-19-48-16.png" alt="以管理员身份运行 start.exe" style="max-width: 100%; width: 1000px;"/> </a>
 
 <a href="images/2026-08-01-19-53-06.png" target="_blank"> <img src="images/2026-08-01-19-53-06.png" alt="驱动程序中选择 LJ2400" style="max-width: 50%; width: 1000px;"/> </a>
 
@@ -106,15 +106,15 @@ LJ2400 通过 USB 连接电脑，纸张由前方纸盒送入，并从顶部出�
 
 <a href="images/2026-08-01-19-54-19.png" target="_blank"> <img src="images/2026-08-01-19-54-19.png" alt="选择打印机驱动程序" style="max-width: 50%; width: 1000px;"/> </a>
 
-<a href="images/2026-08-01-19-54-42.png" target="_blank"> <img src="images/2026-08-01-19-54-42.png" alt="接受打印机驱动安装的许可证协议" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-54-42.png" target="_blank"> <img src="images/2026-08-01-19-54-42.png" alt="接受打印机驱动安装的许可证协议" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="images/2026-08-01-19-55-30.png" target="_blank"> <img src="images/2026-08-01-19-55-30.png" alt="选择安装类型：标准或自定义" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-55-30.png" target="_blank"> <img src="images/2026-08-01-19-55-30.png" alt="选择安装类型：标准或自定义" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="images/2026-08-01-19-58-46.png" target="_blank"> <img src="images/2026-08-01-19-58-46.png" alt="跳过驱动注册" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-58-46.png" target="_blank"> <img src="images/2026-08-01-19-58-46.png" alt="跳过驱动注册" style="max-width: 100%; width: 1000px;"/> </a>
 
 安装完成后点击“完成”，然后退出安装程序。
 
-<a href="images/2026-08-01-19-59-42.png" target="_blank"> <img src="images/2026-08-01-19-59-42.png" alt="完成 LJ2400 驱动安装" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-19-59-42.png" target="_blank"> <img src="images/2026-08-01-19-59-42.png" alt="完成 LJ2400 驱动安装" style="max-width: 100%; width: 1000px;"/> </a>
 
 <a href="images/2026-08-01-20-00-08.png" target="_blank"> <img src="images/2026-08-01-20-00-08.png" alt="退出 LJ2400 驱动安装程序" style="max-width: 50%; width: 1000px;"/> </a>
 
@@ -122,7 +122,7 @@ LJ2400 通过 USB 连接电脑，纸张由前方纸盒送入，并从顶部出�
 
 依次打开“设置 → 蓝牙和设备 → 打印机和扫描仪”，选择 **Lenovo LJ2400**，点击“打印测试页”。测试页能正常输出，即表示驱动已安装完成。
 
-<a href="images/2026-08-01-20-01-44.png" target="_blank"> <img src="images/2026-08-01-20-01-44.png" alt="Windows 中的 Lenovo LJ2400 打印机设置" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-20-01-44.png" target="_blank"> <img src="images/2026-08-01-20-01-44.png" alt="Windows 中的 Lenovo LJ2400 打印机设置" style="max-width: 100%; width: 1000px;"/> </a>
 
 <a href="images/2026-08-01-20-03-28.png" target="_blank"> <img src="images/2026-08-01-20-03-28.png" alt="LJ2400 成功打印测试页" style="max-width: 50%; width: 1000px;"/> </a>
 
@@ -134,9 +134,9 @@ LJ2400 需要通过驱动提供的手动双面功能完成双面打印。**重�
 2. 设置打印页码范围，勾选“双面打印”，并选择“长边翻页”。
 3. 点击“打印”，在第一个提示框中点击“确定”。打印机将先输出奇数页。
 
-<a href="images/2026-08-01-20-20-04.png" target="_blank"> <img src="images/2026-08-01-20-20-04.png" alt="WPS 中启用双面打印并选择长边翻页" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-20-20-04.png" target="_blank"> <img src="images/2026-08-01-20-20-04.png" alt="WPS 中启用双面打印并选择长边翻页" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="images/2026-08-01-20-21-50.png" target="_blank"> <img src="images/2026-08-01-20-21-50.png" alt="手动双面打印的第一个提示框" style="max-width: 50%; width: 1000px;"/> </a>
+<a href="images/2026-08-01-20-21-50.png" target="_blank"> <img src="images/2026-08-01-20-21-50.png" alt="手动双面打印的第一个提示框" style="max-width: 100%; width: 1000px;"/> </a>
 
 4. 全部奇数页输出完毕后，再处理第二个提示框。取出纸张时请保持整叠纸的顺序不变。
 5. 打开纸盒，将纸张以**已打印面朝上**的方向放回；纸张顶部应朝向远离打印机的一侧。调整导轨后，将纸盒推回打印机。

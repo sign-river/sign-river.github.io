@@ -40,7 +40,7 @@ slug: "codex-parallel-development"
 
 多个任务并行执行后的效果如下：
 
-<a href="images/2026-07-31-22-01-38.png" target="_blank"> <img src="images/2026-07-31-22-01-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-07-31-22-01-38.png" target="_blank"> <img src="images/2026-07-31-22-01-38.png" alt="image" style="max-width: 50%; width: 1000px;"/> </a>
 
 ### 1.2 要求每个任务完成收尾
 
