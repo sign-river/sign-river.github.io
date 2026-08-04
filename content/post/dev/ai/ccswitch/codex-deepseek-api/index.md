@@ -11,7 +11,7 @@ tags:
   - "API"
   - "AI 编程"
   - "配置"
-draft: true
+draft: false
 slug: "codex-deepseek-api"
 related_group: "ccswitch"
 hidden: true

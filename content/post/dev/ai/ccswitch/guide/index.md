@@ -10,7 +10,7 @@ tags:
   - "API"
   - "DeepSeek"
   - "Faro API"
-draft: true
+draft: false
 slug: "ccswitch-guide"
 related_group: "ccswitch"
 content_richness: 100
