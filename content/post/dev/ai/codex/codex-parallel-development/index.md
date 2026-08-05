@@ -12,6 +12,11 @@ tags:
   - "Git"
 draft: false
 slug: "codex-parallel-development"
+related_group: "codex"
+hidden: true
+searchable: true
+guide: "/p/codex-guide/"
+guide_title: "Codex 使用指南"
 ---
 
 本文演示如何借助本地 Codex 和 Git 工作树，让多个对话同时推进同一个项目中的不同任务。核心原则是先划分清楚任务边界，再分别开发、提交和合并。

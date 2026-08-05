@@ -1,7 +1,7 @@
 ---
-title: "使用 CC Switch 管理 Faro API 密钥并登录 Codex 桌面版"
+title: "使用 CC Switch 在 Codex 中接入 Faro API"
 date: 2026-07-25T00:00:00+08:00
-description: "介绍如何在 Windows 上安装 CC Switch，添加并测试 Faro API 配置，再通过 API 密钥登录 Codex 桌面版。"
+description: "介绍如何在 Codex 中配置并接入 Faro API，通过 API 密钥登录 Codex 桌面版。"
 categories:
   - "开发"
 tags:
@@ -11,12 +11,12 @@ tags:
   - "GPT"
   - "API 密钥"
 draft: false
-slug: "ccswitch-faroapi-codex-login"
-related_group: "ccswitch"
+slug: "codex-faroapi-api"
+related_group: "codex"
 hidden: true
 searchable: true
-guide: "/p/ccswitch-guide/"
-guide_title: "CC Switch 使用指南"
+guide: "/p/codex-guide/"
+guide_title: "Codex 使用指南"
 ---
 
 本文以 Windows 和 CC Switch v3.18.0 为例，介绍如何将 Faro API 提供的 API 密钥添加到 CC Switch，并让 Codex 桌面版使用这套配置。后续需要更换接口或密钥时，也可以直接在 CC Switch 中统一管理。

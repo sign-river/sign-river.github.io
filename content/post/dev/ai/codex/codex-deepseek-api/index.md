@@ -13,11 +13,11 @@ tags:
   - "配置"
 draft: false
 slug: "codex-deepseek-api"
-related_group: "ccswitch"
+related_group: "codex"
 hidden: true
 searchable: true
-guide: "/p/ccswitch-guide/"
-guide_title: "CC Switch 使用指南"
+guide: "/p/codex-guide/"
+guide_title: "Codex 使用指南"
 ---
 
 本文以 Windows 和 CC Switch v3.18.0 为例，介绍如何使用 CC Switch 在 Codex 中接入 DeepSeek API，让 Codex 使用 DeepSeek 提供的模型进行对话与编程。
