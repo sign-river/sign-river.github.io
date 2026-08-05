@@ -7,3 +7,4 @@ assets/jsconfig.json
 # 本地 Hugo 服务器运行日志
 .hugo-server.log
 .hugo-server-error.log
+__pycache__/
