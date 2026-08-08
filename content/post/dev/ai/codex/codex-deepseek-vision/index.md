@@ -51,6 +51,10 @@ DeepSeek 基于描述回答
 
 <a href="images/2026-08-05-23-01-31.png" target="_blank"> <img src="images/2026-08-05-23-01-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
+如果没有 python，则执行 `winget install Python.Python.3.12` 安装
+
+<a href="images/2026-08-08-21-34-59.png" target="_blank"> <img src="images/2026-08-08-21-34-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 ## 二、安装 agent-vision
 
 `agent-vision` 是一个「视觉桥」——给纯文本模型（比如 DeepSeek）外挂一双眼睛，让它在图片到达之前，先把图片翻译成文字描述。
