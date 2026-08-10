@@ -1,0 +1,18 @@
+﻿{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{{- $pages := slice .Site.Home }}
+{{- range .Site.RegularPages }}
+  {{- $skip := or (eq .Layout "search") (isset .Params "redirect_to") (eq .Params.sitemap_exclude true) (eq .Params.noindex true) }}
+  {{- if not $skip }}
+    {{- $pages = $pages | append . }}
+  {{- end }}
+{{- end }}
+{{- range $pages }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+    {{- end }}
+  </url>
+{{- end }}
+</urlset>

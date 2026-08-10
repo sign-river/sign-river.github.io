@@ -1,4 +1,5 @@
-{{- printf "%s\n" .Site.Home.Permalink -}}
+﻿{{- printf "%s\n" .Site.Home.Permalink -}}
 {{- range .Site.RegularPages -}}
-{{ printf "%s\n" .Permalink -}}
+{{- $skip := or (eq .Layout "search") (isset .Params "redirect_to") (eq .Params.sitemap_exclude true) (eq .Params.noindex true) -}}
+{{- if not $skip }}{{ printf "%s\n" .Permalink }}{{ end -}}
 {{- end -}}
