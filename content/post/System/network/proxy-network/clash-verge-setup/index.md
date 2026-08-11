@@ -1,5 +1,5 @@
 ---
-title: "Clash Verge 个人节点搭建完整教程"
+title: "Vultr 搭建 VLESS+Reality 节点完整教程"
 date: 2026-02-11
 description: "从零开始搭建个人代理节点，涵盖 VPS 选购、3x-ui 面板安装到 Clash Verge 客户端配置"
 categories:
@@ -14,6 +14,11 @@ tags:
   - "服务器"
 draft: false
 slug: "clash-verge-setup-tutorial"
+related_group: "proxy-network"
+hidden: true
+searchable: true
+guide: "/p/proxy-network-guide/"
+guide_title: "自建节点与国内中转绕网指南"
 ---
 
 ## 1. 引言
