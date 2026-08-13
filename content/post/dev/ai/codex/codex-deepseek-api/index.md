@@ -85,9 +85,6 @@ API Key 只会完整显示一次；如果第一次生成后不小心丢失，也
 
 <a href="images/2026-08-04-22-14-38.png" target="_blank"> <img src="images/2026-08-04-22-14-38.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-DeepSeek V4 Pro 目前尚未适配 Codex，可以将其删除。
-<a href="images/2026-08-04-22-15-42.png" target="_blank"> <img src="images/2026-08-04-22-15-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
-
 全部设置完成后点击 **添加**。
 
 <a href="images/2026-08-04-22-16-32.png" target="_blank"> <img src="images/2026-08-04-22-16-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
