@@ -13,7 +13,7 @@ tags:
   - "VLESS"
   - "Reality"
   - "Clash Verge"
-draft: true
+draft: false
 slug: "frp-aliyun-bandwagon-relay"
 related_group: "proxy-network"
 hidden: true
