@@ -32,12 +32,12 @@ guide_title: "自建节点教程与国内中转绕网指南"
 - 在本次环境中观察到阿里云到搬瓦工的直连存在**握手后数据异常**（握手能过、真实代理数据不稳定）；阿里云主动连、mihomo 直连、FRP 隧道都实际测试过，最终只有 FRP 反向隧道稳定。这个结论是本线路的实测结果，不代表所有阿里云与搬瓦工线路都存在同样策略：隧道由搬瓦工主动发起并长期保持，数据在既有连接上双向流动，因此绕开了直连路径上的异常；
 - 出口仍是**搬瓦工 IP**，因此 Steam、Google 等服务都能正常识别使用。
 
-如果你还没有搬瓦工节点，请先阅读[搬瓦工搭建 VLESS+Reality 节点完整教程](/p/bandwagon-vless-reality-setup/)，完成节点创建并确认直连可用；
+如果你还没有节点，请先阅读[搬瓦工搭建 VLESS+Reality 节点完整教程](/p/bandwagon-vless-reality-setup/)；
 
 **前置条件：**
 
 - 已有一台阿里云大陆服务器（本文以阿里云轻量为例）
-- 已有可正常使用的搬瓦工 VLESS+Reality 节点（面板里"最低客户端版本"记得设为 `1.0.0`，否则 Clash/Mihomo 会报 `REALITY authentication failed`；可先按[搬瓦工节点搭建教程](/p/bandwagon-vless-reality-setup/)完成）
+- 已有可正常使用的搬瓦工 VLESS+Reality 节点
 - 本机已装 Clash Verge（Windows）
 - 会使用 SSH 登录服务器
 
