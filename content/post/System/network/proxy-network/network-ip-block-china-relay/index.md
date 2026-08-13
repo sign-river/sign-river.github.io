@@ -1,7 +1,7 @@
 ---
-title: "网络封锁国外 IP？国内中转服务器绕开封锁完整教程"
+title: "国内中转绕开网络封锁：阿里云 + 一元机场完整教程"
 date: 2026-08-10
-description: "网络封锁国外 IP 导致代理节点全部超时？通过大陆中转服务器 + mihomo + 机场订阅绕开封锁，并实现节点自动更新的完整教程"
+description: "通过阿里云大陆服务器作为入口，使用 mihomo 转发一元机场订阅的海外出口，绕开网络封锁并实现节点自动更新。"
 categories:
   - "系统"
 tags:
@@ -18,7 +18,7 @@ related_group: "proxy-network"
 hidden: true
 searchable: true
 guide: "/p/proxy-network-guide/"
-guide_title: "自建节点与国内中转绕网指南"
+guide_title: "自建节点教程与国内中转绕网指南"
 ---
 
 ## 写在前面
@@ -27,9 +27,11 @@ guide_title: "自建节点与国内中转绕网指南"
 
 相比直接购买机场的"国内中转入口"，自己养一台中转机的优势是：出口可以自由组合（自建节点 / 任意机场）、线路可控、不依赖机场附带的入口。
 
+如果你还没有海外自建节点，可以先阅读[搬瓦工搭建 VLESS+Reality 节点完整教程](/p/bandwagon-vless-reality-setup/)；
+
 > **前置条件**
 >
-> - 一个可用的海外出口：自建节点（如搬瓦工）或机场订阅（本文以一元机场为例）
+> - 一个可用的海外出口：机场订阅（本文以一元机场为例）；如果使用自建节点，请先完成[搬瓦工 VLESS+Reality 节点搭建](/p/bandwagon-vless-reality-setup/)
 > - 一台国内大陆服务器（本文以阿里云轻量为例，月付试水）
 > - 本机已安装 Clash Verge（Windows）
 

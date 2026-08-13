@@ -27,7 +27,8 @@ content_richness: 100
 
 ## 2. 受限网络环境下绕网
 
-- [网络封锁国外 IP？国内中转服务器绕开封锁完整教程](/p/network-ip-block-china-relay/)
+- [国内中转绕开网络封锁：阿里云 + 一元机场完整教程](/p/network-ip-block-china-relay/)
+- [国内中转绕开网络封锁：阿里云 + 搬瓦工 FRP 完整教程](/p/frp-aliyun-bandwagon-relay/)
 
 ## 3. 仍未解决
 

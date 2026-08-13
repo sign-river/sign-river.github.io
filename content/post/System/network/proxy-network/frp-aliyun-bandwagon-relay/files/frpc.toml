@@ -1,0 +1,13 @@
+# frpc.toml —— 搬瓦工（frp 客户端）
+# 部署路径：/etc/frp/frpc.toml
+serverAddr = "<阿里云公网IP>"
+serverPort = 7000
+auth.method = "token"
+auth.token = "<设置一个和frps一致的token>"
+
+[[proxies]]
+name = "bandwagon-443"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 443
+remotePort = 443
