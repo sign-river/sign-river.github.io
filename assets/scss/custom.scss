@@ -1390,6 +1390,246 @@
 }
 
 
+
+/* ========== 正文链接：普通跳转与文件下载独立样式 ========== */
+.article-content {
+  /* 普通站内/站外链接：常态即有轻量胶囊底色，不再只靠下划线识别。 */
+  a.content-link--internal,
+  a.content-link--external {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+    /* 为链接后的中文标点预留空间，避免窄屏时标点单独掉到下一行。 */
+    max-width: calc(100% - 1.35em);
+    padding: 0.08em 0.34em 0.12em;
+    border: 1px solid rgba(var(--accent-color-rgb, 51, 51, 51), 0.16);
+    border-radius: 0.42em;
+    background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.07);
+    box-shadow: none;
+    color: var(--accent-color);
+    font-weight: 560;
+    line-height: 1.55;
+    text-decoration: none;
+    vertical-align: middle;
+    transition:
+      color 0.18s ease,
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      box-shadow 0.18s ease;
+
+    .content-link__text {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    &::after {
+      flex: 0 0 auto;
+      margin-left: 0.04em;
+      color: currentColor;
+      font-size: 0.78em;
+      font-weight: 750;
+      line-height: 1;
+      opacity: 0.72;
+      transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    &:hover {
+      border-color: rgba(var(--accent-color-rgb, 51, 51, 51), 0.42);
+      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.13);
+      box-shadow: 0 2px 8px rgba(var(--accent-color-rgb, 51, 51, 51), 0.1);
+      color: var(--accent-color-darker);
+
+      &::after {
+        opacity: 1;
+        transform: translateX(2px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+  }
+
+  a.content-link--internal::after {
+    content: "›";
+  }
+
+  a.content-link--external::after {
+    content: "↗";
+  }
+
+  /* 文件链接：使用独立的下载按钮，显示下载图标与文件类型。 */
+  a.content-link--download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.58em;
+    max-width: 100%;
+    margin: 0.18em 0.08em;
+    padding: 0.54em 0.7em 0.54em 0.58em;
+    border: 1px solid rgba(var(--accent-color-rgb, 51, 51, 51), 0.28);
+    border-radius: 10px;
+    background: linear-gradient(
+      135deg,
+      rgba(var(--accent-color-rgb, 51, 51, 51), 0.13),
+      rgba(var(--accent-color-rgb, 51, 51, 51), 0.055)
+    );
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    color: var(--card-text-color-main);
+    font-weight: 650;
+    line-height: 1.35;
+    text-decoration: none;
+    vertical-align: middle;
+    transition:
+      color 0.18s ease,
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      box-shadow 0.18s ease,
+      transform 0.18s ease;
+
+    .content-link__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.9em;
+      height: 1.9em;
+      flex: 0 0 auto;
+      border-radius: 7px;
+      background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.14);
+      color: var(--accent-color);
+      transition:
+        background-color 0.18s ease,
+        transform 0.18s ease;
+
+      svg {
+        width: 1.12em;
+        height: 1.12em;
+      }
+    }
+
+    .content-link__text {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .content-link__type {
+      flex: 0 0 auto;
+      padding: 0.22em 0.48em;
+      border: 1px solid rgba(var(--accent-color-rgb, 51, 51, 51), 0.22);
+      border-radius: 999px;
+      background: var(--card-background);
+      color: var(--accent-color);
+      font-family: var(--code-font-family);
+      font-size: 0.68em;
+      font-weight: 750;
+      letter-spacing: 0.055em;
+      line-height: 1.25;
+    }
+
+    &:hover {
+      border-color: var(--accent-color);
+      background: linear-gradient(
+        135deg,
+        rgba(var(--accent-color-rgb, 51, 51, 51), 0.19),
+        rgba(var(--accent-color-rgb, 51, 51, 51), 0.09)
+      );
+      box-shadow:
+        0 6px 18px rgba(var(--accent-color-rgb, 51, 51, 51), 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      color: var(--accent-color-darker);
+      transform: translateY(-1px);
+
+      .content-link__icon {
+        background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.22);
+        transform: translateY(2px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 3px;
+    }
+  }
+}
+
+[data-scheme="dark"] .article-content {
+  a.content-link--internal,
+  a.content-link--external {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.075);
+
+    &:hover {
+      border-color: rgba(var(--accent-color-rgb, 255, 255, 255), 0.58);
+      background: rgba(255, 255, 255, 0.13);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+    }
+  }
+
+  a.content-link--download {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.055)
+    );
+    box-shadow:
+      0 3px 12px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    .content-link__icon {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .content-link__type {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover {
+      border-color: var(--accent-color);
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.16),
+        rgba(255, 255, 255, 0.08)
+      );
+      box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .article-content a.content-link--download {
+    gap: 0.48em;
+    padding: 0.5em 0.62em 0.5em 0.5em;
+
+    .content-link__icon {
+      width: 1.75em;
+      height: 1.75em;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-content a.content-link {
+    transition: none;
+
+    &::after,
+    .content-link__icon {
+      transition: none;
+    }
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
 /* ========== 合集主指南：子文章跳转卡片 ========== */
 .is-guide .article-content ul:has(> li > a) {
   list-style: none;
@@ -1401,6 +1641,7 @@
     > a {
       display: flex;
       align-items: center;
+      max-width: none;
       gap: 10px;
       padding: 13px 16px;
       border: 1px solid var(--card-separator-color);

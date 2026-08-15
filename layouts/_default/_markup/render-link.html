@@ -1,0 +1,31 @@
+{{- $destination := .Destination -}}
+{{- $destinationLower := lower $destination -}}
+{{- $cleanDestination := replaceRE `[?#].*$` "" $destinationLower -}}
+{{- $extension := path.Ext $cleanDestination -}}
+{{- $downloadExtensions := slice ".7z" ".apk" ".bat" ".cmd" ".conf" ".csv" ".deb" ".dmg" ".doc" ".docx" ".exe" ".gz" ".img" ".ini" ".iso" ".json" ".msi" ".pdf" ".pkg" ".ps1" ".rar" ".rpm" ".sh" ".tar" ".tgz" ".toml" ".txt" ".xls" ".xlsx" ".yaml" ".yml" ".zip" -}}
+{{- $isBundledFile := or (strings.HasPrefix $cleanDestination "files/") (strings.HasPrefix $cleanDestination "/files/") (strings.Contains $cleanDestination "/files/") -}}
+{{- $isDownload := or $isBundledFile (in $downloadExtensions $extension) -}}
+{{- $isExternal := or (strings.HasPrefix $destinationLower "http://") (strings.HasPrefix $destinationLower "https://") (strings.HasPrefix $destinationLower "//") -}}
+{{- $linkKind := "internal" -}}
+{{- if $isDownload -}}
+    {{- $linkKind = "download" -}}
+{{- else if $isExternal -}}
+    {{- $linkKind = "external" -}}
+{{- end -}}
+<a class="link content-link content-link--{{ $linkKind }}" href="{{ $destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $isExternal }} target="_blank" rel="noopener"{{ end }}{{ if and $isDownload (not $isExternal) }} download{{ end }}>
+    {{- if $isDownload -}}
+        <span class="content-link__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v12"></path>
+                <path d="m7 10 5 5 5-5"></path>
+                <path d="M5 21h14"></path>
+            </svg>
+        </span>
+        <span class="content-link__text">{{ .Text | safeHTML }}</span>
+        {{- with $extension }}
+            <span class="content-link__type">{{ strings.TrimPrefix "." . | upper }}</span>
+        {{- end }}
+    {{- else -}}
+        <span class="content-link__text">{{ .Text | safeHTML }}</span>
+    {{- end -}}
+</a>
