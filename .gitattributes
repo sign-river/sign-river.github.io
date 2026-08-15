@@ -1,0 +1,3 @@
+# Preserve Windows batch file bytes so downloadable scripts keep CRLF line endings.
+*.cmd -text whitespace=cr-at-eol
+*.bat -text whitespace=cr-at-eol
