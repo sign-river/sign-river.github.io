@@ -4,12 +4,12 @@ date: 2026-07-27
 description: "汇总群星启动闪退、加载进度卡死、游戏内闪退、黑屏、分辨率异常和联机校验码不一致等常见问题。"
 categories:
   - "报错"
+  - "专题"
 tags:
   - "群星"
   - "Stellaris"
   - "游戏闪退"
   - "联机问题"
-  - "专题指南"
 draft: false
 slug: "stellaris-troubleshooting-guide"
 related_group: "stellaris"

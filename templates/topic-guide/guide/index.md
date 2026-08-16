@@ -4,6 +4,7 @@ date: YYYY-MM-DD
 description: "汇总该专题覆盖的问题、任务或使用场景。"
 categories:
   - "分类"
+  - "专题"
 tags:
   - "主题标签"
 draft: true

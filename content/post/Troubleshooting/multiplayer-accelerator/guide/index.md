@@ -4,11 +4,11 @@ date: 2026-07-27
 description: "汇总联机加速器虚拟网卡安装失败、未检测到网卡、DNS 读取失败、网络电缆断开和节点无法连接等问题。"
 categories:
   - "报错"
+  - "专题"
 tags:
   - "联机加速器"
   - "虚拟网卡"
   - "网络故障"
-  - "专题指南"
 draft: false
 slug: "multiplayer-accelerator-troubleshooting-guide"
 related_group: "multiplayer-accelerator"

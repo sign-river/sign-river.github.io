@@ -4,12 +4,12 @@ date: 2026-07-27
 description: "汇总群星 DLC 补丁包解压异常、DLC 未激活、启动器与游戏内显示不一致，以及启动报错的排查方案。"
 categories:
   - "报错"
+  - "专题"
 tags:
   - "群星"
   - "Stellaris"
   - "DLC 异常"
   - "DLC"
-  - "专题指南"
 draft: false
 slug: "stellaris-dlc-troubleshooting-guide"
 related_group: "stellaris-dlc"

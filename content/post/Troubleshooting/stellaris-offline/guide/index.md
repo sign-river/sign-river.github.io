@@ -4,12 +4,12 @@ date: 2026-07-27
 description: "汇总群星离线版启动闪退、中文设置、修改语言文件后报错，以及 JSGME MOD 未生效等问题。"
 categories:
   - "报错"
+  - "专题"
 tags:
   - "群星"
   - "Stellaris"
   - "离线版"
   - "MOD 异常"
-  - "专题指南"
 draft: false
 slug: "stellaris-offline-troubleshooting-guide"
 related_group: "stellaris-offline"

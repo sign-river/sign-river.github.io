@@ -4,6 +4,7 @@ date: 2026-08-11
 description: "汇总自建代理节点（Vultr / 搬瓦工）与受限网络下国内中转绕网方案。"
 categories:
   - "系统"
+  - "专题"
 tags:
   - "科学上网"
   - "VPS"
@@ -12,7 +13,6 @@ tags:
   - "Reality"
   - "Clash Verge"
   - "socat"
-  - "专题指南"
 draft: false
 slug: "proxy-network-guide"
 related_group: "proxy-network"

@@ -4,11 +4,11 @@ date: 2026-07-27
 description: "汇总 SteamCMD 重复下载、启动闪退、下载失败、更新卡住、HTTPS 与网络错误、登录异常和磁盘空间不足等问题。"
 categories:
   - "报错"
+  - "专题"
 tags:
   - "SteamCMD"
   - "下载失败"
   - "命令行工具"
-  - "专题指南"
 draft: false
 slug: "steamcmd-troubleshooting-guide"
 related_group: "steamcmd"

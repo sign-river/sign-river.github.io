@@ -4,6 +4,7 @@ date: 2026-02-11
 description: "手把手教你搭建专为群星等 P2P 联机游戏优化的虚拟局域网，告别卡顿和不同步"
 categories:
   - "系统"
+  - "专题"
 tags:
   - "群星"
   - "Stellaris"
@@ -12,7 +13,6 @@ tags:
   - "虚拟局域网"
   - "游戏工具"
   - "网络配置"
-  - "专题指南"
 draft: false
 slug: "stellaris-lan-openvpn-guide"
 related_group: "stellaris-lan-setup"

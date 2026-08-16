@@ -4,11 +4,11 @@ date: 2026-07-27
 description: "汇总 Steam 启动游戏缓慢、点击开始后无响应、游戏进程无法关闭和激活异常等常见问题。"
 categories:
   - "报错"
+  - "专题"
 tags:
   - "Steam"
   - "游戏启动"
   - "Steam 故障"
-  - "专题指南"
 draft: false
 slug: "steam-troubleshooting-guide"
 related_group: "steam"

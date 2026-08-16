@@ -5,12 +5,12 @@ description: "从在 Windows 上部署第一个本地模型开始，逐步完成
 slug: "local-llm-from-zero-guide"
 categories:
   - "笔记"
+  - "专题"
 tags:
   - "Windows"
   - "本地模型"
   - "大语言模型"
   - "LLM"
-  - "专题指南"
 related_group: "local-llm-from-zero"
 content_richness: 100
 draft: false

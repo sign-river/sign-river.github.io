@@ -4,13 +4,13 @@ date: 2026-08-05
 description: "按使用目标汇总 Codex 相关文章，涵盖 API 与模型配置、模型能力扩展、开发工作流，以及桌面端常见问题排查。"
 categories:
   - "开发"
+  - "专题"
 tags:
   - "Codex"
   - "CC Switch"
   - "DeepSeek"
   - "API"
   - "AI 编程"
-  - "专题指南"
 draft: false
 slug: "codex-guide"
 related_group: "codex"

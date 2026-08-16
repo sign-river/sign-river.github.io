@@ -4,13 +4,13 @@ date: 2026-07-27
 description: "汇总 Hugo Theme Stack 博客的搭建部署、图片显示、可复用组件、相关文章推荐配置和搜索引擎收录。"
 categories:
   - "系统"
+  - "专题"
 tags:
   - "Hugo"
   - "GitHub Pages"
   - "hugo-theme-stack"
   - "博客搭建"
   - "站点维护"
-  - "专题指南"
 draft: false
 slug: "blog-site-maintenance-guide"
 related_group: "hugo-site-maintenance"

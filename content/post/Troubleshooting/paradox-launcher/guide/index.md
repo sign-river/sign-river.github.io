@@ -4,11 +4,11 @@ date: 2026-07-27
 description: "汇总 Paradox Launcher（P 社启动器）常见的安装、更新、启动、游戏目录、MOD 和 DLC 报错。根据完整错误提示跳转到对应解决方案。"
 categories:
   - "报错"
+  - "专题"
 tags:
   - "P 社启动器"
   - "Paradox Launcher"
   - "启动器故障"
-  - "专题指南"
 draft: false
 slug: "paradox-launcher-troubleshooting-guide"
 related_group: "paradox-launcher"

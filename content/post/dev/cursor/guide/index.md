@@ -4,12 +4,12 @@ date: 2026-07-27
 description: "汇总 Cursor 的入门使用、界面切换、插件安装、阿里云百炼 API 配置和 Agent 卡死排查文章。"
 categories:
   - "开发"
+  - "专题"
 tags:
   - "Cursor"
   - "AI"
   - "编程助手"
   - "AI 开发"
-  - "专题指南"
 draft: false
 slug: "cursor-troubleshooting-guide"
 related_group: "cursor"
