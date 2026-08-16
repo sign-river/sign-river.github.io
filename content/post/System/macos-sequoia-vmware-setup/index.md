@@ -11,11 +11,9 @@ tags:
   - "Windows"
   - "Apple Recovery"
   - "系统安装"
-draft: true
+draft: false
 slug: "macos-sequoia-vmware-setup"
 ---
-
-本文只保留已经完整跑通的一条路线：在 Windows 上动态下载 Apple BaseSystem Recovery，把它转换成 VMware 可用的 VMDK，再通过在线恢复安装 macOS Sequoia。按顺序执行即可，不需要尝试 VirtualBox 引导 macOS、OpenCore 启动盘或完整 `InstallAssistant.pkg`。
 
 > 在非 Apple 硬件上运行 macOS，以及修改 Windows 版 VMware 的 macOS 来宾支持，可能不受 Apple 或 VMware 官方支持。操作前请自行确认授权、许可条款和风险。
 

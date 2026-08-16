@@ -11,7 +11,7 @@ tags:
   - "代理"
   - "语言设置"
   - "问题排查"
-draft: true
+draft: false
 slug: "codex-zh-cn-language-fix"
 related_group: "codex"
 hidden: true

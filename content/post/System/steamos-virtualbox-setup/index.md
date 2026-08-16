@@ -11,11 +11,9 @@ tags:
   - "Steam Deck"
   - "Arch Linux"
   - "系统安装"
-draft: true
+draft: false
 slug: "steamos-virtualbox-setup"
 ---
-
-本文只保留已经跑通的一条路线：下载 Valve Steam Deck Recovery/OOBE 磁盘镜像，将它转换成 VirtualBox 系统盘，再通过 Arch LTS 内核解决 VMSVGA 分辨率问题。最终得到的是一台适合功能验证的 SteamOS 测试机，而不是传统 ISO 安装出的通用 PC SteamOS。
 
 > 这套方案使用 Steam Deck 恢复镜像，并对系统内核和 GRUB 做测试环境改造。它不属于 Valve 官方支持的通用 PC 安装方式，也不代表真实 Steam Deck 或 Linux 游戏主机的图形性能。
 
@@ -23,12 +21,12 @@ slug: "steamos-virtualbox-setup"
 
 本次验证使用：
 
-| 资源 | 版本或文件 | 用途 |
-| --- | --- | --- |
-| VirtualBox | 7.2.14 | 创建和运行虚拟机 |
-| Steam Deck Recovery | `steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2` | SteamOS 恢复系统盘 |
-| Python 3 | Windows 版本 | 使用标准库 `bz2` 解压镜像 |
-| Windows OpenSSH Client | Windows 可选功能 | 从宿主通过 SSH 管理来宾 |
+| 资源                   | 版本或文件                                         | 用途                      |
+| ---------------------- | -------------------------------------------------- | ------------------------- |
+| VirtualBox             | 7.2.14                                             | 创建和运行虚拟机          |
+| Steam Deck Recovery    | `steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2` | SteamOS 恢复系统盘        |
+| Python 3               | Windows 版本                                       | 使用标准库 `bz2` 解压镜像 |
+| Windows OpenSSH Client | Windows 可选功能                                   | 从宿主通过 SSH 管理来宾   |
 
 下载入口：
 
@@ -61,7 +59,7 @@ Get-FileHash -Algorithm SHA256 `
 
 ```text
 大小：3357999306 bytes
-SHA256：4254ee02ec34ae8add9aceef1881a2ce675a9d0176171df92e0eaa1bf014c594
+SHA256:4254ee02ec34ae8add9aceef1881a2ce675a9d0176171df92e0eaa1bf014c594
 ```
 
 本文固定使用 `20260707.10-3.8.14`。不要在复现时未经验证就换成索引中的其他镜像。
@@ -373,4 +371,3 @@ $VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
 恢复快照会丢弃该快照之后的磁盘状态。恢复前先导出需要保留的项目文件、游戏存档和测试证据。
 
 同属“虚拟机”主题的另一篇文章：[在 Windows 的 VMware 中安装 macOS Sequoia](/p/macos-sequoia-vmware-setup/)。
-
