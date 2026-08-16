@@ -8,6 +8,7 @@ tags:
   - "联机加速器"
   - "虚拟网卡"
   - "网络故障"
+  - "专题指南"
 draft: false
 slug: "multiplayer-accelerator-troubleshooting-guide"
 related_group: "multiplayer-accelerator"

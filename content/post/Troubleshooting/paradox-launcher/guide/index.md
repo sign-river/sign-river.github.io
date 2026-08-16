@@ -8,6 +8,7 @@ tags:
   - "P 社启动器"
   - "Paradox Launcher"
   - "启动器故障"
+  - "专题指南"
 draft: false
 slug: "paradox-launcher-troubleshooting-guide"
 related_group: "paradox-launcher"

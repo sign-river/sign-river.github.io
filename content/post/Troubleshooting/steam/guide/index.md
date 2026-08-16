@@ -8,6 +8,7 @@ tags:
   - "Steam"
   - "游戏启动"
   - "Steam 故障"
+  - "专题指南"
 draft: false
 slug: "steam-troubleshooting-guide"
 related_group: "steam"

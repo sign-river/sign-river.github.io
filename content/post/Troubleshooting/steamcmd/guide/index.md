@@ -8,6 +8,7 @@ tags:
   - "SteamCMD"
   - "下载失败"
   - "命令行工具"
+  - "专题指南"
 draft: false
 slug: "steamcmd-troubleshooting-guide"
 related_group: "steamcmd"

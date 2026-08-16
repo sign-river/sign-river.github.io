@@ -9,6 +9,7 @@ tags:
   - "Stellaris"
   - "离线版"
   - "MOD 异常"
+  - "专题指南"
 draft: false
 slug: "stellaris-offline-troubleshooting-guide"
 related_group: "stellaris-offline"

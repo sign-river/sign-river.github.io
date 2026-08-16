@@ -12,6 +12,7 @@ tags:
   - "虚拟局域网"
   - "游戏工具"
   - "网络配置"
+  - "专题指南"
 draft: false
 slug: "stellaris-lan-openvpn-guide"
 related_group: "stellaris-lan-setup"

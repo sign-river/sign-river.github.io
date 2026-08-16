@@ -10,6 +10,7 @@ tags:
   - "hugo-theme-stack"
   - "博客搭建"
   - "站点维护"
+  - "专题指南"
 draft: false
 slug: "blog-site-maintenance-guide"
 related_group: "hugo-site-maintenance"

@@ -9,6 +9,7 @@ tags:
   - "Stellaris"
   - "DLC 异常"
   - "DLC"
+  - "专题指南"
 draft: false
 slug: "stellaris-dlc-troubleshooting-guide"
 related_group: "stellaris-dlc"

@@ -10,6 +10,7 @@ tags:
   - "本地模型"
   - "大语言模型"
   - "LLM"
+  - "专题指南"
 related_group: "local-llm-from-zero"
 content_richness: 100
 draft: false

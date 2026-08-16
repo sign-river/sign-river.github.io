@@ -9,6 +9,7 @@ tags:
   - "Stellaris"
   - "游戏闪退"
   - "联机问题"
+  - "专题指南"
 draft: false
 slug: "stellaris-troubleshooting-guide"
 related_group: "stellaris"

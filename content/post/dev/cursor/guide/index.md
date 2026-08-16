@@ -9,6 +9,7 @@ tags:
   - "AI"
   - "编程助手"
   - "AI 开发"
+  - "专题指南"
 draft: false
 slug: "cursor-troubleshooting-guide"
 related_group: "cursor"
