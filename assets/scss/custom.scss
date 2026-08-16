@@ -1398,19 +1398,22 @@
   a.content-link--external {
     display: inline-flex;
     align-items: center;
-    gap: 0.2em;
-    /* 为链接后的中文标点预留空间，避免窄屏时标点单独掉到下一行。 */
-    max-width: calc(100% - 1.35em);
-    padding: 0.08em 0.34em 0.12em;
+    gap: 0.16em;
+    /* 使用相对字号和紧凑高度，使胶囊跟随正文缩放且不撑高当前行。 */
+    max-width: calc(100% - 1.2em);
+    min-height: 1.45em;
+    box-sizing: border-box;
+    padding: 0 0.3em;
     border: 1px solid rgba(var(--accent-color-rgb, 51, 51, 51), 0.16);
-    border-radius: 0.42em;
+    border-radius: 0.36em;
     background: rgba(var(--accent-color-rgb, 51, 51, 51), 0.07);
     box-shadow: none;
     color: var(--accent-color);
+    font-size: 0.9em;
     font-weight: 560;
-    line-height: 1.55;
+    line-height: 1.25;
     text-decoration: none;
-    vertical-align: middle;
+    vertical-align: 0.04em;
     transition:
       color 0.18s ease,
       background-color 0.18s ease,
@@ -1424,9 +1427,9 @@
 
     &::after {
       flex: 0 0 auto;
-      margin-left: 0.04em;
+      margin-left: 0.02em;
       color: currentColor;
-      font-size: 0.78em;
+      font-size: 0.74em;
       font-weight: 750;
       line-height: 1;
       opacity: 0.72;

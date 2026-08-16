@@ -15,18 +15,10 @@
         icon = "archives"
 
 [[main]]
-    identifier = "topics"
-    name = "专题"
-    url = "/tags/专题指南/"
-    weight = 3
-    [main.params]
-        icon = "categories"
-
-[[main]]
     identifier = "tags"
     name = "标签"
     url = "/tags/"
-    weight = 4
+    weight = 3
     [main.params]
         icon = "tag"
 
@@ -34,7 +26,7 @@
     identifier = "search"
     name = "搜索"
     url = "/search/"
-    weight = 5
+    weight = 4
     [main.params]
         icon = "search"
 
@@ -42,7 +34,7 @@
     identifier = "projects"
     name = "项目"
     url = "/projects/"
-    weight = 6
+    weight = 5
     [main.params]
         icon = "folder"
 
@@ -50,7 +42,7 @@
     identifier = "about"
     name = "我的"
     url = "/about/"
-    weight = 7
+    weight = 6
     [main.params]
         icon = "user"
 
@@ -58,7 +50,7 @@
     identifier = "links"
     name = "友链"
     url = "/links/"
-    weight = 8
+    weight = 7
     [main.params]
         icon = "link"
 
@@ -66,6 +58,6 @@
     identifier = "guestbook"
     name = "留言板"
     url = "/guestbook/"
-    weight = 9
+    weight = 8
     [main.params]
         icon = "messages"
