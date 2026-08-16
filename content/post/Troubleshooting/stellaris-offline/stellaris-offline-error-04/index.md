@@ -16,7 +16,7 @@ related_group: "stellaris-offline"
 hidden: true
 searchable: true
 guide: "/p/stellaris-offline-troubleshooting-guide/"
-guide_title: "群星离线版常见问题解决指南"
+guide_title: "群星破解版常见问题解决指南"
 ---
 
 > 本文整理自《群星常见问题合集及解决办法》，原作者：唏嘘南溪。文档内容会随实际反馈持续修正。
