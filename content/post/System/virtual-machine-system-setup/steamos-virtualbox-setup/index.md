@@ -13,6 +13,11 @@ tags:
   - "系统安装"
 draft: false
 slug: "steamos-virtualbox-setup"
+related_group: "virtual-machine-system-setup"
+hidden: true
+searchable: true
+guide: "/p/virtual-machine-system-setup-guide/"
+guide_title: "虚拟机系统部署指南"
 ---
 
 > 这套方案使用 Steam Deck 恢复镜像，并对系统内核和 GRUB 做测试环境改造。它不属于 Valve 官方支持的通用 PC 安装方式，也不代表真实 Steam Deck 或 Linux 游戏主机的图形性能。
@@ -370,4 +375,4 @@ $VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
 
 恢复快照会丢弃该快照之后的磁盘状态。恢复前先导出需要保留的项目文件、游戏存档和测试证据。
 
-同属“虚拟机”主题的另一篇文章：[在 Windows 的 VMware 中安装 macOS Sequoia](/p/macos-sequoia-vmware-setup/)。
+更多虚拟机系统部署方案请返回[虚拟机系统部署指南](/p/virtual-machine-system-setup-guide/)。

@@ -13,6 +13,11 @@ tags:
   - "系统安装"
 draft: false
 slug: "macos-sequoia-vmware-setup"
+related_group: "virtual-machine-system-setup"
+hidden: true
+searchable: true
+guide: "/p/virtual-machine-system-setup-guide/"
+guide_title: "虚拟机系统部署指南"
 ---
 
 > 在非 Apple 硬件上运行 macOS，以及修改 Windows 版 VMware 的 macOS 来宾支持，可能不受 Apple 或 VMware 官方支持。操作前请自行确认授权、许可条款和风险。
@@ -486,4 +491,4 @@ shutdown -h now
 
 不要在 macOS 正在安装或更新时强制结束 `vmware-vmx.exe`，否则可能损坏 APFS 或快照链。
 
-同属“虚拟机”主题的另一篇文章：[在 VirtualBox 中部署 SteamOS 测试虚拟机](/p/steamos-virtualbox-setup/)。
+更多虚拟机系统部署方案请返回[虚拟机系统部署指南](/p/virtual-machine-system-setup-guide/)。
