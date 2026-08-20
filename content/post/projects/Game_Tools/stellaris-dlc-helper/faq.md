@@ -11,7 +11,13 @@ toc: true
 
 使用“浏览”手动选择游戏安装文件夹。正确的目录中应包含 `stellaris.exe`。
 
-![选择安装目录](/p/stellaris-dlc-helper/images/2026-02-13-17-06-52.png)
+<a href="/p/stellaris-dlc-helper/images/2026-02-13-17-06-52.png" target="_blank">
+  <img
+    src="/p/stellaris-dlc-helper/images/2026-02-13-17-06-52.png"
+    alt="选择安装目录"
+    style="max-width: 100%; width: 1000px;"
+  />
+</a>
 
 ## 下载失败
 
@@ -21,7 +27,13 @@ toc: true
 
 在“设置”的高级功能中按界面提示恢复缺失文件。如果安全软件阻止了文件，请先核对来源与文件安全性，再按自己的安全策略处理。
 
-![文件检查提示](/p/stellaris-dlc-helper/images/2026-02-13-17-44-15.png)
+<a href="/p/stellaris-dlc-helper/images/2026-02-13-17-44-15.png" target="_blank">
+  <img
+    src="/p/stellaris-dlc-helper/images/2026-02-13-17-44-15.png"
+    alt="文件检查提示"
+    style="max-width: 100%; width: 1000px;"
+  />
+</a>
 
 ## 需要更多帮助
 

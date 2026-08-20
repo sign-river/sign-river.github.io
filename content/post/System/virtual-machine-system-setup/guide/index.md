@@ -21,11 +21,13 @@ content_richness: 100
 
 ## 1. 使用 VMware 部署 macOS
 
-- [在 Windows 的 VMware 中安装 macOS Sequoia](/p/macos-sequoia-vmware-setup/)：使用 Apple BaseSystem Recovery、VMware Workstation 和两块 VMDK，从零安装可启动的 macOS Sequoia 虚拟机。
+- [在 Windows 的 VMware 中安装 macOS Sequoia](/p/macos-sequoia-vmware-setup/)
+使用 Apple BaseSystem Recovery、VMware Workstation 和两块 VMDK，从零安装可启动的 macOS Sequoia 虚拟机。
 
 ## 2. 使用 VirtualBox 部署 SteamOS
 
-- [在 VirtualBox 中部署 SteamOS 测试虚拟机](/p/steamos-virtualbox-setup/)：把 Steam Deck Recovery 镜像转换为 VirtualBox 虚拟机，并完成分辨率、关机和 Steam 启动配置。
+- [在 VirtualBox 中部署 SteamOS 测试虚拟机](/p/steamos-virtualbox-setup/)
+把 Steam Deck Recovery 镜像转换为 VirtualBox 虚拟机，并完成分辨率、关机和 Steam 启动配置。
 
 ## 3. 仍未解决
 
