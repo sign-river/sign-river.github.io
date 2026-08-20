@@ -11,7 +11,7 @@ tags:
   - "问题排查"
   - "Windows"
   - "SQLite"
-draft: true
+draft: false
 slug: "codex-unable-to-archive-conversation"
 related_group: "codex"
 hidden: true

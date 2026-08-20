@@ -45,6 +45,7 @@ content_richness: 100
 
 - [Codex 桌面端自定义模型列表为空的修复方法](/p/codex-desktop-custom-model-list-empty/)
 - [Codex 切换简体中文界面无效的解决方法](/p/codex-zh-cn-language-fix/)
+- [Codex 对话无法归档的解决方法](/p/codex-unable-to-archive-conversation/)
 
 ## 5. 仍未解决
 

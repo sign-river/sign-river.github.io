@@ -9,7 +9,7 @@ tags:
   - "CLI"
   - "AI"
   - "开发工具"
-draft: true
+draft: false
 slug: "gemini-cli-configuration-and-usage"
 ---
 

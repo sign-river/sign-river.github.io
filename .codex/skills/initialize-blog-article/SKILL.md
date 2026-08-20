@@ -49,10 +49,11 @@ description: Initialize a new blog article from this repository's supported temp
 3. 检查目标路径是否已存在。已有文件不得覆盖；如目标已存在，应报告冲突并停止写入该目标。
 4. 从 `templates/` 复制对应模板文件，保持模板结构和字段顺序。
 5. 将已知信息填入 Front Matter：标题、日期、描述、分类、标签、`draft: true`、slug 以及该模板要求的其他字段。
-6. 项目介绍文档必须保留 `_index.md`、`getting-started.md`、`daily-use.md`、`faq.md` 的结构；按需创建 `images/` 目录。不要把项目文档改成多个 `index.md` page bundle。
-7. 普通文章和专题文章的图片放在文章目录下的 `images/`；小型附件放在文章 page bundle 的 `files/`，文件名只使用英文、数字和连字符。
-8. 不主动填写用户未提供的正文事实。可以保留模板占位内容，但应明确告诉用户哪些内容仍待补充。
-9. 不修改分类统计，不改变其他已有文章，不自动提交 Git。
+6. 创建专题子文章时，必须同步更新同一专题的 `guide/index.md`：按用户任务或问题类型将子文章链接加入合适的小节。链接文本应使用文章标题或能区分该问题的简洁描述；不得只设置子文章的 `guide` 字段而遗漏主指南入口。
+7. 项目介绍文档必须保留 `_index.md`、`getting-started.md`、`daily-use.md`、`faq.md` 的结构；按需创建 `images/` 目录。不要把项目文档改成多个 `index.md` page bundle。
+8. 普通文章和专题文章的图片放在文章目录下的 `images/`；小型附件放在文章 page bundle 的 `files/`，文件名只使用英文、数字和连字符。
+9. 不主动填写用户未提供的正文事实。可以保留模板占位内容，但应明确告诉用户哪些内容仍待补充。
+10. 不修改分类统计，不改变其他已有文章，不自动提交 Git。
 
 ## 图片和正文约定
 
@@ -67,6 +68,7 @@ description: Initialize a new blog article from this repository's supported temp
 - 目标目录结构符合所选模板。
 - Front Matter 包含模板要求的字段。
 - `draft` 保持为 `true`，除非用户明确要求发布。
+- 如果创建的是专题子文章，`guide/index.md` 已增加指向该子文章的链接，且子文章的 `guide` 指回同一个主指南。
 - 分类和标签符合 `docs/分类标签规范.md`。
 - 没有覆盖已有文件。
 - 运行 `git diff --check`。
