@@ -38,6 +38,7 @@ content_richness: 100
 
 - [用本地 Codex 并行开发同一个项目](/p/codex-parallel-development/)
 - [在 Codex 新任务中迁移上下文](/p/codex-new-task-context-handoff/)
+- [Windows 多账号 Codex 管理：额度看板、快速切换与安全配置](/p/windows-multi-account-codex-management/)
 
 ## 4. 桌面端问题排查
 

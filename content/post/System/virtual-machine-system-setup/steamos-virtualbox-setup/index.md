@@ -190,6 +190,40 @@ ssh -p 2222 deck@127.0.0.1
 
 连接成功后立即为账户设置自己的密码，并优先配置 SSH 公钥。本文不记录任何默认密码或私钥。
 
+### 5.1 SSH 无法登录时：离线恢复自己的公钥
+
+如果忘记密码、已有私钥却始终被拒绝，先不要反复猜密码。先关机并创建快照，然后用临时 Linux 救援虚拟机挂载 SteamOS 的**系统盘**，把自己的公钥追加回 `deck` 的 `authorized_keys`。这不会替换旧密钥，也不会暴露私钥。
+
+先从自己的私钥导出公钥；公钥是一行以 `ssh-ed25519`、`ssh-rsa` 等开头的文本：
+
+```powershell
+$keyPath = "$env:USERPROFILE\.ssh\signriver_vm_rsa"
+ssh-keygen -y -f $keyPath
+```
+
+救援虚拟机中应只连接 SteamOS 的系统盘，不要挂载额外的数据盘。用 `lsblk -f` 确认包含 `deck` 家目录的 Btrfs 根分区后挂载；本次固定恢复镜像的根分区为 `/dev/sda5`：
+
+```bash
+sudo mount /dev/sda5 /mnt
+sudo install -d -m 700 /mnt/deck/.ssh
+
+# 使用编辑器把上一条命令导出的“整行公钥”追加到此文件末尾，不删除已有内容。
+sudoedit /mnt/deck/.ssh/authorized_keys
+
+sudo chmod 600 /mnt/deck/.ssh/authorized_keys
+sudo sync
+sudo umount /mnt
+```
+
+关闭救援虚拟机、移除系统盘挂载后，再启动 SteamOS。用对应私钥验证连接：
+
+```powershell
+ssh -i "$env:USERPROFILE\.ssh\signriver_vm_rsa" `
+  -p 2222 -o BatchMode=yes deck@127.0.0.1
+```
+
+> 救援前必须先创建 VirtualBox 快照；分区号可能随镜像版本变化，务必先用 `lsblk -f` 确认。不要把私钥、密码或完整的 `authorized_keys` 内容写进博客或上传到云端。
+
 ## 6. 安装 Arch LTS 内核解决分辨率问题
 
 原恢复内核在 VMSVGA 下可能只提供约 640×480。已经验证可用的解决方式是保留原内核，再增加 Arch LTS 内核，让 `vmwgfx` 正常加载。
@@ -278,6 +312,65 @@ set default="gnulinux-advanced-<你的 UUID>>gnulinux-linux-lts-advanced-<你的
 修改后重启一次，再执行 `uname -r` 确认仍进入 LTS 内核。
 
 > `grub.cfg` 是生成文件，再次运行 `grub-mkconfig` 会覆盖这个修改。原 `linux-neptune-616` 内核仍保留在 GRUB 高级启动项中，LTS 无法启动时可回退。
+
+### 6.1 固定可用分辨率，阻止 VirtualBox 自动协商超高画布
+
+LTS 内核下，`xrandr` 的输出名实测为 `Virtual-1`。如果旧配置仍使用 `VGA-1`，设置会失败，来宾可能回到异常的超大画布并出现横向、纵向滚动条。
+
+还有一种更隐蔽的情况：VirtualBox 的“自动调整客户机显示大小”会向 SteamOS 通报宿主窗口的超高逻辑尺寸。实测桌面曾被自动协商为 **7680×4320**；画面虽然没有滚动条，但所有文字和按钮都会缩成很小的一块。这不是 SteamOS 的缩放设置问题，也不需要开启 VirtualBox 缩放模式。
+
+先创建一个开机执行的分辨率服务，将来宾固定为 `1600×900`。这个尺寸在普通桌面窗口中仍然清晰，同时比 1920×1080 更容易阅读：
+
+```bash
+sudo tee /etc/systemd/system/signriver-resolution.service >/dev/null <<'EOF'
+[Unit]
+Description=Set SteamOS VirtualBox display resolution
+After=signriver-xorg.service
+Requires=signriver-xorg.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash -c 'for i in {1..20}; do DISPLAY=:0 /usr/bin/xrandr --output Virtual-1 --mode 1600x900 && exit 0; sleep 1; done; exit 1'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical.target
+EOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable --now signriver-resolution.service
+DISPLAY=:0 XAUTHORITY=/home/deck/.Xauthority xrandr --current
+```
+
+当前 SteamOS 默认使用 KDE Wayland 时，桌面会话也可能在服务执行后再次应用显示配置。可以在已登录的桌面会话中查看并切换 KScreen 模式：
+
+```bash
+XDG_RUNTIME_DIR=/run/user/1000 \
+WAYLAND_DISPLAY=wayland-0 \
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+kscreen-doctor -o
+```
+
+从输出中找到 `Virtual-1` 的 `1600x900@60` 对应模式编号后执行，例如本次为编号 `18`：
+
+```bash
+XDG_RUNTIME_DIR=/run/user/1000 \
+WAYLAND_DISPLAY=wayland-0 \
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+kscreen-doctor output.1.mode.18
+```
+
+最后必须在宿主禁用自动调整，并保留原始像素显示。不要使用 VirtualBox 的**缩放模式**，它会对整张来宾画面插值放大而变模糊。先正常关机，再执行：
+
+```powershell
+$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
+& $VBoxManage setextradata SteamOS GUI/Scale false
+& $VBoxManage setextradata SteamOS GUI/AutoresizeGuest false
+& $VBoxManage setextradata SteamOS GUI/LastGuestSizeHint '1600,900'
+& $VBoxManage startvm SteamOS --type gui
+```
+
+这样使用的是来宾原始像素；既不会回到 7680×4320 的巨幅画布，也不会因 VirtualBox 二次缩放而变模糊。若使用不同大小的宿主窗口，可相应改成 `1440×900` 或 `1280×720`，但每次改动后都应保持 `GUI/AutoresizeGuest=false`。
 
 ## 7. 修复 ACPI 电源按钮
 

@@ -230,6 +230,27 @@ proxies:
 | 本地 TCP 能连 443 但握手后断                                               | 检查搬瓦工节点本身是否正常（先用直连确认）；若直连正常而经隧道断，多为参数问题               |
 | frps/frpc 版本不一致导致异常                                               | 两台都用同一版本（0.63.0）                                                                   |
 
+### FRP 服务正常但中转节点突然失效
+
+**问题：** `frps` 和 `frpc` 均显示 `active (running)`，阿里云的 `7000`、`443` 端口也处于监听状态，但中转节点突然超时或出现 `Connection reset by peer`。`frps` 日志可能出现 `timeout trying to get work connection`、`failed to get work connection`。
+
+**问题描述：** FRP 的旧连接可能处于表面在线、实际无法建立工作连接的异常状态。此时配置文件通常没有问题，不需要重新配置节点或修改 token。
+
+**解决方案：** 先在阿里云校验配置并重启 `frps`：
+
+```bash
+/usr/local/bin/frps verify -c /etc/frp/frps.toml && systemctl restart frps
+```
+
+再在搬瓦工校验配置并重启 `frpc`：
+
+```bash
+/usr/local/bin/frpc verify -c /etc/frp/frpc.toml && systemctl restart frpc
+journalctl -u frpc -n 20 --no-pager
+```
+
+日志出现 `login to server success`、`proxy added` 和 `start proxy success`，且阿里云重新监听 `443`，说明 FRP 隧道已经恢复。以上操作只会校验配置并重建 FRP 连接，不会修改现有配置文件。
+
 ## 9. 配置备份与 token 轮换
 
 修改 FRP 配置前先备份。阿里云服务器执行：
