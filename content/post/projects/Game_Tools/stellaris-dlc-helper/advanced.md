@@ -7,56 +7,56 @@ weight: 40
 toc: true
 ---
 
-## 日志功能
+## 1. 查看日志
 
-程序会将所有的操作以及报错内容输出到日志中，当程序遇到报错，可以选择将复制日志内容或导出日志文件，把文件内容发给开发者或者 ai 以解决程序问题
+程序会记录操作过程和报错信息。遇到问题时，可以选择 **复制日志** 或 **导出日志文件**，再将日志内容提供给开发者或 AI，便于定位问题。
 
-<a href="images/2026-08-28-03-04-57.png" target="_blank"> <img src="images/2026-08-28-03-04-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-04-57.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-04-57.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 公告显示提示
+## 2. 管理公告显示
 
-每次打开软件后会弹出公告，如果不想重复看同一篇公告可以在设置中关闭这一按钮，这样同一份公告就不会再次显示，但当有新公告发布时，仍然会显示，相对的，如果你在公告界面失误勾选了本版本不再显示公告而想再看一次公告，可以打开这一按钮并重启程序，这样公告就会再次弹出
+每次打开软件时，程序可能会显示公告。如果不想重复查看同一篇公告，可以在设置中关闭公告显示；已有公告不会再次弹出，但新公告仍会显示。若误选了“本版本不再显示公告”，想再次查看时，重新开启该设置并重启程序即可。
 
-<a href="images/2026-08-28-03-07-49.png" target="_blank"> <img src="images/2026-08-28-03-07-49.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-07-49.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-07-49.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 清理 dlc 缓存
+## 3. 清理 DLC 缓存
 
-在安装 dlc 后程序文件夹中会缓存 dlc 文件，方便在下次安装 dlc 时跳过从云端的下载，如果觉得占地方可以在设置中清理掉这些缓存，不过代价是下次下载需要重新从云端获取
+安装 DLC 后，程序会在程序文件夹中缓存相关文件，以便下次安装时跳过云端下载。如果需要释放空间，可以在设置中清理缓存；清理后再次安装 DLC 时，需要重新从云端下载。
 
-<a href="images/2026-08-28-03-09-24.png" target="_blank"> <img src="images/2026-08-28-03-09-24.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-09-24.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-09-24.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 检查更新
+## 4. 检查更新
 
-一般程序会自动检查更新，如果自动检查更新没生效，可以选择手动在设置中检查更新来安装新版本
+程序通常会自动检查更新。如果自动检查未生效，可以在设置中手动检查更新并安装新版本。
 
-<a href="images/2026-08-28-03-10-20.png" target="_blank"> <img src="images/2026-08-28-03-10-20.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-10-20.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-10-20.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 更新文件管理
+## 5. 管理更新文件
 
-顾名思义就是管理下载更新文件时产生的临时文件和备份文件，觉得占地方可以选择删除
+此功能用于管理下载或更新过程中产生的临时文件和备份文件。如果这些文件占用空间较多，可以选择删除。
 
-<a href="images/2026-08-28-03-11-00.png" target="_blank"> <img src="images/2026-08-28-03-11-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-11-00.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-11-00.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 测速功能
+## 6. 测试下载源
 
-在测速功能页面可以选择对下载源进行测速判断当前网络与下载源是否连通以及的下载速度
+在测速页面选择下载源后，可以检查当前网络是否能够连通该来源，并查看下载速度。
 
-<a href="images/2026-08-28-03-12-29.png" target="_blank"> <img src="images/2026-08-28-03-12-29.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-12-29.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-12-29.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 配置文件管理
+## 7. 管理配置文件
 
-小白不用管，如果想调整程序配置可以通过展示的路径找到配置文件以及日志文件
+一般情况下无需修改此项。如果需要调整程序配置，可以根据界面显示的路径打开配置文件或日志文件所在目录。
 
-<a href="images/2026-08-28-03-13-16.png" target="_blank"> <img src="images/2026-08-28-03-13-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-13-16.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-13-16.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 补丁恢复
+## 8. 恢复补丁
 
-有时补丁会被杀毒软件删除，当加入白名单后可以用补丁恢复还原程序的补丁并可以重新使用程序的所有功能
+如果补丁被安全软件删除，请先根据自己的安全策略确认文件来源并加入白名单。随后使用 **补丁恢复** 还原程序补丁，即可继续使用相关功能。
 
-<a href="images/2026-08-28-03-13-35.png" target="_blank"> <img src="images/2026-08-28-03-13-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-13-35.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-13-35.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## p 社启动器下载
+## 9. 下载 P 社启动器
 
-一个拓展功能，用来不挂代理的下载 p 社启动器，如果版本低了可以去群里找我更新
+这是一个扩展功能，可在不使用代理的情况下下载 P 社启动器。若启动器版本过低，请联系项目维护者获取更新信息。
 
-<a href="images/2026-08-28-03-15-32.png" target="_blank"> <img src="images/2026-08-28-03-15-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-15-32.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-15-32.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>

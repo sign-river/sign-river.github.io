@@ -7,24 +7,24 @@ weight: 20
 toc: true
 ---
 
-程序还有一些附带的操作功能，比如卸载程序 dlc
+除首次解锁外，程序还提供卸载 DLC、移除补丁和一键修复等维护功能。
 
-## 卸载程序 dlc
+## 1. 卸载程序 DLC
 
-点击卸载程序 dlc 会删除程序下载的所有 dlc 内容，方便恢复游戏到初始状态
+点击 **卸载程序 DLC**，可以删除程序下载的全部 DLC 内容，便于将游戏恢复到初始状态。
 
-<a href="images/2026-08-28-03-00-27.png" target="_blank"> <img src="images/2026-08-28-03-00-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-00-27.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-00-27.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 移除补丁
+## 2. 移除补丁
 
-和卸载 dlc 效果相似，移除程序安装的补丁，还原游戏文件
+**移除补丁** 与卸载 DLC 的作用类似：它会移除程序安装的补丁，还原游戏文件。
 
-<a href="images/2026-08-28-03-01-53.png" target="_blank"> <img src="images/2026-08-28-03-01-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-01-53.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-01-53.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 一键修复
+## 3. 一键修复
 
-简单粗暴的功能，删除全部 dlc 和补丁后重新下载一遍，解决部分用户因为文件结构损坏而导致的游戏崩溃问题
+**一键修复** 会先删除全部 DLC 和补丁，再重新下载并安装。该功能可用于处理部分因文件结构损坏导致的游戏崩溃问题。
 
-<a href="images/2026-08-28-03-02-42.png" target="_blank"> <img src="images/2026-08-28-03-02-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-02-42.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-02-42.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
 日志、缓存和其他界面功能见 [进阶功能](/p/stellaris-dlc-helper/advanced/)。

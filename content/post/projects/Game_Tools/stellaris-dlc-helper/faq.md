@@ -7,28 +7,28 @@ weight: 30
 toc: true
 ---
 
-## 下载失败
+## 1. 下载失败
 
-检查网络连接；随后在“设置 -> 测速”中手动测速并切换可用来源，再重试操作。
+先检查网络连接，再打开 **设置 → 测速** 手动测试下载源。选择可用来源后，重新执行操作。
 
-## 文件缺失
+## 2. 文件缺失
 
-在“设置”的高级功能中按界面提示恢复缺失文件。如果安全软件阻止了文件，请先核对来源与文件安全性，再按自己的安全策略处理。
+在 **设置** 的高级功能中，按界面提示恢复缺失文件。如果安全软件阻止了文件，请先核对文件来源和安全性，再按照自己的安全策略处理。
 
 <a href="/p/stellaris-dlc-helper/images/2026-02-13-17-44-15.png" target="_blank">
   <img
     src="/p/stellaris-dlc-helper/images/2026-02-13-17-44-15.png"
     alt="文件检查提示"
-    style="max-width: 100%; width: 1000px;"
+    style="max-width: 40%; width: 1000px;"
   />
 </a>
 
-## 解锁后游戏报错
+## 3. 解锁后游戏报错
 
-点击程序右上角遇到报错跳转链接打开报错指南，根据报错指南内容找到对应报错的解决方案
+点击程序右上角的 **遇到报错？** 跳转链接，打开报错指南，并根据对应条目的说明排查问题。
 
-<a href="images/2026-08-28-03-17-09.png" target="_blank"> <img src="images/2026-08-28-03-17-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="/p/stellaris-dlc-helper/images/2026-08-28-03-17-09.png" target="_blank"> <img src="/p/stellaris-dlc-helper/images/2026-08-28-03-17-09.png" alt="image" style="max-width: 70%; width: 1000px;"/> </a>
 
-## 需要更多帮助
+## 4. 需要更多帮助
 
-可以在 [GitHub Issues](https://github.com/sign-river/Stellaris-DLC-Helper/issues) 提交可复现的情况、程序版本和相关日志。
+仍无法解决时，可在 [GitHub Issues](https://github.com/sign-river/Stellaris-DLC-Helper/issues) 提交问题。请尽量附上可复现的操作、程序版本和相关日志。
