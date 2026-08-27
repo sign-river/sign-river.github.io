@@ -7,40 +7,24 @@ weight: 20
 toc: true
 ---
 
-## 游戏更新后
+程序还有一些附带的操作功能，比如卸载程序 dlc
 
-打开工具并按界面操作。程序会处理需要更新的内容；结束后再启动游戏确认状态。
+## 卸载程序 dlc
 
-## 网络测速
+点击卸载程序 dlc 会删除程序下载的所有 dlc 内容，方便恢复游戏到初始状态
 
-在“设置”的测速页执行测速，比较可用下载源的速度后再继续操作。
+<a href="images/2026-08-28-03-00-27.png" target="_blank"> <img src="images/2026-08-28-03-00-27.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="/p/stellaris-dlc-helper/images/2026-02-13-17-15-41.png" target="_blank">
-  <img
-    src="/p/stellaris-dlc-helper/images/2026-02-13-17-15-41.png"
-    alt="测速界面"
-    style="max-width: 100%; width: 1000px;"
-  />
-</a>
+## 移除补丁
 
-## 暂停与继续
+和卸载 dlc 效果相似，移除程序安装的补丁，还原游戏文件
 
-操作进行中可以暂停；恢复时继续即可。工具支持断点续传，网络短暂中断不需要从头开始。
+<a href="images/2026-08-28-03-01-53.png" target="_blank"> <img src="images/2026-08-28-03-01-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-<a href="/p/stellaris-dlc-helper/images/2026-02-13-17-16-33.png" target="_blank">
-  <img
-    src="/p/stellaris-dlc-helper/images/2026-02-13-17-16-33.png"
-    alt="暂停操作"
-    style="max-width: 100%; width: 1000px;"
-  />
-</a>
+## 一键修复
 
-<a href="/p/stellaris-dlc-helper/images/2026-02-13-17-16-46.png" target="_blank">
-  <img
-    src="/p/stellaris-dlc-helper/images/2026-02-13-17-16-46.png"
-    alt="继续操作"
-    style="max-width: 100%; width: 1000px;"
-  />
-</a>
+简单粗暴的功能，删除全部 dlc 和补丁后重新下载一遍，解决部分用户因为文件结构损坏而导致的游戏崩溃问题
+
+<a href="images/2026-08-28-03-02-42.png" target="_blank"> <img src="images/2026-08-28-03-02-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 日志、缓存和其他界面功能见 [进阶功能](/p/stellaris-dlc-helper/advanced/)。

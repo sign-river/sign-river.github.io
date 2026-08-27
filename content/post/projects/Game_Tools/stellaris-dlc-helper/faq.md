@@ -7,18 +7,6 @@ weight: 30
 toc: true
 ---
 
-## 找不到游戏目录
-
-使用“浏览”手动选择游戏安装文件夹。正确的目录中应包含 `stellaris.exe`。
-
-<a href="/p/stellaris-dlc-helper/images/2026-02-13-17-06-52.png" target="_blank">
-  <img
-    src="/p/stellaris-dlc-helper/images/2026-02-13-17-06-52.png"
-    alt="选择安装目录"
-    style="max-width: 100%; width: 1000px;"
-  />
-</a>
-
 ## 下载失败
 
 检查网络连接；随后在“设置 -> 测速”中手动测速并切换可用来源，再重试操作。
@@ -34,6 +22,12 @@ toc: true
     style="max-width: 100%; width: 1000px;"
   />
 </a>
+
+## 解锁后游戏报错
+
+点击程序右上角遇到报错跳转链接打开报错指南，根据报错指南内容找到对应报错的解决方案
+
+<a href="images/2026-08-28-03-17-09.png" target="_blank"> <img src="images/2026-08-28-03-17-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 需要更多帮助
 
