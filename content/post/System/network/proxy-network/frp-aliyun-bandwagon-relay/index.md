@@ -232,11 +232,11 @@ proxies:
 
 ### FRP 服务正常但中转节点突然失效
 
-**问题：** `frps` 和 `frpc` 均显示 `active (running)`，阿里云的 `7000`、`443` 端口也处于监听状态，但中转节点突然超时或出现 `Connection reset by peer`。`frps` 日志可能出现 `timeout trying to get work connection`、`failed to get work connection`。
+**问题：** `frps` 和 `frpc` 均显示 `active (running)`，阿里云的 `7000`、`443` 端口也处于监听状态，但中转节点突然超时或出现 `Connection reset by peer`。`frps` 日志可能出现大量 `timeout trying to get work connection`、`failed to get work connection`，搬瓦工 `frpc` 可能出现 `connection write timeout` 或 `session shutdown`。
 
-**问题描述：** FRP 的旧连接可能处于表面在线、实际无法建立工作连接的异常状态。此时配置文件通常没有问题，不需要重新配置节点或修改 token。
+**问题描述：** 跨境长连接偶发网络抖动后，FRP 旧连接进入“控制通道看似在线、但工作连接无法创建”的假死状态。此时配置文件通常没有问题，不需要重新配置节点或修改 token。
 
-**解决方案：** 先在阿里云校验配置并重启 `frps`：
+**临时恢复方案：** 先在阿里云校验配置并重启 `frps`：
 
 ```bash
 /usr/local/bin/frps verify -c /etc/frp/frps.toml && systemctl restart frps
@@ -249,7 +249,9 @@ proxies:
 journalctl -u frpc -n 20 --no-pager
 ```
 
-日志出现 `login to server success`、`proxy added` 和 `start proxy success`，且阿里云重新监听 `443`，说明 FRP 隧道已经恢复。以上操作只会校验配置并重建 FRP 连接，不会修改现有配置文件。
+日志出现 `login to server success`、`proxy added` 和 `start proxy success`，且阿里云重新监听 `443`，说明 FRP 隧道已经恢复。
+
+**若频繁复现（彻底解决）：** 检查两端 FRP 版本（`frps -v` 与 `frpc -v`）。如果使用的是 `0.63.0` 等较早版本，由于旧版本在 TCP 连接断开时存在死锁/内部状态不同步缺陷，网络抖动后极易陷入工作连接假死状态，导致每隔一两天就会复现。建议将两端统一升级至最新版本（如 `0.71.0` 及以上）。升级只需替换二进制文件（`frps` / `frpc`），无需改动现有配置文件和 token。
 
 ## 9. 配置备份与 token 轮换
 

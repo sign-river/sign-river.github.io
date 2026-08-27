@@ -11,7 +11,7 @@ tags:
   - "多账号管理"
   - "账号安全"
   - "源码构建"
-draft: true
+draft: false
 slug: "windows-multi-account-codex-management"
 related_group: "codex"
 hidden: true
