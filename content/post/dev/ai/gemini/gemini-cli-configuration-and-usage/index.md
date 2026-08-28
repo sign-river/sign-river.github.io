@@ -13,7 +13,7 @@ draft: false
 slug: "gemini-cli-configuration-and-usage"
 ---
 
-> **前置提示**：使用 Gemini CLI 建议准备一张外币信用卡（用于绑定 Google Cloud / AI Studio 结算以获取充足的模型调用额度），否则免费额度相对有限。
+> **前置提示**：使用 Gemini CLI 建议准备一张外币信用卡（用于绑定 Google Cloud / AI Studio 结算以获取充足的模型调用额度），否则免费额度非常非常有限。
 
 ## 1. 环境准备与 Node.js 安装
 
@@ -105,8 +105,6 @@ gemini
 <a href="images/2026-08-20-20-35-02.png" target="_blank"> <img src="images/2026-08-20-20-35-02.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 默认免费层级的调用额度与速率相对较低；如需高频或流畅调用主力模型，建议完成信用卡绑定并开启结算服务：
-
-<a href="images/2026-08-20-41-34.png" target="_blank"> <img src="images/2026-08-20-41-34.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 5. 总结
 
