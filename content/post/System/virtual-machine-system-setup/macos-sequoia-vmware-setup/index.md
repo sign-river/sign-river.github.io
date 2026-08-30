@@ -1,7 +1,7 @@
 ---
 title: "在 Windows 的 VMware 中安装 macOS Sequoia"
-date: 2026-08-16
-description: "使用 Apple BaseSystem Recovery、VMware Workstation 和两块 VMDK，从零安装可启动的 macOS Sequoia 虚拟机。"
+date: 2026-08-29
+description: "重新整理在 Windows 的 VMware 中部署 macOS Sequoia 虚拟机的步骤、配置与验证方法。"
 categories:
   - "系统"
 tags:
@@ -12,483 +12,449 @@ tags:
   - "Apple Recovery"
   - "系统安装"
 draft: false
-slug: "macos-sequoia-vmware-setup"
 related_group: "virtual-machine-system-setup"
 hidden: true
 searchable: true
 guide: "/p/virtual-machine-system-setup-guide/"
 guide_title: "虚拟机系统部署指南"
+slug: "macos-sequoia-vmware-setup"
 ---
 
-> 在非 Apple 硬件上运行 macOS，以及修改 Windows 版 VMware 的 macOS 来宾支持，可能不受 Apple 或 VMware 官方支持。操作前请自行确认授权、许可条款和风险。
+本文记录一套我实际验证过的流程：在 Windows 11 上使用 VMware Workstation Pro 17.6.4，创建 macOS Sequoia 虚拟机，并通过 Apple Recovery 在线安装系统。本文中的图片均来自这次实际操作。
 
-## 1. 准备环境
+> 注意：macOS 在非 Apple 品牌硬件上的虚拟化不属于 Apple 官方支持场景。Unlocker 是第三方补丁，使用前请确认授权、法律和安全风险。不要把它用于生产环境，也不要下载来源不明的“现成 ISO/VMDK”。
 
-本次验证使用以下版本：
+## 一、准备软件与目录
 
-| 工具 | 版本 | 用途 |
-| --- | --- | --- |
-| VMware Workstation | 17.6.4 | 运行 macOS 虚拟机 |
-| Unlocker | 4.2.8 | VMware 中没有 macOS 来宾选项时使用 |
-| OpenCorePkg | 1.0.7 | 只使用其中的 `macrecovery.py` |
-| dmg2img | 1.6.7 | 把 `BaseSystem.dmg` 转成 raw IMG |
-| VirtualBox | 7.2.14 | 只使用 `VBoxManage.exe` 转换和创建磁盘 |
-| Python | Windows Python 3 | 运行 `macrecovery.py` |
-| 7-Zip | 26.02 | 解压工具包 |
+建议准备以下版本：VMware Workstation Pro 17.6.4、Unlocker 4.2.8、OpenCorePkg 1.0.7、Python 3.13.x、dmg2img 1.6.7、VirtualBox 7.2.x，以及 7-Zip。
 
-下载入口：
-
-- [VMware Workstation 产品页](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion)
-- [Unlocker 4.2.8](https://github.com/DrDonk/unlocker/releases/tag/v4.2.8)
-- [OpenCorePkg 1.0.7](https://github.com/acidanthera/OpenCorePkg/releases/tag/1.0.7)
-- [dmg2img 工具页](http://vu1tur.eu.org/tools/)
-- [VirtualBox 7.2.14 Windows 安装包](https://download.virtualbox.org/virtualbox/7.2.14/VirtualBox-7.2.14-174565-Win.exe)
-- [Python for Windows](https://www.python.org/downloads/windows/)
-- [7-Zip](https://www.7-zip.org/)
-
-建立工作目录：
-
-```powershell
-$base = 'D:\Downloads\SignRiver-Test-OS'
-foreach ($d in @('macos','macos\recovery','vmware','tools')) {
-    New-Item -ItemType Directory -Force -Path (Join-Path $base $d) | Out-Null
-}
-```
-
-后文都使用这个路径。如果你换到其他目录，必须同步修改所有命令和 VMX 中的磁盘路径。
-
-## 2. 安装 VMware 并准备 macOS 来宾支持
-
-正常安装 VMware Workstation 17.6.4，启动一次确认程序可用，然后完全退出 VMware：
-
-```powershell
-Get-Process vmware,vmware-vmx -ErrorAction SilentlyContinue
-```
-
-如果 VMware 的新建虚拟机向导中已经有 64 位 macOS 来宾，可以直接进入下一节。
-
-如果没有 macOS 来宾选项：
-
-1. 备份 VMware 安装目录和现有虚拟机；
-2. 解压 Unlocker 4.2.8；
-3. 完全退出 VMware；
-4. 以管理员身份运行 `windows\unlock.exe`；
-5. 使用同目录的 `check.exe` 检查补丁状态。
-
-> VMware 升级或修复安装可能覆盖 Unlocker。不要运行来源不明的 Unlocker，也不要在 VMware 进程仍运行时打补丁。
-
-## 3. 下载 Apple BaseSystem Recovery
-
-解压 `OpenCore-1.0.7-RELEASE.zip` 到：
+虚拟机文件统一放在空间充足的磁盘，例如：
 
 ```text
-D:\Downloads\SignRiver-Test-OS\tools\OpenCore-1.0.7
+D:\vmware\macos-vm
 ```
 
-本路线不使用 OpenCore 引导器、Kext 或 `config.plist`，只使用：
+下文命令都以这个目录为例；如果你使用其他路径，请同步修改命令中的路径。
 
-```text
-D:\Downloads\SignRiver-Test-OS\tools\OpenCore-1.0.7\Utilities\macrecovery\macrecovery.py
-```
+## 二、下载并安装 VMware Workstation Pro
 
-确认 Python 可用，然后动态下载当前 Apple Recovery：
+可以从 Broadcom Support Portal 下载，也可以使用我保存的 17.6.4 安装包：
+https://github.com/sign-river/File_warehouse/releases/download/VMware/VMware-workstation-full-17.6.4-24832109.exe
+
+打开 [Broadcom 支持门户](https://support.broadcom.com/) 并注册账号。
+
+<a href="images/2026-08-30-16-32-03.png" target="_blank"> <img src="images/2026-08-30-16-32-03.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+返回主页并登录刚注册的账号。
+
+<a href="images/2026-08-30-16-34-53.png" target="_blank"> <img src="images/2026-08-30-16-34-53.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+进入 VMware Workstation Pro 产品下载页，选择 **17.6.4 for Windows**，接受条款后开始下载。
+
+<a href="images/2026-08-30-16-40-31.png" target="_blank"> <img src="images/2026-08-30-16-40-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+返回下载页面，勾选同意相关条款。
+
+<a href="images/2026-08-30-16-42-26.png" target="_blank"> <img src="images/2026-08-30-16-42-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+然后下载
+
+<a href="images/2026-08-30-16-42-56.png" target="_blank"> <img src="images/2026-08-30-16-42-56.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+首次下载可能需要填写贸易合规信息。公司字段可以按页面要求填写；个人使用时不要虚构公司信息。确认出口合规声明后提交。
+
+<a href="images/2026-08-30-16-48-14.png" target="_blank"> <img src="images/2026-08-30-16-48-14.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+提交后返回下载页面，再次点击对应的下载按钮。
+
+<a href="images/2026-08-30-16-49-09.png" target="_blank"> <img src="images/2026-08-30-16-49-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+双击下载的 `.exe` 安装包。安装位置保持默认即可；安装向导中的选项一般保持默认，一直安装到完成。首次启动 VMware 后退出，方便后续运行 Unlocker。
+
+<a href="images/2026-08-30-16-59-44.png" target="_blank"> <img src="images/2026-08-30-16-59-44.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+## 三、应用 Unlocker 补丁
+
+打开 https://github.com/DrDonk/unlocker/releases/tag/v4.2.8，下载 zip 包
+
+<a href="images/2026-08-30-17-01-42.png" target="_blank"> <img src="images/2026-08-30-17-01-42.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+下载完成后，将 ZIP 解压到全英文路径，例如 `D:\tools\unlocker428`。
+
+<a href="images/2026-08-30-17-10-47.png" target="_blank"> <img src="images/2026-08-30-17-10-47.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+如果 VMware 正在运行，请完全退出，并确认任务管理器中没有 `vmware.exe` 或 `vmware-vmx.exe`。进入解压目录的 `windows` 文件夹，右键 **“以管理员身份运行”** `unlock.exe`。
+
+<a href="images/2026-08-30-17-13-13.png" target="_blank"> <img src="images/2026-08-30-17-13-13.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+补丁运行结束后，在同一目录以管理员身份运行 `check.exe` 检查状态。
+
+<a href="images/2026-08-30-17-13-54.png" target="_blank"> <img src="images/2026-08-30-17-13-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+四个项目都显示 `Patch Status: Patched (1)`，说明补丁已应用成功。若 VMware 后续升级或修复安装，需要重新检查补丁状态。
+
+<a href="images/2026-08-30-17-15-30.png" target="_blank"> <img src="images/2026-08-30-17-15-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+重新打开 VMware Workstation Pro。如果弹出新版本更新提示，先选择跳过；升级可能覆盖刚应用的补丁。
+
+<a href="images/2026-08-30-17-17-35.png" target="_blank"> <img src="images/2026-08-30-17-17-35.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+## 四、创建空白虚拟机
+
+选择 **创建新的虚拟机 → 自定义（高级）**。
+
+<a href="images/2026-08-30-17-18-07.png" target="_blank"> <img src="images/2026-08-30-17-18-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+保持当前已经选中的：Workstation 17.5 or later 然后点击 下一步
+<a href="images/2026-08-30-17-21-07.png" target="_blank"> <img src="images/2026-08-30-17-21-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+选择 **稍后安装操作系统**，点击“下一步”。
+
+<a href="images/2026-08-30-17-23-26.png" target="_blank"> <img src="images/2026-08-30-17-23-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+来宾操作系统选择 **Apple macOS**，版本选择 **macOS 15**，点击“下一步”。
+
+<a href="images/2026-08-30-17-35-54.png" target="_blank"> <img src="images/2026-08-30-17-35-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+虚拟机名称填写 `macOS Sequoia`。位置选择预先创建的 `D:\vmware\macos-vm`，点击“下一步”。
+
+<a href="images/2026-08-30-17-39-32.png" target="_blank"> <img src="images/2026-08-30-17-39-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+处理器设置为 **2 个处理器、每个处理器 2 个内核**，总计 4 个 vCPU。点击“下一步”。
+
+<a href="images/2026-08-30-17-42-34.png" target="_blank"> <img src="images/2026-08-30-17-42-34.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+内存设置为 **8192 MB（8 GB）**。主机内存较少时可以适当降低，但不建议低于 4 GB。
+
+<a href="images/2026-08-30-17-43-39.png" target="_blank"> <img src="images/2026-08-30-17-43-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+网络类型选择 **使用网络地址转换（NAT）**。
+
+<a href="images/2026-08-30-17-45-06.png" target="_blank"> <img src="images/2026-08-30-17-45-06.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+I/O 控制器保持默认的 **LSI Logic**。
+
+<a href="images/2026-08-30-17-46-09.png" target="_blank"> <img src="images/2026-08-30-17-46-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+虚拟磁盘类型选择 **SATA**。
+
+<a href="images/2026-08-30-17-46-29.png" target="_blank"> <img src="images/2026-08-30-17-46-29.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+选择 **创建新虚拟磁盘**。
+
+<a href="images/2026-08-30-17-47-07.png" target="_blank"> <img src="images/2026-08-30-17-47-07.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+这是向导创建的临时磁盘，后面会移除并换成手动创建的 128 GB 磁盘，因此容量保持默认即可。
+
+<a href="images/2026-08-30-17-48-17.png" target="_blank"> <img src="images/2026-08-30-17-48-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+选择将虚拟磁盘拆分为多个文件，点击“下一步”。
+
+<a href="images/2026-08-30-17-48-34.png" target="_blank"> <img src="images/2026-08-30-17-48-34.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+点击“完成”创建虚拟机。
+
+<a href="images/2026-08-30-17-48-57.png" target="_blank"> <img src="images/2026-08-30-17-48-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+打开 **编辑虚拟机设置**，
+
+<a href="images/2026-08-30-17-50-15.png" target="_blank"> <img src="images/2026-08-30-17-50-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+选中向导生成的临时硬盘，点击 **移除**，再点击“确定”。只移除设备，不要删除后续可能需要的文件。
+
+<a href="images/2026-08-30-17-50-48.png" target="_blank"> <img src="images/2026-08-30-17-50-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+## 五、准备 Recovery 下载环境
+
+首先安装 Python。打开 https://www.python.org/downloads/windows/，在稳定版本区域选择 **Windows installer (64-bit)**。
+
+<a href="images/2026-08-30-17-55-50.png" target="_blank"> <img src="images/2026-08-30-17-55-50.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+安装程序第一页勾选 **Add python.exe to PATH**，然后选择 **Install Now**。
+
+<a href="images/2026-08-30-17-57-17.png" target="_blank"> <img src="images/2026-08-30-17-57-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+安装完成后点击 **Disable path length limit**（如果显示该选项），再点击 Close。
+
+<a href="images/2026-08-30-17-59-34.png" target="_blank"> <img src="images/2026-08-30-17-59-34.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+打开 PowerShell，运行下面的命令检查 Python：
 
 ```powershell
-python --version
+py -3 --version
+```
 
-$mr = 'D:\Downloads\SignRiver-Test-OS\tools\OpenCore-1.0.7\Utilities\macrecovery\macrecovery.py'
-$out = 'D:\Downloads\SignRiver-Test-OS\macos\recovery'
+<a href="images/2026-08-30-18-00-41.png" target="_blank"> <img src="images/2026-08-30-18-00-41.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+如图显示出版本号即为安装成功
+
+<a href="images/2026-08-30-18-01-02.png" target="_blank"> <img src="images/2026-08-30-18-01-02.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+接着下载 OpenCorePkg。打开 https://github.com/acidanthera/OpenCorePkg/releases/tag/1.0.7，下载源码压缩包并解压。
+
+<a href="images/2026-08-30-18-02-02.png" target="_blank"> <img src="images/2026-08-30-18-02-02.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+解压后必须能找到：
+
+```text
+D:\tools\OpenCore-1.0.7-RELEASE\Utilities\macrecovery\macrecovery.py
+```
+
+注意不要多套一层目录；以 PowerShell 中实际存在的 `macrecovery.py` 路径为准。
+
+<a href="images/2026-08-30-18-05-00.png" target="_blank"> <img src="images/2026-08-30-18-05-00.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+### 下载 Apple Recovery
+
+打开 PowerShell，运行以下命令。脚本会从 Apple 服务器下载 Recovery 文件，过程可能需要几分钟，请不要关闭 PowerShell。
+
+```powershell
+$mr = 'D:\tools\OpenCore-1.0.7-RELEASE\Utilities\macrecovery\macrecovery.py'
+$out = 'D:\vmware\macos-vm\recovery'
 
 New-Item -ItemType Directory -Force -Path $out | Out-Null
-python $mr download -o $out -v 2>&1 |
-  Tee-Object 'D:\Downloads\SignRiver-Test-OS\macos\recovery-download.log'
+
+py -3 $mr `
+    -b Mac-937A206F2EE63C01 `
+    -m 00000000000000000 `
+    download `
+    -o $out `
+    -v
 ```
 
-完成后应得到：
+<a href="images/2026-08-30-18-06-12.png" target="_blank"> <img src="images/2026-08-30-18-06-12.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+下载完成后检查文件：
+
+```powershell
+Get-ChildItem 'D:\vmware\macos-vm\recovery'
+```
+
+正常应看到：
 
 ```text
-D:\Downloads\SignRiver-Test-OS\macos\recovery\BaseSystem.dmg
-D:\Downloads\SignRiver-Test-OS\macos\recovery\BaseSystem.chunklist
+BaseSystem.dmg
+BaseSystem.chunklist
 ```
 
-检查文件大小和 SHA256：
+<a href="images/2026-08-30-18-13-48.png" target="_blank"> <img src="images/2026-08-30-18-13-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-Get-Item "$out\BaseSystem.dmg", "$out\BaseSystem.chunklist" |
-  Select-Object Name,Length
+## 六、转换 Recovery 并创建 128 GB 系统盘
 
-Get-FileHash "$out\BaseSystem.dmg", "$out\BaseSystem.chunklist" -Algorithm SHA256
-```
+下一步使用 `dmg2img` 将 `.dmg` 转换成 IMG。打开 https://www.softpedia.com/get/System/Hard-Disk-Utils/DMG2IMG.shtml，下载 Windows 版 `dmg2img-1.6.7-win32.zip`。
 
-本次成功安装 Sequoia 时得到的文件为：
+<a href="images/2026-08-30-18-16-17.png" target="_blank"> <img src="images/2026-08-30-18-16-17.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-| 文件 | 大小 | SHA256 |
-| --- | ---: | --- |
-| `BaseSystem.dmg` | `884317790` bytes | `7314eb401f5e84087f621b3599f0ad21ca3cdcc2685ea2da7f76806792328e20` |
-| `BaseSystem.chunklist` | `3352` bytes | `dbf262b83a16d55f1b2d8ce8ce95986561f8e889719524ea4b7aa22a2417ca27` |
+在下载链接页面选择 **Softpedia Secure Download (US)**，确认文件是 ZIP 压缩包。
 
-Apple 以后可能返回不同版本。若大小或哈希不同，先确认镜像对应的 macOS 版本，不要只看文件名就继续。
+<a href="images/2026-08-30-18-17-57.png" target="_blank"> <img src="images/2026-08-30-18-17-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 4. 转换 Recovery 并创建系统盘
-
-安装 VirtualBox 后，确认以下程序存在：
+将压缩包解压到英文路径，例如：
 
 ```text
-C:\Program Files\Oracle\VirtualBox\VBoxManage.exe
+D:\tools\dmg2img-1.6.7-win32
 ```
 
-解压 dmg2img。本次使用的程序路径为：
+<a href="images/2026-08-30-18-18-26.png" target="_blank"> <img src="images/2026-08-30-18-18-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+打开 PowerShell，复制并执行下面的命令：
+
+```powershell
+& 'D:\tools\dmg2img-1.6.7-win32\dmg2img.exe' 'D:\vmware\macos-vm\recovery\BaseSystem.dmg' 'D:\vmware\macos-vm\recovery\BaseSystem.img'
+```
+
+<a href="images/2026-08-30-18-19-32.png" target="_blank"> <img src="images/2026-08-30-18-19-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+还需要安装 VirtualBox，仅借用它的 `VBoxManage.exe` 将 IMG 转成 VMware 的 VMDK。打开 https://www.virtualbox.org/wiki/Downloads，选择 **Windows hosts** 下载。
+<a href="images/2026-08-30-18-22-10.png" target="_blank"> <img src="images/2026-08-30-18-22-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+安装时基本保持默认即可；安装完成后可以取消“安装后运行 VirtualBox”，点击“完成”。
+
+<a href="images/2026-08-30-18-24-31.png" target="_blank"> <img src="images/2026-08-30-18-24-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+在 PowerShell 中执行：
+
+```powershell
+& 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe' convertfromraw 'D:\vmware\macos-vm\recovery\BaseSystem.img' 'D:\vmware\macos-vm\recovery\BaseSystem.vmdk' --format VMDK
+```
+
+<a href="images/2026-08-30-18-26-21.png" target="_blank"> <img src="images/2026-08-30-18-26-21.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+现在创建用于安装 macOS 的 128 GB 虚拟硬盘。在 PowerShell 中执行：
+
+```powershell
+$vb = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
+$vm = 'D:\vmware\macos-vm'
+
+& $vb createmedium disk --filename "$vm\macos-disk-128.vdi" --size 131072 --format VDI
+& $vb clonemedium disk "$vm\macos-disk-128.vdi" "$vm\macos-disk-128.vmdk" --format VMDK
+```
+
+回到 VMware 的虚拟机设置界面，点击 **添加** → **硬盘**。
+
+<a href="images/2026-08-30-18-31-49.png" target="_blank"> <img src="images/2026-08-30-18-31-49.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+点击 添加 → 硬盘
+
+<a href="images/2026-08-30-18-32-24.png" target="_blank"> <img src="images/2026-08-30-18-32-24.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+SATA
+<a href="images/2026-08-30-18-32-50.png" target="_blank"> <img src="images/2026-08-30-18-32-50.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+使用现有虚拟硬盘
+
+<a href="images/2026-08-30-18-33-20.png" target="_blank"> <img src="images/2026-08-30-18-33-20.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+选择：
 
 ```text
-D:\Downloads\SignRiver-Test-OS\tools\dmg2img\extracted\dmg2img.exe
+D:\vmware\macos-vm\recovery\BaseSystem.vmdk
 ```
 
-先把 DMG 转成 raw IMG，再转成 VMDK：
+<a href="images/2026-08-30-18-33-54.png" target="_blank"> <img src="images/2026-08-30-18-33-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-$dmg2img = 'D:\Downloads\SignRiver-Test-OS\tools\dmg2img\extracted\dmg2img.exe'
-$recovery = 'D:\Downloads\SignRiver-Test-OS\macos\recovery'
-$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
+保持现有格式
 
-& $dmg2img `
-  "$recovery\BaseSystem.dmg" `
-  "$recovery\BaseSystem.img"
+<a href="images/2026-08-30-18-34-54.png" target="_blank"> <img src="images/2026-08-30-18-34-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-if ($LASTEXITCODE -ne 0) { throw 'dmg2img 转换失败' }
-
-& $VBoxManage convertfromraw `
-  "$recovery\BaseSystem.img" `
-  "$recovery\BaseSystem.vmdk" `
-  --format VMDK
-
-if ($LASTEXITCODE -ne 0) { throw 'VBoxManage convertfromraw 失败' }
-```
-
-创建 100 GiB 左右的动态系统盘：
-
-```powershell
-$mac = 'D:\Downloads\SignRiver-Test-OS\macos'
-
-& $VBoxManage createmedium disk `
-  --filename "$mac\macos-disk.vdi" `
-  --size 102400 `
-  --format VDI
-
-if ($LASTEXITCODE -ne 0) { throw '创建目标 VDI 失败' }
-
-& $VBoxManage clonemedium disk `
-  "$mac\macos-disk.vdi" `
-  "$mac\macos-disk.vmdk" `
-  --format VMDK
-
-if ($LASTEXITCODE -ne 0) { throw '目标盘转 VMDK 失败' }
-```
-
-最终要有两块磁盘：
+以同样方式添加第二块盘：
 
 ```text
-D:\Downloads\SignRiver-Test-OS\macos\recovery\BaseSystem.vmdk
-D:\Downloads\SignRiver-Test-OS\macos\macos-disk.vmdk
+D:\vmware\macos-vm\macos-disk-128.vmdk
 ```
 
-`102400 MiB` 在 macOS 磁盘工具中会显示为约 `107.16 GB`，属于计量单位差异。
-
-## 5. 创建 VMware 虚拟机
-
-在 VMware Workstation 中执行以下操作：
-
-1. 选择**创建新的虚拟机**，使用自定义配置；
-2. 选择**稍后安装操作系统**；
-3. 来宾系统选择 64 位 macOS；
-4. 硬件兼容性选择 Workstation 17.x；
-5. 虚拟机名称填写 `macOS Sequoia`；
-6. 虚拟机目录设为 `D:\Downloads\SignRiver-Test-OS\vmware`；
-7. 设置 4 个 vCPU，每插槽 2 核；
-8. 内存设置为 8192 MB；
-9. 固件选择 EFI；
-10. 不创建新磁盘，或者在完成向导后移除向导创建的磁盘；
-11. 完成后不要启动虚拟机，并完全退出 VMware。
-
-找到新生成的 `macOS Sequoia.vmx`，确认虚拟机未运行并备份：
-
-```powershell
-$vmrun = 'C:\Program Files (x86)\VMware\VMware Workstation\vmrun.exe'
-$vmx = 'D:\Downloads\SignRiver-Test-OS\vmware\macOS Sequoia.vmx'
-
-& $vmrun list
-Get-Process vmware-vmx -ErrorAction SilentlyContinue
-Copy-Item $vmx "$vmx.before-initial-config"
-```
-
-用文本编辑器打开 VMX。保留向导生成的其他内容，替换同名配置项；不要在文件末尾重复追加相同键：
-
-```ini
-.encoding = "UTF-8"
-config.version = "8"
-virtualHW.version = "21"
-displayName = "macOS Sequoia"
-guestOS = "darwin24-64"
-firmware = "efi"
-
-numvcpus = "4"
-cpuid.coresPerSocket = "2"
-memsize = "8192"
-
-smc.present = "TRUE"
-smc.version = "0"
-board-id.reflectHost = "TRUE"
-hw.model.reflectHost = "TRUE"
-serialNumber.reflectHost = "TRUE"
-smbios.reflectHost = "TRUE"
-
-sata0.present = "TRUE"
-sata0.pciSlotNumber = "36"
-sata0:0.deviceType = "disk"
-sata0:0.fileName = "D:/Downloads/SignRiver-Test-OS/macos/recovery/BaseSystem.vmdk"
-sata0:0.present = "TRUE"
-sata0:0.redo = ""
-sata0:1.deviceType = "disk"
-sata0:1.fileName = "D:/Downloads/SignRiver-Test-OS/macos/macos-disk.vmdk"
-sata0:1.present = "TRUE"
-sata0:1.redo = ""
-
-ethernet0.present = "TRUE"
-ethernet0.connectionType = "nat"
-ethernet0.virtualDev = "vmxnet3"
-ethernet0.addressType = "generated"
-ethernet0.pciSlotNumber = "160"
-
-pciBridge0.present = "TRUE"
-pciBridge0.pciSlotNumber = "17"
-pciBridge4.present = "TRUE"
-pciBridge5.present = "TRUE"
-pciBridge6.present = "TRUE"
-pciBridge7.present = "TRUE"
-pciBridge4.virtualDev = "pcieRootPort"
-pciBridge4.functions = "8"
-pciBridge5.virtualDev = "pcieRootPort"
-pciBridge5.functions = "8"
-pciBridge6.virtualDev = "pcieRootPort"
-pciBridge6.functions = "8"
-pciBridge7.virtualDev = "pcieRootPort"
-pciBridge7.functions = "8"
-pciBridge4.pciSlotNumber = "21"
-pciBridge5.pciSlotNumber = "22"
-pciBridge6.pciSlotNumber = "23"
-pciBridge7.pciSlotNumber = "24"
-
-usb.present = "TRUE"
-usb.pciSlotNumber = "34"
-usb_xhci.present = "TRUE"
-usb_xhci.pciSlotNumber = "192"
-keyboard.vusb.present = "TRUE"
-keyboard.vusb.enable = "TRUE"
-mouse.vusb.present = "TRUE"
-mouse.vusb.enable = "TRUE"
-mouse.vusb.useBasicMouse = "FALSE"
-mouse.present = "FALSE"
-vmmouse.present = "TRUE"
-usb.generic.allowHID = "TRUE"
-
-svga.vramSize = "268435456"
-mks.enable3d = "FALSE"
-```
+遇到格式提示时选择 **保持现有格式**。
 
-检查关键配置：
+<a href="images/2026-08-30-18-36-31.png" target="_blank"> <img src="images/2026-08-30-18-36-31.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-Select-String -Path $vmx -Pattern `
-  '^(guestOS|firmware|sata0|ethernet0|pciBridge[4-7]|usb|usb_xhci|keyboard|mouse|vmmouse|mks)'
-```
+在显示设置中确认没有勾选 **加速 3D 图形**，保存设置后启动虚拟机。
 
-## 6. 启动 Recovery 并初始化系统盘
+<a href="images/2026-08-30-18-39-48.png" target="_blank"> <img src="images/2026-08-30-18-39-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-启动虚拟机：
+## 七、安装 macOS Sequoia
 
-```powershell
-& $vmrun start $vmx gui
-```
+进入恢复环境后选择简体中文，点击“下一步”。
 
-首次启动应直接进入 macOS Recovery。先确认鼠标和键盘可用，并且磁盘工具能看到约 107.16 GB 的目标盘。
+<a href="images/2026-08-30-18-40-54.png" target="_blank"> <img src="images/2026-08-30-18-40-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-在**磁盘工具**中：
+选择磁盘工具，然后继续
 
-1. 点击**显示所有设备**；
-2. 选择约 107.16 GB 目标磁盘最上层的物理设备；
-3. 点击**抹掉**；
-4. 名称填写 `Macintosh HD`；
-5. 格式选择 **APFS**；
-6. 方案选择 **GUID Partition Map**；
-7. 完成后退出磁盘工具。
+<a href="images/2026-08-30-18-41-49.png" target="_blank"> <img src="images/2026-08-30-18-41-49.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-> 不要抹掉 `BaseSystem` 或 Recovery 盘。
+打开“磁盘工具”，选择“显示所有设备”。选中容量约 128 GB（macOS 可能显示约 137 GB）的物理磁盘，点击“抹掉”。不要选择约 3 GB 的 `BaseSystem` 恢复盘。
 
-创建安装前快照：
+<a href="images/2026-08-30-18-44-22.png" target="_blank"> <img src="images/2026-08-30-18-44-22.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-& $vmrun snapshot $vmx 'pre-sequoia-apfs-install'
-```
+- 名称：Macintosh HD
+- 格式：APFS
+- 方案：GUID 分区图
 
-## 7. 联网安装 macOS Sequoia
+点击“抹掉”，完成后点击“完成”。
 
-VMX 已固定使用 NAT 和 `vmxnet3`。需要确认网络时，在 Recovery 的**终端**中执行：
+<a href="images/2026-08-30-18-45-50.png" target="_blank"> <img src="images/2026-08-30-18-45-50.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```bash
-ifconfig en0
-route -n get default
-```
+抹除完成后点击“完成”，再点击左上角红色按钮退出磁盘工具。
 
-`en0` 应获得 VMware NAT 分配的正常地址。如果只看到 `169.254.x.x`，说明 DHCP 没有成功。
+<a href="images/2026-08-30-18-46-41.png" target="_blank"> <img src="images/2026-08-30-18-46-41.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-如果 Windows 宿主正在使用 Clash Verge、Mihomo 或其他 Fake-IP/TUN 代理，安装前临时把宿主代理切换为**直连**。本次验证中，规则模式会导致 Recovery 能连接 Apple CDN，但下载长期停在起点。安装完成后再恢复原来的代理模式。
+在恢复菜单中选择 **重新安装 macOS Sequoia**，点击“继续”。
 
-网络正常后：
+<a href="images/2026-08-30-18-47-14.png" target="_blank"> <img src="images/2026-08-30-18-47-14.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-1. 退出磁盘工具；
-2. 选择**安装 macOS**；
-3. 选择刚才创建的 `Macintosh HD`；
-4. 接受安装过程中的多次自动重启；
-5. 重启期间不要强制关闭虚拟机；
-6. 等待进入首次设置界面。
+接受许可协议，安装目标选择刚刚抹除的 **Macintosh HD**，点击“继续”。安装过程会下载完整系统并自动重启多次；不要强制关闭 VMware。
 
-进入首次设置后创建快照：
+<a href="images/2026-08-30-18-48-51.png" target="_blank"> <img src="images/2026-08-30-18-48-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-& $vmrun snapshot $vmx 'pre-account-setup'
-```
+地区选择 **中国大陆**。
 
-## 8. 完成首次设置
+<a href="images/2026-08-30-21-45-51.png" target="_blank"> <img src="images/2026-08-30-21-45-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-如果界面已经是中文或英文，直接按向导选择地区、键盘、网络并创建本地账户。
+数据迁移选择 **设置为新机**。
 
-本次验证使用的 Recovery 在安装后进入了俄语首次设置。如果你也遇到相同情况，按下一节修改语言；如果界面语言正常，跳到第 10 节。
+<a href="images/2026-08-30-21-47-01.png" target="_blank"> <img src="images/2026-08-30-21-47-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 9. 将俄语首次设置改为简体中文
+按向导继续到创建账户页面。设置本地账户名称和密码；个人使用可以先不登录 Apple 账户。
 
-先记录 VMX 当前实际连接的磁盘，再正常关机：
+<a href="images/2026-08-30-21-49-01.png" target="_blank"> <img src="images/2026-08-30-21-49-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-Select-String -Path $vmx -Pattern '^sata0:[01]\.fileName|^sata0:[01]\.present'
-& $vmrun stop $vmx soft
-& $vmrun list
-Get-Process vmware-vmx -ErrorAction SilentlyContinue
-Copy-Item $vmx "$vmx.before-language-recovery"
-```
+Apple 账户页面选择 **稍后设置**，并确认跳过。
+<a href="images/2026-08-30-21-52-28.png" target="_blank"> <img src="images/2026-08-30-21-52-28.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-等待虚拟机完全停止。此时 VMX 可能已经因为快照而引用 `macos-disk-000001.vmdk` 等差分盘。下面必须使用 VMX 中的当前文件名，不能改回基础 `macos-disk.vmdk`。
+定位服务可不启用；出现二次确认时选择 **不使用**。
+<a href="images/2026-08-30-21-53-16.png" target="_blank"> <img src="images/2026-08-30-21-53-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-保持 BaseSystem 在 `sata0:0`，把目标系统盘临时改挂到 NVMe。例如当前系统盘是 `macos-disk-000001.vmdk` 时：
+时区选择 **中国标准时间**，最近的城市选择 **上海 – 中国大陆**，点击“继续”。
 
-```ini
-sata0:1.present = "FALSE"
+<a href="images/2026-08-30-21-55-10.png" target="_blank"> <img src="images/2026-08-30-21-55-10.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-nvme0.present = "TRUE"
-nvme0:0.present = "TRUE"
-nvme0:0.fileName = "macos-disk-000001.vmdk"
-nvme0:0.redo = ""
-nvme0.pciSlotNumber = "224"
-```
+分析数据共享选项全部不勾选，点击“继续”。
 
-重新启动后会从 SATA 上的 BaseSystem 进入 Recovery，同时能看到 NVMe 上已安装的 Sequoia。打开**终端**，先识别实际盘号：
+<a href="images/2026-08-30-21-55-48.png" target="_blank"> <img src="images/2026-08-30-21-55-48.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```bash
-diskutil list
-diskutil apfs list
-```
+自动更新页面点击左下角 **自动下载手动安装更新**，再点击“继续”。非官方虚拟机不建议自动安装系统更新。
 
-找到约 107 GB 目标盘对应的 APFS Container、System 卷和 Data 卷。本次验证中目标容器是 `disk2`，Data 卷是 `disk2s1`，System 卷挂载在 `/Volumes/macintosh hd`。你的盘号可能不同，必须按现场输出替换。
+<a href="images/2026-08-30-21-57-14.png" target="_blank"> <img src="images/2026-08-30-21-57-14.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-把 Data 卷挂载到系统卷的 firmlink 路径：
+完成设置后进入 macOS 桌面。此时先正常关机，并在 VMware 中创建一个“安装完成”快照，再重新启动一次确认可以独立启动。
 
-```bash
-diskutil unmount disk2s1
-/sbin/mount_apfs /dev/disk2s1 "/Volumes/macintosh hd/System/Volumes/Data"
-D="/Volumes/macintosh hd/System/Volumes/Data"
-```
+<a href="images/2026-08-30-21-58-01.png" target="_blank"> <img src="images/2026-08-30-21-58-01.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-备份并修改系统级语言偏好：
+点左上角苹果图标，点关机
 
-```bash
-cp -p "$D/Library/Preferences/.GlobalPreferences.plist" \
-  "$D/Library/Preferences/.GlobalPreferences.plist.before-zh"
+<a href="images/2026-08-30-22-02-24.png" target="_blank"> <img src="images/2026-08-30-22-02-24.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-plutil -replace AppleLanguages \
-  -json '["zh-Hans-CN","en-US"]' \
-  "$D/Library/Preferences/.GlobalPreferences.plist"
+虚拟机保持关机状态时，点击 **虚拟机 → 快照 → 拍摄快照…**，名称填写 `macOS Sequoia 安装完成`。
+<a href="images/2026-08-30-22-04-46.png" target="_blank"> <img src="images/2026-08-30-22-04-46.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-plutil -replace AppleLocale -string zh_CN \
-  "$D/Library/Preferences/.GlobalPreferences.plist"
+重新启动虚拟机，确认能正常进入 macOS 桌面。
+<a href="images/2026-08-30-22-05-49.png" target="_blank"> <img src="images/2026-08-30-22-05-49.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-plutil -replace Country -string CN \
-  "$D/Library/Preferences/.GlobalPreferences.plist"
-```
+如果可以正常进入桌面，主线安装就完成了。
 
-再修改 root 的全局偏好作为兜底：
+<a href="images/2026-08-30-22-07-51.png" target="_blank"> <img src="images/2026-08-30-22-07-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```bash
-R="$D/private/var/root/Library/Preferences/.GlobalPreferences.plist"
-cp -p "$R" "$R.before-zh"
+## 八、移除临时 Recovery 盘并安装 VMware Tools
 
-/usr/libexec/PlistBuddy -c "Delete :AppleLanguages" "$R" >/dev/null 2>&1
-/usr/libexec/PlistBuddy -c "Add :AppleLanguages array" "$R"
-/usr/libexec/PlistBuddy -c "Add :AppleLanguages:0 string zh-Hans-CN" "$R"
-/usr/libexec/PlistBuddy -c "Add :AppleLanguages:1 string en-US" "$R"
+再次正常关闭虚拟机，打开虚拟机设置。
 
-/usr/libexec/PlistBuddy -c "Delete :AppleLocale" "$R" >/dev/null 2>&1
-/usr/libexec/PlistBuddy -c "Add :AppleLocale string zh_CN" "$R"
+<a href="images/2026-08-30-22-09-43.png" target="_blank"> <img src="images/2026-08-30-22-09-43.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-/usr/libexec/PlistBuddy -c "Delete :Country" "$R" >/dev/null 2>&1
-/usr/libexec/PlistBuddy -c "Add :Country string CN" "$R"
-```
+选中容量约 3 GB、路径包含 `BaseSystem` 的临时硬盘，点击“移除”。提示删除文件时选择**仅从虚拟机移除，不删除文件**；保留 128 GB 系统盘。
 
-在 Recovery 中关机：
+<a href="images/2026-08-30-22-10-16.png" target="_blank"> <img src="images/2026-08-30-22-10-16.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```bash
-shutdown -h now
-```
+启动 macOS，在 VMware 顶部菜单中选择 **虚拟机 → 安装 VMware Tools**。VMware 会挂载自带的 `darwin.iso`。
 
-虚拟机完全停止后恢复 VMX：
+<a href="images/2026-08-30-22-34-59.png" target="_blank"> <img src="images/2026-08-30-22-34-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-1. 把 `sata0:1.present` 改回 `TRUE`；
-2. 保留 `sata0:1.fileName` 当前使用的差分盘名；
-3. 删除全部临时 `nvme0...` 行；
-4. 不要用早期 VMX 备份覆盖当前文件。
+打开挂载的 **VMware Tools** 磁盘，双击 **安装 VMware Tools**。
 
-重启后，首次设置界面应显示简体中文。按向导选择国家或地区、键盘和网络，然后创建本地账户。
+<a href="images/2026-08-30-22-37-04.png" target="_blank"> <img src="images/2026-08-30-22-37-04.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 10. 验证结果并创建快照
+按向导点击“继续”并输入 macOS 账户密码。安装结束后按提示重新启动。
 
-完成后检查：
+<a href="images/2026-08-30-22-38-09.png" target="_blank"> <img src="images/2026-08-30-22-38-09.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-- 虚拟机可以从系统盘正常启动；
-- 鼠标和键盘可以正常操作；
-- 系统显示为 macOS Sequoia / Darwin 24；
-- NAT 网络可用；
-- 已完成首次设置并进入桌面；
-- 宿主代理已恢复到原来的模式。
+如果出现“系统扩展已被阻止”，打开 **系统设置 → 隐私与安全性**，滚动到底部，找到 `VMware, Inc.` 后点击“允许”，再重新启动。
 
-创建最终快照：
+<a href="images/2026-08-30-22-39-54.png" target="_blank"> <img src="images/2026-08-30-22-39-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-& $vmrun snapshot $vmx 'sequoia-ready'
-```
+重启后测试宿主机与虚拟机之间的复制、粘贴和拖放功能。Windows 键在 macOS 客户机中通常映射为 Command 键，因此粘贴快捷键是 **Win + V（⌘ + V）**，不是 Ctrl + V。
 
-日常操作：
+<a href="images/2026-08-30-22-40-26.png" target="_blank"> <img src="images/2026-08-30-22-40-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-```powershell
-# GUI 启动
-& $vmrun start $vmx gui
+如果复制粘贴正常，说明 VMware Tools 已经生效。弹出的 VMware Tools 磁盘可以在 macOS 桌面上推出；以后需要时可从 VMware 菜单重新挂载。
 
-# 后台启动
-& $vmrun start $vmx nogui
+<a href="images/2026-08-30-22-44-26.png" target="_blank"> <img src="images/2026-08-30-22-44-26.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-# 正常关机
-& $vmrun stop $vmx soft
+最后正常关机，再创建一个快照，例如 `macOS Sequoia-Tools已安装-可用`。之后即可投入使用。
 
-# 查看快照
-& $vmrun listSnapshots $vmx
-```
+## 九、日常使用与注意事项
 
-不要在 macOS 正在安装或更新时强制结束 `vmware-vmx.exe`，否则可能损坏 APFS 或快照链。
+- macOS、应用和游戏都会占用 128 GB 虚拟系统盘的空间；该磁盘是动态增长的，不会一开始就占满。
+- 系统更新前先创建快照，并手动确认兼容性。
+- 不要删除当前使用的 `macos-disk-128*` 文件；旧的 80 GB 文件可以暂时保留。
+- RTX 5070 Laptop 没有 macOS 原生驱动，保持 VMware 的 3D 加速关闭，图形性能有限属于预期现象。
+- 如果以后需要在 Windows 与 macOS 之间共享大量文件，可以另行配置 VMware 共享文件夹。
+
+至此，macOS Sequoia 虚拟机的安装、清理和 VMware Tools 配置全部完成。
 
 更多虚拟机系统部署方案请返回[虚拟机系统部署指南](/p/virtual-machine-system-setup-guide/)。

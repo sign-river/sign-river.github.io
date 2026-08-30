@@ -34,17 +34,21 @@ slug: "idm-free-trial-install-guide"
 
 ## 第三步：下载激活脚本
 
-前往 [IDM 激活脚本 GitHub 项目](https://github.com/tytsxai/IDM-Activation-Script-Chinese) 的 Release 页面，点击右侧"Releases"区域的最新版本（v1.4.2）。
+前往 [IDM 激活脚本 GitHub 项目](https://github.com/tytsxai/IDM-Activation-Script-Chinese)，然后打开仓库中的 [`release`](https://github.com/tytsxai/IDM-Activation-Script-Chinese/tree/main/release) 文件夹。项目不再通过 GitHub Releases 发布版本，下载文件统一放在该目录中。
 
-<a href="images/2026-07-29-00-21-04.png" target="_blank"> <img src="images/2026-07-29-00-21-04.png" alt="GitHub 项目主页，显示 IDM 激活脚本中文版页面" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-08-30-17-29-57.png" target="_blank"> <img src="images/2026-08-30-17-29-57.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-在 Release 页面右侧的 **Assets**（资源）区域，点击下载 `IDM-Activation-Script.zip` 压缩包：
+进入 `release` 文件夹后，点击 `IDM-Activation-Script.zip` 文件，
 
-<a href="images/2026-07-29-00-23-53.png" target="_blank"> <img src="images/2026-07-29-00-23-53.png" alt="GitHub Release 页面，显示 IDM-Activation-Script.zip 下载链接" style="max-width: 100%; width: 1000px;"/> </a>
+<a href="images/2026-08-30-17-30-12.png" target="_blank"> <img src="images/2026-08-30-17-30-12.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+再点击文件页面中的下载按钮获取压缩包。也可以直接使用固定的 [下载链接](https://raw.githubusercontent.com/tytsxai/IDM-Activation-Script-Chinese/main/release/IDM-Activation-Script.zip)：
+
+<a href="images/2026-08-30-17-30-32.png" target="_blank"> <img src="images/2026-08-30-17-30-32.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
 ## 第四步：运行激活脚本
 
-下载并解压压缩包后，您会看到以下两个核心命令文件（原 Release 中还包含其他文档，但这两个是必需的）：
+下载并解压压缩包后，您会看到以下两个核心命令文件（压缩包中还包含其他文档，但这两个是必需的）：
 
 <a href="images/2026-07-29-00-24-55.png" target="_blank"> <img src="images/2026-07-29-00-24-55.png" alt="解压后的文件列表，显示 IAS.cmd 和开始激活.cmd 两个文件" style="max-width: 100%; width: 1000px;"/> </a>
 
