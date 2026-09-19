@@ -82,6 +82,18 @@ guide_title: "Codex 使用指南"
 
 <a href="images/2026-07-25-00-21-58.png" target="_blank" rel="noopener"><img src="images/2026-07-25-00-21-58.png" alt="CC Switch 添加 Faro API 供应商表单" style="max-width: 100%; width: 1000px;"/></a>
 
+另外有快速添加模型的方法，首先点击下载按钮，就可以从服务端获取支持的模型列表
+
+<a href="images/2026-09-19-17-28-18.png" target="_blank"> <img src="images/2026-09-19-17-28-18.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+然后点添加模型，接着在列表中选择需要的模型添加即可
+
+<a href="images/2026-09-19-17-28-51.png" target="_blank"> <img src="images/2026-09-19-17-28-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+不过需要注意的是上下文窗口 cc switch 默认是 128k，感觉不是很够用，建议设置为 256k
+
+<a href="images/2026-09-19-17-29-28.png" target="_blank"> <img src="images/2026-09-19-17-29-28.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
 ### 3.3. 测试请求地址
 
 填写完成后，点击 API 请求地址右侧的 **管理与测速**。

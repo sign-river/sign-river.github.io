@@ -1,7 +1,7 @@
 ---
 title: "在 VirtualBox 中部署 SteamOS 测试虚拟机"
-date: 2026-08-16
-description: "把 Valve Steam Deck Recovery 镜像转换为 VirtualBox 虚拟机，并完成可用分辨率、正常关机和 Steam 启动配置。"
+date: 2026-08-30
+description: "重新整理使用 Steam Deck Recovery 镜像在 VirtualBox 中部署 SteamOS 测试虚拟机的流程与验证方法。"
 categories:
   - "系统"
 tags:
@@ -20,452 +20,278 @@ guide: "/p/virtual-machine-system-setup-guide/"
 guide_title: "虚拟机系统部署指南"
 ---
 
-> 这套方案使用 Steam Deck 恢复镜像，并对系统内核和 GRUB 做测试环境改造。它不属于 Valve 官方支持的通用 PC 安装方式，也不代表真实 Steam Deck 或 Linux 游戏主机的图形性能。
+首先从 Oracle 官网下载并安装 VirtualBox。记住下载路径，后面要用。
 
-## 1. 准备环境
+然后下载 steamos 镜像
 
-本次验证使用：
+<a href="images/2026-09-01-16-40-04.png" target="_blank"> <img src="images/2026-09-01-16-40-04.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-| 资源                   | 版本或文件                                         | 用途                      |
-| ---------------------- | -------------------------------------------------- | ------------------------- |
-| VirtualBox             | 7.2.14                                             | 创建和运行虚拟机          |
-| Steam Deck Recovery    | `steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2` | SteamOS 恢复系统盘        |
-| Python 3               | Windows 版本                                       | 使用标准库 `bz2` 解压镜像 |
-| Windows OpenSSH Client | Windows 可选功能                                   | 从宿主通过 SSH 管理来宾   |
+输入& 'C:\Program Files\7-Zip\7z.exe' t `
+'D:\vmware\steamos\steamdeck-oobe-repair-20260707.10-3.8.14.img.zip'
+检查下载文件是否正常
 
-下载入口：
+输出 Everything is Ok 则为正常
+<a href="images/2026-09-13-02-22-36.png" target="_blank"> <img src="images/2026-09-13-02-22-36.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-- [VirtualBox 7.2.14 Windows 安装包](https://download.virtualbox.org/virtualbox/7.2.14/VirtualBox-7.2.14-174565-Win.exe)
-- [Valve Steam Deck Recovery 说明](https://help.steampowered.com/en/faqs/view/1B71-EDF2-EB6D-2BB3)
-- [Valve 恢复镜像索引](https://steamdeck-images.steamos.cloud/recovery/)
-- [本次使用的固定恢复镜像](https://steamdeck-images.steamos.cloud/recovery/steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2)
-- [Python for Windows](https://www.python.org/downloads/windows/)
-- [Windows OpenSSH Client 说明](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse)
+下一步解压 Recovery 镜像。在 PowerShell 中执行：
 
-宿主至少要为压缩镜像、解压后的 IMG、两块 VDI 和后续快照预留足够空间。数据盘逻辑容量为 128 GiB，但使用动态分配，不会立刻占满宿主磁盘。
+<a href="images/2026-09-13-02-24-25.png" target="_blank"> <img src="images/2026-09-13-02-24-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-## 2. 下载并核对恢复镜像
+现在把 Recovery IMG 转换成 VirtualBox 使用的 VDI
 
-在 PowerShell 中执行：
+$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
 
-```powershell
-$dir = 'D:\Downloads\SignRiver-Test-OS\steamos'
-New-Item -ItemType Directory -Force $dir | Out-Null
+$src = 'D:\vmware\steamos\recovery\steamdeck-oobe-repair-20260707.10-3.8.14.img'
+$vbDir = 'D:\vmware\steamos\virtualbox'
 
-curl.exe -fL --retry 3 `
-  -o "$dir\steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2" `
-  'https://steamdeck-images.steamos.cloud/recovery/steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2'
+New-Item -ItemType Directory -Force "$vbDir\vm" | Out-Null
 
-Get-FileHash -Algorithm SHA256 `
-  "$dir\steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2"
+& $VBoxManage convertfromraw 'D:\vmware\steamos\recovery\steamdeck-oobe-repair-20260707.10-3.8.14.img' 'D:\vmware\steamos\virtualbox\vm\steamos-install.vdi' --format VDI
+
+<a href="images/2026-09-13-21-21-25.png" target="_blank"> <img src="images/2026-09-13-21-21-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+下一步创建 128 GiB 动态数据盘，
+
+& $VBoxManage createmedium disk --filename 'D:\vmware\steamos\virtualbox\vm\steamos-disk.vdi' --size 131072 --format VDI
+<a href="images/2026-09-13-21-21-39.png" target="_blank"> <img src="images/2026-09-13-21-21-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+下一步创建虚拟机并设置基本硬件。依次执行这两条：
+
+& $VBoxManage createvm --name SteamOS --ostype ArchLinux_64 --basefolder 'D:\vmware\steamos\virtualbox' --register
+
+& $VBoxManage modifyvm SteamOS --memory 8192 --cpus 2 --vram 256 --graphicscontroller vboxsvga --accelerate-3d off --firmware efi --nic1 nat --nictype1 82540EM --ioapic on --audio-enabled off --usb off --clipboard-mode bidirectional --drag-and-drop bidirectional
+
+<a href="images/2026-09-13-21-21-51.png" target="_blank"> <img src="images/2026-09-13-21-21-51.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+下一步创建 SATA 控制器，并挂载系统盘
+& $VBoxManage storagectl SteamOS --name SATA --add sata --controller IntelAhci --portcount 2
+
+& $VBoxManage storageattach SteamOS --storagectl SATA --port 0 --device 0 --type hdd --medium 'D:\vmware\steamos\virtualbox\vm\steamos-install.vdi'
+
+<a href="images/2026-09-13-21-22-14.png" target="_blank"> <img src="images/2026-09-13-21-22-14.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+下一步挂载数据盘，并设置 SSH 端口转发：
+& $VBoxManage storageattach SteamOS --storagectl SATA --port 1 --device 0 --type hdd --medium 'D:\vmware\steamos\virtualbox\vm\steamos-disk.vdi'
+& $VBoxManage modifyvm SteamOS --natpf1 "ssh,tcp,127.0.0.1,2222,,22"
+
+<a href="images/2026-09-13-21-22-25.png" target="_blank"> <img src="images/2026-09-13-21-22-25.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+现在启动虚拟机：
+& $VBoxManage startvm SteamOS --type gui
+
+<a href="images/2026-09-13-21-22-39.png" target="_blank"> <img src="images/2026-09-13-21-22-39.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+现在先创建一个快照
+& $VBoxManage snapshot SteamOS take 'before-steamos-config' --description 'Successfully entered SteamOS Recovery desktop'
+
+<a href="images/2026-09-13-21-24-52.png" target="_blank"> <img src="images/2026-09-13-21-24-52.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+
+ssh 链接方法
+
+虚拟机内输入
+
+sudo systemctl start sshd
+
+passwd
+
+然后输入密码 123456
+
+宿主机输入
+
+ssh-keygen -R '[127.0.0.1]:2222'
+
+ssh -p 2222 deck@127.0.0.1
+
+为了避免每次虚拟机重启后都要重新启动 SSH，在虚拟机中执行：
+
+```bash
+sudo systemctl enable --now sshd
 ```
 
-本次验证文件为：
+执行后可以用下面的命令检查：
+
+```bash
+systemctl is-enabled sshd
+systemctl is-active sshd
+```
+
+输出 `enabled` 和 `active` 就表示 SSH 已经设置为开机自动启动。
+
+接下来处理 SteamOS 的实际安装。Steam Deck Recovery 自带的安装脚本默认按照真实 Steam Deck 的 NVMe 硬盘工作，如果仍然使用 SATA 控制器，脚本识别磁盘时比较容易出问题。因此我后来关闭虚拟机，把 Recovery 盘和 128 GiB 目标盘都改挂到 NVMe 控制器。
+
+先在宿主机中查看当前磁盘和 UUID：
+
+```powershell
+& $VBoxManage showvminfo SteamOS
+& $VBoxManage list hdds
+```
+
+如果前面已经创建过快照，不要直接填写最初 VDI 文件的路径，而要使用 `showvminfo` 中当前实际挂载的磁盘 UUID。关闭虚拟机后创建 NVMe 控制器，并把两块盘从 SATA 控制器移动过去：
+
+```powershell
+& $VBoxManage storagectl SteamOS --name NVMe --add pcie --controller NVMe --portcount 2
+
+& $VBoxManage storageattach SteamOS --storagectl SATA --port 0 --device 0 --type hdd --medium none
+& $VBoxManage storageattach SteamOS --storagectl SATA --port 1 --device 0 --type hdd --medium none
+
+& $VBoxManage storageattach SteamOS --storagectl NVMe --port 0 --device 0 --type hdd --medium '<Recovery 当前磁盘 UUID>'
+& $VBoxManage storageattach SteamOS --storagectl NVMe --port 1 --device 0 --type hdd --medium '<128 GiB 目标磁盘 UUID>'
+```
+
+> 如果 NVMe 控制器已经存在，就不要重复执行 `storagectl --add`。这里的两个 UUID 必须以自己执行 `showvminfo` 后看到的结果为准。
+
+重新进入 Recovery 系统后，通过 SSH 执行：
+
+```bash
+lsblk -o NAME,SIZE,FSTYPE,LABEL,PARTLABEL,MOUNTPOINTS
+```
+
+当两块磁盘都挂在 NVMe 控制器上时，本次安装环境中 Recovery 盘是 `/dev/nvme0n1`，128 GiB 目标盘是 `/dev/nvme0n2`。这里一定要根据容量和分区再次确认，不能只照抄设备名，否则可能清空错误的磁盘。
+
+SteamOS 的修复脚本还会尝试调用真实 NVMe 硬盘支持的 sanitize 操作。VirtualBox 的虚拟 NVMe 磁盘不支持这个功能，脚本会在这里失败。因此我把修改后的脚本保存在：
 
 ```text
-大小：3357999306 bytes
-SHA256:4254ee02ec34ae8add9aceef1881a2ce675a9d0176171df92e0eaa1bf014c594
+/home/deck/tools/repair_device.sh
 ```
 
-本文固定使用 `20260707.10-3.8.14`。不要在复现时未经验证就换成索引中的其他镜像。
+修改内容主要有两处：
 
-## 3. 解压镜像并创建虚拟磁盘
+1. 把安装目标明确设置为 `/dev/nvme0n2`。
+2. 跳过真实硬盘的 NVMe sanitize，改用 VirtualBox 虚拟磁盘可以执行的 `wipefs` 和 `dd` 清理分区签名及磁盘开头区域。
 
-使用 Python 标准库解压 `.bz2`。把下面代码保存为 `D:\Downloads\SignRiver-Test-OS\steamos\extract-image.py`：
+清理目标盘时使用的思路如下：
 
-```python
-import bz2
-import shutil
-
-src = r"D:\Downloads\SignRiver-Test-OS\steamos\steamdeck-oobe-repair-20260707.10-3.8.14.img.bz2"
-dst = r"D:\Downloads\SignRiver-Test-OS\steamos\steamdeck-oobe-repair-20260707.10-3.8.14.img"
-
-with bz2.open(src, "rb") as fin, open(dst, "wb") as fout:
-    shutil.copyfileobj(fin, fout, length=4 * 1024 * 1024)
+```bash
+sudo wipefs -a /dev/nvme0n2
+sudo dd if=/dev/zero of=/dev/nvme0n2 bs=1M count=64 conv=fsync
 ```
 
-运行脚本：
+确认目标设备无误后运行修改过的修复脚本：
 
-```powershell
-python 'D:\Downloads\SignRiver-Test-OS\steamos\extract-image.py'
+```bash
+sudo /home/deck/tools/repair_device.sh
 ```
 
-然后把 raw IMG 转成 VDI，并创建一块 128 GiB 动态数据盘：
+脚本执行完成后，再次检查目标盘：
 
-```powershell
-$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
-$dir = 'D:\Downloads\SignRiver-Test-OS\steamos'
-
-New-Item -ItemType Directory -Force "$dir\vm" | Out-Null
-
-& $VBoxManage convertfromraw `
-  "$dir\steamdeck-oobe-repair-20260707.10-3.8.14.img" `
-  "$dir\vm\steamos-install.vdi" `
-  --format VDI
-
-if ($LASTEXITCODE -ne 0) { throw '恢复盘转换失败' }
-
-& $VBoxManage createmedium disk `
-  --filename "$dir\vm\steamos-disk.vdi" `
-  --size 131072 `
-  --format VDI
-
-if ($LASTEXITCODE -ne 0) { throw '数据盘创建失败' }
+```bash
+lsblk -o NAME,SIZE,FSTYPE,LABEL,PARTLABEL,MOUNTPOINTS
 ```
 
-## 4. 创建 VirtualBox 虚拟机
+目标盘出现 ESP、EFI-A、EFI-B、rootfs-A、rootfs-B、var-A、var-B 和 home 等分区，就说明 SteamOS 已经写入完成。本次安装生成了约 117 GiB 的 home 分区。
 
-以 PowerShell 执行：
+接下来关闭虚拟机，卸载 Recovery 盘，只保留刚刚安装好的 128 GiB 目标盘，并把目标盘挂到 NVMe 控制器的 0 号端口。再次启动后，系统已经能够从目标盘进入 SteamOS，但画面一直停留在黑屏，看起来像是安装失败。
 
-```powershell
-$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
-$dir = 'D:\Downloads\SignRiver-Test-OS\steamos'
-
-& $VBoxManage createvm --name SteamOS --ostype ArchLinux_64 --register
-
-& $VBoxManage modifyvm SteamOS `
-  --memory 8192 `
-  --cpus 2 `
-  --vram 256 `
-  --graphicscontroller vmsvga `
-  --accelerate-3d on `
-  --firmware efi `
-  --nic1 nat `
-  --nictype1 82540EM `
-  --ioapic on `
-  --audio-enabled off `
-  --usb off `
-  --clipboard-mode bidirectional `
-  --drag-and-drop bidirectional
-```
-
-创建 SATA 控制器并挂载恢复盘和数据盘：
-
-```powershell
-& $VBoxManage storagectl SteamOS `
-  --name SATA `
-  --add sata `
-  --controller IntelAhci `
-  --portcount 2
-
-& $VBoxManage storageattach SteamOS `
-  --storagectl SATA `
-  --port 0 `
-  --device 0 `
-  --type hdd `
-  --medium "$dir\vm\steamos-install.vdi"
-
-& $VBoxManage storageattach SteamOS `
-  --storagectl SATA `
-  --port 1 `
-  --device 0 `
-  --type hdd `
-  --medium "$dir\vm\steamos-disk.vdi"
-```
-
-设置 SSH 端口转发：
-
-```powershell
-& $VBoxManage modifyvm SteamOS `
-  --natpf1 "ssh,tcp,127.0.0.1,2222,,22"
-```
-
-SSH 只绑定到宿主回环地址，不会直接暴露到局域网。
-
-## 5. 首次启动并通过 SSH 接管
-
-启动虚拟机：
-
-```powershell
-& $VBoxManage startvm SteamOS --type gui
-```
-
-恢复镜像启动的是精简 OOBE/X 会话，而不是完整 KDE Plasma 桌面，因此没有开始菜单、`Super` 菜单或 `Ctrl+Alt+T` 终端属于正常现象。
-
-恢复镜像测试阶段使用 `deck` 用户。按界面完成必要的初始操作后，从宿主连接：
+实际上这次黑屏并不是系统没有安装成功。此时 SSH 仍然可以连接，所以先从宿主机进入系统：
 
 ```powershell
 ssh -p 2222 deck@127.0.0.1
 ```
 
-连接成功后立即为账户设置自己的密码，并优先配置 SSH 公钥。本文不记录任何默认密码或私钥。
-
-### 5.1 SSH 无法登录时：离线恢复自己的公钥
-
-如果忘记密码、已有私钥却始终被拒绝，先不要反复猜密码。先关机并创建快照，然后用临时 Linux 救援虚拟机挂载 SteamOS 的**系统盘**，把自己的公钥追加回 `deck` 的 `authorized_keys`。这不会替换旧密钥，也不会暴露私钥。
-
-先从自己的私钥导出公钥；公钥是一行以 `ssh-ed25519`、`ssh-rsa` 等开头的文本：
-
-```powershell
-$keyPath = "$env:USERPROFILE\.ssh\signriver_vm_rsa"
-ssh-keygen -y -f $keyPath
-```
-
-救援虚拟机中应只连接 SteamOS 的系统盘，不要挂载额外的数据盘。用 `lsblk -f` 确认包含 `deck` 家目录的 Btrfs 根分区后挂载；本次固定恢复镜像的根分区为 `/dev/sda5`：
+然后检查系统版本、磁盘、显示管理器、Gamescope 和显卡驱动：
 
 ```bash
-sudo mount /dev/sda5 /mnt
-sudo install -d -m 700 /mnt/deck/.ssh
-
-# 使用编辑器把上一条命令导出的“整行公钥”追加到此文件末尾，不删除已有内容。
-sudoedit /mnt/deck/.ssh/authorized_keys
-
-sudo chmod 600 /mnt/deck/.ssh/authorized_keys
-sudo sync
-sudo umount /mnt
+cat /etc/os-release
+uname -a
+lsblk -o NAME,SIZE,FSTYPE,LABEL,PARTLABEL,MOUNTPOINTS
+systemctl status sddm --no-pager -l
+systemctl status gamescope-session-plus@deck.service --no-pager -l
+lspci -nnk | grep -A4 -Ei 'VGA|Display|3D'
+sudo journalctl -b -p warning..alert --no-pager -n 250
 ```
 
-关闭救援虚拟机、移除系统盘挂载后，再启动 SteamOS。用对应私钥验证连接：
+检查结果可以确认以下几点：
 
-```powershell
-ssh -i "$env:USERPROFILE\.ssh\signriver_vm_rsa" `
-  -p 2222 -o BatchMode=yes deck@127.0.0.1
-```
+- SteamOS 3.8.14 已经安装完成，Build 为 `20260707.10`。
+- 系统能够正常挂载 rootfs、var 和 home 分区。
+- VirtualBox 提供的是 `VirtualBox Graphics Adapter`，使用 `vboxvideo` 驱动。
+- SDDM 已经启动，但默认的 Gaming Mode 会反复启动并崩溃。
+- 日志中出现了 `gamescope-session.service`、`status=6/ABRT`、`vkCreateInstance` 和 `libVkLayer_FROG_gamescope_wsi_x86_64.so` 等错误。
 
-> 救援前必须先创建 VirtualBox 快照；分区号可能随镜像版本变化，务必先用 `lsblk -f` 确认。不要把私钥、密码或完整的 `authorized_keys` 内容写进博客或上传到云端。
+SteamOS 的 Gaming Mode 使用 Gamescope，并依赖受支持的 Vulkan 显卡。VirtualBox 的虚拟显卡无法提供 Steam Deck 所需的 AMD GPU 和 Vulkan 环境，因此 Gamescope 在创建 Vulkan 实例时崩溃，最终只留下黑屏。
 
-## 6. 安装 Arch LTS 内核解决分辨率问题
+也就是说，问题不是 SteamOS 没有装好，而是 SteamOS 默认进入的 Gaming Mode 不兼容 VirtualBox。解决方法是跳过 Gamescope，把默认会话永久改成 KDE Plasma X11 桌面。
 
-原恢复内核在 VMSVGA 下可能只提供约 640×480。已经验证可用的解决方式是保留原内核，再增加 Arch LTS 内核，让 `vmwgfx` 正常加载。
-
-先在宿主创建快照：
-
-```powershell
-$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
-& $VBoxManage snapshot SteamOS take 'before-arch-lts-vmsvga' `
-  --description 'Before installing Arch LTS kernel for VMSVGA support'
-```
-
-在来宾中解除只读，并使用本次固定恢复镜像已经验证通过的命令安装 LTS 内核：
+在 SSH 中执行：
 
 ```bash
-sudo steamos-readonly disable 2>/dev/null || true
-sudo pacman -S --noconfirm --needed \
-  --assume-installed=initramfs \
-  linux-lts
+steamosctl set-default-login-mode desktop
+steamosctl set-default-desktop-session plasmax11.desktop
+sudo systemctl restart sddm
 ```
 
-本次验证安装的是 `linux-lts 6.18.44-1`。
-
-> `--assume-installed=initramfs` 是针对本文固定恢复镜像仓库状态的兼容参数。执行前确认系统已有 initramfs 工具链和正常的 `/boot` 内容，不要在其他 Linux 系统上照抄。
-
-备份并重新生成 EFI GRUB 配置：
+然后检查生成的 SDDM 自动登录配置：
 
 ```bash
-sudo cp /efi/EFI/steamos/grub.cfg \
-  /home/deck/grub.cfg.before-lts
-
-sudo grub-mkconfig -o /efi/EFI/steamos/grub.cfg
-sudo grep -E '^menuentry |^submenu ' /efi/EFI/steamos/grub.cfg
-find /usr/lib/modules -name 'vmwgfx.ko*' -print
+grep -R '^Session=' /etc/sddm.conf.d/zz-steamos-autologin.conf
 ```
 
-从输出中找到 `linux-lts` 对应的完整 GRUB 条目。它的 UUID 会因虚拟磁盘而变化，不能照抄别人的值。本次验证中的条目形式如下：
+输出如下：
 
 ```text
-gnulinux-advanced-<你的 UUID>>gnulinux-linux-lts-advanced-<你的 UUID>
+Session=plasmax11.desktop
 ```
 
-先只让下一次启动进入 LTS：
+再检查 Plasma X11 是否已经真正启动：
 
 ```bash
-entry='把这里替换为上一条命令找到的完整 linux-lts 条目'
-sudo grub-editenv /efi/EFI/steamos/grubenv set next_entry="$entry"
-sudo grub-editenv /efi/EFI/steamos/grubenv list
-sudo systemctl poweroff
+systemctl status sddm --no-pager -l
+ps -eo comm,args | grep -E 'Xorg|startplasma-x11|kwin_x11' | grep -v grep
 ```
 
-虚拟机关闭后，在宿主再次固定显示配置并启动：
-
-```powershell
-& $VBoxManage modifyvm SteamOS `
-  --graphicscontroller vmsvga `
-  --accelerate-3d on `
-  --vram 256
-
-& $VBoxManage startvm SteamOS --type gui
-```
-
-重新 SSH 登录并验证：
-
-```bash
-uname -r
-lspci -nnk | sed -n '/VGA compatible controller/,+5p'
-lsmod | grep vmwgfx
-DISPLAY=:0 XAUTHORITY=/home/deck/.Xauthority xrandr --current
-```
-
-确认 `uname -r` 显示 LTS 内核、`vmwgfx` 已加载，并且 `xrandr` 出现可用分辨率后，再把 LTS 固定为默认启动项。
-
-本次成功路线是备份 `/efi/EFI/steamos/grub.cfg`，然后把文件开头的：
+正常情况下可以看到以下进程：
 
 ```text
-set default="0"
+/usr/lib/Xorg
+/usr/bin/startplasma-x11
+/usr/bin/kwin_x11 --replace
 ```
 
-改为：
+这时 VirtualBox 中原来的黑屏会变成正常的 Plasma 桌面，Steam 客户端也可以正常打开登录页面。
+
+为了确认这不是临时生效，再执行一次重启：
+
+```bash
+sudo reboot
+```
+
+重启后重新连接 SSH，并执行：
+
+```bash
+steamosctl get-default-login-mode
+grep -R '^Session=' /etc/sddm.conf.d/zz-steamos-autologin.conf
+systemctl is-active sddm sshd
+ps -eo comm,args | grep -E 'Xorg|startplasma-x11|kwin_x11' | grep -v grep
+findmnt -no SOURCE,TARGET /
+```
+
+本次验证结果为：
 
 ```text
-set default="gnulinux-advanced-<你的 UUID>>gnulinux-linux-lts-advanced-<你的 UUID>"
+desktop
+Session=plasmax11.desktop
+active
+active
+/dev/nvme0n1p5 /
 ```
 
-修改后重启一次，再执行 `uname -r` 确认仍进入 LTS 内核。
+说明重启后仍然会自动进入 Plasma X11，SSH 也会自动启动。卸载 Recovery 盘后，安装完成的目标盘会从原来的 `/dev/nvme0n2` 变成 `/dev/nvme0n1`，这是正常现象。
 
-> `grub.cfg` 是生成文件，再次运行 `grub-mkconfig` 会覆盖这个修改。原 `linux-neptune-616` 内核仍保留在 GRUB 高级启动项中，LTS 无法启动时可回退。
-
-### 6.1 固定可用分辨率，阻止 VirtualBox 自动协商超高画布
-
-LTS 内核下，`xrandr` 的输出名实测为 `Virtual-1`。如果旧配置仍使用 `VGA-1`，设置会失败，来宾可能回到异常的超大画布并出现横向、纵向滚动条。
-
-还有一种更隐蔽的情况：VirtualBox 的“自动调整客户机显示大小”会向 SteamOS 通报宿主窗口的超高逻辑尺寸。实测桌面曾被自动协商为 **7680×4320**；画面虽然没有滚动条，但所有文字和按钮都会缩成很小的一块。这不是 SteamOS 的缩放设置问题，也不需要开启 VirtualBox 缩放模式。
-
-先创建一个开机执行的分辨率服务，将来宾固定为 `1600×900`。这个尺寸在普通桌面窗口中仍然清晰，同时比 1920×1080 更容易阅读：
-
-```bash
-sudo tee /etc/systemd/system/signriver-resolution.service >/dev/null <<'EOF'
-[Unit]
-Description=Set SteamOS VirtualBox display resolution
-After=signriver-xorg.service
-Requires=signriver-xorg.service
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/bash -c 'for i in {1..20}; do DISPLAY=:0 /usr/bin/xrandr --output Virtual-1 --mode 1600x900 && exit 0; sleep 1; done; exit 1'
-RemainAfterExit=yes
-
-[Install]
-WantedBy=graphical.target
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable --now signriver-resolution.service
-DISPLAY=:0 XAUTHORITY=/home/deck/.Xauthority xrandr --current
-```
-
-当前 SteamOS 默认使用 KDE Wayland 时，桌面会话也可能在服务执行后再次应用显示配置。可以在已登录的桌面会话中查看并切换 KScreen 模式：
-
-```bash
-XDG_RUNTIME_DIR=/run/user/1000 \
-WAYLAND_DISPLAY=wayland-0 \
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
-kscreen-doctor -o
-```
-
-从输出中找到 `Virtual-1` 的 `1600x900@60` 对应模式编号后执行，例如本次为编号 `18`：
-
-```bash
-XDG_RUNTIME_DIR=/run/user/1000 \
-WAYLAND_DISPLAY=wayland-0 \
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
-kscreen-doctor output.1.mode.18
-```
-
-最后必须在宿主禁用自动调整，并保留原始像素显示。不要使用 VirtualBox 的**缩放模式**，它会对整张来宾画面插值放大而变模糊。先正常关机，再执行：
+最后在宿主机中创建一个安装完成后的快照：
 
 ```powershell
-$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
-& $VBoxManage setextradata SteamOS GUI/Scale false
-& $VBoxManage setextradata SteamOS GUI/AutoresizeGuest false
-& $VBoxManage setextradata SteamOS GUI/LastGuestSizeHint '1600,900'
-& $VBoxManage startvm SteamOS --type gui
+& $VBoxManage snapshot SteamOS take 'steamos-installed-plasma-x11' --description 'SteamOS 3.8.14 installed; Plasma X11 selected because Gamescope/Vulkan is incompatible with VirtualBox' --live
 ```
 
-这样使用的是来宾原始像素；既不会回到 7680×4320 的巨幅画布，也不会因 VirtualBox 二次缩放而变模糊。若使用不同大小的宿主窗口，可相应改成 `1440×900` 或 `1280×720`，但每次改动后都应保持 `GUI/AutoresizeGuest=false`。
+最终安装结果：
 
-## 7. 修复 ACPI 电源按钮
+- SteamOS 3.8.14 已经成功安装到 128 GiB 虚拟磁盘。
+- 系统可以正常启动和重启。
+- Plasma X11 桌面可以正常显示。
+- Steam 客户端可以正常打开登录页面。
+- SSH 可以通过宿主机的 `127.0.0.1:2222` 连接，并且已经设置为开机自动启动。
+- VirtualBox 中不能使用 SteamOS Gaming Mode，因为 Gamescope 所需的 Vulkan GPU 环境不受支持。
 
-如果宿主发送 ACPI 电源按钮后虚拟机不关机，在来宾中创建配置：
-
-```bash
-cat > /home/deck/zz-signriver-poweroff.conf <<'EOF'
-[Login]
-HandlePowerKey=poweroff
-PowerKeyIgnoreInhibited=no
-EOF
-
-sudo install -m 644 \
-  /home/deck/zz-signriver-poweroff.conf \
-  /etc/systemd/logind.conf.d/zz-signriver-poweroff.conf
-
-sudo systemctl restart systemd-logind
-systemd-analyze cat-config systemd/logind.conf
-```
-
-在宿主测试正常关机：
-
-```powershell
-& $VBoxManage controlvm SteamOS acpipowerbutton
-```
-
-虚拟机应执行正常关机，而不是保持无响应。
-
-## 8. 正确启动 Steam
-
-重新启动虚拟机后，不要调用 `/usr/bin/steam`。该恢复镜像中的这个入口会进入 OOBE 包装流程，并可能清理 Steam 配置。直接启动实际客户端：
-
-```bash
-/usr/lib/steam/steam
-```
-
-如果需要从 SSH 中启动 Steam，必须同时提供用户会话环境：
-
-```bash
-sudo systemd-run \
-  --unit=signriver-steam \
-  --property=Restart=no \
-  --uid=deck \
-  --working-directory=/home/deck \
-  --setenv=HOME=/home/deck \
-  --setenv=DISPLAY=:0 \
-  --setenv=XDG_RUNTIME_DIR=/run/user/1000 \
-  --setenv=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
-  --setenv=XAUTHORITY=/home/deck/.Xauthority \
-  /usr/lib/steam/steam -skipinitialbootstrap
-```
-
-Steam 首次启动后会自行下载客户端更新。等待更新完成并登录自己的 Steam 账户。
-
-## 9. 验证并创建快照
-
-确认以下项目：
-
-- SteamOS 能从恢复系统盘稳定启动；
-- `uname -r` 显示 LTS 内核；
-- `vmwgfx` 已加载；
-- `xrandr` 能看到高于 640×480 的可用分辨率；
-- 宿主能通过 `127.0.0.1:2222` SSH 连接；
-- ACPI 电源按钮可以正常关机；
-- `/usr/lib/steam/steam` 可以启动并保留登录状态。
-
-关机后创建最终快照：
-
-```powershell
-$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
-& $VBoxManage snapshot SteamOS take 'steamos-ready' `
-  --description 'SteamOS recovery image with LTS kernel, VMSVGA, SSH and Steam validated'
-```
-
-日常命令：
-
-```powershell
-$VBoxManage = 'C:\Program Files\Oracle\VirtualBox\VBoxManage.exe'
-
-# GUI 启动
-& $VBoxManage startvm SteamOS --type gui
-
-# 无界面启动
-& $VBoxManage startvm SteamOS --type headless
-
-# 请求正常关机
-& $VBoxManage controlvm SteamOS acpipowerbutton
-
-# 查看配置与状态
-& $VBoxManage showvminfo SteamOS --machinereadable
-
-# 查看快照
-& $VBoxManage snapshot SteamOS list --machinereadable
-```
-
-恢复快照会丢弃该快照之后的磁盘状态。恢复前先导出需要保留的项目文件、游戏存档和测试证据。
+桌面上的 **Return to Gaming Mode** 不要点击。点击后系统会再次尝试启动 Gamescope，并可能重新进入黑屏。在 VirtualBox 中测试 SteamOS 时，直接使用 Plasma X11 桌面和桌面版 Steam 即可。
 
 更多虚拟机系统部署方案请返回[虚拟机系统部署指南](/p/virtual-machine-system-setup-guide/)。
