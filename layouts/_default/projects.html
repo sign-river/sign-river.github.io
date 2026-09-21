@@ -73,8 +73,8 @@
       </div>
       {{ with .status }}
       <div class="project-status project-status--{{ . }}">
-        {{ if eq . "active" }}开发中 {{ else if eq . "completed" }}已完成 {{
-        else if eq . "archived" }}已归档 {{ else }}{{ . }} {{ end }}
+        {{ if eq . "active" }}开发中 {{ else if eq . "maintenance" }}维护中 {{
+        else if eq . "completed" }}已完成 {{ else if eq . "archived" }}已归档 {{ else }}{{ . }} {{ end }}
       </div>
       {{ end }}
     </div>

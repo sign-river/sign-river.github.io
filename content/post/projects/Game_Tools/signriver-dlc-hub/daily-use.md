@@ -1,6 +1,6 @@
 ---
 title: "日常使用"
-description: "高频功能、配置和维护操作。"
+description: "首页入口、常用按钮、下载任务与各项设置。"
 type: "project-docs"
 url: "/p/signriver-dlc-hub/daily-use/"
 weight: 20
@@ -8,30 +8,83 @@ toc: true
 draft: false
 ---
 
-首页顶端有 xxxx，功能是 xxxxx
+## 1. 顶部快捷入口
 
-<a href="images/2026-09-22-04-23-18.png" target="_blank"> <img src="images/2026-09-22-04-23-18.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+主界面顶部右侧是一排常驻入口：
 
-在首页除了一键解锁还有 xxxx 按钮，点开高级操作还有 xxx 按钮，他们的功能是 xxxxx
+- **GitHub**：打开项目仓库，源码、发布包和反馈都在这里。
+- **B 站**：打开作者的 B 站主页。
+- **使用教程**：弹出选择窗口，可以打开 GitHub 上的图文教程（即本站这一页），也可以改看 B 站教程。
+- **QQ 群 1061299021**：把交流群号复制到剪贴板，方便直接搜索加群。
 
-<a href="images/2026-09-22-04-18-59.png" target="_blank"> <img src="images/2026-09-22-04-18-59.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+顶部同时显示当前游戏与路径状态。DLC 列表右上角的 **资源有遗漏？反馈更新 →** 用于反馈缺失资源或希望新增的游戏，点击后会进入反馈渠道。
 
-在下载过程中可以关注程序左下角的 xxxx 判断网路状态以及下载速度，通过右上角的 xxxx 按钮可以实现 xxxx 的功能，中间会有待下载，下载中，下载完成或是下载失败的条目，供参考 xxxx
+<a href="images/2026-09-22-04-23-18.png" target="_blank"> <img src="images/2026-09-22-04-23-18.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
-<a href="images/2026-09-22-04-20-15.png" target="_blank"> <img src="images/2026-09-22-04-20-15.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+## 2. DLC 库中的常用按钮
 
-如果有报错问题可以进入报错指南界面，报错指南的详细操作参考常见问题页，这里不多赘述
+DLC 列表上方一排按钮负责日常操作：
 
-<a href="images/2026-09-22-04-21-08.png" target="_blank"> <img src="images/2026-09-22-04-21-08.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+- **全选 DLC**：一次勾选当前游戏的全部 DLC，再次点击会变成 **取消全选**。
+- **刷新目录**：重新读取云端资源目录，切换下载源或资源有更新后使用。
+- **高级操作 ▾**：展开下方的三个维护按钮。
 
-在设置的下载与网络模块中有 xxxxx 可以 xxxxxxx
+<a href="images/2026-09-22-04-18-59.png" target="_blank"> <img src="images/2026-09-22-04-18-59.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
-<a href="images/2026-09-22-04-21-36.png" target="_blank"> <img src="images/2026-09-22-04-21-36.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+### 2.1 一键修复
 
-在程序与存储中有 xxxx，可以 xxxx
+**一键修复** 适合解锁后游戏报错、文件被改动过或反复失败的情况。
 
-<a href="images/2026-09-22-04-21-58.png" target="_blank"> <img src="images/2026-09-22-04-21-58.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+### 2.2 一键移除补丁
 
-最后的常规设置则是有 xxxx 功用，第一个负责 xxxx，第二个如果不懂就没必要调整，保持开启即可
+**一键移除补丁** 会清理游戏目录中的补丁文件，并把原版库还原回去，让游戏回到未解锁状态。
 
-<a href="images/2026-09-22-04-22-43.png" target="_blank"> <img src="images/2026-09-22-04-22-43.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
+### 2.3 移除本程序安装内容
+
+**移除本程序安装内容** 只撤销由本程序管理的内容：撤销本程序记录的 DLC 安装、恢复安装前被替换的同名 DLC 内容，并移除补丁、还原可信的原版库。
+
+游戏原有的 DLC、其他来源的内容和下载缓存都不会被删除。执行前需要先取消全部下载任务，暂停中的任务也要一并取消。
+
+### 2.4 逐项管理 DLC
+
+**逐项管理 DLC** 把 DLC 列表切换为可维护的视图，可以针对单个 DLC 执行下载、取消、校验和卸载，适合只处理其中几项的场景。
+
+## 3. 下载任务与状态
+
+解锁、修复、移除等操作产生的下载都会进入 **下载任务** 页，条目按 **待下载**、**下载中**、**已完成**、**失败** 区分。
+
+页面右上角提供 **清除全部记录**、**清除失败/取消记录**、**取消全部下载** 和 **刷新**；程序左下角常驻显示网络连接状态、实时任务速度与缓存占用，下载过程中可以据此判断当前是否正常。
+
+<a href="images/2026-09-22-04-20-15.png" target="_blank"> <img src="images/2026-09-22-04-20-15.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+
+## 4. 报错指南
+
+左侧导航的 **报错指南** 集中了排查相关的功能。它的组成与使用方式见 [常见问题](/p/signriver-dlc-hub/faq/)，这里不再重复。
+
+<a href="images/2026-09-22-04-21-08.png" target="_blank"> <img src="images/2026-09-22-04-21-08.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+
+## 5. 设置
+
+设置页的改动会自动保存，分为三组。
+
+### 5.1 下载与网络
+
+- **下载源**：在 `GitLink` 与 `GitHub` 之间切换，用于读取资源、公告和程序更新；切换后会刷新本地资源目录。下方链接可以直接打开当前下载源的资源仓库。
+- **网络测速**：从当前下载源获取一个小测试文件，用于判断当前网络是否适合下载；测试文件不会保留。
+- **超时检测**：默认在长时间无响应时提醒。网络较慢或使用代理时，可以关闭它以继续等待。
+
+<a href="images/2026-09-22-04-21-36.png" target="_blank"> <img src="images/2026-09-22-04-21-36.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+
+### 5.2 程序与存储
+
+- **程序更新**：检查是否有新版本，更新不会删除已下载的 DLC、游戏或本地缓存。
+- **缓存管理**：显示缓存总占用与各游戏的容量分布，并提供 **清理当前游戏**、**打开目录**、**清除所有缓存** 三个操作。
+
+<a href="images/2026-09-22-04-21-58.png" target="_blank"> <img src="images/2026-09-22-04-21-58.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+
+### 5.3 常规设置
+
+- **公告提醒**：控制启动时是否显示最新公告。关闭后同一条公告不会重复弹出，有新公告时仍会显示。
+- **启动失败时保留当前模块**：当前模块启动失败时保留现场并显示错误，不会自动回退到旧版本，便于把问题反馈给开发者。不清楚用途时保持默认开启即可。
+
+<a href="images/2026-09-22-04-22-43.png" target="_blank"> <img src="images/2026-09-22-04-22-43.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
