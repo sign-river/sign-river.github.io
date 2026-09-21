@@ -8,15 +8,15 @@ toc: true
 draft: false
 ---
 
-## 前置条件
+这里仅以 windows 端为例，其余端操作相似
+下载安装包后解压，双击 xxxxx
 
-待补充。
+<a href="images/2026-09-22-04-13-33.png" target="_blank"> <img src="images/2026-09-22-04-13-33.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
+打开后查看公告可了解，然后关闭公告进入程序首页
 
-## 安装
+<a href="images/2026-09-22-04-16-54.png" target="_blank"> <img src="images/2026-09-22-04-16-54.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
 
-待补充。
+在游戏检测中切换目标游戏后点击一键解锁即可
 
-## 第一次使用
-
-待补充。
+<a href="images/2026-09-22-04-17-30.png" target="_blank"> <img src="images/2026-09-22-04-17-30.png" alt="image" style="max-width: 100%; width: 1000px;"/> </a>
