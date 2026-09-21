@@ -19,7 +19,7 @@ draft: false
 
 顶部同时显示当前游戏与路径状态。DLC 列表右上角的 **资源有遗漏？反馈更新 →** 用于反馈缺失资源或希望新增的游戏，点击后会进入反馈渠道。
 
-<a href="images/2026-09-22-04-23-18.png" target="_blank"> <img src="images/2026-09-22-04-23-18.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-23-18.png" target="_blank"> <img src="../images/2026-09-22-04-23-18.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 2. DLC 库中的常用按钮
 
@@ -29,7 +29,7 @@ DLC 列表上方一排按钮负责日常操作：
 - **刷新目录**：重新读取云端资源目录，切换下载源或资源有更新后使用。
 - **高级操作 ▾**：展开下方的三个维护按钮。
 
-<a href="images/2026-09-22-04-18-59.png" target="_blank"> <img src="images/2026-09-22-04-18-59.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-18-59.png" target="_blank"> <img src="../images/2026-09-22-04-18-59.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ### 2.1 一键修复
 
@@ -55,13 +55,13 @@ DLC 列表上方一排按钮负责日常操作：
 
 页面右上角提供 **清除全部记录**、**清除失败/取消记录**、**取消全部下载** 和 **刷新**；程序左下角常驻显示网络连接状态、实时任务速度与缓存占用，下载过程中可以据此判断当前是否正常。
 
-<a href="images/2026-09-22-04-20-15.png" target="_blank"> <img src="images/2026-09-22-04-20-15.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-20-15.png" target="_blank"> <img src="../images/2026-09-22-04-20-15.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 4. 报错指南
 
 左侧导航的 **报错指南** 集中了排查相关的功能。它的组成与使用方式见 [常见问题](/p/signriver-dlc-hub/faq/)，这里不再重复。
 
-<a href="images/2026-09-22-04-21-08.png" target="_blank"> <img src="images/2026-09-22-04-21-08.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-21-08.png" target="_blank"> <img src="../images/2026-09-22-04-21-08.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 5. 设置
 
@@ -73,18 +73,18 @@ DLC 列表上方一排按钮负责日常操作：
 - **网络测速**：从当前下载源获取一个小测试文件，用于判断当前网络是否适合下载；测试文件不会保留。
 - **超时检测**：默认在长时间无响应时提醒。网络较慢或使用代理时，可以关闭它以继续等待。
 
-<a href="images/2026-09-22-04-21-36.png" target="_blank"> <img src="images/2026-09-22-04-21-36.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-21-36.png" target="_blank"> <img src="../images/2026-09-22-04-21-36.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ### 5.2 程序与存储
 
 - **程序更新**：检查是否有新版本，更新不会删除已下载的 DLC、游戏或本地缓存。
 - **缓存管理**：显示缓存总占用与各游戏的容量分布，并提供 **清理当前游戏**、**打开目录**、**清除所有缓存** 三个操作。
 
-<a href="images/2026-09-22-04-21-58.png" target="_blank"> <img src="images/2026-09-22-04-21-58.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-21-58.png" target="_blank"> <img src="../images/2026-09-22-04-21-58.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ### 5.3 常规设置
 
 - **公告提醒**：控制启动时是否显示最新公告。关闭后同一条公告不会重复弹出，有新公告时仍会显示。
 - **启动失败时保留当前模块**：当前模块启动失败时保留现场并显示错误，不会自动回退到旧版本，便于把问题反馈给开发者。不清楚用途时保持默认开启即可。
 
-<a href="images/2026-09-22-04-22-43.png" target="_blank"> <img src="images/2026-09-22-04-22-43.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-22-43.png" target="_blank"> <img src="../images/2026-09-22-04-22-43.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>

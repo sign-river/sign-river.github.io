@@ -16,7 +16,7 @@ SignRiver DLC Hub 目前支持 Windows、SteamOS 与 macOS（Intel）。本文�
 
 把压缩包解压到本地磁盘上任意可读写的目录，例如 `D:\Tools\SignRiver-DLC-Hub`，然后双击其中的 **唏嘘南溪 DLC 一键解锁工具.exe** 启动程序。
 
-<a href="images/2026-09-22-04-42-49.png" target="_blank"> <img src="images/2026-09-22-04-42-49.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-42-49.png" target="_blank"> <img src="../images/2026-09-22-04-42-49.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 解压后的目录中除了主程序，还有 `app`、`config`、`data` 等运行所需的目录，请保持它们与主程序在同一层。
 
@@ -30,7 +30,7 @@ SignRiver DLC Hub 目前支持 Windows、SteamOS 与 macOS（Intel）。本文�
 
 如果不想在短期内重复看到同一条公告，可以点击 **下次公告更新前不再显示**；之后仍可在 **设置 → 常规设置** 中重新打开公告提醒。
 
-<a href="images/2026-09-22-04-16-54.png" target="_blank"> <img src="images/2026-09-22-04-16-54.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-16-54.png" target="_blank"> <img src="../images/2026-09-22-04-16-54.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 3. 确认游戏目录
 
@@ -46,6 +46,6 @@ SignRiver DLC Hub 目前支持 Windows、SteamOS 与 macOS（Intel）。本文�
 
 程序会先写入解锁补丁，补丁就绪后再从云端下载并安装所选的 DLC。下载与写入的进度可以在 **下载任务** 页查看，完成后对应条目会显示 **已安装**。
 
-<a href="images/2026-09-22-04-17-30.png" target="_blank"> <img src="images/2026-09-22-04-17-30.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-17-30.png" target="_blank"> <img src="../images/2026-09-22-04-17-30.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 > 执行解锁前请先关闭游戏，程序检测到游戏正在运行时会拒绝执行。

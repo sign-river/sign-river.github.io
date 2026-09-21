@@ -18,7 +18,7 @@ draft: false
 
 报错指南的入口在左侧导航，页面分为 **一键排错** 与 **其他工具** 两部分：其他工具中包含 **解决方案**、**问题记录**、**运行日志** 和 **常用工具**。页面底部还有 **导出诊断**，可以把诊断信息整理成一份文件发给开发者。
 
-<a href="images/2026-09-22-04-24-11.png" target="_blank"> <img src="images/2026-09-22-04-24-11.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-24-11.png" target="_blank"> <img src="../images/2026-09-22-04-24-11.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 3. 一键排错：先做一次自动检查
 
@@ -26,7 +26,7 @@ draft: false
 
 其中需要处理的条目会直接给出 **查看解决方案** 或 **查看工具详情** 的跳转。检测过程中可以 **暂停检测** 或 **终止检测**，检测结束后可以 **复制检测结果**。
 
-<a href="images/2026-09-22-04-24-49.png" target="_blank"> <img src="images/2026-09-22-04-24-49.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-24-49.png" target="_blank"> <img src="../images/2026-09-22-04-24-49.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 > 一键排错只做检测，不会修改游戏文件、程序设置或网络配置。未发现异常，也不代表所有问题都已排除。
 
@@ -36,13 +36,13 @@ draft: false
 
 从一键排错的检查结果里点击 **查看解决方案**，可以直接跳到对应条目。
 
-<a href="images/2026-09-22-04-43-53.png" target="_blank"> <img src="images/2026-09-22-04-43-53.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-43-53.png" target="_blank"> <img src="../images/2026-09-22-04-43-53.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 5. 问题记录：查看已记录的异常
 
 程序会把检测到的异常与处理建议记录在案，方便回头核对。页面右上角提供 **清空全部记录**、**刷新** 和 **返回指南**。
 
-<a href="images/2026-09-22-04-25-10.png" target="_blank"> <img src="images/2026-09-22-04-25-10.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-25-10.png" target="_blank"> <img src="../images/2026-09-22-04-25-10.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 6. 运行日志：反馈问题时最有用的材料
 
@@ -50,13 +50,13 @@ draft: false
 
 反馈问题时，把复制出来的日志或导出的诊断包一起发给开发者，可以明显加快定位速度。
 
-<a href="images/2026-09-22-04-25-59.png" target="_blank"> <img src="images/2026-09-22-04-25-59.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-25-59.png" target="_blank"> <img src="../images/2026-09-22-04-25-59.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 ## 7. 常用工具：按需自助处理
 
 常用工具中目前包含多种实用工具，最常用的比如补丁管理，杀毒软件检测和 p 社启动器下载等。每张卡片点击 **查看详情** 进入具体操作。
 
-<a href="images/2026-09-22-04-27-08.png" target="_blank"> <img src="images/2026-09-22-04-27-08.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
+<a href="../images/2026-09-22-04-27-08.png" target="_blank"> <img src="../images/2026-09-22-04-27-08.png" alt="image" style="max-width: 60%; width: 1000px;"/> </a>
 
 > 部分工具会改动系统或游戏文件，操作前请先阅读详情页中的说明。
 
